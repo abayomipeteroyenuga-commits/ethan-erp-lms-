@@ -11,76 +11,103 @@
 </head>
 <body>
   <div id="app">
-    <section id="authScreen" class="auth-shell">
-      <div class="auth-brand-panel">
-        <img src="assets/ethan-logo.jpeg" class="brand-logo" alt="Ethan Digital Academy logo" />
-        <div class="brand-copy">
-          <span class="eyebrow">ETHAN DIGITAL ACADEMY</span>
-          <h1>ETHAN ERP & LMS</h1>
-          <p>Learn. Manage. Grow. Succeed.</p>
-          <div class="feature-chips">
-            <span>Student Portal</span><span>Instructor Portal</span><span>Parent Portal</span><span>Academy ERP</span>
+    <section id="authScreen" class="auth-shell modern-auth">
+      <header class="public-header">
+        <a class="public-brand" href="#" aria-label="Ethan ERP & LMS home">
+          <img src="assets/ethan-logo.jpeg" alt="Ethan Digital Academy logo" />
+          <span><strong>ETHAN</strong><small>ERP & LMS</small></span>
+        </a>
+        <div class="public-header-actions">
+          <span class="secure-pill">Secure Learning Portal</span>
+          <button type="button" class="header-signin" data-jump-auth="signin">Sign In</button>
+        </div>
+      </header>
+
+      <div class="auth-main">
+        <div class="auth-brand-panel">
+          <div class="auth-hero-inner">
+            <span class="eyebrow hero-kicker">ETHAN DIGITAL ACADEMY</span>
+            <h1>One intelligent platform for <span>digital learning and academy management.</span></h1>
+            <p class="hero-lead">A professional ERP & LMS environment for Ethan Digital Academy — connecting administrators, instructors and learners through structured digital learning, verified payments and controlled course access.</p>
+
+            <div class="hero-benefits">
+              <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Role-based portals</strong><small>Super Admin, Admin, Instructor, Student, Professional and Business Owner</small></div></div>
+              <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Payment-gated learning</strong><small>Courses and videos are allocated only after approval</small></div></div>
+              <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Academic operations</strong><small>Courses, attendance, fees, reports and student progress</small></div></div>
+            </div>
+
+            
           </div>
         </div>
-      </div>
-      <div class="auth-card-wrap">
-        <div class="auth-card">
-          <div class="auth-tabs">
-            <button class="auth-tab active" data-auth-tab="signin">Sign In</button>
-            <button class="auth-tab" data-auth-tab="signup">Create Account</button>
+
+        <div class="auth-card-wrap">
+          <div class="auth-card professional-card">
+            <div class="auth-card-brand">
+              <img src="assets/ethan-logo.jpeg" alt="Ethan Digital Academy" />
+              <div><strong>Welcome to Ethan</strong><small>ERP & Learning Management System</small></div>
+            </div>
+
+            <div class="auth-tabs">
+  <button class="auth-tab active" data-auth-tab="signin">Sign In</button>
+  <button class="auth-tab" data-auth-tab="signup">Create Account</button>
+</div>
+
+            <form id="signinForm" class="auth-form">
+              <div class="auth-heading"><h2>Sign in to your portal</h2><p>Use your registered account. Your role will open the correct workspace automatically.</p></div>
+              <label>Email address
+                <input type="email" id="signinEmail" required autocomplete="email" placeholder="name@example.com" />
+              </label>
+              <label>Password
+                <div class="password-field">
+                  <input type="password" id="signinPassword" required autocomplete="current-password" placeholder="Enter your password" />
+                  <button type="button" class="text-btn toggle-password" data-target="signinPassword">Show</button>
+                </div>
+              </label>
+              <div class="form-row between auth-options">
+                <label class="checkbox"><input type="checkbox" id="rememberMe" /> Remember me</label>
+                <button type="button" id="forgotPasswordBtn" class="text-btn">Forgot password?</button>
+              </div>
+              <button type="submit" class="primary-btn full auth-submit">Sign In Securely <span>→</span></button>
+              <p id="signinMessage" class="form-message"></p>
+              
+            </form>
+
+            <form id="signupForm" class="auth-form hidden">
+              <div class="auth-heading">
+                <h2>Create your account</h2>
+                <p>Register as a Student, Professional or Business Owner.</p>
+              </div>
+              <div class="grid-2">
+                <label>First name<input type="text" id="firstName" required placeholder="First name" /></label>
+                <label>Last name<input type="text" id="lastName" required placeholder="Last name" /></label>
+              </div>
+              <label>Email address<input type="email" id="signupEmail" required autocomplete="email" placeholder="name@example.com" /></label>
+              <label>Phone number<input type="tel" id="signupPhone" required placeholder="Phone number" /></label>
+              <label>Register as
+                <select id="signupRole" required>
+                  <option value="student">Student</option>
+                  <option value="professional">Professional</option>
+                  <option value="business_owner">Business Owner</option>
+                </select>
+              </label>
+              <label>Password
+                <div class="password-field">
+                  <input type="password" id="signupPassword" required minlength="8" autocomplete="new-password" placeholder="Minimum 8 characters" />
+                  <button type="button" class="text-btn toggle-password" data-target="signupPassword">Show</button>
+                </div>
+              </label>
+              <label>Confirm password<input type="password" id="confirmPassword" required minlength="8" autocomplete="new-password" placeholder="Repeat password" /></label>
+              <label class="checkbox terms-row"><input type="checkbox" id="termsCheck" required /> I agree to the terms and privacy policy.</label>
+              <button type="submit" class="primary-btn full auth-submit">Create Account <span>→</span></button>
+              <p id="signupMessage" class="form-message"></p>
+            </form>
+
+            <div class="auth-footer-line">Powered by <strong>Ethan Digital Academy</strong></div>
           </div>
+</div>
+</section>
 
-          <form id="signinForm" class="auth-form">
-            <h2>Welcome back</h2>
-            <p class="muted">Sign in to continue to your learning and management portal.</p>
-            <label>Email address
-              <input type="email" id="signinEmail" required autocomplete="email" placeholder="you@example.com" />
-            </label>
-            <label>Password
-              <div class="password-field">
-                <input type="password" id="signinPassword" required autocomplete="current-password" placeholder="Enter your password" />
-                <button type="button" class="text-btn toggle-password" data-target="signinPassword">Show</button>
-              </div>
-            </label>
-            <div class="form-row between">
-              <label class="checkbox"><input type="checkbox" id="rememberMe" /> Remember me</label>
-              <button type="button" id="forgotPasswordBtn" class="text-btn">Forgot password?</button>
-            </div>
-            <button type="submit" class="primary-btn full">Sign In</button>
-            <p id="signinMessage" class="form-message"></p>
-          </form>
-
-          <form id="signupForm" class="auth-form hidden">
-            <h2>Create your account</h2>
-            <p class="muted">Register as a student or parent. Staff accounts are created by administration.</p>
-            <div class="grid-2">
-              <label>First name<input type="text" id="firstName" required /></label>
-              <label>Last name<input type="text" id="lastName" required /></label>
-            </div>
-            <label>Email address<input type="email" id="signupEmail" required /></label>
-            <label>Phone number<input type="tel" id="signupPhone" required /></label>
-            <label>Account type
-              <select id="signupRole" required>
-                <option value="student">Student</option>
-                <option value="parent">Parent/Guardian</option>
-              </select>
-            </label>
-            <label>Password
-              <div class="password-field">
-                <input type="password" id="signupPassword" required minlength="8" />
-                <button type="button" class="text-btn toggle-password" data-target="signupPassword">Show</button>
-              </div>
-            </label>
-            <label>Confirm password<input type="password" id="confirmPassword" required minlength="8" /></label>
-            <label class="checkbox"><input type="checkbox" id="termsCheck" required /> I agree to the terms and privacy policy.</label>
-            <button type="submit" class="primary-btn full">Create Account</button>
-            <p id="signupMessage" class="form-message"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="portal" class="portal hidden">
+<section id="portal" class="portal hidden">
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-brand">
           <img src="assets/ethan-logo.jpeg" alt="Ethan logo" />
@@ -148,5 +175,33 @@
   <script src="config.js"></script>
   <script src="supabase-client.js"></script>
   <script src="app.js"></script>
+
+<section class="course-catalogue-section" id="courseCatalogue">
+  <div class="catalogue-head">
+    <div>
+      <span class="eyebrow">EXPLORE BEFORE YOU ENROL</span>
+      <h2>Find Your Digital Course</h2>
+      <p>Click Browse Courses, choose a course from the dropdown, and read a short overview before enrolling.</p>
+    </div>
+    <div class="catalogue-search-wrap">
+      <button type="button" class="catalogue-browse-btn" id="browseCoursesBtn">Browse Courses</button>
+    </div>
+  </div>
+
+  <div class="catalogue-dropdown-wrap hidden" id="catalogueDropdownWrap">
+    <label for="courseCatalogueSelect">Choose a course</label>
+    <select id="courseCatalogueSelect">
+      <option value="">Select one of the 100 courses</option>
+    </select>
+  </div>
+
+  <div class="catalogue-brief-panel hidden" id="catalogueBriefPanel">
+    <span class="eyebrow">COURSE OVERVIEW</span>
+    <h3 id="courseBriefTitle"></h3>
+    <p id="courseBriefText"></p>
+    <div class="course-access-note">Full lessons and videos become available after payment verification and course allocation.</div>
+  </div>
+</section>
+
 </body>
 </html>

@@ -81,6 +81,35 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
+
+  async function getStudentByUserId(userId) {
+    if (!client) return null;
+    const { data, error } = await client.from("students").select("*").eq("user_id", userId).maybeSingle();
+    if (error) throw error;
+    return data;
+  }
+
+  async function listStudentEnrolments(studentId) {
+    if (!client) return [];
+    const { data, error } = await client.from("enrolments").select("*, course:courses(*)").eq("student_id", studentId).eq("status","active").order("enrolled_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function createEnrolment(payload) {
+    if (!client) return null;
+    const { data, error } = await client.from("enrolments").upsert(payload,{onConflict:"student_id,course_id"}).select().single();
+    if (error) throw error;
+    return data;
+  }
+
+  async function listMyPayments(studentId) {
+    if (!client) return [];
+    const { data, error } = await client.from("payments").select("*").eq("student_id",studentId).order("paid_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
+  }
+
   async function createPayment(payload) {
     if (!client) return null;
     const { data, error } = await client.from("payments").insert(payload).select().single();
@@ -88,5 +117,20 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
-  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, createPayment };
+  async function listStaff() {
+    if (!client) return [];
+    const { data, error } = await client.from("profiles").select("id,first_name,last_name,email,phone,role,created_at").in("role",["super_admin","admin","instructor"]).order("created_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function createStaff(payload) {
+    if (!client) throw new Error("Supabase is not connected.");
+    const { data, error } = await client.functions.invoke("create-staff", { body: payload });
+    if (error) throw error;
+    if (data?.error) throw new Error(data.error);
+    return data;
+  }
+
+  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, createPayment, listStaff, createStaff };
 })();
