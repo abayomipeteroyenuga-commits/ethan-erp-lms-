@@ -31,3 +31,14 @@ Open `index.html` directly, or serve this folder using a simple local web server
 - Core ERP/LMS database entities
 - Backend-ready auth methods
 - Setup guide included
+
+
+## v3 connection
+This build is configured for:
+- Supabase project URL: https://hsigpjyvuvqdmujklcvw.supabase.co
+- Public publishable key configured in `config.js`
+
+Before public deployment:
+- Confirm Email provider is enabled in Supabase Authentication.
+- Configure the Site URL and redirect URLs for the production domain.
+- Revoke/rotate any secret key that was previously exposed.
