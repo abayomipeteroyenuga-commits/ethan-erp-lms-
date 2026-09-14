@@ -1260,3 +1260,175 @@ textarea:focus-visible{
   background:var(--primary)!important;
   color:#fff!important;
 }
+
+/* v8.4 — unified seamless interface: remove slab/card appearance */
+:root{
+  --page:#f7f9fc;
+  --surface:#f7f9fc;
+  --surface-soft:#f7f9fc;
+  --primary:#2f5f8f;
+  --primary-2:#4778aa;
+  --ink:#20384f;
+  --muted:#718397;
+  --line:#e7edf3;
+}
+
+/* Make the whole public page rhyme as one continuous canvas */
+.modern-auth,
+.auth-shell,
+body{
+  background:#f7f9fc !important;
+}
+
+.public-header{
+  background:#f7f9fc !important;
+  border-bottom:1px solid #e7edf3 !important;
+  box-shadow:none !important;
+}
+
+.auth-main{
+  background:transparent !important;
+}
+
+/* Remove slab effect from hero side */
+.auth-brand-panel,
+.auth-hero-inner,
+.hero-benefits,
+.benefit-item{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+
+/* Login/create-account should feel embedded, not like a detached slab */
+.auth-card,
+.professional-card,
+.auth-card-wrap{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+
+.professional-card,
+.auth-card{
+  padding:0 !important;
+}
+
+/* Keep only the form controls themselves visibly structured */
+.auth-tabs{
+  background:#eef3f8 !important;
+  box-shadow:none !important;
+  border:0 !important;
+}
+
+.auth-card-brand{
+  border-bottom:1px solid #e3e9f0 !important;
+  background:transparent !important;
+}
+
+/* Inputs remain clear but subtle */
+.auth-form input,
+.auth-form select{
+  background:#ffffff !important;
+  border:1px solid #dce5ee !important;
+  box-shadow:none !important;
+}
+
+/* Catalogue should continue naturally from hero area */
+.course-catalogue-section{
+  background:#f7f9fc !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+.catalogue-head{
+  border-top:1px solid #e3e9f0 !important;
+}
+
+.catalogue-dropdown-wrap,
+.catalogue-brief-panel,
+.catalogue-empty{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.catalogue-dropdown-wrap select{
+  background:#fff !important;
+  border:1px solid #dce5ee !important;
+}
+
+.course-access-note{
+  background:#edf3f8 !important;
+  border-radius:8px !important;
+}
+
+/* Remove dashboard slab feeling too */
+.portal{
+  background:#f7f9fc !important;
+}
+
+.card,
+.stat-card,
+.panel,
+.dashboard-card,
+.course-card,
+.table-card,
+.hero-card{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+
+.stats-grid{
+  border-top:1px solid #e5ebf1 !important;
+  border-bottom:1px solid #e5ebf1 !important;
+}
+
+.stat-card{
+  padding:18px 14px !important;
+  border-right:1px solid #e5ebf1 !important;
+}
+
+.stat-card:last-child{
+  border-right:0 !important;
+}
+
+/* Tables and lists blend with page while staying readable */
+table{
+  background:transparent !important;
+}
+
+thead{
+  background:#eef3f8 !important;
+}
+
+tbody tr{
+  border-bottom:1px solid #e8edf2 !important;
+}
+
+/* Sidebar remains the strongest navigation anchor */
+.sidebar{
+  box-shadow:none !important;
+}
+
+.topbar,
+.app-header{
+  box-shadow:none !important;
+}
+
+/* Mobile cleanup */
+@media(max-width:760px){
+  .auth-main{
+    gap:34px !important;
+  }
+  .auth-card-brand{
+    padding-bottom:14px !important;
+  }
+}

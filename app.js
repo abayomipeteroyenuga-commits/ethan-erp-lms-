@@ -467,7 +467,14 @@ function closeModal(){const m=$("#activeModal");if(m)m.remove()}
  const user=getUsers().find(u=>u.email===s.email); if(user)openPortal(user);
 })();
 
-if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
+if("serviceWorker" in navigator){
+  window.addEventListener("load", async ()=>{
+    try{
+      const reg = await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
+      await reg.update();
+    }catch(_){}
+  });
+}
 
 
 /* v5: payment-controlled course allocation */
