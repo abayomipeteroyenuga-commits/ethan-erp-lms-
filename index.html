@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b2a67" />
+  <meta name="description" content="ETHAN ERP & LMS — Education management and learning platform powered by Ethan Digital Academy." />
+  <title>ETHAN ERP & LMS</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="authScreen" class="auth-shell">
+      <div class="auth-brand-panel">
+        <img src="assets/ethan-logo.jpeg" class="brand-logo" alt="Ethan Digital Academy logo" />
+        <div class="brand-copy">
+          <span class="eyebrow">ETHAN DIGITAL ACADEMY</span>
+          <h1>ETHAN ERP & LMS</h1>
+          <p>Learn. Manage. Grow. Succeed.</p>
+          <div class="feature-chips">
+            <span>Student Portal</span><span>Instructor Portal</span><span>Parent Portal</span><span>Academy ERP</span>
+          </div>
+        </div>
+      </div>
+      <div class="auth-card-wrap">
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-auth-tab="signin">Sign In</button>
+            <button class="auth-tab" data-auth-tab="signup">Create Account</button>
+          </div>
+
+          <form id="signinForm" class="auth-form">
+            <h2>Welcome back</h2>
+            <p class="muted">Sign in to continue to your learning and management portal.</p>
+            <label>Email address
+              <input type="email" id="signinEmail" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+            <label>Password
+              <div class="password-field">
+                <input type="password" id="signinPassword" required autocomplete="current-password" placeholder="Enter your password" />
+                <button type="button" class="text-btn toggle-password" data-target="signinPassword">Show</button>
+              </div>
+            </label>
+            <div class="form-row between">
+              <label class="checkbox"><input type="checkbox" id="rememberMe" /> Remember me</label>
+              <button type="button" id="forgotPasswordBtn" class="text-btn">Forgot password?</button>
+            </div>
+            <button type="submit" class="primary-btn full">Sign In</button>
+            <p id="signinMessage" class="form-message"></p>
+          </form>
+
+          <form id="signupForm" class="auth-form hidden">
+            <h2>Create your account</h2>
+            <p class="muted">Register as a student or parent. Staff accounts are created by administration.</p>
+            <div class="grid-2">
+              <label>First name<input type="text" id="firstName" required /></label>
+              <label>Last name<input type="text" id="lastName" required /></label>
+            </div>
+            <label>Email address<input type="email" id="signupEmail" required /></label>
+            <label>Phone number<input type="tel" id="signupPhone" required /></label>
+            <label>Account type
+              <select id="signupRole" required>
+                <option value="student">Student</option>
+                <option value="parent">Parent/Guardian</option>
+              </select>
+            </label>
+            <label>Password
+              <div class="password-field">
+                <input type="password" id="signupPassword" required minlength="8" />
+                <button type="button" class="text-btn toggle-password" data-target="signupPassword">Show</button>
+              </div>
+            </label>
+            <label>Confirm password<input type="password" id="confirmPassword" required minlength="8" /></label>
+            <label class="checkbox"><input type="checkbox" id="termsCheck" required /> I agree to the terms and privacy policy.</label>
+            <button type="submit" class="primary-btn full">Create Account</button>
+            <p id="signupMessage" class="form-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="portal" class="portal hidden">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+          <img src="assets/ethan-logo.jpeg" alt="Ethan logo" />
+          <div>
+            <strong>ETHAN</strong>
+            <small>ERP & LMS</small>
+          </div>
+        </div>
+        <nav id="sideNav"></nav>
+        <div class="sidebar-footer">
+          <button id="logoutBtn" class="nav-item logout">↪ <span>Logout</span></button>
+          <small>Powered by Ethan Digital Academy</small>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="top-left">
+            <button id="menuBtn" class="icon-btn">☰</button>
+            <div>
+              <span class="eyebrow" id="pageEyebrow">PORTAL</span>
+              <h2 id="pageTitle">Dashboard</h2>
+            </div>
+          </div>
+          <div class="top-actions">
+            <div class="search-wrap">
+              <input id="globalSearch" type="search" placeholder="Search portal..." />
+            </div>
+            <button id="notificationBtn" class="icon-btn notif-btn">🔔<span id="notifBadge">3</span></button>
+            <div class="user-pill">
+              <div class="avatar" id="userAvatar">EP</div>
+              <div>
+                <strong id="userName">Ethan User</strong>
+                <small id="userRole">Student</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div id="content" class="content"></div>
+      </main>
+
+      <div id="notificationPanel" class="notification-panel hidden">
+        <div class="panel-head">
+          <h3>Notifications</h3>
+          <button id="closeNotif" class="icon-btn">✕</button>
+        </div>
+        <div id="notificationList"></div>
+      </div>
+    </section>
+  </div>
+
+  <template id="statCardTemplate">
+    <div class="stat-card">
+      <div class="stat-icon"></div>
+      <div>
+        <small class="stat-label"></small>
+        <strong class="stat-value"></strong>
+        <span class="stat-sub"></span>
+      </div>
+    </div>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
