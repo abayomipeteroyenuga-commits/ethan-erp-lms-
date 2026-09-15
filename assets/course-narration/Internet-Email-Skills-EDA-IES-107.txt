@@ -1,0 +1,1254 @@
+ETHAN DIGITAL ACADEMY
+
+ INTERNET & EMAIL SKILLS
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-IES-107
+Level Beginner to Professional Everyday Use
+Duration 6 Weeks (19 Lessons)
+Certificate Professional Certificate in Internet & Email Skills
+Prerequisite Computer Appreciation / Digital Literacy
+Learning Format Classroom + Guided Practicals + Final
+ Communication Project
+
+ This manual teaches practical, safe and professional internet and email use. All
+ exercises should use authorised accounts, fictional practice identities and non-
+ sensitive information.
+
+ 
+
+ 
+
+Course Introduction
+Internet and email skills are essential for modern education, work and business. This course develops
+confident browsing, effective research, professional email communication, file handling, privacy awareness,
+account security and responsible online behaviour.
+
+Learning Objectives
+ Explain how the internet, web browsers and websites work at an everyday-user level.
+ Search for information efficiently and evaluate online sources.
+ Download, upload and organise files responsibly.
+ Write, send and manage professional email.
+ Recognise common phishing and scam warning signs without interacting with suspicious systems.
+ Protect accounts, privacy and digital reputation.
+ Combine research, files, email and scheduling into a complete workflow.
+
+Course Structure
+1. Lesson 1: Internet Foundations and Everyday Uses
+2. Lesson 2: Web Browsers, Tabs and Web Addresses
+3. Lesson 3: Searching the Web Effectively
+4. Lesson 4: Evaluating Online Information and Misinformation
+5. Lesson 5: Downloading, Uploading and Managing Online Files
+6. Lesson 6: Email Foundations and Email Addresses
+7. Lesson 7: Writing Professional Emails
+8. Lesson 8: Attachments, Links and Safe File Sharing
+9. Lesson 9: Inbox Organisation, Search and Email Management
+10. Lesson 10: Phishing, Scams and Suspicious Messages
+11. Lesson 11: Passwords, MFA and Account Recovery
+12. Lesson 12: Privacy, Cookies and Digital Footprints
+13. Lesson 13: Wi-Fi, Public Computers and Safer Connections
+14. Lesson 14: Video Calls, Messaging and Online Etiquette
+15. Lesson 15: Online Forms, Registrations and Transactions
+16. Lesson 16: Email Productivity and Calendar Follow-Up
+17. Lesson 17: Responsible Internet Use, Copyright and Online Conduct
+18. Lesson 18: Integrated Internet and Email Workflow
+19. Lesson 19: Final Internet & Email Skills Project
+
+ 
+
+ 
+
+Lesson 1: Internet Foundations and Everyday
+Uses
+Introduction
+The internet is a global system of interconnected networks that allows devices and services to exchange
+information. Learners use it for communication, education, research, banking, entertainment, cloud
+applications and many other legitimate activities.
+
+Learning Objectives
+ Explain the main concepts in internet foundations and everyday uses.
+ Complete a guided practical related to internet foundations and everyday uses.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: The internet is the underlying network; the World Wide Web is one service that uses it.
+
+Key point: A device usually connects through a local network and an internet service provider before
+reaching an online service.
+
+Key point: Online services depend on connectivity, servers, software and user accounts.
+
+Key point: Good digital practice includes protecting accounts, respecting privacy and checking information
+before relying on it.
+
+ 
+
+ 
+ Figure 1: Instructional visual for Internet Foundations and Everyday Uses.
+
+Step-by-Step Guided Practical
+1. List five legitimate ways you use the internet.
+
+2. Identify whether each example is communication, research, cloud productivity or entertainment.
+
+3. Draw a simple device-to-online-service connection path.
+
+4. Explain the difference between the internet and the web.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy learners may use the internet to access learning resources, communicate with
+instructors and use authorised cloud applications.
+
+Review Questions
+20. What is the main purpose of internet foundations and everyday uses?
+21. State two good practices from this lesson.
+22. What risk or mistake should a careful user avoid?
+23. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 1 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 2: Web Browsers, Tabs and Web
+Addresses
+Introduction
+A web browser is software used to access websites and web applications. Understanding the address bar,
+tabs, navigation controls and web addresses helps users browse more confidently.
+
+Learning Objectives
+ Explain the main concepts in web browsers, tabs and web addresses.
+ Complete a guided practical related to web browsers, tabs and web addresses.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Common browser controls include Back, Forward, Refresh, Home where configured, tabs and
+the address bar.
+
+Key point: A URL is the address of a web resource. The domain name is an important part of that address.
+
+Key point: HTTPS indicates encrypted transport between browser and site, but users must still evaluate
+whether the site itself is legitimate.
+
+Key point: Bookmarks can save frequently used pages; too many poorly named bookmarks become difficult
+to manage.
+
+ 
+
+ 
+ Figure 2: Instructional visual for Web Browsers, Tabs and Web Addresses.
+
+Step-by-Step Guided Practical
+1. Open your browser.
+
+2. Identify the address bar, tab bar, Back, Forward and Refresh controls.
+
+3. Open two harmless websites in separate tabs.
+
+4. Read the domain name shown in each address bar.
+
+5. Bookmark one trusted educational page and rename the bookmark clearly.
+
+Ethan Digital Academy Case Study
+Learners can bookmark the Academy's official learning portal instead of repeatedly searching for it and
+risking look-alike pages.
+
+Review Questions
+24. What is the main purpose of web browsers, tabs and web addresses?
+25. State two good practices from this lesson.
+26. What risk or mistake should a careful user avoid?
+27. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 2 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 3: Searching the Web Effectively
+Introduction
+Search engines help users locate information on the web. Better searches begin with a clear question and
+specific keywords rather than long, vague sentences.
+
+Learning Objectives
+ Explain the main concepts in searching the web effectively.
+ Complete a guided practical related to searching the web effectively.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Use important nouns, names, dates or phrases that describe the information needed.
+
+Key point: Quotation marks may help search for an exact phrase in many search engines.
+
+Key point: Adding a trusted organisation name can narrow results when looking for official guidance.
+
+Key point: Search results are not automatically correct; ranking does not prove reliability.
+
+Key point: For important facts, compare multiple trustworthy sources.
+
+ Figure 3: Instructional visual for Searching the Web Effectively.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Choose a harmless topic such as 'benefits of keyboard shortcuts'.
+
+2. Write a broad search query, then a more specific one.
+
+3. Compare the first page of results.
+
+4. Identify which result appears most suitable and explain why.
+
+5. Record the title, publisher and date of one useful source.
+
+Ethan Digital Academy Case Study
+An instructor researching a software feature should prefer official documentation or a reputable educational
+source rather than copying the first anonymous answer found online.
+
+Review Questions
+28. What is the main purpose of searching the web effectively?
+29. State two good practices from this lesson.
+30. What risk or mistake should a careful user avoid?
+31. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 3 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 4: Evaluating Online Information and
+Misinformation
+Introduction
+Digital literacy includes deciding whether online information deserves trust. False, outdated, manipulated or
+incomplete information can spread quickly.
+
+Learning Objectives
+ Explain the main concepts in evaluating online information and misinformation.
+ Complete a guided practical related to evaluating online information and misinformation.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Check who created the content and whether the author or organisation is identifiable.
+
+Key point: Check publication or update dates when freshness matters.
+
+Key point: Separate evidence from opinion, advertising and unsupported claims.
+
+Key point: Images and headlines can be misleading when removed from context.
+
+Key point: Cross-check important claims with reliable independent sources before sharing.
+
+ Figure 4: Instructional visual for Evaluating Online Information and Misinformation.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Find two harmless articles about the same technology topic.
+
+2. Record publisher, date, purpose and evidence used.
+
+3. Identify any differences in claims.
+
+4. Choose which source you would rely on and justify your choice.
+
+5. Write a two-sentence rule for avoiding misinformation.
+
+Ethan Digital Academy Case Study
+Before Ethan Digital Academy publishes a technology update, staff should verify it from current, credible
+sources rather than forwarding an unverified social-media post.
+
+Review Questions
+32. What is the main purpose of evaluating online information and misinformation?
+33. State two good practices from this lesson.
+34. What risk or mistake should a careful user avoid?
+35. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 4 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 5: Downloading, Uploading and
+Managing Online Files
+Introduction
+Internet users often move files between local devices and online services. Understanding upload, download
+and storage location prevents confusion and accidental data exposure.
+
+Learning Objectives
+ Explain the main concepts in downloading, uploading and managing online files.
+ Complete a guided practical related to downloading, uploading and managing online files.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Downloading saves a copy from an online service to a device.
+
+Key point: Uploading sends or copies a local file to an authorised online service.
+
+Key point: A cloud file may remain online until downloaded or synchronised.
+
+Key point: Use clear file names and known folders so downloaded work can be found later.
+
+Key point: Only upload files you are authorised to share.
+
+ Figure 5: Instructional visual for Downloading, Uploading and Managing Online Files.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a harmless text document called Internet Practice.
+
+2. Upload it to an authorised practice cloud folder.
+
+3. Confirm the online copy is present.
+
+4. Download a copy to a known Downloads or practice folder.
+
+5. Rename the downloaded copy clearly and identify which copy is local and which is online.
+
+Ethan Digital Academy Case Study
+Learners may download approved course materials and upload assignments while keeping their local
+folders organised.
+
+Review Questions
+36. What is the main purpose of downloading, uploading and managing online files?
+37. State two good practices from this lesson.
+38. What risk or mistake should a careful user avoid?
+39. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 5 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 6: Email Foundations and Email
+Addresses
+Introduction
+Email is a system for sending digital messages between addresses. A professional email address and
+correct recipient entry are essential for reliable communication.
+
+Learning Objectives
+ Explain the main concepts in email foundations and email addresses.
+ Complete a guided practical related to email foundations and email addresses.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: An email address normally contains a local name, @ symbol and domain.
+
+Key point: The To field contains primary recipients.
+
+Key point: CC sends a visible copy to secondary recipients; BCC can protect recipient visibility in
+appropriate bulk communication.
+
+Key point: The subject line should state the purpose clearly.
+
+Key point: Email should not be used to request or share passwords or one-time security codes.
+
+ 
+
+ 
+ Figure 6: Instructional visual for Email Foundations and Email Addresses.
+
+Step-by-Step Guided Practical
+1. Open your email service and start a new draft.
+
+2. Identify To, CC/BCC, Subject and message body.
+
+3. Enter a fictional practice recipient such as learner@example.com but do not send.
+
+4. Write the subject 'Digital Skills Class Question'.
+
+5. Delete the practice recipient before closing the draft.
+
+Ethan Digital Academy Case Study
+Academy staff can use clear subject lines such as 'Excel Class - Schedule Update' so learners understand
+the purpose immediately.
+
+Review Questions
+40. What is the main purpose of email foundations and email addresses?
+41. State two good practices from this lesson.
+42. What risk or mistake should a careful user avoid?
+43. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 6 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 7: Writing Professional Emails
+Introduction
+Professional email writing is concise, respectful and action-oriented. The reader should quickly understand
+why the message was sent and what happens next.
+
+Learning Objectives
+ Explain the main concepts in writing professional emails.
+ Complete a guided practical related to writing professional emails.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Begin with an appropriate greeting.
+
+Key point: State the purpose early in the message.
+
+Key point: Use short paragraphs and specific dates or actions where needed.
+
+Key point: Close politely and include an appropriate name or signature.
+
+Key point: Read the message once from the recipient's perspective before sending.
+
+Step-by-Step Guided Practical
+1. Draft an email to a fictional instructor asking for clarification about an assignment.
+
+2. Use a clear subject line.
+
+3. Write a greeting, purpose, one specific question and a polite closing.
+
+4. Check spelling and tone.
+
+5. Do not send; save or delete the draft as instructed.
+
+Ethan Digital Academy Case Study
+A learner who cannot attend a class should communicate the relevant information politely rather than
+sending an unclear one-word message.
+
+Review Questions
+44. What is the main purpose of writing professional emails?
+45. State two good practices from this lesson.
+46. What risk or mistake should a careful user avoid?
+47. Give one academic or workplace example of this skill.
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 7 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 8: Attachments, Links and Safe File
+Sharing
+Introduction
+Attachments and links make email useful, but they also require careful checking. Users should confirm both
+what they send and what they open.
+
+Learning Objectives
+ Explain the main concepts in attachments, links and safe file sharing.
+ Complete a guided practical related to attachments, links and safe file sharing.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Before sending, confirm the correct file is attached and does not contain unrelated private
+information.
+
+Key point: Before opening an unexpected attachment, verify the sender and context.
+
+Key point: Do not open suspicious files simply because the message looks urgent.
+
+Key point: For large or collaborative files, an authorised cloud link may be more suitable than repeated
+attachments.
+
+Key point: Check link text and destination carefully before entering account credentials.
+
+ 
+
+ 
+ Figure 8: Instructional visual for Attachments, Links and Safe File Sharing.
+
+Step-by-Step Guided Practical
+1. Create a harmless practice PDF or text file.
+
+2. Attach it to a draft email.
+
+3. Confirm the filename and file type.
+
+4. Remove it, then attach the correct file again.
+
+5. Write three checks you would make before opening an unexpected attachment.
+
+Ethan Digital Academy Case Study
+An instructor sending course notes should attach the approved learner copy, not an internal administrative
+document with unrelated information.
+
+Review Questions
+48. What is the main purpose of attachments, links and safe file sharing?
+49. State two good practices from this lesson.
+50. What risk or mistake should a careful user avoid?
+51. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 8 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 9: Inbox Organisation, Search and
+Email Management
+Introduction
+A busy inbox becomes easier to manage when messages are searched, labelled or filed consistently.
+Organisation also reduces the chance of overlooking important communication.
+
+Learning Objectives
+ Explain the main concepts in inbox organisation, search and email management.
+ Complete a guided practical related to inbox organisation, search and email management.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Search can find messages by sender, subject or keywords.
+
+Key point: Labels or folders can group messages by course, project or purpose.
+
+Key point: Stars or flags can mark messages that require attention.
+
+Key point: Archive removes a message from the main inbox without necessarily deleting it.
+
+Key point: Delete unwanted messages according to appropriate retention rules.
+
+Step-by-Step Guided Practical
+1. Create or identify a practice label/folder called Training.
+
+2. Move or label a harmless practice message.
+
+3. Search for the message by subject.
+
+4. Mark it for follow-up, then clear the marker.
+
+5. Explain the difference between archive and delete in your email service.
+
+Ethan Digital Academy Case Study
+Academy staff can organise messages by programme or cohort so course enquiries are easier to retrieve.
+
+Review Questions
+52. What is the main purpose of inbox organisation, search and email management?
+53. State two good practices from this lesson.
+54. What risk or mistake should a careful user avoid?
+55. Give one academic or workplace example of this skill.
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 9 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 10: Phishing, Scams and Suspicious
+Messages
+Introduction
+Phishing is an attempt to trick people into revealing sensitive information or taking an unsafe action.
+Awareness is more important than trying to investigate suspicious systems yourself.
+
+Learning Objectives
+ Explain the main concepts in phishing, scams and suspicious messages.
+ Complete a guided practical related to phishing, scams and suspicious messages.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Warning signs can include unusual urgency, unexpected payment requests, sender mismatches,
+unfamiliar links and requests for passwords or security codes.
+
+Key point: A familiar logo or display name does not prove a message is genuine.
+
+Key point: When uncertain, contact the organisation through a known official channel rather than replying to
+the suspicious message.
+
+Key point: Do not forward suspicious links to friends for them to test.
+
+Key point: Use the email provider's report-phishing or spam feature where appropriate.
+
+ 
+
+ 
+ Figure 10: Instructional visual for Phishing, Scams and Suspicious Messages.
+
+Step-by-Step Guided Practical
+1. Review a fictional suspicious-message example supplied by the instructor.
+
+2. Circle or list four warning signs.
+
+3. Explain how you would verify the request using an official channel.
+
+4. State what information you should never send by email.
+
+5. Practise locating the Report spam/phishing control without reporting a legitimate message.
+
+Ethan Digital Academy Case Study
+If a message claims an Academy account will be closed unless a password is sent immediately, the
+recipient should not comply and should verify through authorised Academy support.
+
+Review Questions
+56. What is the main purpose of phishing, scams and suspicious messages?
+57. State two good practices from this lesson.
+58. What risk or mistake should a careful user avoid?
+59. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 10 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 11: Passwords, MFA and Account
+Recovery
+Introduction
+Email accounts often unlock many other online services, so protecting them is essential. Strong
+authentication reduces the chance that one stolen password leads to wider account loss.
+
+Learning Objectives
+ Explain the main concepts in passwords, mfa and account recovery.
+ Complete a guided practical related to passwords, mfa and account recovery.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Use a long, unique password or passphrase for important accounts.
+
+Key point: Do not reuse the same password across unrelated services.
+
+Key point: Multi-factor authentication adds another verification step.
+
+Key point: Never share one-time codes with someone who contacts you unexpectedly.
+
+Key point: Keep recovery email or phone information current where appropriate.
+
+Step-by-Step Guided Practical
+1. Without revealing your password, write the characteristics of a strong passphrase.
+
+2. Check whether your email provider offers MFA.
+
+3. Review recovery options on your own account if permitted.
+
+4. Write a safe response to someone asking for your one-time code.
+
+5. Explain why password reuse is risky.
+
+Ethan Digital Academy Case Study
+Academy staff accounts should use unique credentials and additional authentication where supported
+because email may contain operational information.
+
+Review Questions
+60. What is the main purpose of passwords, mfa and account recovery?
+61. State two good practices from this lesson.
+62. What risk or mistake should a careful user avoid?
+
+ 
+
+ 
+63. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 11 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 12: Privacy, Cookies and Digital
+Footprints
+Introduction
+Browsing and communication can create records about user activity. Privacy-aware users understand what
+they share and review permissions instead of assuming everything online disappears.
+
+Learning Objectives
+ Explain the main concepts in privacy, cookies and digital footprints.
+ Complete a guided practical related to privacy, cookies and digital footprints.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: A digital footprint is the trail of information created by online activity.
+
+Key point: Cookies can support sign-in, preferences and analytics; browser settings provide controls for
+managing them.
+
+Key point: Privacy settings influence who can view content, but screenshots and redistribution can still
+occur.
+
+Key point: Avoid publishing personal information that is unnecessary for the task.
+
+Key point: Review app and site permissions periodically.
+
+ 
+
+ 
+ Figure 12: Instructional visual for Privacy, Cookies and Digital Footprints.
+
+Step-by-Step Guided Practical
+1. Open your browser privacy/settings area.
+
+2. Locate cookie or site-data controls without deleting anything required for your accounts.
+
+3. Review permissions for one harmless website.
+
+4. Write three examples of information you would avoid posting publicly.
+
+5. Describe one positive digital-footprint habit.
+
+Ethan Digital Academy Case Study
+Learners submitting assignments should share only the information requested for the academic task.
+
+Review Questions
+64. What is the main purpose of privacy, cookies and digital footprints?
+65. State two good practices from this lesson.
+66. What risk or mistake should a careful user avoid?
+67. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 12 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 13: Wi-Fi, Public Computers and Safer
+Connections
+Introduction
+Internet access may come from home, school, mobile data or public networks. Users should adjust their
+behaviour when they do not control the network or computer.
+
+Learning Objectives
+ Explain the main concepts in wi-fi, public computers and safer connections.
+ Complete a guided practical related to wi-fi, public computers and safer connections.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Prefer trusted networks for sensitive account activity.
+
+Key point: Public Wi-Fi may expose users to additional risks; avoid unnecessary sensitive transactions
+when trust is unclear.
+
+Key point: On shared computers, do not save passwords and always sign out.
+
+Key point: Keep browsers and operating systems updated.
+
+Key point: A screen lock helps protect a device when left unattended.
+
+ 
+
+ 
+ Figure 13: Instructional visual for Wi-Fi, Public Computers and Safer Connections.
+
+Step-by-Step Guided Practical
+1. Identify whether your current connection is home, school, mobile or public.
+
+2. List two activities you would postpone on an unfamiliar public network.
+
+3. Practise signing out of a non-sensitive practice account on your own device.
+
+4. Check for browser updates using normal settings.
+
+5. Create a four-point shared-computer checklist.
+
+Ethan Digital Academy Case Study
+A learner using a library computer should sign out completely and avoid leaving downloaded personal files
+behind.
+
+Review Questions
+68. What is the main purpose of wi-fi, public computers and safer connections?
+69. State two good practices from this lesson.
+70. What risk or mistake should a careful user avoid?
+71. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 13 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 14: Video Calls, Messaging and Online
+Etiquette
+Introduction
+Internet communication includes video meetings and instant messaging. Professional behaviour applies
+even when communication is fast and informal.
+
+Learning Objectives
+ Explain the main concepts in video calls, messaging and online etiquette.
+ Complete a guided practical related to video calls, messaging and online etiquette.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Use clear display names in academic or workplace meetings.
+
+Key point: Mute background noise when not speaking.
+
+Key point: Avoid sharing screenshots, recordings or private chat content without permission.
+
+Key point: Keep group messages relevant to the group's purpose.
+
+Key point: Disagreement should remain respectful and focused on the issue.
+
+Step-by-Step Guided Practical
+1. Write five rules for a professional online class.
+
+2. Prepare a short agenda for a 15-minute study meeting.
+
+3. Practise checking microphone and camera controls on an authorised platform.
+
+4. Write a respectful message asking a group to return to the topic.
+
+5. Explain why recording permission matters.
+
+Ethan Digital Academy Case Study
+Online Ethan Digital Academy classes should follow the same respect and attention standards as physical
+classroom sessions.
+
+Review Questions
+72. What is the main purpose of video calls, messaging and online etiquette?
+73. State two good practices from this lesson.
+74. What risk or mistake should a careful user avoid?
+
+ 
+
+ 
+75. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 14 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 15: Online Forms, Registrations and
+Transactions
+Introduction
+Many websites use forms for registration, enquiries and transactions. Users should confirm the site and
+understand what information is required before submitting.
+
+Learning Objectives
+ Explain the main concepts in online forms, registrations and transactions.
+ Complete a guided practical related to online forms, registrations and transactions.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Check that you are on the intended official website before entering information.
+
+Key point: Required fields should be relevant to the service.
+
+Key point: Read important terms, prices and confirmation details before submitting.
+
+Key point: Do not enter payment information into suspicious or unexpected forms.
+
+Key point: Keep legitimate confirmation messages or receipts when appropriate.
+
+Step-by-Step Guided Practical
+1. Open a harmless practice form created by your instructor.
+
+2. Identify required and optional fields.
+
+3. Check the domain or platform hosting the form.
+
+4. Complete it using fictional information.
+
+5. Review all entries before submitting.
+
+Ethan Digital Academy Case Study
+A course registration form should request only information necessary to enrol and support the learner.
+
+Review Questions
+76. What is the main purpose of online forms, registrations and transactions?
+77. State two good practices from this lesson.
+78. What risk or mistake should a careful user avoid?
+79. Give one academic or workplace example of this skill.
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 15 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 16: Email Productivity and Calendar
+Follow-Up
+Introduction
+Email is more effective when messages lead to organised actions. Flags, tasks and calendar events can
+help users remember deadlines and commitments.
+
+Learning Objectives
+ Explain the main concepts in email productivity and calendar follow-up.
+ Complete a guided practical related to email productivity and calendar follow-up.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Convert important requests into clear next actions.
+
+Key point: Use reminders or calendar events for deadlines instead of relying only on memory.
+
+Key point: Avoid marking every message as urgent.
+
+Key point: Keep action-related messages until the task is complete according to your organisation's rules.
+
+Key point: Review pending actions regularly.
+
+ Figure 16: Instructional visual for Email Productivity and Calendar Follow-Up.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Draft a fictional email about an assignment deadline.
+
+2. Create a practice calendar reminder for the deadline.
+
+3. Add a simple task such as 'Review assignment instructions'.
+
+4. Mark the task complete after the exercise.
+
+5. Explain how this workflow prevents missed deadlines.
+
+Ethan Digital Academy Case Study
+An instructor can turn a learner-support request into a scheduled follow-up instead of leaving the message
+buried in the inbox.
+
+Review Questions
+80. What is the main purpose of email productivity and calendar follow-up?
+81. State two good practices from this lesson.
+82. What risk or mistake should a careful user avoid?
+83. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 16 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 17: Responsible Internet Use,
+Copyright and Online Conduct
+Introduction
+Responsible internet use includes respecting other people, intellectual property, school rules and applicable
+laws. Being able to access content does not mean it is free to copy or redistribute.
+
+Learning Objectives
+ Explain the main concepts in responsible internet use, copyright and online conduct.
+ Complete a guided practical related to responsible internet use, copyright and online conduct.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Credit sources when using ideas, data or permitted quotations.
+
+Key point: Do not copy entire protected works into assignments without permission.
+
+Key point: Use appropriately licensed or original images for public projects.
+
+Key point: Respect platform rules and other people's privacy.
+
+Key point: Report harmful or inappropriate online behaviour to a trusted adult, teacher or authorised
+administrator when necessary.
+
+Step-by-Step Guided Practical
+1. Choose a harmless research topic.
+
+2. Record the title and publisher of two sources.
+
+3. Paraphrase one idea in your own words and note the source.
+
+4. Identify one image source that clearly states its usage licence.
+
+5. Write three rules for respectful online conduct.
+
+Ethan Digital Academy Case Study
+Academy learners should create original work and acknowledge sources rather than presenting copied
+online material as their own.
+
+Review Questions
+84. What is the main purpose of responsible internet use, copyright and online conduct?
+85. State two good practices from this lesson.
+
+ 
+
+ 
+86. What risk or mistake should a careful user avoid?
+87. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 17 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 18: Integrated Internet and Email
+Workflow
+Introduction
+Digital competence means combining research, file handling, communication and follow-up into one reliable
+workflow.
+
+Learning Objectives
+ Explain the main concepts in integrated internet and email workflow.
+ Complete a guided practical related to integrated internet and email workflow.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: Start with a clear task and identify what information is needed.
+
+Key point: Search and evaluate sources before using them.
+
+Key point: Save or create files with meaningful names.
+
+Key point: Communicate findings through a professional email or authorised platform.
+
+Key point: Schedule follow-up actions and protect private information throughout the process.
+
+ Figure 18: Instructional visual for Integrated Internet and Email Workflow.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Research a harmless digital-skills topic using two credible sources.
+
+2. Create a one-page summary in your own words.
+
+3. Save it with a clear filename.
+
+4. Attach it to a draft professional email addressed to a fictional recipient.
+
+5. Create a calendar reminder for a fictional follow-up date.
+
+Ethan Digital Academy Case Study
+An Academy learner can research a software topic, prepare a short report, email it to an instructor and
+schedule the submission deadline.
+
+Review Questions
+88. What is the main purpose of integrated internet and email workflow?
+89. State two good practices from this lesson.
+90. What risk or mistake should a careful user avoid?
+91. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 18 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Lesson 19: Final Internet & Email Skills Project
+Introduction
+The final project demonstrates safe, professional and effective use of the internet and email in a realistic
+academic scenario.
+
+Learning Objectives
+ Explain the main concepts in final internet & email skills project.
+ Complete a guided practical related to final internet & email skills project.
+ Apply safe, responsible and professional digital practices.
+
+Teaching Content
+Key point: The project should show research skill, source evaluation, file organisation, email writing,
+attachment handling, privacy awareness and follow-up planning.
+
+Key point: Use fictional identities and non-sensitive information throughout the exercise.
+
+Key point: Quality is measured by accuracy, clarity, safety and professionalism.
+
+Key point: Do not contact strangers or test suspicious links as part of the project.
+
+Key point: Review every item before submission.
+
+Step-by-Step Guided Practical
+1. Choose a fictional Ethan Digital Academy short course.
+
+2. Research three reliable sources relevant to the course.
+
+3. Prepare a one-page source evaluation and summary.
+
+4. Draft a professional email with the summary attached.
+
+5. Create a follow-up calendar item and a short security/privacy checklist.
+
+6. Submit the project according to instructor directions.
+
+Ethan Digital Academy Case Study
+This project models the complete information-to-communication workflow a learner may use in school or
+work.
+
+Review Questions
+92. What is the main purpose of final internet & email skills project?
+93. State two good practices from this lesson.
+94. What risk or mistake should a careful user avoid?
+ 
+
+ 
+95. Give one academic or workplace example of this skill.
+
+Assignment
+Repeat the Lesson 19 practical using only authorised accounts and harmless information. Save any practice
+file clearly and write 100-150 words explaining what you learned.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Complete an Internet & Email Skills project for a fictional Ethan Digital Academy course. Do not contact
+strangers or use real sensitive information.
+
+ Component Marks Requirement
+ Web research 20 Use three credible sources and
+ explain why they are suitable.
+ Source evaluation 15 Assess publisher, date, purpose
+ and evidence.
+ File organisation 10 Use clear file and folder names.
+ Professional email 20 Draft a clear message with
+ appropriate subject, greeting,
+ body and closing.
+ Attachment handling 10 Attach the correct harmless
+ practice document and explain
+ checks performed.
+ Security and privacy 15 Identify account, phishing,
+ privacy and connection
+ precautions.
+ Follow-up plan 5 Create a suitable
+ reminder/calendar action.
+ Reflection 5 Explain what was learned.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is the internet?
+
+2. How is the web different from the internet?
+
+3. What is a web browser?
+
+4. What is a domain name?
+
+5. What does HTTPS indicate?
+
+6. What makes a search query more effective?
+
+7. Why should important online claims be cross-checked?
+
+8. Name two questions used to evaluate a source.
+
+9. What is downloading?
+
+10. What is uploading?
+
+11. What is the purpose of the email To field?
+
+12. What is CC used for?
+
+13. Why might BCC be used appropriately?
+
+14. What makes a good subject line?
+
+15. Name three parts of a professional email body.
+
+16. What should you check before sending an attachment?
+
+17. State two warning signs of phishing.
+
+18. What should you do if an unexpected message asks for your password?
+
+19. Why should important accounts use unique passwords?
+
+20. What does MFA add to account security?
+
+21. What is a digital footprint?
+
+22. Why should users review privacy settings?
+
+23. State one safer habit for public Wi-Fi.
+
+24. What should you do after using a shared computer?
+
+25. Why should online meetings be recorded only with permission?
+
+26. What should you check before submitting an online form?
+
+27. How can labels or folders help email management?
+
+ 
+
+ 
+28. Why are calendar reminders useful?
+
+29. Why should online sources be credited?
+
+30. Describe the stages of a professional internet-to-email workflow.
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Internet and Browsing (20 marks)
+Explain the internet, web browsers, URLs, domains, HTTPS and safe browsing habits.
+
+Section B - Research and Information Evaluation (20 marks)
+Describe a professional method for searching, evaluating, comparing and recording online sources.
+
+Section C - Professional Email (20 marks)
+Write and explain the structure of a professional email, including recipient fields, subject, body, attachments
+and follow-up.
+
+Section D - Security and Privacy (20 marks)
+Explain phishing awareness, strong authentication, privacy, digital footprints, safer network habits and
+shared-computer precautions.
+
+Section E - Integrated Scenario (20 marks)
+Design a complete workflow for researching a digital topic, creating a short report, emailing it to an instructor
+and scheduling follow-up.
+
+ 
+
+ 
+
+Course Completion Outcome
+On successful completion, the learner should be able to browse and search the web confidently, evaluate
+online information, manage downloads and uploads, communicate professionally by email, organise
+messages, handle attachments responsibly, recognise common phishing warning signs, protect account
+privacy and combine internet research with a reliable communication workflow.
+
+Professional Practice Checklist
+ Verify websites and recipients before sharing information.
+ Use strong, unique authentication for important accounts.
+ Do not share passwords or one-time codes.
+ Pause and verify unexpected links, attachments and urgent requests.
+ Use professional language in academic and workplace communication.
+ Respect privacy, copyright and online conduct rules.

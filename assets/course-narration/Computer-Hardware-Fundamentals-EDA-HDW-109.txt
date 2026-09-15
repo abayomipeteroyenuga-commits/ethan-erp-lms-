@@ -1,0 +1,1192 @@
+ETHAN DIGITAL ACADEMY
+
+ COMPUTER HARDWARE
+ FUNDAMENTALS
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-HDW-109
+Level Beginner to Intermediate
+Duration 6 Weeks (19 Lessons)
+Certificate Professional Certificate in Computer Hardware
+ Fundamentals
+Prerequisite Computer Appreciation
+Learning Format Classroom + Safe Guided Practicals + Hardware
+ Planning Project
+
+ Safety standard: beginner practicals focus on identification, specifications and
+ safe external checks. Learners should not open powered equipment, handle
+ exposed electrical parts or attempt hazardous repairs.
+
+ 
+
+ 
+
+Course Introduction
+Computer Hardware Fundamentals explains the physical components that make computers work. Learners
+study system types, motherboards, processors, memory, storage, input/output devices, ports, power,
+cooling, graphics, networking, specifications, upgrades, basic troubleshooting and preventive care.
+
+Learning Objectives
+ Identify major internal and external hardware components.
+ Explain the purpose of CPU, RAM, storage, motherboard and peripherals.
+ Recognise common ports and device categories.
+ Read computer specifications and match them to workloads.
+ Compare desktops and laptops.
+ Apply safe basic troubleshooting and preventive-care principles.
+ Plan a suitable computer system for a realistic use case.
+
+Course Structure
+1. Lesson 1: Introduction to Computer Hardware
+2. Lesson 2: Computer System Units and Form Factors
+3. Lesson 3: Motherboard Fundamentals
+4. Lesson 4: Central Processing Unit (CPU)
+5. Lesson 5: RAM and Working Memory
+6. Lesson 6: Storage Devices: SSD, HDD and Removable Media
+7. Lesson 7: Input Devices
+8. Lesson 8: Output Devices
+9. Lesson 9: Ports, Connectors and Cables
+10. Lesson 10: Power Supply, Batteries and Electrical Protection
+11. Lesson 11: Cooling, Airflow and Dust Awareness
+12. Lesson 12: Graphics Hardware and Displays
+13. Lesson 13: Network Hardware Basics
+14. Lesson 14: Desktop and Laptop Hardware Comparison
+15. Lesson 15: Reading Computer Specifications
+16. Lesson 16: Hardware Compatibility and Upgrades
+17. Lesson 17: Basic Hardware Troubleshooting
+18. Lesson 18: Preventive Care and Hardware Records
+19. Lesson 19: Final Computer Hardware Project
+
+ 
+
+ 
+
+Lesson 1: Introduction to Computer Hardware
+Introduction
+Computer hardware refers to the physical parts of a computer system that can be seen or touched.
+Hardware works together with software to receive input, process data, store information and produce output.
+
+Learning Objectives
+ Explain the major concepts in introduction to computer hardware.
+ Complete the safe guided practical for introduction to computer hardware.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Core hardware groups include input, processing, memory, storage and output.
+
+Key point: Internal components are housed inside the computer while peripherals connect externally.
+
+Key point: Hardware choices should match the intended workload.
+
+Key point: Users should not open powered equipment or attempt electrical repairs during beginner training.
+
+ Figure 1: Instructional visual for Introduction to Computer Hardware.
+
+Step-by-Step Guided Practical
+1. Identify a desktop or laptop computer.
+ 
+
+ 
+2. List five visible hardware components.
+
+3. Classify each as input, output, storage or processing-related.
+
+4. Explain one difference between hardware and software.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy can select different computer specifications for basic office training, graphics work
+and software-development classes.
+
+Review Questions
+20. What is the main purpose of introduction to computer hardware?
+21. Name two important hardware concepts from this lesson.
+22. What safety or compatibility mistake should be avoided?
+23. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 1 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 2: Computer System Units and Form
+Factors
+Introduction
+Computers are built in different physical forms, including desktops, all-in-one systems, laptops, tablets and
+small-form-factor computers.
+
+Learning Objectives
+ Explain the major concepts in computer system units and form factors.
+ Complete the safe guided practical for computer system units and form factors.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: A desktop usually separates the system unit from monitor and peripherals.
+
+Key point: All-in-one computers integrate many components behind the display.
+
+Key point: Laptops combine display, keyboard, pointing device, battery and internal hardware in one
+portable unit.
+
+Key point: Form factor affects portability, upgrade options, cooling and available ports.
+
+Step-by-Step Guided Practical
+1. Compare a laptop and desktop in the classroom.
+
+2. Record portability, screen, keyboard, ports and power source.
+
+3. Identify which system is easier to move.
+
+4. Choose a form factor for a computer lab and explain why.
+
+Ethan Digital Academy Case Study
+A fixed Academy lab may favour desktops, while instructors who travel between classrooms may need
+laptops.
+
+Review Questions
+24. What is the main purpose of computer system units and form factors?
+25. Name two important hardware concepts from this lesson.
+26. What safety or compatibility mistake should be avoided?
+27. How would this knowledge help when choosing or supporting a computer?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 2 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 3: Motherboard Fundamentals
+Introduction
+The motherboard is the main circuit board that connects the processor, memory, storage interfaces,
+expansion devices and external ports.
+
+Learning Objectives
+ Explain the major concepts in motherboard fundamentals.
+ Complete the safe guided practical for motherboard fundamentals.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: The CPU socket or package area holds the processor.
+
+Key point: RAM slots accept compatible memory modules.
+
+Key point: Expansion slots may support graphics, network or other add-in cards.
+
+Key point: Firmware stored on the system board helps initialise hardware during startup.
+
+Key point: Motherboards must match the processor, memory type, case and other components.
+
+ Figure 3: Instructional visual for Motherboard Fundamentals.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Use an instructor-provided motherboard diagram or powered-off display unit.
+
+2. Locate the CPU area, RAM slots, expansion slots and storage connectors.
+
+3. Do not remove components unless the instructor has prepared a safe training unit.
+
+4. Label the parts on a worksheet.
+
+Ethan Digital Academy Case Study
+Understanding motherboard layout helps Academy learners read hardware specifications without treating
+the computer as a mysterious box.
+
+Review Questions
+28. What is the main purpose of motherboard fundamentals?
+29. Name two important hardware concepts from this lesson.
+30. What safety or compatibility mistake should be avoided?
+31. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 3 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 4: Central Processing Unit (CPU)
+Introduction
+The CPU is the main general-purpose processor. It executes instructions and coordinates many operations
+in a computer.
+
+Learning Objectives
+ Explain the major concepts in central processing unit (cpu).
+ Complete the safe guided practical for central processing unit (cpu).
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Processor performance depends on architecture, generation, core count, clock behaviour, cache
+and workload.
+
+Key point: More cores can help tasks designed to use them, but core count alone does not determine
+overall speed.
+
+Key point: The CPU produces heat and normally requires an appropriate cooling solution.
+
+Key point: Processor compatibility with the motherboard is essential.
+
+ Figure 4: Instructional visual for Central Processing Unit (CPU).
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open the operating system's system-information page.
+
+2. Record the processor name shown.
+
+3. Identify the number of cores or logical processors if displayed.
+
+4. Compare two fictional processor specifications supplied by the instructor.
+
+Ethan Digital Academy Case Study
+Basic office systems and demanding creative workstations may require different processor capabilities.
+
+Review Questions
+32. What is the main purpose of central processing unit (cpu)?
+33. Name two important hardware concepts from this lesson.
+34. What safety or compatibility mistake should be avoided?
+35. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 4 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 5: RAM and Working Memory
+Introduction
+Random Access Memory (RAM) is fast temporary memory used for programs and data that are actively in
+use.
+
+Learning Objectives
+ Explain the major concepts in ram and working memory.
+ Complete the safe guided practical for ram and working memory.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: RAM is volatile, so its contents are normally lost when power is removed.
+
+Key point: More RAM can improve multitasking when a system is running short of memory.
+
+Key point: Memory modules must be compatible with the motherboard and processor platform.
+
+Key point: Capacity is commonly expressed in gigabytes.
+
+ Figure 5: Instructional visual for RAM and Working Memory.
+
+Step-by-Step Guided Practical
+1. Open system information or Task Manager on an authorised computer.
+ 
+
+ 
+2. Record installed RAM.
+
+3. Open two normal applications and observe memory use.
+
+4. Close one application and observe the change.
+
+Ethan Digital Academy Case Study
+A computer used for many browser tabs, office applications and video meetings may benefit from more RAM
+than a very basic single-task system.
+
+Review Questions
+36. What is the main purpose of ram and working memory?
+37. Name two important hardware concepts from this lesson.
+38. What safety or compatibility mistake should be avoided?
+39. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 5 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 6: Storage Devices: SSD, HDD and
+Removable Media
+Introduction
+Storage keeps files and software when the computer is powered off. Common technologies include solid-
+state drives and hard disk drives.
+
+Learning Objectives
+ Explain the major concepts in storage devices: ssd, hdd and removable media.
+ Complete the safe guided practical for storage devices: ssd, hdd and removable media.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: SSDs use flash memory and generally provide faster access with no moving read/write
+mechanism.
+
+Key point: HDDs store data magnetically on rotating platters and can offer large capacity at lower cost.
+
+Key point: USB flash drives and memory cards are removable storage but should not be the only copy of
+important work.
+
+Key point: Storage capacity and performance are separate considerations.
+
+Step-by-Step Guided Practical
+1. Open File Explorer or the system storage page.
+
+2. Record the main drive's total and free capacity.
+
+3. Identify whether the system reports SSD/HDD where available.
+
+4. Copy a harmless practice file to an authorised removable drive, then safely eject it.
+
+Ethan Digital Academy Case Study
+Academy course materials need adequate storage, while important administrative files should also follow
+proper backup procedures.
+
+Review Questions
+40. What is the main purpose of storage devices: ssd, hdd and removable media?
+41. Name two important hardware concepts from this lesson.
+42. What safety or compatibility mistake should be avoided?
+43. How would this knowledge help when choosing or supporting a computer?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 6 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 7: Input Devices
+Introduction
+Input devices allow users or sensors to send data and commands into a computer.
+
+Learning Objectives
+ Explain the major concepts in input devices.
+ Complete the safe guided practical for input devices.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Keyboards enter text and commands.
+
+Key point: Mice and touchpads control pointers and selections.
+
+Key point: Scanners convert physical documents into digital images.
+
+Key point: Microphones and webcams capture audio and video.
+
+Key point: Touchscreens combine input with visual output.
+
+ Figure 7: Instructional visual for Input Devices.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. List the input devices connected to your computer.
+
+2. Use keyboard and mouse to create a short document.
+
+3. Test a webcam or microphone only if authorised.
+
+4. Explain what data each device sends to the computer.
+
+Ethan Digital Academy Case Study
+Different Academy courses may use webcams for online classes, scanners for document workflows and
+graphics tablets for creative work.
+
+Review Questions
+44. What is the main purpose of input devices?
+45. Name two important hardware concepts from this lesson.
+46. What safety or compatibility mistake should be avoided?
+47. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 7 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 8: Output Devices
+Introduction
+Output devices present processed information to users or another medium.
+
+Learning Objectives
+ Explain the major concepts in output devices.
+ Complete the safe guided practical for output devices.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Monitors display visual information.
+
+Key point: Printers produce physical copies.
+
+Key point: Speakers and headphones provide audio output.
+
+Key point: Projectors display a computer image to a larger audience.
+
+Key point: Output quality depends on both device capability and software settings.
+
+Step-by-Step Guided Practical
+1. Identify the monitor's display settings.
+
+2. Locate the volume control for audio output.
+
+3. Inspect printer options without printing unnecessarily.
+
+4. List one classroom use for a projector.
+
+Ethan Digital Academy Case Study
+An Academy instructor can connect a laptop to a projector or large display for demonstrations.
+
+Review Questions
+48. What is the main purpose of output devices?
+49. Name two important hardware concepts from this lesson.
+50. What safety or compatibility mistake should be avoided?
+51. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 8 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Lesson 9: Ports, Connectors and Cables
+Introduction
+Ports connect computers to peripherals, displays, networks and power. Correct identification prevents
+damage and connection errors.
+
+Learning Objectives
+ Explain the major concepts in ports, connectors and cables.
+ Complete the safe guided practical for ports, connectors and cables.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: USB is widely used for peripherals and data devices.
+
+Key point: HDMI commonly carries digital video and audio.
+
+Key point: Ethernet ports support wired networking.
+
+Key point: Audio connectors may support headphones, speakers or microphones.
+
+Key point: Connector shapes and capabilities vary; never force a plug into a port.
+
+ Figure 9: Instructional visual for Ports, Connectors and Cables.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Inspect the outside of an authorised computer.
+
+2. Identify USB, display, network and audio ports that are present.
+
+3. Match sample cables to their correct ports without forcing them.
+
+4. Record which ports are absent on the device.
+
+Ethan Digital Academy Case Study
+Before buying a projector or external monitor, the Academy should confirm that the computer has a
+compatible display connection.
+
+Review Questions
+52. What is the main purpose of ports, connectors and cables?
+53. Name two important hardware concepts from this lesson.
+54. What safety or compatibility mistake should be avoided?
+55. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 9 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 10: Power Supply, Batteries and
+Electrical Protection
+Introduction
+Computers require stable electrical power. Desktop power supplies convert incoming electricity for internal
+components, while laptops commonly use adapters and batteries.
+
+Learning Objectives
+ Explain the major concepts in power supply, batteries and electrical protection.
+ Complete the safe guided practical for power supply, batteries and electrical protection.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: The desktop PSU distributes appropriate power to internal hardware.
+
+Key point: Laptop batteries provide portable power and gradually lose capacity with age.
+
+Key point: A surge protector can help protect equipment from voltage spikes.
+
+Key point: A UPS can provide temporary backup power and time for safe shutdown.
+
+Key point: Electrical repairs and damaged power equipment should be handled by qualified adults or
+technicians.
+
+ 
+
+ 
+ Figure 10: Instructional visual for Power Supply, Batteries and Electrical Protection.
+
+Step-by-Step Guided Practical
+1. Identify the computer's external power connection without opening equipment.
+
+2. Locate battery status on a laptop if applicable.
+
+3. Demonstrate normal operating-system shutdown.
+
+4. Write a safe response to a damaged power cable: stop using it and report it.
+
+Ethan Digital Academy Case Study
+A computer lab should use suitable electrical protection and normal shutdown procedures, especially where
+power supply can be unstable.
+
+Review Questions
+56. What is the main purpose of power supply, batteries and electrical protection?
+57. Name two important hardware concepts from this lesson.
+58. What safety or compatibility mistake should be avoided?
+59. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 10 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 11: Cooling, Airflow and Dust
+Awareness
+Introduction
+Electronic components generate heat. Cooling systems move heat away so the computer can operate within
+safe temperatures.
+
+Learning Objectives
+ Explain the major concepts in cooling, airflow and dust awareness.
+ Complete the safe guided practical for cooling, airflow and dust awareness.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Fans move air through a case or laptop cooling path.
+
+Key point: Heatsinks increase surface area for heat transfer.
+
+Key point: Blocked vents can reduce cooling effectiveness.
+
+Key point: Dust can restrict airflow over time.
+
+Key point: Beginner learners should clean only external surfaces or filters when instructed; internal
+servicing should be done by authorised persons.
+
+ 
+
+ 
+ Figure 11: Instructional visual for Cooling, Airflow and Dust Awareness.
+
+Step-by-Step Guided Practical
+1. Locate external air vents on a powered-off computer.
+
+2. Check that vents are not blocked by books or fabric.
+
+3. Listen for normal fan operation after startup.
+
+4. Write three ways to support good airflow without opening the computer.
+
+Ethan Digital Academy Case Study
+Academy lab computers should be positioned so ventilation openings remain clear.
+
+Review Questions
+60. What is the main purpose of cooling, airflow and dust awareness?
+61. Name two important hardware concepts from this lesson.
+62. What safety or compatibility mistake should be avoided?
+63. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 11 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 12: Graphics Hardware and Displays
+Introduction
+Graphics hardware produces images for the display. Some computers use graphics integrated with the
+processor, while others have a separate graphics processor.
+
+Learning Objectives
+ Explain the major concepts in graphics hardware and displays.
+ Complete the safe guided practical for graphics hardware and displays.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Integrated graphics can be suitable for office work and general learning.
+
+Key point: Dedicated GPUs can provide more performance for demanding graphics, video and 3D
+workloads.
+
+Key point: Display resolution describes the number of pixels used to form the image.
+
+Key point: Refresh rate describes how often the display updates each second.
+
+Key point: Hardware should be selected according to the actual software workload.
+
+Step-by-Step Guided Practical
+1. Open display settings.
+
+2. Record screen resolution and scaling.
+
+3. Identify the graphics adapter from system information if available.
+
+4. Compare a fictional office PC and creative workstation specification.
+
+Ethan Digital Academy Case Study
+Canva and office training may run well on modest graphics hardware, while advanced video or 3D courses
+may require stronger graphics capability.
+
+Review Questions
+64. What is the main purpose of graphics hardware and displays?
+65. Name two important hardware concepts from this lesson.
+66. What safety or compatibility mistake should be avoided?
+67. How would this knowledge help when choosing or supporting a computer?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 12 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 13: Network Hardware Basics
+Introduction
+Network hardware connects computers to local networks and the internet.
+
+Learning Objectives
+ Explain the major concepts in network hardware basics.
+ Complete the safe guided practical for network hardware basics.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: A network interface can be wired Ethernet or wireless Wi-Fi.
+
+Key point: Routers direct traffic between networks and commonly provide local connectivity.
+
+Key point: Switches connect multiple wired devices within a local network.
+
+Key point: Modems or provider equipment connect a site to an internet service depending on the
+technology used.
+
+Key point: Network devices should be configured only by authorised administrators.
+
+Step-by-Step Guided Practical
+1. Identify whether your computer is using Wi-Fi or Ethernet.
+
+2. Locate the network icon and connection name.
+
+3. Inspect an Ethernet cable if available.
+
+4. Draw a simple computer-router-internet diagram.
+
+Ethan Digital Academy Case Study
+An Academy lab can use wired networking for fixed desktops and Wi-Fi for authorised mobile devices.
+
+Review Questions
+68. What is the main purpose of network hardware basics?
+69. Name two important hardware concepts from this lesson.
+70. What safety or compatibility mistake should be avoided?
+71. How would this knowledge help when choosing or supporting a computer?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 13 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 14: Desktop and Laptop Hardware
+Comparison
+Introduction
+Desktops and laptops perform similar computing functions but package their components differently.
+
+Learning Objectives
+ Explain the major concepts in desktop and laptop hardware comparison.
+ Complete the safe guided practical for desktop and laptop hardware comparison.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Desktops are often more modular and may offer easier upgrades.
+
+Key point: Laptops prioritise portability and integrate battery, display and input devices.
+
+Key point: Laptop components can be model-specific and less accessible.
+
+Key point: Cooling and power limits differ between compact and larger systems.
+
+Key point: Purchase decisions should consider mobility, repairability, ports and workload.
+
+ Figure 14: Instructional visual for Desktop and Laptop Hardware Comparison.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a comparison table with Desktop and Laptop columns.
+
+2. Compare portability, upgradeability, battery, display and ports.
+
+3. Choose one for a travelling instructor.
+
+4. Choose one for a fixed computer lab and justify both decisions.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy may use desktops in a permanent lab while staff use laptops for presentations and
+field training.
+
+Review Questions
+72. What is the main purpose of desktop and laptop hardware comparison?
+73. Name two important hardware concepts from this lesson.
+74. What safety or compatibility mistake should be avoided?
+75. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 14 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 15: Reading Computer Specifications
+Introduction
+A specification sheet describes the main hardware capabilities of a computer. Buyers should interpret the
+whole system rather than focus on one impressive number.
+
+Learning Objectives
+ Explain the major concepts in reading computer specifications.
+ Complete the safe guided practical for reading computer specifications.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Processor model and generation help identify capability.
+
+Key point: RAM capacity affects multitasking.
+
+Key point: Storage type and capacity affect responsiveness and file space.
+
+Key point: Display size/resolution, graphics hardware, ports and battery life may matter depending on use.
+
+Key point: Warranty, support and upgrade options are also practical purchase factors.
+
+ Figure 15: Instructional visual for Reading Computer Specifications.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Find the specification page for your own authorised computer in system settings.
+
+2. Record processor, RAM and storage.
+
+3. Create a fictional specification for an office learner.
+
+4. Create a stronger fictional specification for video editing and explain the differences.
+
+Ethan Digital Academy Case Study
+The Academy can avoid overspending by matching computer specifications to each training room's real
+software requirements.
+
+Review Questions
+76. What is the main purpose of reading computer specifications?
+77. Name two important hardware concepts from this lesson.
+78. What safety or compatibility mistake should be avoided?
+79. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 15 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 16: Hardware Compatibility and
+Upgrades
+Introduction
+An upgrade replaces or adds hardware to improve capacity or capability. Compatibility must be confirmed
+before purchasing or installing components.
+
+Learning Objectives
+ Explain the major concepts in hardware compatibility and upgrades.
+ Complete the safe guided practical for hardware compatibility and upgrades.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: RAM upgrades require compatible memory type, capacity support and physical form factor.
+
+Key point: Storage upgrades require a supported interface and physical space.
+
+Key point: Power and cooling requirements matter for some expansion devices.
+
+Key point: Manufacturer documentation is the safest reference for model-specific compatibility.
+
+Key point: Learners should not dismantle devices unless the exercise is supervised on safe training
+equipment.
+
+Step-by-Step Guided Practical
+1. Use a fictional computer specification supplied by the instructor.
+
+2. Identify which RAM type it supports from the worksheet.
+
+3. Choose a compatible fictional storage upgrade from two options.
+
+4. Explain what documentation should be checked before purchase.
+
+Ethan Digital Academy Case Study
+Before upgrading Academy computers, the technician should confirm model support rather than assuming
+every RAM module or drive fits every machine.
+
+Review Questions
+80. What is the main purpose of hardware compatibility and upgrades?
+81. Name two important hardware concepts from this lesson.
+82. What safety or compatibility mistake should be avoided?
+83. How would this knowledge help when choosing or supporting a computer?
+ 
+
+ 
+
+Assignment
+Complete the Lesson 16 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 17: Basic Hardware Troubleshooting
+Introduction
+Basic troubleshooting is a structured process of identifying symptoms, checking simple causes and
+escalating when specialist repair is required.
+
+Learning Objectives
+ Explain the major concepts in basic hardware troubleshooting.
+ Complete the safe guided practical for basic hardware troubleshooting.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Describe the symptom precisely: no power, no display, no sound, no network, or slow
+performance.
+
+Key point: Check safe external factors first, such as power, cables, brightness, volume and normal settings.
+
+Key point: Restarting through the operating system can resolve some temporary problems.
+
+Key point: Change one safe variable at a time so the cause is easier to identify.
+
+Key point: Stop and escalate if there is burning smell, damaged power equipment, liquid exposure or a
+repair requiring internal electrical work.
+
+ Figure 17: Instructional visual for Basic Hardware Troubleshooting.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Use a fictional 'monitor shows no picture' scenario.
+
+2. List safe checks: power indicator, display cable, correct input and brightness.
+
+3. Use a fictional 'no sound' scenario and list volume/output checks.
+
+4. Write when you would stop and call a technician.
+
+Ethan Digital Academy Case Study
+Academy support staff can solve simple connection problems quickly while referring hardware faults to
+qualified technicians.
+
+Review Questions
+84. What is the main purpose of basic hardware troubleshooting?
+85. Name two important hardware concepts from this lesson.
+86. What safety or compatibility mistake should be avoided?
+87. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 17 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 18: Preventive Care and Hardware
+Records
+Introduction
+Preventive care helps equipment remain reliable and makes maintenance easier to plan.
+
+Learning Objectives
+ Explain the major concepts in preventive care and hardware records.
+ Complete the safe guided practical for preventive care and hardware records.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Keep liquids away from computer equipment.
+
+Key point: Maintain clear ventilation and a clean workspace.
+
+Key point: Use normal shutdown and approved power protection.
+
+Key point: Record device model, serial/asset number and warranty information where authorised.
+
+Key point: Back up important data because hardware can fail unexpectedly.
+
+Step-by-Step Guided Practical
+1. Create a fictional asset record with device name, model, RAM, storage and purchase date.
+
+2. Inspect the workstation for blocked vents or loose external cables.
+
+3. Organise cables safely without disconnecting critical equipment.
+
+4. Write a monthly external-check checklist.
+
+Ethan Digital Academy Case Study
+An Academy asset register helps management know which computers are available, their specifications and
+maintenance history.
+
+Review Questions
+88. What is the main purpose of preventive care and hardware records?
+89. Name two important hardware concepts from this lesson.
+90. What safety or compatibility mistake should be avoided?
+91. How would this knowledge help when choosing or supporting a computer?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 18 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Lesson 19: Final Computer Hardware Project
+Introduction
+The final project requires learners to recommend a computer system for a realistic Ethan Digital Academy
+training scenario.
+
+Learning Objectives
+ Explain the major concepts in final computer hardware project.
+ Complete the safe guided practical for final computer hardware project.
+ Relate hardware choices to real academic and workplace needs.
+
+Teaching Content
+Key point: Start with the user's workload rather than choosing the most expensive parts.
+
+Key point: Balance processor, RAM, storage, graphics, display, ports and power protection.
+
+Key point: Explain desktop versus laptop choice.
+
+Key point: Include peripherals and backup considerations.
+
+Key point: Use specifications, not unsafe hands-on dismantling, to justify the design.
+
+ Figure 19: Instructional visual for Final Computer Hardware Project.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Choose one scenario: office training lab, digital-marketing workstation or beginner coding lab.
+
+2. Write the required tasks.
+
+3. Select a suitable CPU class, RAM amount, storage type/capacity and display.
+
+4. Choose keyboard, mouse, networking and power protection.
+
+5. Prepare a one-page justification and short presentation.
+
+Ethan Digital Academy Case Study
+This project demonstrates that hardware knowledge is about making appropriate, safe and cost-aware
+technology decisions.
+
+Review Questions
+92. What is the main purpose of final computer hardware project?
+93. Name two important hardware concepts from this lesson.
+94. What safety or compatibility mistake should be avoided?
+95. How would this knowledge help when choosing or supporting a computer?
+
+Assignment
+Complete the Lesson 19 worksheet or practical using only safe, authorised equipment. Write 100-150 words
+explaining what you learned and one real-world use.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Component Marks Requirement
+Needs analysis 15 Define the intended workload and
+ users.
+Processor and RAM 20 Choose and justify appropriate
+ capability.
+Storage 15 Choose type and capacity.
+Graphics/display 10 Match visual hardware to
+ workload.
+Ports/peripherals/network 15 Select useful connectivity and
+ devices.
+Power/protection 10 Include safe power and backup
+ considerations.
+Budget/value 10 Balance cost with need.
+Presentation 5 Explain choices clearly.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is computer hardware?
+
+2. Name the four basic hardware functions.
+
+3. What is a computer form factor?
+
+4. What is the motherboard?
+
+5. What is the purpose of the CPU?
+
+6. What is a CPU core?
+
+7. What is RAM?
+
+8. Why is RAM called volatile memory?
+
+9. What is an SSD?
+
+10. State one difference between SSD and HDD.
+
+11. Name three input devices.
+
+12. Name three output devices.
+
+13. What is USB used for?
+
+14. What does HDMI commonly carry?
+
+15. What is Ethernet used for?
+
+16. What is a PSU?
+
+17. What is a UPS used for?
+
+18. Why does a computer need cooling?
+
+19. What is integrated graphics?
+
+20. What is a dedicated GPU?
+
+21. What is display resolution?
+
+22. What is a network interface?
+
+23. What does a router do?
+
+24. State one advantage of a desktop.
+
+25. State one advantage of a laptop.
+
+26. Why should specifications be matched to workload?
+
+27. What must be checked before a hardware upgrade?
+
+ 
+
+ 
+28. Name two safe first checks when a monitor shows no picture.
+
+29. When should a hardware problem be escalated to a technician?
+
+30. Why is an asset register useful?
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Core Components (20 marks)
+Explain motherboard, CPU, RAM, storage and how they work together.
+
+Section B - Peripherals and Connectivity (20 marks)
+Classify input/output devices and explain common ports, cables and networking hardware.
+
+Section C - Power, Cooling and Safety (20 marks)
+Explain PSU, batteries, surge protection, UPS, cooling and safe hardware practice.
+
+Section D - Specifications and Upgrades (20 marks)
+Compare two fictional computers and recommend one for a stated workload, including compatibility
+considerations.
+
+Section E - Troubleshooting and Planning (20 marks)
+Describe a safe troubleshooting process and design a suitable computer for an Ethan Digital Academy
+learning scenario.
+
+ 
+
+ 
+
+Course Completion Outcome
+After successful completion, the learner should be able to identify major computer hardware, explain how
+core components work together, recognise ports and peripherals, interpret basic specifications, compare
+computer types, understand safe power and cooling practices, perform simple external troubleshooting
+checks and recommend appropriate hardware for common academic and workplace needs.
+
+Professional Practice Checklist
+ Never open powered equipment during beginner practicals.
+ Never force connectors into ports.
+ Match hardware to workload and compatibility requirements.
+ Protect equipment with appropriate power practices.
+ Keep ventilation clear.
+ Back up important data.
+ Escalate electrical or internal hardware faults to qualified personnel.

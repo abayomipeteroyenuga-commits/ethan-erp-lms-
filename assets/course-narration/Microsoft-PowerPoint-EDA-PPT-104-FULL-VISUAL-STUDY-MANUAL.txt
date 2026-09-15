@@ -1,0 +1,983 @@
+ETHAN DIGITAL ACADEMY
+
+ MICROSOFT POWERPOINT
+ COMPLETE PROFESSIONAL VISUAL STUDY MANUAL
+
+ Paid Enrollee Course Material
+
+ Course Code: EDA-PPT-104
+
+ Level: Beginner to Advanced Workplace Use
+
+ Duration: 6 Weeks (18 Lessons)
+
+ Certificate: Professional Certificate in Microsoft PowerPoint
+
+ Prerequisite: Computer Appreciation
+
+Learning Format: Classroom + Guided Practical + Presentation Project
+
+ 
+
+COURSE OVERVIEW
+Microsoft PowerPoint is a presentation application used to organise ideas into slides and communicate them
+visually to an audience. This course teaches both the software skills and the presentation-design thinking
+needed to create professional classroom, business and training presentations.
+
+Learners will work with slide layouts, text, images, shapes, tables, charts, themes, transitions, animations,
+Slide Master, hyperlinks, notes, Presenter View, printing/export and presentation delivery.
+
+LEARNING OBJECTIVES
+ Navigate the PowerPoint interface and create presentations.
+ Plan a presentation around audience, purpose and story.
+ Use slide layouts and placeholders effectively.
+ Format text with clear visual hierarchy.
+ Insert and arrange images, shapes, icons and text boxes.
+ Create tables, charts and SmartArt-style diagrams.
+ Apply themes, backgrounds and consistent design.
+ Use transitions and animations appropriately.
+ Use Slide Master for repeated design.
+ Add hyperlinks and navigation.
+ Use speaker notes and Presenter View.
+ Prepare, rehearse, export and deliver professional presentations.
+
+COURSE OUTLINE
+ Lesson Topic
+ 1 Getting Started with PowerPoint
+ 2 Understanding the PowerPoint Interface
+ 3 Planning a Presentation
+ 4 Slides, Layouts and Placeholders
+ 5 Text and Typography
+ 6 Images, Shapes, Icons and Text Boxes
+ 7 Tables, Charts and Data
+ 8 Themes, Colours and Backgrounds
+ 9 Alignment, Guides and Visual Hierarchy
+ 10 Transitions
+ 11 Animations
+ 12 Slide Master and Layout Masters
+ 13 Hyperlinks, Action Buttons and Navigation
+ 14 Audio, Video and Media Principles
+ 15 Speaker Notes and Presenter View
+ 16 Printing, PDF Export and Sharing
+ 17 Professional Presentation Delivery
+ 18 Final Professional Presentation Project
+
+ 
+
+LESSON 1: GETTING STARTED WITH POWERPOINT
+PowerPoint helps a presenter combine text, visuals, data and media into a sequence of slides.
+
+ Figure 2. A presentation should have a clear structure.
+
+Common Uses
+ Classroom lessons
+ Business proposals
+ Training sessions
+ Project reports
+ Sales presentations
+ Conference talks
+
+Presentation File
+A presentation contains slides. Each slide should support the overall purpose rather than operate as an
+unrelated page.
+
+Create and Save
+Create a blank presentation or approved template, then save early with a meaningful filename.
+
+Step-by-Step Practical
+1. Open PowerPoint.
+
+2. Create a blank presentation.
+
+3. Enter a title and subtitle.
+
+4. Save it as EDA-Practice-Presentation.
+
+ 
+
+Review Questions
+1. What is PowerPoint?
+
+2. What is a slide?
+
+3. Name four uses of PowerPoint.
+
+4. Why should you save early?
+
+Assignment
+Create a three-slide introduction to Ethan Digital Academy.
+
+ 
+
+LESSON 2: UNDERSTANDING THE POWERPOINT INTERFACE
+Knowing the interface makes it easier to work quickly and confidently.
+
+ Figure 1. The PowerPoint working interface.
+
+Main Areas
+ Title bar
+ Quick Access Toolbar
+ Ribbon and tabs
+ Slides/thumbnail pane
+ Slide canvas
+ Notes area
+ Status bar
+ View controls and zoom
+
+Ribbon
+Commands are grouped under tabs such as Home, Insert, Design, Transitions, Animations, Slide Show,
+Review and View.
+
+Contextual Tools
+Some commands appear when a picture, shape, chart or other object is selected.
+
+Step-by-Step Practical
+1. Identify each interface area.
+
+2. Switch between Home, Insert and Design.
+
+3. Change the zoom level.
+
+4. Select a slide thumbnail and return to the slide canvas.
+ 
+
+Review Questions
+1. What is the Ribbon?
+
+2. What is the slide canvas?
+
+3. What is the thumbnail pane?
+
+4. What are contextual tools?
+
+Assignment
+Label a simplified PowerPoint interface diagram.
+
+ 
+
+LESSON 3: PLANNING A PRESENTATION
+Strong presentations begin with purpose, audience and a clear sequence of ideas.
+
+ Figure 2. A clear presentation story.
+
+Purpose
+Decide whether the presentation should inform, teach, persuade, report or demonstrate.
+
+Audience
+Consider what the audience already knows, what they need and what action is expected.
+
+Story Structure
+A useful structure is opening, explanation, evidence/examples and conclusion/next action.
+
+Outline First
+Write the main message of each slide before spending time on visual design.
+
+Step-by-Step Practical
+1. Choose a presentation topic.
+
+2. Define the audience and purpose.
+
+3. Write a 6-slide outline.
+
+4. Give each slide one main message.
+
+Review Questions
+1. Why plan before designing?
+
+2. What is audience analysis?
+ 
+
+3. Name four story stages.
+
+4. Why should a slide have one main message?
+
+Assignment
+Prepare an outline for a 10-slide digital-skills presentation.
+
+ 
+
+LESSON 4: SLIDES, LAYOUTS AND PLACEHOLDERS
+Layouts organise content and help maintain consistency.
+
+ Figure 3. Common PowerPoint slide layouts.
+
+Adding Slides
+Use New Slide and choose an appropriate layout.
+
+Placeholders
+Placeholders reserve areas for titles, text, images, charts or other content.
+
+Choosing Layouts
+Use Title Slide for opening, Section Header for divisions and content layouts for teaching or explanation.
+
+Reordering
+Drag slide thumbnails to improve the sequence.
+
+Sections
+Sections can group larger presentations into logical parts.
+
+Step-by-Step Practical
+1. Create six slides using at least three layouts.
+
+2. Reorder two slides.
+
+3. Duplicate one slide and modify it.
+
+4. Create two presentation sections if supported.
+
+ 
+
+Review Questions
+1. What is a layout?
+
+2. What is a placeholder?
+
+3. Why use sections?
+
+4. How can slides be reordered?
+
+Assignment
+Build a structured 8-slide deck using suitable layouts.
+
+ 
+
+LESSON 5: TEXT AND TYPOGRAPHY
+Text should be readable, concise and visually organised.
+
+ Figure 4. Readable slide design.
+
+Font Choice
+Use readable fonts and avoid excessive typefaces.
+
+Hierarchy
+Titles should be visually stronger than body text. Use size, weight and spacing consistently.
+
+Bullets
+Bullets help organise short points, but avoid turning every slide into a long document.
+
+Alignment
+Choose left, centre or other alignment deliberately.
+
+Editing
+Use spelling tools and review wording for clarity.
+
+Step-by-Step Practical
+1. Create a title and body slide.
+
+2. Format title, subtitle and body text consistently.
+
+3. Turn a paragraph into concise bullets.
+
+4. Compare a crowded version with a simplified version.
+
+ 
+
+Review Questions
+1. What is visual hierarchy?
+
+2. Why limit the number of fonts?
+
+3. When are bullets useful?
+
+4. Why should slide text be concise?
+
+Assignment
+Redesign a text-heavy slide into a clear presentation slide.
+
+ 
+
+LESSON 6: IMAGES, SHAPES, ICONS AND TEXT BOXES
+Visual objects can explain ideas faster than text when they are relevant and well arranged.
+
+ Figure 5. Using visuals intentionally.
+
+Pictures
+Insert relevant images, resize proportionally and crop intentionally.
+
+Shapes
+Use shapes for diagrams, labels, callouts and visual structure.
+
+Icons
+Icons can support scanning when their meaning is clear.
+
+Text Boxes
+Text boxes allow flexible placement of short text.
+
+Layering
+Bring Forward, Send Backward and Selection Pane help control overlapping objects.
+
+Copyright
+Use visuals you created, licensed material or sources you are permitted to use.
+
+Step-by-Step Practical
+1. Insert a practice image.
+
+2. Crop it to a suitable area.
+
+3. Add two shapes and a text box.
+ 
+
+4. Align the objects and adjust layering.
+
+Review Questions
+1. Why maintain image proportions?
+
+2. What is cropping?
+
+3. What does Send Backward do?
+
+4. Why do image permissions matter?
+
+Assignment
+Create an illustrated course-introduction slide.
+
+ 
+
+LESSON 7: TABLES, CHARTS AND DATA
+Tables show exact values; charts help audiences see patterns and comparisons.
+
+ Figure 6. A simple course-enrolment chart.
+
+Tables
+Use tables for compact structured information. Keep them readable and avoid excessive rows on one slide.
+
+Charts
+Column, bar, line and pie charts serve different questions. Choose the simplest chart that communicates the
+point.
+
+Chart Titles and Labels
+Use clear titles and only necessary labels.
+
+Data Integrity
+Charts should represent the source data accurately and avoid misleading scales or unnecessary effects.
+
+Step-by-Step Practical
+1. Create a small 4-row course table.
+
+2. Create a column chart from fictional enrolment data.
+
+3. Add a meaningful chart title.
+
+4. Remove unnecessary chart clutter.
+
+Review Questions
+1. When is a table useful?
+
+ 
+
+2. When is a chart useful?
+
+3. Why should charts avoid misleading scales?
+
+4. What makes a chart title useful?
+
+Assignment
+Create a data slide comparing four fictional courses.
+
+ 
+
+LESSON 8: THEMES, COLOURS AND BACKGROUNDS
+Themes provide coordinated fonts, colours and effects across a presentation.
+
+ Figure 4. Consistency improves readability.
+
+Theme
+A theme creates a consistent visual system.
+
+Variants
+Variants can adjust colour and style while retaining the overall theme.
+
+Background
+Backgrounds should support readability. Strong contrast between text and background is essential.
+
+Branding
+Use approved brand colours, logo placement and typography consistently rather than decorating every slide
+differently.
+
+Step-by-Step Practical
+1. Apply a theme.
+
+2. Compare two variants.
+
+3. Create a simple branded title slide.
+
+4. Check text/background contrast.
+
+Review Questions
+1. What is a theme?
+
+ 
+
+2. What is a variant?
+
+3. Why does contrast matter?
+
+4. What makes branding consistent?
+
+Assignment
+Create a three-slide Ethan Digital Academy visual style.
+
+ 
+
+LESSON 9: ALIGNMENT, GUIDES AND VISUAL HIERARCHY
+Professional slides look organised because objects follow a deliberate visual structure.
+
+ Figure 4. A strong slide uses hierarchy and space.
+
+Alignment
+Use Align Left, Centre, Top or other alignment commands instead of guessing positions.
+
+Distribution
+Distribute objects evenly when appropriate.
+
+Guides and Gridlines
+Guides help maintain margins and consistent placement.
+
+White Space
+Empty space is useful; it separates ideas and reduces clutter.
+
+Hierarchy
+Use size, position, contrast and spacing to show what the audience should notice first.
+
+Step-by-Step Practical
+1. Create three shapes.
+
+2. Align and distribute them.
+
+3. Turn on guides or gridlines.
+
+4. Rebuild a crowded slide using more white space.
+
+ 
+
+Review Questions
+1. What is alignment?
+
+2. What does distribute mean?
+
+3. Why use guides?
+
+4. What is white space?
+
+Assignment
+Redesign one slide using alignment and hierarchy principles.
+
+ 
+
+LESSON 10: TRANSITIONS
+Transitions control how one slide changes to the next.
+
+ Figure 7. Transitions happen between slides.
+
+Purpose
+Transitions can signal movement between sections or create a smooth presentation flow.
+
+Consistency
+Use one subtle transition for most slides unless a clear reason requires another.
+
+Duration
+Control speed carefully; very slow transitions can interrupt the presentation.
+
+Apply to All
+Use Apply to All when a consistent transition is desired.
+
+Step-by-Step Practical
+1. Apply a subtle transition to one slide.
+
+2. Preview it.
+
+3. Adjust duration.
+
+4. Apply it consistently to the presentation.
+
+Review Questions
+1. What is a transition?
+
+2. Why should transitions be subtle?
+ 
+
+3. What does Apply to All do?
+
+4. Why does duration matter?
+
+Assignment
+Create a five-slide deck with a consistent transition.
+
+ 
+
+LESSON 11: ANIMATIONS
+Animations control how objects appear, move, emphasise or exit on a slide.
+
+ Figure 7. Animations affect objects on a slide.
+
+Animation Types
+ Entrance
+ Emphasis
+ Exit
+ Motion path
+
+Animation Pane
+The Animation Pane shows order and timing.
+
+Start Options
+Animations can start On Click, With Previous or After Previous.
+
+Purpose
+Use animation to reveal steps, explain a process or focus attention - not simply because effects are available.
+
+Step-by-Step Practical
+1. Animate three bullet points to appear one at a time.
+
+2. Open the Animation Pane.
+
+3. Change the order.
+
+4. Compare On Click and After Previous.
+
+ 
+
+Review Questions
+1. What is animation?
+
+2. Name four animation categories.
+
+3. What is the Animation Pane?
+
+4. When is animation useful?
+
+Assignment
+Create an instructional process slide using restrained animation.
+
+ 
+
+LESSON 12: SLIDE MASTER AND LAYOUT MASTERS
+Slide Master controls repeated design across many slides.
+
+ Figure 8. Slide Master controls repeated design.
+
+Master Elements
+Logo position, fonts, colours, placeholders and recurring footer elements can be controlled from the master.
+
+Layouts
+Individual layouts inherit design from the master and can have different placeholder arrangements.
+
+Efficiency
+Master editing avoids changing the same design manually on every slide.
+
+Caution
+Make master changes carefully because they can affect many slides at once.
+
+Step-by-Step Practical
+1. Open Slide Master view.
+
+2. Identify the main master and layouts.
+
+3. Add a small practice footer or approved logo placeholder.
+
+4. Close Master View and inspect several slides.
+
+Review Questions
+1. What is Slide Master?
+
+2. What is a layout master?
+ 
+
+3. Why is master editing efficient?
+
+4. Why should master changes be made carefully?
+
+Assignment
+Create a simple branded master for a training presentation.
+
+ 
+
+LESSON 13: HYPERLINKS, ACTION BUTTONS AND NAVIGATION
+Interactive navigation can create menus, non-linear lessons and self-paced presentations.
+
+ Figure 10. Internal presentation navigation.
+
+Hyperlinks
+Link text or objects to websites, files or another slide when appropriate.
+
+Internal Links
+Internal slide links can create a menu or return-to-home navigation.
+
+Action Buttons
+Action buttons provide familiar navigation controls.
+
+Testing
+Always test links in Slide Show mode before delivery.
+
+Safety
+Use trusted destinations and avoid linking learners to unsafe or unrelated sites.
+
+Step-by-Step Practical
+1. Create a menu slide.
+
+2. Link two buttons to different slides.
+
+3. Add a Back to Menu button.
+
+4. Test all navigation in Slide Show mode.
+
+ 
+
+Review Questions
+1. What is a hyperlink?
+
+2. What is an internal slide link?
+
+3. What is an action button?
+
+4. Why must navigation be tested?
+
+Assignment
+Create a five-slide interactive lesson menu.
+
+ 
+
+LESSON 14: AUDIO, VIDEO AND MEDIA PRINCIPLES
+Media can demonstrate processes and increase engagement when it directly supports the lesson.
+
+ Figure 5. Visuals and media should support the message.
+
+Video
+Use short relevant clips and test playback before presenting.
+
+Audio
+Audio can support narration, language learning or demonstrations. Keep levels appropriate.
+
+File Size
+Embedded media can increase presentation size significantly.
+
+Accessibility
+Provide captions or text alternatives where possible and appropriate.
+
+Reliability
+Keep a backup plan in case media playback or internet access fails.
+
+Step-by-Step Practical
+1. Insert an instructor-approved short media file if available.
+
+2. Resize and position it.
+
+3. Set an appropriate playback option.
+
+4. Create a backup text/image explanation of the same point.
+
+ 
+
+Review Questions
+1. Why should media be relevant?
+
+2. How can media affect file size?
+
+3. Why are captions useful?
+
+4. Why prepare a backup?
+
+Assignment
+Design a media-supported teaching slide.
+
+ 
+
+LESSON 15: SPEAKER NOTES AND PRESENTER VIEW
+Speaker notes let presenters keep supporting information without crowding the slide.
+
+ Figure 9. Presenter notes support delivery.
+
+Notes
+Store explanations, examples, reminders and source details in the Notes area.
+
+Presenter View
+Presenter View can show the current slide, next slide, notes and timing tools to the presenter.
+
+Audience View
+The audience should see the slide show, not private notes.
+
+Rehearsal
+Use notes as prompts rather than reading every word.
+
+Step-by-Step Practical
+1. Add speaker notes to three slides.
+
+2. Start Slide Show/Presenter View if available.
+
+3. Practice explaining the slide without reading it word-for-word.
+
+4. Add a timing reminder.
+
+Review Questions
+1. What are speaker notes?
+
+2. What can Presenter View show?
+ 
+
+3. Should the audience see private notes?
+
+4. Why should notes be prompts?
+
+Assignment
+Prepare speaker notes for a five-slide mini-presentation.
+
+ 
+
+LESSON 16: PRINTING, PDF EXPORT AND SHARING
+A finished presentation may need to be printed, exported or shared in different formats.
+
+ Figure 9. Prepare presentation content for different audiences.
+
+Print Options
+Print full-page slides, notes pages or handouts depending on purpose.
+
+PDF Export
+PDF preserves the visual layout for distribution, but animations and interactive features do not behave like a
+live slide show.
+
+Sharing
+Check permissions and remove sensitive notes or hidden content before external sharing.
+
+Compatibility
+Test the file on the presentation computer or export a backup PDF when compatibility is uncertain.
+
+Step-by-Step Practical
+1. Open Print Preview.
+
+2. Compare full-page slides and handouts.
+
+3. Export a practice PDF.
+
+4. Review the PDF for layout and missing content.
+
+Review Questions
+1. What is a handout?
+
+ 
+
+2. Why export to PDF?
+
+3. What may be lost in PDF?
+
+4. Why check notes before sharing?
+
+Assignment
+Export a professional presentation and a handout version.
+
+ 
+
+LESSON 17: PROFESSIONAL PRESENTATION DELIVERY
+Good delivery combines preparation, clear speaking, audience awareness and confident use of slides.
+
+ Figure 11. Prepare, rehearse, present and review.
+
+Preparation
+Know the purpose, room, equipment and time limit.
+
+Rehearsal
+Practise the sequence and timing. Identify difficult transitions between topics.
+
+Delivery
+Speak clearly, face the audience where practical and use slides as visual support.
+
+Questions
+Listen carefully, answer what you know and say when further checking is needed.
+
+Feedback
+Use audience or instructor feedback to improve future presentations.
+
+Step-by-Step Practical
+1. Rehearse a five-minute presentation.
+
+2. Time the delivery.
+
+3. Practise moving between slides without rushing.
+
+4. Answer two instructor questions.
+
+5. Write two improvements after feedback.
+ 
+
+Review Questions
+1. Why rehearse?
+
+2. What role should slides play during delivery?
+
+3. How should uncertain questions be handled?
+
+4. Why is feedback useful?
+
+Assignment
+Deliver a five-minute professional presentation.
+
+ 
+
+LESSON 18: FINAL PROFESSIONAL PRESENTATION PROJECT
+The final project combines planning, design, visuals, data, navigation and delivery into one professional
+presentation.
+
+ Figure 12. The complete presentation workflow.
+
+Project Brief
+Create a 12-15 slide presentation introducing one Ethan Digital Academy programme or explaining a
+professional digital topic.
+
+Required Elements
+ Title slide
+ Clear audience and purpose
+ Logical sections
+ Consistent theme
+ Relevant images/shapes
+ At least one table or chart
+ Appropriate transition
+ At least one restrained animation
+ Speaker notes
+ Conclusion and CTA
+ PDF export
+
+Quality Criteria
+Accuracy, visual hierarchy, consistency, readability, appropriate visuals, logical flow and professional delivery.
+
+Step-by-Step Practical
+1. Plan the presentation outline.
+
+ 
+
+2. Build the slide master/theme.
+
+3. Create 12-15 slides.
+
+4. Add visuals and one data display.
+
+5. Add notes, transitions and restrained animation.
+
+6. Check alignment and consistency.
+
+7. Export a PDF backup.
+
+8. Rehearse and deliver.
+
+Review Questions
+1. What makes a presentation professional?
+
+2. Why is Slide Master useful?
+
+3. Why should visuals support the message?
+
+4. What should be checked before delivery?
+
+Assignment
+Submit the PPTX, PDF backup and deliver the final presentation.
+
+ 
+
+REAL-LIFE CASE STUDY - ETHAN DIGITAL ACADEMY
+Ethan Digital Academy needs a presentation for a professional digital training programme. The presenter first
+defines the audience and purpose, then creates a logical outline. A consistent Slide Master controls branding,
+while images, shapes and a simple chart explain the offer. Speaker notes hold the detailed explanation so the
+slides remain uncluttered. The presentation is rehearsed, exported to PDF as a backup and delivered within
+the agreed time.
+
+FINAL PRACTICAL PROJECT - 100 MARKS
+1. Define the audience, purpose and presentation objective.
+
+2. Create a 12-15 slide outline.
+
+3. Use appropriate layouts and a consistent visual system.
+
+4. Apply readable typography and visual hierarchy.
+
+5. Use relevant images, shapes or icons.
+
+6. Include one table or chart.
+
+7. Use a subtle transition and at least one purposeful animation.
+
+8. Add speaker notes and internal navigation where useful.
+
+9. Export and inspect a PDF backup.
+
+10. Rehearse and deliver the presentation professionally.
+
+QUIZ - 30 QUESTIONS
+1. What is PowerPoint?
+
+2. What is a slide?
+
+3. What is the Ribbon?
+
+4. What is the thumbnail pane?
+
+5. Why plan a presentation?
+
+6. What is a placeholder?
+
+7. What is a slide layout?
+
+8. What is visual hierarchy?
+
+9. Why should slide text be concise?
+
+10. What is cropping?
+
+11. What does Send Backward do?
+
+12. When is a table useful?
+ 
+
+13. When is a chart useful?
+
+14. What is a theme?
+
+15. Why does contrast matter?
+
+16. What is alignment?
+
+17. What is white space?
+
+18. What is a transition?
+
+19. What is an animation?
+
+20. Name four animation categories.
+
+21. What is the Animation Pane?
+
+22. What is Slide Master?
+
+23. Why use a master?
+
+24. What is an internal hyperlink?
+
+25. What is an action button?
+
+26. Why should media have a backup?
+
+27. What are speaker notes?
+
+28. What is Presenter View?
+
+29. Why export to PDF?
+
+30. Why rehearse a presentation?
+
+FINAL EXAMINATION - 100 MARKS
+Section A - Objective Questions (20 Marks)
+
+Twenty questions covering interface, layouts, typography, visuals, charts, themes, transitions, animations,
+Slide Master and delivery.
+
+Section B - Short Answer and Design Analysis (30 Marks)
+
+Explain presentation concepts and recommend improvements to realistic slide-design situations.
+
+Section C - Practical Presentation Assessment (50 Marks)
+
+Create and present a professional slide deck from a supplied brief using appropriate layouts, visual hierarchy,
+data, notes and export.
+
+ 
+
+COURSE COMPLETION OUTCOME
+Graduates of EDA-PPT-104 Microsoft PowerPoint will be able to plan, design, build, export and deliver
+professional presentations for classroom, business and training use. They will understand both PowerPoint
+tools and the communication principles that make slides effective.

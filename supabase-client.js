@@ -39,6 +39,13 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
+  async function setSession(accessToken, refreshToken) {
+    if (!client) return null;
+    const { data, error } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
+    if (error) throw error;
+    return data.session;
+  }
+
   async function getSession() {
     if (!client) return null;
     const { data, error } = await client.auth.getSession();
@@ -165,5 +172,29 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
-  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, listPayments, createPayment, listAnnouncements, createAnnouncement, listMyNotifications, listStaff, createStaff };
+  async function uploadCourseMaterial({courseId,title,file}) {
+    if (!client) throw new Error("Supabase is not connected.");
+    const { data: authData } = await client.auth.getUser();
+    if (!authData?.user) throw new Error("Sign in again before uploading.");
+    const safeName = String(file.name||"course.pdf").replace(/[^a-zA-Z0-9._-]+/g,"-");
+    const path = `${courseId}/${Date.now()}-${safeName}`;
+    const { error: uploadError } = await client.storage.from("course-materials").upload(path,file,{contentType:"application/pdf",upsert:false});
+    if (uploadError) throw uploadError;
+    const { data, error } = await client.from("course_materials").insert({course_id:courseId,title,file_path:path,file_name:file.name,mime_type:"application/pdf",uploaded_by:authData.user.id,is_active:true}).select().single();
+    if (error) { await client.storage.from("course-materials").remove([path]); throw error; }
+    return data;
+  }
+
+  async function getCourseMaterial(courseTitle) {
+    if (!client) return null;
+    const { data: course, error: ce } = await client.from("courses").select("id,title").ilike("title",courseTitle).maybeSingle();
+    if (ce || !course) return null;
+    const { data: material, error } = await client.from("course_materials").select("*").eq("course_id",course.id).eq("is_active",true).order("created_at",{ascending:false}).limit(1).maybeSingle();
+    if (error || !material) return null;
+    const { data: signed, error: se } = await client.storage.from("course-materials").createSignedUrl(material.file_path,3600);
+    if (se) throw se;
+    return {...material,pdf_url:signed.signedUrl,source:"storage"};
+  }
+
+  return { ready, client, signUp, signIn, signOut, resetPassword, setSession, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, listPayments, createPayment, listAnnouncements, createAnnouncement, listMyNotifications, listStaff, createStaff, uploadCourseMaterial, getCourseMaterial };
 })();

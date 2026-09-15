@@ -1,0 +1,1212 @@
+ETHAN DIGITAL ACADEMY
+
+ WINDOWS PRODUCTIVITY
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-WIN-112
+Level Beginner to Intermediate
+Duration 6 Weeks (19 Lessons)
+Certificate Professional Certificate in Windows Productivity
+Prerequisite Computer Appreciation
+Learning Format Classroom + Guided Practicals + Final Productivity
+ Project
+
+ This course focuses on normal learner-facing Windows productivity. Advanced
+ administrative controls, security bypasses and risky system modifications are
+ outside the beginner practical scope.
+
+ 
+
+ 
+
+Course Introduction
+Windows Productivity teaches learners to use the Windows desktop, Start menu, taskbar, File Explorer,
+search, window management, shortcuts, clipboard, screenshots, settings, accessibility, notifications,
+security, storage and backup features efficiently.
+
+Learning Objectives
+ Navigate the Windows desktop, Start menu and taskbar.
+ Organise files and folders using File Explorer.
+ Use Windows Search effectively.
+ Manage multiple application windows.
+ Apply useful keyboard shortcuts.
+ Capture and manage screenshots responsibly.
+ Use normal display, sound and accessibility settings.
+ Apply safe everyday Windows security habits.
+ Build an organised end-to-end productivity workflow.
+
+Course Structure
+1. Lesson 1: Introduction to Windows Productivity
+2. Lesson 2: The Windows Desktop and Start Menu
+3. Lesson 3: File Explorer Fundamentals
+4. Lesson 4: Creating, Naming and Organising Files
+5. Lesson 5: Copy, Move, Rename and Delete
+6. Lesson 6: Windows Search
+7. Lesson 7: Managing Application Windows
+8. Lesson 8: Essential Windows Keyboard Shortcuts
+9. Lesson 9: Clipboard and Clipboard History
+10. Lesson 10: Screenshots and Snipping Tool
+11. Lesson 11: Taskbar, Pins and Jump Lists
+12. Lesson 12: Windows Settings for Everyday Users
+13. Lesson 13: Accessibility and Ease-of-Use Features
+14. Lesson 14: Notifications and Focus
+15. Lesson 15: Windows Security and Safe Everyday Use
+16. Lesson 16: Managing Storage and Recycle Bin
+17. Lesson 17: Multitasking and Efficient Workflows
+18. Lesson 18: Backup and Cloud-Synchronised Folders
+19. Lesson 19: Final Windows Productivity Project
+
+ 
+
+ 
+
+Lesson 1: Introduction to Windows
+Productivity
+Introduction
+Windows productivity means using the operating system efficiently to organise files, launch applications,
+manage windows, search, capture information and complete everyday digital work.
+
+Learning Objectives
+ Explain the main concepts in introduction to windows productivity.
+ Complete the guided Windows practical for introduction to windows productivity.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: The operating system provides the workspace in which applications run.
+
+Key point: Productivity comes from organised habits as well as shortcuts.
+
+Key point: Normal user settings can be customised without changing advanced system controls.
+
+Key point: Files should be saved deliberately rather than left scattered across Downloads and Desktop.
+
+ Figure 1: Instructional visual for Introduction to Windows Productivity.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Identify Start, taskbar, desktop and notification area.
+
+2. Open two normal applications.
+
+3. Switch between them.
+
+4. Create a folder named Windows Productivity Practice.
+
+Ethan Digital Academy Case Study
+Academy learners use Windows as the foundation for Word, Excel, browsers and other digital tools.
+
+Review Questions
+20. What is the productivity purpose of introduction to windows productivity?
+21. State two Windows features or techniques from this lesson.
+22. What mistake should a careful learner avoid?
+23. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 1 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 2: The Windows Desktop and Start
+Menu
+Introduction
+The desktop, Start menu and taskbar provide fast access to applications, files and system controls.
+
+Learning Objectives
+ Explain the main concepts in the windows desktop and start menu.
+ Complete the guided Windows practical for the windows desktop and start menu.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Start provides apps, search, account and power options.
+
+Key point: The taskbar shows pinned and running applications.
+
+Key point: Desktop shortcuts are links, not necessarily the original file.
+
+Key point: A clean desktop reduces clutter and makes important items easier to find.
+
+Step-by-Step Guided Practical
+1. Open Start.
+
+2. Pin or identify a commonly used app if authorised.
+
+3. Open File Explorer from the taskbar or Start.
+
+4. Return to the desktop using a normal method.
+
+Ethan Digital Academy Case Study
+Academy lab computers can pin frequently used learning applications while keeping the desktop
+uncluttered.
+
+Review Questions
+24. What is the productivity purpose of the windows desktop and start menu?
+25. State two Windows features or techniques from this lesson.
+26. What mistake should a careful learner avoid?
+27. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 2 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 3: File Explorer Fundamentals
+Introduction
+File Explorer is the main Windows tool for browsing drives, folders and files.
+
+Learning Objectives
+ Explain the main concepts in file explorer fundamentals.
+ Complete the guided Windows practical for file explorer fundamentals.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: The navigation pane gives access to common locations.
+
+Key point: The address bar shows the current location.
+
+Key point: Views can display names, dates, types and sizes.
+
+Key point: File extensions help identify formats when shown.
+
+Key point: Users should understand a file's location before moving or deleting it.
+
+ Figure 3: Instructional visual for File Explorer Fundamentals.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open File Explorer.
+
+2. Navigate to Documents.
+
+3. Create a practice folder.
+
+4. Create two subfolders: Current Work and Archive.
+
+5. Observe Details view if available.
+
+Ethan Digital Academy Case Study
+Learners can keep each Academy course in a dedicated folder instead of mixing every file together.
+
+Review Questions
+28. What is the productivity purpose of file explorer fundamentals?
+29. State two Windows features or techniques from this lesson.
+30. What mistake should a careful learner avoid?
+31. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 3 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 4: Creating, Naming and Organising
+Files
+Introduction
+Consistent naming makes files easier to search, share and archive.
+
+Learning Objectives
+ Explain the main concepts in creating, naming and organising files.
+ Complete the guided Windows practical for creating, naming and organising files.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Use descriptive names that explain content.
+
+Key point: Dates can be written consistently, for example 2026-09-15.
+
+Key point: Avoid confusing names such as final-final-new.
+
+Key point: Keep editable originals separate from exported copies.
+
+Key point: Use folders that reflect project or course structure.
+
+Step-by-Step Guided Practical
+1. Create three harmless practice files.
+
+2. Rename them with clear subject names.
+
+3. Move one into Archive.
+
+4. Create an Exports folder.
+
+5. Explain which file is the working master.
+
+Ethan Digital Academy Case Study
+Academy course teams can use names such as Excel-Assignment-01 rather than Document1.
+
+Review Questions
+32. What is the productivity purpose of creating, naming and organising files?
+33. State two Windows features or techniques from this lesson.
+34. What mistake should a careful learner avoid?
+35. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 4 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 5: Copy, Move, Rename and Delete
+Introduction
+File operations are basic productivity skills, but they should be performed carefully.
+
+Learning Objectives
+ Explain the main concepts in copy, move, rename and delete.
+ Complete the guided Windows practical for copy, move, rename and delete.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Copy creates another instance while leaving the original.
+
+Key point: Move changes location.
+
+Key point: Rename changes the label, not the file content.
+
+Key point: Delete normally sends local files to Recycle Bin first, depending on context.
+
+Key point: Permanent deletion should be used cautiously.
+
+Step-by-Step Guided Practical
+1. Copy a practice file.
+
+2. Move the copy to another folder.
+
+3. Rename it.
+
+4. Delete only the practice copy.
+
+5. Restore it from Recycle Bin if available.
+
+Ethan Digital Academy Case Study
+Learners should practise on disposable files before managing important Academy documents.
+
+Review Questions
+36. What is the productivity purpose of copy, move, rename and delete?
+37. State two Windows features or techniques from this lesson.
+38. What mistake should a careful learner avoid?
+39. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 5 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 6: Windows Search
+Introduction
+Windows Search can locate apps, settings and local files more quickly than browsing many folders
+manually.
+
+Learning Objectives
+ Explain the main concepts in windows search.
+ Complete the guided Windows practical for windows search.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Search by a distinctive part of a file name.
+
+Key point: Results can include apps, settings and documents.
+
+Key point: Filters may narrow results by type or location.
+
+Key point: Good file names improve search quality.
+
+Key point: Search results should still be checked before opening or deleting files.
+
+ Figure 6: Instructional visual for Windows Search.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a file with a unique practice name.
+
+2. Use Windows Search to find it.
+
+3. Search for Display settings.
+
+4. Search for Calculator.
+
+5. Record which search was fastest.
+
+Ethan Digital Academy Case Study
+A learner can quickly locate an assignment when the file has a meaningful name.
+
+Review Questions
+40. What is the productivity purpose of windows search?
+41. State two Windows features or techniques from this lesson.
+42. What mistake should a careful learner avoid?
+43. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 6 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 7: Managing Application Windows
+Introduction
+Window-management tools help users work with several applications without losing track of tasks.
+
+Learning Objectives
+ Explain the main concepts in managing application windows.
+ Complete the guided Windows practical for managing application windows.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Minimise hides a window without closing it.
+
+Key point: Maximise uses most available screen space.
+
+Key point: Snap can arrange windows side by side.
+
+Key point: Alt+Tab switches among open applications.
+
+Key point: Virtual desktops can separate groups of tasks on supported Windows versions.
+
+ Figure 7: Instructional visual for Managing Application Windows.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open a browser and text editor.
+
+2. Snap them side by side.
+
+3. Switch using Alt+Tab.
+
+4. Minimise and restore one window.
+
+5. Create a virtual desktop only if supported and authorised.
+
+Ethan Digital Academy Case Study
+An Academy learner can view course instructions on one side and type an assignment on the other.
+
+Review Questions
+44. What is the productivity purpose of managing application windows?
+45. State two Windows features or techniques from this lesson.
+46. What mistake should a careful learner avoid?
+47. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 7 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 8: Essential Windows Keyboard
+Shortcuts
+Introduction
+Shortcuts reduce repeated pointer movement and can make common actions faster.
+
+Learning Objectives
+ Explain the main concepts in essential windows keyboard shortcuts.
+ Complete the guided Windows practical for essential windows keyboard shortcuts.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Win+E opens File Explorer.
+
+Key point: Win+D shows the desktop.
+
+Key point: Alt+Tab switches applications.
+
+Key point: Win+L locks the computer.
+
+Key point: Ctrl+C, Ctrl+X, Ctrl+V and Ctrl+Z work in many Windows applications.
+
+ Figure 8: Instructional visual for Essential Windows Keyboard Shortcuts.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Practise Win+E.
+
+2. Open two apps and use Alt+Tab.
+
+3. Copy and paste a practice sentence.
+
+4. Use Win+D and return to your work.
+
+5. Use Win+L only when appropriate and sign back in privately.
+
+Ethan Digital Academy Case Study
+Keyboard shortcuts improve efficiency across Academy office and digital-skills courses.
+
+Review Questions
+48. What is the productivity purpose of essential windows keyboard shortcuts?
+49. State two Windows features or techniques from this lesson.
+50. What mistake should a careful learner avoid?
+51. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 8 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 9: Clipboard and Clipboard History
+Introduction
+The clipboard temporarily holds copied or cut content. Windows may also provide optional clipboard history.
+
+Learning Objectives
+ Explain the main concepts in clipboard and clipboard history.
+ Complete the guided Windows practical for clipboard and clipboard history.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Copy preserves the source; Cut is intended to move selected content.
+
+Key point: Pasting inserts the current clipboard content.
+
+Key point: Clipboard history can hold several recent text/image items when enabled.
+
+Key point: Sensitive information should not be casually stored in shared clipboard history.
+
+Key point: Users should confirm the correct content before pasting.
+
+ Figure 9: Instructional visual for Clipboard and Clipboard History.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Copy two short practice phrases.
+
+2. Paste them into a document.
+
+3. If clipboard history is enabled, view it using the normal Windows shortcut.
+
+4. Clear only harmless practice entries if instructed.
+
+5. Explain one privacy consideration.
+
+Ethan Digital Academy Case Study
+Learners can move text between a browser and a document while avoiding copying private account
+information.
+
+Review Questions
+52. What is the productivity purpose of clipboard and clipboard history?
+53. State two Windows features or techniques from this lesson.
+54. What mistake should a careful learner avoid?
+55. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 9 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 10: Screenshots and Snipping Tool
+Introduction
+Screenshots capture visual information for instructions, evidence or communication.
+
+Learning Objectives
+ Explain the main concepts in screenshots and snipping tool.
+ Complete the guided Windows practical for screenshots and snipping tool.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Snipping Tool can capture a region, window or screen depending on version.
+
+Key point: Capture only what is necessary.
+
+Key point: Crop or annotate to focus attention.
+
+Key point: Check screenshots for names, messages or other private information before sharing.
+
+Key point: Use clear file names and storage folders.
+
+ Figure 10: Instructional visual for Screenshots and Snipping Tool.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open a harmless practice window.
+
+2. Capture only a small relevant area.
+
+3. Add an arrow or note if the tool supports it.
+
+4. Save the image in your practice folder.
+
+5. Review it for unnecessary information before sharing.
+
+Ethan Digital Academy Case Study
+Academy learners can submit a screenshot of a completed software exercise without exposing unrelated
+personal content.
+
+Review Questions
+56. What is the productivity purpose of screenshots and snipping tool?
+57. State two Windows features or techniques from this lesson.
+58. What mistake should a careful learner avoid?
+59. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 10 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 11: Taskbar, Pins and Jump Lists
+Introduction
+The taskbar can be organised to reduce time spent searching for frequently used applications.
+
+Learning Objectives
+ Explain the main concepts in taskbar, pins and jump lists.
+ Complete the guided Windows practical for taskbar, pins and jump lists.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Pinned apps remain available even when closed.
+
+Key point: Running apps are indicated on the taskbar.
+
+Key point: Some apps provide jump lists or recent items.
+
+Key point: Too many pins can create clutter.
+
+Key point: Shared computers should avoid exposing private recent files unnecessarily.
+
+Step-by-Step Guided Practical
+1. Identify pinned versus running apps.
+
+2. Pin one approved learning app if allowed.
+
+3. Reorder taskbar icons if permitted.
+
+4. Open a recent item only from your own practice work.
+
+5. Remove an unnecessary pin.
+
+Ethan Digital Academy Case Study
+Academy lab computers can use a standard set of approved pinned applications.
+
+Review Questions
+60. What is the productivity purpose of taskbar, pins and jump lists?
+61. State two Windows features or techniques from this lesson.
+62. What mistake should a careful learner avoid?
+63. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 11 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 12: Windows Settings for Everyday
+Users
+Introduction
+Windows Settings provides normal controls for display, sound, devices, accounts, accessibility and updates.
+
+Learning Objectives
+ Explain the main concepts in windows settings for everyday users.
+ Complete the guided Windows practical for windows settings for everyday users.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Display scaling can improve readability.
+
+Key point: Sound settings choose volume and output device.
+
+Key point: Bluetooth/device settings manage supported peripherals.
+
+Key point: Update status should be reviewed through official Windows settings.
+
+Key point: Advanced administrator changes should be left to authorised staff.
+
+ Figure 12: Instructional visual for Windows Settings for Everyday Users.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open Settings.
+
+2. Locate Display and Sound.
+
+3. Record current scale and output device.
+
+4. Locate Windows Update without bypassing controls.
+
+5. Return to the main Settings page.
+
+Ethan Digital Academy Case Study
+First-line Academy support can guide users through ordinary settings without altering restricted policies.
+
+Review Questions
+64. What is the productivity purpose of windows settings for everyday users?
+65. State two Windows features or techniques from this lesson.
+66. What mistake should a careful learner avoid?
+67. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 12 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 13: Accessibility and Ease-of-Use
+Features
+Introduction
+Windows includes features that can improve access and comfort for different users.
+
+Learning Objectives
+ Explain the main concepts in accessibility and ease-of-use features.
+ Complete the guided Windows practical for accessibility and ease-of-use features.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Text size and display scaling can improve readability.
+
+Key point: Magnifier enlarges screen content.
+
+Key point: Narrator is a built-in screen reader.
+
+Key point: Voice access and speech features depend on Windows version, language and configuration.
+
+Key point: Accessibility settings are useful productivity tools, not signs of reduced ability.
+
+ Figure 13: Instructional visual for Accessibility and Ease-of-Use Features.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open Accessibility settings.
+
+2. Locate Text size, Magnifier and Narrator.
+
+3. Read the descriptions without changing settings unnecessarily.
+
+4. Try one harmless display/readability feature if authorised.
+
+5. Restore the original setting.
+
+Ethan Digital Academy Case Study
+Academy can introduce accessibility options so learners know Windows can adapt to different study needs.
+
+Review Questions
+68. What is the productivity purpose of accessibility and ease-of-use features?
+69. State two Windows features or techniques from this lesson.
+70. What mistake should a careful learner avoid?
+71. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 13 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 14: Notifications and Focus
+Introduction
+Notifications can be useful, but constant interruptions reduce concentration.
+
+Learning Objectives
+ Explain the main concepts in notifications and focus.
+ Complete the guided Windows practical for notifications and focus.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Notifications can be controlled by application.
+
+Key point: Do Not Disturb or focus features can reduce interruptions on supported Windows versions.
+
+Key point: Important system/security alerts should not be ignored.
+
+Key point: Learners should distinguish useful reminders from unnecessary promotional notifications.
+
+Key point: Settings should match the user's responsibilities.
+
+Step-by-Step Guided Practical
+1. Open notification settings.
+
+2. Review which apps can notify.
+
+3. Do not disable security alerts.
+
+4. Identify a focus or Do Not Disturb option if available.
+
+5. Plan a distraction-reduced 20-minute study session.
+
+Ethan Digital Academy Case Study
+During an Academy practical test, unnecessary app notifications can be reduced while important system
+alerts remain available.
+
+Review Questions
+72. What is the productivity purpose of notifications and focus?
+73. State two Windows features or techniques from this lesson.
+74. What mistake should a careful learner avoid?
+75. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 14 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 15: Windows Security and Safe
+Everyday Use
+Introduction
+Productivity should not come at the cost of account or device security.
+
+Learning Objectives
+ Explain the main concepts in windows security and safe everyday use.
+ Complete the guided Windows practical for windows security and safe everyday use.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Lock the computer when leaving it unattended.
+
+Key point: Install software from trusted approved sources.
+
+Key point: Keep supported Windows and applications updated.
+
+Key point: Do not disable security controls to run unknown software.
+
+Key point: Use separate authorised accounts where organisations require them.
+
+ Figure 15: Instructional visual for Windows Security and Safe Everyday Use.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Practise locking the computer with Win+L.
+
+2. Open Windows Security status without changing administrator controls.
+
+3. Check update status.
+
+4. List three unsafe download behaviours.
+
+5. Write the correct response to a suspicious security alert: stop and report.
+
+Ethan Digital Academy Case Study
+Academy learners should protect shared lab sessions by locking devices and avoiding unknown downloads.
+
+Review Questions
+76. What is the productivity purpose of windows security and safe everyday use?
+77. State two Windows features or techniques from this lesson.
+78. What mistake should a careful learner avoid?
+79. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 15 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 16: Managing Storage and Recycle Bin
+Introduction
+Windows provides tools to review storage and recover some accidentally deleted local files.
+
+Learning Objectives
+ Explain the main concepts in managing storage and recycle bin.
+ Complete the guided Windows practical for managing storage and recycle bin.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Storage settings show categories using disk space.
+
+Key point: Recycle Bin can restore recently deleted local files in many cases.
+
+Key point: Emptying Recycle Bin can make recovery harder.
+
+Key point: Downloads should be reviewed periodically.
+
+Key point: Important files need backups, not just local storage.
+
+Step-by-Step Guided Practical
+1. Open Storage settings.
+
+2. Record free space.
+
+3. Delete a disposable practice file.
+
+4. Restore it from Recycle Bin.
+
+5. Move an old practice file into Archive.
+
+Ethan Digital Academy Case Study
+Academy lab maintenance can reduce clutter while preserving learner work that still matters.
+
+Review Questions
+80. What is the productivity purpose of managing storage and recycle bin?
+81. State two Windows features or techniques from this lesson.
+82. What mistake should a careful learner avoid?
+83. How could this skill save time in an academic or office task?
+
+ 
+
+ 
+
+Assignment
+Repeat the Lesson 16 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 17: Multitasking and Efficient
+Workflows
+Introduction
+A productive workflow combines file organisation, window management, shortcuts and deliberate saving.
+
+Learning Objectives
+ Explain the main concepts in multitasking and efficient workflows.
+ Complete the guided Windows practical for multitasking and efficient workflows.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Plan the task before opening many apps.
+
+Key point: Keep related files in one project folder.
+
+Key point: Use Snap and Alt+Tab for controlled multitasking.
+
+Key point: Save regularly with meaningful names.
+
+Key point: Close applications that are no longer needed.
+
+ Figure 17: Instructional visual for Multitasking and Efficient Workflows.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a project folder.
+
+2. Open instructions in one app and a document in another.
+
+3. Snap them side by side.
+
+4. Save the document into the project folder.
+
+5. Close both apps and reopen the saved file.
+
+Ethan Digital Academy Case Study
+A learner can complete an assignment without losing files or repeatedly searching through open windows.
+
+Review Questions
+84. What is the productivity purpose of multitasking and efficient workflows?
+85. State two Windows features or techniques from this lesson.
+86. What mistake should a careful learner avoid?
+87. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 17 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 18: Backup and Cloud-Synchronised
+Folders
+Introduction
+Windows computers may use local backup tools or cloud-synchronised folders. Users should understand
+where their files are stored.
+
+Learning Objectives
+ Explain the main concepts in backup and cloud-synchronised folders.
+ Complete the guided Windows practical for backup and cloud-synchronised folders.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: A synchronised folder can copy changes to a cloud service when configured.
+
+Key point: Sync is not always a complete backup because deletions or changes may also synchronise.
+
+Key point: Important files should follow the organisation's backup plan.
+
+Key point: Check sync status before assuming a file is safely stored elsewhere.
+
+Key point: Shared devices require care with account sign-in and sign-out.
+
+Step-by-Step Guided Practical
+1. Identify whether a practice folder is local or synchronised.
+
+2. Create a harmless file in the approved location.
+
+3. Observe the sync status if configured.
+
+4. Create a second authorised backup copy.
+
+5. Explain the difference between sync and backup.
+
+Ethan Digital Academy Case Study
+Academy staff can keep approved course documents in managed cloud folders while maintaining separate
+backups.
+
+Review Questions
+88. What is the productivity purpose of backup and cloud-synchronised folders?
+89. State two Windows features or techniques from this lesson.
+90. What mistake should a careful learner avoid?
+
+ 
+
+ 
+91. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 18 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Lesson 19: Final Windows Productivity Project
+Introduction
+The final project combines the major Windows productivity skills in one realistic office-learning workflow.
+
+Learning Objectives
+ Explain the main concepts in final windows productivity project.
+ Complete the guided Windows practical for final windows productivity project.
+ Apply the skill to an organised academic or workplace task.
+
+Teaching Content
+Key point: Create a logical project folder structure.
+
+Key point: Use clear file names and archive/export folders.
+
+Key point: Demonstrate search, Snap, Alt+Tab and at least five shortcuts.
+
+Key point: Capture a privacy-safe screenshot.
+
+Key point: Review storage and create a second copy of important work.
+
+Key point: Finish with a clean organised workspace.
+
+ Figure 19: Instructional visual for Final Windows Productivity Project.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a fictional 'Ethan Digital Skills Workshop' project folder.
+
+2. Add Current Work, Resources, Exports and Archive subfolders.
+
+3. Create and organise three practice documents.
+
+4. Use Windows Search to find one file.
+
+5. Demonstrate window snapping and five shortcuts.
+
+6. Capture and save one privacy-safe screenshot.
+
+7. Create a backup copy and submit a short workflow report.
+
+Ethan Digital Academy Case Study
+This project demonstrates practical Windows skills that support every other Ethan Digital Academy course.
+
+Review Questions
+92. What is the productivity purpose of final windows productivity project?
+93. State two Windows features or techniques from this lesson.
+94. What mistake should a careful learner avoid?
+95. How could this skill save time in an academic or office task?
+
+Assignment
+Repeat the Lesson 19 practical using harmless practice files. Submit a short note explaining the steps, the
+result and one way the skill improves your personal Windows workflow.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Component Marks Requirement
+Folder structure 15 Logical project folders and clear
+ names.
+File operations 15 Create, copy, move, rename,
+ archive and restore practice files.
+Search 10 Find apps/settings/files efficiently.
+Window management 15 Use Snap and app switching.
+Shortcuts 15 Demonstrate at least five useful
+ shortcuts.
+Screenshot/privacy 10 Capture and save only relevant
+ information.
+Security/storage/backup 10 Lock, review storage and create
+ a second copy.
+Workflow report 10 Explain the completed process
+ clearly.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is an operating system?
+
+2. What is the Windows desktop?
+
+3. What is the Start menu used for?
+
+4. What is the taskbar?
+
+5. What is File Explorer?
+
+6. Why are meaningful file names useful?
+
+7. What is the difference between Copy and Move?
+
+8. What does Rename change?
+
+9. What is Recycle Bin used for?
+
+10. What can Windows Search find?
+
+11. What does Minimise do?
+
+12. What is Windows Snap?
+
+13. What does Alt+Tab do?
+
+14. What does Win+E do?
+
+15. What does Win+D do?
+
+16. What does Win+L do?
+
+17. What is the clipboard?
+
+18. What is clipboard history?
+
+19. Why should sensitive data not be left in shared clipboard history?
+
+20. What is Snipping Tool used for?
+
+21. Why should screenshots be checked before sharing?
+
+22. What is display scaling?
+
+23. Name two Windows accessibility features.
+
+24. What is Narrator?
+
+25. Why can notifications reduce concentration?
+
+26. Why should security alerts not simply be disabled?
+
+27. Why does free storage matter?
+
+ 
+
+ 
+28. What is the difference between sync and backup?
+
+29. Name three parts of an organised Windows workflow.
+
+30. List four skills required in the final project.
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Windows Interface (20 marks)
+Explain desktop, Start, taskbar, File Explorer and Windows Search.
+
+Section B - File and Window Management (20 marks)
+Describe file organisation, file operations, Snap, app switching and virtual desktops.
+
+Section C - Productivity Tools (20 marks)
+Explain shortcuts, clipboard, screenshots, taskbar pins and notification management.
+
+Section D - Settings, Accessibility and Safety (20 marks)
+Explain normal user settings, accessibility features, security habits and storage management.
+
+Section E - Integrated Workflow (20 marks)
+Design a Windows workflow for completing and backing up an Ethan Digital Academy assignment.
+
+ 
+
+ 
+
+Course Completion Outcome
+After successful completion, the learner should be able to use Windows confidently for everyday academic
+and office productivity: navigate the interface, organise files, search efficiently, manage multiple windows,
+use shortcuts and clipboard tools, capture screenshots responsibly, adjust normal settings, use accessibility
+features, protect sessions, manage storage and maintain an organised backup-aware workflow.
+
+Professional Practice Checklist
+ Use clear file and folder names.
+ Keep the desktop and Downloads organised.
+ Use shortcuts only when their effect is understood.
+ Review screenshots before sharing.
+ Lock the device when leaving it unattended.
+ Use official Windows settings and approved software.
+ Keep an independent backup of important work.

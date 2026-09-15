@@ -1,0 +1,1249 @@
+DIGITAL LITERACY
+
+FULL VISUAL STUDY MANUAL
+
+Safety standard: use authorised accounts, harmless practice content and official recovery/support channels. Never share passwords or one-time codes, test suspicious links, expose private information, or bypass device/network restrictions.
+
+Course Introduction
+
+Digital Literacy develops the broad knowledge and practical judgement required to participate effectively in modern digital life. It covers devices, operating systems, internet use, search, information evaluation, communication, collaboration, digital citizenship, privacy, account security, scams, content creation, copyright, cloud work, problem solving, AI literacy and productive digital habits.
+
+Learning Objectives
+
+Use common digital devices and services confidently.
+
+Search for and evaluate online information.
+
+Communicate and collaborate professionally online.
+
+Protect privacy, accounts and digital identity.
+
+Recognise common phishing and scam warning signs.
+
+Create responsible original digital content.
+
+Respect copyright, licensing and attribution.
+
+Apply basic cloud collaboration and digital problem solving.
+
+Use AI tools critically and responsibly.
+
+Course Structure
+
+Lesson 1: Introduction to Digital Literacy
+
+Lesson 2: Digital Devices and Their Uses
+
+Lesson 3: Operating Systems, Apps and Digital Services
+
+Lesson 4: Internet and Web Fundamentals
+
+Lesson 5: Online Search Skills
+
+Lesson 6: Evaluating Online Information
+
+Lesson 7: Email and Professional Digital Communication
+
+Lesson 8: Online Meetings and Collaboration
+
+Lesson 9: Social Media and Digital Citizenship
+
+Lesson 10: Privacy and Digital Footprints
+
+Lesson 11: Passwords, MFA and Account Security
+
+Lesson 12: Phishing, Scams and Suspicious Content
+
+Lesson 13: Creating Digital Content
+
+Lesson 14: Copyright, Licensing and Attribution
+
+Lesson 15: File Management and Cloud Collaboration
+
+Lesson 16: Digital Problem Solving
+
+Lesson 17: Introduction to AI Literacy
+
+Lesson 18: Digital Wellbeing and Productive Habits
+
+Lesson 19: Final Digital Literacy Project
+
+Lesson 1: Introduction to Digital Literacy
+
+Introduction
+
+Digital literacy is the ability to use digital devices, information, communication tools and online services confidently, critically, safely and responsibly.
+
+Learning Objectives
+
+Explain the main ideas in introduction to digital literacy.
+
+Complete a safe guided practical for introduction to digital literacy.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Digital literacy is broader than knowing how to operate a computer.
+
+Key point: A digitally literate person can find information, judge its quality, create content and communicate appropriately.
+
+Key point: Safety, privacy, ethics and responsible behaviour are part of digital competence.
+
+Key point: Digital skills should help a learner solve real academic, workplace and everyday problems.
+
+Figure 1: Instructional visual for Introduction to Digital Literacy.
+
+Step-by-Step Guided Practical
+
+1. List five digital activities you already perform.
+
+2. Classify each as information, communication, creation, safety or problem solving.
+
+3. Choose one skill you want to improve.
+
+4. Create a personal digital-learning folder.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy develops practical digital confidence, not just knowledge of individual apps.
+
+Review Questions
+
+What does introduction to digital literacy mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 1 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 2: Digital Devices and Their Uses
+
+Introduction
+
+Computers, smartphones, tablets and connected devices have different strengths, interfaces and limitations.
+
+Learning Objectives
+
+Explain the main ideas in digital devices and their uses.
+
+Complete a safe guided practical for digital devices and their uses.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Desktop computers suit fixed workspaces and larger displays.
+
+Key point: Laptops combine portability with full desktop applications.
+
+Key point: Smartphones and tablets support mobile communication, media and apps.
+
+Key point: Input, processing, storage and output occur across digital devices.
+
+Key point: Choose a device based on task, accessibility, connectivity and available software.
+
+Figure 2: Instructional visual for Digital Devices and Their Uses.
+
+Step-by-Step Guided Practical
+
+1. Identify four device types.
+
+2. List one suitable task for each.
+
+3. Compare keyboard/mouse input with touch input.
+
+4. Identify local storage on an authorised device.
+
+Ethan Digital Academy Case Study
+
+Academy learners may use a phone for quick communication but a laptop for a complex spreadsheet.
+
+Review Questions
+
+What does digital devices and their uses mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 2 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 3: Operating Systems, Apps and Digital Services
+
+Introduction
+
+An operating system manages a device while applications and online services help users perform specific tasks.
+
+Learning Objectives
+
+Explain the main ideas in operating systems, apps and digital services.
+
+Complete a safe guided practical for operating systems, apps and digital services.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Windows, macOS, Android and iOS are examples of operating systems.
+
+Key point: Applications may be installed locally or accessed through a browser.
+
+Key point: Cloud services store or process information online.
+
+Key point: Updates can improve security, compatibility and features.
+
+Key point: Use approved software and official sources.
+
+Step-by-Step Guided Practical
+
+1. Identify the operating system on an authorised device.
+
+2. List five installed or web-based applications.
+
+3. Classify each by purpose.
+
+4. Check normal update status without bypassing restrictions.
+
+Ethan Digital Academy Case Study
+
+Academy courses may use Windows, a browser, office applications and cloud learning services together.
+
+Review Questions
+
+What does operating systems, apps and digital services mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 3 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 4: Internet and Web Fundamentals
+
+Introduction
+
+The internet connects networks and devices; the web is one service that uses the internet to deliver linked pages and applications.
+
+Learning Objectives
+
+Explain the main ideas in internet and web fundamentals.
+
+Complete a safe guided practical for internet and web fundamentals.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: A browser displays websites and web applications.
+
+Key point: A URL identifies an online resource location.
+
+Key point: Search engines help discover public information.
+
+Key point: HTTPS indicates an encrypted web connection but does not guarantee that every claim on a site is trustworthy.
+
+Key point: Downloads should come from trusted sources.
+
+Step-by-Step Guided Practical
+
+1. Open an approved browser.
+
+2. Identify the address bar.
+
+3. Visit an instructor-approved site.
+
+4. Identify whether the connection uses HTTPS.
+
+5. Save the page title in your notes.
+
+Ethan Digital Academy Case Study
+
+Learners use the web to reach Ethan learning resources, research and approved digital tools.
+
+Review Questions
+
+What does internet and web fundamentals mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 4 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 5: Online Search Skills
+
+Introduction
+
+Effective search begins with a clear question and specific keywords, followed by careful review of results.
+
+Learning Objectives
+
+Explain the main ideas in online search skills.
+
+Complete a safe guided practical for online search skills.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Specific keywords usually produce more useful results than long vague questions.
+
+Key point: Quotation marks and search filters may help in some search engines.
+
+Key point: Result titles, domains and dates provide useful clues.
+
+Key point: The first result is not automatically the best source.
+
+Key point: Search is a discovery step; verification comes next.
+
+Figure 5: Instructional visual for Online Search Skills.
+
+Step-by-Step Guided Practical
+
+1. Choose a harmless academic topic.
+
+2. Write three increasingly specific search queries.
+
+3. Compare the result types.
+
+4. Record two promising sources.
+
+5. Explain why you chose them.
+
+Ethan Digital Academy Case Study
+
+An Academy learner researching digital marketing should compare reliable educational and professional sources rather than copy the first result.
+
+Review Questions
+
+What does online search skills mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 5 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 6: Evaluating Online Information
+
+Introduction
+
+Digital literacy requires judging whether online information is credible, current, relevant and supported.
+
+Learning Objectives
+
+Explain the main ideas in evaluating online information.
+
+Complete a safe guided practical for evaluating online information.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Identify the author or organisation when possible.
+
+Key point: Look for evidence, references and transparent methodology.
+
+Key point: Check publication or update date when freshness matters.
+
+Key point: Separate fact, opinion, advertising and satire.
+
+Key point: Cross-check important claims with reliable independent sources.
+
+Figure 6: Instructional visual for Evaluating Online Information.
+
+Step-by-Step Guided Practical
+
+1. Review two instructor-provided sample pages.
+
+2. Identify author, date and purpose.
+
+3. Mark claims that need verification.
+
+4. Cross-check one harmless factual claim.
+
+5. Write a short reliability judgement.
+
+Ethan Digital Academy Case Study
+
+Academy students should verify statistics before using them in assignments or business presentations.
+
+Review Questions
+
+What does evaluating online information mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 6 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 7: Email and Professional Digital Communication
+
+Introduction
+
+Digital communication should be clear, respectful and appropriate to the channel.
+
+Learning Objectives
+
+Explain the main ideas in email and professional digital communication.
+
+Complete a safe guided practical for email and professional digital communication.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Email suits formal, detailed or asynchronous communication.
+
+Key point: Subject lines should explain the message purpose.
+
+Key point: Messages should use professional language and a clear action where needed.
+
+Key point: CC and BCC have different visibility implications.
+
+Key point: Never send passwords or one-time authentication codes by email or chat.
+
+Figure 7: Instructional visual for Email and Professional Digital Communication.
+
+Step-by-Step Guided Practical
+
+1. Draft a professional email requesting assignment clarification.
+
+2. Write a useful subject line.
+
+3. Add a greeting, concise body and closing.
+
+4. Identify when CC might be appropriate.
+
+5. Review for tone before sending.
+
+Ethan Digital Academy Case Study
+
+Academy learners can communicate with instructors professionally instead of using unclear one-word messages.
+
+Review Questions
+
+What does email and professional digital communication mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 7 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 8: Online Meetings and Collaboration
+
+Introduction
+
+Video meetings and shared workspaces enable remote teamwork when participants use good digital etiquette.
+
+Learning Objectives
+
+Explain the main ideas in online meetings and collaboration.
+
+Complete a safe guided practical for online meetings and collaboration.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Join meetings with an appropriate display name.
+
+Key point: Mute when background noise would disrupt others.
+
+Key point: Use chat, hand-raise and screen sharing responsibly.
+
+Key point: Shared documents need clear editing roles.
+
+Key point: Respect privacy and do not record people without appropriate permission.
+
+Figure 8: Instructional visual for Online Meetings and Collaboration.
+
+Step-by-Step Guided Practical
+
+1. Create a fictional meeting agenda.
+
+2. Practise mute/unmute controls in a supervised session.
+
+3. Write three online-meeting etiquette rules.
+
+4. Assign editor and reviewer roles to a fictional shared document.
+
+Ethan Digital Academy Case Study
+
+Academy teams can collaborate remotely while keeping meetings organised and respectful.
+
+Review Questions
+
+What does online meetings and collaboration mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 8 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 9: Social Media and Digital Citizenship
+
+Introduction
+
+Digital citizenship means participating online responsibly, respectfully and with awareness of consequences.
+
+Learning Objectives
+
+Explain the main ideas in social media and digital citizenship.
+
+Complete a safe guided practical for social media and digital citizenship.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Online posts can reach audiences beyond the intended group.
+
+Key point: Respect other people's privacy and dignity.
+
+Key point: Do not spread unverified claims or harmful rumours.
+
+Key point: Platform rules and community standards apply to user behaviour.
+
+Key point: Report serious safety or abuse concerns through appropriate trusted channels.
+
+Step-by-Step Guided Practical
+
+1. Review three fictional social posts.
+
+2. Identify which is professional, misleading or oversharing.
+
+3. Rewrite one post responsibly.
+
+4. Create a five-point digital citizenship pledge.
+
+Ethan Digital Academy Case Study
+
+Academy learners representing a business online should communicate accurately and professionally.
+
+Review Questions
+
+What does social media and digital citizenship mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 9 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 10: Privacy and Digital Footprints
+
+Introduction
+
+A digital footprint is the information created through online activity, accounts, posts and service use.
+
+Learning Objectives
+
+Explain the main ideas in privacy and digital footprints.
+
+Complete a safe guided practical for privacy and digital footprints.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Public posts may be copied or reshared.
+
+Key point: Apps and websites request different permissions and data.
+
+Key point: Privacy settings help manage visibility but cannot guarantee complete control.
+
+Key point: Share only information necessary for the purpose.
+
+Key point: Review old accounts and permissions periodically.
+
+Figure 10: Instructional visual for Privacy and Digital Footprints.
+
+Step-by-Step Guided Practical
+
+1. List categories of information that should stay private.
+
+2. Review privacy settings on a practice or supervised account.
+
+3. Identify unnecessary permissions in a fictional app scenario.
+
+4. Write a 'think before posting' checklist.
+
+Ethan Digital Academy Case Study
+
+Academy learners should avoid publishing personal records or private class information on public channels.
+
+Review Questions
+
+What does privacy and digital footprints mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 10 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 11: Passwords, MFA and Account Security
+
+Introduction
+
+Strong account habits protect access to digital services.
+
+Learning Objectives
+
+Explain the main ideas in passwords, mfa and account security.
+
+Complete a safe guided practical for passwords, mfa and account security.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Use long, unique passwords or passphrases for important accounts.
+
+Key point: A password manager can help manage unique credentials when appropriate.
+
+Key point: Multi-factor authentication adds another verification step.
+
+Key point: Never share passwords, recovery codes or one-time codes.
+
+Key point: Use official account-recovery procedures when access is lost.
+
+Figure 11: Instructional visual for Passwords, MFA and Account Security.
+
+Step-by-Step Guided Practical
+
+1. Create three fictional strong passphrases - not real passwords.
+
+2. Explain why reuse is risky.
+
+3. Identify two MFA methods.
+
+4. Write a safe account-recovery checklist.
+
+Ethan Digital Academy Case Study
+
+Academy learners should use official reset processes rather than giving credentials to anyone claiming to be support.
+
+Review Questions
+
+What does passwords, mfa and account security mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 11 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 12: Phishing, Scams and Suspicious Content
+
+Introduction
+
+Phishing and scams try to manipulate users into giving information, money or access.
+
+Learning Objectives
+
+Explain the main ideas in phishing, scams and suspicious content.
+
+Complete a safe guided practical for phishing, scams and suspicious content.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Unexpected urgency, unusual sender details and suspicious links are warning signs.
+
+Key point: Do not open suspicious attachments or test suspicious links.
+
+Key point: Verify requests through a known official channel.
+
+Key point: Report suspicious messages using the organisation's process.
+
+Key point: Delete or quarantine only according to approved guidance.
+
+Step-by-Step Guided Practical
+
+1. Review fictional message examples supplied by an instructor.
+
+2. Circle warning signs without opening links.
+
+3. Write a safe verification response.
+
+4. Create a phishing-report note.
+
+Ethan Digital Academy Case Study
+
+Academy students should report a suspicious 'account will close now' message rather than follow its link.
+
+Review Questions
+
+What does phishing, scams and suspicious content mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 12 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 13: Creating Digital Content
+
+Introduction
+
+Digital content includes documents, presentations, graphics, videos, audio and web material.
+
+Learning Objectives
+
+Explain the main ideas in creating digital content.
+
+Complete a safe guided practical for creating digital content.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Start with purpose and audience.
+
+Key point: Choose a tool suited to the content format.
+
+Key point: Use readable structure, clear language and accessible design.
+
+Key point: Check facts, spelling and visual consistency.
+
+Key point: Save working files and exports in organised locations.
+
+Figure 13: Instructional visual for Creating Digital Content.
+
+Step-by-Step Guided Practical
+
+1. Choose a topic.
+
+2. Define audience and purpose.
+
+3. Create a one-page digital information sheet.
+
+4. Review it for clarity.
+
+5. Save an editable version and an export.
+
+Ethan Digital Academy Case Study
+
+Academy learners can create professional resources rather than copying disconnected online material.
+
+Review Questions
+
+What does creating digital content mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 13 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 14: Copyright, Licensing and Attribution
+
+Introduction
+
+Responsible digital creators respect ownership, licensing and attribution.
+
+Learning Objectives
+
+Explain the main ideas in copyright, licensing and attribution.
+
+Complete a safe guided practical for copyright, licensing and attribution.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Copyright generally protects original creative works.
+
+Key point: A licence can grant specific reuse permissions.
+
+Key point: Public availability does not automatically mean unrestricted reuse.
+
+Key point: Citation acknowledges information sources; permission may still be needed for some reuse.
+
+Key point: Create original visuals or use properly licensed resources.
+
+Figure 14: Instructional visual for Copyright, Licensing and Attribution.
+
+Step-by-Step Guided Practical
+
+1. Create a short original paragraph and image.
+
+2. Review a sample Creative Commons licence supplied by an instructor.
+
+3. Write a basic source credit.
+
+4. Identify one example where permission should be checked.
+
+Ethan Digital Academy Case Study
+
+Academy course materials should use original or properly licensed content and acknowledge sources where appropriate.
+
+Review Questions
+
+What does copyright, licensing and attribution mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 14 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 15: File Management and Cloud Collaboration
+
+Introduction
+
+Digital literacy includes knowing where information is stored and how shared access works.
+
+Learning Objectives
+
+Explain the main ideas in file management and cloud collaboration.
+
+Complete a safe guided practical for file management and cloud collaboration.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Use meaningful folder and file names.
+
+Key point: Know whether a file is local, synced or cloud-only.
+
+Key point: Give collaborators only the access they need.
+
+Key point: Check sync status before switching devices.
+
+Key point: Keep independent backups of important work.
+
+Step-by-Step Guided Practical
+
+1. Create a project folder.
+
+2. Add Resources, Current Work and Exports.
+
+3. Create a harmless file with a clear name.
+
+4. Design View/Edit permissions for fictional collaborators.
+
+5. Write a backup plan.
+
+Ethan Digital Academy Case Study
+
+Academy teams can collaborate on shared resources without creating many confusing duplicate copies.
+
+Review Questions
+
+What does file management and cloud collaboration mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 15 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 16: Digital Problem Solving
+
+Introduction
+
+Digital problem solving means defining a task, selecting suitable tools, testing a solution and learning from the result.
+
+Learning Objectives
+
+Explain the main ideas in digital problem solving.
+
+Complete a safe guided practical for digital problem solving.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Start by describing the actual problem, not a guessed cause.
+
+Key point: Break large tasks into smaller steps.
+
+Key point: Use built-in help, trusted documentation and authorised support.
+
+Key point: Test one reasonable change at a time.
+
+Key point: Document solutions that may be useful again.
+
+Step-by-Step Guided Practical
+
+1. Choose a harmless problem such as 'cannot find a saved file'.
+
+2. Define the symptom.
+
+3. List three safe checks.
+
+4. Test the checks on practice data.
+
+5. Write the successful solution.
+
+Ethan Digital Academy Case Study
+
+Academy learners can solve routine digital issues systematically instead of changing random settings.
+
+Review Questions
+
+What does digital problem solving mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 16 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 17: Introduction to AI Literacy
+
+Introduction
+
+AI literacy means understanding what AI tools can do, where they can fail and how to use them responsibly.
+
+Learning Objectives
+
+Explain the main ideas in introduction to ai literacy.
+
+Complete a safe guided practical for introduction to ai literacy.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Generative AI can produce text, images and other content from instructions.
+
+Key point: AI output may contain errors, outdated information or invented details.
+
+Key point: Important facts should be verified independently.
+
+Key point: Do not enter confidential or private information into tools without permission.
+
+Key point: The user remains responsible for reviewing and using AI output.
+
+Figure 17: Instructional visual for Introduction to AI Literacy.
+
+Step-by-Step Guided Practical
+
+1. Write a harmless prompt asking for a study outline.
+
+2. Review the response for clarity.
+
+3. Identify two claims that would require verification.
+
+4. Rewrite the prompt to be more specific.
+
+5. Write an AI-use responsibility statement.
+
+Ethan Digital Academy Case Study
+
+Academy learners can use AI for brainstorming while still checking facts and producing responsible final work.
+
+Review Questions
+
+What does introduction to ai literacy mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 17 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 18: Digital Wellbeing and Productive Habits
+
+Introduction
+
+Healthy digital habits support concentration, learning and sustainable technology use.
+
+Learning Objectives
+
+Explain the main ideas in digital wellbeing and productive habits.
+
+Complete a safe guided practical for digital wellbeing and productive habits.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Notifications can interrupt focused work.
+
+Key point: Regular breaks and comfortable workstation setup support sustained study.
+
+Key point: Organised files and planned study sessions reduce digital clutter.
+
+Key point: Screen time should be balanced with other responsibilities and activities.
+
+Key point: Technology should support goals rather than constantly compete for attention.
+
+Step-by-Step Guided Practical
+
+1. Turn off unnecessary practice notifications for a study period.
+
+2. Plan a focused 25-minute learning session.
+
+3. Organise your study folder before beginning.
+
+4. Write two habits that improve concentration.
+
+Ethan Digital Academy Case Study
+
+Academy learners can combine digital efficiency with sensible study routines.
+
+Review Questions
+
+What does digital wellbeing and productive habits mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 18 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Lesson 19: Final Digital Literacy Project
+
+Introduction
+
+The final project combines research, evaluation, creation, communication, privacy, security and responsible digital participation.
+
+Learning Objectives
+
+Explain the main ideas in final digital literacy project.
+
+Complete a safe guided practical for final digital literacy project.
+
+Apply the lesson to a realistic learning, workplace or everyday situation.
+
+Teaching Content
+
+Key point: Research a harmless educational topic using multiple sources.
+
+Key point: Evaluate source quality before using information.
+
+Key point: Create an original digital resource for a defined audience.
+
+Key point: Credit sources and respect copyright.
+
+Key point: Choose an appropriate sharing method and privacy level.
+
+Key point: Explain the security and ethical choices made.
+
+Figure 19: Instructional visual for Final Digital Literacy Project.
+
+Step-by-Step Guided Practical
+
+1. Choose an approved digital-skills topic.
+
+2. Research it using at least three sources.
+
+3. Evaluate each source briefly.
+
+4. Create a two-page guide or short presentation.
+
+5. Add source credits.
+
+6. Prepare a professional email to share the work.
+
+7. Submit a one-page reflection on privacy, security, copyright and verification.
+
+Ethan Digital Academy Case Study
+
+The project demonstrates the broad digital competence expected of an Ethan Digital Academy learner.
+
+Review Questions
+
+What does final digital literacy project mean in practical digital use?
+
+State two good practices from this lesson.
+
+What risk or common mistake should a learner avoid?
+
+How could you apply this lesson to study or work?
+
+Assignment
+
+Complete the Lesson 19 practical using authorised tools and harmless practice information. Submit a short record of what you did, what you learned and one responsible digital habit you will apply.
+
+Final Practical Project - 100 Marks
+
+Course Quiz - 30 Questions
+
+1. Define digital literacy.
+
+2. Name four categories of digital literacy.
+
+3. Give one strength of a laptop.
+
+4. What is an operating system?
+
+5. What is a web browser?
+
+6. What is a URL?
+
+7. Why is the first search result not always the best?
+
+8. Name four checks for evaluating online information.
+
+9. What makes a useful email subject line?
+
+10. What is digital citizenship?
+
+11. What is a digital footprint?
+
+12. Why should app permissions be reviewed?
+
+13. Why should important accounts use unique passwords?
+
+14. What is MFA?
+
+15. Should one-time codes be shared with support staff?
+
+16. Name two phishing warning signs.
+
+17. What should you do with a suspicious link?
+
+18. Name three forms of digital content.
+
+19. Why should creators consider audience?
+
+20. What is copyright?
+
+21. Does public availability mean unrestricted reuse?
+
+22. What is attribution?
+
+23. What is cloud collaboration?
+
+24. What is least-necessary sharing access?
+
+25. What is digital problem solving?
+
+26. Why should troubleshooting begin with the actual symptom?
+
+27. What is generative AI?
+
+28. Why must important AI claims be verified?
+
+29. Name two productive digital wellbeing habits.
+
+30. List four requirements of the final digital literacy project.
+
+Final Examination - 100 Marks
+
+Section A - Digital Foundations (20 marks)
+
+Explain digital literacy, devices, operating systems, applications, internet and web fundamentals.
+
+Section B - Information and Communication (20 marks)
+
+Explain search, source evaluation, email, meetings and digital citizenship.
+
+Section C - Privacy and Security (20 marks)
+
+Explain digital footprints, account security, MFA, phishing and responsible online behaviour.
+
+Section D - Creation and Collaboration (20 marks)
+
+Explain digital content creation, copyright, attribution, cloud collaboration and file organisation.
+
+Section E - Problem Solving and AI Literacy (20 marks)
+
+Apply digital problem solving and responsible AI use to an Ethan Digital Academy learning scenario.
+
+Course Completion Outcome
+
+After successful completion, the learner should be able to participate confidently and responsibly in digital learning and work: use common devices and services, search and evaluate information, communicate professionally, protect privacy and accounts, recognise suspicious content, create and credit digital materials, collaborate online, solve routine digital problems and use AI tools with appropriate verification and human judgement.
+
+Professional Practice Checklist
+
+Verify important information before sharing it.
+
+Use professional communication appropriate to the channel.
+
+Protect passwords, MFA codes and private information.
+
+Use official software and recovery processes.
+
+Respect copyright and credit sources.
+
+Check cloud-sharing permissions.
+
+Review AI-generated material before using it.
+
+Keep digital work organised and backed up.

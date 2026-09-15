@@ -1,0 +1,1193 @@
+ETHAN DIGITAL ACADEMY
+
+ GOOGLE WORKSPACE
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-GWS-106
+Level Beginner to Professional Workplace Use
+Duration 6 Weeks (18 Lessons)
+Certificate Professional Certificate in Google Workspace
+Prerequisite Computer Appreciation / Digital Literacy
+Learning Format Classroom + Guided Practicals + Final Workspace
+ Project
+
+ This manual is designed for paid Ethan Digital Academy learners. Practicals use
+ fictional or non-sensitive information. Google product interfaces can change over
+ time, so focus on the underlying workflow and good practice.
+
+ 
+
+ 
+
+Course Introduction
+Google Workspace brings communication, cloud storage, document creation, spreadsheets, presentations,
+forms, scheduling and online meetings into one connected environment. This course teaches learners how
+to use the major tools confidently for school, work, business and collaborative projects.
+
+Learning Objectives
+ Navigate the main Google Workspace tools and understand what each one is for.
+ Organise and share cloud files responsibly using Google Drive.
+ Create professional documents, spreadsheets and presentations.
+ Collect structured information with Forms and manage schedules with Calendar.
+ Communicate professionally with Gmail and participate effectively in Meet.
+ Combine several Workspace tools into a practical academic or workplace workflow.
+
+Course Structure
+1. Lesson 1: Introduction to Google Workspace
+2. Lesson 2: Google Accounts, Sign-In and Account Safety
+3. Lesson 3: Google Drive Fundamentals
+4. Lesson 4: Sharing Files and Managing Permissions
+5. Lesson 5: Google Docs - Creating Professional Documents
+6. Lesson 6: Google Docs - Collaboration, Comments and Version History
+7. Lesson 7: Google Sheets - Spreadsheet Foundations
+8. Lesson 8: Google Sheets - Formulas and Essential Functions
+9. Lesson 9: Google Sheets - Data Organisation, Charts and Analysis
+10. Lesson 10: Google Slides - Building Effective Presentations
+11. Lesson 11: Google Forms - Collecting Information
+12. Lesson 12: Google Calendar - Scheduling and Time Management
+13. Lesson 13: Google Meet - Professional Online Meetings
+14. Lesson 14: Gmail for Professional Communication
+15. Lesson 15: Google Keep, Tasks and Everyday Productivity
+16. Lesson 16: Integrated Collaboration Workflow
+17. Lesson 17: File Export, Offline Considerations and Good Practice
+18. Lesson 18: Final Google Workspace Project
+
+ 
+
+ 
+
+Lesson 1: Introduction to Google Workspace
+Introduction
+Google Workspace is a collection of cloud-based productivity and collaboration tools. It allows learners,
+schools and organisations to communicate, create documents, analyse information, make presentations,
+store files and work together from connected devices.
+
+Learning Objectives
+ Explain the key ideas in introduction to google workspace.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Cloud productivity means your work can be stored online and accessed from supported devices
+after signing in.
+
+Key point: Major Workspace tools include Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar and Meet.
+
+Key point: A Google Account provides identity and access. Organisational Workspace accounts may have
+additional controls managed by an administrator.
+
+Key point: Workspace is especially useful when several people need to work on the same information
+without passing many file copies around.
+
+ Figure 1: Instructional view for Introduction to Google Workspace.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Sign in to a practice Google Account.
+
+2. Open the Google apps launcher.
+
+3. Identify Gmail, Drive, Docs, Sheets, Slides, Calendar and Meet.
+
+4. Write one business or school use for each tool.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy can use Workspace to organise course documents, communicate with learners,
+schedule classes and collaborate on teaching materials.
+
+Review Questions
+19. What is the main purpose of introduction to google workspace?
+20. Name two good practices from this lesson.
+21. What mistake could reduce the quality or safety of this workflow?
+22. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 1, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 2: Google Accounts, Sign-In and
+Account Safety
+Introduction
+A Google Account is the identity used to access Google services. Good account security protects email,
+files, calendars and other connected information.
+
+Learning Objectives
+ Explain the key ideas in google accounts, sign-in and account safety.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Use a strong, unique password and never share it with classmates or colleagues.
+
+Key point: Enable multi-factor authentication when available.
+
+Key point: Check the account name before uploading private or organisational files.
+
+Key point: Sign out on shared computers and avoid saving passwords on public devices.
+
+Key point: Recovery information should be kept current so legitimate account recovery is easier.
+
+Step-by-Step Guided Practical
+1. Open the Google Account page from the profile menu.
+
+2. Review basic security options without changing settings you do not understand.
+
+3. Check whether you are using a personal or school/work account.
+
+4. Practise signing out and signing in again on your own device.
+
+Ethan Digital Academy Case Study
+A learner should not use another person's account to submit work. Each user should work through their own
+authorised account.
+
+Review Questions
+23. What is the main purpose of google accounts, sign-in and account safety?
+24. Name two good practices from this lesson.
+25. What mistake could reduce the quality or safety of this workflow?
+26. How could this lesson be applied in a school or workplace?
+
+ 
+
+ 
+
+Assignment
+Complete the guided practical for Lesson 2, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 3: Google Drive Fundamentals
+Introduction
+Google Drive is the cloud storage centre of Google Workspace. It stores files and folders and provides links
+to Docs, Sheets, Slides and other Workspace content.
+
+Learning Objectives
+ Explain the key ideas in google drive fundamentals.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: My Drive is the main area for files you own or organise.
+
+Key point: Folders provide structure; useful names reduce confusion.
+
+Key point: Drive search can locate items by name, type and other properties.
+
+Key point: Files can be starred or moved into suitable folders for faster access.
+
+Key point: Cloud storage does not remove the need for sensible backup and retention policies.
+
+ Figure 3: Instructional view for Google Drive Fundamentals.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a folder named EDA Workspace Practice.
+
+2. Inside it create folders named Documents, Spreadsheets, Presentations and Forms.
+
+3. Upload one harmless practice file.
+
+4. Rename the file clearly and move it into the correct folder.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy could maintain a folder for each course, with subfolders for lesson notes, attendance,
+assessments and approved learner resources.
+
+Review Questions
+27. What is the main purpose of google drive fundamentals?
+28. Name two good practices from this lesson.
+29. What mistake could reduce the quality or safety of this workflow?
+30. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 3, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 4: Sharing Files and Managing
+Permissions
+Introduction
+Sharing allows other people to access a Drive file without sending separate copies. Permission choice
+determines what each collaborator can do.
+
+Learning Objectives
+ Explain the key ideas in sharing files and managing permissions.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Viewer access is appropriate when a person only needs to read.
+
+Key point: Commenter access supports feedback without direct editing.
+
+Key point: Editor access should be limited to people who genuinely need to change content.
+
+Key point: Restricted sharing is safer for internal or sensitive material.
+
+Key point: Before sending a link, confirm both the recipient and the permission level.
+
+ Figure 4: Instructional view for Sharing Files and Managing Permissions.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a practice Doc.
+
+2. Open Share and inspect the available roles.
+
+3. Choose Restricted sharing for the exercise.
+
+4. Explain what would happen if Viewer were changed to Editor.
+
+5. Do not share personal information as part of the practical.
+
+Ethan Digital Academy Case Study
+Course policies may be shared as Viewer, while authorised instructors may receive Editor access to
+collaborative teaching plans.
+
+Review Questions
+31. What is the main purpose of sharing files and managing permissions?
+32. Name two good practices from this lesson.
+33. What mistake could reduce the quality or safety of this workflow?
+34. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 4, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 5: Google Docs - Creating Professional
+Documents
+Introduction
+Google Docs is a word-processing application for writing and formatting documents in a browser. It supports
+collaborative editing and automatic cloud saving.
+
+Learning Objectives
+ Explain the key ideas in google docs - creating professional documents.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: A document should have a clear title, logical headings and readable paragraphs.
+
+Key point: Formatting tools include fonts, size, alignment, lists, spacing and styles.
+
+Key point: Page setup and print settings affect how a document appears when exported or printed.
+
+Key point: Templates can speed up common document tasks, but content should still be reviewed.
+
+Key point: Professional documents favour consistency over excessive decoration.
+
+ Figure 5: Instructional view for Google Docs - Creating Professional Documents.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a document titled Ethan Digital Academy Course Notice.
+
+2. Add a heading, two short paragraphs and a bulleted list.
+
+3. Apply a consistent heading style.
+
+4. Use spell check to review the document.
+
+5. Download a practice copy as PDF.
+
+Ethan Digital Academy Case Study
+Docs can be used for course outlines, memos, meeting notes, learner instructions and policy drafts.
+
+Review Questions
+35. What is the main purpose of google docs - creating professional documents?
+36. Name two good practices from this lesson.
+37. What mistake could reduce the quality or safety of this workflow?
+38. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 5, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 6: Google Docs - Collaboration,
+Comments and Version History
+Introduction
+Docs becomes especially powerful when several authorised people collaborate. Comments, suggestions
+and version history make review easier to manage.
+
+Learning Objectives
+ Explain the key ideas in google docs - collaboration, comments and version history.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Comments attach discussion to specific content.
+
+Key point: Suggestion mode proposes edits that can later be accepted or rejected.
+
+Key point: Version history helps users understand how a document changed over time.
+
+Key point: @mentions may help direct a comment to a collaborator where supported.
+
+Key point: Collaborators should resolve comments only after the issue has genuinely been addressed.
+
+Step-by-Step Guided Practical
+1. In a practice document add a comment to one sentence.
+
+2. Switch to Suggesting mode and make a small correction.
+
+3. Inspect version history.
+
+4. Name the current version if the option is available.
+
+5. Explain the difference between editing and suggesting.
+
+Ethan Digital Academy Case Study
+An instructor can draft a lesson note while an academic reviewer comments and suggests improvements
+before publication.
+
+Review Questions
+39. What is the main purpose of google docs - collaboration, comments and version history?
+40. Name two good practices from this lesson.
+41. What mistake could reduce the quality or safety of this workflow?
+
+ 
+
+ 
+42. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 6, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 7: Google Sheets - Spreadsheet
+Foundations
+Introduction
+Google Sheets is a spreadsheet application for organising, calculating and analysing structured information.
+Data is stored in cells arranged in rows and columns.
+
+Learning Objectives
+ Explain the key ideas in google sheets - spreadsheet foundations.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: A cell has an address such as A1 or C5.
+
+Key point: A range is a group of cells, such as A2:A10.
+
+Key point: Text, numbers and dates should be entered consistently.
+
+Key point: Formatting improves readability but does not replace accurate data.
+
+Key point: Freeze, sort and filter tools help users work with larger tables.
+
+ Figure 7: Instructional view for Google Sheets - Spreadsheet Foundations.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create columns for Learner, Course, Score and Status.
+
+2. Enter five fictional learners and scores.
+
+3. Format the heading row.
+
+4. Sort the scores from highest to lowest.
+
+5. Apply a filter and practise showing one status.
+
+Ethan Digital Academy Case Study
+A training centre can use Sheets for authorised attendance summaries, course schedules and non-sensitive
+practice datasets.
+
+Review Questions
+43. What is the main purpose of google sheets - spreadsheet foundations?
+44. Name two good practices from this lesson.
+45. What mistake could reduce the quality or safety of this workflow?
+46. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 7, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 8: Google Sheets - Formulas and
+Essential Functions
+Introduction
+Formulas turn a worksheet from a simple table into a calculation tool. A formula normally begins with an
+equals sign.
+
+Learning Objectives
+ Explain the key ideas in google sheets - formulas and essential functions.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Arithmetic formulas can add, subtract, multiply and divide cell values.
+
+Key point: SUM adds a range of numbers.
+
+Key point: AVERAGE calculates the arithmetic mean.
+
+Key point: MIN and MAX return the smallest and largest values.
+
+Key point: COUNT counts cells containing numbers. Formulas should reference cells rather than
+repeatedly typing values.
+
+ 
+
+ 
+ Figure 8: Instructional view for Google Sheets - Formulas and Essential Functions.
+
+Step-by-Step Guided Practical
+1. Enter five fictional scores in B2:B6.
+
+2. Calculate total with =SUM(B2:B6).
+
+3. Calculate average with =AVERAGE(B2:B6).
+
+4. Find minimum and maximum with MIN and MAX.
+
+5. Change one score and observe how the formulas update.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy could calculate class totals and averages from authorised assessment data rather
+than calculating each result manually.
+
+Review Questions
+47. What is the main purpose of google sheets - formulas and essential functions?
+48. Name two good practices from this lesson.
+49. What mistake could reduce the quality or safety of this workflow?
+50. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 8, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 9: Google Sheets - Data Organisation,
+Charts and Analysis
+Introduction
+Good spreadsheet analysis starts with clean, well-organised data. Charts then help communicate patterns,
+comparisons and trends.
+
+Learning Objectives
+ Explain the key ideas in google sheets - data organisation, charts and analysis.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Keep one type of information per column.
+
+Key point: Avoid blank rows inside a continuous dataset unless there is a clear reason.
+
+Key point: Sort changes record order; filtering temporarily hides records that do not match criteria.
+
+Key point: Charts should match the question: column charts compare categories, while line charts often
+show change over time.
+
+Key point: Always label charts clearly so viewers know what is being measured.
+
+Step-by-Step Guided Practical
+1. Use a fictional monthly enrolment table.
+
+2. Sort months or categories correctly.
+
+3. Insert a simple column chart.
+
+4. Add a meaningful chart title.
+
+5. Write two observations supported by the chart.
+
+Ethan Digital Academy Case Study
+Management can use a dashboard-style Sheet to review enrolment trends without exposing unnecessary
+personal details.
+
+Review Questions
+51. What is the main purpose of google sheets - data organisation, charts and analysis?
+52. Name two good practices from this lesson.
+
+ 
+
+ 
+53. What mistake could reduce the quality or safety of this workflow?
+54. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 9, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 10: Google Slides - Building Effective
+Presentations
+Introduction
+Google Slides is used to create visual presentations. Effective slides support a speaker or learning activity
+rather than crowding every detail onto the screen.
+
+Learning Objectives
+ Explain the key ideas in google slides - building effective presentations.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Start with an outline before designing slides.
+
+Key point: Use one main idea per slide whenever practical.
+
+Key point: Choose readable font sizes and strong contrast.
+
+Key point: Images and charts should support the message, not merely decorate the slide.
+
+Key point: Use consistent layouts, spacing and visual hierarchy.
+
+ Figure 10: Instructional view for Google Slides - Building Effective Presentations.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a five-slide presentation about a digital skill.
+
+2. Use title, agenda, two content slides and a conclusion.
+
+3. Apply one consistent theme.
+
+4. Insert one relevant shape or original graphic.
+
+5. Present the slides in slideshow mode.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy can use Slides for classroom teaching, orientation sessions and programme
+presentations.
+
+Review Questions
+55. What is the main purpose of google slides - building effective presentations?
+56. Name two good practices from this lesson.
+57. What mistake could reduce the quality or safety of this workflow?
+58. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 10, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 11: Google Forms - Collecting
+Information
+Introduction
+Google Forms creates online forms, surveys and quizzes. Responses are collected in a structured format
+and can be reviewed in Forms or linked to Sheets.
+
+Learning Objectives
+ Explain the key ideas in google forms - collecting information.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Question types include short answer, paragraph, multiple choice, checkboxes and dropdowns.
+
+Key point: Required questions should be used only when the information is genuinely necessary.
+
+Key point: Clear wording improves response quality.
+
+Key point: Forms should avoid collecting unnecessary personal or sensitive information.
+
+Key point: Response settings should be reviewed before a form is distributed.
+
+ Figure 11: Instructional view for Google Forms - Collecting Information.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a fictional Course Feedback form.
+
+2. Add name or alias, course choice, rating and one comment question.
+
+3. Mark only essential questions as required.
+
+4. Preview the form.
+
+5. Submit one fictional test response and review the response summary.
+
+Ethan Digital Academy Case Study
+A feedback form can help the Academy evaluate teaching quality while keeping the questionnaire focused
+on relevant information.
+
+Review Questions
+59. What is the main purpose of google forms - collecting information?
+60. Name two good practices from this lesson.
+61. What mistake could reduce the quality or safety of this workflow?
+62. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 11, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 12: Google Calendar - Scheduling and
+Time Management
+Introduction
+Google Calendar organises events, appointments and reminders. Shared scheduling can reduce missed
+classes and meeting confusion.
+
+Learning Objectives
+ Explain the key ideas in google calendar - scheduling and time management.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: An event should include a clear title, correct date and time, and useful description.
+
+Key point: Guests can be invited when collaboration is required.
+
+Key point: Notifications provide advance reminders.
+
+Key point: Recurring events are useful for repeated classes or meetings.
+
+Key point: Time-zone awareness matters when participants are in different locations.
+
+ Figure 12: Instructional view for Google Calendar - Scheduling and Time Management.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a fictional Digital Skills Class event.
+
+2. Set a future date and duration.
+
+3. Add a short agenda in the description.
+
+4. Add a reminder.
+
+5. Create a second practice event and compare one-time versus recurring options.
+
+Ethan Digital Academy Case Study
+The Academy can schedule classes, staff meetings and assessment dates while giving participants a
+consistent calendar reference.
+
+Review Questions
+63. What is the main purpose of google calendar - scheduling and time management?
+64. Name two good practices from this lesson.
+65. What mistake could reduce the quality or safety of this workflow?
+66. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 12, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 13: Google Meet - Professional Online
+Meetings
+Introduction
+Google Meet supports online video meetings. Good meeting practice combines technical preparation with
+respectful communication.
+
+Learning Objectives
+ Explain the key ideas in google meet - professional online meetings.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Test audio, camera and internet connection before an important meeting.
+
+Key point: Use a recognisable display name appropriate to the setting.
+
+Key point: Mute when background noise would interrupt others.
+
+Key point: Use chat, reactions or hand-raise features appropriately where available.
+
+Key point: Never record or redistribute a meeting without the necessary permission.
+
+ Figure 13: Instructional view for Google Meet - Professional Online Meetings.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create or open a practice Meet link without inviting strangers.
+
+2. Check microphone and camera controls.
+
+3. Locate captions, chat and participant controls if available.
+
+4. Practise muting and unmuting.
+
+5. Write a five-point online meeting etiquette checklist.
+
+Ethan Digital Academy Case Study
+An instructor can use Meet for remote lessons while sharing a Slides presentation or demonstrating a
+document.
+
+Review Questions
+67. What is the main purpose of google meet - professional online meetings?
+68. Name two good practices from this lesson.
+69. What mistake could reduce the quality or safety of this workflow?
+70. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 13, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 14: Gmail for Professional
+Communication
+Introduction
+Gmail is Google's email service. Professional email is clear, purposeful and respectful, with careful handling
+of recipients and attachments.
+
+Learning Objectives
+ Explain the key ideas in gmail for professional communication.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: A useful subject line tells the recipient what the message concerns.
+
+Key point: The message should include a greeting, concise body and appropriate closing.
+
+Key point: CC is for visible secondary recipients; BCC hides recipient addresses from other recipients and
+should be used responsibly.
+
+Key point: Attachments should be checked before sending.
+
+Key point: Phishing awareness is essential: verify unexpected requests, links and attachments.
+
+Step-by-Step Guided Practical
+1. Draft an email titled Course Schedule Update without sending it.
+
+2. Write a professional greeting and three-sentence body.
+
+3. Attach a harmless practice document.
+
+4. Check the recipient field, subject and attachment.
+
+5. Delete the draft after review if it is not needed.
+
+Ethan Digital Academy Case Study
+The Academy can use email for formal learner notices, instructor communication and approved
+administrative updates.
+
+Review Questions
+71. What is the main purpose of gmail for professional communication?
+72. Name two good practices from this lesson.
+
+ 
+
+ 
+73. What mistake could reduce the quality or safety of this workflow?
+74. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 14, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 15: Google Keep, Tasks and Everyday
+Productivity
+Introduction
+Workspace productivity also involves capturing ideas and tracking small actions. Google Keep and Tasks
+can support simple personal organisation where available.
+
+Learning Objectives
+ Explain the key ideas in google keep, tasks and everyday productivity.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Keep is useful for short notes, checklists and reminders.
+
+Key point: Tasks supports actionable items and due dates.
+
+Key point: A note is not a substitute for a properly stored official document.
+
+Key point: Avoid placing passwords or confidential information in casual notes.
+
+Key point: Review and clear completed items so lists remain useful.
+
+Step-by-Step Guided Practical
+1. Create a practice checklist for preparing a class.
+
+2. Add five harmless tasks.
+
+3. Set one practice due date if available.
+
+4. Mark one item complete.
+
+5. Decide which information belongs in a note and which belongs in Drive.
+
+Ethan Digital Academy Case Study
+An instructor may use a personal checklist for lesson preparation while storing the official lesson plan in the
+authorised Drive folder.
+
+Review Questions
+75. What is the main purpose of google keep, tasks and everyday productivity?
+76. Name two good practices from this lesson.
+77. What mistake could reduce the quality or safety of this workflow?
+
+ 
+
+ 
+78. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 15, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 16: Integrated Collaboration Workflow
+Introduction
+The main value of Workspace appears when tools are connected into a coherent workflow rather than used
+separately.
+
+Learning Objectives
+ Explain the key ideas in integrated collaboration workflow.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Calendar can schedule the activity, Drive stores its files, Docs/Sheets/Slides create the content,
+Forms collects structured responses, Gmail communicates, and Meet supports remote interaction.
+
+Key point: A clear folder and naming system prevents duplication.
+
+Key point: Permissions should follow each person's role.
+
+Key point: Version history and comments support review.
+
+Key point: The workflow should be simple enough that authorised users can follow it consistently.
+
+ Figure 16: Instructional view for Integrated Collaboration Workflow.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a folder called Digital Training Project.
+
+2. Add one Doc, one Sheet and one Slides file.
+
+3. Create a Calendar event referring to the project.
+
+4. Design a short feedback Form.
+
+5. Write the steps a teammate would follow from planning to completion.
+
+Ethan Digital Academy Case Study
+For a new course, Ethan Digital Academy can plan dates in Calendar, prepare content collaboratively, store
+approved files in Drive and collect feedback through Forms.
+
+Review Questions
+79. What is the main purpose of integrated collaboration workflow?
+80. Name two good practices from this lesson.
+81. What mistake could reduce the quality or safety of this workflow?
+82. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 16, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 17: File Export, Offline Considerations
+and Good Practice
+Introduction
+Cloud applications still need sensible file-management practices. Users may sometimes need downloadable
+copies, printed documents or access planning for unreliable connectivity.
+
+Learning Objectives
+ Explain the key ideas in file export, offline considerations and good practice.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: Docs, Sheets and Slides support common download/export formats, although formatting may
+change between applications.
+
+Key point: PDF is useful when a fixed-layout reading copy is needed.
+
+Key point: Keep original editable files when future changes are expected.
+
+Key point: Offline access, where supported and properly configured, should be tested before it is needed.
+
+Key point: Use clear file names and avoid uncontrolled duplicate versions such as final-final-new2.
+
+Step-by-Step Guided Practical
+1. Open a practice Doc and inspect Download options.
+
+2. Export one practice file as PDF.
+
+3. Rename the original using a clear naming convention.
+
+4. Place exported and editable versions in suitable folders.
+
+5. Explain why an editable master and a PDF copy may both be useful.
+
+Ethan Digital Academy Case Study
+The Academy can keep an editable approved master and provide learners with a PDF reading copy where
+appropriate.
+
+Review Questions
+83. What is the main purpose of file export, offline considerations and good practice?
+84. Name two good practices from this lesson.
+
+ 
+
+ 
+85. What mistake could reduce the quality or safety of this workflow?
+86. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 17, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Lesson 18: Final Google Workspace Project
+Introduction
+The final project brings the course together. The learner will design a small Workspace system for a fictional
+Ethan Digital Academy training programme.
+
+Learning Objectives
+ Explain the key ideas in final google workspace project.
+ Apply the lesson in a guided Google Workspace practical.
+ Use good organisation, collaboration and information-handling practice.
+
+Teaching Content
+Key point: The project must demonstrate organisation, collaboration, calculation, presentation, scheduling
+and responsible information handling.
+
+Key point: Use fictional learner information only.
+
+Key point: The quality of the workflow matters more than decorative complexity.
+
+Key point: Files should be named consistently and placed in a logical folder structure.
+
+Key point: Before submission, test links, permissions, formulas and presentation readability.
+
+ Figure 18: Instructional view for Final Google Workspace Project.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a Drive folder for a fictional course.
+
+2. Create a Docs course information sheet.
+
+3. Create a Sheets learner tracker with formulas.
+
+4. Create a five-slide Slides presentation.
+
+5. Create a Forms feedback form and a Calendar class event.
+
+6. Prepare a one-page explanation of how all components work together.
+
+Ethan Digital Academy Case Study
+This project simulates a realistic academic administration workflow without using real learner personal data.
+
+Review Questions
+87. What is the main purpose of final google workspace project?
+88. Name two good practices from this lesson.
+89. What mistake could reduce the quality or safety of this workflow?
+90. How could this lesson be applied in a school or workplace?
+
+Assignment
+Complete the guided practical for Lesson 18, save the result with a clear file name, and write 100-150 words
+explaining what you learned and how you would use it in a real academic or workplace task.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Create a complete Google Workspace system for a fictional Ethan Digital Academy course. Use fictional
+learner information only.
+
+ Component Marks Requirement
+ Drive organisation 15 Logical folder structure and clear
+ file naming.
+ Google Docs 15 Professional one-page course
+ information document.
+ Google Sheets 20 Learner tracker with at least two
+ correct formulas and readable
+ formatting.
+ Google Slides 15 Five-slide course presentation
+ with consistent design.
+ Google Forms 10 Feedback or registration form
+ with appropriate question types.
+ Calendar and Meet planning 10 Scheduled class event with
+ useful description and meeting
+ plan.
+ Sharing and permissions 10 Correct explanation of Viewer,
+ Commenter and Editor choices.
+ Reflection 5 Short explanation of how the
+ tools work together.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is Google Workspace?
+
+2. Which Workspace tool is mainly used for cloud file storage?
+
+3. What does Viewer permission allow?
+
+4. What is the purpose of Commenter permission?
+
+5. Which tool is used for word processing?
+
+6. What is version history used for?
+
+7. What is a spreadsheet cell?
+
+8. Which symbol normally starts a spreadsheet formula?
+
+9. What does SUM do?
+
+10. What does AVERAGE calculate?
+
+11. Which tool is mainly used for presentations?
+
+12. Why should slides avoid too much text?
+
+13. Which tool creates online forms?
+
+14. Why should a form avoid collecting unnecessary personal information?
+
+15. Which tool is used for scheduling events?
+
+16. What is a recurring event?
+
+17. Which tool supports video meetings?
+
+18. State one good online-meeting habit.
+
+19. What makes an email subject line useful?
+
+20. What should you check before sending an attachment?
+
+21. What is the purpose of a Drive folder?
+
+22. Why are clear file names important?
+
+23. What is the difference between editing and suggesting in Docs?
+
+24. What is a range in Sheets?
+
+25. Name one chart type useful for comparing categories.
+
+26. What is the value of linking Forms responses to Sheets?
+
+27. Why should Editor permission be limited?
+
+ 
+
+ 
+28. What is the benefit of using several Workspace tools in one workflow?
+
+29. Why might you export a document as PDF?
+
+30. State one way to protect a Google Account.
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Concepts (20 marks)
+Answer four questions. Explain Google Workspace, cloud collaboration, Drive permissions, account security,
+and professional email practice.
+
+Section B - Google Docs and Drive (20 marks)
+Describe how to create, organise, share, review and export a professional document.
+
+Section C - Google Sheets (20 marks)
+Using a fictional score table, explain cells, ranges, SUM, AVERAGE, MIN, MAX, sorting, filtering and chart
+selection.
+
+Section D - Communication and Scheduling (20 marks)
+Explain how Gmail, Calendar and Meet can support a professional training programme.
+
+Section E - Integrated Workflow (20 marks)
+Design a Google Workspace workflow for a fictional Ethan Digital Academy short course. Show which tools
+you would use, why, and how permissions would be controlled.
+
+ 
+
+ 
+
+Course Completion Outcome
+After successfully completing this course, the learner should be able to use the major Google Workspace
+applications for everyday academic and workplace productivity; organise and share files responsibly; create
+collaborative documents, spreadsheets and presentations; collect structured responses; schedule activities;
+communicate professionally; and combine Workspace tools into a coherent project workflow.
+
+Professional Practice Checklist
+ Use strong account-security habits.
+ Keep Drive folders and file names organised.
+ Share only with the access level required.
+ Use fictional or authorised data during training.
+ Check formulas, recipients, attachments and permissions before final submission.
+ Maintain professional communication and collaboration standards.

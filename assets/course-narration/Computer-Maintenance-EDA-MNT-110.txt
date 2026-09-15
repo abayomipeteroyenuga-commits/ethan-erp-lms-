@@ -1,0 +1,1239 @@
+ETHAN DIGITAL ACADEMY
+
+ COMPUTER MAINTENANCE
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-MNT-110
+Level Beginner to Intermediate
+Duration 6 Weeks (19 Lessons)
+Certificate Professional Certificate in Computer Maintenance
+Prerequisite Computer Hardware Fundamentals
+Learning Format Classroom + Safe Guided Practicals + Maintenance
+ Planning Project
+
+ Safety standard: this beginner course focuses on preventive care, safe external
+ checks and approved software maintenance. Electrical repair, damaged batteries,
+ exposed components and hazardous internal servicing must be handled by
+ qualified personnel.
+
+ 
+
+ 
+
+Course Introduction
+Computer Maintenance teaches learners how to keep computers clean, organised, updated, backed up,
+secure and reliable. It covers preventive maintenance, safe cleaning, software updates, storage
+management, backups, performance monitoring, browser care, battery and peripheral care, troubleshooting,
+maintenance records and planning.
+
+Learning Objectives
+ Explain preventive and corrective computer maintenance.
+ Prepare a safe maintenance workspace.
+ Perform safe external cleaning and inspection.
+ Use approved operating-system and application maintenance tools.
+ Manage storage and backups responsibly.
+ Monitor basic performance without unsafe system changes.
+ Maintain simple asset and maintenance records.
+ Apply a structured troubleshooting and escalation workflow.
+ Create a preventive-maintenance plan for a computer lab.
+
+Course Structure
+1. Lesson 1: Introduction to Computer Maintenance
+2. Lesson 2: Maintenance Safety and Preparation
+3. Lesson 3: External Cleaning of Computers
+4. Lesson 4: Keyboard, Mouse and Peripheral Care
+5. Lesson 5: Operating System Updates
+6. Lesson 6: Application Updates and Software Hygiene
+7. Lesson 7: Storage Management and Disk Space
+8. Lesson 8: Backup Fundamentals
+9. Lesson 9: File Organisation and Version Control
+10. Lesson 10: Performance Monitoring Basics
+11. Lesson 11: Startup and Shutdown Good Practice
+12. Lesson 12: Basic Malware Prevention and Security Maintenance
+13. Lesson 13: Browser Maintenance
+14. Lesson 14: Laptop Battery and Power Care
+15. Lesson 15: Printer and Scanner Maintenance Basics
+16. Lesson 16: Maintenance Logs and Asset Records
+17. Lesson 17: Safe Troubleshooting Workflow
+18. Lesson 18: Maintenance Schedule Planning
+19. Lesson 19: Final Computer Maintenance Project
+
+ 
+
+ 
+
+Lesson 1: Introduction to Computer
+Maintenance
+Introduction
+Computer maintenance is the planned care of hardware, software and data so a computer remains reliable,
+secure and useful. Preventive maintenance aims to reduce avoidable problems before they interrupt work.
+
+Learning Objectives
+ Explain the key principles of introduction to computer maintenance.
+ Complete the safe guided practical for introduction to computer maintenance.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Maintenance includes inspection, safe cleaning, updates, storage management, backups,
+performance checks and record keeping.
+
+Key point: Preventive maintenance is scheduled before a failure; corrective maintenance responds after a
+problem appears.
+
+Key point: Beginner learners should focus on safe external care and approved software tools.
+
+Key point: Internal electrical repair, damaged batteries and exposed power components require qualified
+personnel.
+
+ 
+
+ 
+ Figure 1: Instructional visual for Introduction to Computer Maintenance.
+
+Step-by-Step Guided Practical
+1. Inspect an authorised computer without opening it.
+
+2. Record visible condition, free storage and update status.
+
+3. List three preventive tasks and three corrective tasks.
+
+4. Create a simple maintenance checklist.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy can schedule routine checks for lab computers so training is not repeatedly
+interrupted by avoidable issues.
+
+Review Questions
+20. What is the purpose of introduction to computer maintenance?
+21. State two good maintenance practices from this lesson.
+22. What unsafe or unnecessary action should be avoided?
+23. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 1 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 2: Maintenance Safety and Preparation
+Introduction
+Safe maintenance begins before any cleaning or troubleshooting. A dry workspace, correct shutdown and
+clear limits reduce risk to both people and equipment.
+
+Learning Objectives
+ Explain the key principles of maintenance safety and preparation.
+ Complete the safe guided practical for maintenance safety and preparation.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Save work and use normal operating-system shutdown.
+
+Key point: Disconnect external power only when the instructor or manufacturer procedure requires it.
+
+Key point: Never work on wet equipment or damaged electrical cables.
+
+Key point: Do not open power supplies or other hazardous electrical components.
+
+Key point: Use manufacturer guidance for model-specific service procedures.
+
+ Figure 2: Instructional visual for Maintenance Safety and Preparation.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Save and close all applications.
+
+2. Shut down the computer normally.
+
+3. Inspect the external power cable without touching damaged areas.
+
+4. Prepare a dry, uncluttered workspace.
+
+5. Write when a learner should stop and call a technician.
+
+Ethan Digital Academy Case Study
+Academy learners should know the difference between a safe external check and a repair that belongs to
+trained technical staff.
+
+Review Questions
+24. What is the purpose of maintenance safety and preparation?
+25. State two good maintenance practices from this lesson.
+26. What unsafe or unnecessary action should be avoided?
+27. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 2 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 3: External Cleaning of Computers
+Introduction
+Dust, fingerprints and debris can affect comfort, airflow and appearance. Cleaning must be done with the
+equipment in a safe state and with suitable materials.
+
+Learning Objectives
+ Explain the key principles of external cleaning of computers.
+ Complete the safe guided practical for external cleaning of computers.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use a soft lint-free cloth for external surfaces.
+
+Key point: Do not spray liquid directly into ports, keyboards or vents.
+
+Key point: Screens require gentle cleaning with a method suitable for the display manufacturer.
+
+Key point: Loose keyboard debris can be removed using safe, non-damaging methods.
+
+Key point: Internal cleaning should be performed only on prepared training equipment by authorised
+personnel.
+
+ Figure 3: Instructional visual for External Cleaning of Computers.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Power down the device.
+
+2. Wipe the external case with a dry or appropriately prepared soft cloth.
+
+3. Clean the screen gently according to instructor guidance.
+
+4. Inspect vents and keyboard for loose debris.
+
+5. Confirm no moisture remains before normal use.
+
+Ethan Digital Academy Case Study
+A clean Academy lab supports professional presentation and helps keep ventilation openings unobstructed.
+
+Review Questions
+28. What is the purpose of external cleaning of computers?
+29. State two good maintenance practices from this lesson.
+30. What unsafe or unnecessary action should be avoided?
+31. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 3 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 4: Keyboard, Mouse and Peripheral
+Care
+Introduction
+Peripherals are handled frequently and benefit from routine inspection and cleaning.
+
+Learning Objectives
+ Explain the key principles of keyboard, mouse and peripheral care.
+ Complete the safe guided practical for keyboard, mouse and peripheral care.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Disconnect removable peripherals when appropriate before cleaning.
+
+Key point: Check cables for visible wear, bent connectors or loose connections.
+
+Key point: Clean mouse surfaces and keyboard exteriors without flooding openings.
+
+Key point: Printers and scanners should be maintained according to manufacturer instructions.
+
+Key point: Damaged cables or power adapters should be removed from use and reported.
+
+Step-by-Step Guided Practical
+1. Inspect a keyboard and mouse.
+
+2. Clean external surfaces safely.
+
+3. Check USB cable and connector condition.
+
+4. Reconnect the device and confirm normal operation.
+
+5. Record the result in a maintenance log.
+
+Ethan Digital Academy Case Study
+Academy computer-lab peripherals can be checked weekly because frequent learner use increases wear.
+
+Review Questions
+32. What is the purpose of keyboard, mouse and peripheral care?
+33. State two good maintenance practices from this lesson.
+34. What unsafe or unnecessary action should be avoided?
+35. How would this maintenance task improve reliability in a computer lab?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 4 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 5: Operating System Updates
+Introduction
+Operating-system updates can correct bugs, improve compatibility and address security issues.
+Maintenance should use official update mechanisms.
+
+Learning Objectives
+ Explain the key principles of operating system updates.
+ Complete the safe guided practical for operating system updates.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use the operating system's normal update settings.
+
+Key point: Review whether an update requires a restart.
+
+Key point: Save work before restarting.
+
+Key point: Do not download unofficial 'update tools' from random websites.
+
+Key point: Organisations may schedule updates to avoid interrupting classes.
+
+ Figure 5: Instructional visual for Operating System Updates.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open the official update settings.
+
+2. Check update status without bypassing administrator controls.
+
+3. Record whether a restart is pending.
+
+4. If authorised, install normal updates.
+
+5. Confirm the computer starts and key applications open normally.
+
+Ethan Digital Academy Case Study
+The Academy can schedule updates outside teaching hours and verify classroom software afterward.
+
+Review Questions
+36. What is the purpose of operating system updates?
+37. State two good maintenance practices from this lesson.
+38. What unsafe or unnecessary action should be avoided?
+39. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 5 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 6: Application Updates and Software
+Hygiene
+Introduction
+Applications also require maintenance. Unsupported or unnecessary software can create compatibility,
+storage and security problems.
+
+Learning Objectives
+ Explain the key principles of application updates and software hygiene.
+ Complete the safe guided practical for application updates and software hygiene.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Update applications through trusted vendor or app-store channels.
+
+Key point: Remove software only when authorised and no longer required.
+
+Key point: Avoid installing unknown 'cleaner' or 'booster' programs promising unrealistic speed
+improvements.
+
+Key point: Keep licences and account access organised.
+
+Key point: Check that important teaching applications still work after updates.
+
+Step-by-Step Guided Practical
+1. List five installed learning applications.
+
+2. Identify their normal update source.
+
+3. Check one application's version using its About screen.
+
+4. Record unused software for administrator review rather than deleting it without permission.
+
+5. Test one key application after an authorised update.
+
+Ethan Digital Academy Case Study
+Academy administrators can maintain a standard list of approved applications for each training room.
+
+Review Questions
+40. What is the purpose of application updates and software hygiene?
+41. State two good maintenance practices from this lesson.
+42. What unsafe or unnecessary action should be avoided?
+
+ 
+
+ 
+43. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 6 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 7: Storage Management and Disk
+Space
+Introduction
+Computers need adequate free storage for updates, temporary files and user work. Good housekeeping
+reduces clutter without deleting important data.
+
+Learning Objectives
+ Explain the key principles of storage management and disk space.
+ Complete the safe guided practical for storage management and disk space.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use built-in storage tools to see which categories consume space.
+
+Key point: Organise files into clear folders.
+
+Key point: Delete only files you own and understand.
+
+Key point: Emptying a recycle bin can make deletion harder to reverse, so review first.
+
+Key point: Back up important work before major cleanup.
+
+ Figure 7: Instructional visual for Storage Management and Disk Space.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open the system storage view.
+
+2. Record total and free storage.
+
+3. Identify one folder containing harmless practice files.
+
+4. Remove only an instructor-approved unnecessary practice file.
+
+5. Record free space again.
+
+Ethan Digital Academy Case Study
+Academy lab machines can use standard folders and periodic review so old downloads do not consume all
+available storage.
+
+Review Questions
+44. What is the purpose of storage management and disk space?
+45. State two good maintenance practices from this lesson.
+46. What unsafe or unnecessary action should be avoided?
+47. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 7 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 8: Backup Fundamentals
+Introduction
+A backup is a separate copy of important data used for recovery after deletion, hardware failure or another
+problem.
+
+Learning Objectives
+ Explain the key principles of backup fundamentals.
+ Complete the safe guided practical for backup fundamentals.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: A backup should be separate from the working copy.
+
+Key point: The 3-2-1 idea encourages multiple copies, more than one storage type and one separate copy.
+
+Key point: Cloud sync and backup are related but not always identical; accidental changes may
+synchronise too.
+
+Key point: Backups should be protected from unauthorised access.
+
+Key point: A restore test confirms that the backup can actually be used.
+
+ Figure 8: Instructional visual for Backup Fundamentals.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a harmless practice folder.
+
+2. Copy it to an authorised backup location.
+
+3. Rename one file in the working copy.
+
+4. Restore the original from the backup into a separate test folder.
+
+5. Compare both copies.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy should protect course materials and administrative records with a documented
+backup routine.
+
+Review Questions
+48. What is the purpose of backup fundamentals?
+49. State two good maintenance practices from this lesson.
+50. What unsafe or unnecessary action should be avoided?
+51. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 8 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 9: File Organisation and Version
+Control
+Introduction
+Maintenance also means keeping information organised. Poor naming and uncontrolled duplicates make
+recovery and collaboration difficult.
+
+Learning Objectives
+ Explain the key principles of file organisation and version control.
+ Complete the safe guided practical for file organisation and version control.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use meaningful file names with subject and date or version where useful.
+
+Key point: Keep an editable master separate from exported copies.
+
+Key point: Avoid confusing names such as final-final-new.
+
+Key point: Archive completed work according to organisational rules.
+
+Key point: Do not store passwords inside ordinary documents.
+
+Step-by-Step Guided Practical
+1. Create folders named Current, Archive and Exports.
+
+2. Rename three fictional files clearly.
+
+3. Move an old practice copy to Archive.
+
+4. Export one document to PDF and place it in Exports.
+
+5. Explain which file is the editable master.
+
+Ethan Digital Academy Case Study
+Academy course teams can keep approved masters separate from learner-facing PDF exports.
+
+Review Questions
+52. What is the purpose of file organisation and version control?
+53. State two good maintenance practices from this lesson.
+54. What unsafe or unnecessary action should be avoided?
+55. How would this maintenance task improve reliability in a computer lab?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 9 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 10: Performance Monitoring Basics
+Introduction
+Slow performance can come from many causes. Maintenance starts by identifying the symptom and
+checking normal resource information rather than making random changes.
+
+Learning Objectives
+ Explain the key principles of performance monitoring basics.
+ Complete the safe guided practical for performance monitoring basics.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Task Manager or similar tools can show CPU, memory, storage and application activity.
+
+Key point: High usage during a demanding task is not automatically a fault.
+
+Key point: Too many applications can reduce available memory.
+
+Key point: Very low free storage can affect updates and normal operation.
+
+Key point: Avoid changing advanced system settings unless authorised and understood.
+
+ Figure 10: Instructional visual for Performance Monitoring Basics.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open Task Manager or the system monitor.
+
+2. Observe CPU and memory at idle.
+
+3. Open a normal application and observe the change.
+
+4. Close it and confirm resource use settles.
+
+5. Record observations without ending unknown system processes.
+
+Ethan Digital Academy Case Study
+An instructor can identify whether a slow lab computer is simply running too many applications before
+requesting technical support.
+
+Review Questions
+56. What is the purpose of performance monitoring basics?
+57. State two good maintenance practices from this lesson.
+58. What unsafe or unnecessary action should be avoided?
+59. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 10 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 11: Startup and Shutdown Good
+Practice
+Introduction
+Correct startup and shutdown help protect open work and allow the operating system to complete normal
+processes.
+
+Learning Objectives
+ Explain the key principles of startup and shutdown good practice.
+ Complete the safe guided practical for startup and shutdown good practice.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use the operating system's shutdown command rather than routinely cutting power.
+
+Key point: Restart is useful after some updates or temporary software issues.
+
+Key point: Sleep preserves a session but is not the same as shutdown.
+
+Key point: Unexpected power loss can interrupt writes and cause data loss.
+
+Key point: A UPS can provide time for safe shutdown during short outages.
+
+Step-by-Step Guided Practical
+1. Identify Shut down, Restart and Sleep options.
+
+2. Explain when each is appropriate.
+
+3. Save a practice file.
+
+4. Restart the computer if authorised.
+
+5. Reopen the file and confirm it is intact.
+
+Ethan Digital Academy Case Study
+Academy labs should use normal shutdown at the end of sessions rather than switching off wall power while
+computers are running.
+
+Review Questions
+60. What is the purpose of startup and shutdown good practice?
+61. State two good maintenance practices from this lesson.
+62. What unsafe or unnecessary action should be avoided?
+
+ 
+
+ 
+63. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 11 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 12: Basic Malware Prevention and
+Security Maintenance
+Introduction
+Security maintenance reduces exposure to malicious software and unsafe downloads. Learners should use
+approved defensive tools rather than experimenting with suspicious files.
+
+Learning Objectives
+ Explain the key principles of basic malware prevention and security maintenance.
+ Complete the safe guided practical for basic malware prevention and security maintenance.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Keep supported operating systems and applications updated.
+
+Key point: Use approved antivirus or built-in security protection.
+
+Key point: Download software from trusted official sources.
+
+Key point: Do not disable security controls to make an unknown file run.
+
+Key point: Report suspicious pop-ups, unexpected account prompts or unusual behaviour.
+
+ Figure 12: Instructional visual for Basic Malware Prevention and Security Maintenance.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open the built-in security status page.
+
+2. Confirm protection status without changing administrator settings.
+
+3. Review the last update date if shown.
+
+4. Write four signs that should be reported.
+
+5. Explain why an unknown 'free cleaner' download may be risky.
+
+Ethan Digital Academy Case Study
+Academy computers should use standard security settings and approved software sources across the lab.
+
+Review Questions
+64. What is the purpose of basic malware prevention and security maintenance?
+65. State two good maintenance practices from this lesson.
+66. What unsafe or unnecessary action should be avoided?
+67. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 12 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 13: Browser Maintenance
+Introduction
+Browsers store history, cookies, cache and extensions. Maintenance should improve reliability without
+casually deleting information users need.
+
+Learning Objectives
+ Explain the key principles of browser maintenance.
+ Complete the safe guided practical for browser maintenance.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Keep the browser updated.
+
+Key point: Review extensions and remove only those that are authorised and unnecessary.
+
+Key point: Cache can sometimes be cleared when troubleshooting website display problems.
+
+Key point: Cookies may store sign-in sessions, so clearing them can sign users out.
+
+Key point: Bookmarks should be organised and suspicious extensions reported.
+
+Step-by-Step Guided Practical
+1. Open browser settings.
+
+2. Check browser version/update status.
+
+3. Review installed extensions without adding unknown ones.
+
+4. Create a bookmark folder for Academy resources.
+
+5. Write what could happen if cookies are cleared.
+
+Ethan Digital Academy Case Study
+A standard browser setup helps Academy learners access the LMS consistently.
+
+Review Questions
+68. What is the purpose of browser maintenance?
+69. State two good maintenance practices from this lesson.
+70. What unsafe or unnecessary action should be avoided?
+71. How would this maintenance task improve reliability in a computer lab?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 13 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 14: Laptop Battery and Power Care
+Introduction
+Laptop batteries are consumable components. Good power and heat habits can support reliable operation.
+
+Learning Objectives
+ Explain the key principles of laptop battery and power care.
+ Complete the safe guided practical for laptop battery and power care.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Use a compatible manufacturer-approved charger or suitable certified replacement.
+
+Key point: Avoid blocking ventilation while charging or using the laptop.
+
+Key point: Built-in battery-health features should be used where provided.
+
+Key point: A swollen, leaking, unusually hot or physically damaged battery should not be handled casually;
+stop using the device and report it.
+
+Key point: Battery replacement procedures vary by model and may require qualified service.
+
+ Figure 14: Instructional visual for Laptop Battery and Power Care.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open battery/power settings.
+
+2. Record current charge level.
+
+3. Identify available battery-saver or power-mode options.
+
+4. Inspect the laptop exterior for obvious damage without opening it.
+
+5. Write the correct response to a visibly swollen battery: stop use and escalate.
+
+Ethan Digital Academy Case Study
+Academy laptops should be stored and charged in suitable conditions and damaged batteries removed from
+service by authorised staff.
+
+Review Questions
+72. What is the purpose of laptop battery and power care?
+73. State two good maintenance practices from this lesson.
+74. What unsafe or unnecessary action should be avoided?
+75. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 14 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 15: Printer and Scanner Maintenance
+Basics
+Introduction
+Printers and scanners require routine care, correct consumables and manufacturer-supported
+troubleshooting.
+
+Learning Objectives
+ Explain the key principles of printer and scanner maintenance basics.
+ Complete the safe guided practical for printer and scanner maintenance basics.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Keep paper dry and correctly loaded.
+
+Key point: Use suitable ink, toner or other consumables for the model.
+
+Key point: Paper jams should be cleared only through safe accessible paths described by the
+manufacturer.
+
+Key point: Scanner glass can be cleaned gently using an appropriate method.
+
+Key point: Repeated mechanical faults should be escalated rather than forced.
+
+Step-by-Step Guided Practical
+1. Inspect paper loading on an authorised printer.
+
+2. Open the normal printer status page.
+
+3. Check for low-paper or consumable messages.
+
+4. Inspect scanner glass.
+
+5. Record one issue that requires technician support.
+
+Ethan Digital Academy Case Study
+Reliable printers and scanners support Academy registration, certificates and document workflows.
+
+Review Questions
+76. What is the purpose of printer and scanner maintenance basics?
+77. State two good maintenance practices from this lesson.
+78. What unsafe or unnecessary action should be avoided?
+
+ 
+
+ 
+79. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 15 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 16: Maintenance Logs and Asset
+Records
+Introduction
+Maintenance records show what was checked, when it was done and what happened next.
+
+Learning Objectives
+ Explain the key principles of maintenance logs and asset records.
+ Complete the safe guided practical for maintenance logs and asset records.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: A log can include date, device ID, symptom, action, result and responsible person.
+
+Key point: Asset records can include model, serial number, RAM, storage, location and warranty.
+
+Key point: Logs help identify repeated faults.
+
+Key point: Do not record passwords or unnecessary personal information.
+
+Key point: Consistent records support budgeting and replacement planning.
+
+ Figure 16: Instructional visual for Maintenance Logs and Asset Records.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a fictional maintenance log table.
+
+2. Add three fictional devices.
+
+3. Record one routine update, one cleaning check and one support issue.
+
+4. Add a status column.
+
+5. Review the table for clarity.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy can use maintenance history to identify computers that repeatedly interrupt classes.
+
+Review Questions
+80. What is the purpose of maintenance logs and asset records?
+81. State two good maintenance practices from this lesson.
+82. What unsafe or unnecessary action should be avoided?
+83. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 16 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 17: Safe Troubleshooting Workflow
+Introduction
+Troubleshooting should be systematic. The goal is to understand the problem, test safe possibilities and
+document the outcome.
+
+Learning Objectives
+ Explain the key principles of safe troubleshooting workflow.
+ Complete the safe guided practical for safe troubleshooting workflow.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Describe the exact symptom and when it started.
+
+Key point: Check simple external causes first: power, cables, storage, volume, display input and normal
+settings.
+
+Key point: Restart when appropriate.
+
+Key point: Use built-in diagnostic information before installing extra tools.
+
+Key point: Change one safe factor at a time and escalate internal/electrical faults.
+
+ Figure 17: Instructional visual for Safe Troubleshooting Workflow.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Use a fictional 'computer is slow' scenario.
+
+2. List observations and safe checks.
+
+3. Use a fictional 'printer not printing' scenario.
+
+4. List cable, queue, paper and status checks.
+
+5. Create an escalation note for a fault you cannot safely resolve.
+
+Ethan Digital Academy Case Study
+Academy staff can reduce downtime by recording symptoms clearly before sending a device to technical
+support.
+
+Review Questions
+84. What is the purpose of safe troubleshooting workflow?
+85. State two good maintenance practices from this lesson.
+86. What unsafe or unnecessary action should be avoided?
+87. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 17 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 18: Maintenance Schedule Planning
+Introduction
+A maintenance schedule turns occasional care into a repeatable process.
+
+Learning Objectives
+ Explain the key principles of maintenance schedule planning.
+ Complete the safe guided practical for maintenance schedule planning.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: Daily checks can include obvious damage, startup and network availability.
+
+Key point: Weekly checks may include external cleanliness, storage review and peripheral condition.
+
+Key point: Monthly checks may include update review, backup verification and asset-log review.
+
+Key point: Schedules should match the organisation's actual environment.
+
+Key point: Maintenance windows should minimise disruption to teaching.
+
+Step-by-Step Guided Practical
+1. Create Daily, Weekly and Monthly columns.
+
+2. Assign at least four tasks to each period.
+
+3. Add a responsible role such as learner, instructor or technician.
+
+4. Mark tasks that require administrator approval.
+
+5. Choose a suitable maintenance window for a computer lab.
+
+Ethan Digital Academy Case Study
+An Academy lab can perform light checks between classes and deeper authorised maintenance during
+scheduled non-teaching periods.
+
+Review Questions
+88. What is the purpose of maintenance schedule planning?
+89. State two good maintenance practices from this lesson.
+90. What unsafe or unnecessary action should be avoided?
+91. How would this maintenance task improve reliability in a computer lab?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 18 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Lesson 19: Final Computer Maintenance
+Project
+Introduction
+The final project asks the learner to create a complete preventive-maintenance plan for a fictional Ethan
+Digital Academy computer lab.
+
+Learning Objectives
+ Explain the key principles of final computer maintenance project.
+ Complete the safe guided practical for final computer maintenance project.
+ Know when a maintenance task should be escalated to authorised technical staff.
+
+Teaching Content
+Key point: The plan should cover hardware condition, cleaning, updates, storage, backups, security,
+peripherals and records.
+
+Key point: Tasks must be assigned to suitable roles; learners should not be assigned hazardous repairs.
+
+Key point: Include an escalation route for electrical, battery and internal hardware faults.
+
+Key point: The plan should specify frequency and evidence of completion.
+
+Key point: A good plan is realistic enough to follow consistently.
+
+ 
+
+ 
+ Figure 19: Instructional visual for Final Computer Maintenance Project.
+
+Step-by-Step Guided Practical
+1. Create an inventory of ten fictional computers.
+
+2. Build a daily/weekly/monthly maintenance schedule.
+
+3. Create a one-page maintenance checklist.
+
+4. Create a maintenance log template.
+
+5. Write a backup and update routine.
+
+6. Present the plan and explain which tasks require technician support.
+
+Ethan Digital Academy Case Study
+This project demonstrates how preventive maintenance supports reliable digital training operations.
+
+Review Questions
+92. What is the purpose of final computer maintenance project?
+93. State two good maintenance practices from this lesson.
+94. What unsafe or unnecessary action should be avoided?
+95. How would this maintenance task improve reliability in a computer lab?
+
+Assignment
+Complete the Lesson 19 maintenance exercise on authorised equipment or a fictional scenario. Write 100-
+150 words describing the result, any risk identified and the correct next action.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Component Marks Requirement
+Lab inventory 10 Create a clear fictional device
+ inventory.
+Maintenance schedule 20 Daily, weekly and monthly tasks
+ with suitable responsibilities.
+Cleaning and inspection 10 Safe external-care checklist.
+Updates and software 15 Approved update and software-
+ hygiene routine.
+Storage and backup 15 Housekeeping plus a practical
+ backup plan.
+Security maintenance 10 Basic defensive maintenance
+ practices.
+Troubleshooting/escalation 10 Safe workflow and clear stop
+ points.
+Maintenance records 10 Usable log and reporting
+ template.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is computer maintenance?
+
+2. What is preventive maintenance?
+
+3. What is corrective maintenance?
+
+4. Why should work be saved before maintenance?
+
+5. When should external power be disconnected?
+
+6. Why should liquid not be sprayed into a keyboard?
+
+7. What should be done with a damaged power cable?
+
+8. Why are operating-system updates important?
+
+9. Where should software updates come from?
+
+10. Why should unknown 'booster' software be avoided?
+
+11. Why does free storage space matter?
+
+12. What is a backup?
+
+13. What does the 3-2-1 backup idea encourage?
+
+14. Why should a restore test be performed?
+
+15. What makes a useful file name?
+
+16. What can Task Manager or a system monitor show?
+
+17. Why should unknown system processes not be ended randomly?
+
+18. What is the difference between Restart and Sleep?
+
+19. Why is sudden power loss undesirable?
+
+20. Name two basic malware-prevention habits.
+
+21. What can clearing browser cookies do?
+
+22. Why should browser extensions be reviewed?
+
+23. What should be done with a swollen laptop battery?
+
+24. Why should laptop vents remain clear?
+
+25. What should be checked when a printer does not print?
+
+26. What information belongs in a maintenance log?
+
+27. Why are asset records useful?
+
+ 
+
+ 
+28. What is the first step in troubleshooting?
+
+29. Why should only one safe variable be changed at a time?
+
+30. Name three parts of a maintenance schedule.
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Maintenance Foundations (20 marks)
+Explain preventive/corrective maintenance, safety preparation, cleaning and peripheral care.
+
+Section B - Software and Storage Maintenance (20 marks)
+Explain operating-system updates, application hygiene, storage management, file organisation and browser
+maintenance.
+
+Section C - Backup and Security (20 marks)
+Describe a practical backup routine, restore testing and basic malware-prevention practices.
+
+Section D - Performance and Troubleshooting (20 marks)
+Explain resource monitoring, startup/shutdown practice and a safe troubleshooting workflow.
+
+Section E - Maintenance Planning (20 marks)
+Design a maintenance schedule and record system for a fictional Ethan Digital Academy computer lab.
+
+ 
+
+ 
+
+Course Completion Outcome
+After successful completion, the learner should be able to carry out safe preventive computer maintenance,
+perform external cleaning and inspection, manage approved software updates, organise storage, create and
+test backups, monitor basic system performance, maintain browsers and peripherals, recognise issues
+requiring escalation, keep maintenance records and design a realistic maintenance schedule.
+
+Professional Practice Checklist
+ Save work and shut down correctly before relevant maintenance.
+ Keep liquids away from equipment openings.
+ Use official update and software sources.
+ Back up important data before major changes.
+ Do not disable security controls to force unknown software to run.
+ Stop using damaged electrical equipment or swollen batteries.
+ Document maintenance actions and escalate hazardous faults.

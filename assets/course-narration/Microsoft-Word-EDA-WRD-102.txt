@@ -1,0 +1,989 @@
+ETHAN DIGITAL ACADEMY
+
+ MICROSOFT WORD
+ COMPLETE PROFESSIONAL STUDY MANUAL
+ FULL VISUAL EDITION
+
+ Paid Enrollee Course Material
+
+ Course Code: EDA-WRD-102
+
+ Level: Beginner to Intermediate
+
+ Duration: 6 Weeks / 18 Lessons
+
+ Certificate: Professional Certificate in Microsoft Word
+
+ Prerequisite: Computer Appreciation
+
+Learning Format: Classroom + Guided Practical + Independent Practice
+
+ 
+
+COURSE OVERVIEW
+Microsoft Word is a word-processing application used to create, edit, format, organize, review, print and
+share documents. This course is designed as a complete student study manual rather than a short module
+outline. It develops practical skills for academic work, office administration, business communication and
+remote work.
+
+Learners will work through explanations, examples, step-by-step procedures, practical exercises, workplace
+case studies, review questions, assignments and a final professional project.
+
+LEARNING OBJECTIVES
+ Explain the purpose and major features of Microsoft Word.
+ Navigate the Word interface confidently.
+ Create, save, open and organize documents.
+ Enter, select and edit text efficiently.
+ Apply professional character and paragraph formatting.
+ Use page layout tools correctly.
+ Create and format tables.
+ Insert and arrange pictures, shapes, icons and text boxes.
+ Use headers, footers and page numbers.
+ Use styles, themes and document structure.
+ Create a table of contents for a structured report.
+ Use Mail Merge for personalized documents.
+ Use references and review tools.
+ Prepare CVs, letters, reports and business documents.
+ Print, export and share documents professionally.
+
+COURSE OUTLINE
+ Lesson Topic
+ 1 Getting Started with Microsoft Word
+ 2 Understanding the Word Interface
+ 3 Creating, Opening, Saving and Organizing
+ Documents
+ 4 Text Entry, Selection and Editing
+ 5 Character Formatting
+ 6 Paragraph Formatting
+ 7 Page Layout and Document Setup
+ 8 Lists, Tabs and Indentation
+ 9 Working with Tables
+ 10 Pictures, Shapes, Icons and Text Boxes
+ 11 Headers, Footers and Page Numbers
+ 12 Styles, Themes and Document Structure
+ 13 Table of Contents and Navigation
+ 14 Mail Merge
+ 15 References and Review Tools
+ 16 Professional Letters, CVs and Reports
+ 17 Printing, PDF Export and Sharing
+ 18 Final Professional Word Project
+
+ 
+
+LESSON 1: GETTING STARTED WITH MICROSOFT WORD
+Introduction
+Microsoft Word is a word-processing program designed for producing written documents. Unlike a plain text
+editor, Word provides tools for formatting, page design, tables, graphics, references, reviewing and
+professional printing.
+
+What Word Is Used For
+ Letters and memos
+ School assignments and projects
+ CVs and résumés
+ Reports and proposals
+ Minutes of meetings
+ Invoices and simple forms
+ Training manuals and newsletters
+
+Word Processing Concepts
+A document is the file you create. Word allows the document to contain text and other objects such as tables,
+pictures, charts, shapes and hyperlinks. Most modern Word documents are saved in DOCX format.
+
+Starting and Closing Word
+Word can be opened from the Start menu, desktop shortcut or an existing Word file. Before closing, save
+important changes. If Word asks whether to save unsaved work, read the prompt carefully.
+
+Step-by-Step Practical
+1. Open Microsoft Word.
+2. Choose Blank document.
+3. Type: My First Professional Word Document.
+4. Press Enter twice and type a short paragraph about Ethan Digital Academy.
+5. Use Ctrl+S, choose a folder, name the file EDA-Word-Practice-01.docx and save.
+6. Close Word and reopen the saved file.
+
+Real-Life Application / Case Study
+A new office assistant is asked to type a one-page meeting notice. Understanding how to start Word, create a
+document and save it correctly prevents loss of work and creates an organized record.
+
+Review Questions
+7. What is word processing?
+8. Mention five documents that can be created in Word.
+9. What is the common modern Word file extension?
+10. Why should a document be saved early?
+
+Assignment
+Create a one-page document titled 'How Microsoft Word Helps in the Workplace' and save it using a
+meaningful filename.
+
+ 
+
+LESSON 2: UNDERSTANDING THE WORD INTERFACE
+
+ Figure 1. Instructional visual for Understanding The Word Interface.
+
+Introduction
+The Word interface is the working environment containing commands, document controls and the page on
+which content is created.
+
+Major Parts of the Interface
+ Title Bar - displays the document and application name.
+ Quick Access Toolbar - provides frequently used commands such as Save and Undo.
+ File tab - opens Backstage view for saving, printing, sharing and options.
+ Ribbon - organizes commands into tabs and groups.
+ Document area - the page where content is entered.
+ Ruler - assists with margins, indents and tabs.
+ Status Bar - displays page, word and view information.
+ Scroll bars - move through the document.
+ Zoom control - changes the viewing size without changing printed font size.
+
+Ribbon Tabs
+Common tabs include Home, Insert, Design, Layout, References, Mailings, Review and View. Each tab
+groups related commands. The exact interface can vary slightly by Word version.
+
+Views and Zoom
+Print Layout is commonly used for document creation because it approximates the printed page. Zoom
+affects only the on-screen view.
+
+Step-by-Step Practical
+11. Open a blank document.
+
+ 
+
+12. Identify the Title Bar, Ribbon, ruler, document area, status bar and zoom control.
+13. Click Home, Insert, Layout, References and Review and observe how the commands change.
+14. Change zoom to 80%, then 120%, and return to a comfortable level.
+15. Use the View tab to inspect available document views.
+
+Real-Life Application / Case Study
+A learner who knows where commands are located spends less time searching and can follow workplace
+instructions more confidently.
+
+Review Questions
+16. What is the Ribbon?
+17. What is the purpose of the Status Bar?
+18. Does zoom change the actual font size?
+19. Name five Ribbon tabs.
+
+Assignment
+Draw or describe the Word interface and label at least eight parts.
+
+ 
+
+LESSON 3: CREATING, OPENING, SAVING AND ORGANIZING
+DOCUMENTS
+
+ Figure 2. Instructional visual for Creating, Opening, Saving And Organizing Documents.
+
+Introduction
+Professional document work requires both writing skills and reliable file management.
+
+New and Existing Documents
+New creates a fresh document; Open retrieves an existing document. Recent files can speed up access, but
+important files should still be stored in organized folders.
+
+Save and Save As
+Save updates the current file. Save As creates a new copy, changes the filename, changes the location or
+chooses another format.
+
+Common Formats
+ DOCX - standard editable Word document.
+ PDF - fixed-layout format useful for distribution.
+ TXT - plain text without Word formatting.
+ RTF - rich text format supported by many word processors.
+
+File Organization
+Use folders and meaningful names such as EDA_Training_Report_September_2026.docx instead of
+Document1.docx. Avoid creating unnecessary duplicate versions.
+
+Step-by-Step Practical
+20. Create a folder named Ethan Digital Academy Word Course.
+21. Inside it create folders named Lessons, Assignments and Final Project.
+ 
+
+22. Create a new Word document and save it in Lessons as Lesson-03-Practice.docx.
+23. Use Save As to create a second copy in Assignments.
+24. Export or save an additional PDF copy if your Word version provides that option.
+
+Real-Life Application / Case Study
+A training administrator keeps every file on the desktop with names such as Document1 and New Document.
+When a client requests an old report, it is difficult to locate. A simple folder and naming system solves the
+problem.
+
+Review Questions
+25. Differentiate Save and Save As.
+26. Why are meaningful filenames important?
+27. What is the difference between DOCX and PDF?
+28. Give an example of a professional filename.
+
+Assignment
+Create an organized course folder containing at least three Word documents with professional filenames.
+
+ 
+
+LESSON 4: TEXT ENTRY, SELECTION AND EDITING
+Introduction
+Editing means changing document content accurately and efficiently.
+
+Insertion Point and Selection
+The blinking insertion point shows where new text will appear. Text can be selected with the mouse or
+keyboard before formatting, moving or deleting it.
+
+Core Editing Commands
+ Copy duplicates selected content.
+ Cut removes selected content and places it on the Clipboard.
+ Paste inserts Clipboard content.
+ Undo reverses a recent action.
+ Redo repeats or restores an undone action.
+ Find locates words or phrases.
+ Replace changes repeated text efficiently.
+
+Useful Shortcuts
+ Ctrl+C - Copy
+ Ctrl+X - Cut
+ Ctrl+V - Paste
+ Ctrl+Z - Undo
+ Ctrl+Y - Redo
+ Ctrl+A - Select All
+ Ctrl+F - Find
+ Ctrl+H - Replace
+
+Step-by-Step Practical
+29. Type three short paragraphs.
+30. Select the second paragraph and copy it below the third.
+31. Cut one sentence and paste it at the beginning.
+32. Use Undo and Redo.
+33. Use Find to locate a repeated word.
+34. Use Replace to change that word throughout the practice document.
+
+Real-Life Application / Case Study
+An administrator receives a report in which the old department name appears 25 times. Find and Replace
+can update the document quickly, but the replacement should be reviewed to ensure every change is
+appropriate.
+
+Review Questions
+35. What is the insertion point?
+36. Differentiate Copy and Cut.
+37. What does Ctrl+H do?
+38. Why should Replace All be used carefully?
+
+ 
+
+Assignment
+Edit a supplied or self-created one-page passage using Copy, Cut, Paste, Find and Replace.
+
+ 
+
+LESSON 5: CHARACTER FORMATTING
+
+ Figure 3. Instructional visual for Character Formatting.
+
+Introduction
+Character formatting changes the appearance of letters, numbers and symbols without changing the
+underlying wording.
+
+Font Controls
+ Font family
+ Font size
+ Bold
+ Italic
+ Underline
+ Font color
+ Text highlight
+ Change Case
+ Superscript and subscript
+
+Professional Formatting Principles
+Use readable fonts, consistent sizes and limited emphasis. Headings should stand out, but body text should
+remain comfortable to read. Excessive colors, underlining and decorative fonts can reduce professionalism.
+
+Format Painter
+Format Painter copies formatting from one selection and applies it to another, helping maintain consistency.
+
+Step-by-Step Practical
+39. Type a heading and two paragraphs.
+40. Format the heading in a larger bold font.
+
+ 
+
+41. Apply italic to one important phrase and bold to another.
+42. Use text highlight on one temporary review item, then remove it.
+43. Use Format Painter to copy a heading format to another heading.
+44. Experiment with Change Case and then restore the correct wording.
+
+Real-Life Application / Case Study
+A business proposal with six unrelated fonts and many bright colors can look less credible even when the
+content is strong. Consistent typography supports professional communication.
+
+Review Questions
+45. What is character formatting?
+46. Name six character-formatting tools.
+47. What is Format Painter used for?
+48. Why should decorative formatting be limited?
+
+Assignment
+Create a one-page announcement with a clear title, subtitle and body text using a consistent formatting
+hierarchy.
+
+ 
+
+LESSON 6: PARAGRAPH FORMATTING
+Introduction
+Paragraph formatting controls how complete paragraphs are positioned and spaced on the page.
+
+Alignment
+ Left - common for general text.
+ Center - useful for selected headings.
+ Right - sometimes used for dates or special layouts.
+ Justify - aligns text to both left and right margins.
+
+Spacing and Indentation
+Line spacing controls distance between lines. Paragraph spacing controls space before or after paragraphs.
+Indents move paragraph edges inward.
+
+Bullets and Numbering
+Bullets are useful for unordered items; numbering is useful when sequence or priority matters.
+
+Borders and Shading
+Borders and shading can emphasize selected paragraphs, but should be applied sparingly.
+
+Step-by-Step Practical
+49. Type four paragraphs.
+50. Apply different alignments and observe the effect.
+51. Set appropriate line spacing for the body text.
+52. Add space after paragraphs instead of pressing Enter repeatedly.
+53. Create a bulleted list of five digital skills.
+54. Create a numbered five-step procedure.
+55. Apply a subtle border to a short notice.
+
+Real-Life Application / Case Study
+A report created with random blank lines often changes badly when text is edited. Using paragraph spacing
+produces a more stable and professional layout.
+
+Review Questions
+56. Name the four main paragraph alignments.
+57. Differentiate line spacing and paragraph spacing.
+58. When should numbering be preferred to bullets?
+59. What is an indent?
+
+Assignment
+Format a two-page report using consistent paragraph spacing, alignment, bullets and numbering.
+
+ 
+
+LESSON 7: PAGE LAYOUT AND DOCUMENT SETUP
+
+ Figure 4. Instructional visual for Page Layout And Document Setup.
+
+Introduction
+Page layout determines the physical structure of the document page.
+
+Margins
+Margins are the blank spaces around page content. Standard professional margins are suitable for most
+documents, while special documents may require custom margins.
+
+Orientation and Size
+Portrait is taller than it is wide; landscape is wider than it is tall. A4 is commonly used for office and academic
+documents in many countries.
+
+Breaks
+A page break moves following content to a new page. Section breaks allow different formatting in different
+sections, such as orientation, headers or columns.
+
+Columns
+Columns can be used for newsletters, brochures and selected layouts.
+
+Step-by-Step Practical
+60. Create a three-page document.
+61. Set the page size to A4.
+62. Change margins and observe the effect, then choose a professional setting.
+63. Insert a page break rather than pressing Enter repeatedly.
+64. Create a new section and, where supported, change that section to landscape.
+65. Create a short two-column section.
+
+ 
+
+Real-Life Application / Case Study
+A report contains a wide financial table that does not fit comfortably in portrait orientation. A separate
+landscape section can accommodate the table while the rest of the report remains portrait.
+
+Review Questions
+66. What are margins?
+67. Differentiate portrait and landscape.
+68. Why is a page break better than repeated blank lines?
+69. What is a section break useful for?
+
+Assignment
+Prepare a document containing portrait pages and one landscape section for a wide table.
+
+ 
+
+LESSON 8: LISTS, TABS AND INDENTATION
+Introduction
+Lists, tab stops and indents help organize information without using repeated spaces.
+
+Bulleted and Numbered Lists
+Use multilevel lists for structured outlines. Keep list punctuation and capitalization consistent.
+
+Tabs
+Tab stops align text at predictable positions. They are more reliable than pressing the spacebar many times.
+
+Indents
+First-line, hanging, left and right indents support paragraphs, references and structured content.
+
+Step-by-Step Practical
+70. Create a numbered list of six course registration steps.
+71. Convert a copy to bullets.
+72. Create a two-level outline with main points and subpoints.
+73. Use a hanging indent for a short reference list.
+74. Use tab stops to align simple labels and values.
+
+Real-Life Application / Case Study
+An office worker aligns a price list using spaces. When fonts change, the columns become uneven. Tabs or a
+table provide more reliable alignment.
+
+Review Questions
+75. What is a multilevel list?
+76. Why should spaces not be used for column alignment?
+77. What is a hanging indent?
+78. Give one use of tab stops.
+
+Assignment
+Create a structured one-page policy document using a multilevel list and appropriate indentation.
+
+ 
+
+LESSON 9: WORKING WITH TABLES
+
+ Figure 5. Instructional visual for Working With Tables.
+
+Introduction
+A table organizes information into rows and columns and is useful for records, schedules, comparisons and
+forms.
+
+Creating Tables
+Tables can be inserted by choosing the number of rows and columns. Data should have clear headings.
+
+Editing Structure
+ Insert or delete rows and columns.
+ Merge cells for selected headings.
+ Split cells when more divisions are required.
+ Adjust row height and column width.
+ Use AutoFit where appropriate.
+
+Formatting Tables
+Use readable header rows, consistent alignment and moderate borders or shading. Avoid overcrowding cells.
+
+Step-by-Step Practical
+79. Insert a 5-column, 8-row table.
+80. Create headings: S/N, Student Name, Course, Amount, Status.
+81. Enter sample records.
+82. Add another row and column.
+83. Merge cells to create a table title.
+84. Format the header row professionally.
+85. Adjust widths so all information is readable.
+
+ 
+
+Real-Life Application / Case Study
+Ethan Digital Academy needs a simple attendance register. A table can organize names, dates and
+attendance status more clearly than manually spaced text.
+
+Review Questions
+86. What is a table?
+87. What does Merge Cells do?
+88. Why should tables have headings?
+89. Mention three ways to change table structure.
+
+Assignment
+Create a professional weekly training timetable using a Word table.
+
+ 
+
+LESSON 10: PICTURES, SHAPES, ICONS AND TEXT BOXES
+
+ Figure 6. Instructional visual for Pictures, Shapes, Icons And Text Boxes.
+
+Introduction
+Visual objects can support communication when they are relevant and arranged carefully.
+
+Pictures
+Pictures can be inserted, resized, cropped and positioned. Maintain reasonable proportions to avoid
+distortion.
+
+Text Wrapping
+Wrapping controls how text flows around an object. Common choices may include In Line with Text, Square,
+Tight, Top and Bottom, Behind Text and In Front of Text.
+
+Shapes, Icons and Text Boxes
+Shapes can create callouts and diagrams. Text boxes position selected text independently. Icons can provide
+simple visual symbols where available.
+
+Alignment and Layering
+Objects can be aligned, distributed, brought forward or sent backward to create an orderly layout.
+
+Step-by-Step Practical
+90. Insert a suitable picture.
+91. Resize it using a corner handle.
+92. Crop unnecessary edges.
+93. Try different text-wrapping options.
+94. Insert a shape and type a short message inside it.
+95. Insert a text box for contact information.
+
+ 
+
+96. Align the objects neatly.
+
+Real-Life Application / Case Study
+A training flyer becomes difficult to read because a large image covers the text. Proper resizing, wrapping
+and object order restore readability.
+
+Review Questions
+97. What is text wrapping?
+98. Why should pictures be resized from corner handles?
+99. What is a text box?
+100. What do Bring Forward and Send Backward control?
+
+Assignment
+Create a one-page professional course announcement containing text, a picture, a shape and a text box.
+
+ 
+
+LESSON 11: HEADERS, FOOTERS AND PAGE NUMBERS
+
+ Figure 7. Instructional visual for Headers, Footers And Page Numbers.
+
+Introduction
+Headers and footers are repeating areas at the top and bottom of pages.
+
+Typical Header/Footer Content
+ Organization name
+ Document title
+ Date or version
+ Confidentiality notice
+ Page numbers
+
+Page Numbers
+Automatic page numbers update as pages are added or removed. They may be placed at the top, bottom or
+margin depending on the document style.
+
+Different First Page
+Formal reports may use a cover page without the same header or footer as the main document.
+
+Step-by-Step Practical
+101. Create a three-page report.
+102. Insert Ethan Digital Academy in the header.
+103. Add an automatic page number in the footer.
+104. Enable Different First Page if available and inspect the result.
+105. Edit the footer to add a short document title.
+
+ 
+
+Real-Life Application / Case Study
+A 25-page training manual without page numbers is difficult to reference during class. Automatic numbering
+makes navigation and discussion easier.
+
+Review Questions
+106. What is a header?
+107. What is a footer?
+108. Why should page numbers be automatic?
+109. What is Different First Page used for?
+
+Assignment
+Prepare a four-page report with a clean first page and appropriate headers, footers and page numbers.
+
+ 
+
+LESSON 12: STYLES, THEMES AND DOCUMENT STRUCTURE
+
+ Figure 8. Instructional visual for Styles, Themes And Document Structure.
+
+Introduction
+Styles are named sets of formatting that help keep long documents consistent.
+
+Built-in Styles
+Heading 1, Heading 2, Heading 3 and Normal are useful for creating a clear hierarchy.
+
+Why Styles Matter
+Changing a style can update many headings consistently. Heading styles also support navigation and
+automatic tables of contents.
+
+Themes
+Themes coordinate document fonts, colors and effects. Professional documents should use a restrained and
+consistent theme.
+
+Step-by-Step Practical
+110. Create a document with one main title, three major sections and two subsections.
+111. Apply Heading 1 to major sections and Heading 2 to subsections.
+112. Use Normal for body text.
+113. Modify one heading style and observe the consistent change.
+114. Open the Navigation Pane if available and use headings to move through the document.
+
+Real-Life Application / Case Study
+A 40-page manual formatted manually becomes difficult to update. Styles allow the organization to change
+the heading design consistently across the document.
+
+ 
+
+Review Questions
+115. What is a style?
+116. Why are Heading styles important?
+117. How do styles support navigation?
+118. What is a document theme?
+
+Assignment
+Create a structured three-page mini-manual using Heading 1, Heading 2 and Normal styles.
+
+ 
+
+LESSON 13: TABLE OF CONTENTS AND NAVIGATION
+Introduction
+A table of contents lists major document headings and their page locations, helping readers navigate long
+documents.
+
+Preparing the Document
+An automatic table of contents depends on properly applied heading styles.
+
+Creating the TOC
+Use the References tab to insert an automatic table of contents. After content changes, update the table so
+page numbers and headings remain accurate.
+
+Navigation
+The Navigation Pane can display headings and make it easier to move around a long document.
+
+Step-by-Step Practical
+119. Create at least four sections using Heading 1 and several subsections using Heading 2.
+120. Place the cursor near the beginning of the document.
+121. Insert an automatic table of contents.
+122. Add another section later in the document.
+123. Update the table of contents.
+124. Use the Navigation Pane to move between sections.
+
+Real-Life Application / Case Study
+A training manual changes after a new lesson is inserted. A manually typed contents page becomes
+incorrect, while an automatic table can be updated.
+
+Review Questions
+125. What must be applied before an automatic table of contents works properly?
+126. Why should a TOC be updated?
+127. What does the Navigation Pane show?
+128. Where is the Table of Contents command commonly found?
+
+Assignment
+Create a five-section report with an automatic table of contents.
+
+ 
+
+LESSON 14: MAIL MERGE
+
+ Figure 9. Instructional visual for Mail Merge.
+
+Introduction
+Mail Merge combines one main document with a data source to create multiple personalized documents.
+
+Common Uses
+ Personalized letters
+ Certificates
+ Labels
+ Envelopes
+ Notices sent to many recipients
+
+Main Components
+The main document contains common text. The recipient list contains changing information such as name,
+address or course. Merge fields mark where personalized data will appear.
+
+Merge Process
+A typical process is: prepare the main document, select recipients, insert merge fields, preview results, then
+finish and merge.
+
+Step-by-Step Practical
+129. Create a simple recipient list with five names and courses.
+130. Create a course-completion letter.
+131. Start Mail Merge for letters.
+132. Connect or create the recipient list.
+133. Insert Name and Course merge fields.
+134. Preview each record.
+
+ 
+
+135. Complete the merge to create personalized letters.
+
+Real-Life Application / Case Study
+An academy needs to prepare 100 course-completion letters. Typing each letter separately wastes time and
+increases errors. Mail Merge can produce personalized letters from one template and a recipient list.
+
+Review Questions
+136. What is Mail Merge?
+137. What is a data source?
+138. What is a merge field?
+139. Mention three uses of Mail Merge.
+
+Assignment
+Create five personalized invitation letters using Mail Merge.
+
+ 
+
+LESSON 15: REFERENCES AND REVIEW TOOLS
+
+ Figure 10. Instructional visual for References And Review Tools.
+
+Introduction
+Word provides tools for checking, reviewing and documenting professional or academic work.
+
+Spelling and Grammar
+Proofing tools can identify possible spelling and grammar issues, but users should review suggestions rather
+than accept every change automatically.
+
+Comments and Track Changes
+Comments allow reviewers to leave notes. Track Changes records insertions, deletions and formatting
+changes for review.
+
+References
+Depending on the document, Word can assist with footnotes, citations, captions and bibliographies.
+Academic requirements should determine the correct citation style.
+
+Word Count
+Word Count helps monitor assignment or report length.
+
+Step-by-Step Practical
+140. Type a short paragraph containing intentional spelling errors and run the proofing tools.
+141. Add a comment to a sentence.
+142. Turn on Track Changes and edit the paragraph.
+143. Review the recorded changes.
+144. Insert a footnote or citation if available in your version.
+145. Check the document word count.
+
+ 
+
+Real-Life Application / Case Study
+A manager reviews a policy written by an assistant. Track Changes allows the assistant to see exactly what
+was edited, while comments explain why some revisions are requested.
+
+Review Questions
+146. What is Track Changes?
+147. What is the purpose of comments?
+148. Why should proofing suggestions be reviewed?
+149. What does Word Count measure?
+
+Assignment
+Exchange a one-page document with another learner and review it using comments and Track Changes.
+
+ 
+
+LESSON 16: PROFESSIONAL LETTERS, CVS AND REPORTS
+
+ Figure 11. Instructional visual for Professional Letters, Cvs And Reports.
+
+Introduction
+Microsoft Word is commonly used to prepare formal documents that represent an individual or organization.
+
+Professional Letters
+A formal letter normally includes appropriate sender/recipient information, date, salutation, clear subject or
+purpose, body, closing and name/signature as required.
+
+CV / Résumé
+A CV should present accurate information clearly. Typical sections may include contact information, profile,
+education, experience, skills and relevant achievements.
+
+Reports
+Reports usually use a title, headings, logical sections, consistent formatting, page numbering and, for longer
+documents, a table of contents.
+
+Professional Principles
+ Accuracy
+ Consistency
+ Readable layout
+ Correct spelling and grammar
+ Appropriate tone
+ No unnecessary decoration
+
+Step-by-Step Practical
+150. Create a professional one-page business letter.
+
+ 
+
+151. Create a clean two-page sample CV using fictional or non-sensitive information.
+152. Create a three-page report with headings, a table and page numbers.
+153. Review all three documents for consistency and spelling.
+
+Real-Life Application / Case Study
+A job applicant has strong experience but submits a poorly organized CV with inconsistent fonts and errors.
+Improving the document structure and proofreading can make the information easier for an employer to
+assess.
+
+Review Questions
+154. List major parts of a formal letter.
+155. Mention five common CV sections.
+156. Why should a report use headings?
+157. What makes a document professional?
+
+Assignment
+Prepare a formal application letter and a clean sample CV.
+
+ 
+
+LESSON 17: PRINTING, PDF EXPORT AND SHARING
+
+ Figure 12. Instructional visual for Printing, Pdf Export And Sharing.
+
+Introduction
+Before a document is delivered, it should be checked for both content and page presentation.
+
+Print Preview
+Print Preview helps detect unwanted blank pages, poor page breaks, incorrect orientation and other layout
+issues before paper is used.
+
+Print Settings
+Users may select printer, page range, number of copies, orientation, paper size and other available options.
+
+PDF Export
+PDF is useful when the recipient should see a stable layout. Keep the editable Word file when future editing
+may be required.
+
+Final Quality Check
+ Correct filename
+ Correct pages and margins
+ No spelling errors
+ Consistent headings
+ Tables and pictures fit the page
+ Headers, footers and numbering correct
+
+Step-by-Step Practical
+158. Open a completed report.
+159. Use Print Preview and inspect every page.
+
+ 
+
+160. Correct any unwanted page break or layout problem.
+161. Choose an appropriate page range in the print settings without printing if unnecessary.
+162. Export a PDF copy.
+163. Open the PDF and verify that the layout is correct.
+
+Real-Life Application / Case Study
+A proposal looks correct in editing view but contains an unexpected blank page when printed. Print Preview
+catches the problem before the document is sent to a client.
+
+Review Questions
+164. Why is Print Preview important?
+165. When is PDF useful?
+166. Why should the editable DOCX sometimes be retained?
+167. Mention four items in a final quality check.
+
+Assignment
+Submit one professional document in both DOCX and PDF formats.
+
+ 
+
+LESSON 18: FINAL PROFESSIONAL WORD PROJECT
+Introduction
+The final project combines the major skills developed throughout the course into one complete professional
+document.
+
+Project Brief
+Create a professional Ethan Digital Academy training report of at least six pages. It should demonstrate clear
+structure, accurate formatting and appropriate use of Word features.
+
+Required Elements
+ Professional cover page
+ Automatic table of contents
+ Heading styles
+ Well-formatted paragraphs
+ Bulleted or numbered list
+ At least one table
+ At least one relevant image or shape
+ Header/footer and automatic page numbers
+ A short reference or footnote section where appropriate
+ Professional final layout
+
+Assessment Focus
+The work will be assessed for accuracy, structure, formatting consistency, practical use of Word tools,
+readability, proofreading and final presentation.
+
+Step-by-Step Practical
+168. Plan the report structure before typing.
+169. Create the cover page.
+170. Write the report using Heading styles.
+171. Insert the required table and visual object.
+172. Add header/footer and page numbering.
+173. Insert and update the table of contents.
+174. Proofread the complete report.
+175. Inspect Print Preview.
+176. Save the editable DOCX.
+177. Export and verify the PDF.
+
+Real-Life Application / Case Study
+A professional report often passes through planning, drafting, formatting, review and final publishing. The
+final project reproduces this workplace process.
+
+Review Questions
+178. Why should a long document be planned before formatting?
+179. Which Word feature supports an automatic contents page?
+180. Why should the PDF be checked after export?
+181. List six features required in the final project.
+
+ 
+
+Assignment
+Complete and submit the final professional Word project in DOCX and PDF formats.
+
+ 
+
+FINAL QUIZ - 30 QUESTIONS
+182. What is Microsoft Word?
+183. Mention five uses of Word.
+184. What is the Ribbon?
+185. What is the Quick Access Toolbar?
+186. Differentiate Save and Save As.
+187. What is DOCX?
+188. What is PDF?
+189. What does Ctrl+C do?
+190. What does Ctrl+H do?
+191. What is Format Painter?
+192. Name four paragraph alignments.
+193. What is line spacing?
+194. What is a page break?
+195. What is a section break?
+196. What is landscape orientation?
+197. Why are tabs better than repeated spaces?
+198. What is a hanging indent?
+199. What is a table?
+200. What is text wrapping?
+201. What is a text box?
+202. What is a header?
+203. What is a footer?
+204. What is a Word style?
+205. Why are Heading styles important?
+206. What is a table of contents?
+207. What is Mail Merge?
+208. What is a merge field?
+209. What is Track Changes?
+210. Why is Print Preview important?
+211. Give five features of a professional Word document.
+
+FINAL EXAMINATION - 100 MARKS
+Section A - Objective Questions: 30 Marks
+
+Answer multiple-choice questions covering Word concepts, interface, formatting, page layout, tables,
+graphics, styles, Mail Merge, review and publishing.
+
+Section B - Theory: 30 Marks
+
+Answer short and extended questions requiring explanations, comparisons and workplace applications.
+
+Section C - Practical: 40 Marks
+
+ Create and save a professional document.
+ Apply heading and paragraph formatting.
+ Insert and format a table.
+ Insert and arrange an image or shape.
+ Add header/footer and automatic page numbering.
+ 
+
+ Use appropriate page layout.
+ Proofread the document.
+ Export a correct PDF copy.
+
+COURSE COMPLETION OUTCOME
+A learner who successfully completes EDA-WRD-102 should be able to use Microsoft Word confidently for
+academic, office and business documentation; produce structured and professional documents; apply
+efficient editing and formatting methods; use tables, graphics, styles, Mail Merge and review tools; and
+prepare documents correctly for printing, PDF distribution and workplace collaboration.

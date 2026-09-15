@@ -1,0 +1,939 @@
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+ETHAN DIGITAL ACADEMY
+CORELDRAW ESSENTIALS
+FULL VISUAL STUDY MANUAL
+Course Code
+EDA-CDR-119
+Level
+Beginner to Intermediate
+Duration
+6 Weeks (19 Lessons)
+Certificate
+Professional Certificate in CorelDRAW Essentials
+Prerequisite
+Digital Literacy / Graphic Design Fundamentals 
+recommended
+Learning Format
+Guided Vector Practicals + Print/Digital Promotional 
+Project
+Responsible design standard: create original vector work or use properly 
+licensed assets. Do not copy protected logos, trace copyrighted commercial 
+artwork, fabricate endorsements or publish private information.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Course Introduction
+CorelDRAW Essentials teaches practical vector-graphics production for logos, icons, flyers, posters and 
+digital graphics. Learners progress from the workspace and basic shapes to node editing, typography, 
+colour, precision layout, object shaping, image placement, print preparation and final export.
+Learning Objectives
+
+Understand vector and raster graphics.
+
+Navigate the CorelDRAW workspace.
+
+Create and transform vector shapes.
+
+Edit nodes and curves.
+
+Apply fills, outlines and typography.
+
+Align, distribute, group and organise objects.
+
+Combine geometry into original forms.
+
+Prepare basic print and digital outputs.
+
+Complete a coordinated vector promotional package.
+Course Structure
+1.
+Lesson 1: Introduction to CorelDRAW and Vector Graphics
+2.
+Lesson 2: Understanding the CorelDRAW Workspace
+3.
+Lesson 3: Vector and Raster Graphics
+4.
+Lesson 4: Document Setup, Page Size and Units
+5.
+Lesson 5: Drawing Basic Shapes
+6.
+Lesson 6: Selecting, Moving, Scaling and Rotating Objects
+7.
+Lesson 7: Node Editing and Curves
+8.
+Lesson 8: Fills, Outlines and Colour
+9.
+Lesson 9: Working with Text
+10. Lesson 10: Alignment, Distribution, Guides and Snapping
+11. Lesson 11: Object Order, Grouping and Organisation
+12. Lesson 12: Combining and Shaping Objects
+13. Lesson 13: Transparency, Gradients and Simple Effects
+14. Lesson 14: Importing Images and Working with Bitmaps
+15. Lesson 15: Simple Logo and Icon Design
+16. Lesson 16: Flyer and Poster Layout
+17. Lesson 17: Print Preparation Basics
+18. Lesson 18: Export for Digital Use
+19. Lesson 19: Final CorelDRAW Promotional Package
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 1: Introduction to CorelDRAW and 
+Vector Graphics
+Introduction
+CorelDRAW is a vector-graphics application used for logos, signs, layouts, illustrations and print-oriented 
+graphics. This course focuses on original, practical vector design.
+Learning Objectives
+
+Explain the main principles of introduction to coreldraw and vector graphics.
+
+Complete a guided CorelDRAW practical for introduction to coreldraw and vector graphics.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Vector artwork is built from paths, shapes and curves.
+Key principle: Vector objects can be scaled without the pixelation typical of raster enlargement.
+Key principle: A design should begin with purpose, audience and output requirements.
+Key principle: Objects remain editable when the master file is preserved.
+Key principle: Responsible design requires original or properly licensed assets.
+Figure 1: Original instructional visual for Introduction to CorelDRAW and Vector Graphics.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Open CorelDRAW or an instructor-approved training installation.
+2. Create a blank practice document.
+3. Draw one rectangle and one ellipse.
+4. Save the editable file with a meaningful name.
+Ethan Digital Academy Case Study
+Ethan Digital Academy can use vector graphics for scalable logos, signage and course promotional layouts.
+Review Questions
+20. What is the main purpose of introduction to coreldraw and vector graphics?
+21. State two professional vector-design practices from this lesson.
+22. What common quality or copyright mistake should be avoided?
+23. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 1 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 2: Understanding the CorelDRAW 
+Workspace
+Introduction
+The workspace combines a page, toolbox, property controls, colour tools and object-management panels.
+Learning Objectives
+
+Explain the main principles of understanding the coreldraw workspace.
+
+Complete a guided CorelDRAW practical for understanding the coreldraw workspace.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: The page represents the design/output area.
+Key principle: The toolbox provides selection, shape, drawing and text tools.
+Key principle: The property bar changes according to the active tool or object.
+Key principle: Panels or dockers provide detailed object controls.
+Key principle: Zoom and pan help inspect artwork without changing it.
+Figure 2: Original instructional visual for Understanding the CorelDRAW Workspace.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Identify the page, toolbox and property controls.
+2. Select two different tools and observe changing options.
+3. Zoom in and out.
+4. Return to a comfortable page view.
+Ethan Digital Academy Case Study
+Workspace confidence reduces accidental editing and makes practical work faster.
+Review Questions
+24. What is the main purpose of understanding the coreldraw workspace?
+25. State two professional vector-design practices from this lesson.
+26. What common quality or copyright mistake should be avoided?
+27. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 2 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 3: Vector and Raster Graphics
+Introduction
+Understanding vector and raster graphics helps learners choose suitable tools and output formats.
+Learning Objectives
+
+Explain the main principles of vector and raster graphics.
+
+Complete a guided CorelDRAW practical for vector and raster graphics.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Vectors use mathematical paths and curves.
+Key principle: Raster images use pixels.
+Key principle: Logos and icons often benefit from vector construction.
+Key principle: Photographs are normally raster images.
+Key principle: CorelDRAW can place raster images inside vector layouts, but they do not become true 
+vectors automatically.
+Figure 3: Original instructional visual for Vector and Raster Graphics.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Create a vector circle.
+2. Import an authorised small raster image.
+3. Zoom in closely on both.
+4. Compare edge behaviour.
+5. Write one suitable use for each image type.
+Ethan Digital Academy Case Study
+An Academy logo should remain crisp on a business card and a large banner, making vector construction 
+useful.
+Review Questions
+28. What is the main purpose of vector and raster graphics?
+29. State two professional vector-design practices from this lesson.
+30. What common quality or copyright mistake should be avoided?
+31. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 3 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 4: Document Setup, Page Size and 
+Units
+Introduction
+Correct document setup reduces resizing and output errors later.
+Learning Objectives
+
+Explain the main principles of document setup, page size and units.
+
+Complete a guided CorelDRAW practical for document setup, page size and units.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Choose page dimensions for the intended product.
+Key principle: Units may include millimetres, inches or pixels depending on work.
+Key principle: Orientation should match the design purpose.
+Key principle: Margins and safe areas protect important content.
+Key principle: Print providers may require bleed or other specifications.
+Step-by-Step Guided Practical
+1. Create an A4 practice document.
+2. Change orientation and observe the page.
+3. Set a consistent unit.
+4. Create simple margin guides.
+5. Save the setup as a practice file.
+Ethan Digital Academy Case Study
+A course flyer should be created at the intended size rather than stretched at the final printing stage.
+Review Questions
+32. What is the main purpose of document setup, page size and units?
+33. State two professional vector-design practices from this lesson.
+34. What common quality or copyright mistake should be avoided?
+35. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 4 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 5: Drawing Basic Shapes
+Introduction
+Rectangles, ellipses, polygons and other basic shapes are building blocks for vector design.
+Learning Objectives
+
+Explain the main principles of drawing basic shapes.
+
+Complete a guided CorelDRAW practical for drawing basic shapes.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Simple shapes can create panels, badges and symbols.
+Key principle: Dimensions can be controlled numerically where needed.
+Key principle: Corner properties can change a rectangle appearance.
+Key principle: Duplicate repeated shapes for consistency.
+Key principle: Avoid unnecessary decorative shapes.
+Figure 5: Original instructional visual for Drawing Basic Shapes.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Draw a rectangle, ellipse and polygon.
+2. Resize each deliberately.
+3. Duplicate one shape.
+4. Create a simple badge from two shapes.
+5. Align the badge components.
+Ethan Digital Academy Case Study
+Academy course category icons can begin with consistent geometric construction.
+Review Questions
+36. What is the main purpose of drawing basic shapes?
+37. State two professional vector-design practices from this lesson.
+38. What common quality or copyright mistake should be avoided?
+39. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 5 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 6: Selecting, Moving, Scaling and 
+Rotating Objects
+Introduction
+Object transformation is central to arranging a vector composition.
+Learning Objectives
+
+Explain the main principles of selecting, moving, scaling and rotating objects.
+
+Complete a guided CorelDRAW practical for selecting, moving, scaling and rotating objects.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Selection identifies the object to edit.
+Key principle: Dragging can reposition objects.
+Key principle: Handles can scale or rotate depending on the tool state.
+Key principle: Proportional scaling helps preserve shape.
+Key principle: Copies should be used when the original must remain.
+Step-by-Step Guided Practical
+1. Create three shapes.
+2. Move them into a simple composition.
+3. Scale one proportionally.
+4. Rotate a duplicate.
+5. Undo and redo one transformation.
+Ethan Digital Academy Case Study
+A promotional layout can reuse a repeated motif at different sizes without redrawing it.
+Review Questions
+40. What is the main purpose of selecting, moving, scaling and rotating objects?
+41. State two professional vector-design practices from this lesson.
+42. What common quality or copyright mistake should be avoided?
+43. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 6 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 7: Node Editing and Curves
+Introduction
+Node editing allows custom vector forms beyond basic geometry.
+Learning Objectives
+
+Explain the main principles of node editing and curves.
+
+Complete a guided CorelDRAW practical for node editing and curves.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Nodes anchor a path.
+Key principle: Segments connect nodes.
+Key principle: Handles influence curve direction and shape.
+Key principle: Too many nodes can make curves harder to control.
+Key principle: Smooth curves should be built with deliberate node placement.
+Figure 7: Original instructional visual for Node Editing and Curves.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Draw or create a simple curve.
+2. Activate the shape/node tool.
+3. Move one node.
+4. Adjust a curve handle.
+5. Simplify the shape if unnecessary nodes exist.
+Ethan Digital Academy Case Study
+An original Academy icon can be refined from simple curves without copying another organisation’s mark.
+Review Questions
+44. What is the main purpose of node editing and curves?
+45. State two professional vector-design practices from this lesson.
+46. What common quality or copyright mistake should be avoided?
+47. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 7 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 8: Fills, Outlines and Colour
+Introduction
+Vector objects have interior fills and outlines that can be controlled independently.
+Learning Objectives
+
+Explain the main principles of fills, outlines and colour.
+
+Complete a guided CorelDRAW practical for fills, outlines and colour.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Fill is the interior appearance of an object.
+Key principle: Outline is the object border or stroke.
+Key principle: Consistent palettes support brand recognition.
+Key principle: Outline thickness should suit output size.
+Key principle: Contrast affects readability and separation.
+Figure 8: Original instructional visual for Fills, Outlines and Colour.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Apply a solid fill to three shapes.
+2. Change one outline width.
+3. Remove an outline from one object.
+4. Create a three-colour practice palette.
+5. Check contrast on light and dark backgrounds.
+Ethan Digital Academy Case Study
+Ethan graphics can use a restrained palette and consistent outline treatment across related materials.
+Review Questions
+48. What is the main purpose of fills, outlines and colour?
+49. State two professional vector-design practices from this lesson.
+50. What common quality or copyright mistake should be avoided?
+51. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 8 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 9: Working with Text
+Introduction
+CorelDRAW supports text for headlines, labels and longer layout content.
+Learning Objectives
+
+Explain the main principles of working with text.
+
+Complete a guided CorelDRAW practical for working with text.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Display/artistic text is useful for short headlines.
+Key principle: Paragraph text is useful for larger blocks where available.
+Key principle: Typography needs hierarchy and readable spacing.
+Key principle: Alignment should connect text to other elements.
+Key principle: Use fonts that are licensed or authorised for the intended work.
+Figure 9: Original instructional visual for Working with Text.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Create a headline.
+2. Create a supporting text block.
+3. Apply two levels of hierarchy.
+4. Align text to a shape or guide.
+5. Check readability at normal size.
+Ethan Digital Academy Case Study
+A course flyer can use a strong headline with smaller schedule and registration information.
+Review Questions
+52. What is the main purpose of working with text?
+53. State two professional vector-design practices from this lesson.
+54. What common quality or copyright mistake should be avoided?
+55. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 9 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 10: Alignment, Distribution, Guides 
+and Snapping
+Introduction
+Precision tools create professional spacing and object relationships.
+Learning Objectives
+
+Explain the main principles of alignment, distribution, guides and snapping.
+
+Complete a guided CorelDRAW practical for alignment, distribution, guides and snapping.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Alignment places objects on common edges or centres.
+Key principle: Distribution creates equal spacing.
+Key principle: Guides provide visual placement references.
+Key principle: Snapping can assist precise positioning.
+Key principle: Measured relationships are more reliable than visual guessing alone.
+Figure 10: Original instructional visual for Alignment, Distribution, Guides and Snapping.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Create four equal shapes.
+2. Align their top edges.
+3. Distribute them evenly.
+4. Add a guide.
+5. Move a headline into alignment with the guide.
+Ethan Digital Academy Case Study
+Course-feature cards look more professional when their spacing is consistent.
+Review Questions
+56. What is the main purpose of alignment, distribution, guides and snapping?
+57. State two professional vector-design practices from this lesson.
+58. What common quality or copyright mistake should be avoided?
+59. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 10 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 11: Object Order, Grouping and 
+Organisation
+Introduction
+Complex designs become easier to edit when objects are named, grouped and stacked deliberately.
+Learning Objectives
+
+Explain the main principles of object order, grouping and organisation.
+
+Complete a guided CorelDRAW practical for object order, grouping and organisation.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Front/back order controls overlap.
+Key principle: Grouping lets related objects move together.
+Key principle: Ungrouping restores individual editing.
+Key principle: Object managers/panels can help locate hidden content.
+Key principle: Lock stable objects where appropriate and available.
+Figure 11: Original instructional visual for Object Order, Grouping and Organisation.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Create a background, image placeholder and text.
+2. Change stacking order.
+3. Group two related items.
+4. Move the group.
+5. Rename important objects if the interface supports it.
+Ethan Digital Academy Case Study
+A flyer header can be grouped so its logo, label and headline remain together during layout changes.
+Review Questions
+60. What is the main purpose of object order, grouping and organisation?
+61. State two professional vector-design practices from this lesson.
+62. What common quality or copyright mistake should be avoided?
+63. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 11 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 12: Combining and Shaping Objects
+Introduction
+Vector applications can combine overlapping geometry to build more complex original forms.
+Learning Objectives
+
+Explain the main principles of combining and shaping objects.
+
+Complete a guided CorelDRAW practical for combining and shaping objects.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Weld/union-style operations merge forms.
+Key principle: Trim/subtract-style operations remove overlapping areas.
+Key principle: Intersect-style operations create shared areas.
+Key principle: Keep a copy before irreversible shaping if later editing may be needed.
+Key principle: Use shaping to support clear design, not complexity for its own sake.
+Step-by-Step Guided Practical
+1. Create two overlapping circles.
+2. Duplicate them before shaping.
+3. Try an instructor-approved combine operation.
+4. Compare the new object with the originals.
+5. Use simple geometry to create an original icon.
+Ethan Digital Academy Case Study
+A simple technology symbol can be constructed from original geometry without tracing a protected logo.
+Review Questions
+64. What is the main purpose of combining and shaping objects?
+65. State two professional vector-design practices from this lesson.
+66. What common quality or copyright mistake should be avoided?
+67. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 12 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 13: Transparency, Gradients and Simple 
+Effects
+Introduction
+Effects can add depth or emphasis but should remain controlled and appropriate.
+Learning Objectives
+
+Explain the main principles of transparency, gradients and simple effects.
+
+Complete a guided CorelDRAW practical for transparency, gradients and simple effects.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Transparency reduces object visibility.
+Key principle: Gradients transition between colours.
+Key principle: Shadows can separate objects from backgrounds.
+Key principle: Effects should not reduce readability.
+Key principle: Flat design is often stronger than excessive effects.
+Step-by-Step Guided Practical
+1. Apply a simple gradient to a practice shape.
+2. Reduce transparency on a second shape.
+3. Add a subtle shadow if available.
+4. Compare with a flat version.
+5. Keep the version that communicates more clearly.
+Ethan Digital Academy Case Study
+A course badge may use a subtle gradient while retaining clear text and brand consistency.
+Review Questions
+68. What is the main purpose of transparency, gradients and simple effects?
+69. State two professional vector-design practices from this lesson.
+70. What common quality or copyright mistake should be avoided?
+71. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 13 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 14: Importing Images and Working 
+with Bitmaps
+Introduction
+Raster images can be placed into CorelDRAW layouts alongside vector objects.
+Learning Objectives
+
+Explain the main principles of importing images and working with bitmaps.
+
+Complete a guided CorelDRAW practical for importing images and working with bitmaps.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Import only authorised images.
+Key principle: Raster image quality depends on pixel dimensions.
+Key principle: Cropping can improve composition.
+Key principle: Do not enlarge small raster images excessively.
+Key principle: Keep image links/embedding and final output workflow organised.
+Step-by-Step Guided Practical
+1. Import an authorised photo.
+2. Resize it proportionally.
+3. Crop or frame it within the layout.
+4. Add a vector caption panel.
+5. Inspect the photo at normal output size.
+Ethan Digital Academy Case Study
+An Academy event photo can be combined with vector text and shapes for a promotional poster.
+Review Questions
+72. What is the main purpose of importing images and working with bitmaps?
+73. State two professional vector-design practices from this lesson.
+74. What common quality or copyright mistake should be avoided?
+75. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 14 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 15: Simple Logo and Icon Design
+Introduction
+Logo practice teaches simplification, scalability and originality.
+Learning Objectives
+
+Explain the main principles of simple logo and icon design.
+
+Complete a guided CorelDRAW practical for simple logo and icon design.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Begin with a concept, not an effect.
+Key principle: Use simple geometry and clean curves.
+Key principle: Test at small and large sizes.
+Key principle: Create light and dark-background variants.
+Key principle: Do not copy, trace or imitate protected logos.
+Figure 15: Original instructional visual for Simple Logo and Icon Design.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Write three keywords for a fictional practice brand.
+2. Sketch two original symbol ideas.
+3. Build one using simple geometry.
+4. Add an authorised type treatment.
+5. Test the result at small size.
+Ethan Digital Academy Case Study
+Learners can create a fictional training-club mark while respecting existing trademarks and brand identities.
+Review Questions
+76. What is the main purpose of simple logo and icon design?
+77. State two professional vector-design practices from this lesson.
+78. What common quality or copyright mistake should be avoided?
+79. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 15 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 16: Flyer and Poster Layout
+Introduction
+Vector layout combines hierarchy, typography, images, colour and alignment into a complete communication 
+piece.
+Learning Objectives
+
+Explain the main principles of flyer and poster layout.
+
+Complete a guided CorelDRAW practical for flyer and poster layout.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Lead with the main message.
+Key principle: Group related logistics.
+Key principle: Use a clear visual path.
+Key principle: Keep contact information accurate.
+Key principle: Design at the intended output size.
+Step-by-Step Guided Practical
+1. Create a practice course flyer.
+2. Add headline, benefit, date and CTA.
+3. Use one authorised image or original vector motif.
+4. Align content using guides.
+5. Run a spelling and spacing review.
+Ethan Digital Academy Case Study
+An Ethan open-day flyer should communicate the event and next action within seconds.
+Review Questions
+80. What is the main purpose of flyer and poster layout?
+81. State two professional vector-design practices from this lesson.
+82. What common quality or copyright mistake should be avoided?
+83. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 16 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 17: Print Preparation Basics
+Introduction
+Print-oriented design requires technical checks before sending artwork to a printer.
+Learning Objectives
+
+Explain the main principles of print preparation basics.
+
+Complete a guided CorelDRAW practical for print preparation basics.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Confirm final page size.
+Key principle: Ask the printer about bleed, colour and PDF requirements.
+Key principle: Keep important content inside safe areas.
+Key principle: Images should be suitable for intended output quality.
+Key principle: Proofread and inspect the exported PDF.
+Step-by-Step Guided Practical
+1. Review a practice A4 flyer.
+2. Check page size and margins.
+3. Identify content too close to an edge.
+4. Export a practice PDF using instructor-approved settings.
+5. Open the PDF and inspect it.
+Ethan Digital Academy Case Study
+Academy should confirm a commercial printer’s exact specifications rather than assuming every print 
+workflow is identical.
+Review Questions
+84. What is the main purpose of print preparation basics?
+85. State two professional vector-design practices from this lesson.
+86. What common quality or copyright mistake should be avoided?
+87. How would you apply this lesson to an Academy design?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Assignment
+Complete the Lesson 17 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 18: Export for Digital Use
+Introduction
+Digital outputs need suitable dimensions, formats and file sizes.
+Learning Objectives
+
+Explain the main principles of export for digital use.
+
+Complete a guided CorelDRAW practical for export for digital use.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: PNG is useful for many sharp graphics and transparency.
+Key principle: JPG is common for flattened photographic content.
+Key principle: PDF can be useful for documents and sharing.
+Key principle: Keep the editable CDR master.
+Key principle: Inspect exported files before publication.
+Figure 18: Original instructional visual for Export for Digital Use.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Prepare a square practice design.
+2. Export PNG.
+3. Export JPG where suitable.
+4. Compare file size and appearance.
+5. Store approved output separately from the master.
+Ethan Digital Academy Case Study
+Ethan social graphics can be exported for mobile viewing while retaining the original vector design file.
+Review Questions
+88. What is the main purpose of export for digital use?
+89. State two professional vector-design practices from this lesson.
+90. What common quality or copyright mistake should be avoided?
+91. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 18 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Lesson 19: Final CorelDRAW Promotional 
+Package
+Introduction
+The final project combines original vector construction, typography, image placement, layout, export and 
+organised handoff.
+Learning Objectives
+
+Explain the main principles of final coreldraw promotional package.
+
+Complete a guided CorelDRAW practical for final coreldraw promotional package.
+
+Apply the skill to an Ethan Digital Academy design task.
+Teaching Content
+Key principle: Create a campaign from a clear brief.
+Key principle: Use original vector shapes or motifs.
+Key principle: Maintain consistent typography and colour.
+Key principle: Produce both print-oriented and digital outputs.
+Key principle: Submit editable masters and final exports.
+Figure 19: Original instructional visual for Final CorelDRAW Promotional Package.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Step-by-Step Guided Practical
+1. Write a campaign brief.
+2. Create an original vector motif or icon.
+3. Design an A4 flyer/poster.
+4. Adapt it to a square social post.
+5. Run content and alignment checks.
+6. Export PDF and PNG/JPG versions as appropriate.
+7. Submit the CDR master, exports and one-page rationale.
+Ethan Digital Academy Case Study
+The capstone demonstrates the ability to produce a coordinated, editable vector design package for Ethan 
+Digital Academy.
+Review Questions
+92. What is the main purpose of final coreldraw promotional package?
+93. State two professional vector-design practices from this lesson.
+94. What common quality or copyright mistake should be avoided?
+95. How would you apply this lesson to an Academy design?
+Assignment
+Complete the Lesson 19 practical using original or authorised assets. Submit the editable CorelDRAW 
+practice file or instructor-approved evidence, a final preview, and a short explanation of your design choices.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Final Practical Project - 100 Marks
+Component
+Marks
+Requirement
+Brief
+10
+Audience, purpose and required 
+outputs.
+Original vector motif
+15
+Clean original geometry/curves.
+Typography and colour
+15
+Readable hierarchy and 
+consistent palette.
+Flyer/poster
+20
+Strong layout and complete 
+information.
+Digital adaptation
+15
+Effective square social version.
+Technical preparation
+10
+Correct page setup and suitable 
+exports.
+Responsible asset use
+5
+Original/licensed content only.
+Rationale and handoff
+10
+Organised master, exports and 
+explanation.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Course Quiz - 30 Questions
+1. What is vector graphics?
+2. What is raster graphics?
+3. Give one advantage of vector artwork.
+4. Name four CorelDRAW workspace areas.
+5. Why should page size be set early?
+6. Name three basic vector shapes.
+7. What is proportional scaling?
+8. What is a node?
+9. What is a curve handle?
+10. What is a fill?
+11. What is an outline?
+12. Why is colour contrast important?
+13. What is text hierarchy?
+14. What is alignment?
+15. What is distribution?
+16. What is grouping?
+17. What does object order control?
+18. What is a weld/union-style shaping operation?
+19. What is transparency?
+20. What is a gradient?
+21. Why should effects be restrained?
+22. Why must imported images be authorised?
+23. What happens if a small raster image is enlarged too much?
+24. State two principles of simple logo design.
+25. Why should protected logos not be traced?
+26. Name four items required on an event flyer.
+27. What should be confirmed with a commercial printer?
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+28. Give one use for PNG.
+29. Why should the editable CDR master be retained?
+30. List four deliverables or requirements in the final CorelDRAW project.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Final Examination - 100 Marks
+Section A - Vector Foundations (20 marks)
+Explain vector/raster graphics, workspace, page setup and basic object transformation.
+Section B - Drawing and Object Editing (20 marks)
+Explain shapes, nodes, curves, fills, outlines and object shaping.
+Section C - Typography and Precision Layout (20 marks)
+Explain text, hierarchy, alignment, distribution, guides and grouping.
+Section D - Applied Design (20 marks)
+Plan an original logo/icon exercise and a complete course flyer/poster.
+Section E - Output and Professional Practice (20 marks)
+Explain raster-image placement, print preparation, digital export, copyright responsibility and file handoff.
+
+ETHAN DIGITAL ACADEMY  |  CORELDRAW ESSENTIALS
+Ethan Digital Academy | EDA-CDR-119 | Paid Enrollee Visual Study Manual
+Course Completion Outcome
+After successful completion, the learner should be able to create and organise vector artwork in 
+CorelDRAW, work with shapes and curves, apply colour and typography, align and group objects, combine 
+geometry into original forms, build flyers and simple identity graphics, place authorised raster images, 
+prepare basic print-oriented files and export suitable digital outputs while preserving an editable master.
+Professional Practice Checklist
+
+Begin with a clear brief and correct page size.
+
+Use original vector construction.
+
+Keep typography readable and aligned.
+
+Use consistent fills, outlines and colour.
+
+Organise groups and object order.
+
+Do not copy or trace protected logos or commercial artwork.
+
+Confirm printer requirements before final print export.
+
+Inspect final PDF/PNG/JPG outputs and keep the editable CDR master.

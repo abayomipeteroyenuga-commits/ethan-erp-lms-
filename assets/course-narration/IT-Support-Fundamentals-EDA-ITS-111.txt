@@ -1,0 +1,1223 @@
+ETHAN DIGITAL ACADEMY
+
+ IT SUPPORT FUNDAMENTALS
+ FULL VISUAL STUDY MANUAL
+
+Course Code EDA-ITS-111
+Level Beginner to Intermediate
+Duration 6 Weeks (19 Lessons)
+Certificate Professional Certificate in IT Support Fundamentals
+Prerequisite Computer Appreciation + Hardware Fundamentals
+Learning Format Classroom + Guided Help-Desk Practicals + Final
+ Service-Desk Project
+
+ Safety and security standard: all practicals use authorised devices, fictional users
+ and defensive support workflows. Learners must not request passwords or one-
+ time codes, bypass controls, probe networks, test suspicious links or perform
+ hazardous electrical repairs.
+
+ 
+
+ 
+
+Course Introduction
+IT Support Fundamentals prepares learners to provide safe, organised and professional first-line technology
+support. The course covers service desks, ticketing, prioritisation, troubleshooting, Windows and application
+support, peripherals, connectivity, accounts, email, remote support, customer service, security escalation,
+knowledge bases, asset records and reporting.
+
+Learning Objectives
+ Explain the role and structure of an IT support service.
+ Create clear support tickets and prioritise incidents.
+ Apply a structured first-line troubleshooting method.
+ Support common desktop, application, peripheral and connectivity issues safely.
+ Guide legitimate account recovery without collecting user secrets.
+ Communicate professionally with users.
+ Recognise issues that require technical or security escalation.
+ Create knowledge-base and support records.
+ Operate a fictional help desk from ticket opening to closure.
+
+Course Structure
+1. Lesson 1: Introduction to IT Support
+2. Lesson 2: IT Support Roles and Service Desk Structure
+3. Lesson 3: Support Tickets and Incident Logging
+4. Lesson 4: Impact, Urgency and Prioritisation
+5. Lesson 5: Troubleshooting Methodology
+6. Lesson 6: Supporting Windows and Desktop Settings
+7. Lesson 7: Application Support Fundamentals
+8. Lesson 8: Printer and Peripheral Support
+9. Lesson 9: Network and Internet Support Basics
+10. Lesson 10: Account and Password Support
+11. Lesson 11: Email and Communication Support
+12. Lesson 12: Remote Support and User Consent
+13. Lesson 13: Customer Service and Communication Skills
+14. Lesson 14: Security Awareness for IT Support
+15. Lesson 15: Escalation and Handover
+16. Lesson 16: Knowledge Base and Self-Service Documentation
+17. Lesson 17: Asset and Support Records
+18. Lesson 18: Help-Desk Reporting and Service Improvement
+19. Lesson 19: Final IT Support Help-Desk Project
+
+ 
+
+ 
+
+Lesson 1: Introduction to IT Support
+Introduction
+IT support helps people use technology effectively by diagnosing problems, guiding users, maintaining
+service records and escalating issues that require specialist access.
+
+Learning Objectives
+ Explain the main principles of introduction to it support.
+ Complete a safe first-line support practical for introduction to it support.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: IT support is a service function, not only a repair activity.
+
+Key point: A support professional needs technical knowledge, communication, patience and documentation
+skills.
+
+Key point: Good support begins with understanding the user's actual problem rather than guessing.
+
+Key point: Support staff should work only within authorised systems, accounts and organisational
+procedures.
+
+ Figure 1: Instructional visual for Introduction to IT Support.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. List five problems an IT support desk may receive.
+
+2. Classify each as hardware, software, account, network or user-guidance issue.
+
+3. Write one sentence explaining the purpose of IT support.
+
+4. Create a fictional support-desk name and contact process.
+
+Ethan Digital Academy Case Study
+Ethan Digital Academy may need support for learner logins, classroom computers, projectors, printers, Wi-Fi
+and approved learning applications.
+
+Review Questions
+20. What is the main support goal in introduction to it support?
+21. State two correct first-line practices from this lesson.
+22. What action would require escalation or extra authorisation?
+23. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 1 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 2: IT Support Roles and Service Desk
+Structure
+Introduction
+Support work can be organised into front-line help desk, technical escalation and specialist teams.
+
+Learning Objectives
+ Explain the main principles of it support roles and service desk structure.
+ Complete a safe first-line support practical for it support roles and service desk structure.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: First-line support handles common questions and safe standard fixes.
+
+Key point: Second-line or specialist staff handle more complex issues requiring deeper access or expertise.
+
+Key point: System administrators manage authorised infrastructure and accounts.
+
+Key point: Security incidents should follow the organisation's security escalation route.
+
+Key point: Clear role boundaries reduce unsafe or duplicated work.
+
+Step-by-Step Guided Practical
+1. Draw a three-level support structure.
+
+2. Place five fictional issues at the correct level.
+
+3. Identify which role should handle a damaged power supply.
+
+4. Identify which role should handle a password reset under an approved process.
+
+Ethan Digital Academy Case Study
+Academy reception or first-line staff can log an issue, while hardware repair or security incidents go to
+qualified staff.
+
+Review Questions
+24. What is the main support goal in it support roles and service desk structure?
+25. State two correct first-line practices from this lesson.
+26. What action would require escalation or extra authorisation?
+27. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 2 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 3: Support Tickets and Incident Logging
+Introduction
+A ticket is a record of a support request. Clear tickets help teams understand what happened and what has
+already been tried.
+
+Learning Objectives
+ Explain the main principles of support tickets and incident logging.
+ Complete a safe first-line support practical for support tickets and incident logging.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Record user or department, device, date/time, symptom and impact.
+
+Key point: Use the user's words for the initial symptom, then add technical observations separately.
+
+Key point: Avoid storing passwords, one-time codes or unnecessary personal data.
+
+Key point: Record actions and results so another authorised technician can continue the case.
+
+Key point: Close a ticket only after resolution or an agreed next step.
+
+ Figure 3: Instructional visual for Support Tickets and Incident Logging.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create a fictional ticket for 'projector shows no image'.
+
+2. Add device, room, symptom and impact.
+
+3. Record two safe checks.
+
+4. Write a resolution or escalation note.
+
+5. Review the ticket for clarity.
+
+Ethan Digital Academy Case Study
+An Academy ticket history can show whether the same classroom device repeatedly fails.
+
+Review Questions
+28. What is the main support goal in support tickets and incident logging?
+29. State two correct first-line practices from this lesson.
+30. What action would require escalation or extra authorisation?
+31. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 3 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 4: Impact, Urgency and Prioritisation
+Introduction
+Support teams prioritise work by considering how many people or services are affected and how quickly
+action is needed.
+
+Learning Objectives
+ Explain the main principles of impact, urgency and prioritisation.
+ Complete a safe first-line support practical for impact, urgency and prioritisation.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Impact measures the scale of disruption.
+
+Key point: Urgency measures how quickly the issue needs attention.
+
+Key point: A single learner with a workaround may be lower priority than a whole class unable to access the
+LMS.
+
+Key point: Safety, security and major service failures require immediate escalation according to policy.
+
+Key point: Priority should be based on service impact, not on who complains the loudest.
+
+ Figure 4: Instructional visual for Impact, Urgency and Prioritisation.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Rank four fictional incidents from low to high priority.
+
+2. Explain the impact and urgency of each.
+
+3. Choose a response target for classroom-critical issues.
+
+4. Write one example where a low-impact issue is still urgent.
+
+Ethan Digital Academy Case Study
+If an entire Academy lab loses internet during an examination, its priority is higher than one optional
+application failing on one computer.
+
+Review Questions
+32. What is the main support goal in impact, urgency and prioritisation?
+33. State two correct first-line practices from this lesson.
+34. What action would require escalation or extra authorisation?
+35. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 4 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 5: Troubleshooting Methodology
+Introduction
+Troubleshooting is a logical process of defining the symptom, checking likely causes, testing safely and
+verifying the result.
+
+Learning Objectives
+ Explain the main principles of troubleshooting methodology.
+ Complete a safe first-line support practical for troubleshooting methodology.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Ask what changed, when the problem began and whether it affects one user or many.
+
+Key point: Check simple external causes first.
+
+Key point: Use approved built-in status information before installing extra tools.
+
+Key point: Change one safe variable at a time.
+
+Key point: Document every meaningful action and stop when specialist access is required.
+
+ Figure 5: Instructional visual for Troubleshooting Methodology.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Use a fictional 'no sound' problem.
+
+2. Write clarifying questions.
+
+3. List safe checks such as volume and output device.
+
+4. Choose one test at a time.
+
+5. Write how you would verify success.
+
+Ethan Digital Academy Case Study
+A structured method prevents Academy support staff from randomly changing settings and creating new
+problems.
+
+Review Questions
+36. What is the main support goal in troubleshooting methodology?
+37. State two correct first-line practices from this lesson.
+38. What action would require escalation or extra authorisation?
+39. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 5 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 6: Supporting Windows and Desktop
+Settings
+Introduction
+Many support requests involve ordinary desktop settings rather than failed hardware.
+
+Learning Objectives
+ Explain the main principles of supporting windows and desktop settings.
+ Complete a safe first-line support practical for supporting windows and desktop settings.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Display issues may involve brightness, resolution, duplicate/extend mode or external display
+input.
+
+Key point: Sound issues may involve mute, volume or wrong output device.
+
+Key point: Storage issues may involve low free space or misplaced files.
+
+Key point: Updates may require a restart.
+
+Key point: Use normal system settings and respect administrator restrictions.
+
+ Figure 6: Instructional visual for Supporting Windows and Desktop Settings.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Open Windows Settings on an authorised computer.
+
+2. Locate Display, Sound, Storage and Windows Update.
+
+3. Record current settings without changing restricted options.
+
+4. Change one harmless display scaling or volume setting if authorised, then restore it.
+
+Ethan Digital Academy Case Study
+Academy first-line support can solve many classroom issues through standard Windows settings.
+
+Review Questions
+40. What is the main support goal in supporting windows and desktop settings?
+41. State two correct first-line practices from this lesson.
+42. What action would require escalation or extra authorisation?
+43. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 6 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 7: Application Support Fundamentals
+Introduction
+Application support focuses on whether software opens, behaves normally and has the resources or
+permissions it legitimately needs.
+
+Learning Objectives
+ Explain the main principles of application support fundamentals.
+ Complete a safe first-line support practical for application support fundamentals.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Confirm the correct application and version.
+
+Key point: Check whether the issue affects one file or the whole application.
+
+Key point: Save user work before restarting an application.
+
+Key point: Use official update or repair options when authorised.
+
+Key point: Do not disable security controls or install unknown patches to force an application to work.
+
+Step-by-Step Guided Practical
+1. Use a harmless document application.
+
+2. Open a practice file.
+
+3. Simulate a 'file not found' issue by moving a practice file to another folder.
+
+4. Use search or Recent files to locate it.
+
+5. Document the resolution.
+
+Ethan Digital Academy Case Study
+Academy support may help learners locate assignments or confirm approved applications are updated.
+
+Review Questions
+44. What is the main support goal in application support fundamentals?
+45. State two correct first-line practices from this lesson.
+46. What action would require escalation or extra authorisation?
+47. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 7 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 8: Printer and Peripheral Support
+Introduction
+Printers, keyboards, mice, webcams and projectors create common help-desk tickets.
+
+Learning Objectives
+ Explain the main principles of printer and peripheral support.
+ Complete a safe first-line support practical for printer and peripheral support.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Check power and cable connections before assuming hardware failure.
+
+Key point: Confirm the correct printer or output device is selected.
+
+Key point: Check paper, queue and status messages.
+
+Key point: For USB devices, reconnect only through normal external ports.
+
+Key point: Damaged electrical parts or repeated mechanical faults should be escalated.
+
+Step-by-Step Guided Practical
+1. Create a fictional 'printer not printing' ticket.
+
+2. Check selected printer, queue and paper status.
+
+3. Create a 'mouse not working' checklist.
+
+4. Create a 'projector no image' checklist.
+
+5. Mark which conditions require technician escalation.
+
+Ethan Digital Academy Case Study
+A prepared peripheral checklist helps Academy instructors restore simple classroom equipment quickly.
+
+Review Questions
+48. What is the main support goal in printer and peripheral support?
+49. State two correct first-line practices from this lesson.
+50. What action would require escalation or extra authorisation?
+51. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 8 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 9: Network and Internet Support Basics
+Introduction
+Connectivity support begins by separating device, local-network and wider-service problems.
+
+Learning Objectives
+ Explain the main principles of network and internet support basics.
+ Complete a safe first-line support practical for network and internet support basics.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Confirm whether Wi-Fi or Ethernet is enabled and connected to the expected authorised
+network.
+
+Key point: Check whether the issue affects one device or many.
+
+Key point: Test access to an approved known service rather than random websites.
+
+Key point: Restarting network infrastructure should be left to authorised administrators.
+
+Key point: Do not scan, probe or attempt to bypass network controls.
+
+ Figure 9: Instructional visual for Network and Internet Support Basics.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Identify whether an authorised computer uses Wi-Fi or Ethernet.
+
+2. Record the connection status.
+
+3. Use the normal network troubleshooter if available.
+
+4. Compare a fictional one-device outage with a whole-lab outage.
+
+5. Write the correct escalation path.
+
+Ethan Digital Academy Case Study
+Academy support can determine whether one laptop lost Wi-Fi or the entire site has a provider outage.
+
+Review Questions
+52. What is the main support goal in network and internet support basics?
+53. State two correct first-line practices from this lesson.
+54. What action would require escalation or extra authorisation?
+55. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 9 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 10: Account and Password Support
+Introduction
+Account support must protect user identity and credentials while restoring legitimate access.
+
+Learning Objectives
+ Explain the main principles of account and password support.
+ Complete a safe first-line support practical for account and password support.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Never ask a user to tell you their password or one-time authentication code.
+
+Key point: Use approved identity-verification and password-reset procedures.
+
+Key point: Encourage users to enter credentials privately.
+
+Key point: Account lockouts may require administrator action.
+
+Key point: Suspicious account activity should be escalated to security or authorised administrators.
+
+ Figure 10: Instructional visual for Account and Password Support.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Write a safe password-reset conversation.
+
+2. Identify information support staff should never request.
+
+3. Locate the official account-recovery option for a practice service.
+
+4. Create a fictional locked-account ticket.
+
+5. Write an escalation note for suspicious sign-in activity.
+
+Ethan Digital Academy Case Study
+Academy staff can guide learners to the official LMS password-reset process without knowing their
+passwords.
+
+Review Questions
+56. What is the main support goal in account and password support?
+57. State two correct first-line practices from this lesson.
+58. What action would require escalation or extra authorisation?
+59. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 10 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 11: Email and Communication Support
+Introduction
+Support staff often help users with email setup, sending, attachments and mailbox organisation.
+
+Learning Objectives
+ Explain the main principles of email and communication support.
+ Complete a safe first-line support practical for email and communication support.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Confirm internet connectivity before troubleshooting online email.
+
+Key point: Check recipient address and attachment size for ordinary sending issues.
+
+Key point: Explain CC/BCC and inbox organisation when needed.
+
+Key point: Do not open suspicious attachments to 'test' them.
+
+Key point: Phishing reports should follow the security process.
+
+Step-by-Step Guided Practical
+1. Draft a fictional ticket for 'attachment will not send'.
+
+2. Check file size and connection status.
+
+3. Write a user-friendly explanation.
+
+4. Create a separate fictional phishing report and mark it for escalation.
+
+5. Do not interact with suspicious links.
+
+Ethan Digital Academy Case Study
+Academy support can help instructors attach approved course documents while routing suspicious
+messages to security.
+
+Review Questions
+60. What is the main support goal in email and communication support?
+61. State two correct first-line practices from this lesson.
+62. What action would require escalation or extra authorisation?
+63. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 11 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 12: Remote Support and User Consent
+Introduction
+Remote support can be useful when staff cannot reach a device physically, but it requires consent,
+transparency and privacy.
+
+Learning Objectives
+ Explain the main principles of remote support and user consent.
+ Complete a safe first-line support practical for remote support and user consent.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Use only organisation-approved remote-support tools.
+
+Key point: Obtain the user's permission before starting.
+
+Key point: Explain what you are doing and avoid unrelated personal files.
+
+Key point: Ask the user to enter passwords themselves.
+
+Key point: End the remote session when support is complete.
+
+ Figure 12: Instructional visual for Remote Support and User Consent.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Write a remote-support consent script.
+
+2. Create a checklist for beginning a session.
+
+3. Create a privacy checklist.
+
+4. Write a closing message confirming the session has ended.
+
+5. Explain when remote support should not be used.
+
+Ethan Digital Academy Case Study
+Academy IT staff can remotely guide an instructor only through approved tools and with the instructor's
+knowledge.
+
+Review Questions
+64. What is the main support goal in remote support and user consent?
+65. State two correct first-line practices from this lesson.
+66. What action would require escalation or extra authorisation?
+67. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 12 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 13: Customer Service and
+Communication Skills
+Introduction
+Users may be frustrated when technology blocks their work. Support professionals should communicate
+calmly and clearly.
+
+Learning Objectives
+ Explain the main principles of customer service and communication skills.
+ Complete a safe first-line support practical for customer service and communication skills.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Acknowledge the problem without blaming the user.
+
+Key point: Ask focused questions one at a time.
+
+Key point: Avoid unnecessary technical jargon.
+
+Key point: Give realistic updates when a case is taking longer.
+
+Key point: Confirm the solution in language the user understands.
+
+ Figure 13: Instructional visual for Customer Service and Communication Skills.
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Rewrite three technical statements in plain language.
+
+2. Role-play a fictional support call with a classmate or instructor.
+
+3. Ask three clarifying questions.
+
+4. Write a short progress update.
+
+5. Write a professional closure message.
+
+Ethan Digital Academy Case Study
+Good communication helps Academy learners and instructors feel supported even when a technical issue
+needs escalation.
+
+Review Questions
+68. What is the main support goal in customer service and communication skills?
+69. State two correct first-line practices from this lesson.
+70. What action would require escalation or extra authorisation?
+71. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 13 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 14: Security Awareness for IT Support
+Introduction
+Support staff are often the first to hear about suspicious emails, malware alerts, lost devices or unusual
+account behaviour.
+
+Learning Objectives
+ Explain the main principles of security awareness for it support.
+ Complete a safe first-line support practical for security awareness for it support.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Do not investigate suspicious links or files beyond approved defensive procedures.
+
+Key point: Preserve useful information such as time, device and visible alert message.
+
+Key point: Escalate malware, credential theft, lost devices and possible data exposure promptly.
+
+Key point: Do not promise secrecy when an organisational security process requires reporting.
+
+Key point: Use least privilege and access only what is needed for the support task.
+
+ Figure 14: Instructional visual for Security Awareness for IT Support.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Review four fictional support tickets.
+
+2. Identify which are ordinary IT issues and which require security escalation.
+
+3. Write a safe incident note.
+
+4. List evidence that can be recorded without opening suspicious content.
+
+5. State who should receive the escalation in a fictional organisation.
+
+Ethan Digital Academy Case Study
+An Academy help desk should recognise a phishing report and send it to the authorised security contact
+rather than testing the link.
+
+Review Questions
+72. What is the main support goal in security awareness for it support?
+73. State two correct first-line practices from this lesson.
+74. What action would require escalation or extra authorisation?
+75. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 14 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 15: Escalation and Handover
+Introduction
+Escalation transfers a case to someone with the authority or expertise required to continue safely.
+
+Learning Objectives
+ Explain the main principles of escalation and handover.
+ Complete a safe first-line support practical for escalation and handover.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Escalate when the issue exceeds your access, skill, time target or safety boundary.
+
+Key point: Include symptoms, impact, actions already taken and results.
+
+Key point: Avoid repeating failed steps without a reason.
+
+Key point: Tell the user what happens next.
+
+Key point: Keep ownership clear until the receiving team accepts the case.
+
+Step-by-Step Guided Practical
+1. Create a fictional escalation for a failed laptop battery.
+
+2. Include ticket number, device, impact and checks performed.
+
+3. Write a user update.
+
+4. Create a second escalation for a suspected account compromise.
+
+5. Compare the information needed in each.
+
+Ethan Digital Academy Case Study
+Academy first-line staff can hand a hardware fault to a technician with enough information to avoid restarting
+the diagnosis from zero.
+
+Review Questions
+76. What is the main support goal in escalation and handover?
+77. State two correct first-line practices from this lesson.
+78. What action would require escalation or extra authorisation?
+79. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 15 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 16: Knowledge Base and Self-Service
+Documentation
+Introduction
+A knowledge base turns repeated support solutions into clear reusable instructions.
+
+Learning Objectives
+ Explain the main principles of knowledge base and self-service documentation.
+ Complete a safe first-line support practical for knowledge base and self-service documentation.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Use a specific problem-focused title.
+
+Key point: Describe symptoms and prerequisites.
+
+Key point: Write numbered safe steps.
+
+Key point: Include what success looks like.
+
+Key point: Review articles when software changes.
+
+Key point: Do not publish internal credentials, private URLs or sensitive administrative details.
+
+ 
+
+ 
+ Figure 16: Instructional visual for Knowledge Base and Self-Service Documentation.
+
+Step-by-Step Guided Practical
+1. Choose a common harmless issue such as 'How to select the correct printer'.
+
+2. Write a title and symptom description.
+
+3. Write five numbered steps.
+
+4. Add a verification step.
+
+5. Ask a classmate to follow the article and note unclear wording.
+
+Ethan Digital Academy Case Study
+Academy can publish learner-facing help articles for login, course access and common classroom
+technology tasks.
+
+Review Questions
+80. What is the main support goal in knowledge base and self-service documentation?
+81. State two correct first-line practices from this lesson.
+82. What action would require escalation or extra authorisation?
+83. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 16 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 17: Asset and Support Records
+Introduction
+IT support works better when devices and recurring problems can be tracked.
+
+Learning Objectives
+ Explain the main principles of asset and support records.
+ Complete a safe first-line support practical for asset and support records.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Asset records can include device name, model, location, serial/asset number and warranty.
+
+Key point: Ticket history can reveal repeated faults.
+
+Key point: Maintenance and support records should use consistent identifiers.
+
+Key point: Access to records should follow organisational permissions.
+
+Key point: Passwords and unnecessary personal information do not belong in asset records.
+
+Step-by-Step Guided Practical
+1. Create a fictional asset register for five computers.
+
+2. Give each a unique asset ID.
+
+3. Link two fictional tickets to one device.
+
+4. Identify a repeated issue.
+
+5. Write a replacement or maintenance recommendation.
+
+Ethan Digital Academy Case Study
+Academy management can use support history to decide whether a frequently failing computer should be
+repaired or replaced.
+
+Review Questions
+84. What is the main support goal in asset and support records?
+85. State two correct first-line practices from this lesson.
+86. What action would require escalation or extra authorisation?
+87. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 17 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 18: Help-Desk Reporting and Service
+Improvement
+Introduction
+Support data can show workload, recurring problems and opportunities for training or preventive action.
+
+Learning Objectives
+ Explain the main principles of help-desk reporting and service improvement.
+ Complete a safe first-line support practical for help-desk reporting and service improvement.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Useful measures include ticket volume, categories, resolution time and repeat incidents.
+
+Key point: Metrics need context; a fast closure is not useful if the problem returns.
+
+Key point: Recurring user questions may indicate a need for clearer training or documentation.
+
+Key point: Reports should protect user privacy.
+
+Key point: Service improvement should focus on reducing disruption and improving user experience.
+
+Step-by-Step Guided Practical
+1. Create ten fictional tickets in a table.
+
+2. Group them by category.
+
+3. Count how many were resolved or escalated.
+
+4. Identify the most common issue.
+
+5. Recommend one improvement based on the data.
+
+Ethan Digital Academy Case Study
+If many Academy learners repeatedly ask how to upload assignments, a clearer guide may reduce future
+tickets.
+
+Review Questions
+88. What is the main support goal in help-desk reporting and service improvement?
+89. State two correct first-line practices from this lesson.
+90. What action would require escalation or extra authorisation?
+91. What information should be recorded in the support ticket?
+
+ 
+
+ 
+
+Assignment
+Complete the Lesson 18 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Lesson 19: Final IT Support Help-Desk Project
+Introduction
+The final project combines ticketing, prioritisation, troubleshooting, communication, escalation and reporting.
+
+Learning Objectives
+ Explain the main principles of final it support help-desk project.
+ Complete a safe first-line support practical for final it support help-desk project.
+ Document and communicate the result professionally.
+
+Teaching Content
+Key point: Use only fictional users, devices and support cases.
+
+Key point: Apply safe first-line checks rather than invasive or unauthorised actions.
+
+Key point: Show clear communication at opening, progress and closure.
+
+Key point: Escalate security, electrical and specialist faults appropriately.
+
+Key point: Summarise lessons that could improve future support.
+
+ Figure 19: Instructional visual for Final IT Support Help-Desk Project.
+
+ 
+
+ 
+
+Step-by-Step Guided Practical
+1. Create five fictional tickets covering software, hardware, network, account and security categories.
+
+2. Assign impact, urgency and priority.
+
+3. Write safe troubleshooting steps for each.
+
+4. Resolve at least two fictional first-line cases and escalate the others appropriately.
+
+5. Write user updates and closure notes.
+
+6. Produce a one-page help-desk summary report.
+
+Ethan Digital Academy Case Study
+This project models a small professional service desk supporting Ethan Digital Academy operations.
+
+Review Questions
+92. What is the main support goal in final it support help-desk project?
+93. State two correct first-line practices from this lesson.
+94. What action would require escalation or extra authorisation?
+95. What information should be recorded in the support ticket?
+
+Assignment
+Complete the Lesson 19 fictional support scenario. Submit a short ticket containing the symptom, impact,
+safe checks, result and next action. Do not include passwords, codes or real private information.
+
+ 
+
+ 
+
+Final Practical Project - 100 Marks
+Component Marks Requirement
+Ticket quality 15 Five clear fictional tickets with
+ complete facts.
+Prioritisation 10 Impact and urgency applied
+ consistently.
+Troubleshooting 20 Safe logical first-line checks.
+User communication 15 Professional opening, updates
+ and closure.
+Account/privacy practice 10 No collection of passwords or
+ one-time codes.
+Escalation 15 Correct handover for
+ specialist/security cases.
+Knowledge article 5 One reusable help article.
+Service report 10 Summary, recurring issue and
+ improvement recommendation.
+
+ 
+
+ 
+
+Course Quiz - 30 Questions
+1. What is IT support?
+
+2. What is first-line support?
+
+3. What is a support ticket?
+
+4. Name four facts that belong in a ticket.
+
+5. Why should passwords not be stored in tickets?
+
+6. What is impact?
+
+7. What is urgency?
+
+8. Why should priority not depend on who complains loudest?
+
+9. What is the first step in troubleshooting?
+
+10. Why change one safe variable at a time?
+
+11. Name two common Windows support areas.
+
+12. Why should user work be saved before restarting an application?
+
+13. Name three peripheral support checks.
+
+14. How can you tell whether a network problem affects one device or many?
+
+15. Why should learners not scan or probe networks?
+
+16. Should a support worker ask for a user's password?
+
+17. What is the safe way to handle MFA codes?
+
+18. What should happen if suspicious account activity is reported?
+
+19. Name two ordinary email support checks.
+
+20. Why should suspicious attachments not be opened for testing?
+
+21. What is remote support consent?
+
+22. Why should a remote session end when support is complete?
+
+23. Name two good customer-service behaviours.
+
+24. What does least privilege mean in support work?
+
+25. When should a case be escalated?
+
+26. What information belongs in a handover?
+
+27. What is a knowledge base?
+
+ 
+
+ 
+28. What is an asset register?
+
+29. Name two useful help-desk metrics.
+
+30. Why are recurring issues useful for service improvement?
+
+ 
+
+ 
+
+Final Examination - 100 Marks
+Section A - Service Desk Foundations (20 marks)
+Explain IT support roles, ticketing, impact, urgency and prioritisation.
+
+Section B - Troubleshooting and Desktop Support (20 marks)
+Describe a safe troubleshooting method and apply it to common Windows, application and peripheral
+issues.
+
+Section C - Connectivity and Accounts (20 marks)
+Explain first-line network checks, legitimate account recovery, email support and privacy boundaries.
+
+Section D - Communication, Security and Escalation (20 marks)
+Explain customer service, remote-support consent, security awareness and professional handover.
+
+Section E - Support Operations (20 marks)
+Design a simple knowledge base, asset register and service report for Ethan Digital Academy.
+
+ 
+
+ 
+
+Course Completion Outcome
+After successful completion, the learner should be able to operate as a safe beginner first-line IT support
+assistant: log and prioritise tickets, diagnose common user problems systematically, support desktop
+applications and peripherals, perform basic connectivity checks, guide legitimate account recovery without
+handling secrets, communicate clearly, document work, escalate security or specialist issues and contribute
+to a simple knowledge base and service report.
+
+Professional Practice Checklist
+ Work only on authorised devices and accounts.
+ Never ask for a user's password or one-time code.
+ Use safe standard checks before advanced changes.
+ Do not probe networks or test suspicious links/files.
+ Explain actions clearly to the user.
+ Document symptoms, actions and results.
+ Escalate electrical, security and specialist faults promptly.

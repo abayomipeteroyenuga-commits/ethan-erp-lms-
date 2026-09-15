@@ -1,4 +1,4 @@
-const CACHE = "ethan-erp-lms-v10.4";
+const CACHE = "ethan-erp-lms-v12.3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const ASSETS = [
   "./app.js",
   "./config.js",
   "./supabase-client.js",
+  "./course-narration-data.js",
   "./assets/ethan-logo.jpeg"
 ];
 
@@ -34,7 +35,8 @@ self.addEventListener("fetch", event => {
     url.pathname.endsWith("/styles.css") ||
     url.pathname.endsWith("/app.js") ||
     url.pathname.endsWith("/config.js") ||
-    url.pathname.endsWith("/supabase-client.js");
+    url.pathname.endsWith("/supabase-client.js") ||
+    url.pathname.endsWith("/course-narration-data.js");
 
   if (isAppAsset) {
     event.respondWith(

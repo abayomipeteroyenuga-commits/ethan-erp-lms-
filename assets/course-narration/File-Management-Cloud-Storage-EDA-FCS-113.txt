@@ -1,0 +1,1299 @@
+ETHAN DIGITAL ACADEMY
+
+FILE MANAGEMENT & CLOUD STORAGE
+
+FULL VISUAL STUDY MANUAL
+
+Practical work should use authorised accounts and harmless practice files. Never share passwords or one-time codes, expose private files through public links, or delete important data while practising.
+
+Course Introduction
+
+This course teaches learners how to create a reliable digital filing system and use cloud storage responsibly. It combines local file organisation with synchronisation, sharing, collaboration, backup, recovery, privacy and cross-device workflows.
+
+Learning Objectives
+
+Explain files, folders, paths, formats and storage locations.
+
+Design clear folder structures and naming conventions.
+
+Search, sort, move, copy, archive and recover files safely.
+
+Explain local, external, synced and cloud storage.
+
+Use cloud sharing permissions appropriately.
+
+Understand synchronisation, version history and offline files.
+
+Create and test a basic backup and recovery plan.
+
+Apply account security and privacy to cloud storage.
+
+Complete an end-to-end digital filing project.
+
+Course Structure
+
+Lesson 1: Introduction to File Management and Cloud Storage
+
+Lesson 2: Understanding Files, Folders and Paths
+
+Lesson 3: File Names and Naming Conventions
+
+Lesson 4: File Types, Extensions and Formats
+
+Lesson 5: Creating a Practical Folder Structure
+
+Lesson 6: Copying, Moving, Renaming and Deleting Safely
+
+Lesson 7: Searching, Sorting and Filtering Files
+
+Lesson 8: Local Storage, External Storage and Cloud Storage
+
+Lesson 9: Cloud Storage Fundamentals
+
+Lesson 10: Synchronisation and Offline Files
+
+Lesson 11: Sharing Files and Folders
+
+Lesson 12: Collaboration and Version History
+
+Lesson 13: Backup Fundamentals
+
+Lesson 14: Restoring Files and Recovering Versions
+
+Lesson 15: Storage Space and Digital Housekeeping
+
+Lesson 16: Cloud Account Security and Privacy
+
+Lesson 17: Working Across Devices
+
+Lesson 18: Archives, Retention and Course Completion
+
+Lesson 19: Final File Management and Cloud Storage Project
+
+Lesson 1: Introduction to File Management and Cloud Storage
+
+Introduction
+
+File management is the organised creation, naming, storage, retrieval, sharing, protection and archiving of digital information. Cloud storage adds online access and synchronisation across authorised devices.
+
+Learning Objectives
+
+Explain the main principles of introduction to file management and cloud storage.
+
+Complete a guided practical for introduction to file management and cloud storage.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: A file is a named unit of digital information; a folder groups files and other folders.
+
+Key point: Good organisation reduces time wasted searching and lowers the risk of using the wrong version.
+
+Key point: Storage location matters: a file may be local, synchronised, cloud-only or backed up elsewhere.
+
+Key point: Cloud services are useful, but users still need naming, permissions, backup and security habits.
+
+Figure 1: Instructional visual for Introduction to File Management and Cloud Storage.
+
+Step-by-Step Guided Practical
+
+1. Create a practice folder named EDA File Management.
+
+2. Add Current Work, Resources, Exports and Archive subfolders.
+
+3. Create one harmless practice text file.
+
+4. Write down whether the file is stored locally or in a synced location.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy learners can keep every course in a predictable folder structure so assignments and resources remain easy to locate.
+
+Review Questions
+
+What is the main purpose of introduction to file management and cloud storage?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 1 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 2: Understanding Files, Folders and Paths
+
+Introduction
+
+A file path describes where a file is stored. Understanding folders and paths helps users locate, move and reference information accurately.
+
+Learning Objectives
+
+Explain the main principles of understanding files, folders and paths.
+
+Complete a guided practical for understanding files, folders and paths.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Folders create hierarchy from broad categories to specific projects.
+
+Key point: A path may include a drive, folders, subfolders and file name.
+
+Key point: Two files can have the same name if they are stored in different folders, which can cause confusion.
+
+Key point: Short, logical structures are easier to maintain than deeply nested folders.
+
+Figure 2: Instructional visual for Understanding Files, Folders and Paths.
+
+Step-by-Step Guided Practical
+
+1. Open File Explorer on an authorised computer.
+
+2. Navigate to your practice folder.
+
+3. Create a subfolder called Week-1.
+
+4. Observe the address/path shown by File Explorer.
+
+5. Explain the path in words.
+
+Ethan Digital Academy Case Study
+
+Academy staff can use a consistent Courses > Course Name > Resources/Assignments structure.
+
+Review Questions
+
+What is the main purpose of understanding files, folders and paths?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 2 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 3: File Names and Naming Conventions
+
+Introduction
+
+A naming convention is a consistent rule for naming files so people can understand and sort them.
+
+Learning Objectives
+
+Explain the main principles of file names and naming conventions.
+
+Complete a guided practical for file names and naming conventions.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Use descriptive words rather than default names such as Document1.
+
+Key point: Dates written year-month-day sort naturally.
+
+Key point: Version numbers such as v01, v02 and v03 are clearer than final-final-new.
+
+Key point: Avoid unnecessary special characters that may cause compatibility problems.
+
+Key point: A team should agree on one naming pattern.
+
+Figure 3: Instructional visual for File Names and Naming Conventions.
+
+Step-by-Step Guided Practical
+
+1. Rename three practice files using a course-topic-description pattern.
+
+2. Add a date to one file name.
+
+3. Create v01 and v02 copies of a harmless practice document.
+
+4. Compare the names in alphabetical order.
+
+5. Write your own naming standard.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can use names such as Digital-Marketing-Content-Calendar-v02 instead of New Document.
+
+Review Questions
+
+What is the main purpose of file names and naming conventions?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 3 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 4: File Types, Extensions and Formats
+
+Introduction
+
+A file extension indicates a file format and often helps Windows choose an application to open it.
+
+Learning Objectives
+
+Explain the main principles of file types, extensions and formats.
+
+Complete a guided practical for file types, extensions and formats.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: DOCX is commonly used for editable word-processing documents.
+
+Key point: XLSX stores spreadsheet workbooks; PPTX stores presentations.
+
+Key point: PDF preserves a fixed page layout for viewing and printing.
+
+Key point: JPG and PNG are common image formats; ZIP packages multiple files into a compressed archive.
+
+Key point: Changing only the extension text does not truly convert a file format.
+
+Figure 4: Instructional visual for File Types, Extensions and Formats.
+
+Step-by-Step Guided Practical
+
+1. Identify five harmless files and their extensions.
+
+2. Group them as document, spreadsheet, presentation, image or archive.
+
+3. Open file properties/details for one practice file.
+
+4. Explain which application normally opens it.
+
+5. Do not rename extensions to attempt conversion.
+
+Ethan Digital Academy Case Study
+
+Academy learners should submit the format requested by an instructor rather than simply changing a file extension.
+
+Review Questions
+
+What is the main purpose of file types, extensions and formats?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 4 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 5: Creating a Practical Folder Structure
+
+Introduction
+
+A useful folder structure reflects how work is actually performed.
+
+Learning Objectives
+
+Explain the main principles of creating a practical folder structure.
+
+Complete a guided practical for creating a practical folder structure.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Separate active work from resources and completed archives.
+
+Key point: Use one project or course folder as the main container.
+
+Key point: Avoid saving everything to Desktop or Downloads.
+
+Key point: A shared team structure should be understandable without verbal explanation.
+
+Key point: Review structures periodically and remove unnecessary duplication.
+
+Step-by-Step Guided Practical
+
+1. Create a folder for a fictional Ethan Digital Skills Workshop.
+
+2. Add Admin, Learners, Resources, Current Work, Exports and Archive.
+
+3. Place three practice files in the correct locations.
+
+4. Ask another learner to locate one file using only the structure.
+
+5. Improve any confusing folder name.
+
+Ethan Digital Academy Case Study
+
+A standard Academy course folder can make handover easier when more than one instructor works on the same programme.
+
+Review Questions
+
+What is the main purpose of creating a practical folder structure?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 5 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 6: Copying, Moving, Renaming and Deleting Safely
+
+Introduction
+
+Routine file operations should preserve important information and avoid accidental loss.
+
+Learning Objectives
+
+Explain the main principles of copying, moving, renaming and deleting safely.
+
+Complete a guided practical for copying, moving, renaming and deleting safely.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Copy duplicates a file; Move changes its location.
+
+Key point: Rename changes the file label without changing its contents.
+
+Key point: Deleting a local file may send it to Recycle Bin, depending on the storage system.
+
+Key point: Cloud services may have their own trash or recycle area.
+
+Key point: Before bulk moves or deletions, confirm the selected files and destination.
+
+Step-by-Step Guided Practical
+
+1. Copy a disposable practice file.
+
+2. Move the copy into Archive.
+
+3. Rename it clearly.
+
+4. Delete only the disposable copy.
+
+5. Restore it using the normal recycle/trash feature if available.
+
+Ethan Digital Academy Case Study
+
+Academy learners can practise destructive actions only on disposable files before handling important coursework.
+
+Review Questions
+
+What is the main purpose of copying, moving, renaming and deleting safely?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 6 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 7: Searching, Sorting and Filtering Files
+
+Introduction
+
+Search and sorting help users retrieve information without manually opening every folder.
+
+Learning Objectives
+
+Explain the main principles of searching, sorting and filtering files.
+
+Complete a guided practical for searching, sorting and filtering files.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Search works best with meaningful file names.
+
+Key point: Sorting by name, date, type or size can reveal useful patterns.
+
+Key point: Filtering can narrow large collections.
+
+Key point: Recent files can help, but they are not a substitute for organised storage.
+
+Key point: Verify the location before editing or deleting a search result.
+
+Step-by-Step Guided Practical
+
+1. Create four practice files with different names.
+
+2. Sort the folder by name and then date.
+
+3. Search for a distinctive word in one file name.
+
+4. Filter by type if the interface supports it.
+
+5. Open the result and confirm its path.
+
+Ethan Digital Academy Case Study
+
+An Academy instructor can quickly find all PDF handouts when formats and names are consistent.
+
+Review Questions
+
+What is the main purpose of searching, sorting and filtering files?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 7 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 8: Local Storage, External Storage and Cloud Storage
+
+Introduction
+
+Storage options differ in portability, availability, capacity and risk.
+
+Learning Objectives
+
+Explain the main principles of local storage, external storage and cloud storage.
+
+Complete a guided practical for local storage, external storage and cloud storage.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Internal drives provide fast local access but are tied to the device.
+
+Key point: External drives can provide portable copies but can be lost or damaged.
+
+Key point: Cloud storage allows online access and sharing subject to account and internet availability.
+
+Key point: No single storage location should be treated as automatically permanent.
+
+Key point: Important information should follow an approved backup plan.
+
+Figure 8: Instructional visual for Local Storage, External Storage and Cloud Storage.
+
+Step-by-Step Guided Practical
+
+1. List three files you would keep locally, in cloud storage or both.
+
+2. Identify one advantage and one risk of each location.
+
+3. Inspect an authorised USB drive without moving important data.
+
+4. Identify an approved cloud folder if available.
+
+5. Design a storage plan for a class project.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can keep working course files in managed cloud storage while retaining approved backup copies.
+
+Review Questions
+
+What is the main purpose of local storage, external storage and cloud storage?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 8 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 9: Cloud Storage Fundamentals
+
+Introduction
+
+Cloud storage stores data on provider-managed systems accessed through an account and network connection.
+
+Learning Objectives
+
+Explain the main principles of cloud storage fundamentals.
+
+Complete a guided practical for cloud storage fundamentals.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Users can upload, download, organise and often preview files online.
+
+Key point: Services may offer desktop synchronisation applications.
+
+Key point: Storage quotas can limit available space.
+
+Key point: Offline availability varies by service and settings.
+
+Key point: Cloud access depends on account security and permissions.
+
+Step-by-Step Guided Practical
+
+1. Open an approved cloud-storage service or training account.
+
+2. Create a practice folder.
+
+3. Upload one harmless file.
+
+4. Confirm it appears in the web interface.
+
+5. Download a copy and compare the file name.
+
+Ethan Digital Academy Case Study
+
+Academy staff can store approved teaching resources online so authorised instructors can access current copies.
+
+Review Questions
+
+What is the main purpose of cloud storage fundamentals?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 9 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 10: Synchronisation and Offline Files
+
+Introduction
+
+Synchronisation keeps selected device folders and cloud storage aligned, but users must understand status and conflicts.
+
+Learning Objectives
+
+Explain the main principles of synchronisation and offline files.
+
+Complete a guided practical for synchronisation and offline files.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: A synced folder may keep a local copy while also sending changes to the cloud.
+
+Key point: Cloud-only files may need internet access before they open.
+
+Key point: Status icons or messages show whether syncing is complete.
+
+Key point: Editing the same file on multiple devices can create conflicts.
+
+Key point: Sync is not identical to backup because changes and deletions may propagate.
+
+Figure 10: Instructional visual for Synchronisation and Offline Files.
+
+Step-by-Step Guided Practical
+
+1. Identify a synced practice folder if available.
+
+2. Create or edit a harmless file.
+
+3. Observe its sync status.
+
+4. Disconnect from the file rather than forcing changes while status is unclear.
+
+5. Explain why a separate backup is still useful.
+
+Ethan Digital Academy Case Study
+
+Academy instructors should confirm course updates finish syncing before assuming colleagues can see them.
+
+Review Questions
+
+What is the main purpose of synchronisation and offline files?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 10 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 11: Sharing Files and Folders
+
+Introduction
+
+Cloud sharing lets other authorised people view or collaborate on files without sending many separate copies.
+
+Learning Objectives
+
+Explain the main principles of sharing files and folders.
+
+Complete a guided practical for sharing files and folders.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Sharing can be limited to specific people or provided through a link, depending on the service.
+
+Key point: View, comment and edit permissions have different levels of control.
+
+Key point: Use the least access needed for the task.
+
+Key point: Public or unrestricted links can expose information beyond the intended audience.
+
+Key point: Review and remove access when collaboration ends.
+
+Figure 11: Instructional visual for Sharing Files and Folders.
+
+Step-by-Step Guided Practical
+
+1. Use a fictional sharing scenario rather than real private data.
+
+2. Choose whether a learner should have View or Edit access to a course handout.
+
+3. Choose whether a co-instructor needs Edit access to a planning document.
+
+4. Review a practice share dialog without sending an invitation if not authorised.
+
+5. Write a permission checklist.
+
+Ethan Digital Academy Case Study
+
+Academy course handouts may be view-only for learners while authorised instructors collaborate on editable master documents.
+
+Review Questions
+
+What is the main purpose of sharing files and folders?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 11 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 12: Collaboration and Version History
+
+Introduction
+
+Many cloud services record changes and may provide version history for collaborative files.
+
+Learning Objectives
+
+Explain the main principles of collaboration and version history.
+
+Complete a guided practical for collaboration and version history.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Version history can help identify earlier states of a file.
+
+Key point: Collaborative editing reduces duplicate email attachments.
+
+Key point: Comments can separate feedback from direct editing where supported.
+
+Key point: Users should avoid creating unnecessary parallel copies when a shared master is intended.
+
+Key point: Availability and retention of versions depend on the service.
+
+Figure 12: Instructional visual for Collaboration and Version History.
+
+Step-by-Step Guided Practical
+
+1. Create v01 and v02 of a local practice document.
+
+2. If an approved cloud service provides version history, locate the feature without changing important files.
+
+3. Write a comment on a harmless shared practice document if permitted.
+
+4. Compare manual version naming with service version history.
+
+5. Document which method your team will use.
+
+Ethan Digital Academy Case Study
+
+Academy teams can collaborate on a master course plan while retaining clear revision history.
+
+Review Questions
+
+What is the main purpose of collaboration and version history?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 12 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 13: Backup Fundamentals
+
+Introduction
+
+Backup creates recoverable copies so work can be restored after loss, damage, deletion or device failure.
+
+Learning Objectives
+
+Explain the main principles of backup fundamentals.
+
+Complete a guided practical for backup fundamentals.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: A backup should be separate from the working copy.
+
+Key point: The 3-2-1 principle is a useful planning model: three copies, two storage types/locations and one off-site copy.
+
+Key point: Backups should be scheduled according to how often important data changes.
+
+Key point: A backup is useful only if restoration works.
+
+Key point: Sensitive backups need appropriate access protection.
+
+Figure 13: Instructional visual for Backup Fundamentals.
+
+Step-by-Step Guided Practical
+
+1. Choose a harmless project folder.
+
+2. Create a second copy in an approved backup location.
+
+3. Label the backup with a date.
+
+4. Compare file count between working and backup folders.
+
+5. Write a simple weekly backup schedule.
+
+Ethan Digital Academy Case Study
+
+Academy administrative and course files can follow a scheduled backup routine instead of relying on one laptop.
+
+Review Questions
+
+What is the main purpose of backup fundamentals?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 13 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 14: Restoring Files and Recovering Versions
+
+Introduction
+
+Recovery means retrieving a usable earlier or deleted copy from Recycle Bin, cloud trash, version history or backup.
+
+Learning Objectives
+
+Explain the main principles of restoring files and recovering versions.
+
+Complete a guided practical for restoring files and recovering versions.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Stop and identify what is missing before making more changes.
+
+Key point: Search the expected folder and recent locations first.
+
+Key point: Use normal recycle/trash features for recently deleted practice files.
+
+Key point: Version history may restore an earlier state where supported.
+
+Key point: For important organisational data, follow the approved recovery process rather than experimenting.
+
+Figure 14: Instructional visual for Restoring Files and Recovering Versions.
+
+Step-by-Step Guided Practical
+
+1. Delete a disposable practice file.
+
+2. Restore it from Recycle Bin or cloud trash if available.
+
+3. Create two versions of another practice file.
+
+4. Identify how you would return to the earlier version.
+
+5. Record the recovery steps.
+
+Ethan Digital Academy Case Study
+
+An Academy learner who accidentally deletes a practice assignment may recover it from an available recycle area before recreating the work.
+
+Review Questions
+
+What is the main purpose of restoring files and recovering versions?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 14 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 15: Storage Space and Digital Housekeeping
+
+Introduction
+
+Digital housekeeping keeps storage usable and reduces clutter without deleting valuable information carelessly.
+
+Learning Objectives
+
+Explain the main principles of storage space and digital housekeeping.
+
+Complete a guided practical for storage space and digital housekeeping.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Downloads often accumulate duplicate installers and temporary files.
+
+Key point: Large videos and exported files can consume substantial space.
+
+Key point: Archive completed work before deleting it.
+
+Key point: Built-in storage views can help identify categories using space.
+
+Key point: Do not use unknown 'cleaner' tools or remove system files to gain space.
+
+Step-by-Step Guided Practical
+
+1. Open the normal storage view on an authorised device.
+
+2. Record available space.
+
+3. Review only your practice Downloads files.
+
+4. Move one completed practice file to Archive.
+
+5. Delete only a disposable duplicate.
+
+Ethan Digital Academy Case Study
+
+Academy lab users can maintain their own folders while system-level cleanup remains an administrator responsibility.
+
+Review Questions
+
+What is the main purpose of storage space and digital housekeeping?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 15 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 16: Cloud Account Security and Privacy
+
+Introduction
+
+Cloud storage is tied to an account, so file protection depends partly on safe sign-in and sharing habits.
+
+Learning Objectives
+
+Explain the main principles of cloud account security and privacy.
+
+Complete a guided practical for cloud account security and privacy.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Use strong unique passwords and approved multi-factor authentication where available.
+
+Key point: Never share passwords or one-time authentication codes.
+
+Key point: Review sharing permissions and link access.
+
+Key point: Sign out of cloud accounts on shared or public devices.
+
+Key point: Report suspicious sign-in alerts through the official support process.
+
+Figure 16: Instructional visual for Cloud Account Security and Privacy.
+
+Step-by-Step Guided Practical
+
+1. Write a safe cloud-account checklist.
+
+2. Review a fictional share link and identify possible risks.
+
+3. Describe how to sign out from a shared computer.
+
+4. Explain why one-time codes must remain private.
+
+5. Create a fictional suspicious-login support ticket.
+
+Ethan Digital Academy Case Study
+
+Academy learners should use their own authorised accounts and avoid leaving cloud sessions open on shared lab computers.
+
+Review Questions
+
+What is the main purpose of cloud account security and privacy?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 16 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 17: Working Across Devices
+
+Introduction
+
+Cloud storage can support work across computers and mobile devices, but users must manage versions and offline status carefully.
+
+Learning Objectives
+
+Explain the main principles of working across devices.
+
+Complete a guided practical for working across devices.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Confirm that changes have synchronised before switching devices.
+
+Key point: Avoid editing an old offline copy when a newer cloud version exists.
+
+Key point: Mobile apps may save files to different default locations.
+
+Key point: Use the same naming and folder standards across devices.
+
+Key point: Sign out or remove account access from devices you no longer use.
+
+Step-by-Step Guided Practical
+
+1. Create a fictional workflow from classroom computer to personal device.
+
+2. Mark where sync confirmation is required.
+
+3. Choose which files should be available offline.
+
+4. Identify one risk of editing two offline copies.
+
+5. Write a device handover checklist.
+
+Ethan Digital Academy Case Study
+
+An Academy learner can begin an assignment in the lab and continue later only after confirming the current version is available.
+
+Review Questions
+
+What is the main purpose of working across devices?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 17 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 18: Archives, Retention and Course Completion
+
+Introduction
+
+Archiving moves completed work out of the active workspace while preserving records that may still be useful.
+
+Learning Objectives
+
+Explain the main principles of archives, retention and course completion.
+
+Complete a guided practical for archives, retention and course completion.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Archive folders reduce clutter in Current Work.
+
+Key point: Retention means deciding how long information should be kept.
+
+Key point: Organisations may have legal, academic or business retention rules.
+
+Key point: Duplicate and obsolete practice files can be removed after review.
+
+Key point: Sensitive records should be handled according to policy, not personal preference.
+
+Step-by-Step Guided Practical
+
+1. Move completed practice work into an Archive folder.
+
+2. Add a year or course label to the archive.
+
+3. Identify one file that should be retained and one disposable duplicate.
+
+4. Write a simple retention rule for student practice files.
+
+5. Keep current work separate from archived work.
+
+Ethan Digital Academy Case Study
+
+At the end of an Academy course, final submissions and approved teaching records can be archived separately from active classes.
+
+Review Questions
+
+What is the main purpose of archives, retention and course completion?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 18 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Lesson 19: Final File Management and Cloud Storage Project
+
+Introduction
+
+The final project combines organisation, cloud storage, sharing, backup, recovery and security into one practical workflow.
+
+Learning Objectives
+
+Explain the main principles of final file management and cloud storage project.
+
+Complete a guided practical for final file management and cloud storage project.
+
+Apply the lesson to a realistic study or office workflow.
+
+Teaching Content
+
+Key point: Build a logical folder structure for a fictional digital project.
+
+Key point: Apply a consistent naming and version standard.
+
+Key point: Place a practice folder in an approved cloud location if available.
+
+Key point: Choose appropriate sharing permissions for different collaborators.
+
+Key point: Create an independent backup and demonstrate safe recovery of a disposable file.
+
+Key point: Submit a short storage and security report.
+
+Figure 19: Instructional visual for Final File Management and Cloud Storage Project.
+
+Step-by-Step Guided Practical
+
+1. Create an Ethan Digital Academy Training Project folder.
+
+2. Add Admin, Resources, Current Work, Exports and Archive.
+
+3. Create and name five practice files consistently.
+
+4. Synchronise an approved practice folder or document the steps if cloud access is unavailable.
+
+5. Design View/Edit permissions for three fictional collaborators.
+
+6. Create a backup copy.
+
+7. Delete and restore one disposable file.
+
+8. Submit a one-page project report.
+
+Ethan Digital Academy Case Study
+
+This project demonstrates a complete digital filing system suitable for study, office work and small-business operations.
+
+Review Questions
+
+What is the main purpose of final file management and cloud storage project?
+
+State two good practices from this lesson.
+
+What common mistake could cause confusion or data loss?
+
+How would you apply this lesson to an Academy course or office project?
+
+Assignment
+
+Complete the Lesson 19 practical using only harmless practice files and authorised storage. Submit a short record of your folder/file choices, actions, result and one improvement you would make.
+
+Final Practical Project - 100 Marks
+
+Course Quiz - 30 Questions
+
+1. What is a file?
+
+2. What is a folder?
+
+3. What is a file path?
+
+4. Why is a folder hierarchy useful?
+
+5. What is a naming convention?
+
+6. Why can YYYY-MM-DD be useful in file names?
+
+7. What does a file extension indicate?
+
+8. Does changing an extension convert a file?
+
+9. What is the difference between Copy and Move?
+
+10. What is the purpose of Recycle Bin or cloud trash?
+
+11. Why should search results be checked before deletion?
+
+12. What is local storage?
+
+13. What is external storage?
+
+14. What is cloud storage?
+
+15. What is synchronisation?
+
+16. Why is sync not the same as backup?
+
+17. What is a cloud-only file?
+
+18. What is a sync conflict?
+
+19. What does View permission normally allow?
+
+20. When should Edit permission be used?
+
+21. Why can unrestricted share links be risky?
+
+22. What is version history?
+
+23. What is the 3-2-1 backup principle?
+
+24. Why should backups be tested?
+
+25. Name two possible file-recovery locations.
+
+26. What is digital housekeeping?
+
+27. Why should unknown cleaner tools be avoided?
+
+28. How does MFA help protect cloud accounts?
+
+29. Why should users sign out on shared devices?
+
+30. What is the purpose of archiving completed work?
+
+Final Examination - 100 Marks
+
+Section A - File Organisation (20 marks)
+
+Explain files, folders, paths, naming conventions, extensions and folder structures.
+
+Section B - File Operations and Retrieval (20 marks)
+
+Explain copy, move, rename, delete, restore, search, sorting and archiving.
+
+Section C - Cloud Storage and Synchronisation (20 marks)
+
+Explain local versus cloud storage, synchronisation, offline files and cross-device work.
+
+Section D - Sharing, Backup and Recovery (20 marks)
+
+Explain permissions, version history, backup planning and safe recovery.
+
+Section E - Security and Applied Project (20 marks)
+
+Design a secure digital filing and cloud-storage workflow for Ethan Digital Academy.
+
+Course Completion Outcome
+
+After successful completion, the learner should be able to organise digital information professionally, use clear naming and folder standards, distinguish local, external, synced and cloud storage, collaborate with suitable permissions, protect important work with backups, recover practice files through normal recovery tools, manage cloud accounts responsibly and maintain a reliable cross-device filing workflow.
+
+Professional Practice Checklist
+
+Know where important files are stored.
+
+Use meaningful names and consistent versions.
+
+Keep Current Work separate from Archive.
+
+Check sync status before switching devices.
+
+Use the least sharing permission required.
+
+Never share passwords or one-time codes.
+
+Maintain an independent backup of important work.
+
+Test recovery using harmless practice files.
+
+Course Code. EDA-FCS-113
+
+Level. Beginner to Intermediate
+
+Duration. 6 Weeks (19 Lessons)
+
+Certificate. Professional Certificate in File Management & Cloud Storage
+
+Prerequisite. Computer Appreciation
+
+Learning Format. Classroom + Guided Practicals + Cloud Storage Project
+
+Component. Marks. Requirement
+
+Folder architecture. 15. Logical project structure with Current Work, Resources, Exports and Archive.
+
+Naming/versioning. 15. Consistent meaningful file names and versions.
+
+File operations. 10. Safe copy, move, rename, search and archive.
+
+Cloud workflow. 15. Correct storage/sync understanding.
+
+Sharing permissions. 10. Appropriate View/Edit decisions.
+
+Backup. 15. Independent backup with clear date/location.
+
+Recovery. 10. Safe restoration of a disposable practice file.
+
+Security/report. 10. Account/privacy checklist and concise project report.

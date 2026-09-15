@@ -1,0 +1,1017 @@
+ETHAN DIGITAL ACADEMY
+
+CYBERSECURITY FUNDAMENTALS
+ COMPLETE PROFESSIONAL VISUAL STUDY MANUAL
+
+ Defensive Security Edition - Paid Enrollee Course Material
+
+ Course Code: EDA-CYB-114
+
+ Level: Beginner to Intermediate
+
+ Duration: 6 Weeks (18 Lessons)
+
+ Certificate: Professional Certificate in Cybersecurity Fundamentals
+
+ Prerequisite: Computer Appreciation / Digital Literacy
+
+ Learning Format: Classroom + Safe Guided Practical + Case Studies
+
+ 
+
+COURSE OVERVIEW
+Cybersecurity Fundamentals introduces learners to the safe and responsible protection of devices, accounts,
+networks and information. The course focuses on defensive security, risk awareness, secure habits, incident
+reporting, data protection and professional cybersecurity pathways.
+
+Practicals use safe demonstrations, fictional examples, account-security checks and approved training
+scenarios. Learners are not asked to attack real systems, bypass security controls or obtain other people's
+credentials.
+
+LEARNING OBJECTIVES
+ Explain confidentiality, integrity and availability.
+ Identify assets, threats, vulnerabilities, risks and security controls.
+ Protect accounts with strong unique passwords and multi-factor authentication.
+ Recognise phishing and social-engineering warning signs.
+ Understand common malware categories and defensive measures.
+ Apply safe update, device and network practices.
+ Protect personal and organisational information.
+ Understand backups and recovery.
+ Apply least privilege and role-based access concepts.
+ Respond appropriately to suspected incidents.
+ Understand privacy, ethics and responsible cybersecurity practice.
+ Identify professional cybersecurity career pathways.
+
+COURSE OUTLINE
+ Lesson Topic
+ 1 Cybersecurity Foundations
+ 2 Assets, Threats, Vulnerabilities and Risk
+ 3 Passwords, Passphrases and MFA
+ 4 Phishing and Social Engineering Awareness
+ 5 Malware and Endpoint Protection
+ 6 Updates, Patching and Secure Configuration
+ 7 Safe Internet, Browser and Network Use
+ 8 Data Protection, Privacy and Classification
+ 9 Backups and Recovery
+ 10 Access Control and Least Privilege
+ 11 Email and Messaging Security
+ 12 Mobile Device and Cloud Security
+ 13 Security Awareness for Organisations
+ 14 Incident Recognition, Reporting and Response
+ 15 Cybersecurity Policies, Ethics and Law
+ 16 Risk Assessment and Business Continuity
+ 17 Cybersecurity Careers and Defensive Tools
+ 18 Final Defensive Security Project
+
+ 
+
+LESSON 1: CYBERSECURITY FOUNDATIONS
+Cybersecurity protects digital systems and information from unauthorized access, disruption, alteration and
+loss.
+
+ Figure 1. The confidentiality, integrity and availability security model.
+
+The CIA Triad
+ Confidentiality - information is available only to authorised people.
+ Integrity - information remains accurate and is changed only in authorised ways.
+ Availability - systems and information are accessible when authorised users need them.
+
+People, Process and Technology
+Security depends on responsible users, clear procedures and appropriate technical controls working together.
+
+Everyday Cybersecurity
+Examples include locking a device, using unique passwords, checking suspicious messages, updating
+software and backing up important work.
+
+Safe Guided Practical
+1. Identify five digital assets you use for school or work.
+
+2. For each asset, state why confidentiality, integrity or availability matters.
+
+3. Create a personal safe-computing checklist without including passwords.
+
+Review Questions
+1. What is cybersecurity?
+
+2. Explain confidentiality.
+
+ 
+
+3. Explain integrity.
+
+4. Explain availability.
+
+Assignment
+Prepare a one-page summary of the CIA triad.
+
+ 
+
+LESSON 2: ASSETS, THREATS, VULNERABILITIES AND RISK
+Risk becomes easier to manage when we distinguish what we value, what can cause harm, where
+weaknesses exist and which controls reduce exposure.
+
+ Figure 2. Assets, threats, vulnerabilities and controls.
+
+Assets
+Assets include devices, accounts, files, services, reputation and business information.
+
+Threats
+Threats include scams, malware, theft, accidental loss, service failure and unauthorized access.
+
+Vulnerabilities
+A vulnerability is a weakness, such as outdated software, an unlocked device or excessive permissions.
+
+Controls
+Controls reduce risk. Examples include updates, MFA, backups, access restrictions and awareness training.
+
+Risk Thinking
+A simple risk assessment considers likelihood and impact. High-impact risks deserve stronger attention even
+when they are not frequent.
+
+Safe Guided Practical
+1. Choose a fictional small training centre.
+
+2. List five assets.
+
+3. For each asset, identify one possible threat and one defensive control.
+
+4. Rank the risks as Low, Medium or High using your reasoned judgement.
+ 
+
+Review Questions
+1. What is an asset?
+
+2. Differentiate threat and vulnerability.
+
+3. What is a security control?
+
+4. What two factors are commonly considered in simple risk ranking?
+
+Assignment
+Create a risk register for five fictional assets.
+
+ 
+
+LESSON 3: PASSWORDS, PASSPHRASES AND MFA
+Account security begins with strong authentication and careful credential handling.
+
+ Figure 3. Passwords and multi-factor authentication.
+
+Strong Password Practice
+ Use long, unique passwords or passphrases.
+ Do not reuse important passwords across services.
+ Do not share passwords with classmates or colleagues.
+ Avoid predictable personal information.
+
+Password Managers
+A reputable password manager can help generate and store unique passwords. Protect the manager itself
+with strong authentication.
+
+Multi-Factor Authentication
+MFA requires an additional approved factor beyond the password, reducing the impact of a stolen password.
+
+Recovery Information
+Keep recovery methods current and secure. Do not expose recovery codes in screenshots or class
+submissions.
+
+Safe Guided Practical
+1. Review the security settings of an account you are authorised to use.
+
+2. Check whether MFA is available.
+
+3. Create three fictional example passphrases; do not use real passwords.
+
+4. Write a recovery checklist that excludes secret codes.
+ 
+
+Review Questions
+1. Why should passwords be unique?
+
+2. What is MFA?
+
+3. Why can password reuse be dangerous?
+
+4. What information should never be submitted in a class exercise?
+
+Assignment
+Create an account-security policy for a fictional student portal.
+
+ 
+
+LESSON 4: PHISHING AND SOCIAL ENGINEERING AWARENESS
+Social engineering attempts to influence people into revealing information, sending money or taking unsafe
+actions.
+
+ Figure 4. Warning signs in a fictional phishing message.
+
+Common Warning Signs
+ Unexpected urgency or threats
+ Requests for passwords or one-time codes
+ Unusual payment requests
+ Mismatched sender identity
+ Suspicious links or attachments
+ Offers that seem unrealistic
+
+Safe Verification
+Do not rely only on the message itself. Verify important requests using an official website, known phone
+number or trusted person.
+
+Phishing Beyond Email
+Scams can arrive through SMS, messaging apps, social media, voice calls and fake websites.
+
+Reporting
+Use the organisation's reporting process. Reporting quickly can protect other users.
+
+Safe Guided Practical
+1. Review three fictional messages supplied by the instructor.
+
+2. Highlight warning signs without opening any links.
+
+ 
+
+3. Write the safe verification step for each message.
+
+4. Draft a short phishing-report message.
+
+Review Questions
+1. What is phishing?
+
+2. Name five warning signs.
+
+3. Why should important requests be verified separately?
+
+4. Where can phishing messages appear?
+
+Assignment
+Design a phishing-awareness poster.
+
+ 
+
+LESSON 5: MALWARE AND ENDPOINT PROTECTION
+Malware is software designed to cause harm, disrupt systems, steal information or enable unauthorized
+activity.
+
+ Figure 5. Malware categories and defensive measures.
+
+Common Categories
+ Virus
+ Worm
+ Trojan
+ Ransomware
+ Spyware
+
+Endpoint Protection
+Defensive measures include supported operating systems, timely updates, trusted security software, limited
+permissions and safe downloading habits.
+
+Backups
+Backups help recovery when files are lost, damaged or made unavailable.
+
+Safe Learning Rule
+Do not download, create or run malware for this course. Use diagrams and approved simulations only.
+
+Safe Guided Practical
+1. Classify five fictional malware scenarios by category.
+
+2. Check whether your authorised device receives automatic security updates.
+
+3. Identify where the operating system shows security status.
+
+ 
+
+4. Write a prevention-and-recovery checklist.
+
+Review Questions
+1. What is malware?
+
+2. What is ransomware?
+
+3. Name four endpoint protections.
+
+4. Why are backups important?
+
+Assignment
+Prepare a malware-awareness guide for beginners.
+
+ 
+
+LESSON 6: UPDATES, PATCHING AND SECURE CONFIGURATION
+Software updates can correct security weaknesses, fix defects and improve reliability.
+
+ Figure 6. A safe patch and update cycle.
+
+Patching
+A patch is an update that corrects software problems, including security weaknesses.
+
+Supported Software
+Using supported software matters because unsupported products may stop receiving security fixes.
+
+Secure Configuration
+Examples include screen locks, automatic updates, approved applications and disabling unnecessary sharing
+features when policy requires it.
+
+Change Carefully
+Back up important work and follow school/work procedures before significant system changes.
+
+Safe Guided Practical
+1. Check the update status of an authorised device.
+
+2. Record the operating-system version without exposing device identifiers.
+
+3. Review screen-lock settings.
+
+4. Create an update checklist for a fictional office.
+
+Review Questions
+1. What is a patch?
+
+ 
+
+2. Why is supported software important?
+
+3. Give three secure-configuration examples.
+
+4. Why should important data be backed up before major changes?
+
+Assignment
+Create a monthly device-maintenance checklist.
+
+ 
+
+LESSON 7: SAFE INTERNET, BROWSER AND NETWORK USE
+Safe browsing and network habits reduce exposure to scams, unwanted downloads and information theft.
+
+ Figure 7. Layered safe network and internet use.
+
+Browser Safety
+ Keep the browser updated.
+ Check the site address carefully.
+ Use HTTPS as one signal of encrypted transport, while remembering it does not prove a site is
+ trustworthy.
+ Avoid unexpected downloads.
+
+Public Wi-Fi
+Public networks may not be appropriate for sensitive activity. Follow organisational policy and prefer trusted
+connections for important work.
+
+Home or Office Network
+Use approved router settings, strong administrative credentials and current firmware. Do not change network
+equipment you are not authorised to manage.
+
+Downloads
+Obtain software from trusted official sources and verify that it is appropriate for the device.
+
+Safe Guided Practical
+1. Compare two fictional website addresses and identify which one appears suspicious.
+
+2. Check that your browser is current.
+
+3. List activities you would avoid on an untrusted public network.
+
+ 
+
+4. Create a safe-download checklist.
+
+Review Questions
+1. Does HTTPS alone prove a site is trustworthy?
+
+2. Why are browser updates important?
+
+3. What is a trusted network?
+
+4. Why should software come from official sources?
+
+Assignment
+Write ten rules for safe internet use.
+
+ 
+
+LESSON 8: DATA PROTECTION, PRIVACY AND CLASSIFICATION
+Information should be handled according to its sensitivity, purpose and applicable rules.
+
+ Figure 8. A simple information-classification model.
+
+Personal Information
+Examples can include names, contact details, identification numbers and account information. Collect only
+what is needed and protect it appropriately.
+
+Classification
+Organisations may label information Public, Internal, Confidential or another approved category.
+
+Sharing
+Before sharing, check the recipient, purpose, permissions and whether the chosen channel is appropriate.
+
+Privacy
+Privacy involves responsible collection, use, storage and sharing of information. Follow applicable policies
+and laws.
+
+Safe Guided Practical
+1. Classify ten fictional information items.
+
+2. For each confidential item, state one appropriate protection.
+
+3. Review a fictional sharing request and decide whether it should be approved, rejected or escalated.
+
+4. Create a privacy checklist.
+
+Review Questions
+1. What is data classification?
+ 
+
+2. Why should confidential data have stronger controls?
+
+3. What should be checked before sharing information?
+
+4. What does privacy involve?
+
+Assignment
+Create a simple data-handling guide for a training centre.
+
+ 
+
+LESSON 9: BACKUPS AND RECOVERY
+Backups provide independent copies of important information so work can be recovered after loss or
+disruption.
+
+ Figure 9. The 3-2-1 backup concept.
+
+3-2-1 Concept
+A common resilience idea is three copies of important data, using two types of storage, with one copy kept
+separately/offsite.
+
+Backup Types
+Organisations may use full, incremental or other backup methods depending on their needs.
+
+Restore Testing
+A backup should be tested because an unreadable or incomplete backup may not help during recovery.
+
+Cloud Backup
+Cloud services can support backup and synchronization, but access controls and account security still matter.
+
+Safe Guided Practical
+1. Identify three categories of files worth backing up.
+
+2. Design a fictional 3-2-1 backup plan.
+
+3. Create a restore-test checklist.
+
+4. Explain how MFA helps protect cloud backups.
+
+Review Questions
+1. What is the purpose of a backup?
+ 
+
+2. Explain the 3-2-1 concept.
+
+3. Why should restores be tested?
+
+4. Does cloud storage remove the need for account security?
+
+Assignment
+Design a backup plan for Ethan Digital Academy course records.
+
+ 
+
+LESSON 10: ACCESS CONTROL AND LEAST PRIVILEGE
+Access control determines who can use information or systems and what they are allowed to do.
+
+ Figure 11. Role-based access and least privilege.
+
+Authentication and Authorization
+Authentication verifies identity. Authorization determines permissions after identity is established.
+
+Least Privilege
+Users should receive only the access needed for their responsibilities.
+
+Role-Based Access
+Permissions can be assigned to roles such as learner, instructor and administrator.
+
+Account Lifecycle
+Access should be reviewed when people join, change roles or leave an organisation.
+
+Safe Guided Practical
+1. Create four fictional roles for a learning platform.
+
+2. List what each role should and should not access.
+
+3. Identify two examples of excessive permissions.
+
+4. Create an access-review checklist.
+
+Review Questions
+1. Differentiate authentication and authorization.
+
+2. What is least privilege?
+ 
+
+3. What is role-based access?
+
+4. When should access be reviewed?
+
+Assignment
+Design a role-permission matrix for a fictional LMS.
+
+ 
+
+LESSON 11: EMAIL AND MESSAGING SECURITY
+Email and messaging systems are important business tools and common channels for scams.
+
+ Figure 4. Phishing awareness also applies to business email.
+
+Attachment Safety
+Unexpected attachments should be treated cautiously. Verify the sender and context before opening.
+
+Business Email Requests
+Payment, password-reset or account-change requests deserve independent verification.
+
+Sensitive Information
+Avoid sending secrets or unnecessary confidential data through unsuitable channels.
+
+Account Compromise Signs
+Unexpected sent messages, login alerts or unexplained account changes should be reported promptly.
+
+Safe Guided Practical
+1. Review four fictional email scenarios.
+
+2. Decide which messages require verification.
+
+3. Draft a safe response that does not reveal credentials.
+
+4. Write an account-compromise reporting message.
+
+Review Questions
+1. Why are unexpected attachments risky?
+
+2. Which requests deserve independent verification?
+ 
+
+3. Name two possible signs of account compromise.
+
+4. Should passwords be sent by ordinary email?
+
+Assignment
+Prepare a secure-email checklist.
+
+ 
+
+LESSON 12: MOBILE DEVICE AND CLOUD SECURITY
+Phones, tablets and cloud services hold valuable information and require the same security discipline as
+computers.
+
+ Figure 7. Security layers apply to devices, networks, services and users.
+
+Mobile Security
+ Use a screen lock.
+ Keep the operating system and apps updated.
+ Install apps from trusted sources.
+ Review app permissions.
+ Enable approved device-location or remote-lock features when appropriate.
+
+Cloud Security
+ Use strong authentication.
+ Review sharing permissions.
+ Remove public links that are no longer needed.
+ Protect recovery methods.
+ Follow organisation policy for confidential data.
+
+Lost Devices
+Report loss promptly and follow approved remote-lock, account-protection and recovery procedures.
+
+Safe Guided Practical
+1. Review app permissions on an authorised device.
+
+2. Check whether automatic updates are enabled.
+
+3. Review sharing settings on a non-sensitive cloud practice folder.
+
+ 
+
+4. Create a lost-device response checklist.
+
+Review Questions
+1. Name four mobile-security practices.
+
+2. Why should app permissions be reviewed?
+
+3. What should be checked on cloud-sharing links?
+
+4. What should happen after a device is lost?
+
+Assignment
+Create a mobile-and-cloud security guide.
+
+ 
+
+LESSON 13: SECURITY AWARENESS FOR ORGANISATIONS
+Technical controls are stronger when people understand their responsibilities and know how to report
+concerns.
+
+ Figure 4. Recognising and reporting suspicious communication is a core awareness skill.
+
+Awareness Topics
+ Phishing
+ Password and MFA practices
+ Data handling
+ Safe remote work
+ Incident reporting
+ Physical security
+
+Training Culture
+Security training should be practical, understandable and repeated. Staff should be encouraged to report
+mistakes quickly.
+
+Clear Procedures
+Users need simple instructions for common situations such as suspicious email, lost devices and unusual
+login alerts.
+
+Measurement
+Organisations can measure completion of training, reporting rates and improvement in safe behaviours
+without creating a culture of blame.
+
+Safe Guided Practical
+1. Design a one-month awareness plan.
+
+ 
+
+2. Choose four weekly topics.
+
+3. Create one short safety message for each week.
+
+4. Define two positive measures of programme effectiveness.
+
+Review Questions
+1. Why is awareness training important?
+
+2. Name five awareness topics.
+
+3. Why should reporting be encouraged?
+
+4. How can awareness programmes be measured?
+
+Assignment
+Create a cybersecurity-awareness calendar.
+
+ 
+
+LESSON 14: INCIDENT RECOGNITION, REPORTING AND RESPONSE
+A security incident is an event that may threaten confidentiality, integrity or availability and requires an
+organised response.
+
+ Figure 10. A safe beginner incident-response workflow.
+
+Possible Warning Signs
+ Unexpected account changes
+ Unusual login alerts
+ Missing or inaccessible files
+ Suspicious messages sent from an account
+ Lost device
+ Unexpected security warnings
+
+Immediate Actions
+Follow the organisation's approved procedure. Limit further exposure when safe, report promptly and avoid
+destroying useful evidence.
+
+Escalation
+Learners and ordinary users should contact the responsible administrator, teacher, parent/guardian or support
+person rather than attempting risky technical intervention.
+
+Recovery
+Recovery can include password resets through official channels, restoring backups, updating systems and
+reviewing what happened.
+
+Safe Guided Practical
+1. Read a fictional lost-laptop scenario.
+
+ 
+
+2. Write the first five safe actions.
+
+3. Read a fictional compromised-email scenario.
+
+4. Draft an incident report containing time, observed symptoms and actions already taken.
+
+Review Questions
+1. What is a security incident?
+
+2. Name four warning signs.
+
+3. Why should evidence not be casually deleted?
+
+4. Who should a learner contact during a suspected incident?
+
+Assignment
+Create an incident-report form for a training centre.
+
+ 
+
+LESSON 15: CYBERSECURITY POLICIES, ETHICS AND LAW
+Cybersecurity professionals must work within authorization, policy, ethics and applicable law.
+
+ Figure 2. Security risk management begins with clear assets, responsibilities and controls.
+
+Authorization
+Only access systems, accounts and information you are explicitly authorised to use.
+
+Responsible Practice
+Do not test security controls on real people or systems without proper written permission and an approved
+scope.
+
+Policies
+Organisations use acceptable-use, password, data-handling, backup, incident-response and access-control
+policies.
+
+Professional Ethics
+Protect confidentiality, avoid conflicts of interest, document work accurately and escalate concerns
+responsibly.
+
+Legal Awareness
+Privacy, computer-misuse and data-protection requirements vary by jurisdiction. Professionals must follow
+applicable law and organisational guidance.
+
+Safe Guided Practical
+1. Review a fictional acceptable-use policy.
+
+2. Identify five behaviours that require authorization.
+
+ 
+
+3. Rewrite three vague rules into clear security-policy statements.
+
+4. Discuss why ethical behaviour matters even when a technical action is possible.
+
+Review Questions
+1. What is authorization?
+
+2. Why is written scope important for security testing?
+
+3. Name four cybersecurity policies.
+
+4. What does professional ethics require?
+
+Assignment
+Draft a one-page acceptable-use policy.
+
+ 
+
+LESSON 16: RISK ASSESSMENT AND BUSINESS CONTINUITY
+Organisations prepare for disruption by identifying important services, evaluating risks and planning how to
+continue or recover operations.
+
+ Figure 2. Risk assessment connects assets, threats, weaknesses and controls.
+
+Risk Register
+A risk register records assets, threats, weaknesses, existing controls, likelihood, impact and planned actions.
+
+Business Impact
+Some systems are more critical than others. Prioritise services that are essential to safety, learning, payments
+or operations.
+
+Continuity
+Business continuity focuses on maintaining essential functions during disruption.
+
+Disaster Recovery
+Disaster recovery focuses on restoring technology and data after a serious event.
+
+Review
+Plans should be tested and updated as systems and responsibilities change.
+
+Safe Guided Practical
+1. Create a five-item risk register for a fictional academy.
+
+2. Identify the two most important services.
+
+3. Write a simple continuity plan for an internet outage.
+
+4. Write a simple recovery checklist for accidental file loss.
+ 
+
+Review Questions
+1. What is a risk register?
+
+2. Differentiate business continuity and disaster recovery.
+
+3. Why should critical services be prioritised?
+
+4. Why must plans be tested?
+
+Assignment
+Prepare a basic business-continuity plan.
+
+ 
+
+LESSON 17: CYBERSECURITY CAREERS AND DEFENSIVE TOOLS
+Cybersecurity includes technical and non-technical professional pathways.
+
+ Figure 12. Examples of defensive cybersecurity career pathways.
+
+Career Areas
+ Security awareness and training
+ Security Operations / Blue Team
+ Governance, Risk and Compliance (GRC)
+ Cloud security
+ Identity and access management
+ Digital forensics under proper authorization
+ Security engineering
+
+Defensive Tools
+Professionals may use endpoint protection, logging, vulnerability-management platforms, identity systems,
+backup tools and monitoring dashboards. Tool use must follow authorization and policy.
+
+Skills
+Communication, documentation, risk thinking, operating-system knowledge, networking fundamentals and
+ethical judgement are important.
+
+Learning Path
+Build strong computer, networking and operating-system foundations before moving into advanced security
+specialisations.
+
+Safe Guided Practical
+1. Choose three cybersecurity careers.
+
+ 
+
+2. Research the responsibilities using instructor-approved resources.
+
+3. List the foundational skills for each.
+
+4. Create a six-month defensive-learning plan.
+
+Review Questions
+1. Name four cybersecurity careers.
+
+2. What does a blue team focus on?
+
+3. What is GRC?
+
+4. Why does tool use require authorization?
+
+Assignment
+Prepare a career pathway presentation.
+
+ 
+
+LESSON 18: FINAL DEFENSIVE SECURITY PROJECT
+The final project applies the course to a fictional organisation without attacking any real system.
+
+ Figure 1. Cybersecurity balances confidentiality, integrity and availability.
+
+Scenario
+Ethan Digital Academy wants a beginner-friendly cybersecurity improvement plan for its learning environment.
+
+Required Sections
+ Asset list
+ Simple risk register
+ Account-security standard
+ Phishing-awareness guide
+ Device-update checklist
+ Data-classification guide
+ Backup plan
+ Role-based access matrix
+ Incident-reporting procedure
+ Security-awareness calendar
+
+Presentation
+Summarise the plan in a professional report and short presentation.
+
+Safety Boundary
+Do not scan, probe, exploit, bypass or test live systems. The project is documentation, defensive review and
+safe configuration awareness only.
+
+Safe Guided Practical
+1. Create the ten required project sections.
+ 
+
+2. Use fictional or non-sensitive example data.
+
+3. Add diagrams and checklists.
+
+4. Review the plan for clarity and practicality.
+
+5. Present the plan as if briefing academy management.
+
+Review Questions
+1. What is the purpose of the final project?
+
+2. Why does it avoid live-system testing?
+
+3. Which parts address prevention?
+
+4. Which parts address recovery?
+
+Assignment
+Submit the complete Cybersecurity Improvement Plan.
+
+ 
+
+REAL-LIFE CASE STUDY - ETHAN DIGITAL ACADEMY
+A digital academy stores learner records, course materials, payment information and staff accounts.
+Management introduces role-based access, MFA for privileged accounts, regular updates, staff awareness
+training, controlled data sharing, tested backups and a clear incident-reporting process. The objective is not to
+make risk disappear completely, but to reduce preventable incidents and improve recovery when problems
+occur.
+
+FINAL PRACTICAL PROJECT - 100 MARKS
+1. Prepare an asset inventory for the fictional academy.
+
+2. Create a five-risk register with defensive controls.
+
+3. Write an account-security standard.
+
+4. Create a phishing-awareness guide.
+
+5. Create an update and device-security checklist.
+
+6. Create a data-classification and sharing guide.
+
+7. Design a 3-2-1 backup plan.
+
+8. Create a role-based access matrix.
+
+9. Create an incident-report form and response flow.
+
+10. Present the complete Cybersecurity Improvement Plan.
+
+QUIZ - 30 QUESTIONS
+1. What is cybersecurity?
+
+2. What does confidentiality mean?
+
+3. What does integrity mean?
+
+4. What does availability mean?
+
+5. What is an asset?
+
+6. What is a threat?
+
+7. What is a vulnerability?
+
+8. What is a security control?
+
+9. Why should passwords be unique?
+
+10. What is MFA?
+
+11. What is phishing?
+
+12. Name three phishing warning signs.
+ 
+
+13. What is malware?
+
+14. What is ransomware?
+
+15. Why are software updates important?
+
+16. What is a patch?
+
+17. Does HTTPS alone prove a site is trustworthy?
+
+18. What is data classification?
+
+19. What is the purpose of a backup?
+
+20. Explain the 3-2-1 backup concept.
+
+21. Differentiate authentication and authorization.
+
+22. What is least privilege?
+
+23. Why should cloud-sharing permissions be reviewed?
+
+24. Name three possible signs of a security incident.
+
+25. Why should incidents be reported promptly?
+
+26. What is authorization in cybersecurity?
+
+27. What is a risk register?
+
+28. Differentiate business continuity and disaster recovery.
+
+29. Name three cybersecurity career areas.
+
+30. Why must defensive tools be used only with authorization?
+
+FINAL EXAMINATION - 100 MARKS
+Section A - Objective Questions (20 Marks)
+
+Twenty questions covering cybersecurity terminology, account security, phishing, malware, data protection,
+backups, access control and incident response.
+
+Section B - Short Answer and Case Analysis (30 Marks)
+
+Explain concepts and recommend safe defensive actions for realistic school and business scenarios.
+
+Section C - Defensive Practical Assessment (50 Marks)
+
+Prepare selected parts of a cybersecurity improvement plan using fictional information: risk register, account-
+security checklist, data classification, backup plan, access matrix and incident-reporting procedure.
+
+ 
+
+COURSE COMPLETION OUTCOME
+Graduates of EDA-CYB-114 Cybersecurity Fundamentals will understand essential defensive cybersecurity
+principles and apply safer digital habits in school, office and business environments. They will be prepared for
+deeper study in networking, security operations, governance and risk, cloud security and other authorised
+defensive specialisations.

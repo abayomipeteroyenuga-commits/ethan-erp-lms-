@@ -1,0 +1,1293 @@
+MICROSOFT ACCESS
+ Complete Visual Study Manual
+
+ EDA-ACC-105
+ Beginner to Intermediate
+
+ 6 Weeks | 18 Lessons
+
+ Professional Certificate in Microsoft Access
+
+Classroom + Guided Database Practicals + Final Database Project
+
+ ETHAN DIGITAL ACADEMY
+
+ 
+
+How to Use This Manual
+This manual is written as a complete learner study book. Read each lesson, study the visual examples,
+complete the guided practical using fictional practice data, answer the review questions and complete the
+assignment before moving on.
+
+Course Learning Outcomes
+ Explain relational database concepts and the purpose of Microsoft Access.
+ Create well-structured tables with suitable fields, data types and primary keys.
+ Build relationships and maintain data integrity.
+ Retrieve information using filters and select queries.
+ Create practical forms for data entry and reports for professional output.
+ Import, export, back up and maintain a small Access database.
+ Plan, build, test and present a complete relational database project.
+
+Course Map
+1. Introduction to Databases and Microsoft Access
+
+2. Access Interface and Database Objects
+
+3. Planning a Relational Database
+
+4. Creating a Database and Tables
+
+5. Fields, Data Types and Field Properties
+
+6. Primary Keys and Data Integrity
+
+7. Entering, Editing and Sorting Records
+
+8. Filtering and Finding Data
+
+9. Relationships Between Tables
+
+10. Creating Select Queries
+
+11. Query Criteria and Calculated Fields
+
+12. Creating Forms
+
+13. Improving Forms and Data Entry
+
+14. Creating Reports
+
+15. Grouping, Sorting and Summaries in Reports
+
+16. Importing and Exporting Data
+
+17. Database Maintenance, Backup and Good Practice
+
+18. Final Relational Database Project
+
+ 
+
+Lesson 1: Introduction to Databases and Microsoft Access
+Introduction
+A database is an organised collection of related information. Microsoft Access is a relational database
+application that helps users store, connect, retrieve and present structured records. Unlike a simple list, a
+relational database can separate information into logical tables and connect those tables through keys.
+
+Learning Objectives
+ Explain the main ideas in introduction to databases and microsoft access.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Database, Relational Database, Record, Field, Table, Database Management System.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 1. Instructional visual for Introduction to Databases and Microsoft Access.
+
+ 
+
+Lesson 1 Practical Workshop
+Step-by-Step Practical
+Compare a course register in a spreadsheet with a database that separates learners, courses and
+enrolments. Identify repeated information and explain why repetition can create errors.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of introduction to databases and microsoft access?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Sketch three tables for an academy database: Learners, Courses and Enrolments.
+
+ 
+
+Lesson 2: Access Interface and Database Objects
+Introduction
+An Access database is built from objects. Tables store data, queries retrieve or calculate information, forms
+support controlled data entry, and reports present information professionally. The Navigation Pane helps
+users open and organise these objects. Ribbon commands change according to the active object and view.
+
+Learning Objectives
+ Explain the main ideas in access interface and database objects.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Navigation Pane, Ribbon, Datasheet View, Design View, Tables, Queries, Forms, Reports.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 2. Instructional visual for Access Interface and Database Objects.
+
+ 
+
+Lesson 2 Practical Workshop
+Step-by-Step Practical
+Open a blank database and identify the Ribbon, Navigation Pane, object tabs and status area. Create one
+empty table and switch between Datasheet View and Design View.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of access interface and database objects?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Draw and label the four main Access objects and state one use for each.
+
+ 
+
+Lesson 3: Planning a Relational Database
+Introduction
+Good databases begin with planning. Start from the business questions the database must answer, identify
+entities, list their attributes, choose unique identifiers and decide how entities relate. Avoid putting
+unrelated facts in one huge table. A clear plan reduces duplication and makes future queries easier.
+
+Learning Objectives
+ Explain the main ideas in planning a relational database.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Entity, Attribute, Relationship, Normalization Concept, Business Rule.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 3. Instructional visual for Planning a Relational Database.
+
+ 
+
+Lesson 3 Practical Workshop
+Step-by-Step Practical
+For Ethan Digital Academy, list the information needed to answer: Who enrolled? Which course? When?
+What fee applies? Divide the information into appropriate tables.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of planning a relational database?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Prepare a simple data dictionary for Learners, Courses and Enrolments.
+
+ 
+
+Lesson 4: Creating a Database and Tables
+Introduction
+A new Access file normally uses the .accdb format. Tables can be created in Datasheet View for quick entry
+or Design View for precise control. Meaningful table and field names make the database easier to maintain.
+Each table should represent one main subject.
+
+Learning Objectives
+ Explain the main ideas in creating a database and tables.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Accdb, Table, Field Name, Design View, Datasheet View.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 4. Instructional visual for Creating a Database and Tables.
+
+ 
+
+Lesson 4 Practical Workshop
+Step-by-Step Practical
+Create a database named EDA_Training.accdb. Create tblLearners with LearnerID, FullName, Email and
+Phone fields. Save and reopen the table.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of creating a database and tables?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Create tblCourses with CourseID, CourseTitle, DurationWeeks and Fee.
+
+ 
+
+Lesson 5: Fields, Data Types and Field Properties
+Introduction
+Every field needs a suitable data type. Short Text stores names and codes, Number supports numeric
+calculations, Date/Time stores dates, Currency stores money, Yes/No stores two-state values, and Long Text
+supports longer notes. Field properties such as Required, Field Size, Format and Default Value improve
+consistency.
+
+Learning Objectives
+ Explain the main ideas in fields, data types and field properties.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Data Type, Field Property, Required, Default Value, Validation.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 5. Instructional visual for Fields, Data Types and Field Properties.
+
+ 
+
+Lesson 5 Practical Workshop
+Step-by-Step Practical
+In tblCourses, set CourseTitle to Short Text, DurationWeeks to Number and Fee to Currency. Mark
+CourseTitle as required. Enter three fictional courses and review how each value is displayed.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of fields, data types and field properties?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Explain why a phone number is usually better stored as Short Text than Number.
+
+ 
+
+Lesson 6: Primary Keys and Data Integrity
+Introduction
+A primary key uniquely identifies each record. AutoNumber is convenient for generated identifiers, while
+meaningful codes can also be used when uniqueness is guaranteed. Primary keys prevent ambiguity and
+support relationships. Data integrity means keeping records accurate, valid and consistent.
+
+Learning Objectives
+ Explain the main ideas in primary keys and data integrity.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Primary Key, Unique Value, Autonumber, Duplicate, Integrity.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 6. Instructional visual for Primary Keys and Data Integrity.
+
+ 
+
+Lesson 6 Practical Workshop
+Step-by-Step Practical
+Set LearnerID as an AutoNumber primary key. Enter two fictional learners and observe the automatically
+generated IDs. Try to understand why names should not normally be primary keys.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of primary keys and data integrity?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Write four rules that improve data integrity in a learner database.
+
+ 
+
+Lesson 7: Entering, Editing and Sorting Records
+Introduction
+Datasheet View allows records to be entered and edited in rows. Users should verify values before leaving
+a record, avoid duplicate entries and use consistent formats. Sorting changes the display order without
+changing the underlying meaning of the data.
+
+Learning Objectives
+ Explain the main ideas in entering, editing and sorting records.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Record Selector, Sort Ascending, Sort Descending, Edit, Delete.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 7 Practical Workshop
+Step-by-Step Practical
+Enter five fictional learner records. Sort FullName A-Z, then sort CourseTitle in a course table. Correct one
+deliberately mistyped fictional value.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of entering, editing and sorting records?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Create a one-page data-entry checklist for staff.
+
+ 
+
+Lesson 8: Filtering and Finding Data
+Introduction
+Filtering temporarily displays records that match a condition. Find locates specific values. These tools are
+useful for quick review, but complex or reusable questions are better handled with queries. Filters do not
+delete records that are hidden from view.
+
+Learning Objectives
+ Explain the main ideas in filtering and finding data.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Filter, Selection Filter, Text Filter, Find, Replace.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 8 Practical Workshop
+Step-by-Step Practical
+Filter fictional courses to show only those with fees above a chosen amount. Clear the filter. Use Find to
+locate one fictional learner by name.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of filtering and finding data?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Describe two situations where a filter is enough and two where a query is better.
+
+ 
+
+Lesson 9: Relationships Between Tables
+Introduction
+Relationships connect tables using matching key fields. A common one-to-many relationship means one
+record in a parent table can relate to many records in another table. Referential integrity helps prevent
+orphaned references and protects consistency.
+
+Learning Objectives
+ Explain the main ideas in relationships between tables.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Foreign Key, One-To-Many, Referential Integrity, Parent Table, Related Table.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 7. Instructional visual for Relationships Between Tables.
+
+ 
+
+Lesson 9 Practical Workshop
+Step-by-Step Practical
+Open Relationships. Add Learners, Courses and Enrolments. Connect LearnerID and CourseID to their
+matching foreign-key fields in Enrolments. Review the one-to-many symbols.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of relationships between tables?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Draw the relationship diagram and explain each connection in one sentence.
+
+ 
+
+Lesson 10: Creating Select Queries
+Introduction
+A select query retrieves chosen fields from one or more tables without changing the original records.
+Query Design lets users add tables, choose fields, set sorting and run the query. Queries turn stored data
+into useful information.
+
+Learning Objectives
+ Explain the main ideas in creating select queries.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Select Query, Query Design, Field Grid, Run, Result Set.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 8. Instructional visual for Creating Select Queries.
+
+ 
+
+Lesson 10 Practical Workshop
+Step-by-Step Practical
+Create qryLearnerCourses showing learner name, course title and enrolment date from related tables. Run
+it and verify that each row makes sense.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of creating select queries?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Create a query listing all fictional courses with title, duration and fee.
+
+ 
+
+Lesson 11: Query Criteria and Calculated Fields
+Introduction
+Criteria restrict query results. Calculated fields derive a new value from existing data, such as Balance:
+[Fee]-[AmountPaid]. Criteria must match the field data type and should be tested carefully so valid records
+are not accidentally excluded.
+
+Learning Objectives
+ Explain the main ideas in query criteria and calculated fields.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Criteria, Expression, Calculated Field, Comparison Operator, Parameter Concept.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 9. Instructional visual for Query Criteria and Calculated Fields.
+
+ 
+
+Lesson 11 Practical Workshop
+Step-by-Step Practical
+Create a query showing courses whose Fee is greater than a chosen threshold. Add a simple calculated field
+using fictional Fee and AmountPaid values.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of query criteria and calculated fields?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Write five example criteria for text, number and date fields.
+
+ 
+
+Lesson 12: Creating Forms
+Introduction
+Forms provide a controlled, user-friendly way to view or enter records. A form can be generated from a
+table or query and then improved in Layout or Design View. Clear labels and logical tab order reduce data-
+entry mistakes.
+
+Learning Objectives
+ Explain the main ideas in creating forms.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Form, Control, Label, Text Box, Record Source, Form View.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 10. Instructional visual for Creating Forms.
+
+ 
+
+Lesson 12 Practical Workshop
+Step-by-Step Practical
+Create a Learner form from tblLearners. Add one fictional record through the form rather than directly in
+the table. Confirm that the record appears in the table.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of creating forms?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+List six qualities of a professional data-entry form.
+
+ 
+
+Lesson 13: Improving Forms and Data Entry
+Introduction
+Useful forms guide the user. Controls can be resized and aligned; combo boxes can offer approved choices;
+validation can prevent unacceptable values; and headings can clarify purpose. Design should support
+accuracy rather than decoration.
+
+Learning Objectives
+ Explain the main ideas in improving forms and data entry.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Combo Box, Control Source, Tab Order, Validation Rule, Layout.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 13 Practical Workshop
+Step-by-Step Practical
+Improve the learner or enrolment form: align controls, add a clear title and use a suitable list control for
+course selection if available. Test the form with fictional data.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of improving forms and data entry?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Sketch a professional enrolment form and label its controls.
+
+ 
+
+Lesson 14: Creating Reports
+Introduction
+Reports format data for viewing, printing or PDF output. A report may be based on a table or, preferably, a
+query that already selects the required records. Headers, detail sections and footers organise the output.
+
+Learning Objectives
+ Explain the main ideas in creating reports.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Report, Report Wizard, Report Header, Detail, Page Footer.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 11. Instructional visual for Creating Reports.
+
+ 
+
+Lesson 14 Practical Workshop
+Step-by-Step Practical
+Create a report from qryLearnerCourses. Add a title such as Ethan Digital Academy Enrolment Report.
+Preview the report and check that columns fit.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of creating reports?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Explain why a query can be a better Record Source for a report than a raw table.
+
+ 
+
+Lesson 15: Grouping, Sorting and Summaries in Reports
+Introduction
+Reports become more informative when records are grouped by a meaningful field such as CourseTitle.
+Sorting determines order within groups, while totals can summarize counts or numeric values. Every
+summary should have a clear label and purpose.
+
+Learning Objectives
+ Explain the main ideas in grouping, sorting and summaries in reports.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Grouping, Sorting, Aggregate, Count, Sum, Group Footer.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 15 Practical Workshop
+Step-by-Step Practical
+Group a fictional enrolment report by course. Add a count of enrolments for each course and inspect the
+report in Print Preview.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of grouping, sorting and summaries in reports?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Design a report specification showing title, grouping, sort order and required totals.
+
+ 
+
+Lesson 16: Importing and Exporting Data
+Introduction
+Access can exchange data with formats such as Excel, text/CSV and PDF. Importing brings external data
+into Access, while exporting sends Access data to another format. Before import, inspect field names and
+data types. After export, verify that the result is complete and readable.
+
+Learning Objectives
+ Explain the main ideas in importing and exporting data.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Import, Export, Csv, Excel, Pdf, External Data.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 16 Practical Workshop
+Step-by-Step Practical
+Create a small fictional course list in a spreadsheet or CSV and import it into a practice table. Export a
+query or report to PDF and verify the output.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of importing and exporting data?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Write a pre-import checklist with at least six checks.
+
+ 
+
+Lesson 17: Database Maintenance, Backup and Good Practice
+Introduction
+Databases need care. Keep backup copies, use clear naming, avoid storing unnecessary personal data,
+restrict access appropriately and document important design decisions. Compact and Repair can help
+maintain an Access file. Changes to structure should be tested on a backup first.
+
+Learning Objectives
+ Explain the main ideas in database maintenance, backup and good practice.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Backup, Compact And Repair, Documentation, Access Control, Data Minimisation.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+Lesson 17 Practical Workshop
+Step-by-Step Practical
+Make a copy of the practice database before a structural change. Review object names and create a short
+README note describing the tables and relationships.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+ 
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of database maintenance, backup and good practice?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Prepare a database maintenance schedule for a small training academy.
+
+ 
+
+Lesson 18: Final Relational Database Project
+Introduction
+The final project combines planning, tables, keys, relationships, queries, forms and reports. The goal is not
+merely to create objects but to build a small database that answers real business questions accurately and
+is easy for another user to operate.
+
+Learning Objectives
+ Explain the main ideas in final relational database project.
+ Apply the lesson using a safe fictional Ethan Digital Academy dataset.
+ Check the accuracy of the result and explain why the method is useful.
+
+Key Terms
+Requirements, Database Design, Testing, Documentation, Presentation.
+
+Teaching Content
+Microsoft Access works best when information is organised deliberately. A learner should always ask what
+each table represents, what each field means, and how the information will be used later. Clear structure is
+more important than entering a large quantity of data.
+
+Professional database work depends on consistency. Names, dates, codes and money values should follow
+agreed rules. When the structure is consistent, queries and reports become more reliable and users can
+understand the database more easily.
+
+A database object should have a clear purpose. Before creating or changing an object, identify the question
+it solves. After the change, test the object with fictional records and confirm that the output matches the
+intended business rule.
+
+ Figure 12. Instructional visual for Final Relational Database Project.
+
+ 
+
+Lesson 18 Practical Workshop
+Step-by-Step Practical
+Build the Ethan Digital Academy Training Database using fictional data: at least three related tables, valid
+primary keys, relationships, three useful queries, two forms and two reports. Test every object and correct
+errors.
+
+1. Prepare a practice copy of the database and use only fictional learner/business information.
+
+2. Open the relevant Access object and confirm you are in the correct view before editing.
+
+3. Carry out the task carefully, using meaningful names for fields and objects.
+
+4. Save the object, close it, reopen it and verify that the change was stored correctly.
+
+5. Test the result with at least three fictional records and note anything that needs correction.
+
+Ethan Digital Academy Example
+Imagine Ethan Digital Academy needs a reliable way to manage courses and enrolments. Apply this lesson
+to a fictional academy database. The aim is to reduce repeated information, improve accuracy and make
+useful information easier to retrieve.
+
+Review Questions
+ What is the main purpose of final relational database project?
+ Which Access object or concept is most important in this lesson, and why?
+ What error could occur if this lesson is applied carelessly?
+ How would you verify that your work is correct?
+
+Assignment
+Submit the database, a one-page design explanation, test evidence and a short presentation of how the
+system works.
+
+ 
+
+Final Practical Project - 100 Marks
+Build a complete fictional Ethan Digital Academy Training Database. Use no real personal data.
+
+ Database plan and data dictionary - 10 marks
+ Three or more correctly designed tables - 20 marks
+ Primary keys and relationships with integrity - 15 marks
+ Three useful queries including criteria/calculation - 15 marks
+ Two professional data-entry forms - 10 marks
+ Two professional reports with grouping/summary - 10 marks
+ Testing, backup and documentation - 10 marks
+ Presentation and explanation - 10 marks
+
+Required Business Questions
+ Which learners are enrolled in each course?
+ How many enrolments does each course have?
+ Which courses meet a selected fee criterion?
+ What information should appear on a management enrolment report?
+
+ 
+
+Course Quiz - 30 Questions
+1. What is a database?
+
+2. What is a relational database?
+
+3. What is a table?
+
+4. What is a field?
+
+5. What is a record?
+
+6. Name the four main Access objects.
+
+7. What is the purpose of a primary key?
+
+8. What is a foreign key?
+
+9. What does one-to-many mean?
+
+10. What is referential integrity?
+
+11. When is Short Text appropriate?
+
+12. When is Currency appropriate?
+
+13. What does Required do?
+
+14. What is Datasheet View?
+
+15. What is Design View?
+
+16. What is a filter?
+
+17. What is a select query?
+
+18. What does query criteria do?
+
+19. What is a calculated field?
+
+20. What is a form?
+
+21. Why use a combo box?
+
+22. What is a report?
+
+23. What is grouping in a report?
+
+24. What is an aggregate such as Count?
+
+25. What does importing data mean?
+
+26. What does exporting data mean?
+
+27. Why should imported data be checked?
+
+28. Why are backups important?
+
+29. What is Compact and Repair used for?
+
+30. Why should a database be tested before production use?
+
+ 
+
+Final Examination - 100 Marks
+Section A - Concepts (30 Marks)
+ Define database, table, field, record, primary key and foreign key. (12)
+ Explain the purpose of tables, queries, forms and reports. (8)
+ Explain one-to-many relationships and referential integrity. (10)
+
+Section B - Applied Database Design (30 Marks)
+ Design a three-table academy database and identify fields/data types. (15)
+ Draw the relationships and identify primary/foreign keys. (10)
+ Write five useful query questions the database should answer. (5)
+
+Section C - Practical (40 Marks)
+ Create the tables and relationships. (15)
+ Create one query with criteria and one calculated field. (10)
+ Create one form. (5)
+ Create one grouped report. (5)
+ Back up and document the database. (5)
+
+ 
+
+Course Completion Outcome
+After completing EDA-ACC-105, the learner should be able to plan and build a small relational Microsoft
+Access database, create and relate tables, enter and retrieve records accurately, design queries, forms and
+reports, exchange data with common formats, maintain backups and explain the design decisions used in a
+practical database project.
+
+Professional Practice Checklist
+ Use meaningful object and field names.
+ Choose data types deliberately.
+ Use primary keys and relationships correctly.
+ Use fictional practice data during training.
+ Validate and test before relying on results.
+ Back up before structural changes.
+ Protect personal and business information appropriately.
+ Document the database so another authorised user can understand it.

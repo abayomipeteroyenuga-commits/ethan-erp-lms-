@@ -6,5 +6,8 @@ window.ETHAN_CONFIG = {
   supabasePublishableKey: "sb_publishable_LghFHw2wsTICWz3FmjFBew_zjk62iA_",
   appName: "ETHAN ERP & LMS",
   academyName: "Ethan Digital Academy",
-  website: "https://ethandigitalacademy.org"
+  website: "https://ethandigitalacademy.org",
+  hubUrl: "https://hub.ethandigitalacademy.org",
+  identityProvider: "Ethan ID",
+  ssoFunctionUrl: "https://hsigpjyvuvqdmujklcvw.supabase.co/functions/v1/ethan-sso"
 };

@@ -1,0 +1,692 @@
+ETHAN DIGITAL ACADEMY
+
+COMPUTER APPRECIATION
+ COMPLETE PROFESSIONAL STUDY MANUAL
+
+ Visual Edition - Paid Enrollee Course Material
+
+ Course Code: EDA-COM-101
+
+ Level: Beginner
+
+ Duration: 4 Weeks (12 Lessons)
+
+Certificate: Professional Certificate in Computer Appreciation
+
+ Prerequisites: None
+
+ Learning Format: Classroom + Practical
+
+ 
+
+COURSE OVERVIEW
+Computer Appreciation is the foundation of every digital skill. It introduces learners to computers, hardware,
+software, operating systems, Windows, file management, internet and email, Microsoft Office, cybersecurity,
+cloud computing, artificial intelligence and professional workplace digital skills.
+
+This visual edition adds diagrams, labelled examples and realistic screen-style illustrations so learners can
+see the concepts as they study them.
+
+LEARNING OBJECTIVES
+ Understand what a computer is and how it processes information.
+ Identify computer hardware and software.
+ Explain the development and major types of computers.
+ Operate Windows confidently.
+ Manage files and folders professionally.
+ Use internet and email safely and professionally.
+ Recognise the purpose of Word, Excel and PowerPoint.
+ Apply basic cybersecurity practices.
+ Understand cloud computing and responsible AI use.
+ Apply digital workplace skills.
+
+COURSE OUTLINE
+ Module Topic
+ 1 Introduction to Computers
+ 2 History of Computers
+ 3 Types of Computers
+ 4 Computer Hardware
+ 5 Computer Software
+ 6 Operating Systems
+ 7 Windows Practical
+ 8 Files and Folders
+ 9 Internet and Email
+ 10 Microsoft Office
+ 11 Cybersecurity
+ 12 Cloud Computing & AI
+
+ 
+
+MODULE 1: INTRODUCTION TO COMPUTERS
+What is a Computer?
+A computer is an electronic device that receives data, processes it according to instructions, stores
+information and produces useful output.
+
+ Figure 1. Input, processing, storage and output.
+
+The Information-Processing Cycle
+The basic cycle is Input -> Processing -> Storage -> Output. Input devices enter data, the processor works on
+the data, storage keeps data and programs, and output devices present the result.
+
+Characteristics of Computers
+Computers are valued for speed, accuracy, storage capacity, automation, reliability and versatility. They can
+repeat tasks consistently when given correct instructions and data.
+
+Advantages
+ Saves time
+ Reduces many manual errors
+ Stores large amounts of information
+ Improves communication
+ Supports online learning and business
+
+Limitations and Risks
+ Depends on electricity or battery power
+ Can be affected by malware and cyber attacks
+ Incorrect input can produce incorrect output
+ Overdependence can reduce good work habits
+
+ 
+
+Practical Activity
+1. Identify five places where computers are used.
+2. For each place, write one task the computer performs.
+3. Identify one input and one output device available in your classroom or home.
+
+Review Questions
+4. What is a computer?
+5. List the four stages of the information-processing cycle.
+6. Mention four characteristics of computers.
+7. Give three advantages of computers.
+
+Assignment
+Create a one-page report titled 'Computers in Everyday Life' with five real-life examples.
+
+ 
+
+MODULE 2: HISTORY OF COMPUTERS
+From Mechanical Calculation to Modern Computing
+Computing developed from early counting and mechanical devices to electronic systems that became smaller,
+faster and more intelligent.
+
+ Figure 2. Five generations of computer development.
+
+First Generation (1940-1956)
+ Used vacuum tubes
+ Very large and produced much heat
+ Consumed large amounts of electricity
+ ENIAC is a well-known example
+
+Second Generation
+Transistors replaced many vacuum tubes, making computers smaller, faster and more reliable.
+
+Third Generation
+Integrated circuits placed many electronic components on small chips.
+
+Fourth Generation
+Microprocessors supported the rise of personal computers and portable devices.
+
+Fifth Generation
+Modern computing increasingly uses artificial intelligence, machine learning, robotics and advanced natural-
+language systems.
+
+ 
+
+Charles Babbage
+Charles Babbage designed the Analytical Engine and is commonly described as the Father of the Computer.
+
+Practical Activity
+8. Draw a five-generation timeline.
+9. Write one major technology associated with each generation.
+10. Compare the size, speed and power use of an early electronic computer with a modern laptop.
+
+Review Questions
+11. Who is called the Father of the Computer?
+12. What technology was used in first-generation computers?
+13. What changed in the second generation?
+14. What is associated with fifth-generation computing?
+
+Assignment
+Prepare a comparison table: ENIAC versus a modern laptop.
+
+ 
+
+MODULE 3: TYPES OF COMPUTERS
+Computers can be classified in several ways.
+A useful beginner classification considers size/capacity and purpose.
+
+ Figure 3. Examples of computer types and purposes.
+
+Supercomputers
+Extremely powerful systems used for scientific research, simulations and weather modelling.
+
+Mainframes
+Large systems designed to process very high volumes of transactions and support many users, often in banks
+and government organizations.
+
+Microcomputers
+Computers designed for individual use, including desktops, laptops, tablets and smartphones.
+
+General-Purpose Computers
+Designed to perform many different tasks, such as a laptop used for writing, browsing, spreadsheets and
+communication.
+
+Special-Purpose Computers
+Designed mainly for a specific task or limited set of tasks, such as some ATM or embedded control systems.
+
+Practical Activity
+15. Classify a laptop, smartphone, ATM and bank transaction server.
+16. Explain why a laptop is general purpose.
+17. Find two examples of special-purpose computing in everyday life.
+
+ 
+
+Review Questions
+18. What is a supercomputer used for?
+19. Where are mainframes commonly used?
+20. Give four examples of microcomputers.
+21. Differentiate general-purpose and special-purpose computers.
+
+Assignment
+Create a chart showing at least four computer types and their common uses.
+
+ 
+
+MODULE 4: COMPUTER HARDWARE
+What is Hardware?
+Hardware refers to the physical parts of a computer that can be seen or touched.
+
+ Figure 4. Major computer hardware categories.
+
+Input Devices
+ Keyboard
+ Mouse
+ Scanner
+ Webcam
+ Microphone
+
+Processing Devices
+The CPU executes instructions and performs arithmetic, logical and control operations. Key concepts include
+the Arithmetic and Logic Unit, Control Unit and registers.
+
+Primary Storage
+ RAM temporarily holds active data and programs.
+ ROM stores non-volatile instructions or firmware-related information.
+
+Secondary Storage
+ Hard Disk Drive (HDD)
+ Solid State Drive (SSD)
+ Flash drive
+ Memory card
+
+ 
+
+Output Devices
+ Monitor
+ Printer
+ Speakers
+ Projector
+
+Motherboard
+The motherboard is the main circuit board connecting the processor, memory, storage interfaces, expansion
+components and power connections.
+
+Practical Activity
+22. Using a real computer or labelled picture, identify the keyboard, mouse, monitor and system unit.
+23. On a desktop hardware diagram, identify CPU, RAM, storage and motherboard.
+24. Classify ten devices as input, processing, storage or output.
+
+Review Questions
+25. What is hardware?
+26. Name five input devices.
+27. What is the CPU?
+28. Differentiate RAM and secondary storage.
+29. What does the motherboard do?
+
+Assignment
+Draw and label the major hardware categories.
+
+ 
+
+MODULE 5: COMPUTER SOFTWARE
+What is Software?
+Software consists of programs and instructions that tell computer hardware what to do.
+
+ Figure 5. System, application and utility software.
+
+System Software
+System software manages and supports the computer. Operating systems such as Windows, Linux and
+macOS are key examples.
+
+Application Software
+Application software helps users perform tasks. Examples include Microsoft Word, Excel, web browsers and
+graphics applications.
+
+Utility Software
+Utilities help maintain, protect or manage the system. Examples include antivirus, backup and disk-
+management tools.
+
+Hardware and Software Relationship
+Hardware provides the physical equipment; software provides the instructions. A useful computer system
+normally requires both.
+
+Practical Activity
+30. List ten programs installed on a computer or phone.
+31. Classify each as system, application or utility software where appropriate.
+32. Explain what would happen if a computer had hardware but no usable operating system.
+
+ 
+
+Review Questions
+33. What is software?
+34. What is system software?
+35. Give four examples of application software.
+36. What is utility software?
+
+Assignment
+Create a two-column comparison of hardware and software with five examples each.
+
+ 
+
+MODULE 6: OPERATING SYSTEMS
+Definition
+An operating system manages computer hardware and software resources and provides an environment in
+which users and applications can work.
+
+ Figure 6. Functions managed by an operating system.
+
+Core Functions
+ Memory management
+ File management
+ Device management
+ User management
+ Security and permissions
+ Providing a user interface
+
+Common Operating Systems
+ Windows - common on personal and office computers
+ macOS - used on Apple Mac computers
+ Linux - used on many servers and technical systems
+ Android - widely used on mobile devices
+ iOS - used on Apple iPhones
+
+The User Interface
+Graphical operating systems present windows, icons, menus, buttons and other controls that help users
+interact with the computer.
+
+ 
+
+Practical Activity
+37. Identify the operating system on your computer or phone.
+38. Open the system search feature and find Calculator.
+39. Open a basic application.
+40. Locate system settings without changing important security options.
+
+Review Questions
+41. What is an operating system?
+42. List five operating-system functions.
+43. Name four operating systems.
+44. Why is an operating system important?
+
+Assignment
+Write a short comparison of Windows, macOS and Linux.
+
+ 
+
+MODULE 7: WINDOWS PRACTICAL
+Working with the Windows Desktop
+Windows provides a graphical desktop environment for launching applications, managing files and controlling
+the computer.
+
+ Figure 7. Simplified Windows desktop showing key areas.
+
+Desktop
+The desktop is the main workspace. It may contain shortcuts, folders and the Recycle Bin.
+
+Taskbar and Start Menu
+The taskbar provides access to open or pinned applications. The Start menu provides access to apps, search,
+settings and power options.
+
+Essential Shortcuts
+ Ctrl+C - Copy
+ Ctrl+V - Paste
+ Ctrl+X - Cut
+ Ctrl+Z - Undo
+ Ctrl+S - Save
+ Ctrl+A - Select All
+ Ctrl+P - Print
+ Alt+Tab - Switch between open apps
+ Windows+D - Show desktop
+
+Safe Practice
+Avoid deleting unknown system files or changing advanced settings during beginner practice.
+
+ 
+
+Practical Activity
+45. Open the Start menu.
+46. Search for Calculator and open it.
+47. Open two applications and switch between them with Alt+Tab.
+48. Use Windows+D to show the desktop.
+49. Create a folder named Ethan Digital Academy with Assignments, Projects and Certificates inside.
+
+Review Questions
+50. What is the taskbar?
+51. What does Ctrl+S do?
+52. What does Alt+Tab do?
+53. What is the purpose of the Start menu?
+
+Assignment
+Demonstrate ten Windows actions to your instructor and record the shortcuts used.
+
+ 
+
+MODULE 8: FILES AND FOLDERS
+Files and folders are the foundation of digital organization.
+A file contains information; a folder is a container used to organize files and other folders.
+
+ Figure 8. A professional folder structure.
+
+Common File Types
+ .docx - Word document
+ .xlsx - Excel workbook
+ .pptx - PowerPoint presentation
+ .pdf - Portable Document Format
+ .jpg - image
+ .mp4 - video
+
+File Operations
+ Create
+ Open
+ Save
+ Rename
+ Copy
+ Move
+ Delete
+ Restore from Recycle Bin when appropriate
+
+Good File Management
+ Create logical folders
+ Use meaningful filenames
+ Avoid unnecessary duplicates
+ 
+
+ Back up important work
+ Keep school and business files separated when useful
+
+Example Naming
+A filename such as EDA_Computer_Appreciation_Assignment_01.docx is more useful than Document1.docx.
+
+Practical Activity
+54. Create the folder structure shown in the figure.
+55. Create sample files and place them in the correct folders.
+56. Rename one file professionally.
+57. Copy one file to Projects, then delete the copy and restore it if your system allows.
+
+Review Questions
+58. What is a file?
+59. What is a folder?
+60. What does .pdf indicate?
+61. Give four file-management best practices.
+
+Assignment
+Organize a sample set of Documents, Photos, Videos and Course Materials into a logical folder system.
+
+ 
+
+MODULE 9: INTERNET AND EMAIL
+The internet connects computers and networks around the world.
+Learners use the internet to search, communicate, study, collaborate and access online services.
+
+ Figure 9. Example of a professional email layout.
+
+What You Need
+ A suitable device
+ An internet connection
+ A web browser or relevant application
+
+Web Browsers
+ Chrome
+ Edge
+ Firefox
+ Opera
+
+Better Searching
+Specific searches usually produce more useful results than vague one-word searches. Compare 'computer'
+with 'beginner computer appreciation course topics'.
+
+Email Parts
+ To - recipient address
+ Subject - short description of purpose
+ Body - main message
+ Attachment - file sent with the message
+
+ 
+
+Email Etiquette
+ Use a clear subject
+ Be polite and concise
+ Avoid unnecessary ALL CAPS
+ Proofread before sending
+ Check attachments before sending
+
+Practical Activity
+62. Open a browser and perform a specific educational search.
+63. Draft a professional email requesting course information.
+64. Add a clear subject and polite body.
+65. Attach a non-sensitive practice document.
+66. Review the recipient and attachment before sending.
+
+Review Questions
+67. What is the internet?
+68. Name four browsers.
+69. What is an email subject?
+70. What is an attachment?
+71. Mention four email-etiquette rules.
+
+Assignment
+Write two professional emails: one requesting information and one submitting an assignment.
+
+ 
+
+MODULE 10: MICROSOFT OFFICE
+Microsoft Office applications support common productivity tasks.
+This foundation module introduces Word, Excel and PowerPoint before learners take the dedicated full
+courses.
+
+ Figure 10. Common uses of Word, Excel and PowerPoint.
+
+Microsoft Word
+Used for letters, reports, CVs and other documents. Beginner skills include typing, bold/italic formatting,
+tables, pictures and headers.
+
+Microsoft Excel
+Used for calculations, budgets, attendance and structured data. Common functions include SUM, AVERAGE,
+MAX and MIN.
+
+Microsoft PowerPoint
+Used for presentations, training and meetings. Presentations normally contain a title slide, content slides and
+relevant visual elements.
+
+Choosing the Right Tool
+Use Word for document writing, Excel for spreadsheet calculations and PowerPoint for slide-based
+presentations.
+
+Practical Activity
+72. Create a one-page letter in Word.
+73. Create a simple monthly budget in Excel and calculate a total.
+74. Create a five-slide presentation titled My Digital Journey.
+75. Save all three files in your course folder.
+ 
+
+Review Questions
+76. What is Word mainly used for?
+77. What is Excel useful for?
+78. What is PowerPoint used for?
+79. Which application would you choose for a budget?
+
+Assignment
+Complete the three-application mini project and submit the files.
+
+ 
+
+MODULE 11: CYBERSECURITY
+What is Cybersecurity?
+Cybersecurity is the practice of protecting computers, accounts, networks and information from unauthorized
+access, damage and other digital threats.
+
+ Figure 11. Common cyber threats and basic protective habits.
+
+Common Threats
+ Virus - malicious code that can damage or disrupt systems
+ Malware - general term for harmful software
+ Phishing - deceptive messages designed to trick people into revealing information or taking unsafe
+ actions
+ Ransomware - malware that can block access to files or systems
+
+Basic Protection
+ Use strong, unique passwords
+ Enable two-factor authentication where available
+ Keep software updated
+ Use trusted security tools
+ Avoid suspicious links and unexpected attachments
+ Back up important files
+
+Password Practice
+A strong password or passphrase should be difficult to guess and should not be reused across important
+accounts. Do not share passwords in class exercises.
+
+Practical Activity
+80. Review the security settings of a practice or personal account without sharing credentials.
+ 
+
+81. Check whether automatic software updates are enabled.
+82. Identify warning signs in a fictional phishing message supplied by the instructor.
+83. Create a checklist of five safe-computing habits.
+
+Review Questions
+84. What is cybersecurity?
+85. What is phishing?
+86. What is malware?
+87. Why is two-factor authentication useful?
+88. Mention five protection methods.
+
+Assignment
+Prepare a one-page 'Safe Computer Use' poster for beginners.
+
+ 
+
+MODULE 12: CLOUD COMPUTING AND AI
+Cloud computing and artificial intelligence are important parts of modern digital work.
+Cloud services allow data and applications to be accessed over networks, while AI systems can assist with
+tasks such as summarising, generating ideas and analysing information.
+
+ Figure 12. Cloud storage and AI as complementary digital-work tools.
+
+Cloud Computing
+Cloud storage services can make files available across devices and support backup and collaboration.
+Examples include Google Drive, OneDrive and Dropbox.
+
+Benefits of Cloud Services
+ Access from multiple devices
+ Backup and recovery support
+ Sharing and collaboration
+ Reduced dependence on one local device
+
+Artificial Intelligence
+AI enables computer systems to perform tasks associated with human intelligence, such as recognising
+patterns, understanding language and generating content.
+
+Responsible AI Use
+ Verify important information
+ Do not present AI-generated work as your own when rules prohibit it
+ Protect private or confidential information
+ Use AI as an assistant, not a substitute for judgment
+ Follow school, workplace and platform rules
+
+ 
+
+Practical Activity
+89. Upload a non-sensitive practice file to a cloud-storage account if available.
+90. Create a practice folder and review sharing settings.
+91. Use an approved AI tool to summarise a short non-sensitive paragraph.
+92. Compare the AI summary with the original and identify anything that needs correction.
+
+Review Questions
+93. What is cloud computing?
+94. Name three cloud-storage services.
+95. What is AI?
+96. Mention four responsible-AI practices.
+
+Assignment
+Write a short reflection on how cloud computing and AI can support study or office work.
+
+ 
+
+DIGITAL WORKPLACE SKILLS
+ Professional communication
+ File organization
+ Online meetings
+ Time management
+ Digital collaboration
+ Safe handling of information
+ Responsible use of digital tools
+
+Common collaboration tools include online meeting platforms, shared documents, calendars and cloud
+storage. The exact tools used will depend on the school or workplace.
+
+REAL-LIFE CASE STUDY: ETHAN DIGITAL ACADEMY STUDENT
+A beginner joins Ethan Digital Academy with little computer experience. After completing Computer
+Appreciation, the learner can create documents, prepare basic spreadsheets and presentations, manage files,
+send professional emails, store files online, apply basic cybersecurity habits and use AI responsibly. This
+foundation prepares the learner for advanced courses such as Digital Marketing, Data Analysis, Graphic
+Design, Cybersecurity, Web Development and AI for Business.
+
+FINAL PRACTICAL PROJECT
+97. Create a professional folder structure.
+98. Write a one-page letter in Microsoft Word.
+99. Create an Excel budget using formulas.
+100. Create a five-slide PowerPoint presentation.
+101. Prepare a professional email and attach the files.
+102. Upload the project files to an approved cloud-storage folder and verify sharing settings.
+
+QUIZ - 20 QUESTIONS
+103. What is a computer?
+104. Who is commonly called the Father of the Computer?
+105. What is RAM?
+106. What is ROM?
+107. Name three input devices.
+108. Name three output devices.
+109. What is an operating system?
+110. Mention two operating systems.
+111. What does Ctrl+C do?
+112. What does Ctrl+S do?
+113. What is malware?
+114. What is phishing?
+115. Name two cloud-storage platforms.
+116. What is AI?
+117. What is a motherboard?
+118. What is a CPU?
+119. Differentiate hardware and software.
+ 
+
+120. Name three Microsoft Office applications.
+121. What is an email attachment?
+122. Why should passwords be strong and unique?
+
+FINAL EXAMINATION - 50 MARKS
+Section A - 20 Marks
+
+Multiple-choice questions covering the full course.
+
+Section B - 20 Marks
+
+Short-answer questions requiring definitions, comparisons and examples.
+
+Section C - 10 Marks
+
+Practical assessment: create a document, build a basic spreadsheet, create a short presentation, organize
+the files and prepare them for professional email/cloud submission.
+
+COURSE COMPLETION OUTCOME
+Graduates of EDA-COM-101 Computer Appreciation will confidently use computers in schools, offices,
+businesses and remote-work environments. They will possess the digital foundation required for the advanced
+Ethan Digital Academy curriculum.

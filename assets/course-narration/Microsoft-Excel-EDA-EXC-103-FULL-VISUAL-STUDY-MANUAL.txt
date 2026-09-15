@@ -1,0 +1,1038 @@
+ETHAN DIGITAL ACADEMY
+
+ MICROSOFT EXCEL
+ COMPLETE PROFESSIONAL VISUAL STUDY MANUAL
+
+ Paid Enrollee Course Material
+
+ Course Code: EDA-EXC-103
+
+ Level: Beginner to Intermediate
+
+ Duration: 6 Weeks (18 Lessons)
+
+ Certificate: Professional Certificate in Microsoft Excel
+
+ Prerequisite: Computer Appreciation
+
+Learning Format: Classroom + Guided Practical + Independent Practice
+
+ 
+
+COURSE OVERVIEW
+Microsoft Excel is a spreadsheet application used to organize data, perform calculations, analyse information,
+create charts and prepare reports. This course develops practical spreadsheet skills for school, office,
+business and professional work.
+
+The course is designed as a full teaching manual. Learners work with realistic examples such as budgets,
+student records, sales data, attendance, course fees and management dashboards.
+
+LEARNING OBJECTIVES
+ Understand workbooks, worksheets, rows, columns, cells and ranges.
+ Enter and edit text, numbers, dates and formulas correctly.
+ Format worksheets professionally.
+ Use arithmetic formulas and core functions such as SUM, AVERAGE, MAX, MIN and COUNT.
+ Understand relative, absolute and mixed references.
+ Apply IF and other useful logical functions.
+ Sort, filter and validate data.
+ Use conditional formatting.
+ Create appropriate charts.
+ Use lookup functions to retrieve information.
+ Create PivotTables for summaries.
+ Prepare print-ready worksheets and dashboards.
+
+COURSE OUTLINE
+ Lesson Topic
+ 1 Excel Foundations and Interface
+ 2 Workbooks, Worksheets, Cells and Data Types
+ 3 Entering, Editing and Managing Data
+ 4 Formatting Professional Worksheets
+ 5 Formulas and Operators
+ 6 Core Functions: SUM, AVERAGE, MAX, MIN and
+ COUNT
+ 7 Cell References and Copying Formulas
+ 8 Logical Functions and IF
+ 9 Sorting, Filtering and Excel Tables
+ 10 Data Validation and Conditional Formatting
+ 11 Charts and Data Visualization
+ 12 Text, Date and Useful Business Functions
+ 13 Lookup Functions
+ 14 PivotTables and PivotCharts
+ 15 Page Layout, Printing and PDF Export
+ 16 Data Cleaning and Error Checking
+ 17 Business Reporting and Dashboard Design
+ 18 Final Professional Excel Project
+
+ 
+
+LESSON 1: EXCEL FOUNDATIONS AND INTERFACE
+Microsoft Excel is a spreadsheet application. A spreadsheet organizes information in a grid and can calculate,
+analyse and present that information.
+
+ Figure 1. The main areas of a Microsoft Excel worksheet.
+
+Workbook and Worksheet
+A workbook is an Excel file. A workbook can contain one or more worksheets. Each worksheet contains rows
+and columns.
+
+Key Interface Areas
+ Title bar
+ Ribbon and tabs
+ Name Box
+ Formula Bar
+ Worksheet grid
+ Sheet tabs
+ Status bar and zoom controls
+
+Why Excel Matters
+Excel is used for budgets, payroll support, attendance, inventories, sales records, academic scores, financial
+analysis and management reporting.
+
+Step-by-Step Practical
+1. Open Excel and create a blank workbook.
+
+2. Identify the Ribbon, Name Box, Formula Bar, worksheet grid and Sheet1 tab.
+
+3. Click cell A1 and observe its address in the Name Box.
+
+ 
+
+4. Save the workbook as EDA_Excel_Practice.xlsx.
+
+Review Questions
+1. What is a workbook?
+
+2. What is a worksheet?
+
+3. What is a cell?
+
+4. What is the Formula Bar used for?
+
+Assignment
+Create a labelled sketch of the Excel interface.
+
+ 
+
+LESSON 2: WORKBOOKS, WORKSHEETS, CELLS AND DATA TYPES
+Excel stores information in cells. A cell address combines its column letter and row number, for example B4.
+
+ Figure 2. Excel data types and cell-reference concepts.
+
+Rows, Columns and Ranges
+Rows run horizontally and are numbered. Columns run vertically and are lettered. A range is a group of cells,
+such as A1:C10.
+
+Common Data Types
+ Text - names and labels
+ Numbers - quantities and amounts
+ Dates and times
+ Percentages
+ Formulas - expressions beginning with =
+
+Good Data Entry
+Keep one type of information per column and use clear headings. Avoid mixing unrelated data in the same
+cell.
+
+Step-by-Step Practical
+1. Enter headings Name, Course, Fee and Status in A1:D1.
+
+2. Enter five sample learner records.
+
+3. Select the range A1:D6.
+
+4. Rename Sheet1 to Learners.
+
+ 
+
+Review Questions
+1. What is a cell address?
+
+2. What is a range?
+
+3. Name four common data types.
+
+4. Why should columns have clear headings?
+
+Assignment
+Create a 10-record student data table.
+
+ 
+
+LESSON 3: ENTERING, EDITING AND MANAGING DATA
+Accurate data entry is essential because formulas and reports depend on the values stored in the worksheet.
+
+ Figure 2. Data types and references used during data entry.
+
+Editing Cells
+Double-click a cell or use the Formula Bar to edit its contents. Delete clears selected content; Undo reverses
+many recent actions.
+
+AutoFill and Fill Handle
+The fill handle can copy values, formulas and recognized sequences such as months or numbers.
+
+Find and Replace
+Find locates specific content; Replace can change repeated content efficiently. Always review replacements
+before applying them widely.
+
+Insert and Delete
+Rows, columns and cells can be inserted or deleted. Be careful when formulas depend on the affected range.
+
+Step-by-Step Practical
+1. Create a list of January to June using AutoFill.
+
+2. Enter numbers 1 and 2, select both and drag the fill handle to continue the sequence.
+
+3. Use Find to locate one learner name.
+
+4. Correct a misspelled course name.
+
+Review Questions
+1. What is AutoFill?
+ 
+
+2. What is the fill handle?
+
+3. When is Find and Replace useful?
+
+4. Why should you be careful when deleting rows?
+
+Assignment
+Prepare a clean 20-row attendance register.
+
+ 
+
+LESSON 4: FORMATTING PROFESSIONAL WORKSHEETS
+Formatting improves readability and helps users understand headings, totals, dates, currency and important
+results.
+
+ Figure 5. Before-and-after worksheet formatting.
+
+Font and Alignment
+Use readable fonts, consistent sizes and deliberate alignment. Headings should be visually distinct from data.
+
+Number Formats
+ General
+ Number
+ Currency or Accounting
+ Percentage
+ Date
+ Time
+
+Borders and Fill
+Borders define tables while fill colours can identify headings or categories. Avoid excessive decoration.
+
+Column Width and Row Height
+Use AutoFit or adjust dimensions so content is readable without unnecessary empty space.
+
+Step-by-Step Practical
+1. Format a heading row in bold.
+
+2. Apply currency format to a Fee column.
+
+3. Apply percentage format to a Completion column.
+
+ 
+
+4. AutoFit all used columns.
+
+5. Add a clear border to the table.
+
+Review Questions
+1. Why is number formatting important?
+
+2. What is AutoFit?
+
+3. When should percentage format be used?
+
+4. What makes a worksheet look professional?
+
+Assignment
+Reformat your attendance register into a professional table.
+
+ 
+
+LESSON 5: FORMULAS AND OPERATORS
+A formula is an instruction Excel calculates. Formulas normally begin with the equals sign (=).
+
+ Figure 4. A worked budget example using formulas.
+
+Arithmetic Operators
+ + addition
+ - subtraction
+ * multiplication
+ / division
+ ^ exponentiation
+
+Order of Operations
+Excel follows mathematical precedence. Parentheses can make the intended calculation clearer.
+
+Using Cell References
+Instead of typing values repeatedly, refer to cells. For example, =B2*C2 calculates quantity multiplied by unit
+cost.
+
+Formula Safety
+Check formulas after copying them. A correct-looking result can still come from an incorrect range.
+
+Step-by-Step Practical
+1. Create columns Item, Quantity, Unit Cost and Amount.
+
+2. Enter five expense items.
+
+3. In D2 type =B2*C2.
+
+4. Copy the formula down to the remaining rows.
+ 
+
+5. Change one quantity and observe the recalculation.
+
+Review Questions
+1. What character begins a formula?
+
+2. What does * mean in Excel?
+
+3. Why use cell references?
+
+4. What happens when an input value changes?
+
+Assignment
+Create a five-item office expense sheet using formulas.
+
+ 
+
+LESSON 6: CORE FUNCTIONS: SUM, AVERAGE, MAX, MIN AND
+COUNT
+Functions are predefined formulas that perform common calculations.
+
+ Figure 3. Core Excel formulas and functions.
+
+SUM
+Adds numbers. Example: =SUM(D2:D10).
+
+AVERAGE
+Returns the arithmetic mean. Example: =AVERAGE(B2:B10).
+
+MAX and MIN
+MAX returns the largest value; MIN returns the smallest.
+
+COUNT
+Counts cells containing numbers. COUNTA can count non-empty cells.
+
+Function Arguments
+The values or ranges inside parentheses are arguments. Always verify that the selected range contains the
+intended data.
+
+Step-by-Step Practical
+1. Enter ten student scores.
+
+2. Calculate the total with SUM.
+
+3. Calculate the average with AVERAGE.
+
+ 
+
+4. Find the highest score with MAX and lowest with MIN.
+
+5. Count the numeric scores with COUNT.
+
+Review Questions
+1. What does SUM do?
+
+2. What does AVERAGE return?
+
+3. Differentiate MAX and MIN.
+
+4. What does COUNT count?
+
+Assignment
+Build a score summary showing total, average, highest, lowest and count.
+
+ 
+
+LESSON 7: CELL REFERENCES AND COPYING FORMULAS
+Cell references control how formulas behave when copied to other cells.
+
+ Figure 2. Relative, absolute and mixed cell references.
+
+Relative Reference
+A1 changes relative to the new position when a formula is copied.
+
+Absolute Reference
+$A$1 remains fixed when copied. This is useful for a tax rate, exchange rate or other constant stored in one
+cell.
+
+Mixed Reference
+A$1 fixes the row; $A1 fixes the column.
+
+Practical Example
+If B2 contains an amount and F1 contains a fixed rate, =B2*$F$1 keeps the rate cell fixed when copied
+downward.
+
+Step-by-Step Practical
+1. Enter five amounts in B2:B6.
+
+2. Enter 7.5% in F1.
+
+3. In C2 type =B2*$F$1.
+
+4. Copy C2 down to C6.
+
+5. Check that every copied formula still points to $F$1.
+
+ 
+
+Review Questions
+1. What is a relative reference?
+
+2. What is an absolute reference?
+
+3. What does $A1 fix?
+
+4. Why is $F$1 useful for a constant rate?
+
+Assignment
+Create a price table using one fixed discount-rate cell.
+
+ 
+
+LESSON 8: LOGICAL FUNCTIONS AND IF
+Logical functions allow a worksheet to make decisions based on conditions.
+
+ Figure 7. How an IF formula evaluates a condition.
+
+IF Function
+The IF function tests a condition and returns one result when TRUE and another when FALSE. Example:
+=IF(B2>=50,"Pass","Fail").
+
+Comparison Operators
+ > greater than
+ < less than
+ >= greater than or equal to
+ <= less than or equal to
+ = equal to
+ <> not equal to
+
+AND and OR
+AND requires all specified conditions to be true. OR requires at least one specified condition to be true.
+
+Nested Logic
+Complex formulas can become difficult to audit. Keep business rules clear and test several cases.
+
+Step-by-Step Practical
+1. Enter five scores.
+
+2. Use IF to return Pass for scores of 50 or above and Fail otherwise.
+
+3. Test the formula with scores below, equal to and above 50.
+
+ 
+
+4. Add a second condition for a simple eligibility example using AND.
+
+Review Questions
+1. What does IF do?
+
+2. What does >= mean?
+
+3. Differentiate AND and OR.
+
+4. Why should logical formulas be tested with different cases?
+
+Assignment
+Create a simple result sheet that automatically assigns Pass or Fail.
+
+ 
+
+LESSON 9: SORTING, FILTERING AND EXCEL TABLES
+Sorting changes the order of records. Filtering temporarily displays only records that match selected criteria.
+
+ Figure 6. The difference between sorting and filtering.
+
+Sorting
+Sort text alphabetically, numbers smallest-to-largest or largest-to-smallest, and dates oldest-to-newest or
+newest-to-oldest.
+
+Filtering
+Filters help focus on selected categories without deleting other records.
+
+Excel Tables
+Converting a range to a table provides structured formatting, filter controls and easier expansion.
+
+Data Integrity
+Select the whole dataset before sorting so related values remain on the same row.
+
+Step-by-Step Practical
+1. Create a 10-record course list.
+
+2. Sort by Fee from highest to lowest.
+
+3. Filter Status to show Active only.
+
+4. Convert the range to an Excel Table.
+
+5. Clear the filter and confirm all records return.
+
+ 
+
+Review Questions
+1. What is sorting?
+
+2. What is filtering?
+
+3. Why should the entire dataset be included in a sort?
+
+4. Give two benefits of Excel Tables.
+
+Assignment
+Prepare and filter a learner enrolment table.
+
+ 
+
+LESSON 10: DATA VALIDATION AND CONDITIONAL FORMATTING
+Data validation controls what users can enter, while conditional formatting changes appearance when rules
+are met.
+
+ Figure 11. Validation controls and conditional formatting.
+
+Validation Lists
+A drop-down list can restrict entries to approved values such as Active, Pending and Completed.
+
+Validation Rules
+Rules can restrict numbers, dates, text length or other input.
+
+Conditional Formatting
+Rules can highlight high scores, overdue dates, duplicates or values outside an expected range.
+
+Use with Care
+Formatting should support decisions. Too many colours and rules can make a sheet harder to understand.
+
+Step-by-Step Practical
+1. Create a Status column.
+
+2. Apply a validation list: Active, Pending, Completed.
+
+3. Apply conditional formatting to highlight scores below 50.
+
+4. Enter several test values and confirm the rules behave correctly.
+
+Review Questions
+1. What is data validation?
+
+ 
+
+2. What is a drop-down list?
+
+3. What is conditional formatting?
+
+4. Give two useful conditional-formatting examples.
+
+Assignment
+Create a controlled course-registration sheet.
+
+ 
+
+LESSON 11: CHARTS AND DATA VISUALIZATION
+Charts convert data into visual form so patterns and comparisons can be understood quickly.
+
+ Figure 8. Column, line and pie chart examples.
+
+Column or Bar Charts
+Useful for comparing categories.
+
+Line Charts
+Useful for showing trends over time.
+
+Pie Charts
+Useful for showing parts of a whole when there are only a few categories.
+
+Chart Elements
+ Chart title
+ Axes where applicable
+ Legend where useful
+ Data labels when they improve interpretation
+
+Good Chart Practice
+Choose a chart based on the question. Avoid 3D effects or decoration that makes values harder to compare.
+
+Step-by-Step Practical
+1. Create a monthly enrolment table.
+
+2. Insert a column chart.
+
+3. Add a clear chart title.
+
+ 
+
+4. Create a line chart from monthly revenue.
+
+5. Compare which chart communicates each question better.
+
+Review Questions
+1. When is a line chart useful?
+
+2. What is a column chart good for?
+
+3. When should pie charts be used carefully?
+
+4. Name three chart elements.
+
+Assignment
+Create two charts from the same dataset and explain which is more useful.
+
+ 
+
+LESSON 12: TEXT, DATE AND USEFUL BUSINESS FUNCTIONS
+Excel includes functions for cleaning text, working with dates and preparing business data.
+
+ Figure 3. Functions are reusable formulas for common tasks.
+
+Text Functions
+ LEFT extracts characters from the beginning
+ RIGHT extracts characters from the end
+ LEN counts characters
+ TRIM removes unnecessary spaces
+ CONCAT or & joins text
+
+Date Functions
+ TODAY returns the current date
+ YEAR extracts a year from a date
+ MONTH extracts a month number
+ DAY extracts a day number
+
+Rounding
+ROUND can control the number of decimal places in calculated results.
+
+Practical Relevance
+These functions help clean imported data, build identifiers and calculate time-based reports.
+
+Step-by-Step Practical
+1. Enter five full names with accidental extra spaces and clean them with TRIM.
+
+2. Extract the first three characters of a course code with LEFT.
+
+ 
+
+3. Enter dates and extract YEAR and MONTH.
+
+4. Round a calculated amount to two decimal places.
+
+Review Questions
+1. What does TRIM do?
+
+2. What does LEN return?
+
+3. What does TODAY return?
+
+4. Why is ROUND useful?
+
+Assignment
+Create a small data-cleaning worksheet using at least four functions.
+
+ 
+
+LESSON 13: LOOKUP FUNCTIONS
+Lookup functions search for a key and return related information from a table.
+
+ Figure 9. Looking up a course code in a reference table.
+
+Lookup Idea
+A course code can be used to retrieve a course name or fee from a reference table.
+
+XLOOKUP
+In supported Excel versions, XLOOKUP provides a flexible way to search one range and return a value from
+another.
+
+VLOOKUP
+VLOOKUP is widely used in older workbooks. It searches the first column of a table and returns a value from
+a specified column.
+
+Exact Matches
+For codes, IDs and other identifiers, exact-match logic is usually appropriate.
+
+Error Handling
+If a key is missing, the formula may return an error. Validate the key and consider appropriate error handling.
+
+Step-by-Step Practical
+1. Create a reference table with Course Code, Course and Fee.
+
+2. Enter one course code in a separate cell.
+
+3. Use an available lookup function to return the course name.
+
+4. Return the course fee.
+ 
+
+5. Test a code that does not exist and observe the result.
+
+Review Questions
+1. What is a lookup?
+
+2. What does a lookup key represent?
+
+3. Why are exact matches useful for IDs?
+
+4. What should you check when a lookup fails?
+
+Assignment
+Create a course-fee lookup tool.
+
+ 
+
+LESSON 14: PIVOTTABLES AND PIVOTCHARTS
+A PivotTable summarises large datasets by categories without changing the original source records.
+
+ Figure 10. From detailed source data to a PivotTable summary.
+
+Source Data
+Good PivotTables begin with clean tabular data: one header row, consistent columns and no unnecessary
+blank rows.
+
+Rows, Columns, Values and Filters
+Fields can be arranged to group categories and calculate totals, counts or averages.
+
+Refreshing
+If source data changes, the PivotTable may need to be refreshed.
+
+PivotCharts
+A PivotChart provides a visual summary connected to the PivotTable.
+
+Step-by-Step Practical
+1. Create sample sales or enrolment data with Course, Month and Revenue.
+
+2. Insert a PivotTable.
+
+3. Place Course in Rows and Revenue in Values.
+
+4. Add Month as a filter or column.
+
+5. Create a PivotChart and refresh after changing source data.
+
+ 
+
+Review Questions
+1. What is a PivotTable?
+
+2. Why must source data be clean?
+
+3. What does the Values area contain?
+
+4. When should a PivotTable be refreshed?
+
+Assignment
+Build a PivotTable summarising revenue by course.
+
+ 
+
+LESSON 15: PAGE LAYOUT, PRINTING AND PDF EXPORT
+A correct worksheet can still print badly if page layout is not prepared.
+
+ Figure 4. Portrait and landscape layout concepts also apply to spreadsheet reports.
+
+Print Area
+Set a print area when only part of a worksheet should be printed.
+
+Orientation and Margins
+Portrait suits many narrow reports; landscape may suit wide tables.
+
+Scaling
+Fit-to-page options can help, but excessive shrinking makes text unreadable.
+
+Headers and Footers
+Use them for report titles, dates, confidentiality labels or page numbers where appropriate.
+
+PDF Export
+Review the final PDF to ensure columns, titles and page breaks appear correctly.
+
+Step-by-Step Practical
+1. Open Print Preview for a wide worksheet.
+
+2. Compare portrait and landscape orientation.
+
+3. Adjust margins and scaling.
+
+4. Repeat the heading row on printed pages if your version supports it.
+
+5. Export the worksheet to PDF and inspect the PDF.
+ 
+
+Review Questions
+1. What is Print Area?
+
+2. When is landscape orientation useful?
+
+3. Why can excessive scaling be a problem?
+
+4. What should you check after PDF export?
+
+Assignment
+Prepare a two-page professional report for printing and PDF.
+
+ 
+
+LESSON 16: DATA CLEANING AND ERROR CHECKING
+Reliable analysis depends on clean, consistent data and correctly constructed formulas.
+
+ Figure 11. Controlled inputs and visual checks improve data quality.
+
+Common Data Problems
+ Duplicate records
+ Leading or trailing spaces
+ Numbers stored as text
+ Inconsistent date formats
+ Blank required fields
+ Misspelled categories
+
+Formula Errors
+Common Excel errors can indicate invalid references, unavailable values or inappropriate operations.
+Investigate the cause instead of hiding the error blindly.
+
+Remove Duplicates
+Use carefully and keep a backup when the dataset is important.
+
+Quality Checks
+Compare totals, inspect unusual values and test formulas at the beginning, middle and end of a copied range.
+
+Step-by-Step Practical
+1. Create a deliberately messy dataset.
+
+2. Use TRIM or other tools to clean text.
+
+3. Identify duplicates.
+
+ 
+
+4. Check for numbers stored as text.
+
+5. Audit copied formulas in several rows.
+
+Review Questions
+1. Why does data cleaning matter?
+
+2. Give four common data problems.
+
+3. Why should duplicates be removed carefully?
+
+4. How can you audit copied formulas?
+
+Assignment
+Clean and document a 20-row practice dataset.
+
+ 
+
+LESSON 17: BUSINESS REPORTING AND DASHBOARD DESIGN
+A dashboard brings important indicators and visuals together so decision-makers can understand
+performance quickly.
+
+ Figure 12. A one-page management dashboard example.
+
+Key Performance Indicators
+KPIs are selected measures such as enrolment, revenue, completion rate or average score.
+
+Dashboard Structure
+A useful dashboard may contain KPI cards, a summary table, charts, filters and a short insight section.
+
+Consistency
+Use consistent number formats, titles and periods. A dashboard should answer specific questions rather than
+display every available metric.
+
+Decision Focus
+The purpose is not decoration. Each visual should support a decision or explain performance.
+
+Step-by-Step Practical
+1. Create a summary sheet.
+
+2. Calculate four KPIs.
+
+3. Create one trend chart and one comparison chart.
+
+4. Arrange the elements into a one-page dashboard.
+
+5. Write three insights from the dashboard.
+
+ 
+
+Review Questions
+1. What is a KPI?
+
+2. What is the purpose of a dashboard?
+
+3. Why should dashboard metrics use consistent periods?
+
+4. What makes a dashboard decision-focused?
+
+Assignment
+Create an Ethan Digital Academy training-performance dashboard.
+
+ 
+
+LESSON 18: FINAL PROFESSIONAL EXCEL PROJECT
+The final project combines data entry, formulas, functions, analysis, visualization and reporting.
+
+ Figure 12. The final workbook should lead to a clear management dashboard.
+
+Project Scenario
+You are preparing an Excel management workbook for Ethan Digital Academy.
+
+Required Sheets
+ Learners - learner records and status
+ Payments - course fees and payment records
+ Attendance - attendance percentages
+ Results - assessment scores and Pass/Fail logic
+ Dashboard - KPIs and charts
+
+Required Skills
+ Professional formatting
+ SUM, AVERAGE, MAX, MIN and COUNT
+ Relative and absolute references
+ IF logic
+ Sorting and filtering
+ Data validation
+ Conditional formatting
+ Lookup function
+ PivotTable
+ Charts
+ Print/PDF preparation
+
+ 
+
+Quality Standard
+The workbook must be accurate, readable, logically organized and easy for another user to understand.
+
+Step-by-Step Practical
+1. Build the five required worksheets.
+
+2. Enter realistic sample data.
+
+3. Add formulas and functions.
+
+4. Create at least one lookup and one PivotTable.
+
+5. Build the dashboard.
+
+6. Check formulas and formatting.
+
+7. Prepare the Dashboard sheet for PDF export.
+
+Review Questions
+1. Which skills does the project combine?
+
+2. Why should a workbook use separate logical sheets?
+
+3. What quality checks should be completed before submission?
+
+4. How does the dashboard help management?
+
+Assignment
+Submit the complete professional workbook and exported dashboard PDF.
+
+ 
+
+REAL-LIFE CASE STUDY - ETHAN DIGITAL ACADEMY
+Ethan Digital Academy needs a workbook that tracks learners, payments, attendance and results. The
+administrator creates structured tables, uses formulas to calculate totals and balances, applies IF logic to
+classify outcomes, validates status entries, creates a course-fee lookup, summarizes revenue with a
+PivotTable and presents key indicators on a dashboard. The result is a workbook that supports both daily
+operations and management decisions.
+
+FINAL PRACTICAL PROJECT - 100 MARKS
+1. Create the Learners worksheet with at least 20 records.
+
+2. Create a Payments worksheet and calculate amounts, balances and totals.
+
+3. Create an Attendance worksheet and calculate attendance percentages.
+
+4. Create a Results worksheet using formulas and IF logic.
+
+5. Create a reference table and a working course lookup.
+
+6. Apply data validation and conditional formatting.
+
+7. Create a PivotTable summary.
+
+8. Create at least two appropriate charts.
+
+9. Create a one-page Dashboard sheet with four KPIs.
+
+10. Prepare the dashboard for PDF export and submit the workbook.
+
+QUIZ - 30 QUESTIONS
+1. What is a workbook?
+
+2. What is a worksheet?
+
+3. What is a cell address?
+
+4. What is a range?
+
+5. Name four Excel data types.
+
+6. What character starts a formula?
+
+7. What does SUM do?
+
+8. What does AVERAGE do?
+
+9. What does MAX return?
+
+10. What does MIN return?
+
+11. What does COUNT do?
+
+12. What is a relative reference?
+ 
+
+13. What is an absolute reference?
+
+14. What does $A$1 mean?
+
+15. What is the purpose of IF?
+
+16. What does >= mean?
+
+17. Differentiate AND and OR.
+
+18. What is sorting?
+
+19. What is filtering?
+
+20. What is an Excel Table?
+
+21. What is data validation?
+
+22. What is conditional formatting?
+
+23. When is a line chart useful?
+
+24. When is a column chart useful?
+
+25. What does TRIM do?
+
+26. What is a lookup function used for?
+
+27. What is a PivotTable?
+
+28. Why should PivotTables be refreshed?
+
+29. What is a KPI?
+
+30. Why should a workbook be checked before PDF export?
+
+FINAL EXAMINATION - 100 MARKS
+Section A - Objective Questions (20 Marks)
+
+Twenty questions covering Excel terminology, formulas, functions and data-management concepts.
+
+Section B - Short Answer and Formula Questions (30 Marks)
+
+Explain spreadsheet concepts and write appropriate formulas for realistic scenarios.
+
+Section C - Practical Assessment (50 Marks)
+
+Build and format a workbook, use formulas/functions, apply validation and conditional formatting, analyse data
+with a PivotTable, create charts and prepare a professional dashboard.
+
+ 
+
+COURSE COMPLETION OUTCOME
+Graduates of EDA-EXC-103 Microsoft Excel will be able to build, calculate, analyse and present professional
+spreadsheets for academic, office and business use. They will be prepared for advanced Excel Data Analysis,
+Power BI, Business Intelligence and reporting courses.

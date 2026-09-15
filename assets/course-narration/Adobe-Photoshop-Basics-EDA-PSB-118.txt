@@ -1,0 +1,1299 @@
+ETHAN DIGITAL ACADEMY
+
+ADOBE PHOTOSHOP BASICS
+
+FULL VISUAL STUDY MANUAL
+
+Responsible editing standard: use original, authorised or properly licensed images. Do not alter images to mislead people, fabricate endorsements or expose private information. Keep an original copy and prefer reversible edits.
+
+Course Introduction
+
+Adobe Photoshop Basics introduces raster-image editing through a structured, practical workflow. Learners study the workspace, pixels, file formats, layers, selections, crop, tonal and colour correction, adjustment layers, masks, responsible retouching, text, shapes, blending, Smart Objects, simple compositing and export.
+
+Learning Objectives
+
+Navigate the Photoshop workspace.
+
+Understand pixels, dimensions and common file formats.
+
+Use layers, selections and masks safely.
+
+Correct brightness, contrast and colour non-destructively.
+
+Perform limited responsible cleanup.
+
+Combine images, text and shapes into clear graphics.
+
+Use basic blending and reusable placed content.
+
+Export appropriate files for web and social use.
+
+Complete an organised layered promotional design project.
+
+Course Structure
+
+Lesson 1: Introduction to Adobe Photoshop
+
+Lesson 2: Understanding the Photoshop Workspace
+
+Lesson 3: Pixels, Image Size and Resolution
+
+Lesson 4: Opening, Saving and File Formats
+
+Lesson 5: Layers Fundamentals
+
+Lesson 6: Selections and Basic Isolation
+
+Lesson 7: Crop, Straighten and Composition
+
+Lesson 8: Brightness, Contrast and Tonal Correction
+
+Lesson 9: Colour Correction and Saturation
+
+Lesson 10: Adjustment Layers and Non-Destructive Editing
+
+Lesson 11: Layer Masks
+
+Lesson 12: Basic Retouching and Cleanup
+
+Lesson 13: Text in Photoshop
+
+Lesson 14: Shapes, Guides and Alignment
+
+Lesson 15: Blending Modes and Opacity Basics
+
+Lesson 16: Smart Objects and Reusable Content
+
+Lesson 17: Simple Photo Compositing
+
+Lesson 18: Export for Web and Social Media
+
+Lesson 19: Final Photoshop Promotional Design Project
+
+Lesson 1: Introduction to Adobe Photoshop
+
+Introduction
+
+Adobe Photoshop is a professional raster-image editor used for photo correction, compositing, graphics and digital artwork. This course focuses on safe, beginner-friendly editing with authorised images and non-destructive methods.
+
+Learning Objectives
+
+Explain the main concepts in introduction to adobe photoshop.
+
+Complete a safe guided Photoshop practical for introduction to adobe photoshop.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Raster images are made from pixels.
+
+Key principle: Photoshop projects can contain many independent layers.
+
+Key principle: Good editing starts with a clear purpose and suitable source image.
+
+Key principle: Non-destructive techniques preserve the original content.
+
+Key principle: Professional work includes organised saving and export.
+
+Figure 1: Original instructional visual for Introduction to Adobe Photoshop.
+
+Step-by-Step Guided Practical
+
+1. Open Photoshop or an instructor-approved equivalent workspace.
+
+2. Create a new practice document.
+
+3. Identify the canvas, tools and panels.
+
+4. Save an editable practice file with a clear name.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can prepare course photographs and promotional graphics while keeping editable masters for future updates.
+
+Review Questions
+
+What is the main purpose of introduction to adobe photoshop?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 1 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 2: Understanding the Photoshop Workspace
+
+Introduction
+
+The workspace combines the document canvas, toolbar, options, menus and panels such as Layers and Properties.
+
+Learning Objectives
+
+Explain the main concepts in understanding the photoshop workspace.
+
+Complete a safe guided Photoshop practical for understanding the photoshop workspace.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: The toolbar contains editing and navigation tools.
+
+Key principle: The options bar changes with the selected tool.
+
+Key principle: Panels manage layers, properties, colour and other settings.
+
+Key principle: Workspace layouts can be adjusted to suit a task.
+
+Key principle: Undo/history supports controlled experimentation.
+
+Figure 2: Original instructional visual for Understanding the Photoshop Workspace.
+
+Step-by-Step Guided Practical
+
+1. Open a practice image.
+
+2. Identify the toolbar, options area and Layers panel.
+
+3. Select two different tools and observe the options.
+
+4. Arrange panels without closing the document.
+
+Ethan Digital Academy Case Study
+
+A learner who understands the workspace can focus on the image rather than searching randomly for controls.
+
+Review Questions
+
+What is the main purpose of understanding the photoshop workspace?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 2 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 3: Pixels, Image Size and Resolution
+
+Introduction
+
+Raster images contain a fixed number of pixels. Understanding dimensions and resolution helps avoid poor-quality output.
+
+Learning Objectives
+
+Explain the main concepts in pixels, image size and resolution.
+
+Complete a safe guided Photoshop practical for pixels, image size and resolution.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Pixel dimensions describe image width and height.
+
+Key principle: Resizing can change output dimensions.
+
+Key principle: Resampling creates or removes pixel data.
+
+Key principle: Large enlargement of a small image can reduce apparent quality.
+
+Key principle: Output requirements should be known before final export.
+
+Figure 3: Original instructional visual for Pixels, Image Size and Resolution.
+
+Step-by-Step Guided Practical
+
+1. Open an authorised practice image.
+
+2. Record its pixel dimensions.
+
+3. Create a duplicate copy before resizing.
+
+4. Resize the duplicate for a smaller web use.
+
+5. Compare the original and resized copies.
+
+Ethan Digital Academy Case Study
+
+Academy social graphics can be prepared at appropriate pixel dimensions instead of exporting unnecessarily huge files.
+
+Review Questions
+
+What is the main purpose of pixels, image size and resolution?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 3 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 4: Opening, Saving and File Formats
+
+Introduction
+
+Photoshop uses editable project formats and delivery formats for different purposes.
+
+Learning Objectives
+
+Explain the main concepts in opening, saving and file formats.
+
+Complete a safe guided Photoshop practical for opening, saving and file formats.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: PSD commonly preserves Photoshop layers.
+
+Key principle: JPG is widely used for photographs but does not preserve normal layer editing.
+
+Key principle: PNG supports transparency and is useful for many graphics.
+
+Key principle: Save editable masters separately from final exports.
+
+Key principle: Use clear file names and version labels.
+
+Step-by-Step Guided Practical
+
+1. Open a practice image.
+
+2. Save an editable PSD copy.
+
+3. Export a JPG copy.
+
+4. Export a PNG copy where suitable.
+
+5. Place outputs in Draft and Approved practice folders.
+
+Ethan Digital Academy Case Study
+
+Ethan can retain layered masters while publishing smaller approved exports.
+
+Review Questions
+
+What is the main purpose of opening, saving and file formats?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 4 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 5: Layers Fundamentals
+
+Introduction
+
+Layers allow text, images, adjustments and graphic elements to remain independently editable.
+
+Learning Objectives
+
+Explain the main concepts in layers fundamentals.
+
+Complete a safe guided Photoshop practical for layers fundamentals.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Layer order affects what appears in front.
+
+Key principle: Layers can be renamed for clarity.
+
+Key principle: Visibility can be toggled without deleting content.
+
+Key principle: Opacity changes how strongly a layer appears.
+
+Key principle: Grouping helps organise complex documents.
+
+Figure 5: Original instructional visual for Layers Fundamentals.
+
+Step-by-Step Guided Practical
+
+1. Create three layers.
+
+2. Rename them Background, Image and Text.
+
+3. Change stacking order.
+
+4. Toggle visibility.
+
+5. Group related layers.
+
+Ethan Digital Academy Case Study
+
+A course flyer is easier to update when its background, photo and text are separated.
+
+Review Questions
+
+What is the main purpose of layers fundamentals?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 5 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 6: Selections and Basic Isolation
+
+Introduction
+
+Selections limit an edit to a chosen part of an image.
+
+Learning Objectives
+
+Explain the main concepts in selections and basic isolation.
+
+Complete a safe guided Photoshop practical for selections and basic isolation.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Selection tools suit different shapes and subjects.
+
+Key principle: Accurate edges matter when isolating objects.
+
+Key principle: Add/subtract selection modes refine a selection.
+
+Key principle: Feathering softens an edge and should be used intentionally.
+
+Key principle: A mask is often safer than deleting selected pixels.
+
+Figure 6: Original instructional visual for Selections and Basic Isolation.
+
+Step-by-Step Guided Practical
+
+1. Use a simple geometric practice image.
+
+2. Select one object.
+
+3. Add a second area to the selection.
+
+4. Remove an unwanted area.
+
+5. Convert the selection into a reversible mask where available.
+
+Ethan Digital Academy Case Study
+
+Academy designers can isolate a product or device without permanently erasing the original image.
+
+Review Questions
+
+What is the main purpose of selections and basic isolation?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 6 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 7: Crop, Straighten and Composition
+
+Introduction
+
+Cropping removes unnecessary edge content and can improve visual composition.
+
+Learning Objectives
+
+Explain the main concepts in crop, straighten and composition.
+
+Complete a safe guided Photoshop practical for crop, straighten and composition.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Crop to strengthen the subject, not simply to fill a frame.
+
+Key principle: Straightening corrects tilted horizons or documents.
+
+Key principle: Aspect ratio can match an output format.
+
+Key principle: Avoid cropping away essential context.
+
+Key principle: Keep an original copy when the crop is significant.
+
+Step-by-Step Guided Practical
+
+1. Duplicate a practice image.
+
+2. Use Crop to remove distracting edges.
+
+3. Straighten if necessary.
+
+4. Try a square crop.
+
+5. Compare which composition communicates better.
+
+Ethan Digital Academy Case Study
+
+A training photograph can be cropped differently for a square social post and a wide website banner.
+
+Review Questions
+
+What is the main purpose of crop, straighten and composition?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 7 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 8: Brightness, Contrast and Tonal Correction
+
+Introduction
+
+Tonal correction improves the relationship between dark, middle and bright areas.
+
+Learning Objectives
+
+Explain the main concepts in brightness, contrast and tonal correction.
+
+Complete a safe guided Photoshop practical for brightness, contrast and tonal correction.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Brightness affects overall lightness.
+
+Key principle: Contrast changes separation between light and dark.
+
+Key principle: Levels or Curves provide more controlled tonal adjustment.
+
+Key principle: Histograms help describe tonal distribution.
+
+Key principle: Avoid crushing shadows or blowing highlights unnecessarily.
+
+Figure 8: Original instructional visual for Brightness, Contrast and Tonal Correction.
+
+Step-by-Step Guided Practical
+
+1. Add a non-destructive brightness/contrast or similar adjustment.
+
+2. Make a small correction.
+
+3. Toggle the adjustment off and on.
+
+4. Inspect shadows and highlights.
+
+5. Reduce the correction if detail is lost.
+
+Ethan Digital Academy Case Study
+
+Academy event photos can be corrected for poor lighting without applying extreme filters.
+
+Review Questions
+
+What is the main purpose of brightness, contrast and tonal correction?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 8 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 9: Colour Correction and Saturation
+
+Introduction
+
+Colour correction aims for believable, consistent colour appropriate to the image.
+
+Learning Objectives
+
+Explain the main concepts in colour correction and saturation.
+
+Complete a safe guided Photoshop practical for colour correction and saturation.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Colour casts can make neutral objects look tinted.
+
+Key principle: Hue describes colour family.
+
+Key principle: Saturation describes colour intensity.
+
+Key principle: Vibrance-style controls may affect colours differently from saturation.
+
+Key principle: Extreme colour changes can make professional photographs look unnatural.
+
+Figure 9: Original instructional visual for Colour Correction and Saturation.
+
+Step-by-Step Guided Practical
+
+1. Open an authorised image with a mild colour cast.
+
+2. Add a reversible colour adjustment.
+
+3. Correct the cast gradually.
+
+4. Compare before and after.
+
+5. Check skin, neutral and brand colours for believable results.
+
+Ethan Digital Academy Case Study
+
+Course photos from different rooms can be corrected toward a more consistent visual appearance.
+
+Review Questions
+
+What is the main purpose of colour correction and saturation?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 9 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 10: Adjustment Layers and Non-Destructive Editing
+
+Introduction
+
+Adjustment layers change appearance without permanently rewriting the underlying image pixels.
+
+Learning Objectives
+
+Explain the main concepts in adjustment layers and non-destructive editing.
+
+Complete a safe guided Photoshop practical for adjustment layers and non-destructive editing.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Adjustment layers remain editable.
+
+Key principle: Their order can affect the result.
+
+Key principle: Masks can limit an adjustment to part of an image.
+
+Key principle: Non-destructive editing supports later revision.
+
+Key principle: Keep adjustments clearly named.
+
+Step-by-Step Guided Practical
+
+1. Add two adjustment layers.
+
+2. Rename them by purpose.
+
+3. Change their order and observe the result.
+
+4. Disable one adjustment.
+
+5. Save the layered master.
+
+Ethan Digital Academy Case Study
+
+An Academy designer can revisit an approved image months later and modify the correction without starting again.
+
+Review Questions
+
+What is the main purpose of adjustment layers and non-destructive editing?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 10 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 11: Layer Masks
+
+Introduction
+
+Layer masks control visibility without deleting source content.
+
+Learning Objectives
+
+Explain the main concepts in layer masks.
+
+Complete a safe guided Photoshop practical for layer masks.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: White areas reveal the layer.
+
+Key principle: Black areas conceal it.
+
+Key principle: Grey creates partial visibility.
+
+Key principle: Soft and hard brushes produce different mask edges.
+
+Key principle: Masks can be edited repeatedly.
+
+Figure 11: Original instructional visual for Layer Masks.
+
+Step-by-Step Guided Practical
+
+1. Place one authorised image above another.
+
+2. Add a mask to the upper image.
+
+3. Paint black on the mask to conceal a small area.
+
+4. Switch to white to restore part of it.
+
+5. Save the layered file.
+
+Ethan Digital Academy Case Study
+
+Masks allow flexible image blending for a course poster while preserving the original photographs.
+
+Review Questions
+
+What is the main purpose of layer masks?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 11 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 12: Basic Retouching and Cleanup
+
+Introduction
+
+Retouching can remove small technical distractions while preserving a truthful, natural image.
+
+Learning Objectives
+
+Explain the main concepts in basic retouching and cleanup.
+
+Complete a safe guided Photoshop practical for basic retouching and cleanup.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Use retouching to correct minor dust, marks or temporary distractions.
+
+Key principle: Sample nearby texture carefully where a tool requires it.
+
+Key principle: Work on a separate layer when possible.
+
+Key principle: Zoom out frequently to judge realism.
+
+Key principle: Do not alter a person in a way that creates deceptive appearance claims.
+
+Figure 12: Original instructional visual for Basic Retouching and Cleanup.
+
+Step-by-Step Guided Practical
+
+1. Use an instructor-provided practice image with harmless spots.
+
+2. Create a cleanup layer.
+
+3. Remove only the marked practice spots.
+
+4. Compare at 100% and normal viewing size.
+
+5. Undo any area that looks artificial.
+
+Ethan Digital Academy Case Study
+
+Academy can clean a dust spot from a training-room photograph without changing a learner’s appearance.
+
+Review Questions
+
+What is the main purpose of basic retouching and cleanup?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 12 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 13: Text in Photoshop
+
+Introduction
+
+Photoshop can combine raster images with editable text layers for promotional graphics.
+
+Learning Objectives
+
+Explain the main concepts in text in photoshop.
+
+Complete a safe guided Photoshop practical for text in photoshop.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Text should remain editable until final export.
+
+Key principle: Font size, weight and spacing create hierarchy.
+
+Key principle: Contrast is necessary for readability.
+
+Key principle: Alignment connects text to the composition.
+
+Key principle: Use licensed or appropriately available fonts.
+
+Figure 13: Original instructional visual for Text in Photoshop.
+
+Step-by-Step Guided Practical
+
+1. Add a headline to a practice image.
+
+2. Add a smaller supporting line.
+
+3. Align the text deliberately.
+
+4. Improve contrast using placement or a simple shape.
+
+5. Rename the text layers.
+
+Ethan Digital Academy Case Study
+
+A course announcement can use a strong headline over an Academy photograph while keeping details readable.
+
+Review Questions
+
+What is the main purpose of text in photoshop?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 13 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 14: Shapes, Guides and Alignment
+
+Introduction
+
+Simple vector shapes, guides and alignment controls help build clean graphic layouts.
+
+Learning Objectives
+
+Explain the main concepts in shapes, guides and alignment.
+
+Complete a safe guided Photoshop practical for shapes, guides and alignment.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Shapes can create panels, labels and CTA areas.
+
+Key principle: Guides support consistent margins.
+
+Key principle: Alignment tools reduce visual drift.
+
+Key principle: Repeated spacing creates rhythm.
+
+Key principle: Keep decoration subordinate to the message.
+
+Step-by-Step Guided Practical
+
+1. Add two guides or use a simple alignment reference.
+
+2. Create a rectangle for a text panel.
+
+3. Align headline and supporting text.
+
+4. Duplicate a small label element.
+
+5. Check spacing consistency.
+
+Ethan Digital Academy Case Study
+
+An Ethan promotional card can use one repeated label style across multiple course graphics.
+
+Review Questions
+
+What is the main purpose of shapes, guides and alignment?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 14 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 15: Blending Modes and Opacity Basics
+
+Introduction
+
+Blending modes change how a layer interacts with layers below it. Beginners should use them deliberately and compare results.
+
+Learning Objectives
+
+Explain the main concepts in blending modes and opacity basics.
+
+Complete a safe guided Photoshop practical for blending modes and opacity basics.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Normal mode displays a layer conventionally.
+
+Key principle: Some modes darken, lighten or combine colour relationships.
+
+Key principle: Opacity controls layer strength.
+
+Key principle: A useful effect should support the message or correction.
+
+Key principle: Always compare the effect with Normal before accepting it.
+
+Step-by-Step Guided Practical
+
+1. Duplicate a harmless texture or colour layer.
+
+2. Test a small set of instructor-approved blend modes.
+
+3. Reduce opacity.
+
+4. Choose the clearest result or return to Normal.
+
+5. Record why you kept or rejected the effect.
+
+Ethan Digital Academy Case Study
+
+A subtle texture may support a campaign background, but it should never reduce text readability.
+
+Review Questions
+
+What is the main purpose of blending modes and opacity basics?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 15 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 16: Smart Objects and Reusable Content
+
+Introduction
+
+Smart Objects can preserve placed content and support flexible scaling and some reversible transformations.
+
+Learning Objectives
+
+Explain the main concepts in smart objects and reusable content.
+
+Complete a safe guided Photoshop practical for smart objects and reusable content.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Placed content can remain more flexible than repeatedly rasterising it.
+
+Key principle: Transformations can be adjusted without repeatedly degrading the source in common workflows.
+
+Key principle: Smart Objects are useful for reusable logos and placed graphics.
+
+Key principle: Keep source assets authorised and organised.
+
+Key principle: Do not rely on smart objects as a substitute for backups.
+
+Step-by-Step Guided Practical
+
+1. Place an authorised logo or practice graphic as a Smart Object where available.
+
+2. Scale it smaller.
+
+3. Scale it again within the exercise.
+
+4. Compare workflow with a rasterised duplicate.
+
+5. Save the master.
+
+Ethan Digital Academy Case Study
+
+Academy logos can be placed as reusable objects across promotional layouts while retaining a clean source workflow.
+
+Review Questions
+
+What is the main purpose of smart objects and reusable content?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 16 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 17: Simple Photo Compositing
+
+Introduction
+
+Compositing combines multiple authorised images into one coherent design.
+
+Learning Objectives
+
+Explain the main concepts in simple photo compositing.
+
+Complete a safe guided Photoshop practical for simple photo compositing.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Perspective, scale and lighting should feel compatible.
+
+Key principle: Masks are preferable to destructive erasing.
+
+Key principle: Colour and tone may need harmonising.
+
+Key principle: Edges should be inspected carefully.
+
+Key principle: Composite imagery should not mislead viewers about real events or endorsements.
+
+Step-by-Step Guided Practical
+
+1. Combine two instructor-approved practice images.
+
+2. Use a mask to isolate the foreground element.
+
+3. Adjust scale and position.
+
+4. Apply a mild tonal adjustment if needed.
+
+5. Label the result as a concept if it represents a fictional scene.
+
+Ethan Digital Academy Case Study
+
+A conceptual Academy campaign can combine authorised assets while clearly avoiding false claims about real partnerships or events.
+
+Review Questions
+
+What is the main purpose of simple photo compositing?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 17 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 18: Export for Web and Social Media
+
+Introduction
+
+Final export should balance image quality, dimensions and file size for the destination.
+
+Learning Objectives
+
+Explain the main concepts in export for web and social media.
+
+Complete a safe guided Photoshop practical for export for web and social media.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Choose dimensions for the intended placement.
+
+Key principle: JPG is common for photographic content.
+
+Key principle: PNG is useful for many graphics and transparency.
+
+Key principle: Inspect the exported file, not only the Photoshop canvas.
+
+Key principle: Keep the layered master after export.
+
+Figure 18: Original instructional visual for Export for Web and Social Media.
+
+Step-by-Step Guided Practical
+
+1. Prepare a square practice graphic.
+
+2. Export a JPG version.
+
+3. Export a PNG version if suitable.
+
+4. Compare file sizes and visual quality.
+
+5. Store only the approved export in the final-output folder.
+
+Ethan Digital Academy Case Study
+
+Ethan social posts can be exported efficiently while the editable PSD remains available for later updates.
+
+Review Questions
+
+What is the main purpose of export for web and social media?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 18 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Lesson 19: Final Photoshop Promotional Design Project
+
+Introduction
+
+The final project combines correction, layers, masks, typography, composition and export into one professional beginner-level design.
+
+Learning Objectives
+
+Explain the main concepts in final photoshop promotional design project.
+
+Complete a safe guided Photoshop practical for final photoshop promotional design project.
+
+Apply the technique to a realistic Ethan Digital Academy design task.
+
+Teaching Content
+
+Key principle: Use only original or authorised source images.
+
+Key principle: Keep an organised layered master.
+
+Key principle: Apply at least one non-destructive tonal or colour correction.
+
+Key principle: Use text hierarchy and simple shapes for communication.
+
+Key principle: Export a final web-ready version and document the workflow.
+
+Figure 19: Original instructional visual for Final Photoshop Promotional Design Project.
+
+Step-by-Step Guided Practical
+
+1. Write a short design brief for an approved Ethan course.
+
+2. Prepare and correct one authorised photograph.
+
+3. Build the layout with named layers.
+
+4. Use at least one layer mask.
+
+5. Add headline, support text and CTA.
+
+6. Review readability and accuracy.
+
+7. Export a final PNG or JPG.
+
+8. Submit the PSD/master, export and one-page rationale.
+
+Ethan Digital Academy Case Study
+
+The project demonstrates practical Photoshop fundamentals without relying on destructive editing or copied creative assets.
+
+Review Questions
+
+What is the main purpose of final photoshop promotional design project?
+
+State two good Photoshop practices from this lesson.
+
+Which destructive or misleading editing mistake should be avoided?
+
+How would you apply this lesson to an Academy design?
+
+Assignment
+
+Complete the Lesson 19 practical using an original or authorised image. Submit the editable practice file or instructor-approved evidence, the final preview, and a short explanation of the non-destructive choices you made.
+
+Final Practical Project - 100 Marks
+
+Course Quiz - 30 Questions
+
+1. What is a raster image?
+
+2. What is a pixel?
+
+3. Name four main Photoshop workspace areas.
+
+4. What do pixel dimensions describe?
+
+5. What is resampling?
+
+6. What is a PSD file used for?
+
+7. Give one common use for JPG.
+
+8. Give one common use for PNG.
+
+9. What is a layer?
+
+10. Why should layers be renamed?
+
+11. What is a selection?
+
+12. Why are masks often safer than deleting pixels?
+
+13. What is cropping?
+
+14. What is tonal correction?
+
+15. What does a histogram describe?
+
+16. What is saturation?
+
+17. What is an adjustment layer?
+
+18. What does black do on a layer mask?
+
+19. What does white do on a layer mask?
+
+20. What is responsible retouching?
+
+21. Why should cleanup often be done on a separate layer?
+
+22. Why should text remain editable?
+
+23. What is alignment?
+
+24. What does layer opacity control?
+
+25. What is a blending mode?
+
+26. What is a Smart Object useful for?
+
+27. Name two factors that help a composite look coherent.
+
+28. Why should fictional composites avoid misleading claims?
+
+29. Why should exported files be inspected after export?
+
+30. List four requirements of the final Photoshop project.
+
+Final Examination - 100 Marks
+
+Section A - Photoshop Foundations (20 marks)
+
+Explain raster images, pixels, workspace, image size and file formats.
+
+Section B - Layers, Selections and Masks (20 marks)
+
+Explain layer organisation, selections, masks and non-destructive editing.
+
+Section C - Image Correction (20 marks)
+
+Explain crop, tonal correction, colour correction and responsible cleanup.
+
+Section D - Graphic Composition (20 marks)
+
+Explain text, shapes, alignment, blending and simple compositing.
+
+Section E - Professional Workflow (20 marks)
+
+Plan an organised Photoshop project from authorised source image to editable master and final export.
+
+Course Completion Outcome
+
+After successful completion, the learner should be able to use Photoshop for structured beginner-level image editing: navigate the workspace, understand raster image size, organise layers, make selections, crop, correct tone and colour, use adjustment layers and masks, perform limited responsible cleanup, combine text and shapes, create simple composites and export suitable final files while preserving an editable master.
+
+Professional Practice Checklist
+
+Use only original, authorised or properly licensed assets.
+
+Keep an untouched original or backup.
+
+Prefer adjustment layers and masks to destructive edits.
+
+Name layers and organise files clearly.
+
+Check images at normal viewing size as well as zoomed in.
+
+Keep retouching truthful and natural.
+
+Verify names, dates, prices and claims in promotional graphics.
+
+Keep editable masters separate from approved exports.
+
+Course Code | EDA-PSB-118
+
+Level | Beginner to Intermediate
+
+Duration | 6 Weeks (19 Lessons)
+
+Certificate | Professional Certificate in Adobe Photoshop Basics
+
+Prerequisite | Digital Literacy / Canva Graphic Design recommended
+
+Learning Format | Guided Image Editing Practicals + Final Promotional Design Project
+
+Component | Marks | Requirement
+
+Brief and source assets | 10 | Clear purpose, audience and authorised image sources.
+
+File/layer organisation | 15 | Named layers and editable master.
+
+Image correction | 15 | Controlled tonal/colour correction.
+
+Selections and masks | 15 | Clean reversible isolation.
+
+Typography and layout | 15 | Clear hierarchy and alignment.
+
+Responsible editing | 10 | No deceptive manipulation; natural result.
+
+Export quality | 10 | Suitable final format and dimensions.
+
+Rationale and handoff | 10 | Explains workflow and submits organised files.
