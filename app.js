@@ -8,50 +8,39 @@ const STORE = {
 };
 
 const seed = {
-  students: [
-    {id:"EDA-ST-0001",name:"Amina Yusuf",email:"amina@example.com",program:"Digital Skills",status:"Active",progress:72,payment:"Part Paid"},
-    {id:"EDA-ST-0002",name:"David Okoro",email:"david@example.com",program:"AI & Business",status:"Active",progress:58,payment:"Paid"},
-    {id:"EDA-ST-0003",name:"Grace Adewale",email:"grace@example.com",program:"Office Productivity",status:"Active",progress:83,payment:"Paid"}
-  ],
-  instructors: [
-    {id:"EDA-IN-001",name:"Samuel Adeyemi",specialization:"Digital Marketing",courses:4,status:"Active"},
-    {id:"EDA-IN-002",name:"Mariam Bello",specialization:"Office & Data",courses:3,status:"Active"},
-    {id:"EDA-IN-003",name:"Daniel Peter",specialization:"Cybersecurity",courses:2,status:"Active"}
-  ],
-  courses: [
-    {code:"EDA-CYB-101",title:"Cybersecurity Fundamentals",category:"Cybersecurity",instructor:"Daniel Peter",duration:"6 weeks",progress:45,lessons:30,completed:14},
-    {code:"EDA-EXC-101",title:"Microsoft Excel Mastery",category:"Microsoft Office",instructor:"Mariam Bello",duration:"5 weeks",progress:68,lessons:28,completed:19},
-    {code:"EDA-DMK-201",title:"Advanced Digital Marketing",category:"Digital Marketing",instructor:"Samuel Adeyemi",duration:"8 weeks",progress:36,lessons:40,completed:14},
-    {code:"EDA-AIB-101",title:"AI for Business",category:"Artificial Intelligence",instructor:"Samuel Adeyemi",duration:"4 weeks",progress:20,lessons:24,completed:5},
-    {code:"EDA-CAN-101",title:"Canva Design Essentials",category:"Graphic Design",instructor:"Mariam Bello",duration:"4 weeks",progress:0,lessons:20,completed:0},
-    {code:"EDA-WEB-101",title:"Website Development",category:"Website Development",instructor:"Daniel Peter",duration:"8 weeks",progress:0,lessons:36,completed:0}
-  ],
-  payments: [
-    {ref:"EDA-PAY-1001",student:"Amina Yusuf",description:"Cybersecurity Fundamentals",amount:55000,date:"2026-09-10",status:"Confirmed"},
-    {ref:"EDA-PAY-1002",student:"David Okoro",description:"AI for Business",amount:75000,date:"2026-09-11",status:"Confirmed"},
-    {ref:"EDA-PAY-1003",student:"Grace Adewale",description:"Office Productivity",amount:45000,date:"2026-09-12",status:"Confirmed"}
-  ],
-  announcements: [
-    {title:"Welcome to ETHAN ERP & LMS",message:"Your unified learning and academy management portal is ready.",date:"Today"},
-    {title:"New cybersecurity course",message:"Cybersecurity Fundamentals has been added to the academy catalogue.",date:"Yesterday"}
-  ],
-  notifications: [
-    {title:"Assignment due",message:"Cybersecurity Module 2 practical is due soon.",time:"2 hours ago"},
-    {title:"Payment received",message:"Your recent payment has been recorded.",time:"Yesterday"},
-    {title:"New announcement",message:"Check the latest academy update.",time:"2 days ago"}
-  ]
+  students: [],
+  instructors: [],
+  courses: [],
+  payments: [],
+  enrolments: [],
+  announcements: [],
+  notifications: []
 };
 
 function loadData(){
   const saved = localStorage.getItem(STORE.data);
-  if(saved) return JSON.parse(saved);
+  if(saved){
+    try{
+      const parsed = JSON.parse(saved);
+      const demoEmails = new Set(["amina@example.com","david@example.com","grace@example.com","parent@example.com"]);
+      parsed.students = Array.isArray(parsed.students) ? parsed.students.filter(s=>!demoEmails.has(String(s.email||"").toLowerCase())) : [];
+      parsed.instructors = Array.isArray(parsed.instructors) ? parsed.instructors.filter(i=>!["Samuel Adeyemi","Mariam Bello","Daniel Peter"].includes(i.name)) : [];
+      parsed.payments = Array.isArray(parsed.payments) ? parsed.payments.filter(p=>!["Amina Yusuf","David Okoro","Grace Adewale"].includes(p.student)) : [];
+      parsed.announcements = Array.isArray(parsed.announcements) ? parsed.announcements.filter(a=>a.title!=="Welcome to ETHAN ERP & LMS" && a.title!=="New cybersecurity course") : [];
+      parsed.notifications = [];
+      parsed.enrolments = Array.isArray(parsed.enrolments) ? parsed.enrolments : [];
+      parsed.courses = Array.isArray(parsed.courses) ? parsed.courses.filter(c=>!["EDA-CYB-101","EDA-EXC-101","EDA-DMK-201","EDA-AIB-101","EDA-CAN-101","EDA-WEB-101"].includes(c.code)) : [];
+      localStorage.setItem(STORE.data, JSON.stringify(parsed));
+      return parsed;
+    }catch(_){}
+  }
   localStorage.setItem(STORE.data, JSON.stringify(seed));
   return structuredClone(seed);
 }
 let data = loadData();
 data.enrolments = Array.isArray(data.enrolments) ? data.enrolments : [];
 let currentUser = null;
-let portalState = { myStudent:null, myEnrolments:[], backendLoaded:false };
+let portalState = { myStudent:null, myEnrolments:[], myPayments:[], backendLoaded:false };
 let currentPage = "dashboard";
 
 function getUsers(){ return JSON.parse(localStorage.getItem(STORE.users) || "[]"); }
@@ -60,6 +49,31 @@ function setSession(user){
   localStorage.setItem(STORE.session, JSON.stringify({email:user.email, ts:Date.now()}));
 }
 function initials(name){ return name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join("") || "EU"; }
+
+const ETHAN_SUPER_ADMIN_EMAILS = new Set(["fedora4jesus@gmail.com"]);
+function resolveAuthenticatedRole(authUser, profile){
+  const email=String(authUser?.email||profile?.email||"").trim().toLowerCase();
+  if(ETHAN_SUPER_ADMIN_EMAILS.has(email)) return "super_admin";
+  const dbRole=String(profile?.role||"").trim().toLowerCase();
+  if(["super_admin","admin","instructor","student","parent"].includes(dbRole)) return dbRole;
+  const metaRole=String(authUser?.user_metadata?.role||"").trim().toLowerCase();
+  if(["super_admin","admin","instructor","student","parent"].includes(metaRole)) return metaRole;
+  return "student";
+}
+
+function canonicalPortalRoleLabel(user){
+  if(ETHAN_SUPER_ADMIN_EMAILS.has(String(user?.email||"").trim().toLowerCase())) return "Super Admin";
+  return null;
+}
+function portalRoleLabel(user){
+  if(user?.role==="student"){
+    if(user?.learnerType==="professional") return "Professional";
+    if(user?.learnerType==="business_owner") return "Business Owner";
+    return "Student";
+  }
+  return String(user?.role||"student").replaceAll("_"," ").replace(/\b\w/g,m=>m.toUpperCase());
+}
+
 
 // Staff accounts are created securely through Supabase Staff Management.
 
@@ -117,17 +131,18 @@ $("#signinForm").addEventListener("submit", async e=>{
       const authUser=result.user;
       let profile=null;
       try{ profile=await window.ETHAN_BACKEND.getProfile(authUser.id); }catch(_){}
-      const role=profile?.role||authUser.user_metadata?.role||"student";
+      const role=resolveAuthenticatedRole(authUser,profile);
       const user={
         firstName:profile?.first_name||authUser.user_metadata?.first_name||"Ethan",
         lastName:profile?.last_name||authUser.user_metadata?.last_name||"User",
         name:`${profile?.first_name||authUser.user_metadata?.first_name||"Ethan"} ${profile?.last_name||authUser.user_metadata?.last_name||"User"}`.trim(),
-        email:authUser.email, phone:profile?.phone||"", role, id:authUser.id
+        email:authUser.email, phone:profile?.phone||"", role, learnerType:authUser.user_metadata?.learner_type||authUser.user_metadata?.learnerType||"student", id:authUser.id
       };
       currentUser=user; openPortal(user);
     }else{
-      const user=getUsers().find(u=>u.email===email && u.password===password);
+      let user=getUsers().find(u=>u.email===email && u.password===password);
       if(!user){msg.textContent="Email or password is incorrect.";msg.className="form-message error";return;}
+      if(ETHAN_SUPER_ADMIN_EMAILS.has(email)) user={...user,role:"super_admin",learnerType:"super_admin"};
       setSession(user); openPortal(user);
     }
   }catch(err){
@@ -159,15 +174,17 @@ $("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"
 $("#notificationBtn").addEventListener("click",()=>$("#notificationPanel").classList.toggle("hidden"));
 $("#closeNotif").addEventListener("click",()=>$("#notificationPanel").classList.add("hidden"));
 
-$("#globalSearch").addEventListener("input", e=>{
+$("#globalSearch").addEventListener("keydown", e=>{
+  if(e.key!=="Enter") return;
   const q=e.target.value.toLowerCase().trim();
   if(!q) return;
-  const match=data.courses.find(c=>c.title.toLowerCase().includes(q)) || data.students.find(s=>s.name.toLowerCase().includes(q));
-  if(match && e.key==="Enter") alert(`Found: ${match.title || match.name}`);
+  const match=data.courses.find(c=>String(c.title||"").toLowerCase().includes(q)) || data.students.find(s=>String(s.name||"").toLowerCase().includes(q));
+  if(match) alert(`Found: ${match.title || match.name}`);
+  else alert("No matching learner or course was found.");
 });
 
 const adminNav = [
-  ["dashboard","▦","Dashboard"],["students","👥","Students"],["parents","👪","Parents"],["instructors","🧑‍🏫","Instructors"],["staff","🛡","Staff Management"],
+  ["dashboard","▦","Dashboard"],["students","👥","Learners"],["instructors","🧑‍🏫","Instructors"],["staff","🛡","Staff Management"],
   ["courses","📚","Courses"],["lms","▶","LMS"],["assignments","📝","Assignments"],["quizzes","✅","Quizzes"],
   ["attendance","📅","Attendance"],["timetable","🕒","Timetable"],["payments","💳","Fees & Payments"],
   ["results","📊","Results"],["certificates","🎓","Certificates"],["announcements","📣","Announcements"],["reports","📈","Reports"],["settings","⚙","Settings"]
@@ -191,9 +208,13 @@ const navByRole = {
 };
 
 async function openPortal(user){
+  const canonicalEmail=String(user?.email||"").trim().toLowerCase();
+  if(ETHAN_SUPER_ADMIN_EMAILS.has(canonicalEmail)){
+    user={...user,role:"super_admin",learnerType:"super_admin"};
+  }
   currentUser=user;
   $("#authScreen").classList.add("hidden"); $("#portal").classList.remove("hidden");
-  $("#userName").textContent=user.name; $("#userRole").textContent=(user.role||"student").replace("_"," ");
+  $("#userName").textContent=user.name; $("#userRole").textContent=canonicalPortalRoleLabel(user)||portalRoleLabel(user);
   $("#userAvatar").textContent=initials(user.name);
   await hydratePortalData(user);
   renderNav();
@@ -202,20 +223,56 @@ async function openPortal(user){
 }
 
 async function hydratePortalData(user){
-  portalState={myStudent:null,myEnrolments:[],backendLoaded:false};
+  portalState={myStudent:null,myEnrolments:[],myPayments:[],backendLoaded:false};
   if(window.ETHAN_BACKEND?.ready){
     try{
       if(user.role==="student"){
         portalState.myStudent=await window.ETHAN_BACKEND.getStudentByUserId(user.id);
-        if(portalState.myStudent) portalState.myEnrolments=await window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id);
-      } else if(user.role==="admin" || user.role==="super_admin"){
-        const [students,courses]=await Promise.all([window.ETHAN_BACKEND.listStudents(),window.ETHAN_BACKEND.listCourses()]);
+        if(portalState.myStudent){
+          portalState.myEnrolments=await window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id);
+          portalState.myPayments=await window.ETHAN_BACKEND.listMyPayments(portalState.myStudent.id);
+        }
+      } else if(["admin","super_admin","instructor"].includes(user.role)){
+        const [students,courses] = await Promise.all([
+          window.ETHAN_BACKEND.listStudents(),
+          window.ETHAN_BACKEND.listCourses()
+        ]);
         if(Array.isArray(students)) data.students=students.map(s=>({
-          id:s.id, studentNo:s.student_no, name:[s.profiles?.first_name,s.profiles?.last_name].filter(Boolean).join(" ")||s.student_no,
+          id:s.id, studentNo:s.student_no, name:[s.profiles?.first_name,s.profiles?.last_name].filter(Boolean).join(" ")||s.student_no||"Learner",
           email:s.profiles?.email||"", program:"Awaiting allocation", status:s.status||"Active", progress:0, payment:"Unpaid", userId:s.user_id
         }));
-        if(Array.isArray(courses)) data.courses=courses.map(c=>({id:c.id,code:c.code,title:c.title,category:c.difficulty||"Course",instructor:"Assigned by academy",duration:c.duration||"Self-paced",progress:0,lessons:0,completed:0,fee:Number(c.fee||0),published:c.published}));
+        if(Array.isArray(courses)) data.courses=courses.map(c=>({
+          id:c.id,code:c.code,title:c.title,category:c.difficulty||"Course",instructor:"Assigned by academy",
+          duration:c.duration||"Self-paced",progress:0,lessons:0,completed:0,fee:Number(c.fee||0),published:c.published
+        }));
+        if(user.role==="admin" || user.role==="super_admin"){
+          try{
+            const [staff,payments] = await Promise.all([
+              window.ETHAN_BACKEND.listStaff(),
+              window.ETHAN_BACKEND.listPayments()
+            ]);
+            data.instructors = (staff||[]).filter(x=>x.role==="instructor").map((x,i)=>({
+              id:x.id||`EDA-IN-${String(i+1).padStart(3,"0")}`,
+              name:[x.first_name,x.last_name].filter(Boolean).join(" ")||"Instructor",
+              email:x.email||"", specialization:"Assigned courses", courses:0, status:"Active"
+            }));
+            data.payments = (payments||[]).map(p=>({
+              ref:p.reference, student:p.students?.profiles ? [p.students.profiles.first_name,p.students.profiles.last_name].filter(Boolean).join(" ") : "Learner",
+              studentId:p.student_id, description:p.description||"Training Fee", amount:Number(p.amount||0),
+              date:p.paid_at ? new Date(p.paid_at).toLocaleDateString() : "—",
+              status:p.verified ? "Verified" : "Pending"
+            }));
+          }catch(_){}
+        }
       }
+      try{
+        const announcements=await window.ETHAN_BACKEND.listAnnouncements();
+        data.announcements=(announcements||[]).map(a=>({id:a.id,title:a.title,message:a.message,date:a.created_at?new Date(a.created_at).toLocaleDateString():""}));
+      }catch(_){}
+      try{
+        const notifications=await window.ETHAN_BACKEND.listMyNotifications();
+        data.notifications=(notifications||[]).map(n=>({title:n.title,message:n.message,time:n.created_at?new Date(n.created_at).toLocaleString():""}));
+      }catch(_){}
       portalState.backendLoaded=true;
     }catch(err){ console.warn("Portal data could not be fully loaded",err); }
   }else if(user.role==="student"){
@@ -238,7 +295,7 @@ function navigate(page){
   currentPage=page;
   $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
   const label=($("#sideNav .nav-item.active span:last-child")||{}).textContent || "Dashboard";
-  $("#pageTitle").textContent=label; $("#pageEyebrow").textContent=currentUser.role.toUpperCase()+" PORTAL";
+  $("#pageTitle").textContent=label; $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
   const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile};
   (renderers[page]||renderDashboard)();
 }
@@ -280,9 +337,9 @@ function studentTable(list){
  return `<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Student ID</th><th>Name</th><th>Program</th><th>Progress</th><th>Payment</th><th>Status</th></tr></thead><tbody>${list.map(s=>`<tr><td>${s.id}</td><td><strong>${s.name}</strong><br><small class="muted">${s.email}</small></td><td>${s.program}</td><td>${s.progress}%</td><td><span class="badge ${s.payment==="Paid"?"green":"gold"}">${s.payment}</span></td><td><span class="badge green">${s.status}</span></td></tr>`).join("")}</tbody></table></div></div>`;
 }
 function renderStudents(){
-  const add = (currentUser.role==="admin"||currentUser.role==="super_admin") ? `<button class="primary-btn" id="addStudentBtn">+ Add Student</button>` : "";
-  $("#content").innerHTML=pageHead(currentUser.role==="parent"?"My Children":"Students","Manage student profiles, programmes, progress and status.",add)+studentTable(currentUser.role==="parent"?data.students.slice(0,1):data.students);
-  if($("#addStudentBtn")) $("#addStudentBtn").onclick=()=>showStudentModal();
+  const list=currentUser.role==="student" ? [] : data.students;
+  $("#content").innerHTML=pageHead("Learners","Registered learner accounts. New learners create their own account from the public Create Account tab.")+
+    (list.length?studentTable(list):emptyState("No learner records yet","Registered Students, Professionals and Business Owners will appear here."));
 }
 function showStudentModal(){
  showModal("Add Student","Create a new student record.",`
@@ -302,12 +359,10 @@ function renderParents(){
  </tbody></table></div></div>`;
 }
 function renderInstructors(){
- $("#content").innerHTML=pageHead("Instructors","Manage teaching staff and course assignments.",`<button class="primary-btn" id="addInstructorBtn">+ Add Instructor</button>`)+`
- <div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>Name</th><th>Specialization</th><th>Courses</th><th>Status</th></tr></thead><tbody>${data.instructors.map(i=>`<tr><td>${i.id}</td><td><strong>${i.name}</strong></td><td>${i.specialization}</td><td>${i.courses}</td><td><span class="badge green">${i.status}</span></td></tr>`).join("")}</tbody></table></div></div>`;
- $("#addInstructorBtn").onclick=()=>showModal("Add Instructor","Create an instructor profile.",`<label>Full name<input id="insName"></label><label>Specialization<input id="insSpec"></label>`,()=>{
-  if(!$("#insName").value.trim()||!$("#insSpec").value.trim()) return alert("Complete all fields.");
-  data.instructors.push({id:`EDA-IN-${String(data.instructors.length+1).padStart(3,"0")}`,name:$("#insName").value.trim(),specialization:$("#insSpec").value.trim(),courses:0,status:"Active"});persist();closeModal();renderInstructors();
- });
+ const rows=data.instructors||[];
+ $("#content").innerHTML=pageHead("Instructors","View instructor accounts and teaching staff.",`<button class="primary-btn" id="manageInstructorStaffBtn">Manage Staff Accounts</button>`)+
+ (rows.length?`<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Name</th><th>Email</th><th>Specialization</th><th>Status</th></tr></thead><tbody>${rows.map(i=>`<tr><td><strong>${i.name}</strong></td><td>${i.email||"—"}</td><td>${i.specialization||"Assigned courses"}</td><td><span class="badge green">${i.status||"Active"}</span></td></tr>`).join("")}</tbody></table></div></div>`:emptyState("No instructor accounts yet","Create Instructor accounts securely from Staff Management."));
+ $("#manageInstructorStaffBtn").onclick=()=>navigate("staff");
 }
 async function renderStaff(){
   if(!["admin","super_admin"].includes(currentUser.role)){
@@ -338,8 +393,275 @@ async function renderStaff(){
   });
 }
 
+
+/* v8.8 - Structured readable study notes for every course */
+let currentStudyCourseTitle = "";
+
+function escHtml(v){
+  return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+function courseProfile(title){
+ const t=String(title||"").toLowerCase();
+ let domain="digital technology";
+ let definition=`${title} is a structured professional subject that develops the knowledge, methods and practical skills needed to use its concepts effectively in academic, workplace and business environments.`;
+ let concepts=["Foundations and terminology","Purpose and professional applications","Core tools and features","Planning and workflow","Practical implementation","Quality control","Common mistakes","Performance measurement","Professional best practice","Continuous improvement"];
+ let tools=["Relevant computer or mobile application","Practice files and guided exercises","Internet access where required","Spreadsheet or documentation tool for recording work"];
+ let scenario=`Ethan Digital Academy wants to apply ${title} to improve a real learning, workplace or business process. The learner must identify the problem, define the objective, choose appropriate tools, complete the work, measure the result and recommend improvements.`;
+
+ if(/digital marketing/.test(t)){
+   domain="digital marketing";
+   definition="Digital marketing is the planned use of digital channels, content, technology and measurable data to attract, engage, convert and retain customers.";
+   concepts=["Customer and audience research","Marketing objectives and SMART goals","Digital marketing funnel","Content strategy and content pillars","Search engine optimization (SEO)","Social media marketing","Email marketing","Paid media fundamentals","Landing pages and conversion","Analytics, KPIs and optimization"];
+   tools=["Website or landing page","Search and SEO tools","Social media platforms","Email marketing platform","Canva or another design tool","Spreadsheet or analytics dashboard"];
+ } else if(/excel|google sheets|data|power bi|statistics|dashboard|reporting|business intelligence/.test(t)){
+   domain="data and analytics";
+   definition=`${title} develops the ability to organize, calculate, analyze, interpret and present information so that data can support reliable decisions.`;
+   concepts=["Data structure","Accurate data entry","Cleaning and validation","Calculations and measures","Sorting and filtering","Analysis","Visualization","Dashboards","Interpretation","Reporting and decision-making"];
+   tools=["Microsoft Excel, Google Sheets or the relevant analytics tool","Practice datasets","Calculator where appropriate","Reporting template"];
+ } else if(/word|document/.test(t)){
+   domain="document productivity";
+   definition=`${title} focuses on creating, formatting, reviewing and presenting professional documents accurately and consistently.`;
+   concepts=["Document planning","Page setup","Text formatting","Styles and hierarchy","Tables and objects","Headers and footers","Review and collaboration","References","Export and printing","Document standards"];
+   tools=["Microsoft Word or compatible word processor","Practice documents","PDF reader"];
+ } else if(/powerpoint|presentation/.test(t)){
+   domain="professional presentation";
+   definition=`${title} is the structured use of slides, text, visuals and delivery techniques to communicate information clearly to an audience.`;
+   concepts=["Audience and purpose","Message hierarchy","Slide structure","Typography","Visual communication","Charts and media","Transitions","Speaker preparation","Accessibility","Presentation review"];
+   tools=["Microsoft PowerPoint or compatible presentation software","Image/chart resources","Presentation display where available"];
+ } else if(/canva|graphic|photoshop|coreldraw|logo|brand|figma|ui\/ux/.test(t)){
+   domain="creative design";
+   definition=`${title} applies visual communication principles and digital tools to create clear, attractive and purposeful designs.`;
+   concepts=["Design purpose","Audience","Visual hierarchy","Typography","Colour","Alignment and spacing","Images and graphics","Brand consistency","Usability","Export and quality control"];
+   tools=["Relevant design application","Brand assets","Image resources","Practice design brief"];
+ } else if(/video|capcut|photography|storytelling|content creation/.test(t)){
+   domain="digital media production";
+   definition=`${title} covers the planning, creation, editing and delivery of visual or audiovisual media for education, communication or marketing.`;
+   concepts=["Purpose and audience","Pre-production planning","Composition","Lighting","Audio","Editing","Story structure","Captions","Publishing formats","Performance review"];
+   tools=["Phone or camera","Relevant editing application","Microphone where available","Media storage"];
+ } else if(/facebook|instagram|tiktok|youtube|linkedin|social media|whatsapp|content marketing|email marketing|influencer|affiliate|personal branding|reputation/.test(t)){
+   domain="online marketing and communication";
+   definition=`${title} is the planned use of relevant digital communication channels to reach a defined audience, build relationships and support measurable objectives.`;
+   concepts=["Audience research","Account or channel optimization","Content strategy","Content pillars","Publishing formats","Community engagement","Calls to action","Lead generation","Analytics","Optimization"];
+   tools=["Relevant platform","Content calendar","Design/video tool","Analytics dashboard","Spreadsheet"];
+ } else if(/seo|search engine|google ads|meta ads|marketing analytics/.test(t)){
+   domain="performance marketing";
+   definition=`${title} uses structured research, digital platforms and measurable performance data to improve online visibility, traffic, leads or conversions.`;
+   concepts=["Search or audience intent","Research","Campaign objectives","Targeting","Content or creative","Landing experience","Measurement","KPIs","Optimization","Reporting"];
+   tools=["Relevant advertising/search platform","Analytics tool","Website or landing page","Spreadsheet"];
+ } else if(/artificial intelligence|ai |chatgpt|prompt engineering|generative/.test(t)){
+   domain="artificial intelligence";
+   definition=`${title} develops practical understanding of AI systems and how they can be used responsibly to support research, productivity, content and business workflows.`;
+   concepts=["AI capabilities and limitations","Prompt design","Context","Output evaluation","Fact checking","Privacy","Responsible use","Workflow integration","Automation","Human review"];
+   tools=["Approved AI assistant","Source documents","Productivity tools","Verification sources"];
+ } else if(/python|javascript|programming|software development|api|git|github/.test(t)){
+   domain="software and programming";
+   definition=`${title} develops structured problem-solving skills for creating, understanding, testing or managing software and digital systems.`;
+   concepts=["Problem definition","Logic","Data and variables","Conditions","Repetition","Functions","Input and output","Testing","Debugging","Documentation"];
+   tools=["Code editor","Browser or relevant runtime","Practice exercises","Version-control tools where relevant"];
+ } else if(/web|html|css|wordpress|e-commerce website|landing page|hosting|domain/.test(t)){
+   domain="web technology";
+   definition=`${title} covers the planning, creation, publication and maintenance of useful web-based information or services.`;
+   concepts=["Purpose and audience","Information architecture","Page structure","Content","Responsive design","Usability","Domains and hosting","Security","Performance","Maintenance"];
+   tools=["Browser","Code editor or website builder","Hosting environment where required","Testing checklist"];
+ } else if(/cybersecurity|security|hardware|maintenance|it support|windows|file management|cloud storage|computer/.test(t)){
+   domain="IT and digital operations";
+   definition=`${title} develops practical knowledge for using, supporting, maintaining or protecting computer systems and digital information effectively.`;
+   concepts=["System components","User needs","Configuration","Safe operation","Troubleshooting","Maintenance","Security","Backups","Documentation","Support procedure"];
+   tools=["Computer","Operating-system tools","Relevant utilities","Practice checklist"];
+ } else if(/business|entrepreneur|freelanc|remote work|project management|crm|erp|e-commerce/.test(t)){
+   domain="digital business";
+   definition=`${title} applies structured processes, digital tools and measurable decisions to improve professional or business performance.`;
+   concepts=["Business objective","Customer or stakeholder needs","Process mapping","Digital tools","Roles and responsibilities","Records","Communication","KPIs","Risk and quality","Continuous improvement"];
+   tools=["Productivity suite","Spreadsheet","Communication tools","Relevant business platform"];
+ }
+
+ return {
+   domain,definition,concepts,tools,
+   example:`A learner is given a realistic ${title} assignment. The learner first defines the required result, selects the appropriate tools, completes the task step by step, checks the work against professional standards and records the final outcome.`,
+   caseStudy:`ETHAN DIGITAL ACADEMY — ${title.toUpperCase()} CASE STUDY
+
+Situation:
+Ethan Digital Academy wants to use ${title} to improve a realistic academic, professional or business activity.
+
+Problem:
+The current activity needs a clearer structure, better use of digital tools and a measurable way to judge success.
+
+Objective:
+Apply the principles of ${title} to produce a professional result that solves the identified problem.
+
+Target users or stakeholders:
+1. Learners who need practical digital competence.
+2. Professionals who need efficient workplace methods.
+3. Business owners who need better digital processes and measurable outcomes.
+
+Approach:
+- Define the problem and expected result.
+- Identify the people affected by the work.
+- Select the relevant ${title} concepts and tools.
+- Plan the work before implementation.
+- Complete the task using accepted professional practice.
+- Check accuracy, usability, clarity and safety.
+- Record evidence of the completed work.
+- Measure the result using suitable indicators.
+- Recommend improvements.
+
+Evidence to collect:
+Completed work, screenshots where appropriate, calculations or records, observations, decisions and a short evaluation.
+
+Evaluation:
+Success is determined by whether the completed work meets the original objective, is accurate and professional, and produces a useful result for the intended user. The learner should explain what worked, what did not work and what should be improved next time.`
+ };
+}
+function buildCourseStudyGuide(title){
+ const p=courseProfile(title);
+ return {
+   title,
+   introduction:`This professional course introduces ${title} through structured explanation, guided examples, case-study analysis and practical application. Learners are expected to understand the subject, apply it to realistic tasks and evaluate the quality of their work. The course is designed for paid Ethan Digital Academy enrollees and connects knowledge directly to academic, workplace and business use.`,
+   definition:p.definition,
+   objectives:[
+     `Explain the meaning, purpose and professional importance of ${title}.`,
+     `Identify and explain the major concepts used in ${title}.`,
+     `Select appropriate tools and resources for a ${title} task.`,
+     `Plan a realistic ${title} activity before implementation.`,
+     `Apply the correct workflow to complete a professional task.`,
+     `Evaluate completed work using accuracy, clarity, usability and other relevant standards.`,
+     `Recognize common mistakes, risks and weak practices in ${title}.`,
+     `Use evidence and appropriate performance indicators to measure results.`,
+     `Complete a practical ${title} project and explain the decisions made.`,
+     `Recommend improvements after reviewing the final result.`
+   ],
+   concepts:p.concepts,
+   tools:p.tools,
+   example:p.example,
+   caseStudy:p.caseStudy,
+   practical:[
+     `Choose a realistic academic, workplace or business problem connected to ${title}.`,
+     "Write a clear objective and describe the expected result.",
+     "Identify the intended user, customer or stakeholder.",
+     `Select at least five relevant ${title} concepts from this course.`,
+     "List the tools and resources required for the work.",
+     "Create a short implementation plan before starting.",
+     "Complete the practical work step by step.",
+     "Keep suitable evidence such as screenshots, records, calculations, observations or design decisions.",
+     "Check the final work for accuracy, clarity, usability and professionalism.",
+     "Write a short evaluation explaining the result and at least three improvements."
+   ],
+   assessment:[
+     `Define ${title} in your own words and explain why it is important.`,
+     `Describe five important concepts used in ${title}.`,
+     "Explain how you would choose the correct tools for a practical task.",
+     `Give one realistic professional or business use of ${title}.`,
+     "State three common mistakes that can reduce the quality of completed work.",
+     "Explain how evidence or KPIs can be used to evaluate a result.",
+     `Using the Ethan Digital Academy case study, explain the problem, objective, approach and expected result.`,
+     `Prepare a one-page plan for a practical ${title} project.`
+   ],
+   summary:`${title} should be understood as both knowledge and practical competence. A professional learner must understand the terminology, plan the work, use appropriate tools, follow a clear process, check the quality of the output and evaluate the final result. Repeated practice and evidence-based improvement are essential to mastery.`
+ };
+}
+function renderGuideHtml(g){
+  const list=a=>`<ul>${a.map(x=>`<li>${escHtml(x)}</li>`).join("")}</ul>`;
+  return `
+    <header class="study-cover">
+      <span class="eyebrow">ETHAN DIGITAL ACADEMY STUDY NOTE</span>
+      <h1>${escHtml(g.title)}</h1>
+      <p>Structured learning material for enrolled learners.</p>
+    </header>
+    <section><h2>1. Introduction</h2><p>${escHtml(g.introduction)}</p></section>
+    <section><h2>2. Definition</h2><p>${escHtml(g.definition)}</p></section>
+    <section><h2>3. Learning Objectives</h2>${list(g.objectives)}</section>
+    <section><h2>4. Key Concepts</h2>${list(g.concepts)}</section>
+    ${g.tools.length?`<section><h2>5. Tools and Resources</h2>${list(g.tools)}</section>`:""}
+    <section><h2>${g.tools.length?"6":"5"}. Worked Example</h2><p>${escHtml(g.example)}</p></section>
+    <section><h2>${g.tools.length?"7":"6"}. Case Study</h2><div class="study-case">${escHtml(g.caseStudy).replace(/\n/g,"<br>")}</div></section>
+    <section><h2>${g.tools.length?"8":"7"}. Practical Activity</h2>${list(g.practical)}</section>
+    <section><h2>${g.tools.length?"9":"8"}. Review Questions / Assessment</h2>${list(g.assessment)}</section>
+    <section><h2>${g.tools.length?"10":"9"}. Summary</h2><p>${escHtml(g.summary)}</p></section>
+  `;
+}
+
+function openCourseStudy(title){
+  currentStudyCourseTitle=decodeURIComponent(title);
+  if(currentUser?.role==="student"){
+    const allocated=studentCourses().some(c=>String(c.title||"").trim().toLowerCase()===currentStudyCourseTitle.trim().toLowerCase());
+    if(!allocated){
+      alert("This course material is available only after verified payment and course allocation.");
+      navigate("courses");
+      return;
+    }
+  }else if(!canAccessAllCourseMaterials()){
+    alert("You do not have permission to access this course material.");
+    return;
+  }
+  const g=buildCourseStudyGuide(currentStudyCourseTitle);
+  $("#content").innerHTML=pageHead("Course Study Note",
+    isSuperAdmin() ? "Super Admin academic access: read, review and export the complete course material." :
+    "Paid enrollee study material. Read online or save your personal study copy.",
+    `<div class="study-actions"><button class="secondary-btn" id="downloadWordBtn">Download Word</button><button class="primary-btn" id="printPdfBtn">Save as PDF / Print</button></div>`)+
+    `<article class="study-reader">${renderGuideHtml(g)}</article>`;
+  $("#downloadWordBtn").onclick=()=>downloadCourseWord(g);
+  $("#printPdfBtn").onclick=()=>printCoursePdf(g);
+}
+
+function downloadCourseWord(g){
+  const styles=`<style>
+  body{font-family:Arial,sans-serif;color:#1f2937;line-height:1.6;margin:40px}
+  h1{color:#24496b;font-size:28px} h2{color:#24496b;margin-top:24px;font-size:20px}
+  .study-case{background:#f4f7fa;padding:16px;border-left:4px solid #24496b}
+  li{margin:6px 0}
+  </style>`;
+  const doc=`<!doctype html><html><head><meta charset="utf-8">${styles}</head><body>
+  <p><strong>ETHAN DIGITAL ACADEMY</strong></p>${renderGuideHtml(g)}
+  </body></html>`;
+  const blob=new Blob(["\ufeff",doc],{type:"application/msword"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=`${g.title.replace(/[^a-z0-9]+/gi,"-").replace(/^-|-$/g,"")}-Study-Note.doc`;
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+function printCoursePdf(g){
+  if(["python for beginners","software development basics","coding & programming fundamentals","coding and programming fundamentals"].includes(String(g?.title||"").trim().toLowerCase())){ window.open("./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf","_blank"); return; }
+  if(String(g?.title||"").trim().toLowerCase()==="digital marketing strategy"){ window.open("./assets/course-materials/Digital-Marketing-EDA-DMK-130.pdf","_blank"); return; }
+  if(String(g?.title||"").trim().toLowerCase()==="digital marketing"){ window.open("./assets/course-materials/Digital-Marketing-EDA-DMK-130.pdf","_blank"); return; }
+  if(["cybersecurity awareness","cybersecurity fundamentals"].includes(String(g?.title||"").trim().toLowerCase())){ window.open("./assets/course-materials/Cybersecurity-Fundamentals-EDA-CYB-114.pdf","_blank"); return; }
+  if(String(g?.title||"").trim().toLowerCase()==="computer appreciation"){
+    window.open("./assets/course-materials/Computer-Appreciation-EDA-COM-101.pdf","_blank");
+    return;
+  }
+  if(String(g?.title||"").trim().toLowerCase()==="microsoft word"){
+    window.open("./assets/course-materials/Microsoft-Word-EDA-WRD-102.pdf","_blank");
+    return;
+  }
+  if(String(g?.title||"").trim().toLowerCase()==="microsoft excel"){
+    window.open("./assets/course-materials/Microsoft-Excel-EDA-EXC-103.pdf","_blank");
+    return;
+  }
+  if(String(g?.title||"").trim().toLowerCase()==="microsoft powerpoint"){
+    window.open("./assets/course-materials/Microsoft-PowerPoint-EDA-PPT-104.pdf","_blank");
+    return;
+  }
+  const w=window.open("","_blank");
+  if(!w){ alert("Please allow pop-ups to save the study note as PDF."); return; }
+  w.document.write(`<!doctype html><html><head><title>${escHtml(g.title)} - Ethan Digital Academy</title>
+  <style>
+    @page{size:A4;margin:18mm}
+    body{font-family:Arial,sans-serif;color:#1f2937;line-height:1.55}
+    h1{color:#24496b;font-size:28px}h2{color:#24496b;font-size:19px;margin-top:24px;border-bottom:1px solid #e5e7eb;padding-bottom:6px}
+    .eyebrow{font-size:11px;letter-spacing:1.4px;color:#9b7a3c;font-weight:700}
+    .study-cover{padding-bottom:16px;border-bottom:2px solid #24496b;margin-bottom:24px}
+    .study-case{background:#f6f8fa;padding:14px;border-left:4px solid #24496b}
+    li{margin:5px 0}
+  </style></head><body>${renderGuideHtml(g)}<script>window.onload=()=>setTimeout(()=>window.print(),250)<\/script></body></html>`);
+  w.document.close();
+}
+
 function courseCards(list){
- return `<div class="course-grid">${list.map(c=>`<article class="course-card"><div class="course-thumb"><strong>${c.category}</strong></div><div class="course-body"><small class="muted">${c.code}</small><h3>${c.title}</h3><p class="muted">${c.instructor}</p><div class="course-meta"><span>${c.duration}</span><span>${c.progress}%</span></div><div class="progress"><span style="width:${c.progress}%"></span></div><button class="secondary-btn" onclick="navigate('lms')">${currentUser.role==="student"?"Continue Learning":"Open Course"}</button></div></article>`).join("")}</div>`;
+ return `<div class="course-grid">${list.map(c=>{
+   const encoded=encodeURIComponent(c.title||"Course");
+   return `<article class="course-card"><div class="course-thumb"><strong>${c.category||"Course"}</strong></div><div class="course-body"><small class="muted">${c.code||""}</small><h3>${c.title}</h3><p class="muted">${c.instructor||"Ethan Digital Academy"}</p><div class="course-meta"><span>${c.duration||"Self-paced"}</span><span>${Number(c.progress||0)}%</span></div><div class="progress"><span style="width:${Number(c.progress||0)}%"></span></div><div class="course-card-actions"><button class="primary-btn" onclick="openCourseStudy('${encoded}')">${currentUser.role==="student"?"Read Course Note":"Preview Study Note"}</button><button class="secondary-btn" onclick="navigate('lms')">${currentUser.role==="student"?"Learning Area":"Course Builder"}</button></div></div></article>`;
+ }).join("")}</div>`;
 }
 function renderCourses(){
  const add=(currentUser.role==="admin"||currentUser.role==="super_admin"||currentUser.role==="instructor")?`<button class="primary-btn" id="addCourseBtn">+ Create Course</button>`:"";
@@ -458,7 +780,7 @@ function closeModal(){const m=$("#activeModal");if(m)m.remove()}
      const session=await window.ETHAN_BACKEND.getSession();
      if(session?.user){
        let profile=null; try{profile=await window.ETHAN_BACKEND.getProfile(session.user.id)}catch(_){}
-       const user={firstName:profile?.first_name||"Ethan",lastName:profile?.last_name||"User",name:`${profile?.first_name||"Ethan"} ${profile?.last_name||"User"}`,email:session.user.email,phone:profile?.phone||"",role:profile?.role||"student",id:session.user.id};
+       const user={firstName:profile?.first_name||"Ethan",lastName:profile?.last_name||"User",name:`${profile?.first_name||"Ethan"} ${profile?.last_name||"User"}`,email:session.user.email,phone:profile?.phone||"",role:resolveAuthenticatedRole(session.user,profile),learnerType:session.user.user_metadata?.learner_type||session.user.user_metadata?.learnerType||"student",id:session.user.id};
        openPortal(user); return;
      }
    }catch(_){}
@@ -478,7 +800,232 @@ if("serviceWorker" in navigator){
 
 
 /* v5: payment-controlled course allocation */
+
+
+const ETHAN_APPROVED_BANKS = [
+  {bank:"United Bank for Africa (UBA)", accountNumber:"1021643438"},
+  {bank:"Kuda Microfinance Bank", accountNumber:"3003847218"}
+];
+function approvedBankPaymentHtml(){
+ return `<section class="approved-payment-box">
+   <div class="approved-payment-head">
+     <span class="eyebrow">APPROVED PAYMENT ACCOUNTS</span>
+     <h3>Bank Transfer Details</h3>
+     <p>Make course payments only to one of the approved Ethan Digital Academy bank accounts below. Course access is activated after payment verification and allocation.</p>
+   </div>
+   <div class="approved-bank-grid">
+     ${ETHAN_APPROVED_BANKS.map(b=>`<div class="approved-bank">
+       <small>BANK</small><strong>${b.bank}</strong>
+       <small>ACCOUNT NUMBER</small><div class="bank-account-number">${b.accountNumber}</div>
+     </div>`).join("")}
+   </div>
+   <div class="payment-warning"><strong>Important:</strong> Keep your transfer receipt or payment reference. Payment does not automatically unlock a course until it has been verified by an authorized administrator.</div>
+ </section>`;
+}
+
+
+/* v9.2 - Super Admin full academic access */
+function isSuperAdmin(){
+  return currentUser?.role === "super_admin";
+}
+function canAccessAllCourseMaterials(){
+  return ["super_admin","admin","instructor"].includes(currentUser?.role||"");
+}
+function canCreateCourses(){
+  return ["super_admin","admin","instructor"].includes(currentUser?.role||"");
+}
+function allAcademyCoursesForStaff(){
+  const dbCourses = Array.isArray(data.courses) ? data.courses : [];
+  const seen = new Set(dbCourses.map(c=>String(c.title||"").trim().toLowerCase()));
+  const catalogueCourses = ETHAN_PUBLIC_COURSES
+    .filter(c=>!seen.has(String(c.name||"").trim().toLowerCase()))
+    .map((c,i)=>({
+      id:`catalogue-${i+1}`,
+      code:`EDA-${String(i+1).padStart(3,"0")}`,
+      title:c.name,
+      duration:"Self-paced",
+      progress:0,
+      published:true,
+      catalogue:true
+    }));
+  return [...dbCourses, ...catalogueCourses];
+}
+
+function getPublicCourseByTitle(title){
+  return ETHAN_PUBLIC_COURSES.find(c=>String(c.name||"").trim().toLowerCase()===String(title||"").trim().toLowerCase());
+}
+function learnerCourseCard(c){
+  const publicInfo=getPublicCourseByTitle(c.title)||{};
+  const fee=publicInfo.feeNGN?formatCoursePrice(publicInfo.feeNGN):"";
+  const encoded=encodeURIComponent(c.title||"Course");
+  const progress=Math.max(0,Math.min(100,Number(c.progress||0)));
+  return `<article class="learner-course-card">
+    <div class="learner-course-card-top">
+      <span class="course-status-badge">PAID • ACTIVE</span>
+      <span class="course-progress-label">${progress}%</span>
+    </div>
+    <div class="learner-course-icon">${escHtml((c.title||"DC").split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase())}</div>
+    <small>${escHtml(c.code||"DIGITAL COURSE")}</small>
+    <h3>${escHtml(c.title||"Course")}</h3>
+    <p>${escHtml(publicInfo.brief||"Your allocated Ethan Digital Academy course.")}</p>
+    <div class="learner-progress"><span style="width:${progress}%"></span></div>
+    <div class="learner-course-meta">
+      <span>${escHtml(c.duration||"Self-paced")}</span>
+      ${fee?`<span>${escHtml(fee)}</span>`:""}
+    </div>
+    <div class="learner-course-actions">
+      <button class="primary-btn" onclick="openCourseStudy('${encoded}')">Open Course</button>
+      <button class="secondary-btn" onclick="navigate('lms')">Learning Area</button>
+    </div>
+  </article>`;
+}
+function lockedCatalogueCard(c){
+  return `<article class="catalogue-lock-card">
+    <div>
+      <span class="lock-chip">LOCKED</span>
+      <h4>${escHtml(c.name)}</h4>
+      <p>${escHtml(c.brief)}</p>
+    </div>
+    <div class="catalogue-lock-footer">
+      <strong>${formatCoursePrice(c.feeNGN)}</strong>
+      <button class="secondary-btn" onclick="navigate('payments')">Enrol / Pay</button>
+    </div>
+  </article>`;
+}
+function renderStudentHome(){
+  const courses=studentCourses();
+  const learnerLabel=portalRoleLabel(currentUser);
+  const firstName=escHtml(currentUser.firstName||currentUser.name||"Learner");
+  const paidCount=courses.length;
+  const avgProgress=paidCount?Math.round(courses.reduce((s,c)=>s+Number(c.progress||0),0)/paidCount):0;
+
+  $("#content").innerHTML=`
+    <section class="student-home-hero">
+      <div>
+        <span class="eyebrow">ETHAN DIGITAL ACADEMY</span>
+        <h1>Welcome, ${firstName}</h1>
+        <p>${escHtml(learnerLabel)} learning portal. Your paid digital courses, study materials and learning progress are all in one place.</p>
+      </div>
+      <div class="student-home-profile">
+        <small>ACCOUNT TYPE</small>
+        <strong>${escHtml(learnerLabel)}</strong>
+      </div>
+    </section>
+
+    <section class="student-home-stats">
+      <div><small>PAID COURSES</small><strong>${paidCount}</strong></div>
+      <div><small>AVERAGE PROGRESS</small><strong>${avgProgress}%</strong></div>
+      <div><small>LEARNING ACCESS</small><strong>${paidCount?"Active":"Locked"}</strong></div>
+      <div><small>COURSE CATALOGUE</small><strong>100</strong></div>
+    </section>
+
+    <section class="student-section">
+      <div class="student-section-head">
+        <div>
+          <span class="eyebrow">MY LEARNING</span>
+          <h2>My Digital Courses</h2>
+          <p>These are the courses allocated to your account after payment verification.</p>
+        </div>
+        <button class="secondary-btn" onclick="navigate('courses')">View My Courses</button>
+      </div>
+      ${courses.length
+        ? `<div class="learner-course-grid">${courses.map(learnerCourseCard).join("")}</div>`
+        : `<div class="student-empty-panel">
+            <div>
+              <span class="empty-icon">ED</span>
+              <h3>No paid course allocated yet</h3>
+              <p>Your account is active, but learning materials remain locked until payment is verified and a course is allocated to you.</p>
+            </div>
+            <button class="primary-btn" onclick="navigate('payments')">View Enrolment & Payment</button>
+          </div>`
+      }
+    </section>
+
+    <section class="student-section">
+      <div class="student-section-head">
+        <div>
+          <span class="eyebrow">EXPLORE ETHAN</span>
+          <h2>Digital Courses</h2>
+          <p>Browse Ethan Digital Academy courses. Course materials remain locked until payment and allocation.</p>
+        </div>
+        <div class="student-catalogue-tools">
+          <select id="insideCourseCurrency">
+            <option value="NGN">₦ Naira</option>
+            <option value="USD">$ USD</option>
+            <option value="GBP">£ Pounds</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <input id="insideCourseSearch" placeholder="Search digital courses..." />
+        </div>
+      </div>
+      <div id="insideCourseGrid" class="inside-catalogue-grid">
+        ${ETHAN_PUBLIC_COURSES.slice(0,12).map(lockedCatalogueCard).join("")}
+      </div>
+      <div class="student-catalogue-more">
+        <button class="secondary-btn" id="showAllInsideCourses">View All 100 Digital Courses</button>
+      </div>
+    </section>
+
+    <section class="student-section">
+      ${approvedBankPaymentHtml()}
+    </section>
+
+    <section class="student-section student-quick-links">
+      <div class="student-section-head">
+        <div>
+          <span class="eyebrow">LEARNING PORTAL</span>
+          <h2>Quick Access</h2>
+        </div>
+      </div>
+      <div class="quick-access-grid">
+        <button onclick="navigate('lms')"><strong>Learning Area</strong><span>Open paid study materials</span></button>
+        <button onclick="navigate('payments')"><strong>Payments</strong><span>Check payment status</span></button>
+        <button onclick="navigate('assignments')"><strong>Assignments</strong><span>View course assignments</span></button>
+        <button onclick="navigate('certificates')"><strong>Certificates</strong><span>View earned certificates</span></button>
+      </div>
+    </section>`;
+
+  const search=$("#insideCourseSearch");
+  const currency=$("#insideCourseCurrency");
+  const grid=$("#insideCourseGrid");
+  const showAll=$("#showAllInsideCourses");
+  let showingAll=false;
+
+  function repaintInsideCourses(){
+    const q=(search?.value||"").trim().toLowerCase();
+    const source=q||showingAll?ETHAN_PUBLIC_COURSES:ETHAN_PUBLIC_COURSES.slice(0,12);
+    const filtered=source.filter(c=>!q || `${c.name} ${c.brief}`.toLowerCase().includes(q));
+    grid.innerHTML=filtered.map(lockedCatalogueCard).join("") || `<div class="student-empty-panel"><div><h3>No matching course</h3><p>Try another course name or keyword.</p></div></div>`;
+  }
+  if(currency){
+    currency.value=ethanDisplayCurrency;
+    currency.onchange=()=>{updateCatalogueCurrency(currency.value);repaintInsideCourses();};
+  }
+  if(search) search.oninput=repaintInsideCourses;
+  if(showAll) showAll.onclick=()=>{showingAll=!showingAll;showAll.textContent=showingAll?"Show Fewer Courses":"View All 100 Digital Courses";repaintInsideCourses();};
+}
+
 function renderDashboard(){
+  if(currentUser?.role==="student"){ renderStudentHome(); return; }
+  renderDashboardLegacy();
+  if(isSuperAdmin()){
+    const host=$("#content");
+    if(host){
+      host.insertAdjacentHTML("afterbegin",`<section class="superadmin-academic-panel">
+        <div>
+          <span class="eyebrow">SUPER ADMIN ACADEMIC CONTROL</span>
+          <h2>Full Course & Learning Access</h2>
+          <p>Access every course, open complete study materials, export PDF/Word copies and create new courses.</p>
+        </div>
+        <div class="superadmin-actions">
+          <button class="primary-btn" onclick="navigate('lms')">Open All Courses</button>
+          <button class="secondary-btn" onclick="openCreateCourseForm()">Create Course</button>
+        </div>
+      </section>`);
+    }
+  }
+}
+function renderDashboardLegacy(){
  const role=currentUser.role;
  if(role==="student"){
    const courses=studentCourses();
@@ -514,28 +1061,118 @@ function renderDashboard(){
 function renderCourses(){
  const isStudent=currentUser.role==="student";
  const list=isStudent?studentCourses():data.courses;
- const add=(currentUser.role==="admin"||currentUser.role==="super_admin"||currentUser.role==="instructor")?`<button class="primary-btn" id="addCourseBtn">+ Create Course</button>`:"";
+ const canCreate=["admin","super_admin","instructor"].includes(currentUser.role);
+ const add=canCreate?`<button class="primary-btn" id="addCourseBtn">+ Create Course</button>`:"";
  if(isStudent && !list.length){
-   $("#content").innerHTML=pageHead("My Courses","Only courses allocated after verified payment appear here.")+emptyState("No courses allocated","Your account has no active enrolment yet. Once payment is confirmed and Admin allocates a course, it will appear here automatically.",`<button class="primary-btn" onclick="navigate('payments')">Check Payment Status</button>`);
+   $("#content").innerHTML=pageHead("My Digital Courses","Only courses allocated after verified payment appear here.")+emptyState("No courses allocated","Your account has no active enrolment yet. Once payment is confirmed and Admin allocates a course, it will appear here automatically.",`<button class="primary-btn" onclick="navigate('payments')">Check Payment Status</button>`);
    return;
  }
- $("#content").innerHTML=pageHead(isStudent?"My Courses":"Courses",isStudent?"Your approved and allocated learning programmes.":"Manage the academy course catalogue.",add)+courseCards(list);
- if($("#addCourseBtn")) $("#addCourseBtn").onclick=()=>showModal("Create Course","Add a course to the catalogue.",`<label>Course title<input id="courseTitle"></label><div class="grid-2"><label>Category<input id="courseCat"></label><label>Duration<input id="courseDur" placeholder="6 weeks"></label></div>`,()=>{const t=$("#courseTitle").value.trim(),cat=$("#courseCat").value.trim(),dur=$("#courseDur").value.trim();if(!t||!cat||!dur)return alert("Complete all fields.");data.courses.push({code:`EDA-CRS-${String(data.courses.length+1).padStart(3,"0")}`,title:t,category:cat,instructor:currentUser.name,duration:dur,progress:0,lessons:0,completed:0});persist();closeModal();renderCourses();});
+ $("#content").innerHTML=pageHead(isStudent?"My Courses":"Courses",isStudent?"Your approved and allocated learning programmes.":"Manage the academy course catalogue.",add)+
+   (list.length?courseCards(list):emptyState("No courses created yet","Create the first course when you are ready."));
+ if($("#addCourseBtn")) $("#addCourseBtn").onclick=()=>showModal("Create Course","Add a course to the Academy catalogue.",`
+  <label>Course title<input id="courseTitle"></label>
+  <div class="grid-2"><label>Category / level<input id="courseCat" placeholder="Beginner"></label><label>Duration<input id="courseDur" placeholder="6 weeks"></label></div>
+ `,async()=>{
+  const t=$("#courseTitle").value.trim(),cat=$("#courseCat").value.trim(),dur=$("#courseDur").value.trim();
+  if(!t||!cat||!dur)return alert("Complete all fields.");
+  const code=`EDA-CRS-${Date.now().toString().slice(-6)}`;
+  try{
+    if(window.ETHAN_BACKEND?.ready){
+      const c=await window.ETHAN_BACKEND.createCourse({code,title:t,difficulty:cat,duration:dur,published:false,created_by:currentUser.id});
+      data.courses.unshift({id:c.id,code:c.code,title:c.title,category:c.difficulty||cat,instructor:currentUser.name,duration:c.duration||dur,progress:0,lessons:0,completed:0,fee:Number(c.fee||0),published:c.published});
+    }else{
+      data.courses.unshift({code,title:t,category:cat,instructor:currentUser.name,duration:dur,progress:0,lessons:0,completed:0,published:false});
+      persist();
+    }
+    closeModal();renderCourses();
+  }catch(err){alert(err.message||"Course could not be created.");}
+ });
+}
+
+
+function openCreateCourseForm(){
+ if(!canCreateCourses()){ alert("You do not have permission to create courses."); return; }
+ $("#content").innerHTML=pageHead("Create Course","Add a new Ethan Digital Academy course to the academic catalogue.")+
+ `<form id="createCourseForm" class="course-create-form">
+   <div class="form-grid">
+     <label>Course Code<input id="newCourseCode" required placeholder="e.g. EDA-DMK-301"></label>
+     <label>Course Title<input id="newCourseTitle" required placeholder="Enter course title"></label>
+     <label>Duration<input id="newCourseDuration" placeholder="e.g. 6 Weeks"></label>
+     <label>Difficulty<select id="newCourseDifficulty"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label>
+   </div>
+   <label>Course Description<textarea id="newCourseDescription" rows="5" placeholder="Short professional description"></textarea></label>
+   <div class="form-actions">
+     <button type="button" class="secondary-btn" onclick="navigate('lms')">Cancel</button>
+     <button type="submit" class="primary-btn">Create Course</button>
+   </div>
+ </form>`;
+ $("#createCourseForm").onsubmit=async(e)=>{
+   e.preventDefault();
+   const payload={
+     code:$("#newCourseCode").value.trim(),
+     title:$("#newCourseTitle").value.trim(),
+     duration:$("#newCourseDuration").value.trim()||"Self-paced",
+     difficulty:$("#newCourseDifficulty").value,
+     description:$("#newCourseDescription").value.trim(),
+     published:false,
+     created_by:currentUser.id
+   };
+   if(!payload.code||!payload.title){alert("Course code and title are required.");return;}
+   try{
+     if(window.EthanSupabase?.isConfigured?.() && typeof window.EthanSupabase.createCourse==="function"){
+       const created=await window.EthanSupabase.createCourse(payload);
+       if(created) data.courses=[created,...(data.courses||[])];
+     }else{
+       data.courses=[{...payload,id:`local-${Date.now()}`,progress:0},...(data.courses||[])];
+       saveData?.();
+     }
+     alert("Course created successfully.");
+     navigate("lms");
+   }catch(err){
+     console.error(err);
+     alert(err?.message||"Could not create course.");
+   }
+ };
 }
 
 function renderLMS(){
  if(currentUser.role==="student"){
    const courses=studentCourses();
-   if(!courses.length){ $("#content").innerHTML=pageHead("Learning Classroom","Course lessons and videos are protected until enrolment.")+emptyState("Learning access locked","You have not yet been allocated a paid course. Registration alone does not unlock lessons or videos.",`<button class="primary-btn" onclick="navigate('payments')">View Payment Status</button>`); return; }
-   const c=courses[0];
-   if(!/cyber/i.test(c.title||"")){
-     $("#content").innerHTML=pageHead("Learning Classroom","Your allocated course learning area.")+emptyState(`${c.title} is allocated`,`Your enrolment is active. Lessons, videos, assignments and materials published for this course will appear here. No unrelated sample lessons are shown.`); return;
+   if(!courses.length){
+     $("#content").innerHTML=pageHead("Learning Classroom","Course materials are protected until enrolment.")+
+       emptyState("Learning access locked","You have not yet been allocated a paid course. Registration alone does not unlock course notes, lessons or videos.",`<button class="primary-btn" onclick="navigate('payments')">View Payment Status</button>`);
+     return;
    }
+   $("#content").innerHTML=pageHead("Learning Classroom","Choose one of your allocated courses to begin structured study.")+
+     `<div class="learning-course-list">${courses.map(c=>`<button class="learning-course-row" onclick="openCourseStudy('${encodeURIComponent(c.title||"Course")}')"><div><small>${escHtml(c.code||"ALLOCATED COURSE")}</small><strong>${escHtml(c.title)}</strong><span>Introduction, definition, objectives, key concepts, examples, case study, practical activities and assessment.</span></div><b>Open Study Note →</b></button>`).join("")}</div>`;
+   return;
  }
- $("#content").innerHTML=pageHead(currentUser.role==="instructor"?"Course Builder":"Learning Classroom","Study only lessons assigned to this course.")+`<div class="lesson-layout"><aside class="lesson-menu">${cyberLessons.map((l,i)=>`<button data-lesson="${i}" class="${i===lessonIndex?"active":""}">${l.title}</button>`).join("")}</aside><article class="lesson-content"><small class="eyebrow">CYBERSECURITY FUNDAMENTALS</small>${cyberLessons[lessonIndex].body}<h3>Practical activity</h3><p>Review the security settings on one of your own accounts or devices. Record which protections are enabled.</p><div class="lesson-nav"><button class="secondary-btn" id="prevLesson" ${lessonIndex===0?"disabled":""}>← Previous</button><button class="primary-btn" id="completeLesson">${lessonIndex===cyberLessons.length-1?"Complete Lesson":"Mark Complete & Next →"}</button></div></article></div>`;
- $$(".lesson-menu button").forEach(b=>b.onclick=()=>{lessonIndex=+b.dataset.lesson;renderLMS()});
- $("#prevLesson").onclick=()=>{if(lessonIndex>0){lessonIndex--;renderLMS()}};
- $("#completeLesson").onclick=()=>{if(lessonIndex<cyberLessons.length-1){lessonIndex++;renderLMS()}else alert("Lesson completed.")};
+
+ if(canAccessAllCourseMaterials()){
+   const list=allAcademyCoursesForStaff();
+   const isSA=isSuperAdmin();
+   $("#content").innerHTML=pageHead(
+     isSA?"Super Admin Course Library":currentUser.role==="instructor"?"Instructor Course Library":"Course Library",
+     isSA?"Full academic access to every Ethan Digital Academy course, study material, PDF/Word export and course creation.":"Review and manage available course materials.",
+     canCreateCourses()?`<button class="primary-btn" onclick="openCreateCourseForm()">Create Course</button>`:""
+   )+
+   `<div class="admin-course-summary">
+      <div><small>TOTAL COURSE LIBRARY</small><strong>${list.length}</strong></div>
+      <div><small>MATERIAL ACCESS</small><strong>Full</strong></div>
+      <div><small>WORD / PDF</small><strong>Enabled</strong></div>
+      <div><small>CREATE COURSE</small><strong>${canCreateCourses()?"Enabled":"Disabled"}</strong></div>
+    </div>`+
+   `<div class="learning-course-list">${list.map(c=>`<div class="learning-course-row staff-course-row">
+      <div><small>${escHtml(c.code||"COURSE")}</small><strong>${escHtml(c.title)}</strong><span>${c.catalogue?"Ethan Digital Academy catalogue course":"Database course"} • Full study material available</span></div>
+      <div class="staff-course-actions">
+        <button class="secondary-btn" onclick="openCourseStudy('${encodeURIComponent(c.title||"Course")}')">Open Material</button>
+        <button class="primary-btn" onclick="openCourseStudy('${encodeURIComponent(c.title||"Course")}')">PDF / Word</button>
+      </div>
+    </div>`).join("")}</div>`;
+   return;
+ }
+
+ $("#content").innerHTML=pageHead("Learning Management","No course access available.");
 }
 
 function renderAssignments(){
@@ -576,7 +1213,7 @@ async function allocateAfterPayment(student,course,amount,description){
 
 function renderPayments(){
  if(currentUser.role==="student"){
-   const localPayments=data.payments.filter(p=>(p.studentId && p.studentId===portalState.myStudent?.id) || (!p.studentId && p.student===currentUser.name));
+   const localPayments=portalState.myPayments?.length ? portalState.myPayments : data.payments.filter(p=>(p.studentId && p.studentId===portalState.myStudent?.id) || (!p.studentId && p.student===currentUser.name));
    const courses=studentCourses();
    $("#content").innerHTML=pageHead("Fees & Payments","Payment must be verified before course access is allocated.")+`
      <div class="stats-grid">${stat("Course Access",courses.length?"Active":"Pending",courses.length?"Course allocated":"Awaiting verified payment","🔐")}${stat("Allocated Courses",String(courses.length),"After payment confirmation","📚")}${stat("Recorded Payments",String(localPayments.length),"Your account","💳")}${stat("Learning Access",courses.length?"Open":"Locked",courses.length?"Enrolled":"No enrolment","▶")}</div>
@@ -586,11 +1223,11 @@ function renderPayments(){
  const canVerify=currentUser.role==="admin"||currentUser.role==="super_admin";
  $("#content").innerHTML=pageHead("Fees, Payments & Course Allocation","Verify a learner's payment and allocate exactly the course paid for.",canVerify?`<button class="primary-btn" id="recordPaymentBtn">+ Verify Payment & Allocate Course</button>`:"")+`
    <div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Reference</th><th>Student</th><th>Description / Course</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead><tbody>${data.payments.map(p=>`<tr><td>${p.ref||p.reference||"—"}</td><td>${p.student||"Student"}</td><td>${p.description||"Training Fee"}</td><td>₦${Number(p.amount||0).toLocaleString()}</td><td>${p.date||"—"}</td><td><span class="badge green">${p.status||"Confirmed"}</span></td></tr>`).join("")||`<tr><td colspan="6">No payments recorded yet.</td></tr>`}</tbody></table></div></div>`;
- if($("#recordPaymentBtn")) $("#recordPaymentBtn").onclick=()=>showModal("Verify Payment & Allocate Course","Choose the learner and the exact paid course. Saving confirms payment and creates the enrolment.",`
+ if($("#recordPaymentBtn")) $("#recordPaymentBtn").onclick=()=>{ if(!data.students.length) return alert("No registered learner is available yet."); if(!data.courses.length) return alert("Create at least one course before allocating payment."); showModal("Verify Payment & Allocate Course","Choose the learner and the exact paid course. Saving confirms payment and creates the enrolment.",`
    <label>Student<select id="payStudent">${data.students.map(s=>`<option value="${s.id}">${s.name} ${s.studentNo?`(${s.studentNo})`:""}</option>`).join("")}</select></label>
    <label>Course<select id="payCourse">${data.courses.map(c=>`<option value="${c.id||c.code}">${c.title}${c.fee?` — ₦${Number(c.fee).toLocaleString()}`:""}</option>`).join("")}</select></label>
    <label>Amount received<input id="payAmount" type="number" min="1" required></label><label>Payment description<input id="payDesc" placeholder="Training fee / bank transfer"></label>
- `,async()=>{const student=data.students.find(s=>s.id===$("#payStudent").value),course=data.courses.find(c=>(c.id||c.code)===$("#payCourse").value),amount=Number($("#payAmount").value);if(!student||!course||!amount)return alert("Select student, course and enter a valid payment amount.");try{const ref=await allocateAfterPayment(student,course,amount,$("#payDesc").value.trim());closeModal();alert(`Payment ${ref} verified. ${course.title} has been allocated to ${student.name}.`);renderPayments();}catch(err){alert(err.message||"Payment could not be verified or course allocated.")}});
+ `,async()=>{const student=data.students.find(s=>s.id===$("#payStudent").value),course=data.courses.find(c=>(c.id||c.code)===$("#payCourse").value),amount=Number($("#payAmount").value);if(!student||!course||!amount)return alert("Select student, course and enter a valid payment amount.");try{const ref=await allocateAfterPayment(student,course,amount,$("#payDesc").value.trim());closeModal();alert(`Payment ${ref} verified. ${course.title} has been allocated to ${student.name}.`);renderPayments();}catch(err){alert(err.message||"Payment could not be verified or course allocated.")}}); };
 }
 
 // v7 public header convenience action
@@ -603,7 +1240,108 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 
 
-const ETHAN_PUBLIC_COURSES = [{"name": "Computer Appreciation", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Microsoft Word", "brief": "Learn to create, format and manage professional documents for academic, office and business use."}, {"name": "Microsoft Excel", "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work."}, {"name": "Microsoft PowerPoint", "brief": "Learn to design and deliver clear, professional presentations using effective layouts, visuals and presentation tools."}, {"name": "Microsoft Access", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Google Workspace", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Internet & Email Skills", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Typing & Keyboard Mastery", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Computer Hardware Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Computer Maintenance", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "IT Support Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Windows Productivity", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "File Management & Cloud Storage", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Cybersecurity Awareness", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Digital Literacy", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Canva Graphic Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Advanced Canva Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Adobe Photoshop Basics", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "CorelDRAW Essentials", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Brand Identity Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Social Media Graphics", "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development."}, {"name": "Flyer & Poster Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Logo Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "UI/UX Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Figma for Beginners", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "CapCut Video Editing", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects."}, {"name": "Advanced Video Editing", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects."}, {"name": "Content Creation", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Mobile Photography", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects."}, {"name": "Digital Storytelling", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects."}, {"name": "Facebook Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Instagram Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "TikTok Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "YouTube Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "LinkedIn Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "WhatsApp Business Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Social Media Management", "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development."}, {"name": "Content Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Email Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "SEO Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Advanced SEO", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Search Engine Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Google Ads Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Meta Ads Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Marketing Analytics", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Digital Marketing Strategy", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Influencer Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Affiliate Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Personal Branding", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Online Reputation Management", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Artificial Intelligence Fundamentals", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "AI for Business", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Prompt Engineering", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Generative AI Tools", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "ChatGPT for Productivity", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "AI Content Creation", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "AI for Digital Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "AI for Education", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "AI Automation", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Responsible AI", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Web Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "HTML & CSS", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences."}, {"name": "JavaScript Fundamentals", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences."}, {"name": "WordPress Website Design", "brief": "Learn to create, format and manage professional documents for academic, office and business use."}, {"name": "No-Code Website Building", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences."}, {"name": "E-commerce Website Setup", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences."}, {"name": "Landing Page Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Web Hosting & Domains", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Website SEO", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results."}, {"name": "Website Maintenance", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks."}, {"name": "Python for Beginners", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "JavaScript Programming", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences."}, {"name": "Database Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "SQL Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "Supabase Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "Git & GitHub", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "Software Development Basics", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "API Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development."}, {"name": "Automation with No-Code Tools", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "App Development Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Data Analysis Fundamentals", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Excel Data Analysis", "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work."}, {"name": "Power BI Fundamentals", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Google Sheets Advanced", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "Data Visualization", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Business Intelligence", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Basic Statistics for Data", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Data Cleaning", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Dashboard Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work."}, {"name": "Reporting & Analytics", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions."}, {"name": "Entrepreneurship in the Digital Age", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Digital Business Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "E-commerce Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Online Business Setup", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Freelancing Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Remote Work Skills", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Customer Relationship Management", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence."}, {"name": "ERP Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "CRM Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}, {"name": "Project Management Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities."}];
+
+
+function renderParents(){
+  $("#content").innerHTML=pageHead("Parent Accounts","Parent registration is not part of the current public learner model.")+
+    emptyState("Parent module not in active use","Current public account categories are Student, Professional and Business Owner.");
+}
+
+/* v8.5 production audit overrides */
+function renderTimetable(){
+  $("#content").innerHTML=pageHead("Timetable","Classes and schedules appear here when they are published.")+
+    emptyState("No timetable published yet","There are no scheduled classes to display at the moment.");
+}
+
+function renderAnnouncements(){
+  const items=Array.isArray(data.announcements)?data.announcements:[];
+  const canPost=["admin","super_admin","instructor"].includes(currentUser.role);
+  $("#content").innerHTML=pageHead("Announcements","Academy updates and important information.",canPost?`<button class="primary-btn" id="newAnnouncementBtn">+ New Announcement</button>`:"")+
+    (items.length?`<div class="progress-list">${items.map(a=>`<div class="section-row"><strong>${a.title}</strong><p>${a.message}</p><small class="muted">${a.date||""}</small></div>`).join("")}</div>`:
+    emptyState("No announcements yet","Published Academy announcements will appear here."));
+  if($("#newAnnouncementBtn")) $("#newAnnouncementBtn").onclick=()=>showModal("New Announcement","Publish an academy announcement.",
+    `<label>Title<input id="annTitle"></label><label>Message<textarea id="annMsg" rows="4"></textarea></label>`,async()=>{
+      const title=$("#annTitle").value.trim(), message=$("#annMsg").value.trim();
+      if(!title||!message) return alert("Complete title and message.");
+      try{
+        if(window.ETHAN_BACKEND?.ready){
+          const a=await window.ETHAN_BACKEND.createAnnouncement({title,message,audience:"all",created_by:currentUser.id});
+          data.announcements.unshift({id:a.id,title:a.title,message:a.message,date:a.created_at?new Date(a.created_at).toLocaleDateString():"Today"});
+        }else{
+          data.announcements.unshift({title,message,date:new Date().toLocaleDateString()});persist();
+        }
+        closeModal();renderAnnouncements();
+      }catch(err){alert(err.message||"Announcement could not be published.");}
+    });
+}
+
+function renderReports(){
+  if(!["admin","super_admin"].includes(currentUser.role)){
+    $("#content").innerHTML=emptyState("Access restricted","Reports are available to Admin and Super Admin.");
+    return;
+  }
+  $("#content").innerHTML=pageHead("Reports","Open live operational areas to review current academy records.")+
+  `<div class="module-links">
+    <button class="module-link" onclick="navigate('students')"><strong>Learner Records</strong><span>Review registrations and learner status →</span></button>
+    <button class="module-link" onclick="navigate('courses')"><strong>Course Catalogue</strong><span>Review courses and publication status →</span></button>
+    <button class="module-link" onclick="navigate('payments')"><strong>Payments & Allocations</strong><span>Review verified payments and enrolments →</span></button>
+    <button class="module-link" onclick="navigate('attendance')"><strong>Attendance</strong><span>Review attendance when records are available →</span></button>
+    <button class="module-link" onclick="navigate('results')"><strong>Results</strong><span>Review published assessment results →</span></button>
+    <button class="module-link" onclick="navigate('certificates')"><strong>Certificates</strong><span>Review issued certificates →</span></button>
+  </div>`;
+}
+
+function renderSettings(){
+  if(!["admin","super_admin"].includes(currentUser.role)){
+    $("#content").innerHTML=emptyState("Access restricted","Settings are available to Admin and Super Admin.");
+    return;
+  }
+  const connected=Boolean(window.ETHAN_BACKEND?.ready);
+  $("#content").innerHTML=pageHead("Settings","Academy identity and platform connection status.")+`
+   <div class="settings-layout">
+    <div class="settings-section">
+      <h3>Academy</h3>
+      <label>Academy Name<input id="academyNameSetting" value="Ethan Digital Academy"></label>
+      <label>Website<input id="academyWebsiteSetting" value="https://ethandigitalacademy.org"></label>
+      <button class="primary-btn" id="saveAcademySettings">Save Settings</button>
+    </div>
+    <div class="settings-section">
+      <h3>Platform Status</h3>
+      <p><span class="badge ${connected?"green":"gold"}">${connected?"Supabase Connected":"Supabase Not Connected"}</span></p>
+      <p class="muted">${connected?"Authentication and database services are connected.":"Add valid Supabase project details to config.js before production use."}</p>
+    </div>
+   </div>`;
+  $("#saveAcademySettings").onclick=()=>{
+    localStorage.setItem("ethan_academy_settings",JSON.stringify({
+      name:$("#academyNameSetting").value.trim(),
+      website:$("#academyWebsiteSetting").value.trim()
+    }));
+    alert("Settings saved in this browser.");
+  };
+}
+
+function renderNotifications(){
+  const items=Array.isArray(data.notifications)?data.notifications:[];
+  $("#notificationList").innerHTML=items.length
+    ? items.map(n=>`<div class="notification-item"><strong>${n.title}</strong><div>${n.message}</div><small>${n.time||""}</small></div>`).join("")
+    : `<div class="notification-item"><strong>No new notifications</strong><div>Important account and learning updates will appear here.</div></div>`;
+}
+
+
+const ETHAN_FX_RATES={NGN:1,USD:1/1500,GBP:1/2000,EUR:1/1750};
+let ethanDisplayCurrency=localStorage.getItem("ethan_display_currency")||"NGN";
+function formatCoursePrice(feeNGN,currency=ethanDisplayCurrency){
+ const amount=Number(feeNGN||0)*(ETHAN_FX_RATES[currency]||1);
+ const rounded=currency==="NGN"?Math.round(amount/1000)*1000:Math.round(amount);
+ return new Intl.NumberFormat(currency==="NGN"?"en-NG":"en-GB",{style:"currency",currency,maximumFractionDigits:0}).format(rounded);
+}
+function updateCatalogueCurrency(currency){
+ ethanDisplayCurrency=currency;localStorage.setItem("ethan_display_currency",currency);
+ const s=document.getElementById("courseCatalogueSelect"),p=document.getElementById("courseBriefPrice");
+ if(s&&s.value!==""&&p){const c=ETHAN_PUBLIC_COURSES[Number(s.value)];if(c)p.textContent=formatCoursePrice(c.feeNGN,currency);}
+}
+
+const ETHAN_PUBLIC_COURSES = [{"name": "Computer Appreciation", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Microsoft Word", "brief": "Learn to create, format and manage professional documents for academic, office and business use.", "feeNGN": 55000}, {"name": "Microsoft Excel", "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work.", "feeNGN": 55000}, {"name": "Microsoft PowerPoint", "brief": "Learn to design and deliver clear, professional presentations using effective layouts, visuals and presentation tools.", "feeNGN": 65000}, {"name": "Microsoft Access", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 55000}, {"name": "Google Workspace", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 55000}, {"name": "Internet & Email Skills", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 45000}, {"name": "Typing & Keyboard Mastery", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Computer Hardware Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Computer Maintenance", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 45000}, {"name": "IT Support Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Windows Productivity", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "File Management & Cloud Storage", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Cybersecurity Awareness", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 65000}, {"name": "Digital Literacy", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Canva Graphic Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 55000}, {"name": "Advanced Canva Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 75000}, {"name": "Adobe Photoshop Basics", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 55000}, {"name": "CorelDRAW Essentials", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 55000}, {"name": "Brand Identity Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 55000}, {"name": "Social Media Graphics", "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development.", "feeNGN": 55000}, {"name": "Flyer & Poster Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 45000}, {"name": "Logo Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 45000}, {"name": "UI/UX Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 75000}, {"name": "Figma for Beginners", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 75000}, {"name": "CapCut Video Editing", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.", "feeNGN": 55000}, {"name": "Advanced Video Editing", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.", "feeNGN": 75000}, {"name": "Content Creation", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 55000}, {"name": "Mobile Photography", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.", "feeNGN": 45000}, {"name": "Digital Storytelling", "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.", "feeNGN": 45000}, {"name": "Facebook Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "Instagram Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "TikTok Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "YouTube Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "LinkedIn Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "WhatsApp Business Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "Social Media Management", "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development.", "feeNGN": 55000}, {"name": "Content Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "Email Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 55000}, {"name": "SEO Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 65000}, {"name": "Advanced SEO", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 75000}, {"name": "Search Engine Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 45000}, {"name": "Google Ads Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 75000}, {"name": "Meta Ads Fundamentals", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 75000}, {"name": "Marketing Analytics", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 65000}, {"name": "Digital Marketing Strategy", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 65000}, {"name": "Influencer Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 45000}, {"name": "Affiliate Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 45000}, {"name": "Personal Branding", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 55000}, {"name": "Online Reputation Management", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "Artificial Intelligence Fundamentals", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "AI for Business", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "Prompt Engineering", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "Generative AI Tools", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "ChatGPT for Productivity", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 45000}, {"name": "AI Content Creation", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "AI for Digital Marketing", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 65000}, {"name": "AI for Education", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "AI Automation", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 75000}, {"name": "Responsible AI", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 45000}, {"name": "Web Design Fundamentals", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 75000}, {"name": "HTML & CSS", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.", "feeNGN": 45000}, {"name": "JavaScript Fundamentals", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.", "feeNGN": 45000}, {"name": "WordPress Website Design", "brief": "Learn to create, format and manage professional documents for academic, office and business use.", "feeNGN": 75000}, {"name": "No-Code Website Building", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.", "feeNGN": 65000}, {"name": "E-commerce Website Setup", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.", "feeNGN": 75000}, {"name": "Landing Page Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 45000}, {"name": "Web Hosting & Domains", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 45000}, {"name": "Website SEO", "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.", "feeNGN": 65000}, {"name": "Website Maintenance", "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.", "feeNGN": 65000}, {"name": "Python for Beginners", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 75000}, {"name": "JavaScript Programming", "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.", "feeNGN": 75000}, {"name": "Database Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 65000}, {"name": "SQL Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 75000}, {"name": "Supabase Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 75000}, {"name": "Git & GitHub", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 45000}, {"name": "Software Development Basics", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 75000}, {"name": "API Fundamentals", "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.", "feeNGN": 65000}, {"name": "Automation with No-Code Tools", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 65000}, {"name": "App Development Fundamentals", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 75000}, {"name": "Data Analysis Fundamentals", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 65000}, {"name": "Excel Data Analysis", "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work.", "feeNGN": 65000}, {"name": "Power BI Fundamentals", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 75000}, {"name": "Google Sheets Advanced", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 75000}, {"name": "Data Visualization", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 45000}, {"name": "Business Intelligence", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 65000}, {"name": "Basic Statistics for Data", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 45000}, {"name": "Data Cleaning", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 45000}, {"name": "Dashboard Design", "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.", "feeNGN": 45000}, {"name": "Reporting & Analytics", "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.", "feeNGN": 45000}, {"name": "Entrepreneurship in the Digital Age", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 55000}, {"name": "Digital Business Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 55000}, {"name": "E-commerce Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 55000}, {"name": "Online Business Setup", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 45000}, {"name": "Freelancing Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 55000}, {"name": "Remote Work Skills", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 55000}, {"name": "Customer Relationship Management", "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.", "feeNGN": 45000}, {"name": "ERP Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 65000}, {"name": "CRM Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 65000}, {"name": "Project Management Fundamentals", "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.", "feeNGN": 65000}];
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -650,3 +1388,42 @@ document.addEventListener('DOMContentLoaded', () => {
     panel.classList.remove('hidden');
   });
 });
+
+window.addEventListener("DOMContentLoaded",()=>{
+ const cur=document.getElementById("catalogueCurrencySelect");
+ if(cur){cur.value=ethanDisplayCurrency;cur.addEventListener("change",()=>updateCatalogueCurrency(cur.value));}
+ const s=document.getElementById("courseCatalogueSelect");
+ if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent=formatCoursePrice(c.feeNGN);});
+});
+
+/* v9.1 approved bank payment page */
+function renderPayments(){
+ if(currentUser.role==="student"){
+   const records=portalState.myPayments||[];
+   $("#content").innerHTML=pageHead("Payments & Enrolment","Use only the approved Ethan Digital Academy accounts shown below.")+
+     approvedBankPaymentHtml()+
+     `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">MY ACCOUNT</span><h2>Payment Status</h2><p>Your verified payments and course-access status.</p></div></div>
+       ${records.length?table(["Reference","Amount","Status","Date"],records.map(p=>[
+         escHtml(p.reference||p.id||"Payment"),
+         escHtml(String(p.amount||"")),
+         statusBadge(p.status||"pending"),
+         escHtml(p.created_at?new Date(p.created_at).toLocaleDateString():"")
+       ])):emptyState("No verified payment record yet","After making a bank transfer, your payment must be verified before a course can be allocated.")}
+     </section>`;
+   return;
+ }
+ if(!["admin","super_admin"].includes(currentUser.role)){
+   $("#content").innerHTML=pageHead("Payments","Payment information.")+approvedBankPaymentHtml();
+   return;
+ }
+ const rows=(data.payments||[]).map(p=>[
+   escHtml(p.student||p.student_name||p.student_id||"Learner"),
+   escHtml(String(p.amount||"")),
+   statusBadge(p.status||"pending"),
+   escHtml(p.description||p.reference||"Course payment")
+ ]);
+ $("#content").innerHTML=pageHead("Payments & Verification","Verify learner payments before allocating course access.")+
+   approvedBankPaymentHtml()+
+   `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">ADMINISTRATION</span><h2>Payment Records</h2></div></div>
+   ${rows.length?table(["Learner","Amount","Status","Description"],rows):emptyState("No payment records","Verified and pending payment records will appear here.")}</section>`;
+}

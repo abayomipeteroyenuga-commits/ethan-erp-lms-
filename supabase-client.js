@@ -7,12 +7,12 @@ window.ETHAN_BACKEND = (() => {
   const ready = Boolean(cfg.supabaseUrl && cfg.supabasePublishableKey && window.supabase);
   const client = ready ? window.supabase.createClient(cfg.supabaseUrl, cfg.supabasePublishableKey) : null;
 
-  async function signUp({email,password,firstName,lastName,phone,role}) {
+  async function signUp({email,password,firstName,lastName,phone,role,learnerType}) {
     if (!client) return { local: true };
     const { data, error } = await client.auth.signUp({
       email,
       password,
-      options: { data: { first_name:firstName, last_name:lastName, phone, role } }
+      options: { data: { first_name:firstName, last_name:lastName, phone, role, learner_type:learnerType||"student" } }
     });
     if (error) throw error;
     return data;
@@ -110,11 +110,44 @@ window.ETHAN_BACKEND = (() => {
     return data || [];
   }
 
+  async function listPayments() {
+    if (!client) return [];
+    const { data, error } = await client.from("payments")
+      .select("*, students(student_no, profiles(first_name,last_name,email))")
+      .order("paid_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
+  }
+
   async function createPayment(payload) {
     if (!client) return null;
     const { data, error } = await client.from("payments").insert(payload).select().single();
     if (error) throw error;
     return data;
+  }
+
+  async function listAnnouncements() {
+    if (!client) return [];
+    const { data, error } = await client.from("announcements").select("*").order("created_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
+  }
+
+  async function createAnnouncement(payload) {
+    if (!client) return null;
+    const { data, error } = await client.from("announcements").insert(payload).select().single();
+    if (error) throw error;
+    return data;
+  }
+
+  async function listMyNotifications() {
+    if (!client) return [];
+    const { data: authData } = await client.auth.getUser();
+    const uid = authData?.user?.id;
+    if (!uid) return [];
+    const { data, error } = await client.from("notifications").select("*").eq("user_id",uid).order("created_at",{ascending:false});
+    if (error) throw error;
+    return data || [];
   }
 
   async function listStaff() {
@@ -132,5 +165,5 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
-  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, createPayment, listStaff, createStaff };
+  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, listPayments, createPayment, listAnnouncements, createAnnouncement, listMyNotifications, listStaff, createStaff };
 })();

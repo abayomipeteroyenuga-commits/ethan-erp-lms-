@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ETHAN ERP LMS v8.4 -->
+  <!-- ETHAN ERP LMS v9.9 COMPUTER APPRECIATION FULL VISUAL MANUAL -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0b2a67" />
@@ -185,7 +185,7 @@
       <p>Click Browse Courses, choose a course from the dropdown, and read a short overview before enrolling.</p>
     </div>
     <div class="catalogue-search-wrap">
-      <button type="button" class="catalogue-browse-btn" id="browseCoursesBtn">Browse Courses</button>
+      <div class="catalogue-actions"><label class="currency-control">Currency<select id="catalogueCurrencySelect"><option value="NGN">₦ Naira</option><option value="USD">$ USD</option><option value="GBP">£ Pounds</option><option value="EUR">€ EUR</option></select></label><button type="button" class="catalogue-browse-btn" id="browseCoursesBtn">Browse Courses</button></div>
     </div>
   </div>
 
@@ -199,7 +199,7 @@
   <div class="catalogue-brief-panel hidden" id="catalogueBriefPanel">
     <span class="eyebrow">COURSE OVERVIEW</span>
     <h3 id="courseBriefTitle"></h3>
-    <p id="courseBriefText"></p>
+    <p id="courseBriefText"></p><div class="course-price-row"><span>Course Fee</span><strong id="courseBriefPrice"></strong></div>
     <div class="course-access-note">Full lessons and videos become available after payment verification and course allocation.</div>
   </div>
 </section>
