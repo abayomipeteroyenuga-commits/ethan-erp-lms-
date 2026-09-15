@@ -1,0 +1,1301 @@
+ETHAN DIGITAL ACADEMY
+
+UI/UX DESIGN FUNDAMENTALS
+
+FULL VISUAL STUDY MANUAL
+
+Human-centred design standard: use consent-based research, protect private information, avoid deceptive interface patterns, design accessible alternatives where practical, and never use prototypes to mislead users about real services or transactions.
+
+Course Introduction
+
+UI/UX Design Fundamentals teaches learners how to understand users, define problems, organise information, create wireframes and interfaces, design interactions, consider accessibility, build prototypes, test usability and document improvements. The focus is practical human-centred design rather than coding.
+
+Learning Objectives
+
+Explain the difference and relationship between UI and UX.
+
+Define user problems and research questions.
+
+Create personas, journeys and task flows.
+
+Organise information and navigation.
+
+Build low-fidelity wireframes.
+
+Apply interface hierarchy and interaction patterns.
+
+Design accessible and responsive interfaces.
+
+Prototype and test key tasks.
+
+Complete a documented UI/UX product project.
+
+Course Structure
+
+Lesson 1: Introduction to UI/UX Design
+
+Lesson 2: Understanding Users and Human-Centred Design
+
+Lesson 3: Problem Definition and Design Briefs
+
+Lesson 4: User Research Fundamentals
+
+Lesson 5: Personas, Scenarios and User Needs
+
+Lesson 6: User Journeys and Task Flows
+
+Lesson 7: Information Architecture and Navigation
+
+Lesson 8: Wireframing Fundamentals
+
+Lesson 9: Visual Hierarchy and Interface Layout
+
+Lesson 10: Typography, Colour and UI Foundations
+
+Lesson 11: Buttons, Forms and Interaction Patterns
+
+Lesson 12: Feedback, States and Error Handling
+
+Lesson 13: Accessibility and Inclusive Design
+
+Lesson 14: Responsive and Mobile-First Design
+
+Lesson 15: Design Systems and Reusable Components
+
+Lesson 16: Prototyping Fundamentals
+
+Lesson 17: Usability Testing and Design Iteration
+
+Lesson 18: UI/UX Handoff and Documentation
+
+Lesson 19: Final UI/UX Product Design Project
+
+Lesson 1: Introduction to UI/UX Design
+
+Introduction
+
+Introduction to UI/UX Design develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of introduction to ui/ux design.
+
+Complete a guided UI/UX practical for introduction to ui/ux design.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 1: Original instructional visual for Introduction to UI/UX Design.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply introduction to ui/ux design to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of introduction to ui/ux design?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 1 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 2: Understanding Users and Human-Centred Design
+
+Introduction
+
+Understanding Users and Human-Centred Design develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of understanding users and human-centred design.
+
+Complete a guided UI/UX practical for understanding users and human-centred design.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 2: Original instructional visual for Understanding Users and Human-Centred Design.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply understanding users and human-centred design to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of understanding users and human-centred design?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 2 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 3: Problem Definition and Design Briefs
+
+Introduction
+
+Problem Definition and Design Briefs develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of problem definition and design briefs.
+
+Complete a guided UI/UX practical for problem definition and design briefs.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply problem definition and design briefs to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of problem definition and design briefs?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 3 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 4: User Research Fundamentals
+
+Introduction
+
+User Research Fundamentals develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of user research fundamentals.
+
+Complete a guided UI/UX practical for user research fundamentals.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Choose research methods appropriate to the question.
+
+UX principle: Ask neutral questions rather than leading participants.
+
+UX principle: Collect only information needed for the study.
+
+UX principle: Use consent and protect private information.
+
+UX principle: Separate observations from assumptions.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply user research fundamentals to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of user research fundamentals?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 4 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 5: Personas, Scenarios and User Needs
+
+Introduction
+
+Personas, Scenarios and User Needs develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of personas, scenarios and user needs.
+
+Complete a guided UI/UX practical for personas, scenarios and user needs.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 5: Original instructional visual for Personas, Scenarios and User Needs.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply personas, scenarios and user needs to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of personas, scenarios and user needs?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 5 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 6: User Journeys and Task Flows
+
+Introduction
+
+User Journeys and Task Flows develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of user journeys and task flows.
+
+Complete a guided UI/UX practical for user journeys and task flows.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 6: Original instructional visual for User Journeys and Task Flows.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply user journeys and task flows to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of user journeys and task flows?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 6 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 7: Information Architecture and Navigation
+
+Introduction
+
+Information Architecture and Navigation develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of information architecture and navigation.
+
+Complete a guided UI/UX practical for information architecture and navigation.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 7: Original instructional visual for Information Architecture and Navigation.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply information architecture and navigation to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of information architecture and navigation?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 7 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 8: Wireframing Fundamentals
+
+Introduction
+
+Wireframing Fundamentals develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of wireframing fundamentals.
+
+Complete a guided UI/UX practical for wireframing fundamentals.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 8: Original instructional visual for Wireframing Fundamentals.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply wireframing fundamentals to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of wireframing fundamentals?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 8 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 9: Visual Hierarchy and Interface Layout
+
+Introduction
+
+Visual Hierarchy and Interface Layout develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of visual hierarchy and interface layout.
+
+Complete a guided UI/UX practical for visual hierarchy and interface layout.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 9: Original instructional visual for Visual Hierarchy and Interface Layout.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply visual hierarchy and interface layout to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of visual hierarchy and interface layout?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 9 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 10: Typography, Colour and UI Foundations
+
+Introduction
+
+Typography, Colour and UI Foundations develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of typography, colour and ui foundations.
+
+Complete a guided UI/UX practical for typography, colour and ui foundations.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply typography, colour and ui foundations to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of typography, colour and ui foundations?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 10 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 11: Buttons, Forms and Interaction Patterns
+
+Introduction
+
+Buttons, Forms and Interaction Patterns develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of buttons, forms and interaction patterns.
+
+Complete a guided UI/UX practical for buttons, forms and interaction patterns.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 11: Original instructional visual for Buttons, Forms and Interaction Patterns.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply buttons, forms and interaction patterns to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of buttons, forms and interaction patterns?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 11 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 12: Feedback, States and Error Handling
+
+Introduction
+
+Feedback, States and Error Handling develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of feedback, states and error handling.
+
+Complete a guided UI/UX practical for feedback, states and error handling.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply feedback, states and error handling to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of feedback, states and error handling?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 12 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 13: Accessibility and Inclusive Design
+
+Introduction
+
+Accessibility and Inclusive Design develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of accessibility and inclusive design.
+
+Complete a guided UI/UX practical for accessibility and inclusive design.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 13: Original instructional visual for Accessibility and Inclusive Design.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply accessibility and inclusive design to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of accessibility and inclusive design?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 13 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 14: Responsive and Mobile-First Design
+
+Introduction
+
+Responsive and Mobile-First Design develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of responsive and mobile-first design.
+
+Complete a guided UI/UX practical for responsive and mobile-first design.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 14: Original instructional visual for Responsive and Mobile-First Design.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply responsive and mobile-first design to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of responsive and mobile-first design?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 14 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 15: Design Systems and Reusable Components
+
+Introduction
+
+Design Systems and Reusable Components develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of design systems and reusable components.
+
+Complete a guided UI/UX practical for design systems and reusable components.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply design systems and reusable components to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of design systems and reusable components?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 15 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 16: Prototyping Fundamentals
+
+Introduction
+
+Prototyping Fundamentals develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of prototyping fundamentals.
+
+Complete a guided UI/UX practical for prototyping fundamentals.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply prototyping fundamentals to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of prototyping fundamentals?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 16 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 17: Usability Testing and Design Iteration
+
+Introduction
+
+Usability Testing and Design Iteration develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of usability testing and design iteration.
+
+Complete a guided UI/UX practical for usability testing and design iteration.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Test realistic tasks, not whether participants like the designer.
+
+UX principle: Avoid leading users toward the expected answer.
+
+UX principle: Record success, errors, hesitation and comments.
+
+UX principle: Prioritise recurring usability problems.
+
+UX principle: Revise the design and retest important tasks.
+
+Figure 17: Original instructional visual for Usability Testing and Design Iteration.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply usability testing and design iteration to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of usability testing and design iteration?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 17 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 18: UI/UX Handoff and Documentation
+
+Introduction
+
+UI/UX Handoff and Documentation develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of ui/ux handoff and documentation.
+
+Complete a guided UI/UX practical for ui/ux handoff and documentation.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply ui/ux handoff and documentation to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of ui/ux handoff and documentation?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 18 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Lesson 19: Final UI/UX Product Design Project
+
+Introduction
+
+Final UI/UX Product Design Project develops a practical part of the human-centred product design process. Learners connect user needs with clear information, predictable interactions and interfaces that support successful task completion.
+
+Learning Objectives
+
+Explain the main principles of final ui/ux product design project.
+
+Complete a guided UI/UX practical for final ui/ux product design project.
+
+Apply the lesson to an Ethan Digital Academy learner experience.
+
+Teaching Content
+
+UX principle: Begin with a real user goal rather than visual decoration.
+
+UX principle: Make important information and actions easy to find.
+
+UX principle: Use familiar patterns and clear labels where they improve understanding.
+
+UX principle: Provide feedback so users know what happened after an action.
+
+UX principle: Review designs for accessibility, privacy and avoidable friction.
+
+Figure 19: Original instructional visual for Final UI/UX Product Design Project.
+
+Step-by-Step Guided Practical
+
+1. Choose one learner task such as finding a course or viewing an enrolled lesson.
+
+2. Write the user goal and the information needed to complete it.
+
+3. Sketch the flow or screen structure before adding visual styling.
+
+4. Create a simple wireframe or prototype using instructor-approved tools.
+
+5. Review clarity, accessibility and task completion; record one improvement.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply final ui/ux product design project to improve the learner portal so students, professionals and business owners can understand what to do without developer-oriented language or unnecessary interface clutter.
+
+Review Questions
+
+What is the main purpose of final ui/ux product design project?
+
+State two human-centred practices from this lesson.
+
+What usability, privacy or accessibility mistake should be avoided?
+
+How could this lesson improve an Ethan Digital Academy course page?
+
+Assignment
+
+Complete the Lesson 19 UI/UX exercise. Submit the flow, wireframe, prototype or research output plus a short rationale explaining the user need and the design decision.
+
+Final UI/UX Product Design Project - 100 Marks
+
+Course Quiz - 30 Questions
+
+1. Define user experience (UX).
+
+2. Define user interface (UI).
+
+3. How are UI and UX related?
+
+4. What is human-centred design?
+
+5. What is a design problem statement?
+
+6. Why should research questions be neutral?
+
+7. What is a persona?
+
+8. What is a scenario?
+
+9. What is a user journey?
+
+10. What is a task flow?
+
+11. Define information architecture.
+
+12. Why are clear navigation labels important?
+
+13. What is a wireframe?
+
+14. Why begin with low-fidelity designs?
+
+15. Define visual hierarchy.
+
+16. Name two typography considerations in UI.
+
+17. Why is colour contrast important?
+
+18. What is an interaction pattern?
+
+19. Why should buttons have clear labels?
+
+20. What is form validation feedback?
+
+21. What is an empty state?
+
+22. What is an error state?
+
+23. Name three accessibility practices.
+
+24. What does responsive design mean?
+
+25. What is mobile-first design?
+
+26. What is a design system?
+
+27. What is a prototype?
+
+28. What is usability testing?
+
+29. Why iterate after testing?
+
+30. List six requirements of the final UI/UX project.
+
+Final Examination - 100 Marks
+
+Section A - UX Foundations (20 marks)
+
+Explain UI, UX, human-centred design, problem definition and ethical research.
+
+Section B - Structure and Flows (20 marks)
+
+Explain personas, journeys, task flows, information architecture and navigation.
+
+Section C - Interface Design (20 marks)
+
+Explain wireframes, hierarchy, typography, colour, controls, forms and interface states.
+
+Section D - Inclusive Product Design (20 marks)
+
+Explain accessibility, responsive design, mobile-first thinking and reusable design systems.
+
+Section E - Prototype, Test and Handoff (20 marks)
+
+Plan a prototype, usability test, iteration cycle and professional design handoff.
+
+Course Completion Outcome
+
+After successful completion, the learner should be able to understand a user problem, conduct basic ethical research, create personas and flows, organise information, build wireframes and prototypes, apply clear UI patterns, consider accessibility and responsive behaviour, run a basic usability test, iterate from findings and document a practical product design solution.
+
+Professional Practice Checklist
+
+Start with user goals, not decoration.
+
+Use consent-based research and protect private information.
+
+Use clear labels and predictable navigation.
+
+Design visible feedback and recoverable error states.
+
+Avoid deceptive or manipulative interface patterns.
+
+Check contrast, labels and basic accessibility.
+
+Test key tasks with realistic scenarios.
+
+Document findings and revisions.
+
+Keep design files and handoff notes organised.
+
+Course Code — EDA-UIX-124
+
+Level — Beginner to Intermediate
+
+Duration — 6 Weeks (19 Lessons)
+
+Certificate — Professional Certificate in UI/UX Design Fundamentals
+
+Prerequisite — Digital Literacy recommended
+
+Learning Format — Research + Wireframing + Prototyping + Usability Project
+
+Component — Marks — Requirement
+
+Problem & brief — 10 — Clear user problem, goal and scope.
+
+Research — 15 — Ethical evidence and useful findings.
+
+Persona/journey — 10 — Relevant user needs and context.
+
+Information architecture — 10 — Clear content grouping and navigation.
+
+Task flow — 10 — Logical route to a successful outcome.
+
+Wireframes/prototype — 20 — Key screens and interactions.
+
+Accessibility & responsive thinking — 10 — Inclusive, mobile-aware decisions.
+
+Usability test & iteration — 10 — Findings and improvements.
+
+Handoff/rationale — 5 — Organised documentation.

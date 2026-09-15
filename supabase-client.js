@@ -39,13 +39,6 @@ window.ETHAN_BACKEND = (() => {
     return data;
   }
 
-  async function setSession(accessToken, refreshToken) {
-    if (!client) return null;
-    const { data, error } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
-    if (error) throw error;
-    return data.session;
-  }
-
   async function getSession() {
     if (!client) return null;
     const { data, error } = await client.auth.getSession();
@@ -196,5 +189,5 @@ window.ETHAN_BACKEND = (() => {
     return {...material,pdf_url:signed.signedUrl,source:"storage"};
   }
 
-  return { ready, client, signUp, signIn, signOut, resetPassword, setSession, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, listPayments, createPayment, listAnnouncements, createAnnouncement, listMyNotifications, listStaff, createStaff, uploadCourseMaterial, getCourseMaterial };
+  return { ready, client, signUp, signIn, signOut, resetPassword, getSession, getProfile, listStudents, listCourses, createCourse, createStudent, getStudentByUserId, listStudentEnrolments, createEnrolment, listMyPayments, listPayments, createPayment, listAnnouncements, createAnnouncement, listMyNotifications, listStaff, createStaff, uploadCourseMaterial, getCourseMaterial };
 })();

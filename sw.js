@@ -1,4 +1,4 @@
-const CACHE = "ethan-erp-lms-v12.3";
+const CACHE = "ethan-erp-lms-v12.7";
 const ASSETS = [
   "./",
   "./index.html",

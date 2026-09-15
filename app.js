@@ -603,6 +603,11 @@ const BUILTIN_COURSE_MATERIALS = {
   "coreldraw essentials":"./assets/course-materials/CorelDRAW-Essentials-EDA-CDR-119.pdf",
   "brand identity design":"./assets/course-materials/Brand-Identity-Design-EDA-BID-120.pdf",
   "social media graphics":"./assets/course-materials/Social-Media-Graphics-EDA-SMG-121.pdf",
+  "flyer & poster design":"./assets/course-materials/Flyer-Poster-Design-EDA-FPD-122.pdf",
+  "flyer and poster design":"./assets/course-materials/Flyer-Poster-Design-EDA-FPD-122.pdf",
+  "logo design fundamentals":"./assets/course-materials/Logo-Design-Fundamentals-EDA-LDF-123.pdf",
+  "ui/ux design fundamentals":"./assets/course-materials/UI-UX-Design-Fundamentals-EDA-UIX-124.pdf",
+  "ui ux design fundamentals":"./assets/course-materials/UI-UX-Design-Fundamentals-EDA-UIX-124.pdf",
   "cybersecurity awareness":"./assets/course-materials/Cybersecurity-Fundamentals-EDA-CYB-114.pdf",
   "cybersecurity fundamentals":"./assets/course-materials/Cybersecurity-Fundamentals-EDA-CYB-114.pdf",
   "digital marketing":"./assets/course-materials/Digital-Marketing-EDA-DMK-130.pdf",
@@ -610,7 +615,10 @@ const BUILTIN_COURSE_MATERIALS = {
   "python for beginners":"./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf",
   "software development basics":"./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf",
   "coding & programming fundamentals":"./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf",
-  "coding and programming fundamentals":"./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf"
+  "coding and programming fundamentals":"./assets/course-materials/Coding-Programming-Fundamentals-EDA-COD-171.pdf",
+  "figma for beginners":"./assets/course-materials/Figma-for-Beginners-EDA-FIG-125.pdf",
+  "capcut video editing":"./assets/course-materials/CapCut-Video-Editing-EDA-CVE-126.pdf",
+  "advanced video editing":"./assets/course-materials/Advanced-Video-Editing-EDA-AVE-127.pdf"
 };
 function builtinCourseMaterial(title){ return BUILTIN_COURSE_MATERIALS[String(title||"").trim().toLowerCase()] || ""; }
 
@@ -958,26 +966,7 @@ function showModal(title,desc,body,onSave){
 }
 function closeModal(){const m=$("#activeModal");if(m)m.remove()}
 
-async function consumeEthanSsoTicket(){
-  const params=new URLSearchParams(location.search); const ticket=params.get('ethan_sso');
-  if(!ticket || !window.ETHAN_BACKEND?.ready) return false;
-  try{
-    const endpoint=window.ETHAN_CONFIG?.ssoFunctionUrl;
-    if(!endpoint) throw new Error('Ethan ID SSO endpoint is not configured.');
-    const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'exchange',ticket,target:'erp'})});
-    const out=await res.json();
-    if(!res.ok||!out.access_token||!out.refresh_token) throw new Error(out.error||'Ethan ID handoff failed.');
-    const session=await window.ETHAN_BACKEND.setSession(out.access_token,out.refresh_token);
-    history.replaceState({},document.title,location.pathname+location.hash);
-    if(!session?.user) throw new Error('Ethan ID session could not be established.');
-    let profile=null; try{profile=await window.ETHAN_BACKEND.getProfile(session.user.id)}catch(_){}
-    const user={firstName:profile?.first_name||session.user.user_metadata?.first_name||'Ethan',lastName:profile?.last_name||session.user.user_metadata?.last_name||'User',name:`${profile?.first_name||session.user.user_metadata?.first_name||'Ethan'} ${profile?.last_name||session.user.user_metadata?.last_name||'User'}`.trim(),email:session.user.email,phone:profile?.phone||'',role:resolveAuthenticatedRole(session.user,profile),learnerType:session.user.user_metadata?.learner_type||session.user.user_metadata?.learnerType||'student',id:session.user.id};
-    openPortal(user); return true;
-  }catch(err){ console.error('Ethan ID SSO:',err); history.replaceState({},document.title,location.pathname+location.hash); return false; }
-}
-
 (async function restore(){
- if(await consumeEthanSsoTicket()) return;
  if(window.ETHAN_BACKEND?.ready){
    try{
      const session=await window.ETHAN_BACKEND.getSession();

@@ -1265,3 +1265,33 @@ Confirm printer specifications before commercial printing.
 Inspect exported files before publication.
 
 Keep editable masters and approved outputs organised.
+
+Course Code — EDA-FPD-122
+
+Level — Beginner to Intermediate
+
+Duration — 6 Weeks (19 Lessons)
+
+Certificate — Professional Certificate in Flyer & Poster Design
+
+Prerequisite — Graphic Design Fundamentals recommended
+
+Learning Format — Guided Design Practicals + Print/Digital Campaign Project
+
+Component — Marks — Requirement
+
+Brief — 10 — Audience, purpose, message and CTA.
+
+A4 flyer/poster — 25 — Strong hierarchy and complete information.
+
+Typography & colour — 15 — Readable and brand-consistent.
+
+Imagery & composition — 10 — Relevant authorised assets and effective crop.
+
+Square adaptation — 10 — Effective social-feed version.
+
+Vertical adaptation — 10 — Mobile/story version.
+
+Preflight & export — 10 — Accurate print/digital outputs.
+
+Rationale & handoff — 10 — Organised masters and explanation.

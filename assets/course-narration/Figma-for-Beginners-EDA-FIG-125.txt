@@ -1,0 +1,1301 @@
+ETHAN DIGITAL ACADEMY
+
+FIGMA FOR BEGINNERS
+
+FULL VISUAL STUDY MANUAL
+
+Practice standard: use fictional or authorised project content, protect private information, avoid deceptive interface patterns, and use properly licensed images, icons, fonts and other assets.
+
+Course Introduction
+
+Figma for Beginners teaches practical interface-design workflow from the workspace and frames through Auto Layout, reusable components, mobile and desktop screens, prototyping, collaboration, export and organised handoff. It is written for learners, not software developers.
+
+Learning Objectives
+
+Navigate the Figma workspace and organise files.
+
+Create frames, shapes, text and images.
+
+Use grids, spacing, constraints and Auto Layout.
+
+Create reusable components and variants.
+
+Build mobile and desktop interface screens.
+
+Connect screens into a basic prototype.
+
+Collaborate and respond to design feedback.
+
+Export suitable assets.
+
+Complete an organised interface and prototype project.
+
+Course Structure
+
+Lesson 1: Introduction to Figma and Interface Design
+
+Lesson 2: Figma Files, Pages and Workspace
+
+Lesson 3: Frames, Sections and Basic Layout
+
+Lesson 4: Shapes, Text, Images and Basic Styling
+
+Lesson 5: Layers, Groups and Object Organisation
+
+Lesson 6: Alignment, Grids, Spacing and Constraints
+
+Lesson 7: Auto Layout Fundamentals
+
+Lesson 8: Colour and Typography Systems
+
+Lesson 9: Components and Reusable Interface Elements
+
+Lesson 10: Variants and Common Component States
+
+Lesson 11: Wireframing in Figma
+
+Lesson 12: Designing a Mobile Interface
+
+Lesson 13: Designing a Desktop Interface
+
+Lesson 14: Responsive Design Thinking in Figma
+
+Lesson 15: Prototyping and Interactive Flows
+
+Lesson 16: Comments, Collaboration and Design Review
+
+Lesson 17: Exporting Assets and Developer Handoff Basics
+
+Lesson 18: Organising a Professional Figma File
+
+Lesson 19: Final Figma Interface and Prototype Project
+
+Lesson 1: Introduction to Figma and Interface Design
+
+Introduction
+
+Introduction to Figma and Interface Design develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of introduction to figma and interface design.
+
+Complete a guided Figma practical for introduction to figma and interface design.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 1: Original instructional visual for Introduction to Figma and Interface Design.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply introduction to figma and interface design when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of introduction to figma and interface design?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 1 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 2: Figma Files, Pages and Workspace
+
+Introduction
+
+Figma Files, Pages and Workspace develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of figma files, pages and workspace.
+
+Complete a guided Figma practical for figma files, pages and workspace.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply figma files, pages and workspace when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of figma files, pages and workspace?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 2 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 3: Frames, Sections and Basic Layout
+
+Introduction
+
+Frames, Sections and Basic Layout develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of frames, sections and basic layout.
+
+Complete a guided Figma practical for frames, sections and basic layout.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 3: Original instructional visual for Frames, Sections and Basic Layout.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply frames, sections and basic layout when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of frames, sections and basic layout?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 3 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 4: Shapes, Text, Images and Basic Styling
+
+Introduction
+
+Shapes, Text, Images and Basic Styling develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of shapes, text, images and basic styling.
+
+Complete a guided Figma practical for shapes, text, images and basic styling.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 4: Original instructional visual for Shapes, Text, Images and Basic Styling.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply shapes, text, images and basic styling when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of shapes, text, images and basic styling?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 4 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 5: Layers, Groups and Object Organisation
+
+Introduction
+
+Layers, Groups and Object Organisation develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of layers, groups and object organisation.
+
+Complete a guided Figma practical for layers, groups and object organisation.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply layers, groups and object organisation when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of layers, groups and object organisation?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 5 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 6: Alignment, Grids, Spacing and Constraints
+
+Introduction
+
+Alignment, Grids, Spacing and Constraints develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of alignment, grids, spacing and constraints.
+
+Complete a guided Figma practical for alignment, grids, spacing and constraints.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply alignment, grids, spacing and constraints when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of alignment, grids, spacing and constraints?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 6 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 7: Auto Layout Fundamentals
+
+Introduction
+
+Auto Layout Fundamentals develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of auto layout fundamentals.
+
+Complete a guided Figma practical for auto layout fundamentals.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Auto Layout arranges child objects in a horizontal or vertical flow.
+
+Figma principle: Padding controls space inside the container.
+
+Figma principle: Gap controls space between items.
+
+Figma principle: Resizing rules help containers respond to changing content.
+
+Figma principle: Use Auto Layout where it simplifies repeated interface patterns rather than forcing it everywhere.
+
+Figure 7: Original instructional visual for Auto Layout Fundamentals.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply auto layout fundamentals when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of auto layout fundamentals?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 7 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 8: Colour and Typography Systems
+
+Introduction
+
+Colour and Typography Systems develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of colour and typography systems.
+
+Complete a guided Figma practical for colour and typography systems.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 8: Original instructional visual for Colour and Typography Systems.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply colour and typography systems when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of colour and typography systems?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 8 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 9: Components and Reusable Interface Elements
+
+Introduction
+
+Components and Reusable Interface Elements develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of components and reusable interface elements.
+
+Complete a guided Figma practical for components and reusable interface elements.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 9: Original instructional visual for Components and Reusable Interface Elements.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply components and reusable interface elements when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of components and reusable interface elements?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 9 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 10: Variants and Common Component States
+
+Introduction
+
+Variants and Common Component States develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of variants and common component states.
+
+Complete a guided Figma practical for variants and common component states.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply variants and common component states when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of variants and common component states?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 10 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 11: Wireframing in Figma
+
+Introduction
+
+Wireframing in Figma develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of wireframing in figma.
+
+Complete a guided Figma practical for wireframing in figma.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 11: Original instructional visual for Wireframing in Figma.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply wireframing in figma when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of wireframing in figma?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 11 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 12: Designing a Mobile Interface
+
+Introduction
+
+Designing a Mobile Interface develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of designing a mobile interface.
+
+Complete a guided Figma practical for designing a mobile interface.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply designing a mobile interface when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of designing a mobile interface?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 12 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 13: Designing a Desktop Interface
+
+Introduction
+
+Designing a Desktop Interface develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of designing a desktop interface.
+
+Complete a guided Figma practical for designing a desktop interface.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply designing a desktop interface when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of designing a desktop interface?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 13 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 14: Responsive Design Thinking in Figma
+
+Introduction
+
+Responsive Design Thinking in Figma develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of responsive design thinking in figma.
+
+Complete a guided Figma practical for responsive design thinking in figma.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 14: Original instructional visual for Responsive Design Thinking in Figma.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply responsive design thinking in figma when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of responsive design thinking in figma?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 14 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 15: Prototyping and Interactive Flows
+
+Introduction
+
+Prototyping and Interactive Flows develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of prototyping and interactive flows.
+
+Complete a guided Figma practical for prototyping and interactive flows.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Choose a clear starting frame.
+
+Figma principle: Connect a user action to the intended destination.
+
+Figma principle: Use prototype transitions only when they help explain the flow.
+
+Figma principle: Preview the journey from start to outcome.
+
+Figma principle: A prototype demonstrates intended behaviour; it should not pretend that fictional payments, accounts or services are real.
+
+Figure 15: Original instructional visual for Prototyping and Interactive Flows.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply prototyping and interactive flows when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of prototyping and interactive flows?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 15 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 16: Comments, Collaboration and Design Review
+
+Introduction
+
+Comments, Collaboration and Design Review develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of comments, collaboration and design review.
+
+Complete a guided Figma practical for comments, collaboration and design review.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 16: Original instructional visual for Comments, Collaboration and Design Review.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply comments, collaboration and design review when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of comments, collaboration and design review?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 16 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 17: Exporting Assets and Developer Handoff Basics
+
+Introduction
+
+Exporting Assets and Developer Handoff Basics develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of exporting assets and developer handoff basics.
+
+Complete a guided Figma practical for exporting assets and developer handoff basics.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 17: Original instructional visual for Exporting Assets and Developer Handoff Basics.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply exporting assets and developer handoff basics when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of exporting assets and developer handoff basics?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 17 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 18: Organising a Professional Figma File
+
+Introduction
+
+Organising a Professional Figma File develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of organising a professional figma file.
+
+Complete a guided Figma practical for organising a professional figma file.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply organising a professional figma file when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of organising a professional figma file?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 18 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Lesson 19: Final Figma Interface and Prototype Project
+
+Introduction
+
+Final Figma Interface and Prototype Project develops a practical Figma skill used to turn interface ideas into organised, reusable and testable designs. The lesson focuses on what a learner should do and understand inside a design workflow.
+
+Learning Objectives
+
+Explain the purpose of final figma interface and prototype project.
+
+Complete a guided Figma practical for final figma interface and prototype project.
+
+Apply the skill to an Ethan Digital Academy learner-interface example.
+
+Teaching Content
+
+Figma principle: Name files, pages and layers clearly so the design remains understandable.
+
+Figma principle: Build the interface from simple structure before adding decoration.
+
+Figma principle: Use consistent spacing, typography and colour roles.
+
+Figma principle: Reuse repeated interface elements instead of recreating them inconsistently.
+
+Figma principle: Preview and review the design at its intended screen size.
+
+Figure 19: Original instructional visual for Final Figma Interface and Prototype Project.
+
+Step-by-Step Guided Practical
+
+1. Open or create an instructor-approved practice file and name the page clearly.
+
+2. Create the required frame or interface section.
+
+3. Add and organise the lesson elements using clear layer names.
+
+4. Apply spacing, typography, colour and reusable elements as appropriate.
+
+5. Preview the result, correct inconsistencies and save the organised file.
+
+Ethan Digital Academy Case Study
+
+Ethan Digital Academy can apply final figma interface and prototype project when designing a learner-friendly course portal where course discovery, enrolment status and study actions are clear without developer-oriented language.
+
+Review Questions
+
+What is the main purpose of final figma interface and prototype project?
+
+State two practical Figma practices from this lesson.
+
+What organisation, accessibility or usability mistake should be avoided?
+
+How could this skill improve an Ethan Digital Academy learner screen?
+
+Assignment
+
+Complete the Lesson 19 Figma exercise using fictional or authorised content. Submit the relevant frame or prototype evidence plus a short rationale explaining the design choices.
+
+Final Figma Interface & Prototype Project - 100 Marks
+
+Course Quiz - 30 Questions
+
+1. What is Figma used for?
+
+2. What is a Figma file?
+
+3. What is a page?
+
+4. What is a frame?
+
+5. What is the Layers panel used for?
+
+6. Why name layers clearly?
+
+7. What is alignment?
+
+8. What is a layout grid?
+
+9. What is a constraint?
+
+10. What is Auto Layout?
+
+11. Define padding.
+
+12. Define gap spacing.
+
+13. What is a component?
+
+14. What is an instance?
+
+15. What is a variant?
+
+16. Why use reusable components?
+
+17. What is a wireframe?
+
+18. Why design structure before decoration?
+
+19. What is a mobile-first interface?
+
+20. What does responsive design mean?
+
+21. What is a prototype?
+
+22. What is a prototype starting frame?
+
+23. Why test a prototype flow?
+
+24. What is design feedback?
+
+25. Why use specific comments during review?
+
+26. Name three asset export formats.
+
+27. Why inspect exported assets?
+
+28. What is design handoff?
+
+29. Why organise pages and frames before handoff?
+
+30. List six requirements of the final Figma project.
+
+Final Examination - 100 Marks
+
+Section A - Figma Foundations (20 marks)
+
+Explain workspace, files, pages, frames, layers, shapes, text and basic styling.
+
+Section B - Layout Systems (20 marks)
+
+Explain grids, alignment, spacing, constraints and Auto Layout.
+
+Section C - Reusable Interface Design (20 marks)
+
+Explain colour/type systems, components, instances and variants.
+
+Section D - Screens and Prototypes (20 marks)
+
+Plan mobile, desktop, responsive and interactive prototype work.
+
+Section E - Collaboration and Handoff (20 marks)
+
+Explain comments, review, export, file organisation and professional handoff.
+
+Course Completion Outcome
+
+After successful completion, the learner should be able to navigate Figma, organise design files, create frames and interface elements, use Auto Layout and reusable components, design mobile and desktop screens, connect a basic prototype, collaborate through review, export suitable assets and prepare an organised beginner-level design handoff.
+
+Professional Practice Checklist
+
+Keep files, pages and layers clearly named.
+
+Design structure before visual decoration.
+
+Use consistent spacing, typography and colour.
+
+Reuse components for repeated patterns.
+
+Use authorised or licensed assets.
+
+Avoid deceptive interface patterns.
+
+Preview prototypes from the user’s point of view.
+
+Inspect exported assets.
+
+Keep final design files organised for review and handoff.
+
+Course Code | EDA-FIG-125
+
+Level | Beginner
+
+Duration | 6 Weeks (19 Lessons)
+
+Certificate | Professional Certificate in Figma for Beginners
+
+Prerequisite | UI/UX Design Fundamentals recommended
+
+Learning Format | Guided Interface Practicals + Interactive Prototype Project
+
+Component | Marks | Requirement
+
+Brief & user task | 10 | Clear user, problem and intended outcome.
+
+File organisation | 10 | Pages, frames and layers named logically.
+
+Visual system | 15 | Consistent typography, colour and spacing.
+
+Components | 15 | Useful reusable interface elements.
+
+Mobile screens | 15 | Clear mobile task flow.
+
+Desktop/adaptive screen | 10 | Thoughtful wider-screen adaptation.
+
+Prototype | 15 | Connected key interactions and outcome.
+
+Accessibility & review | 5 | Readable, clear and non-deceptive design.
+
+Handoff | 5 | Organised final file and rationale.
