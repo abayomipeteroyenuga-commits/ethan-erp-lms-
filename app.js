@@ -1054,8 +1054,8 @@ function renderDashboardLegacy(){
  if(role==="admin" || role==="super_admin"){
    $("#content").innerHTML=`
       <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">ACADEMY OVERVIEW</span><h1>Welcome back, ${currentUser.firstName}</h1><p>Manage registrations, verify payments and allocate courses before learning access is opened.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Manage Students</button><button class="secondary-btn" onclick="navigate('payments')">Verify & Allocate</button></div></div>
-      <div class="stats-grid">${stat("Registered Students",data.students.length,"Learner records","👥")}${stat("Course Catalogue",data.courses.length,"Available courses","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Access Rule","Payment","Before allocation","🔐")}</div>
-      <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Student Status</h3></div>${studentTable(data.students)}</div><div class="card"><div class="card-head"><h3>Admission Flow</h3></div><div class="progress-list"><div class="progress-row"><strong>1. Registration</strong><p class="muted">Student creates account with zero courses.</p></div><div class="progress-row"><strong>2. Payment verification</strong><p class="muted">Admin records and confirms payment.</p></div><div class="progress-row"><strong>3. Course allocation</strong><p class="muted">Admin selects the paid course and enrols the student.</p></div><div class="progress-row"><strong>4. Learning access</strong><p class="muted">Lessons and videos become available only for allocated courses.</p></div></div></div></div>`;
+      <div class="stats-grid">${stat("Registered Students",data.students.length,"Learner records","👥")}${stat("Course Catalogue",data.courses.length,"Available courses","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Learning Access","Free","All published courses","🔓")}</div>
+      <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Student Status</h3></div>${studentTable(data.students)}</div><div class="card"><div class="card-head"><h3>Admission Flow</h3></div><div class="progress-list"><div class="progress-row"><strong>1. Free Registration</strong><p class="muted">Learners create their own secure account.</p></div><div class="progress-row"><strong>2. Account Setup</strong><p class="muted">A learner profile and student record are created automatically.</p></div><div class="progress-row"><strong>3. Free Course Access</strong><p class="muted">All 100 published courses are available immediately.</p></div><div class="progress-row"><strong>4. Learning Progress</strong><p class="muted">Lessons, practicals and quizzes help learners track their growth.</p></div></div></div></div>`;
    return;
  }
  if(role==="parent"){
@@ -1138,10 +1138,6 @@ function openCreateCourseForm(){
 function renderLMS(){
  if(currentUser.role==="student"){
    const courses=studentCourses();
-   if(!courses.length){
-     $("#content").innerHTML=pageHead("Learning Classroom","Your free digital courses, lessons and manuals.")+
-       emptyState("Your free course library is ready","All 100 published digital courses are included with your free Ethan LMS account.");
-   }
    $("#content").innerHTML=pageHead("Learning Classroom","Choose any of the 100 free courses to begin structured study.")+
      `<div class="learning-course-list">${courses.map(c=>`<button class="learning-course-row" onclick="openCourseStudy('${encodeURIComponent(c.title||"Course")}')"><div><small>${escHtml(c.code||"ALLOCATED COURSE")}</small><strong>${escHtml(c.title)}</strong><span>Introduction, definition, objectives, key concepts, examples, case study, practical activities and assessment.</span></div><b>Open Study Note →</b></button>`).join("")}</div>`;
    return;
@@ -1915,7 +1911,7 @@ function renderPayments(){
    statusBadge(p.status||"pending"),
    escHtml(p.description||p.reference||"Course payment")
  ]);
- $("#content").innerHTML=pageHead("Payments & Verification","Verify learner payments before allocating course access.")+
+ $("#content").innerHTML=pageHead("Finance Records","Manage optional academy payment records. These records do not control free course access.")+
    approvedBankPaymentHtml()+
    `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">ADMINISTRATION</span><h2>Payment Records</h2></div></div>
    ${rows.length?table(["Learner","Amount","Status","Description"],rows):emptyState("No payment records","Verified and pending payment records will appear here.")}</section>`;
