@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: ethan-erp-lms
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_ORIGIN
+        value: https://app.ethandigitalacademy.org
+      - key: NEON_STORAGE_BUCKET
+        value: ethan-lms-materials
+      - key: AWS_REGION
+        value: eu-central-1
+      - key: DATABASE_URL
+        sync: false
+      - key: NEON_AUTH_JWKS_URL
+        sync: false
+      - key: AWS_ENDPOINT_URL_S3
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
