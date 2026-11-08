@@ -3,7 +3,8 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { createRemoteJWKSet, jwtVerify } from "jose";
 import { Pool } from "@neondatabase/serverless";
 
-const APP_ORIGIN="https://app.ethandigitalacademy.org";
+const APP_ORIGIN=process.env.APP_ORIGIN||"https://app.ethandigitalacademy.org";
+const ALLOWED_ORIGINS=[...new Set([APP_ORIGIN,process.env.RENDER_EXTERNAL_URL||"",...(process.env.ALLOWED_APP_ORIGINS||"").split(",").map(x=>x.trim())].filter(Boolean))];
 const BUCKET=process.env.NEON_STORAGE_BUCKET||"ethan-lms-materials";
 const UUID_RE=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const required=["DATABASE_URL","NEON_AUTH_JWKS_URL","AWS_ENDPOINT_URL_S3","AWS_REGION","AWS_ACCESS_KEY_ID","AWS_SECRET_ACCESS_KEY"];
@@ -21,7 +22,7 @@ let corsReady;
 async function ensureCors(){
  if(!corsReady){
   corsReady=s3.send(new PutBucketCorsCommand({Bucket:BUCKET,CORSConfiguration:{CORSRules:[{
-   AllowedOrigins:[APP_ORIGIN],AllowedMethods:["GET","HEAD","PUT"],AllowedHeaders:["*"],ExposeHeaders:["ETag"],MaxAgeSeconds:3600
+   AllowedOrigins:ALLOWED_ORIGINS,AllowedMethods:["GET","HEAD","PUT"],AllowedHeaders:["*"],ExposeHeaders:["ETag"],MaxAgeSeconds:3600
   }]}})).catch(e=>{corsReady=null;throw e;});
  }
  return corsReady;
@@ -55,9 +56,9 @@ function safeKey(userId,key,courseId){
 }
 export default async function handler(req,res){
  const origin=req.headers.origin||"";
- if(origin&&origin!==APP_ORIGIN)return respond(res,403,{error:"Origin not allowed."});
+ if(origin&&!ALLOWED_ORIGINS.includes(origin))return respond(res,403,{error:"Origin not allowed."});
  res.setHeader("Vary","Origin");
- res.setHeader("Access-Control-Allow-Origin",APP_ORIGIN);
+ res.setHeader("Access-Control-Allow-Origin",origin||APP_ORIGIN);
  res.setHeader("Access-Control-Allow-Methods","POST, OPTIONS");
  res.setHeader("Access-Control-Allow-Headers","Authorization, Content-Type");
  if(req.method==="OPTIONS")return res.status(204).end();
