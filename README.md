@@ -1,70 +1,38 @@
-# ETHAN ERP & LMS
+# ETHAN ERP & LMS — Free Neon Edition
 
-This package contains a working browser-based ERP/LMS prototype with:
-- Official Ethan Digital Academy logo
-- Sign in / create account
-- Role-aware portals (Admin, Student, Parent, Instructor navigation)
-- Student, instructor, course, LMS classroom, assignment, attendance, payments, results, certificates, announcements, reports and settings screens
-- Browser-local data persistence for preview/testing
-- PWA manifest and service worker
-- Supabase configuration placeholder in `config.js`
+ETHAN ERP & LMS is deployed at https://app.ethandigitalacademy.org.
 
-## Preview admin
-For local preview only, the app seeds one administrator account:
-- Email: admin@ethandigitalacademy.org
-- Password: EthanAdmin2026!
+## Backend
+- Independent Neon PostgreSQL 17 database
+- Neon Managed Better Auth (email/password)
+- Neon Data API with JWT-backed row-level security
+- Private Neon Object Storage bucket: `ethan-lms-materials`
+- Vercel API gateway signs upload and download URLs; storage credentials remain server-side.
 
-Change or remove this seeded preview account before a public deployment.
+## Free learner access
+- Registration and learner accounts are free.
+- All 100 published academy courses are free and available after registration.
+- New students receive active enrolments in all published courses automatically.
+- Study notes, uploaded PDF manuals, lessons and narration remain available after sign-in.
+- No Ethan ID, shared Hub account, course payment, payment verification or admin allocation is required to access learning.
+- Staff roles remain protected. Learners cannot promote themselves to staff.
 
-## Supabase
-Add your project URL and publishable key in `config.js`. A production build should replace browser-local authentication/data with Supabase Auth, PostgreSQL tables, Row Level Security and Storage.
+## Staff management
+Staff first create a free account using their own email. An authorized Admin or Super Admin can then promote that account to Instructor or Admin from Staff Management. An Admin can promote Instructors only.
 
-## Run locally
-Open `index.html` directly, or serve this folder using a simple local web server for full PWA support.
+The existing finance modules remain available for academy administration and historical records. They do not gate student learning.
 
+## Environment variables (Vercel)
+Set for Production, Preview and Development:
+- `DATABASE_URL` (encrypted Neon connection string)
+- `NEON_AUTH_JWKS_URL`
+- `AWS_ENDPOINT_URL_S3`
+- `AWS_REGION`
+- `AWS_ACCESS_KEY_ID` (encrypted)
+- `AWS_SECRET_ACCESS_KEY` (encrypted)
+- `NEON_STORAGE_BUCKET`
 
-## v2 additions
-- Supabase JavaScript SDK integration layer
-- Production-ready SQL schema
-- Row Level Security starter policies
-- User profile auto-creation trigger
-- Core ERP/LMS database entities
-- Backend-ready auth methods
-- Setup guide included
+Public Neon database URL is in `config.js`. Never expose the database connection string, S3 key or S3 secret in browser files.
 
-
-## v3 connection
-This build is configured for:
-- Supabase project URL: https://hsigpjyvuvqdmujklcvw.supabase.co
-- Public publishable key configured in `config.js`
-
-Before public deployment:
-- Confirm Email provider is enabled in Supabase Authentication.
-- Configure the Site URL and redirect URLs for the production domain.
-- Revoke/rotate any secret key that was previously exposed.
-
-## v5 Payment-Controlled Learning Access
-- New student accounts start with zero courses and zero progress.
-- Registration alone never unlocks lessons/videos.
-- Admin/Super Admin verifies payment and selects the exact paid course.
-- Verified payment creates the student's enrolment/allocation.
-- Student dashboard, courses, LMS, assignments, results and certificates no longer display sample academic history.
-- Run `UPDATE-v5-PAYMENT-COURSE-GATING.sql` once in Supabase SQL Editor on an existing database.
-
-
-## v6 Staff Access Upgrade
-
-- One common email/password sign-in for all five roles: Super Admin, Admin, Instructor, Student and Parent.
-- Public self-registration remains limited to Student and Parent.
-- Super Admin can create Admin and Instructor accounts from Staff Management.
-- Admin can create Instructor accounts only.
-- Staff creation uses the protected Supabase Edge Function in `supabase/functions/create-staff/`; never place the Service Role key in `config.js`.
-- New students begin with zero courses. Payment verification + course allocation controls lesson/video access.
-- The old hard-coded student 4 courses / 42% progress demo dashboard was removed.
-
-### Upgrade order from v5
-1. Run `UPDATE-v6-STAFF-ACCESS.sql` once in Supabase SQL Editor.
-2. Create your first Super Admin: register your own account, edit the email in `BOOTSTRAP-SUPER-ADMIN.sql`, and run it once.
-3. Deploy the `create-staff` Supabase Edge Function. Supabase automatically provides its standard project environment secrets.
-4. Replace the website files in GitHub with this v6 build and let Vercel redeploy.
-5. Sign in as Super Admin, open Staff Management, and create Admin/Instructor accounts.
+## Migration notes
+The old Supabase backend has not been deleted or modified. Supabase password hashes and user accounts are not imported. Existing users need to register a new free account in the independent Neon identity directory. Existing uploaded materials remain in the previous backend until exported; the bundled static course PDFs and narration assets remain in the repository.

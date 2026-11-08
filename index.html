@@ -29,11 +29,11 @@
           <div class="auth-hero-inner">
             <span class="eyebrow hero-kicker">ETHAN DIGITAL ACADEMY</span>
             <h1>One intelligent platform for <span>digital learning and academy management.</span></h1>
-            <p class="hero-lead">A professional ERP & LMS environment for Ethan Digital Academy connecting administrators, instructors and learners through structured digital learning, verified payments and controlled course access.</p>
+            <p class="hero-lead">A free ERP & LMS environment for Ethan Digital Academy connecting administrators, instructors and learners through structured digital learning, practical lessons and measurable progress.</p>
 
             <div class="hero-benefits">
               <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Role-based portals</strong><small>Super Admin, Admin, Instructor, Student, Professional and Business Owner</small></div></div>
-              <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Payment-gated learning</strong><small>Courses and videos are allocated only after approval</small></div></div>
+              <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Free learning access</strong><small>All 100 digital courses are available after free signup</small></div></div>
               <div class="benefit-item"><span class="benefit-icon">✓</span><div><strong>Academic operations</strong><small>Courses, attendance, fees, reports and student progress</small></div></div>
             </div>
 
@@ -54,7 +54,7 @@
 </div>
 
             <form id="signinForm" class="auth-form">
-              <div class="auth-heading"><h2>Sign in to your portal</h2><p>Use your registered account. Your role will open the correct workspace automatically.</p></div>
+              <div class="auth-heading"><h2>Sign in to your portal</h2><p>Use your free Ethan LMS account. Your role opens the correct workspace automatically.</p></div>
               <label>Email address
                 <input type="email" id="signinEmail" required autocomplete="email" placeholder="name@example.com" />
               </label>
@@ -76,7 +76,7 @@
             <form id="signupForm" class="auth-form hidden">
               <div class="auth-heading">
                 <h2>Create your account</h2>
-                <p>Register as a Student, Professional or Business Owner.</p>
+                <p>Create a free account as a Student, Professional or Business Owner. All 100 courses are included.</p>
               </div>
               <div class="grid-2">
                 <label>First name<input type="text" id="firstName" required placeholder="First name" /></label>
@@ -172,18 +172,16 @@
     </div>
   </template>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
-  <script src="supabase-client.js"></script>
   <script src="course-narration-data.js"></script>
-  <script src="app.js"></script>
+  <script src="neon-client.js"></script>
 
 <section class="course-catalogue-section" id="courseCatalogue">
   <div class="catalogue-head">
     <div>
       <span class="eyebrow">EXPLORE BEFORE YOU ENROL</span>
       <h2>Find Your Digital Course</h2>
-      <p>Click Browse Courses, choose a course from the dropdown, and read a short overview before enrolling.</p>
+      <p>Browse any of the 100 free digital courses and read a short overview before you begin learning.</p>
     </div>
     <div class="catalogue-search-wrap">
       <div class="catalogue-actions"><label class="currency-control">Currency<select id="catalogueCurrencySelect"><option value="NGN">₦ Naira</option><option value="USD">$ USD</option><option value="GBP">£ Pounds</option><option value="EUR">€ EUR</option></select></label><button type="button" class="catalogue-browse-btn" id="browseCoursesBtn">Browse Courses</button></div>
@@ -200,8 +198,8 @@
   <div class="catalogue-brief-panel hidden" id="catalogueBriefPanel">
     <span class="eyebrow">COURSE OVERVIEW</span>
     <h3 id="courseBriefTitle"></h3>
-    <p id="courseBriefText"></p><div class="course-price-row"><span>Course Fee</span><strong id="courseBriefPrice"></strong></div>
-    <div class="course-access-note">Full lessons and videos become available after payment verification and course allocation.</div>
+    <p id="courseBriefText"></p><div class="course-price-row"><span>Course Access</span><strong id="courseBriefPrice">FREE</strong></div>
+    <div class="course-access-note">All lessons and course materials are available free after you sign in.</div>
   </div>
 </section>
 
