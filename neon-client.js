@@ -51,7 +51,13 @@
         const {data,error}=await client.auth.signIn.email({email,password});
         if(error)throw error;
         if(!data?.user)throw new Error("Email or password is incorrect.");
-        const profile=await ensureProfile({});
+        const lookup=await client.from("profiles").select("*").eq("id",data.user.id).maybeSingle();
+        if(lookup.error)throw lookup.error;
+        let profile=lookup.data;
+        if(!profile){
+          const parts=String(data.user.name||"").trim().split(/\\s+/);
+          profile=await ensureProfile({firstName:parts[0]||"",lastName:parts.slice(1).join(" "),phone:"",learnerType:"student"});
+        }
         return {user:data.user,session:data.session||null,profile};
       },
       async signOut(){
