@@ -2,11 +2,18 @@
   "name": "ethan-erp-lms",
   "private": true,
   "type": "module",
-  "engines": { "node": "24.x" },
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.800.0",
     "@aws-sdk/s3-request-presigner": "^3.800.0",
     "@neondatabase/serverless": "^1.0.2",
-    "jose": "^6.1.0"
+    "jose": "^6.1.0",
+    "express": "^5.1.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check api/storage/presign.js"
   }
 }
