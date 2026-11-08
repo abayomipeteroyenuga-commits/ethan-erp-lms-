@@ -115,15 +115,15 @@ $("#signinForm").addEventListener("submit",async e=>{
 });
 
 $("#forgotPasswordBtn").addEventListener("click",()=>{
-  showModal("Password reset","Enter your account email and request a reset link.",`
-    <label>Email address<input id="resetEmail" type="email" placeholder="you@example.com"></label>
-  `,async ()=>{
-    const email=$("#resetEmail").value.trim().toLowerCase();
-    if(!email) return alert("Enter your email address.");
-    if(!window.ETHAN_BACKEND?.ready)return alert(window.ETHAN_BACKEND?.error||"The secure password-reset service is unavailable.");
-    try{await window.ETHAN_BACKEND.resetPassword(email);closeModal();alert("Password reset instructions have been requested. Check your inbox.");}
-    catch(err){alert(err.message||"Unable to request a password reset.");}
-  });
+ showModal("Reset your password","Enter the email address on your free Ethan LMS account. We will send you a secure password reset link.",`
+  <label>Email address<input id="resetEmail" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+ `,async()=>{
+  const email=$("#resetEmail").value.trim().toLowerCase();
+  if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email))return alert("Enter a valid email address.");
+  if(!window.ETHAN_BACKEND?.ready)return alert(window.ETHAN_BACKEND?.error||"The secure password-reset service is unavailable.");
+  try{await window.ETHAN_BACKEND.resetPassword(email);closeModal();alert("A password reset link has been sent. Open the link in the email to choose a new password. The link expires after 15 minutes.");}
+  catch(err){alert(err.message||"Unable to send the password reset email.");}
+ });
 });
 
 $("#logoutBtn").addEventListener("click",async ()=>{
@@ -919,6 +919,24 @@ function closeModal(){const m=$("#activeModal");if(m)m.remove()}
  if(!window.ETHAN_BACKEND?.ready){
   const msg=$("#signinMessage");
   if(msg){msg.textContent=window.ETHAN_BACKEND?.error||"The secure learning service is unavailable. Refresh and try again.";msg.className="form-message error";}
+  return;
+ }
+ const resetToken=new URL(location.href).searchParams.get("token");
+ if(resetToken){
+  showModal("Choose a new password","Enter and confirm a new password for your Ethan LMS account.",`
+   <label>New password<input id="newResetPassword" type="password" minlength="8" autocomplete="new-password" required></label>
+   <label>Confirm new password<input id="confirmResetPassword" type="password" minlength="8" autocomplete="new-password" required></label>
+  `,async()=>{
+   const next=$("#newResetPassword").value,confirm=$("#confirmResetPassword").value;
+   if(next.length<8)return alert("Use at least 8 characters for your new password.");
+   if(next!==confirm)return alert("The passwords do not match.");
+   try{
+    await window.ETHAN_BACKEND.completePasswordReset(resetToken,next);
+    closeModal();
+    const url=new URL(location.href);url.searchParams.delete("token");history.replaceState({},"",url.pathname+(url.search||"")+url.hash);
+    alert("Your password has been updated. Sign in with your new password.");
+   }catch(error){alert(error.message||"The reset link is invalid or expired. Request a new password reset email.");}
+  });
   return;
  }
  try{
