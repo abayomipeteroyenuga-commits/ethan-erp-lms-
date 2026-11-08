@@ -1059,14 +1059,11 @@ function renderDashboardLegacy(){
 
 function renderCourses(){
  const isStudent=currentUser.role==="student";
- const list=isStudent?studentCourses():data.courses;
+ const mine=studentCourses();
+ const list=isStudent?(mine.length?mine:ETHAN_PUBLIC_COURSES.map((c,i)=>({id:"free-catalogue-"+(i+1),code:"EDA-"+String(i+1).padStart(3,"0"),title:c.name,description:c.brief,duration:"Self-paced",fee:0,published:true,progress:0,lessons:0,completed:0}))):data.courses;
  const canCreate=["admin","super_admin","instructor"].includes(currentUser.role);
  const add=canCreate?`<button class="primary-btn" id="addCourseBtn">+ Create Course</button>`:"";
- if(isStudent && !list.length){
-   $("#content").innerHTML=pageHead("My Digital Courses","All 100 courses are free and available to learners.")+emptyState("No courses allocated","Your account has access to all published courses. Refresh the page if your enrolments have not loaded yet.",`<button class="primary-btn" onclick="navigate('payments')">Check Payment Status</button>`);
-   return;
- }
- $("#content").innerHTML=pageHead(isStudent?"My Courses":"Courses",isStudent?"Your approved and allocated learning programmes.":"Manage the academy course catalogue.",add)+
+ $("#content").innerHTML=pageHead(isStudent?"My Free Courses":"Courses",isStudent?"Explore all 100 free academy courses.":"Manage the academy course catalogue.",add)+
    (list.length?courseCards(list):emptyState("No courses created yet","Create the first course when you are ready."));
  if($("#addCourseBtn")) $("#addCourseBtn").onclick=()=>showModal("Create Course","Add a course to the Academy catalogue.",`
   <label>Course title<input id="courseTitle"></label>
@@ -1337,7 +1334,7 @@ function formatCoursePrice(feeNGN,currency=ethanDisplayCurrency){
 function updateCatalogueCurrency(currency){
  ethanDisplayCurrency=currency;localStorage.setItem("ethan_display_currency",currency);
  const s=document.getElementById("courseCatalogueSelect"),p=document.getElementById("courseBriefPrice");
- if(s&&s.value!==""&&p){const c=ETHAN_PUBLIC_COURSES[Number(s.value)];if(c)p.textContent=formatCoursePrice(c.feeNGN,currency);}
+ if(s&&s.value!==""&&p){const c=ETHAN_PUBLIC_COURSES[Number(s.value)];if(c)p.textContent="FREE";}
 }
 
 const ETHAN_PUBLIC_COURSES = [
@@ -1893,7 +1890,7 @@ window.addEventListener("DOMContentLoaded",()=>{
  const cur=document.getElementById("catalogueCurrencySelect");
  if(cur){cur.value=ethanDisplayCurrency;cur.addEventListener("change",()=>updateCatalogueCurrency(cur.value));}
  const s=document.getElementById("courseCatalogueSelect");
- if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent=formatCoursePrice(c.feeNGN);});
+ if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent="FREE";});
 });
 
 /* v9.1 approved bank payment page */
