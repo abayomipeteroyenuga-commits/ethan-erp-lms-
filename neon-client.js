@@ -68,6 +68,10 @@
         const {error}=await client.auth.requestPasswordReset({email,redirectTo:location.origin+location.pathname});
         if(error)throw error;
       },
+      async completePasswordReset(token,newPassword){
+        const {error}=await client.auth.resetPassword({token,newPassword});
+        if(error)throw error;
+      },
       async getSession(){
         const {data,error}=await client.auth.getSession();
         if(error)throw error;
