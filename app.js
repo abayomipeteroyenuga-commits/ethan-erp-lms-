@@ -236,7 +236,15 @@ async function hydratePortalData(user){
 }
 
 function studentEnrolments(){ return currentUser?.role==="student" ? (portalState.myEnrolments||[]) : []; }
-function studentCourses(){ return studentEnrolments().map(e=>e.course).filter(Boolean); }
+function studentCourses(){
+ const enrolled=studentEnrolments().map(e=>e.course).filter(Boolean);
+ if(enrolled.length)return enrolled;
+ return (ETHAN_PUBLIC_COURSES||[]).map((course,index)=>({
+  id:"free-course-"+(index+1),code:"EDA-"+String(index+1).padStart(3,"0"),
+  title:course.name,description:course.brief,duration:"Self-paced",
+  fee:0,published:true,progress:0,lessons:0,completed:0
+ }));
+}
 function emptyState(title,message,action=""){ return `<div class="card" style="text-align:center;padding:34px"><h3>${title}</h3><p class="muted" style="max-width:620px;margin:8px auto 18px">${message}</p>${action}</div>`; }
 function renderNav(){
   const role=currentUser.role==="admin"?"admin":currentUser.role;
@@ -579,7 +587,7 @@ async function renderCourseUpload(){
   <div class="grid-2"><label>Course<select id="uploadCourseId"><option value="">Select course</option>${options}</select></label>
   <label>Material title<input id="uploadMaterialTitle" placeholder="e.g. Full Visual Study Manual"></label></div>
   <label>Course PDF<input id="uploadCoursePdf" type="file" accept="application/pdf,.pdf"></label>
-  <p class="muted">PDF is the learner reading copy. It is stored in the private Supabase course-materials bucket. Paid learners can open it only when they have an active enrolment; Super Admin has full academic access.</p>
+  <p class="muted">PDF is the learner reading copy. It is stored in the private Neon course-materials bucket. All learners can open published manuals free after signing in; authorised academy staff can upload and manage course materials.</p>
   <div class="study-actions"><button class="primary-btn" id="uploadCourseBtn">Upload & Attach Course</button></div><div id="uploadCourseStatus" class="form-message"></div></div>
   <div class="card"><div class="card-head"><h3>How this works</h3></div><p>The full manual becomes the main online course reader. Learners no longer see only the short generated summary when a complete PDF is available.</p></div>`;
   $("#uploadCourseBtn").onclick=async()=>{
@@ -638,7 +646,7 @@ async function startCourseNarration(pdf,title){
 
   // Always resolve narration from the canonical bundled course PDF when the course
   // has a built-in manual. This keeps narration working even if the visible PDF is
-  // a Supabase signed/uploaded URL with a different filename.
+  // a Neon signed/uploaded URL with a different filename.
   const canonicalPdf=builtinCourseMaterial(title)||pdf||"";
   const pdfName=String(canonicalPdf).split("/").pop().split("?")[0].replace(/\.pdf$/i,"");
   let text=window.ETHAN_NARRATION_TEXT?.[pdfName]||"";
@@ -890,7 +898,7 @@ function renderSettings(){
  $("#content").innerHTML=pageHead("Settings","Configure academy, academic, payment and security preferences.")+`
  <div class="dashboard-grid">
  <div class="card"><h3>General Settings</h3><label>Academy Name<input value="Ethan Digital Academy" style="width:100%;padding:11px;border:1px solid var(--line);border-radius:10px"></label><br><br><label>Website<input value="https://ethandigitalacademy.org" style="width:100%;padding:11px;border:1px solid var(--line);border-radius:10px"></label><br><br><button class="primary-btn">Save Settings</button></div>
- <div class="card"><h3>Platform Status</h3><p><span class="badge green">Frontend Ready</span></p><p><span class="badge gold">Backend connection pending</span></p><p class="muted">Add your Supabase project details to config.js to connect production authentication and database services.</p></div>
+ <div class="card"><h3>Platform Status</h3><p><span class="badge green">Frontend Ready</span></p><p><span class="badge gold">Backend connection pending</span></p><p class="muted">Dedicated Neon authentication and database services are configured for this application.</p></div>
  </div>`;
 }
 function renderProfile(){
@@ -1115,13 +1123,9 @@ function openCreateCourseForm(){
    };
    if(!payload.code||!payload.title){alert("Course code and title are required.");return;}
    try{
-     if(window.EthanSupabase?.isConfigured?.() && typeof window.EthanSupabase.createCourse==="function"){
-       const created=await window.EthanSupabase.createCourse(payload);
-       if(created) data.courses=[created,...(data.courses||[])];
-     }else{
-       data.courses=[{...payload,id:`local-${Date.now()}`,progress:0},...(data.courses||[])];
-       saveData?.();
-     }
+     if(!window.ETHAN_BACKEND?.ready)throw new Error(window.ETHAN_BACKEND?.error||"The secure Neon service is unavailable.");
+     const created=await window.ETHAN_BACKEND.createCourse({...payload,fee:0});
+     if(created)data.courses=[created,...(data.courses||[])];
      alert("Course created successfully.");
      navigate("lms");
    }catch(err){
@@ -1135,11 +1139,10 @@ function renderLMS(){
  if(currentUser.role==="student"){
    const courses=studentCourses();
    if(!courses.length){
-     $("#content").innerHTML=pageHead("Learning Classroom","Course materials are protected until enrolment.")+
-       emptyState("Learning access locked","You have not yet been allocated a paid course. Registration alone does not unlock course notes, lessons or videos.",`<button class="primary-btn" onclick="navigate('payments')">View Payment Status</button>`);
-     return;
+     $("#content").innerHTML=pageHead("Learning Classroom","Your free digital courses, lessons and manuals.")+
+       emptyState("Your free course library is ready","All 100 published digital courses are included with your free Ethan LMS account.");
    }
-   $("#content").innerHTML=pageHead("Learning Classroom","Choose one of your allocated courses to begin structured study.")+
+   $("#content").innerHTML=pageHead("Learning Classroom","Choose any of the 100 free courses to begin structured study.")+
      `<div class="learning-course-list">${courses.map(c=>`<button class="learning-course-row" onclick="openCourseStudy('${encodeURIComponent(c.title||"Course")}')"><div><small>${escHtml(c.code||"ALLOCATED COURSE")}</small><strong>${escHtml(c.title)}</strong><span>Introduction, definition, objectives, key concepts, examples, case study, practical activities and assessment.</span></div><b>Open Study Note →</b></button>`).join("")}</div>`;
    return;
  }
@@ -1303,8 +1306,8 @@ function renderSettings(){
     </div>
     <div class="settings-section">
       <h3>Platform Status</h3>
-      <p><span class="badge ${connected?"green":"gold"}">${connected?"Supabase Connected":"Supabase Not Connected"}</span></p>
-      <p class="muted">${connected?"Authentication and database services are connected.":"Add valid Supabase project details to config.js before production use."}</p>
+      <p><span class="badge ${connected?"green":"gold"}">${connected?"Neon Connected":"Neon Not Connected"}</span></p>
+      <p class="muted">${connected?"Authentication and database services are connected.":"Check the dedicated Neon project and Vercel server environment if the service is unavailable."}</p>
     </div>
    </div>`;
   $("#saveAcademySettings").onclick=()=>{
@@ -1896,17 +1899,10 @@ window.addEventListener("DOMContentLoaded",()=>{
 /* v9.1 approved bank payment page */
 function renderPayments(){
  if(currentUser.role==="student"){
-   const records=portalState.myPayments||[];
-   $("#content").innerHTML=pageHead("Payments & Enrolment","Use only the approved Ethan Digital Academy accounts shown below.")+
-     approvedBankPaymentHtml()+
-     `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">MY ACCOUNT</span><h2>Payment Status</h2><p>Your verified payments and course-access status.</p></div></div>
-       ${records.length?table(["Reference","Amount","Status","Date"],records.map(p=>[
-         escHtml(p.reference||p.id||"Payment"),
-         escHtml(String(p.amount||"")),
-         statusBadge(p.status||"pending"),
-         escHtml(p.created_at?new Date(p.created_at).toLocaleDateString():"")
-       ])):emptyState("No verified payment record yet","After making a bank transfer, your payment must be verified before a course can be allocated.")}
-     </section>`;
+   const courses=studentCourses();
+   $("#content").innerHTML=pageHead("Free Learning Access","Every published Ethan Digital Academy course is included with your free account.")+
+     `<div class="stats-grid">${stat("Free Courses","100","Included with registration","📚")}${stat("My Courses",String(courses.length),"Available now","🎓")}${stat("Course Fee","FREE","No payment required","✓")}${stat("Learning Status","Active","Study materials available","▶")}</div>`+
+     emptyState("No course payment is required","Continue to My Courses or the Learning Area. Payments do not control your course access.",`<button class="primary-btn" onclick="navigate('courses')">Browse Free Courses</button>`);
    return;
  }
  if(!["admin","super_admin"].includes(currentUser.role)){
