@@ -130,14 +130,17 @@ AS $$ SELECT role FROM public.erp_profiles WHERE id=auth.uid() $$;
 CREATE OR REPLACE FUNCTION public.ensure_erp_profile(p_full_name text DEFAULT '',p_phone text DEFAULT '')
 RETURNS public.erp_profiles LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp
 AS $$
-DECLARE v_id uuid; v_email text; v_name text; v_role text;
+DECLARE v_id uuid; v_email text; v_name text; v_role text; v_has_profiles boolean;
 BEGIN
  v_id:=auth.uid();
  IF v_id IS NULL THEN RAISE EXCEPTION 'Authentication required'; END IF;
  v_email:=lower(coalesce(auth.jwt()->>'email',''));
  v_name:=coalesce(nullif(trim(p_full_name),''),auth.jwt()->>'name','Ethan ERP User');
  IF v_email='' THEN RAISE EXCEPTION 'Authenticated email is missing'; END IF;
- v_role:=CASE WHEN v_email='fedora4jesus@gmail.com' THEN 'super_admin' ELSE 'viewer' END;
+ -- Serialize initial registrations so only the first ERP account becomes Super Admin.
+ PERFORM pg_advisory_xact_lock(hashtextextended('ethan_erp_initial_super_admin',0));
+ SELECT EXISTS(SELECT 1 FROM public.erp_profiles) INTO v_has_profiles;
+ v_role:=CASE WHEN NOT v_has_profiles THEN 'super_admin' ELSE 'viewer' END;
  INSERT INTO public.erp_profiles(id,full_name,email,phone,role)
  VALUES(v_id,v_name,v_email,nullif(p_phone,''),v_role)
  ON CONFLICT(id) DO UPDATE SET full_name=CASE WHEN public.erp_profiles.full_name='' THEN EXCLUDED.full_name ELSE public.erp_profiles.full_name END;
