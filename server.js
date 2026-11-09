@@ -52,7 +52,7 @@ app.use((err, _req, res, _next) => {
 });
 
 const server = app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Ethan ERP & LMS listening on port ${PORT}`);
+  console.log(`ETHAN LEARN listening on port ${PORT}`);
 });
 
 function shutdown(signal) {
