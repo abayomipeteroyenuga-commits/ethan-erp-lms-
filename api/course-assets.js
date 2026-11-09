@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { createRemoteJWKSet, jwtVerify } from "jose";
 import { Pool } from "@neondatabase/serverless";
 
-const ROOT = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const pool = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, max: 2, idleTimeoutMillis: 10000, connectionTimeoutMillis: 5000 })
   : null;
