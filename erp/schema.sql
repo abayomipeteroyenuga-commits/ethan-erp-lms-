@@ -852,3 +852,34 @@ END $$;
 GRANT EXECUTE ON FUNCTION public.reverse_erp_supplier_bill_payment(uuid,text) TO authenticated;
 DROP TRIGGER IF EXISTS tr_audit_erp_supplier_bill_payments ON public.erp_supplier_bill_payments;
 CREATE TRIGGER tr_audit_erp_supplier_bill_payments AFTER INSERT OR UPDATE OR DELETE ON public.erp_supplier_bill_payments FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+
+-- Staff timekeeping, performance development and alumni engagement.
+CREATE TABLE IF NOT EXISTS public.erp_staff_attendance (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), staff_id uuid NOT NULL REFERENCES public.erp_staff(id) ON DELETE CASCADE, attendance_date date NOT NULL DEFAULT current_date, clock_in time, clock_out time, attendance_status text NOT NULL DEFAULT 'present', notes text, created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(staff_id,attendance_date), CHECK(clock_out IS NULL OR clock_in IS NULL OR clock_out>=clock_in));
+CREATE TABLE IF NOT EXISTS public.erp_staff_reviews (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), review_no text NOT NULL UNIQUE, staff_id uuid NOT NULL REFERENCES public.erp_staff(id) ON DELETE CASCADE, review_period text NOT NULL, reviewer text NOT NULL, review_date date NOT NULL DEFAULT current_date, rating text NOT NULL DEFAULT 'satisfactory', score numeric(5,2), strengths text, improvement_areas text, development_plan text, status text NOT NULL DEFAULT 'draft', created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_staff_training_records (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), training_no text NOT NULL UNIQUE, staff_id uuid NOT NULL REFERENCES public.erp_staff(id) ON DELETE CASCADE, course_name text NOT NULL, provider text, start_date date, end_date date, cost numeric(14,2) NOT NULL DEFAULT 0, certificate_url text, status text NOT NULL DEFAULT 'planned', created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_alumni (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), student_id uuid NOT NULL UNIQUE REFERENCES public.erp_students(id) ON DELETE CASCADE, graduation_date date, programme_name text, qualification text, current_employer text, job_title text, email text, phone text, employment_status text DEFAULT 'unknown', contact_opt_in boolean NOT NULL DEFAULT false, notes text, created_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE public.erp_staff_attendance ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_staff_reviews ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_staff_training_records ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_alumni ENABLE ROW LEVEL SECURITY;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.erp_staff_attendance,public.erp_staff_reviews,public.erp_staff_training_records,public.erp_alumni TO authenticated;
+DROP POLICY IF EXISTS erp_staff_attendance_access ON public.erp_staff_attendance;
+CREATE POLICY erp_staff_attendance_access ON public.erp_staff_attendance FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr'));
+DROP POLICY IF EXISTS erp_staff_reviews_access ON public.erp_staff_reviews;
+CREATE POLICY erp_staff_reviews_access ON public.erp_staff_reviews FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr'));
+DROP POLICY IF EXISTS erp_staff_training_records_access ON public.erp_staff_training_records;
+CREATE POLICY erp_staff_training_records_access ON public.erp_staff_training_records FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr'));
+DROP POLICY IF EXISTS erp_alumni_access ON public.erp_alumni;
+CREATE POLICY erp_alumni_access ON public.erp_alumni FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','admissions','academic_manager')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','admissions','academic_manager'));
+CREATE INDEX IF NOT EXISTS erp_staff_attendance_date_idx ON public.erp_staff_attendance(attendance_date DESC);
+CREATE INDEX IF NOT EXISTS erp_staff_reviews_date_idx ON public.erp_staff_reviews(review_date DESC);
+CREATE INDEX IF NOT EXISTS erp_staff_training_start_idx ON public.erp_staff_training_records(start_date DESC);
+DROP TRIGGER IF EXISTS tr_audit_erp_staff_attendance ON public.erp_staff_attendance;
+CREATE TRIGGER tr_audit_erp_staff_attendance AFTER INSERT OR UPDATE OR DELETE ON public.erp_staff_attendance FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_staff_reviews ON public.erp_staff_reviews;
+CREATE TRIGGER tr_audit_erp_staff_reviews AFTER INSERT OR UPDATE OR DELETE ON public.erp_staff_reviews FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_staff_training_records ON public.erp_staff_training_records;
+CREATE TRIGGER tr_audit_erp_staff_training_records AFTER INSERT OR UPDATE OR DELETE ON public.erp_staff_training_records FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_alumni ON public.erp_alumni;
+CREATE TRIGGER tr_audit_erp_alumni AFTER INSERT OR UPDATE OR DELETE ON public.erp_alumni FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
