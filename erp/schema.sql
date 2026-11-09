@@ -536,3 +536,26 @@ BEGIN
 END $$;
 DROP TRIGGER IF EXISTS tr_sync_erp_payroll_run_totals ON public.erp_payroll_items;
 CREATE TRIGGER tr_sync_erp_payroll_run_totals AFTER INSERT OR UPDATE OR DELETE ON public.erp_payroll_items FOR EACH ROW EXECUTE FUNCTION public.sync_erp_payroll_run_totals();
+
+
+-- Controlled payment receipt reversal; restores the linked invoice balance.
+ALTER TABLE public.erp_payment_receipts ADD COLUMN IF NOT EXISTS reversal_reason text;
+CREATE OR REPLACE FUNCTION public.reverse_erp_payment_receipt(p_receipt_id uuid,p_reason text)
+RETURNS public.erp_payment_receipts LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_receipt public.erp_payment_receipts; v_invoice public.erp_invoices; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can reverse a payment receipt'; END IF;
+ IF nullif(trim(p_reason),'') IS NULL THEN RAISE EXCEPTION 'A reversal reason is required'; END IF;
+ SELECT * INTO v_receipt FROM public.erp_payment_receipts WHERE id=p_receipt_id FOR UPDATE;
+ IF v_receipt.id IS NULL THEN RAISE EXCEPTION 'Payment receipt not found'; END IF;
+ IF v_receipt.status<>'recorded' THEN RAISE EXCEPTION 'Only recorded receipts can be reversed'; END IF;
+ IF nullif(trim(v_receipt.invoice_no),'') IS NOT NULL THEN
+  SELECT * INTO v_invoice FROM public.erp_invoices WHERE invoice_no=v_receipt.invoice_no FOR UPDATE;
+  IF v_invoice.id IS NULL THEN RAISE EXCEPTION 'Linked invoice not found'; END IF;
+  v_paid:=greatest(0,v_invoice.amount_paid-v_receipt.amount);
+  UPDATE public.erp_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=amount_due THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_invoice.id;
+ END IF;
+ UPDATE public.erp_payment_receipts SET status='reversed',reversal_reason=trim(p_reason) WHERE id=p_receipt_id RETURNING * INTO v_receipt;
+ RETURN v_receipt;
+END $$;
+GRANT EXECUTE ON FUNCTION public.reverse_erp_payment_receipt(uuid,text) TO authenticated;
