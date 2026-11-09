@@ -226,6 +226,11 @@ genericModules.accounting.sections.push(
  {table:"erp_journal_entries",title:"General journal",button:"Post balanced journal",order:"entry_date",readOnly:true,fields:[],columns:[["Journal no.","journal_no"],["Date","entry_date","date"],["Description","description"],["Status","status"],["Reversal of","reversal_of"]]},
  {table:"erp_trial_balance",title:"Trial balance",order:"account_code",readOnly:true,fields:[],columns:[["Account code","account_code"],["Account","account_name"],["Type","account_type"],["Debits","total_debits","money"],["Credits","total_credits","money"],["Balance","balance","money"]]}
 );
+genericModules.accounting.sections.push(
+ {table:"erp_profit_and_loss",title:"Profit & loss statement",order:"account_code",readOnly:true,fields:[],columns:[["Account code","account_code"],["Account","account_name"],["Category","account_type"],["Balance","balance","money"]]},
+ {table:"erp_balance_sheet",title:"Balance sheet",order:"account_code",readOnly:true,fields:[],columns:[["Account code","account_code"],["Account","account_name"],["Category","account_type"],["Balance","balance","money"]]}
+);
+
 genericModules.crm.sections.push(
  {table:"erp_customer_invoices",title:"Corporate customer invoices",button:"Create customer invoice",fields:[GF("invoice_no","Invoice number","text",true),GF("customer_name","Customer / organisation","text",true),GF("description","Service / invoice description","text",true),GF("issue_date","Issue date","date",true,null,null,true),GF("due_date","Due date","date"),GF("subtotal","Subtotal (NGN)","number",true),GF("tax_amount","Tax / adjustments (NGN)","number"),GF("status","Status","select",true,[["unpaid","Unpaid"],["cancelled","Cancelled"]])],columns:[["Invoice","invoice_no"],["Customer","customer_name"],["Description","description"],["Issued","issue_date","date"],["Due","due_date","date"],["Total","total_amount","money"],["Paid","amount_paid","money"],["Status","status"]]}
 );
