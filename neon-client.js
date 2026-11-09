@@ -144,6 +144,62 @@
         const {data,error}=await client.rpc("assign_staff_role",{p_email:payload.email,p_role:payload.role});
         if(error)throw error;return data;
       },
+      async listAssignments(){
+        const {data,error}=await client.from("assignments").select("*, course:courses(id,code,title)").order("created_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async createAssignment(payload){
+        const {data,error}=await client.from("assignments").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async listAssignmentSubmissions(){
+        const {data,error}=await client.from("assignment_submissions").select("*, assignment:assignments(id,title,course_id), student:students(student_no, profiles(first_name,last_name,email))").order("submitted_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async submitAssignment({assignmentId,studentId,responseText,fileUrl=null}){
+        const {data,error}=await client.from("assignment_submissions").insert({
+          assignment_id:assignmentId,student_id:studentId,response_text:responseText,file_url:fileUrl
+        }).select().single();
+        if(error)throw error;return data;
+      },
+      async gradeAssignmentSubmission({submissionId,score,feedback,status="graded"}){
+        const {data,error}=await client.rpc("grade_assignment_submission",{
+          p_submission_id:submissionId,p_score:Number(score),p_feedback:feedback||null,p_status:status
+        });
+        if(error)throw error;return data;
+      },
+      async listQuizzes(){
+        const {data,error}=await client.from("quizzes").select("*, course:courses(id,code,title)").order("created_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async createQuiz(payload){
+        const {data,error}=await client.from("quizzes").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async updateQuiz(quizId,payload){
+        const {data,error}=await client.from("quizzes").update(payload).eq("id",quizId).select().single();
+        if(error)throw error;return data;
+      },
+      async listQuizQuestionsForStaff(quizId){
+        const {data,error}=await client.from("quiz_questions").select("id,question,question_type,options,correct_answer,marks").eq("quiz_id",quizId);
+        if(error)throw error;return data||[];
+      },
+      async createQuizQuestion(payload){
+        const {data,error}=await client.from("quiz_questions").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async getPublishedQuizQuestions(quizId){
+        const {data,error}=await client.rpc("get_published_quiz_questions",{p_quiz_id:quizId});
+        if(error)throw error;return Array.isArray(data)?data:[];
+      },
+      async submitQuizAttempt(quizId,answers){
+        const {data,error}=await client.rpc("submit_quiz_attempt",{p_quiz_id:quizId,p_answers:answers});
+        if(error)throw error;return data;
+      },
+      async listQuizAttempts(){
+        const {data,error}=await client.from("quiz_attempts").select("*, quiz:quizzes(id,title,course_id)").order("completed_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
       async uploadCourseMaterial({courseId,title,file}){
         const session=await backend.getSession();
         if(!session?.user?.id)throw new Error("Sign in again before uploading.");
