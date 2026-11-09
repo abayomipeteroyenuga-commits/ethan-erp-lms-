@@ -13,7 +13,7 @@ app.use(express.json({ limit: "1mb", strict: true }));
 
 app.get("/healthz", (_req, res) => {
   res.set("Cache-Control", "no-store");
-  res.status(200).json({ status: "ok", service: "ethan-erp-lms" });
+  res.status(200).json({ status: "ok", service: "ethan-learn" });
 });
 
 app.all("/api/storage/presign", storageHandler);
