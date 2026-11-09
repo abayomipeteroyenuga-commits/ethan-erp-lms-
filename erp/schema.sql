@@ -295,9 +295,9 @@ CREATE POLICY erp_suppliers_access ON public.erp_suppliers FOR ALL TO authentica
 DROP POLICY IF EXISTS erp_purchase_orders_access ON public.erp_purchase_orders;
 CREATE POLICY erp_purchase_orders_access ON public.erp_purchase_orders FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
 DROP POLICY IF EXISTS erp_inventory_items_access ON public.erp_inventory_items;
-CREATE POLICY erp_inventory_items_access ON public.erp_inventory_items FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+CREATE POLICY erp_inventory_items_access ON public.erp_inventory_items FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance','hr','academic_manager')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance','hr','academic_manager'));
 DROP POLICY IF EXISTS erp_inventory_movements_access ON public.erp_inventory_movements;
-CREATE POLICY erp_inventory_movements_access ON public.erp_inventory_movements FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+CREATE POLICY erp_inventory_movements_access ON public.erp_inventory_movements FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance','hr','academic_manager')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance','hr','academic_manager'));
 DROP POLICY IF EXISTS erp_assets_access ON public.erp_assets;
 CREATE POLICY erp_assets_access ON public.erp_assets FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr','academic_manager')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr','academic_manager'));
 DROP POLICY IF EXISTS erp_leave_requests_access ON public.erp_leave_requests;
@@ -357,7 +357,7 @@ CREATE OR REPLACE FUNCTION public.record_erp_inventory_movement(p_item_id uuid,p
 RETURNS public.erp_inventory_movements LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
 DECLARE v_item public.erp_inventory_items; v_result public.erp_inventory_movements; v_new numeric(14,2);
 BEGIN
- IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'You are not authorised to adjust inventory'; END IF;
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance','hr','academic_manager') THEN RAISE EXCEPTION 'You are not authorised to adjust inventory'; END IF;
  IF p_type NOT IN ('receipt','issue','adjustment') THEN RAISE EXCEPTION 'Invalid stock movement type'; END IF;
  IF p_quantity IS NULL OR p_quantity <= 0 THEN RAISE EXCEPTION 'Quantity must be greater than zero'; END IF;
  SELECT * INTO v_item FROM public.erp_inventory_items WHERE id=p_item_id FOR UPDATE;
@@ -374,3 +374,110 @@ BEGIN
  RETURN v_result;
 END $$;
 GRANT EXECUTE ON FUNCTION public.record_erp_inventory_movement(uuid,text,numeric,date,text,text) TO authenticated;
+
+
+-- Receipts update invoice balances atomically. Inventory movements update stock atomically.
+CREATE OR REPLACE FUNCTION public.record_erp_payment_receipt(p_receipt_no text,p_invoice_no text,p_payer_name text,p_payment_date date,p_amount numeric,p_method text,p_reference text DEFAULT NULL)
+RETURNS public.erp_payment_receipts LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_invoice public.erp_invoices; v_receipt public.erp_payment_receipts; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance','admissions') THEN RAISE EXCEPTION 'You are not authorised to record payments'; END IF;
+ IF nullif(trim(p_receipt_no),'') IS NULL OR nullif(trim(p_payer_name),'') IS NULL THEN RAISE EXCEPTION 'Receipt number and payer name are required'; END IF;
+ IF p_amount IS NULL OR p_amount<=0 THEN RAISE EXCEPTION 'Payment amount must be greater than zero'; END IF;
+ IF nullif(trim(p_invoice_no),'') IS NOT NULL THEN
+  SELECT * INTO v_invoice FROM public.erp_invoices WHERE invoice_no=trim(p_invoice_no) FOR UPDATE;
+  IF v_invoice.id IS NULL THEN RAISE EXCEPTION 'Invoice not found'; END IF;
+  v_paid:=v_invoice.amount_paid+p_amount;
+  IF v_paid>v_invoice.amount_due THEN RAISE EXCEPTION 'Payment exceeds the invoice balance'; END IF;
+  UPDATE public.erp_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=amount_due THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_invoice.id;
+ END IF;
+ INSERT INTO public.erp_payment_receipts(receipt_no,invoice_no,payer_name,payment_date,amount,method,reference,status)
+ VALUES(trim(p_receipt_no),nullif(trim(p_invoice_no),''),trim(p_payer_name),coalesce(p_payment_date,current_date),p_amount,coalesce(nullif(trim(p_method),''),'bank transfer'),p_reference,'recorded')
+ RETURNING * INTO v_receipt;
+ RETURN v_receipt;
+END $$;
+GRANT EXECUTE ON FUNCTION public.record_erp_payment_receipt(text,text,text,date,numeric,text,text) TO authenticated;
+
+-- Append-only operational audit trail, readable by Super Admin and Administrator.
+CREATE OR REPLACE FUNCTION public.log_erp_change() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_id text;
+BEGIN
+ IF TG_OP='DELETE' THEN v_id:=OLD.id::text; ELSE v_id:=NEW.id::text; END IF;
+ INSERT INTO public.erp_audit_logs(actor_id,action,entity,entity_id,details)
+ VALUES(auth.uid(),lower(TG_OP),TG_TABLE_NAME,v_id,jsonb_build_object('table',TG_TABLE_NAME,'operation',TG_OP));
+ IF TG_OP='DELETE' THEN RETURN OLD; ELSE RETURN NEW; END IF;
+END $$;
+CREATE INDEX IF NOT EXISTS erp_audit_logs_created_at_idx ON public.erp_audit_logs(created_at DESC);
+
+DROP TRIGGER IF EXISTS tr_audit_erp_profiles ON public.erp_profiles;
+CREATE TRIGGER tr_audit_erp_profiles AFTER INSERT OR UPDATE OR DELETE ON public.erp_profiles FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_students ON public.erp_students;
+CREATE TRIGGER tr_audit_erp_students AFTER INSERT OR UPDATE OR DELETE ON public.erp_students FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_programmes ON public.erp_programmes;
+CREATE TRIGGER tr_audit_erp_programmes AFTER INSERT OR UPDATE OR DELETE ON public.erp_programmes FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_staff ON public.erp_staff;
+CREATE TRIGGER tr_audit_erp_staff AFTER INSERT OR UPDATE OR DELETE ON public.erp_staff FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_finance_entries ON public.erp_finance_entries;
+CREATE TRIGGER tr_audit_erp_finance_entries AFTER INSERT OR UPDATE OR DELETE ON public.erp_finance_entries FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_invoices ON public.erp_invoices;
+CREATE TRIGGER tr_audit_erp_invoices AFTER INSERT OR UPDATE OR DELETE ON public.erp_invoices FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_attendance ON public.erp_attendance;
+CREATE TRIGGER tr_audit_erp_attendance AFTER INSERT OR UPDATE OR DELETE ON public.erp_attendance FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_timetable ON public.erp_timetable;
+CREATE TRIGGER tr_audit_erp_timetable AFTER INSERT OR UPDATE OR DELETE ON public.erp_timetable FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_academic_records ON public.erp_academic_records;
+CREATE TRIGGER tr_audit_erp_academic_records AFTER INSERT OR UPDATE OR DELETE ON public.erp_academic_records FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_certificates ON public.erp_certificates;
+CREATE TRIGGER tr_audit_erp_certificates AFTER INSERT OR UPDATE OR DELETE ON public.erp_certificates FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_announcements ON public.erp_announcements;
+CREATE TRIGGER tr_audit_erp_announcements AFTER INSERT OR UPDATE OR DELETE ON public.erp_announcements FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_enquiries ON public.erp_enquiries;
+CREATE TRIGGER tr_audit_erp_enquiries AFTER INSERT OR UPDATE OR DELETE ON public.erp_enquiries FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_applications ON public.erp_applications;
+CREATE TRIGGER tr_audit_erp_applications AFTER INSERT OR UPDATE OR DELETE ON public.erp_applications FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_customers ON public.erp_customers;
+CREATE TRIGGER tr_audit_erp_customers AFTER INSERT OR UPDATE OR DELETE ON public.erp_customers FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_chart_accounts ON public.erp_chart_accounts;
+CREATE TRIGGER tr_audit_erp_chart_accounts AFTER INSERT OR UPDATE OR DELETE ON public.erp_chart_accounts FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_budgets ON public.erp_budgets;
+CREATE TRIGGER tr_audit_erp_budgets AFTER INSERT OR UPDATE OR DELETE ON public.erp_budgets FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_bank_accounts ON public.erp_bank_accounts;
+CREATE TRIGGER tr_audit_erp_bank_accounts AFTER INSERT OR UPDATE OR DELETE ON public.erp_bank_accounts FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_bank_transactions ON public.erp_bank_transactions;
+CREATE TRIGGER tr_audit_erp_bank_transactions AFTER INSERT OR UPDATE OR DELETE ON public.erp_bank_transactions FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_suppliers ON public.erp_suppliers;
+CREATE TRIGGER tr_audit_erp_suppliers AFTER INSERT OR UPDATE OR DELETE ON public.erp_suppliers FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_purchase_orders ON public.erp_purchase_orders;
+CREATE TRIGGER tr_audit_erp_purchase_orders AFTER INSERT OR UPDATE OR DELETE ON public.erp_purchase_orders FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_inventory_items ON public.erp_inventory_items;
+CREATE TRIGGER tr_audit_erp_inventory_items AFTER INSERT OR UPDATE OR DELETE ON public.erp_inventory_items FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_inventory_movements ON public.erp_inventory_movements;
+CREATE TRIGGER tr_audit_erp_inventory_movements AFTER INSERT OR UPDATE OR DELETE ON public.erp_inventory_movements FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_assets ON public.erp_assets;
+CREATE TRIGGER tr_audit_erp_assets AFTER INSERT OR UPDATE OR DELETE ON public.erp_assets FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_leave_requests ON public.erp_leave_requests;
+CREATE TRIGGER tr_audit_erp_leave_requests AFTER INSERT OR UPDATE OR DELETE ON public.erp_leave_requests FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_payroll_runs ON public.erp_payroll_runs;
+CREATE TRIGGER tr_audit_erp_payroll_runs AFTER INSERT OR UPDATE OR DELETE ON public.erp_payroll_runs FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_payroll_items ON public.erp_payroll_items;
+CREATE TRIGGER tr_audit_erp_payroll_items AFTER INSERT OR UPDATE OR DELETE ON public.erp_payroll_items FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_documents ON public.erp_documents;
+CREATE TRIGGER tr_audit_erp_documents AFTER INSERT OR UPDATE OR DELETE ON public.erp_documents FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_support_tickets ON public.erp_support_tickets;
+CREATE TRIGGER tr_audit_erp_support_tickets AFTER INSERT OR UPDATE OR DELETE ON public.erp_support_tickets FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_approval_requests ON public.erp_approval_requests;
+CREATE TRIGGER tr_audit_erp_approval_requests AFTER INSERT OR UPDATE OR DELETE ON public.erp_approval_requests FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_branches ON public.erp_branches;
+CREATE TRIGGER tr_audit_erp_branches AFTER INSERT OR UPDATE OR DELETE ON public.erp_branches FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_departments ON public.erp_departments;
+CREATE TRIGGER tr_audit_erp_departments AFTER INSERT OR UPDATE OR DELETE ON public.erp_departments FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_facility_maintenance ON public.erp_facility_maintenance;
+CREATE TRIGGER tr_audit_erp_facility_maintenance AFTER INSERT OR UPDATE OR DELETE ON public.erp_facility_maintenance FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_sales_quotes ON public.erp_sales_quotes;
+CREATE TRIGGER tr_audit_erp_sales_quotes AFTER INSERT OR UPDATE OR DELETE ON public.erp_sales_quotes FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_contracts ON public.erp_contracts;
+CREATE TRIGGER tr_audit_erp_contracts AFTER INSERT OR UPDATE OR DELETE ON public.erp_contracts FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_purchase_requisitions ON public.erp_purchase_requisitions;
+CREATE TRIGGER tr_audit_erp_purchase_requisitions AFTER INSERT OR UPDATE OR DELETE ON public.erp_purchase_requisitions FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_payment_receipts ON public.erp_payment_receipts;
+CREATE TRIGGER tr_audit_erp_payment_receipts AFTER INSERT OR UPDATE OR DELETE ON public.erp_payment_receipts FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
