@@ -26,8 +26,8 @@ renderLMS = async function (courseId) {
   });
   if (!catalogue.length) {
     document.querySelector("#content").innerHTML = emptyState(
-      "No digital courses are available yet",
-      "Published professional courses will appear here when your learner account is enrolled."
+      "No courses approved yet",
+      "Your learner account is free. Browse the course catalogue, submit payment details and wait for Superadmin verification before lessons unlock."
     );
     return;
   }
@@ -483,6 +483,12 @@ renderCourses = function () {
 renderQuizzes = async function () {
   var isStudent = currentUser && currentUser.role === "student";
   var catalogue = isStudent ? studentCourses() : (data.courses || []);
+  if(isStudent && !catalogue.length){
+    document.querySelector("#content").innerHTML =
+      pageHead("Quizzes & Knowledge Checks","Assessments are available only for courses approved to your account.")+
+      emptyState("No course assessments yet","Choose a course from the catalogue, complete payment and wait for the Superadmin to approve access.",'<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>');
+    return;
+  }
   document.querySelector("#content").innerHTML =
     pageHead("Quizzes & Knowledge Checks", "Choose a digital course to take its lesson assessments.") +
     emptyState("Loading assessments", "Retrieving published course knowledge checks…");
