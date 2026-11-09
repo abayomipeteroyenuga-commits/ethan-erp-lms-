@@ -144,6 +144,37 @@
         const {data,error}=await client.rpc("assign_staff_role",{p_email:payload.email,p_role:payload.role});
         if(error)throw error;return data;
       },
+      async listCourseModules(courseId){
+        const {data,error}=await client.from("modules")
+          .select("id,course_id,title,position,lessons(id,module_id,title,content_html,video_url,estimated_minutes,position,published)")
+          .eq("course_id",courseId).order("position",{ascending:true});
+        if(error)throw error;
+        return (data||[]).map(m=>({...m,lessons:(m.lessons||[]).sort((a,b)=>Number(a.position||0)-Number(b.position||0))}));
+      },
+      async createCourseModule(payload){
+        const {data,error}=await client.from("modules").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async createCourseLesson(payload){
+        const {data,error}=await client.from("lessons").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async updateCourseLesson(lessonId,payload){
+        const {data,error}=await client.from("lessons").update(payload).eq("id",lessonId).select().single();
+        if(error)throw error;return data;
+      },
+      async listMyLessonProgress(studentId){
+        const {data,error}=await client.from("lesson_progress")
+          .select("lesson_id,completed,completed_at").eq("student_id",studentId);
+        if(error)throw error;return data||[];
+      },
+      async setLessonProgress({studentId,lessonId,completed=true}){
+        const {data,error}=await client.from("lesson_progress").upsert({
+          student_id:studentId,lesson_id:lessonId,completed:Boolean(completed),
+          completed_at:completed?new Date().toISOString():null
+        },{onConflict:"student_id,lesson_id"}).select().single();
+        if(error)throw error;return data;
+      },
       async listAssignments(){
         const {data,error}=await client.from("assignments").select("*, course:courses(id,code,title)").order("created_at",{ascending:false});
         if(error)throw error;return data||[];
