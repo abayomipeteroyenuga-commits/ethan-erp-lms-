@@ -197,7 +197,7 @@ const navByRole = {
   super_admin: [...adminNav.slice(0,5), ["course-upload","⬆","Upload Course"], ...adminNav.slice(5)],
   admin: adminNav,
   student:[
-    ["dashboard","▦","Dashboard"],["courses","📚","My Courses"],["lms","▶","Continue Learning"],["assignments","📝","Assignments"],
+    ["dashboard","▦","Dashboard"],["catalogue","🛍","Course Catalogue"],["courses","📚","My Courses"],["lms","▶","Continue Learning"],["assignments","📝","Assignments"],
     ["quizzes","✅","Quizzes & Exams"],["attendance","📅","Attendance"],["results","📊","Results"],["certificates","🎓","Certificates"],["announcements","📣","Announcements"],["profile","👤","Profile"]
   ],
   parent:[
@@ -309,7 +309,7 @@ function navigate(page){
   $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
   const label=($("#sideNav .nav-item.active span:last-child")||{}).textContent || "Dashboard";
   $("#pageTitle").textContent=label; $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
-  const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile,"course-upload":renderCourseUpload};
+  const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,catalogue:renderCourseCatalogue,courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile,"course-upload":renderCourseUpload};
   (renderers[page]||renderDashboard)();
 }
 
