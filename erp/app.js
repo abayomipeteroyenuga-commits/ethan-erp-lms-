@@ -18,7 +18,8 @@ const modules=[
 ["crm","♧","CRM & Sales","super_admin,admin,admissions,finance"],
 ["accounting","₦","Accounting & Banking","super_admin,admin,finance"],
 ["budgets","▤","Budgets","super_admin,admin,finance"],
-["peopleops","♟","HR & Payroll","super_admin,admin,hr"],
+["humanresources","♟","Human Resources","super_admin,admin,hr"],
+["payroll","₦","Payroll","super_admin,admin,hr,finance"],
 ["procurement","⇄","Procurement","super_admin,admin,finance"],
 ["inventory","▣","Inventory & Assets","super_admin,admin,finance,hr,academic_manager"],
 ["documents","▤","Documents","super_admin,admin,hr,finance,admissions,academic_manager"],
@@ -53,7 +54,7 @@ async function dashboard(){
  ]);
  const inc=f.filter(x=>x.entry_type==="income"&&x.status==="posted").reduce((n,x)=>n+Number(x.amount),0);
  const due=i.reduce((n,x)=>n+Math.max(0,Number(x.amount_due)-Number(x.amount_paid)),0);
- const quick=[["students","Learner records","Student profiles and enrolments"],["admissions","Admissions","Enquiries and applications"],["finance","Finance","Income, expenses and invoices"],["peopleops","HR & payroll","Leave and payroll registers"],["procurement","Procurement","Suppliers and purchase requests"],["inventory","Inventory","Stock and fixed assets"],["helpdesk","Helpdesk","Support tickets"],["reports","Management reports","Operational performance"]].filter(x=>allowed(x[0]));
+ const quick=[["students","Learner records","Student profiles and enrolments"],["admissions","Admissions","Enquiries and applications"],["finance","Finance","Income, expenses and invoices"],["humanresources","Human Resources","Staff leave and HR administration"],["payroll","Payroll","Payroll runs and employee pay records"],["procurement","Procurement","Suppliers and purchase requests"],["inventory","Inventory","Stock and fixed assets"],["helpdesk","Helpdesk","Support tickets"],["reports","Management reports","Operational performance"]].filter(x=>allowed(x[0]));
  const links=quick.map(x=>'<button class="quick-link" data-page="'+x[0]+'"><b>'+x[1]+'</b><span>'+x[2]+'</span></button>').join("");
  const recent=s.slice(0,6).map(x=>'<tr><td>'+esc(x.admission_no)+'</td><td><b>'+esc(x.first_name+" "+x.last_name)+'</b></td><td>'+esc(x.programme||"—")+'</td><td>'+pill(x.status)+'</td></tr>').join("");
  $("#pageContent").innerHTML='<div class="welcome"><div><span class="eyebrow">ACADEMY CONTROL CENTRE</span><h2>Welcome to Ethan ERP</h2><p>Manage your academy administration, finance and operations from one independent workspace.</p></div><button class="secondary-btn" data-page="reports">Management reports →</button></div><div class="stats-grid">'+stat("Registered learners",s.length,"Learner records")+stat("Staff records",t.length,"People directory")+stat("Applications",apps.length,"Application records")+stat("Posted income",money(inc),"Recorded income")+stat("Outstanding invoices",money(due),"Unpaid invoice balance")+stat("Stock items",stock.length,"Inventory catalogue")+'</div><div class="content-grid">'+panel("Recent learner registrations",table(["Admission No.","Learner","Programme","Status"],recent),'<button class="link-btn" data-page="students">View all</button>')+panel("Operations workspace",'<div class="quick-links">'+links+'</div>')+'</div><div class="stats-grid">'+stat("Enquiries",enquiries.length,"Prospective learners")+stat("Pending approvals",approvals.filter(x=>x.status==="pending").length,"Requests awaiting decision")+stat("Open support tickets",tickets.filter(x=>["open","in_progress","waiting"].includes(x.status)).length,"Service desk workload")+stat("Leave requests",leave.filter(x=>x.status==="pending").length,"Awaiting HR review")+'</div>';
@@ -143,6 +144,9 @@ const genericModules={
   {table:"erp_facility_maintenance",title:"Maintenance register",button:"Create maintenance request",fields:[GF("asset_or_room","Room / asset","text",true),GF("request_type","Request type","select",true,[["repair","Repair"],["inspection","Inspection"],["servicing","Servicing"],["cleaning","Cleaning"],["other","Other"]]),GF("reported_by","Reported by"),GF("description","Issue description","textarea",true),GF("priority","Priority","select",true,[["low","Low"],["normal","Normal"],["high","High"],["urgent","Urgent"]]),GF("assigned_to","Assigned to"),GF("due_date","Due date","date"),GF("status","Status","select",true,[["open","Open"],["in_progress","In progress"],["completed","Completed"],["cancelled","Cancelled"]])],columns:[["Room / asset","asset_or_room"],["Type","request_type"],["Description","description"],["Priority","priority"],["Assigned","assigned_to"],["Due date","due_date","date"],["Status","status"]]}
  ]}
 };
+genericModules.humanresources={title:"Human Resources",desc:"Manage employee leave requests and HR reviews.",sections:[genericModules.peopleops.sections[0]]};
+genericModules.payroll={title:"Payroll",desc:"Manage payroll runs and employee pay records. Review statutory calculations and approve payments before execution.",sections:genericModules.peopleops.sections.slice(1)};
+delete genericModules.peopleops;
 genericModules.accounting.sections[3].readOnly=true;
 genericModules.inventory.sections[1].readOnly=true;
 function exportGenericCsv(key,ix){
