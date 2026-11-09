@@ -711,3 +711,43 @@ DROP TRIGGER IF EXISTS tr_audit_erp_compliance_items ON public.erp_compliance_it
 CREATE TRIGGER tr_audit_erp_compliance_items AFTER INSERT OR UPDATE OR DELETE ON public.erp_compliance_items FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
 DROP TRIGGER IF EXISTS tr_audit_erp_incidents ON public.erp_incidents;
 CREATE TRIGGER tr_audit_erp_incidents AFTER INSERT OR UPDATE OR DELETE ON public.erp_incidents FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+
+-- Posted journal entries are immutable; corrections are made using linked reversal journals.
+ALTER TABLE public.erp_journal_entries ADD COLUMN IF NOT EXISTS reversal_of uuid REFERENCES public.erp_journal_entries(id);
+CREATE UNIQUE INDEX IF NOT EXISTS erp_journal_entries_one_reversal_idx ON public.erp_journal_entries(reversal_of) WHERE reversal_of IS NOT NULL;
+CREATE OR REPLACE FUNCTION public.reverse_erp_journal(p_journal_id uuid,p_reversal_no text,p_reversal_date date,p_reason text)
+RETURNS public.erp_journal_entries LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_original public.erp_journal_entries; v_reversal public.erp_journal_entries;
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can reverse journals'; END IF;
+ IF nullif(trim(p_reversal_no),'') IS NULL OR nullif(trim(p_reason),'') IS NULL THEN RAISE EXCEPTION 'Reversal journal number and reason are required'; END IF;
+ SELECT * INTO v_original FROM public.erp_journal_entries WHERE id=p_journal_id FOR UPDATE;
+ IF v_original.id IS NULL THEN RAISE EXCEPTION 'Journal entry not found'; END IF;
+ IF v_original.status<>'posted' THEN RAISE EXCEPTION 'Only posted journals can be reversed'; END IF;
+ IF v_original.reversal_of IS NOT NULL THEN RAISE EXCEPTION 'A reversal journal cannot itself be reversed'; END IF;
+ IF EXISTS(SELECT 1 FROM public.erp_journal_entries WHERE reversal_of=v_original.id) THEN RAISE EXCEPTION 'This journal has already been reversed'; END IF;
+ INSERT INTO public.erp_journal_entries(journal_no,entry_date,description,status,created_by,reversal_of)
+ VALUES(trim(p_reversal_no),coalesce(p_reversal_date,current_date),'Reversal of '||v_original.journal_no||': '||trim(p_reason),'posted',auth.uid(),v_original.id)
+ RETURNING * INTO v_reversal;
+ INSERT INTO public.erp_journal_lines(journal_id,account_code,description,debit,credit)
+ SELECT v_reversal.id,account_code,'Reversal: '||coalesce(description,''),credit,debit FROM public.erp_journal_lines WHERE journal_id=v_original.id;
+ RETURN v_reversal;
+END $$;
+GRANT EXECUTE ON FUNCTION public.reverse_erp_journal(uuid,text,date,text) TO authenticated;
+CREATE OR REPLACE FUNCTION public.guard_posted_erp_journal() RETURNS trigger LANGUAGE plpgsql SET search_path=public,pg_temp AS $$
+DECLARE v_journal_id uuid; v_status text;
+BEGIN
+ IF TG_TABLE_NAME='erp_journal_entries' THEN
+  IF OLD.status='posted' THEN RAISE EXCEPTION 'Posted journals are immutable. Create a reversal journal instead.'; END IF;
+ ELSE
+  v_journal_id:=CASE WHEN TG_OP='DELETE' THEN OLD.journal_id ELSE NEW.journal_id END;
+  SELECT status INTO v_status FROM public.erp_journal_entries WHERE id=v_journal_id;
+  IF v_status='posted' THEN RAISE EXCEPTION 'Posted journal lines are immutable. Create a reversal journal instead.'; END IF;
+ END IF;
+ IF TG_OP='DELETE' THEN RETURN OLD; ELSE RETURN NEW; END IF;
+END $$;
+DROP TRIGGER IF EXISTS tr_guard_posted_erp_journal ON public.erp_journal_entries;
+CREATE TRIGGER tr_guard_posted_erp_journal BEFORE UPDATE OR DELETE ON public.erp_journal_entries FOR EACH ROW EXECUTE FUNCTION public.guard_posted_erp_journal();
+DROP TRIGGER IF EXISTS tr_guard_posted_erp_journal_line ON public.erp_journal_lines;
+CREATE TRIGGER tr_guard_posted_erp_journal_line BEFORE UPDATE OR DELETE ON public.erp_journal_lines FOR EACH ROW EXECUTE FUNCTION public.guard_posted_erp_journal();
