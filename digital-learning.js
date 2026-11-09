@@ -513,3 +513,140 @@ renderQuizzes = async function () {
     );
   }
 };
+
+/* My Courses displays only Superadmin-approved enrolments. */
+renderCourses = function () {
+  var isStudent = currentUser && currentUser.role === "student";
+  var list = isStudent ? studentCourses() : (data.courses || []);
+  var add = (!isStudent && ["admin","super_admin","instructor"].includes(currentUser.role))
+    ? '<button class="primary-btn" id="addCourseBtn">+ Create Course</button>' : "";
+  var body = isStudent && !list.length
+    ? emptyState("No courses approved yet","Your account is free. Choose a course from the catalogue, complete payment and submit the transfer reference. The course opens only after Superadmin verification.",'<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>')
+    : courseCards(list);
+  document.querySelector("#content").innerHTML =
+    pageHead(isStudent ? "My Courses" : "Courses",
+      isStudent ? "Only courses approved for your learner account appear here." : "Browse and manage the Academy digital course catalogue.",
+      add) + body;
+  document.querySelectorAll("[data-open-course]").forEach(function(button){
+    button.addEventListener("click",function(){window.openLmsCourse(button.getAttribute("data-open-course"));});
+  });
+  document.querySelectorAll("[data-course-manual]").forEach(function(button){
+    button.addEventListener("click",function(){openCourseStudy(button.getAttribute("data-course-manual"));});
+  });
+};
+
+/* Superadmin-only payment review. Approval verifies payment and enrols one course atomically. */
+renderPayments = async function () {
+  var backend=window.ETHAN_BACKEND;
+  if(currentUser && currentUser.role==="student"){
+    var requests=portalState.myCourseRequests||[];
+    try{
+      if(backend?.ready && portalState.myStudent){
+        requests=await backend.listMyCourseAccessRequests(portalState.myStudent.id);
+        portalState.myCourseRequests=requests;
+      }
+    }catch(error){console.warn("Course payment requests could not be refreshed:",error);}
+    var pending=requests.filter(function(r){return r.status==="pending";}).length;
+    var approved=requests.filter(function(r){return r.status==="approved";}).length;
+    var history=requests.map(function(r){
+      var title=r.course?.title||"Selected digital course";
+      var status=r.status==="approved"?'Approved — access active':r.status==="rejected"?'Declined':'Awaiting Superadmin verification';
+      var badge=r.status==="approved"?"green":r.status==="rejected"?"red":"gold";
+      return '<div class="progress-row"><div class="progress-top"><strong>'+ethanLmsEscape(title)+'</strong><span class="badge '+badge+'">'+ethanLmsEscape(status)+'</span></div><small class="muted">₦'+Number(r.amount||0).toLocaleString("en-NG")+' · Transfer ref: '+ethanLmsEscape(r.payment_reference||"—")+' · Submitted '+ethanLmsEscape(r.payment_date||"")+'</small>'+(r.admin_note?'<p class="muted" style="margin:8px 0 0">Academy note: '+ethanLmsEscape(r.admin_note)+'</p>':"")+'</div>';
+    }).join("");
+    document.querySelector("#content").innerHTML=
+      pageHead("Payments & Course Requests","Your account is free. Course access is issued separately after the Academy verifies payment.")+
+      '<div class="stats-grid">'+
+        stat("Pending review",String(pending),"Transfer details awaiting review","⏳")+
+        stat("Approved courses",String(approved),"Course access unlocked","📚")+
+        stat("Active enrolments",String(studentCourses().length),"Your approved courses","🎓")+
+        stat("Account fee","FREE","Create and keep your learner account","✓")+
+      '</div>'+
+      (history?'<div class="card"><div class="card-head"><h3>Your course payment requests</h3><button class="secondary-btn" onclick="navigate(\'catalogue\')">Choose another course</button></div><div class="progress-list">'+history+'</div></div>':emptyState("No course payment requests yet","Choose a professional course, pay its listed fee and submit the transfer reference for verification.",'<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>'));
+    return;
+  }
+
+  if(!backend?.ready){
+    document.querySelector("#content").innerHTML=pageHead("Payments & Course Access","Superadmin course approvals.")+
+      emptyState("Payment service unavailable","Reconnect to the learning database and refresh.");
+    return;
+  }
+
+  if(currentUser.role==="super_admin"){
+    document.querySelector("#content").innerHTML=pageHead("Course Payment Approvals","Check the transfer against the Academy bank statement before approving access.")+
+      '<div class="card"><p class="muted">Loading payment requests…</p></div>';
+    try{
+      var requests=await backend.listCourseAccessRequests();
+      var pending=requests.filter(function(r){return r.status==="pending";});
+      var approved=requests.filter(function(r){return r.status==="approved";});
+      var rejected=requests.filter(function(r){return r.status==="rejected";});
+      var rows=requests.map(function(r){
+        var student=r.student?.profiles||{};
+        var studentName=[student.first_name,student.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
+        var courseName=r.course?.title||"Course";
+        var status=r.status==="approved"?'Approved':r.status==="rejected"?'Rejected':'Pending verification';
+        var badge=r.status==="approved"?"green":r.status==="rejected"?"red":"gold";
+        var actions=r.status==="pending"
+          ? '<div class="toolbar-right"><button type="button" class="primary-btn" data-approve-course-request="'+ethanLmsEscape(r.id)+'">Verify & unlock</button><button type="button" class="danger-btn" data-reject-course-request="'+ethanLmsEscape(r.id)+'">Reject</button></div>'
+          : (r.payment_id?'<small class="muted">Verified payment recorded</small>':(r.admin_note?'<small class="muted">'+ethanLmsEscape(r.admin_note)+'</small>':"—"));
+        return '<tr><td><strong>'+ethanLmsEscape(studentName)+'</strong><small class="muted" style="display:block">'+ethanLmsEscape(student.email||"")+'</small></td><td>'+ethanLmsEscape(courseName)+'<small class="muted" style="display:block">'+ethanLmsEscape(r.course?.code||"")+'</small></td><td><strong>₦'+Number(r.amount||0).toLocaleString("en-NG")+'</strong></td><td>'+ethanLmsEscape(r.payment_reference||"")+'</td><td>'+ethanLmsEscape(r.payment_date||"")+'</td><td><span class="badge '+badge+'">'+status+'</span></td><td>'+actions+'</td></tr>';
+      }).join("");
+      document.querySelector("#content").innerHTML=
+        pageHead("Course Payment Approvals","Verify the transaction externally, then approve only the course shown in the request.")+
+        '<div class="stats-grid">'+
+          stat("Pending",String(pending.length),"Awaiting manual payment check","⏳")+
+          stat("Approved",String(approved.length),"Courses unlocked","✓")+
+          stat("Rejected",String(rejected.length),"Not approved","—")+
+          stat("Requests",String(requests.length),"All course access requests","📋")+
+        '</div>'+
+        '<div class="card"><div class="card-head"><h3>Transfer verification queue</h3><span class="badge gold">'+pending.length+' pending</span></div>'+
+        '<p class="muted" style="font-size:12px">Confirm the transaction reference and amount in the Academy bank records before using Verify & unlock. Approval records a verified payment and activates that course only.</p>'+
+        '<div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Amount</th><th>Transfer reference</th><th>Payment date</th><th>Status</th><th>Review</th></tr></thead><tbody>'+
+        (rows||'<tr><td colspan="7">No course payment requests have been submitted.</td></tr>')+
+        '</tbody></table></div></div>';
+      document.querySelectorAll("[data-approve-course-request]").forEach(function(button){
+        button.onclick=async function(){
+          var requestId=button.dataset.approveCourseRequest;
+          if(!confirm("Have you checked the bank record and confirmed that the full course fee was received? This will activate the requested course."))return;
+          var note=prompt("Optional Superadmin note for the learner:","Payment verified. Course access approved.")||"";
+          button.disabled=true;button.textContent="Approving…";
+          try{
+            await backend.approveCourseAccessRequest(requestId,note);
+            alert("Payment verified and the requested course has been unlocked.");
+            await renderPayments();
+          }catch(error){
+            button.disabled=false;button.textContent="Verify & unlock";
+            alert(error.message||"The course could not be approved.");
+          }
+        };
+      });
+      document.querySelectorAll("[data-reject-course-request]").forEach(function(button){
+        button.onclick=async function(){
+          var note=prompt("Reason for rejecting this payment request (required):","");
+          if(note===null)return;
+          if(!note.trim())return alert("Enter a short reason before rejecting the request.");
+          button.disabled=true;button.textContent="Rejecting…";
+          try{
+            await backend.rejectCourseAccessRequest(button.dataset.rejectCourseRequest,note.trim());
+            await renderPayments();
+          }catch(error){
+            button.disabled=false;button.textContent="Reject";
+            alert(error.message||"The request could not be rejected.");
+          }
+        };
+      });
+    }catch(error){
+      document.querySelector("#content").innerHTML=pageHead("Course Payment Approvals","Superadmin review queue.")+
+        emptyState("Payment requests could not be loaded",error.message||"Refresh and try again.");
+    }
+    return;
+  }
+
+  var payments=Array.isArray(data.payments)?data.payments:[];
+  document.querySelector("#content").innerHTML=
+    pageHead("Payments","Verified payment records. Only the Superadmin can approve course access.")+
+    '<div class="card"><p class="muted">Course payment requests are reviewed by the Superadmin. You can view verified payment records, but you cannot approve or allocate learner courses.</p>'+
+    '<div class="table-wrap"><table class="data-table"><thead><tr><th>Reference</th><th>Learner</th><th>Description</th><th>Amount</th><th>Status</th></tr></thead><tbody>'+
+    (payments.map(function(p){return '<tr><td>'+ethanLmsEscape(p.ref||p.reference||"—")+'</td><td>'+ethanLmsEscape(p.student||"Learner")+'</td><td>'+ethanLmsEscape(p.description||"Course payment")+'</td><td>₦'+Number(p.amount||0).toLocaleString("en-NG")+'</td><td>'+ethanLmsEscape(p.status||"Verified")+'</td></tr>';}).join("")||'<tr><td colspan="5">No payment records yet.</td></tr>')+
+    '</tbody></table></div></div>';
+};
