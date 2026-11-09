@@ -1,4 +1,4 @@
-const CACHE = "ethan-erp-lms-neon-free-v13";
+const CACHE = "ethan-learn-neon-v14";
 const ASSETS = [
   "./","./index.html","./styles.css","./app.js","./config.js",
   "./neon-client.js","./course-narration-data.js","./assets/ethan-logo.jpeg"
