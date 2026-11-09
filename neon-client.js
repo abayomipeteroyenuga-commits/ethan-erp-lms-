@@ -17,8 +17,19 @@
   };
   try{
     if(!cfg.neonAuthUrl||!cfg.neonDataApiUrl)throw new Error("Ethan LMS authentication and data services are not configured.");
-    const {createClient}=await import("https://esm.sh/@neon/neon-js@0.9.0-beta?bundle");
-    const client=createClient({
+    let neonSdk=null,cdnErrors=[];
+    const sdkUrls=[
+      "https://esm.sh/@neondatabase/neon-js@0.9.0-beta?bundle",
+      "https://cdn.jsdelivr.net/npm/@neondatabase/neon-js@0.9.0-beta/+esm"
+    ];
+    for(const sdkUrl of sdkUrls){
+      try{ neonSdk=await import(sdkUrl); break; }
+      catch(error){ cdnErrors.push((error?.message||"SDK import failed")+" ("+new URL(sdkUrl).host+")"); }
+    }
+    if(!neonSdk?.createClient){
+      throw new Error("The Neon browser SDK could not be loaded. Check your internet connection and refresh. "+cdnErrors.join(" | "));
+    }
+    const client=neonSdk.createClient({
       auth:{url:cfg.neonAuthUrl},
       dataApi:{url:cfg.neonDataApiUrl}
     });
@@ -170,6 +181,39 @@
       },
       async createPayment(payload){
         const {data,error}=await client.from("payments").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async listMyCourseAccessRequests(studentId){
+        const {data,error}=await client.from("course_access_requests")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,notes,status,submitted_at,reviewed_at,admin_note,course:courses(id,code,title,fee)")
+          .eq("student_id",studentId).order("submitted_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async listCourseAccessRequests(){
+        const {data,error}=await client.from("course_access_requests")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,notes,status,submitted_at,reviewed_by,reviewed_at,admin_note,payment_id,course:courses(id,code,title,fee),student:students(id,student_no,profiles(first_name,last_name,email,phone))")
+          .order("submitted_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async createCourseAccessRequest(payload){
+        const {data,error}=await client.from("course_access_requests").insert({
+          student_id:payload.studentId,course_id:payload.courseId,amount:Number(payload.amount),
+          payment_reference:String(payload.paymentReference||"").trim(),
+          payment_method:payload.paymentMethod||"bank_transfer",payment_date:payload.paymentDate,
+          notes:String(payload.notes||"").trim()||null,status:"pending"
+        }).select().single();
+        if(error)throw error;return data;
+      },
+      async approveCourseAccessRequest(requestId,adminNote=""){
+        const {data,error}=await client.rpc("approve_course_access_request",{
+          p_request_id:requestId,p_admin_note:adminNote||null
+        });
+        if(error)throw error;return data;
+      },
+      async rejectCourseAccessRequest(requestId,adminNote=""){
+        const {data,error}=await client.rpc("reject_course_access_request",{
+          p_request_id:requestId,p_admin_note:adminNote||null
+        });
         if(error)throw error;return data;
       },
       async listAnnouncements(){
