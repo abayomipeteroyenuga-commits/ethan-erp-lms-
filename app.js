@@ -764,12 +764,12 @@ async function openCourseStudy(title){
   const material=await resolveCourseMaterial(currentStudyCourseTitle);
   if(material?.pdf_url){
     $("#content").innerHTML=pageHead("Full Course Study",
-      isSuperAdmin()?"Super Admin academic access: complete uploaded course manual.":"Free course study manual.",
+      isSuperAdmin()?"Super Admin academic access: complete uploaded course manual.":"Your approved course study manual.",
       `<div class="study-actions"><button class="primary-btn" id="openFullPdfBtn">Open Full PDF</button></div>`)+
       narrationControls(material.pdf_url,currentStudyCourseTitle)+`<div class="card course-pdf-shell"><div class="card-head"><div><h3>${escHtml(currentStudyCourseTitle)}</h3><p class="muted">Complete course manual</p></div></div><iframe class="course-pdf-reader" src="${escHtml(material.pdf_url)}#toolbar=1&navpanes=1&view=FitH" title="${escHtml(currentStudyCourseTitle)} full course manual"></iframe></div>`;
     $("#openFullPdfBtn").onclick=()=>window.open(material.pdf_url,"_blank","noopener"); bindNarrationControls(material.pdf_url,currentStudyCourseTitle); return;
   }
-  $("#content").innerHTML=pageHead("Course Study Note",isSuperAdmin()?"Super Admin academic access: structured course material.":"Free course study material.",`<div class="study-actions"><button class="secondary-btn" id="downloadWordBtn">Download Word</button><button class="primary-btn" id="printPdfBtn">Save as PDF / Print</button></div>`)+`<article class="study-reader">${renderGuideHtml(g)}</article>`;
+  $("#content").innerHTML=pageHead("Course Study Note",isSuperAdmin()?"Super Admin academic access: structured course material.":"Your approved course study material.",`<div class="study-actions"><button class="secondary-btn" id="downloadWordBtn">Download Word</button><button class="primary-btn" id="printPdfBtn">Save as PDF / Print</button></div>`)+`<article class="study-reader">${renderGuideHtml(g)}</article>`;
   $("#downloadWordBtn").onclick=()=>downloadCourseWord(g); $("#printPdfBtn").onclick=()=>printCoursePdf(g);
 }
 
@@ -1079,7 +1079,7 @@ function renderStudentHome(){
  const pending=(portalState.myCourseRequests||[]).filter(r=>r.status==="pending").length;
  const courseSection=courses.length
    ? '<div class="course-grid">'+courses.map(function(course){
-       return '<article class="course-card"><div class="course-thumb"><strong>'+escHtml(course.code||"APPROVED COURSE")+'</strong></div><div class="course-body"><h3>'+escHtml(course.title)+'</h3><p>Superadmin-approved course · '+escHtml(course.duration||"Self-paced")+'</p><button class="primary-btn" data-open-approved-course>Open Course</button></div></article>';
+       return '<article class="course-card"><div class="course-thumb"><strong>'+escHtml(course.code||"APPROVED COURSE")+'</strong></div><div class="course-body"><h3>'+escHtml(course.title)+'</h3><p>Superadmin-approved course · '+escHtml(course.duration||"Self-paced")+'</p><button class="primary-btn" type="button" data-open-approved-course="'+escHtml(course.id)+'">Open Course</button></div></article>';
      }).join("")+'</div>'
    : emptyState("No courses approved yet","Your Ethan LEARN account is free. Choose a professional course, pay its listed fee and submit the transfer reference. The Superadmin will unlock the course after verifying the payment.",'<button class="primary-btn" id="browseLearnerCatalogue">Browse Course Catalogue</button>');
  $("#content").innerHTML =
@@ -1101,7 +1101,7 @@ function renderStudentHome(){
    button.onclick=function(){navigate(button.dataset.studentPage);};
  });
  document.querySelectorAll("[data-open-approved-course]").forEach(function(button){
-   button.onclick=function(){navigate("lms");};
+   button.onclick=function(){window.openLmsCourse(button.getAttribute("data-open-approved-course"));};
  });
 }
 
