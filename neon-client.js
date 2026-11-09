@@ -17,7 +17,7 @@
   };
   try{
     if(!cfg.neonDatabaseUrl)throw new Error("Ethan LMS Neon configuration is missing.");
-    const {createClient}=await import("https://esm.sh/@neon/neon-js@latest?bundle");
+    const {createClient}=await import("https://esm.sh/@neon/neon-js@0.9.0-beta?bundle");
     const client=createClient(cfg.neonDatabaseUrl);
     const requestStorage=async(payload)=>{
       const {data,error}=await client.auth.getSession();
