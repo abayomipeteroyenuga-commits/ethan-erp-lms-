@@ -498,3 +498,182 @@ INSERT INTO public.courses(code,title,description,duration,fee,difficulty,publis
 ('EDA-099','CRM Fundamentals','Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.','Self-paced',0,'Beginner',true,true),
 ('EDA-100','Project Management Fundamentals','Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.','Self-paced',0,'Beginner',true,true)
 ON CONFLICT(code) DO UPDATE SET title=excluded.title,description=excluded.description,duration=excluded.duration,fee=0,published=true,certificate_enabled=true,updated_at=now();
+
+
+-- ETHAN LMS assessment security hardening (2026-11-09)
+-- Learners may submit assignment work but cannot write marks or feedback.
+-- Quiz answers are graded inside the database; clients never write score/pass flags.
+
+REVOKE INSERT, UPDATE, DELETE ON public.assignment_submissions FROM authenticated;
+GRANT INSERT (assignment_id, student_id, response_text, file_url)
+  ON public.assignment_submissions TO authenticated;
+
+REVOKE INSERT, UPDATE, DELETE ON public.quiz_attempts FROM authenticated;
+
+CREATE OR REPLACE FUNCTION public.grade_assignment_submission(
+  p_submission_id uuid,
+  p_score numeric,
+  p_feedback text DEFAULT NULL,
+  p_status text DEFAULT 'graded'
+)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'public', 'pg_temp'
+AS $function$
+DECLARE
+  v_max_marks numeric;
+  v_submission public.assignment_submissions%ROWTYPE;
+BEGIN
+  IF NOT public.is_staff() THEN
+    RAISE EXCEPTION 'Only authorised staff can grade assignment submissions.';
+  END IF;
+  IF p_status NOT IN ('graded','returned') THEN
+    RAISE EXCEPTION 'Invalid assignment grading status.';
+  END IF;
+  SELECT a.max_marks INTO v_max_marks
+  FROM public.assignment_submissions s
+  JOIN public.assignments a ON a.id=s.assignment_id
+  WHERE s.id=p_submission_id;
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'Assignment submission not found.';
+  END IF;
+  IF p_score IS NULL OR p_score < 0 OR p_score > COALESCE(v_max_marks,100) THEN
+    RAISE EXCEPTION 'The score must be between zero and the assignment maximum.';
+  END IF;
+  UPDATE public.assignment_submissions
+  SET score=p_score, feedback=p_feedback, status=p_status
+  WHERE id=p_submission_id
+  RETURNING * INTO v_submission;
+  RETURN jsonb_build_object(
+    'id',v_submission.id,
+    'assignment_id',v_submission.assignment_id,
+    'student_id',v_submission.student_id,
+    'score',v_submission.score,
+    'feedback',v_submission.feedback,
+    'status',v_submission.status,
+    'submitted_at',v_submission.submitted_at
+  );
+END;
+$function$;
+
+REVOKE ALL ON FUNCTION public.grade_assignment_submission(uuid,numeric,text,text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.grade_assignment_submission(uuid,numeric,text,text) TO authenticated;
+
+CREATE OR REPLACE FUNCTION public.get_published_quiz_questions(p_quiz_id uuid)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'public', 'pg_temp'
+AS $function$
+DECLARE
+  v_questions jsonb;
+BEGIN
+  IF auth.uid() IS NULL THEN
+    RAISE EXCEPTION 'Sign in to access this quiz.';
+  END IF;
+  IF NOT EXISTS (
+    SELECT 1
+    FROM public.quizzes q
+    JOIN public.courses c ON c.id=q.course_id
+    WHERE q.id=p_quiz_id AND q.published=true AND c.published=true
+  ) THEN
+    RAISE EXCEPTION 'This quiz is not available.';
+  END IF;
+  SELECT COALESCE(
+    jsonb_agg(
+      jsonb_build_object(
+        'id',qq.id,
+        'question',qq.question,
+        'question_type',qq.question_type,
+        'options',qq.options,
+        'marks',qq.marks
+      ) ORDER BY qq.id
+    ),
+    '[]'::jsonb
+  )
+  INTO v_questions
+  FROM public.quiz_questions qq
+  WHERE qq.quiz_id=p_quiz_id;
+  RETURN v_questions;
+END;
+$function$;
+
+REVOKE ALL ON FUNCTION public.get_published_quiz_questions(uuid) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_published_quiz_questions(uuid) TO authenticated;
+
+CREATE OR REPLACE FUNCTION public.submit_quiz_attempt(
+  p_quiz_id uuid,
+  p_answers jsonb
+)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'public', 'pg_temp'
+AS $function$
+DECLARE
+  v_student_id uuid;
+  v_pass_mark numeric;
+  v_attempts_allowed integer;
+  v_attempts_taken integer;
+  v_total_marks numeric;
+  v_earned_marks numeric;
+  v_score numeric(6,2);
+  v_passed boolean;
+  v_attempt public.quiz_attempts%ROWTYPE;
+BEGIN
+  IF auth.uid() IS NULL THEN
+    RAISE EXCEPTION 'Sign in before submitting a quiz.';
+  END IF;
+  IF jsonb_typeof(p_answers) IS DISTINCT FROM 'object' THEN
+    RAISE EXCEPTION 'Quiz answers must be submitted as an answer object.';
+  END IF;
+  SELECT s.id INTO v_student_id
+  FROM public.students s
+  WHERE s.user_id=auth.uid();
+  IF v_student_id IS NULL THEN
+    RAISE EXCEPTION 'A learner profile is required before taking a quiz.';
+  END IF;
+  SELECT q.pass_mark, GREATEST(COALESCE(q.attempts_allowed,1),1), COUNT(qa.id)::integer
+  INTO v_pass_mark, v_attempts_allowed, v_attempts_taken
+  FROM public.quizzes q
+  JOIN public.courses c ON c.id=q.course_id
+  LEFT JOIN public.quiz_attempts qa
+    ON qa.quiz_id=q.id AND qa.student_id=v_student_id
+  WHERE q.id=p_quiz_id AND q.published=true AND c.published=true
+  GROUP BY q.pass_mark,q.attempts_allowed;
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'This quiz is not available.';
+  END IF;
+  IF v_attempts_taken >= v_attempts_allowed THEN
+    RAISE EXCEPTION 'You have used all allowed attempts for this quiz.';
+  END IF;
+  SELECT
+    COALESCE(SUM(qq.marks),0),
+    COALESCE(SUM(CASE WHEN (p_answers -> (qq.id::text)) = qq.correct_answer THEN qq.marks ELSE 0 END),0)
+  INTO v_total_marks,v_earned_marks
+  FROM public.quiz_questions qq
+  WHERE qq.quiz_id=p_quiz_id;
+  IF v_total_marks <= 0 THEN
+    RAISE EXCEPTION 'This quiz has no graded questions yet.';
+  END IF;
+  v_score := ROUND((v_earned_marks / v_total_marks) * 100,2);
+  v_passed := v_score >= COALESCE(v_pass_mark,60);
+  INSERT INTO public.quiz_attempts(quiz_id,student_id,score,passed,started_at,completed_at)
+  VALUES(p_quiz_id,v_student_id,v_score,v_passed,now(),now())
+  RETURNING * INTO v_attempt;
+  RETURN jsonb_build_object(
+    'id',v_attempt.id,
+    'quiz_id',v_attempt.quiz_id,
+    'student_id',v_attempt.student_id,
+    'score',v_attempt.score,
+    'passed',v_attempt.passed,
+    'completed_at',v_attempt.completed_at,
+    'total_marks',v_total_marks,
+    'earned_marks',v_earned_marks
+  );
+END;
+$function$;
+
+REVOKE ALL ON FUNCTION public.submit_quiz_attempt(uuid,jsonb) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.submit_quiz_attempt(uuid,jsonb) TO authenticated;
