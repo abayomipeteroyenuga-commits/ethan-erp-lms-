@@ -1,7 +1,7 @@
-const CACHE = "ethan-learn-neon-v16";
+const CACHE = "ethan-learn-neon-v17";
 const ASSETS = [
   "./","./index.html","./styles.css","./app.js","./config.js",
-  "./neon-client.js","./course-narration-data.js","./digital-learning.js","./assets/ethan-logo.jpeg"
+  "./neon-client.js","./neon-sdk.bundle.js","./course-narration-data.js","./digital-learning.js","./assets/ethan-logo.jpeg"
 ];
 self.addEventListener("install", event => {
   self.skipWaiting();
@@ -15,7 +15,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if(event.request.method!=="GET")return;
   const url=new URL(event.request.url);
-  const isAppAsset=["/","/index.html","/styles.css","/app.js","/config.js","/neon-client.js","/course-narration-data.js"].some(s=>url.pathname.endsWith(s));
+  const isAppAsset=["/","/index.html","/styles.css","/app.js","/config.js","/neon-client.js","/neon-sdk.bundle.js","/course-narration-data.js"].some(s=>url.pathname.endsWith(s));
   if(isAppAsset){
     event.respondWith(fetch(event.request).then(response=>{
       if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}
