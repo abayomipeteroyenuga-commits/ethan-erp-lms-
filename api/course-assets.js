@@ -55,7 +55,7 @@ export default async function handler(req, res) {
 
     const query = isManual
       ? "SELECT cma.filename, cma.course_id FROM public.course_manual_assets cma JOIN public.courses c ON c.id=cma.course_id WHERE cma.filename=$1 AND cma.is_active=true AND c.published=true AND ($2::boolean=true OR EXISTS (SELECT 1 FROM public.enrolments e JOIN public.students s ON s.id=e.student_id WHERE s.user_id=$3 AND e.course_id=c.id AND e.status='active')) LIMIT 1"
-      : "SELECT cma.filename, cma.course_id FROM public.course_manual_assets cma JOIN public.courses c ON c.id=cma.course_id WHERE replace(replace(cma.filename, '-FULL-VISUAL-STUDY-MANUAL.pdf', '.pdf'), '.pdf', '.txt') AND cma.is_active=true AND c.published=true AND ($2::boolean=true OR EXISTS (SELECT 1 FROM public.enrolments e JOIN public.students s ON s.id=e.student_id WHERE s.user_id=$3 AND e.course_id=c.id AND e.status='active')) LIMIT 1";
+      : "SELECT cma.filename, cma.course_id FROM public.course_manual_assets cma JOIN public.courses c ON c.id=cma.course_id WHERE replace(replace(cma.filename, '-FULL-VISUAL-STUDY-MANUAL.pdf', '.pdf'), '.pdf', '.txt')=$1 AND cma.is_active=true AND c.published=true AND ($2::boolean=true OR EXISTS (SELECT 1 FROM public.enrolments e JOIN public.students s ON s.id=e.student_id WHERE s.user_id=$3 AND e.course_id=c.id AND e.status='active')) LIMIT 1";
 
     const record = await pool.query(query, [requested, isStaff, userId]);
     if (!record.rows.length) {
