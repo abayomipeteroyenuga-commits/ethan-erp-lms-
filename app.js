@@ -626,8 +626,13 @@ const BUILTIN_COURSE_MATERIALS = {
 function builtinCourseMaterial(title){ return BUILTIN_COURSE_MATERIALS[String(title||"").trim().toLowerCase()] || ""; }
 
 async function resolveCourseMaterial(title){
-  const built=builtinCourseMaterial(title); if(built) return {pdf_url:built,source:"bundled"};
-  try{ if(window.ETHAN_BACKEND?.getCourseMaterial) return await window.ETHAN_BACKEND.getCourseMaterial(title); }catch(e){ console.warn(e); }
+  const built=builtinCourseMaterial(title);
+  if(built && window.ETHAN_BACKEND?.getBuiltinCourseManual){
+    try{return await window.ETHAN_BACKEND.getBuiltinCourseManual(built.split("/").pop());}
+    catch(error){console.warn("Protected bundled course manual could not be opened:",error);}
+  }
+  try{if(window.ETHAN_BACKEND?.getCourseMaterial)return await window.ETHAN_BACKEND.getCourseMaterial(title);}
+  catch(error){console.warn("Uploaded course material could not be opened:",error);}
   return null;
 }
 
@@ -709,9 +714,9 @@ async function startCourseNarration(pdf,title){
     try{
       const txtName=String(canonicalPdf).split("/").pop().split("?")[0].replace(/\.pdf$/i,".txt");
       const base=new URL("./", window.location.href);
-      const narrationUrl=new URL("assets/course-narration/"+txtName, base).href;
-      const r=await fetch(narrationUrl,{cache:"no-store"});
-      if(r.ok) text=await r.text();
+      if(window.ETHAN_BACKEND?.getCourseNarration){
+        text=await window.ETHAN_BACKEND.getCourseNarration(txtName);
+      }
     }catch(e){ console.warn("Narration transcript fetch failed",e); }
   }
 
