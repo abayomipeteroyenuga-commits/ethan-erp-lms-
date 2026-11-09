@@ -32,6 +32,30 @@
       if(!response.ok)throw new Error(result.error||"The course-material service is unavailable.");
       return result;
     };
+    const PENDING_PROFILE_KEY="ethan_pending_profile_v1";
+    const savePendingProfile=details=>{
+      try{
+        localStorage.setItem(PENDING_PROFILE_KEY,JSON.stringify({...details,createdAt:Date.now()}));
+      }catch(_){}
+    };
+    const getPendingProfile=email=>{
+      try{
+        const saved=JSON.parse(localStorage.getItem(PENDING_PROFILE_KEY)||"null");
+        if(!saved||String(saved.email||"").toLowerCase()!==String(email||"").toLowerCase())return null;
+        if(Date.now()-Number(saved.createdAt||0)>48*60*60*1000){
+          localStorage.removeItem(PENDING_PROFILE_KEY);return null;
+        }
+        return saved;
+      }catch(_){return null;}
+    };
+    const clearPendingProfile=()=>{
+      try{localStorage.removeItem(PENDING_PROFILE_KEY);}catch(_){}
+    };
+    const sessionFrom=async fallback=>{
+      const response=await client.auth.getSession();
+      if(response?.error)throw response.error;
+      return response?.data?.session||fallback||null;
+    };
     const ensureProfile=async({firstName="",lastName="",phone="",learnerType="student"}={})=>{
       const {data,error}=await client.rpc("ensure_student_account",{
         p_first_name:firstName,p_last_name:lastName,p_phone:phone,p_learner_type:learnerType
@@ -42,29 +66,46 @@
     const backend={
       ready:true,client,
       async signUp({email,password,firstName,lastName,phone,learnerType}){
-        const {data,error}=await client.auth.signUp.email({
+        const response=await client.auth.signUp.email({
           email,password,name:(firstName+" "+lastName).trim(),callbackURL:location.origin+location.pathname
         });
-        if(error)throw error;
-        if(!data?.user)throw new Error("The account service did not return the new user. Please try again.");
-        const session=await client.auth.getSession();
-        if(session.error)throw session.error;
-        if(!session.data?.session)throw new Error("Your account was created but a session was not started. Please sign in.");
+        if(response?.error)throw response.error;
+        const data=response?.data||response;
+        const user=data?.user||data?.session?.user;
+        if(!user)throw new Error("The account service did not return the new user. Please try again.");
+        const session=await sessionFrom(data?.session);
+        const pending={email:String(email).trim().toLowerCase(),firstName,lastName,phone,learnerType};
+        if(!session){
+          savePendingProfile(pending);
+          return {user,session:null,profile:null,verificationRequired:true};
+        }
         const profile=await ensureProfile({firstName,lastName,phone,learnerType});
-        return {user:data.user,session:session.data.session,profile};
+        clearPendingProfile();
+        return {user,session,profile,verificationRequired:false};
       },
       async signIn(email,password){
-        const {data,error}=await client.auth.signIn.email({email,password});
-        if(error)throw error;
-        if(!data?.user)throw new Error("Email or password is incorrect.");
-        const lookup=await client.from("profiles").select("*").eq("id",data.user.id).maybeSingle();
+        const response=await client.auth.signIn.email({email,password});
+        if(response?.error)throw response.error;
+        const data=response?.data||response;
+        const session=await sessionFrom(data?.session);
+        const user=data?.user||session?.user;
+        if(!user)throw new Error("Email or password is incorrect.");
+        if(!session)throw new Error("Your account was recognised, but a secure session could not be started. Please sign in again.");
+        const lookup=await client.from("profiles").select("*").eq("id",user.id).maybeSingle();
         if(lookup.error)throw lookup.error;
         let profile=lookup.data;
         if(!profile){
-          const parts=String(data.user.name||"").trim().split(/\\s+/);
-          profile=await ensureProfile({firstName:parts[0]||"",lastName:parts.slice(1).join(" "),phone:"",learnerType:"student"});
+          const pending=getPendingProfile(email);
+          const parts=String(user.name||"").trim().split(/\\s+/);
+          profile=await ensureProfile({
+            firstName:pending?.firstName||parts[0]||"",
+            lastName:pending?.lastName||parts.slice(1).join(" "),
+            phone:pending?.phone||"",
+            learnerType:pending?.learnerType||"student"
+          });
         }
-        return {user:data.user,session:data.session||null,profile};
+        clearPendingProfile();
+        return {user,session,profile};
       },
       async signOut(){
         const {error}=await client.auth.signOut();
