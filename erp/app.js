@@ -160,7 +160,7 @@ const genericModules={
   ]}
 };
 genericModules.admissions.sections.push(
- {table:"erp_student_enrolments",title:"Student enrolment history",button:"Enrol learner on programme",fields:[GF("enrollment_no","Enrolment number","text",true),GF("student_id","Learner","select",true,null,{table:"erp_students",label:"first_name",value:"id",prefix:"admission_no"}),GF("programme_code","Programme","select",true,null,{table:"erp_programmes",label:"name",value:"code"}),GF("intake","Intake"),GF("cohort","Cohort / class"),GF("start_date","Start date","date",true,null,null,true),GF("expected_completion_date","Expected completion","date"),GF("completion_date","Completion date","date"),GF("fee_amount","Agreed programme fee (NGN)","number"),GF("status","Status","select",true,[["active","Active"],["deferred","Deferred"],["completed","Completed"],["withdrawn","Withdrawn"]]),GF("notes","Notes","textarea")],columns:[["Enrolment","enrollment_no"],["Learner","student_id"],["Programme","programme_name"],["Intake","intake"],["Cohort","cohort"],["Start","start_date","date"],["Expected completion","expected_completion_date","date"],["Status","status"]]}
+ {table:"erp_student_enrolments",title:"Student enrolment history",button:"Enrol learner on programme",fields:[GF("enrollment_no","Enrolment number","text",true),GF("student_id","Learner","select",true,null,{table:"erp_student_case_directory",label:"first_name",value:"id",prefix:"admission_no"}),GF("programme_code","Programme","select",true,null,{table:"erp_programmes",label:"name",value:"code"}),GF("intake","Intake"),GF("cohort","Cohort / class"),GF("start_date","Start date","date",true,null,null,true),GF("expected_completion_date","Expected completion","date"),GF("completion_date","Completion date","date"),GF("fee_amount","Agreed programme fee (NGN)","number"),GF("status","Status","select",true,[["active","Active"],["deferred","Deferred"],["completed","Completed"],["withdrawn","Withdrawn"]]),GF("notes","Notes","textarea")],columns:[["Enrolment","enrollment_no"],["Learner","student_id"],["Programme","programme_name"],["Intake","intake"],["Cohort","cohort"],["Start","start_date","date"],["Expected completion","expected_completion_date","date"],["Status","status"]]}
 );
 genericModules.student_support={title:"Student Support & Welfare",desc:"Confidential learner welfare, conduct and support case tracking. Access is limited to academic leadership, HR and administrators.",sections:[
  {table:"erp_student_cases",title:"Learner support and conduct cases",button:"Open student case",fields:[GF("case_no","Case number","text",true),GF("student_id","Learner","select",true,null,{table:"erp_students",label:"first_name",value:"id",prefix:"admission_no"}),GF("case_type","Case type","select",true,[["welfare","Welfare"],["academic_support","Academic support"],["conduct","Conduct"],["safeguarding","Safeguarding"],["disciplinary","Disciplinary"],["other","Other"]]),GF("incident_date","Date","date",true,null,null,true),GF("severity","Severity","select",true,[["low","Low"],["medium","Medium"],["high","High"],["critical","Critical"]]),GF("description","Case details","textarea",true),GF("action_taken","Support / action taken","textarea"),GF("assigned_to","Assigned officer"),GF("status","Status","select",true,[["open","Open"],["in_progress","In progress"],["resolved","Resolved"],["closed","Closed"]]),GF("resolved_at","Resolved date","date")],columns:[["Case no.","case_no"],["Learner","student_id"],["Type","case_type"],["Date","incident_date","date"],["Severity","severity"],["Assigned to","assigned_to"],["Status","status"]]}
@@ -198,6 +198,15 @@ function exportGenericCsv(key,ix){
 }
 function genericFormat(row,col){
  const v=row[col[1]];
+ if(col[1]==="student_id"){
+  const list=cache.erp_students||cache.erp_student_case_directory||[];
+  const st=list.find(x=>x.id===v);
+  if(st)return esc((st.admission_no?st.admission_no+" · ":"")+(st.first_name||"")+" "+(st.last_name||""));
+ }
+ if(col[1]==="project_id"){const pr=(cache.erp_projects||[]).find(x=>x.id===v);if(pr)return esc(pr.project_name);}
+ if(col[1]==="bank_account_id"){const ba=(cache.erp_bank_accounts||[]).find(x=>x.id===v);if(ba)return esc(ba.bank_name+" · "+ba.account_name);}
+ if(col[1]==="programme_code"){const pr=(cache.erp_programmes||[]).find(x=>x.code===v);if(pr)return esc(pr.name);}
+
  if(col[2]==="money")return money(v);
  if(col[2]==="date")return v?esc(String(v).slice(0,10)):"—";
  if(col[2]==="variance")return money(Number(row.budget_amount||0)-Number(row.actual_amount||0));
@@ -257,7 +266,7 @@ function genericFieldHtml(field,value){
  if(field.options||field.relation){
   let opts=field.options||[];
   if(field.relation){opts=(cache[field.relation.table]||[]).map(x=>[x[field.relation.value],(field.relation.prefix&&x[field.relation.prefix]?x[field.relation.prefix]+" · ":"")+x[field.relation.label]]);}
-  return '<label>'+esc(field.label)+'<select name="'+field.name+'" '+req+'>'+(field.required?"":'<option value="">Select / not assigned</option>')+opts.map(o=>'<option value="'+esc(o[0])+'" '+(String(o[0])===v?"selected":"")+'>'+esc(o[1])+'</option>').join("")+'</select></label>';
+  return '<label>'+esc(field.label)+'<select name="'+field.name+'" '+req+'>'+'<option value="">Select / not assigned</option>'+opts.map(o=>'<option value="'+esc(o[0])+'" '+(String(o[0])===v?"selected":"")+'>'+esc(o[1])+'</option>').join("")+'</select></label>';
  }
  if(field.type==="textarea")return '<label>'+esc(field.label)+'<textarea name="'+field.name+'" '+req+'>'+esc(v)+'</textarea></label>';
  const min=field.type==="number"?' min="0" step="0.01"':"";
@@ -294,6 +303,7 @@ function openGenericForm(key,ix,row){
    else payload[f.name]=v||null;
   }
   if(s.table==="erp_payroll_items")payload.net_pay=Math.max(0,Number(payload.basic_salary||0)+Number(payload.allowances||0)-Number(payload.deductions||0));
+  if(s.table==="erp_student_enrolments"&&payload.programme_code){const selected=(cache.erp_programmes||[]).find(x=>x.code===payload.programme_code);payload.programme_name=selected?.name||payload.programme_code;}
   if(s.table==="erp_customer_invoices"||s.table==="erp_supplier_bills")payload.total_amount=Number(payload.subtotal||0)+Number(payload.tax_amount||0);
   if(s.table==="erp_inventory_movements"&&!row){
    await rpc("record_erp_inventory_movement",{p_item_id:payload.item_id,p_type:payload.movement_type,p_quantity:payload.quantity,p_date:payload.movement_date||today(),p_reference:payload.reference,p_notes:payload.notes});
