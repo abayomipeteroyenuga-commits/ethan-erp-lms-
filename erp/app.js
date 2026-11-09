@@ -115,7 +115,7 @@ const genericModules={
  peopleops:{title:"Human Resources & Payroll",desc:"Manage employee leave, payroll runs and individual payroll records. Payroll amounts are administrative records and require review before payment.",sections:[
   {table:"erp_leave_requests",title:"Staff leave applications",button:"Record leave request",fields:[GF("employee_no","Employee number"),GF("staff_name","Staff name","text",true),GF("leave_type","Leave type","select",true,[["annual","Annual"],["sick","Sick"],["maternity","Maternity"],["paternity","Paternity"],["compassionate","Compassionate"],["unpaid","Unpaid"],["other","Other"]]),GF("start_date","Start date","date",true),GF("end_date","End date","date",true),GF("days","Number of days","number"),GF("reason","Reason","textarea"),GF("status","Status","select",true,[["pending","Pending"],["approved","Approved"],["rejected","Rejected"]]),GF("reviewed_by","Reviewed by")],columns:[["Employee","staff_name"],["No.","employee_no"],["Type","leave_type"],["Start","start_date","date"],["End","end_date","date"],["Days","days"],["Status","status"]]},
   {table:"erp_payroll_runs",title:"Payroll runs",button:"Create payroll run",fields:[GF("period","Payroll period (e.g. 2026-11)","text",true),GF("pay_date","Scheduled pay date","date"),GF("gross_total","Gross payroll (NGN)","number"),GF("deductions_total","Total deductions (NGN)","number"),GF("net_total","Net payroll (NGN)","number"),GF("status","Status","select",true,[["draft","Draft"],["review","Under review"],["approved","Approved"],["paid","Paid"],["cancelled","Cancelled"]])],columns:[["Period","period"],["Pay date","pay_date","date"],["Gross","gross_total","money"],["Deductions","deductions_total","money"],["Net","net_total","money"],["Status","status"]]},
-  {table:"erp_payroll_items",title:"Employee payroll details",button:"Add payroll line",fields:[GF("run_id","Payroll run","select",false,null,{table:"erp_payroll_runs",label:"period",value:"id"}),GF("period","Payroll period","text",true),GF("employee_no","Employee number"),GF("staff_name","Staff member","text",true),GF("basic_salary","Basic salary (NGN)","number",true),GF("allowances","Allowances (NGN)","number"),GF("deductions","Deductions (NGN)","number"),GF("net_pay","Net pay (NGN)","number"),GF("status","Status","select",true,[["draft","Draft"],["approved","Approved"],["paid","Paid"]])],columns:[["Period","period"],["Employee","staff_name"],["Employee No.","employee_no"],["Basic","basic_salary","money"],["Allowances","allowances","money"],["Deductions","deductions","money"],["Net pay","net_pay","money"],["Status","status"]]}
+  {table:"erp_payroll_items",title:"Employee payroll details",button:"Add payroll line",fields:[GF("run_id","Payroll run","select",true,null,{table:"erp_payroll_runs",label:"period",value:"id"}),GF("period","Payroll period","text",true),GF("employee_no","Employee number"),GF("staff_name","Staff member","text",true),GF("basic_salary","Basic salary (NGN)","number",true),GF("allowances","Allowances (NGN)","number"),GF("deductions","Deductions (NGN)","number"),GF("net_pay","Net pay (NGN)","number"),GF("status","Status","select",true,[["draft","Draft"],["approved","Approved"],["paid","Paid"]])],columns:[["Period","period"],["Employee","staff_name"],["Employee No.","employee_no"],["Basic","basic_salary","money"],["Allowances","allowances","money"],["Deductions","deductions","money"],["Net pay","net_pay","money"],["Status","status"]]}
  ]},
  procurement:{title:"Procurement & Suppliers",desc:"Manage suppliers, purchase requisitions and purchase orders.",sections:[
   {table:"erp_suppliers",title:"Supplier register",button:"Add supplier",fields:[GF("supplier_name","Supplier name","text",true),GF("contact_name","Contact person"),GF("email","Email","email"),GF("phone","Phone","tel"),GF("address","Address","textarea"),GF("tax_id","Tax / registration ID"),GF("status","Status","select",true,[["active","Active"],["inactive","Inactive"],["blocked","Blocked"]])],columns:[["Supplier","supplier_name"],["Contact","contact_name"],["Email","email"],["Phone","phone"],["Tax ID","tax_id"],["Status","status"]]},
@@ -216,12 +216,13 @@ function genericFieldHtml(field,value){
 }
 function openGenericForm(key,ix,row){
  const cfg=genericModules[key];if(!cfg)return;const s=cfg.sections[ix];if(!s)return;
- const body=s.fields.map(f=>genericFieldHtml(f,row?row[f.name]:undefined)).join("");
+ const fields=(s.table==="erp_inventory_items"&&row)?s.fields.filter(f=>f.name!=="quantity_on_hand"):s.fields;
+ const body=fields.map(f=>genericFieldHtml(f,row?row[f.name]:undefined)).join("");
  modal((row?"Edit ":"")+s.title,body,async fd=>{
   const payload={};
-  for(const f of s.fields){
+  for(const f of fields){
    const v=String(fd.get(f.name)||"").trim();
-   if(f.type==="number")payload[f.name]=v===""?null:Number(v);
+   if(f.type==="number")payload[f.name]=v===""?0:Number(v);
    else if(f.type==="date")payload[f.name]=v||null;
    else if(f.name==="reconciled")payload[f.name]=v==="true";
    else payload[f.name]=v||null;
