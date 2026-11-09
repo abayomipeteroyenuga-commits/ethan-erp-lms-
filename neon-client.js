@@ -17,17 +17,24 @@
   };
   try{
     if(!cfg.neonAuthUrl||!cfg.neonDataApiUrl)throw new Error("Ethan LMS authentication and data services are not configured.");
-    let neonSdk=null,cdnErrors=[];
+    let neonSdk=null,sdkErrors=[];
     const sdkUrls=[
+      "/neon-sdk.bundle.js?v=20261110",
       "https://esm.sh/@neondatabase/neon-js@0.9.0-beta?bundle",
       "https://cdn.jsdelivr.net/npm/@neondatabase/neon-js@0.9.0-beta/+esm"
     ];
     for(const sdkUrl of sdkUrls){
-      try{ neonSdk=await import(sdkUrl); break; }
-      catch(error){ cdnErrors.push((error?.message||"SDK import failed")+" ("+new URL(sdkUrl).host+")"); }
+      try{
+        neonSdk=await import(sdkUrl);
+        if(neonSdk?.createClient)break;
+        throw new Error("SDK module did not expose createClient");
+      }catch(error){
+        sdkErrors.push((error?.message||"SDK import failed")+" ("+(sdkUrl.startsWith("/")?"local bundle":new URL(sdkUrl).host)+")");
+        neonSdk=null;
+      }
     }
     if(!neonSdk?.createClient){
-      throw new Error("The Neon browser SDK could not be loaded. Check your internet connection and refresh. "+cdnErrors.join(" | "));
+      throw new Error("The local Neon browser SDK could not be loaded. Refresh the page or contact the Academy. "+sdkErrors.join(" | "));
     }
     const client=neonSdk.createClient({
       auth:{url:cfg.neonAuthUrl},
