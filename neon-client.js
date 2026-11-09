@@ -6,6 +6,12 @@
     window.__ETHAN_APP_SCRIPT_STARTED=true;
     const script=document.createElement("script");
     script.src="./app.js";
+    script.onload=()=>{
+      const classroom=document.createElement("script");
+      classroom.src="./digital-learning.js";
+      classroom.onerror=()=>{const m=document.getElementById("signinMessage");if(m){m.textContent="The digital classroom could not load. Refresh the page and try again.";m.className="form-message error";}};
+      document.body.appendChild(classroom);
+    };
     script.onerror=()=>{const m=document.getElementById("signinMessage");if(m){m.textContent="The learning portal could not load. Refresh the page and try again.";m.className="form-message error";}};
     document.body.appendChild(script);
   };
