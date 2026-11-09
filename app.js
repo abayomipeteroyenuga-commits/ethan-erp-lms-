@@ -1494,509 +1494,509 @@ function formatCoursePrice(feeNGN,currency=ethanDisplayCurrency){
 function updateCatalogueCurrency(currency){
  ethanDisplayCurrency=currency;localStorage.setItem("ethan_display_currency",currency);
  const s=document.getElementById("courseCatalogueSelect"),p=document.getElementById("courseBriefPrice");
- if(s&&s.value!==""&&p){const c=ETHAN_PUBLIC_COURSES[Number(s.value)];if(c)p.textContent="FREE";}
+ if(s&&s.value!==""&&p){const c=ETHAN_PUBLIC_COURSES[Number(s.value)];if(c)p.textContent=formatCoursePrice(c.feeNGN,currency);}
 }
 
 const ETHAN_PUBLIC_COURSES = [
   {
     "name": "Computer Appreciation",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Microsoft Word",
     "brief": "Learn to create, format and manage professional documents for academic, office and business use.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Microsoft Excel",
     "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Microsoft PowerPoint",
     "brief": "Learn to design and deliver clear, professional presentations using effective layouts, visuals and presentation tools.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Microsoft Access",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Google Workspace",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Internet & Email Skills",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Typing & Keyboard Mastery",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Computer Hardware Fundamentals",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Computer Maintenance",
     "brief": "Learn safe preventive maintenance, software updates, storage care, backups, performance checks, troubleshooting and maintenance planning.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "IT Support Fundamentals",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Windows Productivity",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "File Management & Cloud Storage",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Cybersecurity Awareness",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Digital Literacy",
     "brief": "Build confident, critical and responsible digital skills for devices, online research, communication, privacy, security, content creation, cloud collaboration and AI literacy.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Canva Graphic Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Advanced Canva Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Adobe Photoshop Basics",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "CorelDRAW Essentials",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Brand Identity Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Social Media Graphics",
     "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Flyer & Poster Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Logo Design Fundamentals",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "UI/UX Design Fundamentals",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Figma for Beginners",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "CapCut Video Editing",
     "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Advanced Video Editing",
     "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Content Creation",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Mobile Photography",
     "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Digital Storytelling",
     "brief": "Develop practical media-production skills for creating engaging visual content for digital platforms and professional projects.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Facebook Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Instagram Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "TikTok Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "YouTube Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "LinkedIn Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "WhatsApp Business Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Social Media Management",
     "brief": "Learn how to use major digital platforms professionally for communication, content, audience growth and business development.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Content Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Email Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "SEO Fundamentals",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Advanced SEO",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Search Engine Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Google Ads Fundamentals",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Meta Ads Fundamentals",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Marketing Analytics",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Digital Marketing Strategy",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Influencer Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Affiliate Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Personal Branding",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Online Reputation Management",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Artificial Intelligence Fundamentals",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "AI for Business",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Prompt Engineering",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Generative AI Tools",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "ChatGPT for Productivity",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "AI Content Creation",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "AI for Digital Marketing",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "AI for Education",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "AI Automation",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Responsible AI",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Web Design Fundamentals",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "HTML & CSS",
     "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "JavaScript Fundamentals",
     "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "WordPress Website Design",
     "brief": "Learn to create, format and manage professional documents for academic, office and business use.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "No-Code Website Building",
     "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "E-commerce Website Setup",
     "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Landing Page Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Web Hosting & Domains",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Website SEO",
     "brief": "Develop practical digital marketing skills for reaching audiences, promoting brands, generating leads and measuring results.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Website Maintenance",
     "brief": "Understand and apply modern AI tools to improve productivity, content creation, research and digital business tasks.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Python for Beginners",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "JavaScript Programming",
     "brief": "Learn the essential concepts and practical tools used to create, publish and maintain modern websites and web experiences.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Database Fundamentals",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "SQL Fundamentals",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Supabase Fundamentals",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Git & GitHub",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Software Development Basics",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "API Fundamentals",
     "brief": "Build foundational technical skills through clear concepts and practical exercises for modern software, data and application development.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Automation with No-Code Tools",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "App Development Fundamentals",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Data Analysis Fundamentals",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Excel Data Analysis",
     "brief": "Learn practical spreadsheet skills for organizing data, calculations, analysis, reporting and everyday business work.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Power BI Fundamentals",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Google Sheets Advanced",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 75000
   },
   {
     "name": "Data Visualization",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Business Intelligence",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Basic Statistics for Data",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Data Cleaning",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Dashboard Design",
     "brief": "Build practical visual design skills for creating professional digital content, graphics and user-focused creative work.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Reporting & Analytics",
     "brief": "Learn how to organize, analyze, visualize and communicate data for better academic, operational and business decisions.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Entrepreneurship in the Digital Age",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Digital Business Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "E-commerce Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Online Business Setup",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "Freelancing Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Remote Work Skills",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 55000
   },
   {
     "name": "Customer Relationship Management",
     "brief": "Gain practical, easy-to-follow digital skills designed for learners, professionals and business owners seeking stronger technology confidence.",
-    "feeNGN": 0
+    "feeNGN": 45000
   },
   {
     "name": "ERP Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "CRM Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 65000
   },
   {
     "name": "Project Management Fundamentals",
     "brief": "Gain practical digital-business and workplace skills for managing customers, projects, operations, online services and career opportunities.",
-    "feeNGN": 0
+    "feeNGN": 65000
   }
 ];
 
@@ -2050,7 +2050,7 @@ onDocumentReady(()=>{
  const cur=document.getElementById("catalogueCurrencySelect");
  if(cur){cur.value=ethanDisplayCurrency;cur.addEventListener("change",()=>updateCatalogueCurrency(cur.value));}
  const s=document.getElementById("courseCatalogueSelect");
- if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent="FREE";});
+ if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent=formatCoursePrice(c.feeNGN);});
 });
 
 /* v9.1 approved bank payment page */
