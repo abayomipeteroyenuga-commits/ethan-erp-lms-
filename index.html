@@ -20,6 +20,7 @@
         </a>
         <div class="public-header-actions">
           <span class="secure-pill">Secure Learning Portal</span>
+          <button type="button" class="header-signup" data-jump-auth="signup">Create Account</button>
           <button type="button" class="header-signin" data-jump-auth="signin">Sign In</button>
         </div>
       </header>
@@ -69,7 +70,7 @@
                 <button type="button" id="forgotPasswordBtn" class="text-btn">Forgot password?</button>
               </div>
               <button type="submit" class="primary-btn full auth-submit">Sign In Securely <span>→</span></button>
-              <p id="signinMessage" class="form-message"></p>
+              <p id="signinMessage" class="form-message" role="status" aria-live="polite"></p>
               
             </form>
 
@@ -79,11 +80,11 @@
                 <p>Create a free account as a Student, Professional or Business Owner. All 100 courses are included.</p>
               </div>
               <div class="grid-2">
-                <label>First name<input type="text" id="firstName" required placeholder="First name" /></label>
-                <label>Last name<input type="text" id="lastName" required placeholder="Last name" /></label>
+                <label>First name<input type="text" id="firstName" required autocomplete="given-name" placeholder="First name" /></label>
+                <label>Last name<input type="text" id="lastName" required autocomplete="family-name" placeholder="Last name" /></label>
               </div>
               <label>Email address<input type="email" id="signupEmail" required autocomplete="email" placeholder="name@example.com" /></label>
-              <label>Phone number<input type="tel" id="signupPhone" required placeholder="Phone number" /></label>
+              <label>Phone number<input type="tel" id="signupPhone" required autocomplete="tel" inputmode="tel" placeholder="Phone number" /></label>
               <label>Register as
                 <select id="signupRole" required>
                   <option value="student">Student</option>
@@ -100,7 +101,7 @@
               <label>Confirm password<input type="password" id="confirmPassword" required minlength="8" autocomplete="new-password" placeholder="Repeat password" /></label>
               <label class="checkbox terms-row"><input type="checkbox" id="termsCheck" required /> I agree to the terms and privacy policy.</label>
               <button type="submit" class="primary-btn full auth-submit">Create Account <span>→</span></button>
-              <p id="signupMessage" class="form-message"></p>
+              <p id="signupMessage" class="form-message" role="status" aria-live="polite"></p>
             </form>
 
             <div class="auth-footer-line">Powered by <strong>Ethan Digital Academy</strong></div>
