@@ -1074,22 +1074,37 @@ function lockedCatalogueCard(c){
  return `<article class="catalogue-lock-card"><div><span class="lock-chip">FREE COURSE</span><h4>${escHtml(c.name)}</h4><p>${escHtml(c.brief)}</p></div><div class="catalogue-lock-footer"><strong>FREE</strong><button class="secondary-btn" onclick="openCourseStudy('${encoded}')">Open Course</button></div></article>`;
 }
 function renderStudentHome(){
- const courses=studentCourses(),learnerLabel=portalRoleLabel(currentUser),firstName=escHtml(currentUser.firstName||currentUser.name||"Learner");
- const avgProgress=courses.length?Math.round(courses.reduce((sum,c)=>sum+Number(c.progress||0),0)/courses.length):0;
- $("#content").innerHTML=`
- <section class="student-home-hero"><div><span class="eyebrow">ETHAN DIGITAL ACADEMY</span><h1>Welcome, ${firstName}</h1><p>${escHtml(learnerLabel)} learning portal. Your free courses, lessons, study manuals and progress are all here.</p></div><div class="student-home-profile"><small>ACCOUNT TYPE</small><strong>${escHtml(learnerLabel)}</strong></div></section>
- <section class="student-home-stats"><div><small>FREE COURSES</small><strong>100</strong></div><div><small>MY ENROLMENTS</small><strong>${courses.length}</strong></div><div><small>AVERAGE PROGRESS</small><strong>${avgProgress}%</strong></div><div><small>LEARNING ACCESS</small><strong>ACTIVE</strong></div></section>
- <section class="student-section"><div class="student-section-head"><div><span class="eyebrow">MY LEARNING</span><h2>My Digital Courses</h2><p>All published courses are included with your free account.</p></div><button class="secondary-btn" onclick="navigate('courses')">View My Courses</button></div>
- ${courses.length?`<div class="learner-course-grid">${courses.map(learnerCourseCard).join("")}</div>`:`<div class="student-empty-panel"><div><span class="empty-icon">ED</span><h3>Preparing your course access</h3><p>Your free account is active. Refresh if your enrolments have not appeared yet.</p></div><button class="primary-btn" onclick="navigate('courses')">Browse Free Courses</button></div>`}
- </section>
- <section class="student-section"><div class="student-section-head"><div><span class="eyebrow">EXPLORE ETHAN</span><h2>100 Free Digital Courses</h2><p>Choose a course to open its study notes, manuals and practical learning resources.</p></div><div class="student-catalogue-tools"><input id="insideCourseSearch" placeholder="Search digital courses..."/></div></div>
- <div id="insideCourseGrid" class="inside-catalogue-grid">${ETHAN_PUBLIC_COURSES.slice(0,12).map(lockedCatalogueCard).join("")}</div><div class="student-catalogue-more"><button class="secondary-btn" id="showAllInsideCourses">View All 100 Free Courses</button></div></section>
- <section class="student-section student-quick-links"><div class="student-section-head"><div><span class="eyebrow">LEARNING PORTAL</span><h2>Quick Access</h2></div></div><div class="quick-access-grid">
- <button onclick="navigate('lms')"><strong>Learning Area</strong><span>Open your study classroom</span></button><button onclick="navigate('assignments')"><strong>Assignments</strong><span>View practical tasks</span></button><button onclick="navigate('quizzes')"><strong>Quizzes & Exams</strong><span>Practise and assess learning</span></button><button onclick="navigate('certificates')"><strong>Certificates</strong><span>View earned certificates</span></button></div></section>`;
- const search=$("#insideCourseSearch"),grid=$("#insideCourseGrid"),showAll=$("#showAllInsideCourses");let showingAll=false;
- function repaint(){const q=(search?.value||"").trim().toLowerCase(),source=showingAll||q?ETHAN_PUBLIC_COURSES:ETHAN_PUBLIC_COURSES.slice(0,12),rows=source.filter(c=>!q||`${c.name} ${c.brief}`.toLowerCase().includes(q));grid.innerHTML=rows.map(lockedCatalogueCard).join("")||`<div class="student-empty-panel"><div><h3>No matching course</h3><p>Try another course name or keyword.</p></div></div>`;}
- if(search)search.oninput=repaint;
- if(showAll)showAll.onclick=()=>{showingAll=!showingAll;showAll.textContent=showingAll?"Show Fewer Courses":"View All 100 Free Courses";repaint();};
+ const courses=studentCourses();
+ const learnerLabel=portalRoleLabel(currentUser);
+ const firstName=escHtml(currentUser.firstName||currentUser.name||"Learner");
+ const average=courses.length?Math.round(courses.reduce((sum,c)=>sum+Number(c.progress||0),0)/courses.length):0;
+ const pending=(portalState.myCourseRequests||[]).filter(r=>r.status==="pending").length;
+ const courseSection=courses.length
+   ? '<div class="course-grid">'+courses.map(function(course){
+       return '<article class="course-card"><div class="course-thumb"><strong>'+escHtml(course.code||"APPROVED COURSE")+'</strong></div><div class="course-body"><h3>'+escHtml(course.title)+'</h3><p>Superadmin-approved course · '+escHtml(course.duration||"Self-paced")+'</p><button class="primary-btn" data-open-approved-course>Open Course</button></div></article>';
+     }).join("")+'</div>'
+   : emptyState("No courses approved yet","Your Ethan LEARN account is free. Choose a professional course, pay its listed fee and submit the transfer reference. The Superadmin will unlock the course after verifying the payment.",'<button class="primary-btn" id="browseLearnerCatalogue">Browse Course Catalogue</button>');
+ $("#content").innerHTML =
+   '<section class="student-home-hero"><div><span class="eyebrow">ETHAN DIGITAL ACADEMY</span><h1>Welcome, '+firstName+'</h1><p>'+escHtml(learnerLabel)+' account · free registration · paid course access after Superadmin approval.</p></div><div class="student-home-profile"><small>ACCOUNT TYPE</small><strong>'+escHtml(learnerLabel)+'</strong></div></section>'+
+   '<section class="student-home-stats"><div><small>ACCOUNT FEE</small><strong>FREE</strong></div><div><small>APPROVED COURSES</small><strong>'+courses.length+'</strong></div><div><small>AVERAGE PROGRESS</small><strong>'+average+'%</strong></div><div><small>PAYMENTS PENDING</small><strong>'+pending+'</strong></div></section>'+
+   '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">MY LEARNING</span><h2>My Approved Courses</h2><p>Only courses approved for your learner account appear in your classroom.</p></div><button class="secondary-btn" id="browseLearnerCatalogueTop">Course Catalogue</button></div>'+courseSection+'</section>'+
+   '<section class="student-section student-quick-links"><div class="student-section-head"><div><span class="eyebrow">LEARNING PORTAL</span><h2>Quick Access</h2></div></div><div class="quick-access-grid">'+
+   '<button data-student-page="catalogue"><strong>Course Catalogue</strong><span>Choose a professional course</span></button>'+
+   '<button data-student-page="payments"><strong>Payment Requests</strong><span>Check verification status</span></button>'+
+   '<button data-student-page="quizzes"><strong>Quizzes & Exams</strong><span>Assessments for approved courses</span></button>'+
+   '<button data-student-page="certificates"><strong>Certificates</strong><span>View earned certificates</span></button>'+
+   '</div></section>';
+ const browse=()=>navigate("catalogue");
+ const top=document.querySelector("#browseLearnerCatalogueTop");
+ const bottom=document.querySelector("#browseLearnerCatalogue");
+ if(top)top.onclick=browse;
+ if(bottom)bottom.onclick=browse;
+ document.querySelectorAll("[data-student-page]").forEach(function(button){
+   button.onclick=function(){navigate(button.dataset.studentPage);};
+ });
+ document.querySelectorAll("[data-open-approved-course]").forEach(function(button){
+   button.onclick=function(){navigate("lms");};
+ });
 }
 
 
@@ -1107,7 +1122,7 @@ function renderDashboard(){
         </div>
         <div class="superadmin-actions">
           <button class="primary-btn" onclick="navigate('lms')">Open All Courses</button>
-          <button class="secondary-btn" onclick="openCreateCourseForm()">Create Course</button>
+          <button class="secondary-btn" onclick="navigate('courses')">Create Course</button>
         </div>
       </section>`);
     }
@@ -1135,8 +1150,8 @@ function renderDashboardLegacy(){
  if(role==="admin" || role==="super_admin"){
    $("#content").innerHTML=`
       <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">ACADEMY OVERVIEW</span><h1>Welcome back, ${currentUser.firstName}</h1><p>Manage learner records, published courses and academic operations.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Manage Students</button><button class="secondary-btn" onclick="navigate('payments')">Verify & Allocate</button></div></div>
-      <div class="stats-grid">${stat("Registered Students",data.students.length,"Learner records","👥")}${stat("Course Catalogue",data.courses.length,"Available courses","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Learning Access","Free","All published courses","🔓")}</div>
-      <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Student Status</h3></div>${studentTable(data.students)}</div><div class="card"><div class="card-head"><h3>Admission Flow</h3></div><div class="progress-list"><div class="progress-row"><strong>1. Free Registration</strong><p class="muted">Learners create their own secure account.</p></div><div class="progress-row"><strong>2. Account Setup</strong><p class="muted">A learner profile and student record are created automatically.</p></div><div class="progress-row"><strong>3. Free Course Access</strong><p class="muted">All 100 published courses are available immediately.</p></div><div class="progress-row"><strong>4. Learning Progress</strong><p class="muted">Lessons, practicals and quizzes help learners track their growth.</p></div></div></div></div>`;
+      <div class="stats-grid">${stat("Registered Students",data.students.length,"Learner records","👥")}${stat("Course Catalogue",data.courses.length,"Available courses","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Course Access","Payment-gated","Superadmin approval required","🔐")}</div>
+      <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Student Status</h3></div>${studentTable(data.students)}</div><div class="card"><div class="card-head"><h3>Admission Flow</h3></div><div class="progress-list"><div class="progress-row"><strong>1. Free Registration</strong><p class="muted">Learners create their own secure account.</p></div><div class="progress-row"><strong>2. Account Setup</strong><p class="muted">A learner profile and student record are created automatically.</p></div><div class="progress-row"><strong>3. Course Payment & Approval</strong><p class="muted">The learner submits a payment reference. The Superadmin verifies payment and approves the selected course.</p></div><div class="progress-row"><strong>4. Learning Progress</strong><p class="muted">Lessons, practicals and quizzes help learners track their growth.</p></div></div></div></div>`;
    return;
  }
  if(role==="parent"){
