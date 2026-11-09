@@ -750,6 +750,10 @@ function bindNarrationControls(pdf,title){
 async function openCourseStudy(title){
   currentStudyCourseTitle=decodeURIComponent(title);
   if(!currentUser){alert("Sign in to open free course materials.");return;}
+  if(currentUser.role==="student"&&!studentCourses().some(c=>String(c.title||"").trim().toLowerCase()===currentStudyCourseTitle.trim().toLowerCase())){
+    alert("This course is locked. Choose the course from the catalogue, submit payment details and wait for Superadmin approval.");
+    return;
+  }
   if(currentUser.role!=="student"&&!canAccessAllCourseMaterials()){alert("You do not have permission to access this course material.");return;}
   const g=buildCourseStudyGuide(currentStudyCourseTitle);
   const material=await resolveCourseMaterial(currentStudyCourseTitle);
