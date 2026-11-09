@@ -27,7 +27,8 @@ renderLMS = async function (courseId) {
   if (!catalogue.length) {
     document.querySelector("#content").innerHTML = emptyState(
       "No courses approved yet",
-      "Your learner account is free. Browse the course catalogue, submit payment details and wait for Superadmin verification before lessons unlock."
+      "Your learner account is free. Browse the course catalogue, submit payment details and wait for Superadmin verification before lessons unlock.",
+      '<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>'
     );
     return;
   }
