@@ -43,7 +43,7 @@ let currentPage = "dashboard";
 function initials(name){return String(name||"").split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join("")||"EU";}
 function resolveAuthenticatedRole(authUser,profile){
  const role=String(profile?.role||"student").trim().toLowerCase();
- return ["super_admin","admin","instructor","student","parent"].includes(role)?role:"student";
+ return ["super_admin","admin","instructor","student"].includes(role)?role:"student";
 }
 function canonicalPortalRoleLabel(){return null;}
 function portalUserFromAuth(authUser,profile){
@@ -1071,7 +1071,7 @@ function renderDashboardLegacy(){
  }
  if(role==="admin" || role==="super_admin"){
    $("#content").innerHTML=`
-      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">ACADEMY OVERVIEW</span><h1>Welcome back, ${currentUser.firstName}</h1><p>Manage registrations, verify payments and allocate courses before learning access is opened.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Manage Students</button><button class="secondary-btn" onclick="navigate('payments')">Verify & Allocate</button></div></div>
+      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">ACADEMY OVERVIEW</span><h1>Welcome back, ${currentUser.firstName}</h1><p>Manage learner records, published courses and academic operations.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Manage Students</button><button class="secondary-btn" onclick="navigate('payments')">Verify & Allocate</button></div></div>
       <div class="stats-grid">${stat("Registered Students",data.students.length,"Learner records","👥")}${stat("Course Catalogue",data.courses.length,"Available courses","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Learning Access","Free","All published courses","🔓")}</div>
       <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Student Status</h3></div>${studentTable(data.students)}</div><div class="card"><div class="card-head"><h3>Admission Flow</h3></div><div class="progress-list"><div class="progress-row"><strong>1. Free Registration</strong><p class="muted">Learners create their own secure account.</p></div><div class="progress-row"><strong>2. Account Setup</strong><p class="muted">A learner profile and student record are created automatically.</p></div><div class="progress-row"><strong>3. Free Course Access</strong><p class="muted">All 100 published courses are available immediately.</p></div><div class="progress-row"><strong>4. Learning Progress</strong><p class="muted">Lessons, practicals and quizzes help learners track their growth.</p></div></div></div></div>`;
    return;
@@ -1197,16 +1197,95 @@ function renderQuizzes(){
  $("#content").innerHTML=pageHead("Quizzes & Examinations","Assessments published for allocated courses.")+emptyState("No current assessment","Your instructor will publish quizzes and examinations here.");
 }
 function renderAttendance(){
- if(currentUser.role==="student"){ $("#content").innerHTML=pageHead("Attendance","Your real attendance record.")+emptyState(studentCourses().length?"No attendance recorded yet":"No attendance record","Attendance begins after your course is allocated and classes start."); return; }
- $("#content").innerHTML=pageHead("Attendance","Monitor attendance for enrolled learners.",currentUser.role==="admin"||currentUser.role==="super_admin"||currentUser.role==="instructor"?`<button class="primary-btn">Mark Attendance</button>`:"")+studentTable(data.students);
+ const staff=["admin","super_admin","instructor"].includes(currentUser?.role||"");
+ const action=staff&&data.students.length?'<button class="primary-btn" id="markAttendanceBtn">+ Mark attendance</button>':"";
+ $("#content").innerHTML=pageHead("Attendance",staff?"Record and review learner attendance.":"Your personal attendance history.",action)+'<div class="card"><p class="muted">Loading attendance records…</p></div>';
+ const backend=window.ETHAN_BACKEND;
+ if(!backend?.ready){$("#content").innerHTML=pageHead("Attendance","Your attendance workspace.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload.");return;}
+ (async()=>{
+  try{
+   const rows=await backend.listAttendance();
+   const present=rows.filter(x=>x.status==="present").length,absent=rows.filter(x=>x.status==="absent").length,late=rows.filter(x=>x.status==="late").length;
+   const summary=staff?'<div class="stats-grid">'+stat("Present",present,"Attendance records","✓")+stat("Absent",absent,"Attendance records","—")+stat("Late",late,"Attendance records","⏱")+stat("Records",rows.length,"All recorded sessions","📅")+'</div>':"";
+   const body=rows.map(x=>{
+    const learner=[x.student?.profiles?.first_name,x.student?.profiles?.last_name].filter(Boolean).join(" ")||x.student?.student_no||"Learner";
+    const status=String(x.status||"recorded").toLowerCase();
+    return '<tr><td>'+escHtml(new Date(x.attendance_date+"T00:00:00").toLocaleDateString())+'</td>'+(staff?'<td>'+escHtml(learner)+'</td>':"")+'<td>'+escHtml(x.course?.title||"General attendance")+'</td><td><span class="badge '+(status==="present"?"green":status==="absent"?"gold":"blue")+'">'+escHtml(status)+'</span></td></tr>';
+   }).join("");
+   $("#content").innerHTML=pageHead("Attendance",staff?"Record and review learner attendance.":"Your personal attendance history.",action)+summary+
+    (body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Date</th>'+(staff?'<th>Learner</th>':"")+'<th>Course</th><th>Status</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':emptyState("No attendance recorded yet",staff?"Use Mark attendance to record a class register.":"Your attendance will appear here when your instructor records a session."));
+   const mark=$("#markAttendanceBtn");
+   if(mark)mark.onclick=()=>{
+    const learnerOptions=data.students.map(s=>'<option value="'+escHtml(s.id)+'">'+escHtml(s.name||s.studentNo||"Learner")+'</option>').join("");
+    const courseOptions='<option value="">General / not course-specific</option>'+data.courses.map(c=>'<option value="'+escHtml(c.id)+'">'+escHtml(c.code||"")+' — '+escHtml(c.title)+'</option>').join("");
+    const now=new Date(),localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+    showModal("Mark attendance","Record a learner's attendance for a class or course.",
+     '<label>Learner<select id="attendanceStudent" required>'+learnerOptions+'</select></label><label>Course<select id="attendanceCourse">'+courseOptions+'</select></label><div class="grid-2"><label>Date<input id="attendanceDate" type="date" value="'+localDate+'" required></label><label>Status<select id="attendanceStatus"><option value="present">Present</option><option value="absent">Absent</option><option value="late">Late</option><option value="excused">Excused</option></select></label></div>',
+     async()=>{
+      const studentId=$("#attendanceStudent").value,date=$("#attendanceDate").value,status=$("#attendanceStatus").value,courseId=$("#attendanceCourse").value||null;
+      if(!studentId||!date)return alert("Choose a learner and attendance date.");
+      try{await backend.markAttendance({student_id:studentId,course_id:courseId,attendance_date:date,status,marked_by:currentUser.id});closeModal();renderAttendance();}
+      catch(error){alert(error.message||"Attendance could not be saved.");}
+     });
+   };
+  }catch(error){$("#content").innerHTML=pageHead("Attendance","Your attendance workspace.")+emptyState("Attendance could not be loaded",error.message||"Refresh and try again.");}
+ })();
 }
 function renderResults(){
- if(currentUser.role==="student"){ $("#content").innerHTML=pageHead("Results","Only your published results are shown.")+emptyState("No results yet",studentCourses().length?"Results will appear after you complete graded assessments.":"Results become available after course allocation and assessment."); return; }
- $("#content").innerHTML=pageHead("Results","Academic assessment results and performance.")+emptyState("No result selected","Published learner results will appear here.");
+ const staff=["admin","super_admin","instructor"].includes(currentUser?.role||""),action=staff?'<button class="primary-btn" id="addResultBtn">+ Publish result</button>':"",backend=window.ETHAN_BACKEND;
+ $("#content").innerHTML=pageHead("Results",staff?"Review and publish learner assessment results.":"Your published assessment results.",action)+'<div class="card"><p class="muted">Loading results…</p></div>';
+ if(!backend?.ready){$("#content").innerHTML=pageHead("Results","Your academic results.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload.");return;}
+ (async()=>{
+  try{
+   const rows=await backend.listResults();
+   const body=rows.map(r=>{
+    const learner=[r.student?.profiles?.first_name,r.student?.profiles?.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
+    return '<tr>'+(staff?'<td>'+escHtml(learner)+'</td>':"")+'<td>'+escHtml(r.course?.title||"Course")+'</td><td>'+escHtml(r.assessment_name||"Assessment")+'</td><td>'+Number(r.score||0)+'%</td><td>'+escHtml(r.grade||"—")+'</td><td><span class="badge '+(String(r.status||"").toLowerCase().includes("pass")?"green":"blue")+'">'+escHtml(r.status||"Published")+'</span></td></tr>';
+   }).join("");
+   $("#content").innerHTML=pageHead("Results",staff?"Review and publish learner assessment results.":"Your published assessment results.",action)+(body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr>'+(staff?'<th>Learner</th>':"")+'<th>Course</th><th>Assessment</th><th>Score</th><th>Grade</th><th>Status</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':emptyState("No published results yet",staff?"Published assessment outcomes will appear here. Use Publish result to add a verified result.":"Your instructor's published results will appear here."));
+   const add=$("#addResultBtn");
+   if(add)add.onclick=()=>{
+    if(!data.students.length||!data.courses.length)return alert("Refresh the portal so learner and course lists can load.");
+    const learners=data.students.map(s=>'<option value="'+escHtml(s.id)+'">'+escHtml(s.name||s.studentNo||"Learner")+'</option>').join("");
+    const courses=data.courses.map(c=>'<option value="'+escHtml(c.id)+'">'+escHtml(c.code||"")+' — '+escHtml(c.title)+'</option>').join("");
+    showModal("Publish assessment result","Publish a verified result to the learner's portal.",'<label>Learner<select id="resultStudent">'+learners+'</select></label><label>Course<select id="resultCourse">'+courses+'</select></label><label>Assessment name<input id="resultAssessment" required placeholder="e.g. Excel Practical Assessment"></label><div class="grid-2"><label>Score (%)<input id="resultScore" type="number" min="0" max="100" step="0.5" required></label><label>Grade<select id="resultGrade"><option>A</option><option>B</option><option>C</option><option>D</option><option>F</option></select></label></div><label>Status<select id="resultStatus"><option value="Passed">Passed</option><option value="Not passed">Not passed</option><option value="Completed">Completed</option></select></label><label class="checkbox"><input id="resultPublished" type="checkbox" checked> Publish to learner</label>',
+     async()=>{
+      const studentId=$("#resultStudent").value,courseId=$("#resultCourse").value,assessment=$("#resultAssessment").value.trim(),score=Number($("#resultScore").value),grade=$("#resultGrade").value,status=$("#resultStatus").value;
+      if(!studentId||!courseId||!assessment||!Number.isFinite(score)||score<0||score>100)return alert("Complete the learner, course, assessment and valid score.");
+      try{await backend.createResult({student_id:studentId,course_id:courseId,assessment_name:assessment,score,grade,status,published:$("#resultPublished").checked});closeModal();renderResults();}
+      catch(error){alert(error.message||"The result could not be saved.");}
+     });
+   };
+  }catch(error){$("#content").innerHTML=pageHead("Results","Your academic results.")+emptyState("Results could not be loaded",error.message||"Refresh and try again.");}
+ })();
 }
 function renderCertificates(){
- if(currentUser.role==="student"){ $("#content").innerHTML=pageHead("Certificates","Certificates are issued after successful course completion.")+emptyState("No certificate yet",studentCourses().length?"Complete the required course and assessments to qualify.":"You need an allocated course before certificate progress can begin."); return; }
- $("#content").innerHTML=pageHead("Certificates","Issue, manage and verify course certificates.",currentUser.role==="admin"||currentUser.role==="super_admin"?`<button class="primary-btn">Issue Certificate</button>`:"")+emptyState("Certificate records","Issued certificates will appear here.");
+ const admin=["admin","super_admin"].includes(currentUser?.role||""),action=admin?'<button class="primary-btn" id="issueCertificateBtn">+ Issue certificate</button>':"",backend=window.ETHAN_BACKEND;
+ $("#content").innerHTML=pageHead("Certificates",admin?"Issue and manage verified learner certificates.":"Your earned Ethan Digital Academy certificates.",action)+'<div class="card"><p class="muted">Loading certificates…</p></div>';
+ if(!backend?.ready){$("#content").innerHTML=pageHead("Certificates","Your certificate wallet.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload.");return;}
+ (async()=>{
+  try{
+   const rows=await backend.listCertificates(currentUser?.role==="student"?portalState.myStudent?.id:null);
+   const body=rows.map(c=>{
+    const learner=[c.student?.profiles?.first_name,c.student?.profiles?.last_name].filter(Boolean).join(" ")||c.student?.student_no||"Learner";
+    return '<tr><td>'+escHtml(c.certificate_no||"—")+'</td>'+(admin?'<td>'+escHtml(learner)+'</td>':"")+'<td>'+escHtml(c.course?.title||"Course")+'</td><td>'+escHtml(c.issued_at?new Date(c.issued_at).toLocaleDateString():"—")+'</td><td><span class="badge green">'+escHtml(c.status||"valid")+'</span></td><td><code>'+escHtml(c.verification_code||"")+'</code></td></tr>';
+   }).join("");
+   $("#content").innerHTML=pageHead("Certificates",admin?"Issue and manage verified learner certificates.":"Your earned Ethan Digital Academy certificates.",action)+(body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Certificate ID</th>'+(admin?'<th>Learner</th>':"")+'<th>Course</th><th>Issue date</th><th>Status</th><th>Verification code</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':emptyState("No certificates issued yet",admin?"Certificates you issue will be listed here.":"Complete your course requirements to qualify for a certificate."));
+   const issue=$("#issueCertificateBtn");
+   if(issue)issue.onclick=()=>{
+    if(!data.students.length||!data.courses.length)return alert("Refresh the portal so learner and course lists can load.");
+    const learners=data.students.map(s=>'<option value="'+escHtml(s.id)+'">'+escHtml(s.name||s.studentNo||"Learner")+'</option>').join("");
+    const courses=data.courses.map(c=>'<option value="'+escHtml(c.id)+'">'+escHtml(c.code||"")+' — '+escHtml(c.title)+'</option>').join("");
+    showModal("Issue certificate","Issue a certificate for a completed course.",'<label>Learner<select id="certificateStudent">'+learners+'</select></label><label>Course<select id="certificateCourse">'+courses+'</select></label>',
+     async()=>{
+      const studentId=$("#certificateStudent").value,courseId=$("#certificateCourse").value;
+      if(!studentId||!courseId)return alert("Choose a learner and course.");
+      try{await backend.issueCertificate({certificate_no:"EDA-CERT-"+Date.now(),student_id:studentId,course_id:courseId,status:"valid"});closeModal();renderCertificates();}
+      catch(error){alert(error.message||"The certificate could not be issued.");}
+     });
+   };
+  }catch(error){$("#content").innerHTML=pageHead("Certificates","Your certificate wallet.")+emptyState("Certificates could not be loaded",error.message||"Refresh and try again.");}
+ })();
 }
 
 async function allocateAfterPayment(student,course,amount,description){
