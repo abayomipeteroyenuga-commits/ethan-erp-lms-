@@ -516,3 +516,23 @@ BEGIN
  RETURN v;
 END $$;
 GRANT EXECUTE ON FUNCTION public.decide_erp_approval(uuid,text,text) TO authenticated;
+
+
+-- Keep payroll run totals in sync with employee payroll lines.
+CREATE OR REPLACE FUNCTION public.sync_erp_payroll_run_totals() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_old uuid; v_new uuid;
+BEGIN
+ IF TG_OP='DELETE' THEN v_old:=OLD.run_id;
+ ELSIF TG_OP='UPDATE' THEN v_old:=OLD.run_id; v_new:=NEW.run_id;
+ ELSE v_new:=NEW.run_id;
+ END IF;
+ IF v_old IS NOT NULL AND (v_new IS NULL OR v_old<>v_new) THEN
+  UPDATE public.erp_payroll_runs SET gross_total=coalesce((SELECT sum(basic_salary+allowances) FROM public.erp_payroll_items WHERE run_id=v_old),0),deductions_total=coalesce((SELECT sum(deductions) FROM public.erp_payroll_items WHERE run_id=v_old),0),net_total=coalesce((SELECT sum(net_pay) FROM public.erp_payroll_items WHERE run_id=v_old),0) WHERE id=v_old;
+ END IF;
+ IF v_new IS NOT NULL THEN
+  UPDATE public.erp_payroll_runs SET gross_total=coalesce((SELECT sum(basic_salary+allowances) FROM public.erp_payroll_items WHERE run_id=v_new),0),deductions_total=coalesce((SELECT sum(deductions) FROM public.erp_payroll_items WHERE run_id=v_new),0),net_total=coalesce((SELECT sum(net_pay) FROM public.erp_payroll_items WHERE run_id=v_new),0) WHERE id=v_new;
+ END IF;
+ IF TG_OP='DELETE' THEN RETURN OLD; ELSE RETURN NEW; END IF;
+END $$;
+DROP TRIGGER IF EXISTS tr_sync_erp_payroll_run_totals ON public.erp_payroll_items;
+CREATE TRIGGER tr_sync_erp_payroll_run_totals AFTER INSERT OR UPDATE OR DELETE ON public.erp_payroll_items FOR EACH ROW EXECUTE FUNCTION public.sync_erp_payroll_run_totals();
