@@ -883,3 +883,33 @@ DROP TRIGGER IF EXISTS tr_audit_erp_staff_training_records ON public.erp_staff_t
 CREATE TRIGGER tr_audit_erp_staff_training_records AFTER INSERT OR UPDATE OR DELETE ON public.erp_staff_training_records FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
 DROP TRIGGER IF EXISTS tr_audit_erp_alumni ON public.erp_alumni;
 CREATE TRIGGER tr_audit_erp_alumni AFTER INSERT OR UPDATE OR DELETE ON public.erp_alumni FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+
+-- Ethan Digital Academy starter chart of accounts (editable by Finance).
+INSERT INTO public.erp_chart_accounts(account_code,account_name,account_type,status) VALUES
+('1000','Cash and cash equivalents','asset','active'),
+('1010','Operating bank account','asset','active'),
+('1020','Petty cash','asset','active'),
+('1100','Trade and student receivables','asset','active'),
+('1200','Input tax recoverable','asset','active'),
+('1300','Inventory and consumables','asset','active'),
+('1400','Computer and office equipment','asset','active'),
+('1490','Accumulated depreciation','asset','active'),
+('2000','Trade payables','liability','active'),
+('2100','Student fees received in advance','liability','active'),
+('2200','Tax and statutory deductions payable','liability','active'),
+('2300','Payroll liabilities','liability','active'),
+('3000','Owner capital','equity','active'),
+('3100','Retained earnings','equity','active'),
+('4000','Tuition and professional training income','income','active'),
+('4100','Corporate training income','income','active'),
+('4200','Other operating income','income','active'),
+('5000','Salaries and wages','expense','active'),
+('5100','Rent and facility expenses','expense','active'),
+('5200','Utilities and internet','expense','active'),
+('5300','Software and subscriptions','expense','active'),
+('5400','Training materials and consumables','expense','active'),
+('5500','Marketing and business development','expense','active'),
+('5600','Repairs and maintenance','expense','active'),
+('5700','Professional and administration fees','expense','active')
+ON CONFLICT(account_code) DO NOTHING;
