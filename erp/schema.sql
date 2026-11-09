@@ -751,3 +751,58 @@ DROP TRIGGER IF EXISTS tr_guard_posted_erp_journal ON public.erp_journal_entries
 CREATE TRIGGER tr_guard_posted_erp_journal BEFORE UPDATE OR DELETE ON public.erp_journal_entries FOR EACH ROW EXECUTE FUNCTION public.guard_posted_erp_journal();
 DROP TRIGGER IF EXISTS tr_guard_posted_erp_journal_line ON public.erp_journal_lines;
 CREATE TRIGGER tr_guard_posted_erp_journal_line BEFORE UPDATE OR DELETE ON public.erp_journal_lines FOR EACH ROW EXECUTE FUNCTION public.guard_posted_erp_journal();
+
+
+-- Expanded academy-specific learner, guardian, staff and programme records.
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS date_of_birth date;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS gender text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS address text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS guardian_name text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS guardian_email text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS guardian_phone text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS emergency_contact_name text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS emergency_contact_phone text;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS enrollment_date date NOT NULL DEFAULT current_date;
+ALTER TABLE public.erp_students ADD COLUMN IF NOT EXISTS branch_id uuid REFERENCES public.erp_branches(id) ON DELETE SET NULL;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS date_of_birth date;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS employment_type text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS date_joined date;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS address text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS next_of_kin text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS next_of_kin_phone text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS base_salary numeric(14,2) NOT NULL DEFAULT 0;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS bank_name text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS account_name text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS account_number_masked text;
+ALTER TABLE public.erp_staff ADD COLUMN IF NOT EXISTS branch_id uuid REFERENCES public.erp_branches(id) ON DELETE SET NULL;
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS description text;
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS programme_type text;
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS fee_amount numeric(14,2) NOT NULL DEFAULT 0;
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS currency text NOT NULL DEFAULT 'NGN';
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS delivery_mode text;
+ALTER TABLE public.erp_programmes ADD COLUMN IF NOT EXISTS capacity integer;
+DROP POLICY IF EXISTS erp_programmes_read ON public.erp_programmes;
+CREATE POLICY erp_programmes_read ON public.erp_programmes FOR SELECT TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','admissions','academic_manager','finance'));
+
+CREATE TABLE IF NOT EXISTS public.erp_student_enrolments (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), enrollment_no text NOT NULL UNIQUE, student_id uuid NOT NULL REFERENCES public.erp_students(id) ON DELETE CASCADE, programme_code text REFERENCES public.erp_programmes(code) ON DELETE SET NULL, programme_name text NOT NULL, intake text, cohort text, start_date date NOT NULL DEFAULT current_date, expected_completion_date date, completion_date date, fee_amount numeric(14,2) NOT NULL DEFAULT 0, status text NOT NULL DEFAULT 'active', notes text, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_student_cases (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), case_no text NOT NULL UNIQUE, student_id uuid NOT NULL REFERENCES public.erp_students(id) ON DELETE CASCADE, case_type text NOT NULL, incident_date date NOT NULL DEFAULT current_date, severity text NOT NULL DEFAULT 'low', description text NOT NULL, action_taken text, assigned_to text, status text NOT NULL DEFAULT 'open', resolved_at date, created_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE public.erp_student_enrolments ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_student_cases ENABLE ROW LEVEL SECURITY;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.erp_student_enrolments,public.erp_student_cases TO authenticated;
+DROP POLICY IF EXISTS erp_student_enrolments_access ON public.erp_student_enrolments;
+CREATE POLICY erp_student_enrolments_access ON public.erp_student_enrolments FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','admissions','academic_manager','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','admissions','academic_manager','finance'));
+DROP POLICY IF EXISTS erp_student_cases_access ON public.erp_student_cases;
+CREATE POLICY erp_student_cases_access ON public.erp_student_cases FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr'));
+CREATE INDEX IF NOT EXISTS erp_student_enrolments_student_idx ON public.erp_student_enrolments(student_id,created_at DESC);
+CREATE INDEX IF NOT EXISTS erp_student_cases_student_idx ON public.erp_student_cases(student_id,incident_date DESC);
+DROP TRIGGER IF EXISTS tr_audit_erp_student_enrolments ON public.erp_student_enrolments;
+CREATE TRIGGER tr_audit_erp_student_enrolments AFTER INSERT OR UPDATE OR DELETE ON public.erp_student_enrolments FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_student_cases ON public.erp_student_cases;
+CREATE TRIGGER tr_audit_erp_student_cases AFTER INSERT OR UPDATE OR DELETE ON public.erp_student_cases FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+-- A restricted minimal directory avoids giving HR access to all private student fields for case assignment.
+CREATE OR REPLACE VIEW public.erp_student_case_directory AS
+ SELECT id,admission_no,first_name,last_name,created_at
+ FROM public.erp_students
+ WHERE public.current_erp_role() IN ('super_admin','admin','academic_manager','hr');
+GRANT SELECT ON public.erp_student_case_directory TO authenticated;
