@@ -1,5 +1,9 @@
 const $ = (s, root=document) => root.querySelector(s);
 const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const onDocumentReady = callback => {
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", callback, { once: true });
+  else callback();
+};
 
 const STORE={data:"ethan_data_v1"};
 try{localStorage.removeItem("ethan_users_v1");localStorage.removeItem("ethan_session_v1");}catch(_){}
@@ -65,12 +69,18 @@ function portalRoleLabel(user){
 // Staff register a free account first; authorised administrators can promote that account.
 
 
-$$(".auth-tab").forEach(btn=>btn.addEventListener("click",()=>{
-  $$(".auth-tab").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  $("#signinForm").classList.toggle("hidden", btn.dataset.authTab!=="signin");
-  $("#signupForm").classList.toggle("hidden", btn.dataset.authTab!=="signup");
-}));
+function activateAuthTab(target){
+  const selected=target==="signup"?"signup":"signin";
+  $$(".auth-tab").forEach(button=>{
+    const active=button.dataset.authTab===selected;
+    button.classList.toggle("active",active);
+    button.setAttribute("aria-selected",String(active));
+    button.tabIndex=active?0:-1;
+  });
+  $("#signinForm").classList.toggle("hidden",selected!=="signin");
+  $("#signupForm").classList.toggle("hidden",selected!=="signup");
+}
+$$(".auth-tab").forEach(button=>button.addEventListener("click",()=>activateAuthTab(button.dataset.authTab)));
 
 $$(".toggle-password").forEach(btn=>btn.addEventListener("click",()=>{
   const input = document.getElementById(btn.dataset.target);
@@ -84,34 +94,66 @@ $("#signupForm").addEventListener("submit",async e=>{
  const email=$("#signupEmail").value.trim().toLowerCase(),phone=$("#signupPhone").value.trim();
  const learnerType=$("#signupRole").value,password=$("#signupPassword").value,confirm=$("#confirmPassword").value;
  const msg=$("#signupMessage");
+ msg.textContent="";msg.className="form-message";
+ if(!firstName||!lastName){msg.textContent="Enter your first and last name.";msg.className="form-message error";return;}
  if(password!==confirm){msg.textContent="Passwords do not match.";msg.className="form-message error";return;}
  if(password.length<8){msg.textContent="Use a password with at least 8 characters.";msg.className="form-message error";return;}
+ if(!$("#termsCheck").checked){msg.textContent="Please accept the terms and privacy policy to continue.";msg.className="form-message error";return;}
  if(!window.ETHAN_BACKEND?.ready){msg.textContent=window.ETHAN_BACKEND?.error||"The secure sign-up service is unavailable. Refresh and try again.";msg.className="form-message error";return;}
- const button=$("#signupForm button[type='submit']");button.disabled=true;button.textContent="Creating free account…";
+ const button=$("#signupForm button[type='submit']");
+ button.disabled=true;button.textContent="Creating account…";
  try{
    const result=await window.ETHAN_BACKEND.signUp({email,password,firstName,lastName,phone,role:"student",learnerType});
+   if(result.verificationRequired||!result.session){
+     $("#signupForm").reset();
+     $("#signinEmail").value=email;
+     activateAuthTab("signin");
+     const signinMessage=$("#signinMessage");
+     signinMessage.textContent="Your account has been created. Check your inbox for a verification email, then sign in here. If no verification email is required, you can sign in with your new password.";
+     signinMessage.className="form-message success";
+     msg.textContent="";
+     return;
+   }
    const profile=result.profile||await window.ETHAN_BACKEND.getProfile(result.user.id);
+   if(!profile)throw new Error("Your account is ready, but your learner profile could not be loaded. Sign in again to finish setup.");
    const user=portalUserFromAuth(result.user,profile);
    $("#signupForm").reset();
-   msg.textContent="Free account created. All 100 digital courses are now available.";
-   msg.className="form-message success";
    await openPortal(user);
- }catch(err){msg.textContent=err.message||"Unable to create your free account. Please try again.";msg.className="form-message error";}
- finally{button.disabled=false;button.textContent="Create Account →";}
+ }catch(err){
+   const message=String(err?.message||"");
+   msg.textContent=/already exists|already registered|user_exists/i.test(message)
+     ?"An account with this email already exists. Sign in or use Forgot password."
+     :message||"Unable to create your account. Please try again.";
+   msg.className="form-message error";
+ }finally{
+   button.disabled=false;button.innerHTML="Create Account <span>→</span>";
+ }
 });
 
 $("#signinForm").addEventListener("submit",async e=>{
  e.preventDefault();
  const email=$("#signinEmail").value.trim().toLowerCase(),password=$("#signinPassword").value;
  const msg=$("#signinMessage"),button=$("#signinForm button[type='submit']");
+ msg.textContent="";msg.className="form-message";
+ if(!email||!password){msg.textContent="Enter your email address and password.";msg.className="form-message error";return;}
  if(!window.ETHAN_BACKEND?.ready){msg.textContent=window.ETHAN_BACKEND?.error||"The secure sign-in service is unavailable. Refresh and try again.";msg.className="form-message error";return;}
- button.disabled=true;button.textContent="Signing in…";msg.textContent="";
+ button.disabled=true;button.textContent="Signing in…";
  try{
    const result=await window.ETHAN_BACKEND.signIn(email,password);
    const profile=result.profile||await window.ETHAN_BACKEND.getProfile(result.user.id);
+   if(!profile)throw new Error("Your learner profile is not ready yet. Please contact the Academy.");
    await openPortal(portalUserFromAuth(result.user,profile));
- }catch(err){msg.textContent=err.message||"Unable to sign in. Check your email and password.";msg.className="form-message error";}
- finally{button.disabled=false;button.innerHTML='Sign In Securely <span>→</span>';}
+ }catch(err){
+   const message=String(err?.message||"");
+   msg.textContent=/email not verified|verification required|verify your email/i.test(message)
+     ?"Please verify your email from the link we sent you, then sign in again."
+     :/invalid credentials|incorrect password|user not found/i.test(message)
+       ?"The email address or password is incorrect. Check your details or reset your password."
+       :message||"Unable to sign in. Please try again.";
+   msg.className="form-message error";
+ }finally{
+   button.disabled=false;button.innerHTML='Sign In Securely <span>→</span>';
+ }
 });
 
 $("#forgotPasswordBtn").addEventListener("click",()=>{
@@ -129,6 +171,7 @@ $("#forgotPasswordBtn").addEventListener("click",()=>{
 $("#logoutBtn").addEventListener("click",async ()=>{
   if(window.ETHAN_BACKEND?.ready){ try{ await window.ETHAN_BACKEND.signOut(); }catch(_){} }
   currentUser=null; $("#portal").classList.add("hidden"); $("#authScreen").classList.remove("hidden");
+  $("#courseCatalogue")?.classList.remove("hidden");
 });
 
 $("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
@@ -170,6 +213,7 @@ const navByRole = {
 async function openPortal(user){
  currentUser=user;
  $("#authScreen").classList.add("hidden");$("#portal").classList.remove("hidden");
+ $("#courseCatalogue")?.classList.add("hidden");
  $("#userName").textContent=user.name;$("#userRole").textContent=portalRoleLabel(user);
  $("#userAvatar").textContent=initials(user.name);
  await hydratePortalData(user);renderNav();renderNotifications();navigate("dashboard");
@@ -950,12 +994,14 @@ function closeModal(){const m=$("#activeModal");if(m)m.remove()}
 })();
 
 if("serviceWorker" in navigator){
-  window.addEventListener("load", async ()=>{
+  const registerEthanServiceWorker=async()=>{
     try{
-      const reg = await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
+      const reg=await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
       await reg.update();
-    }catch(_){}
-  });
+    }catch(error){console.warn("Ethan LMS offline cache could not be refreshed:",error);}
+  };
+  if(document.readyState==="complete")registerEthanServiceWorker();
+  else window.addEventListener("load",registerEthanServiceWorker,{once:true});
 }
 
 
@@ -1324,7 +1370,7 @@ function renderPayments(){
 }
 
 // v7 public header convenience action
-window.addEventListener('DOMContentLoaded',()=>{
+onDocumentReady(()=>{
   document.querySelectorAll('[data-jump-auth]').forEach(btn=>btn.addEventListener('click',()=>{
     const target=btn.dataset.jumpAuth;
     document.querySelector(`.auth-tab[data-auth-tab="${target}"]`)?.click();
@@ -1938,7 +1984,7 @@ const ETHAN_PUBLIC_COURSES = [
 ];
 
 
-document.addEventListener('DOMContentLoaded', () => {
+onDocumentReady(() => {
   const browseBtn = document.getElementById('browseCoursesBtn');
   const wrap = document.getElementById('catalogueDropdownWrap');
   const select = document.getElementById('courseCatalogueSelect');
@@ -1983,7 +2029,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-window.addEventListener("DOMContentLoaded",()=>{
+onDocumentReady(()=>{
  const cur=document.getElementById("catalogueCurrencySelect");
  if(cur){cur.value=ethanDisplayCurrency;cur.addEventListener("change",()=>updateCatalogueCurrency(cur.value));}
  const s=document.getElementById("courseCatalogueSelect");
