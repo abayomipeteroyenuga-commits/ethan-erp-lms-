@@ -2057,9 +2057,9 @@ onDocumentReady(()=>{
 function renderPayments(){
  if(currentUser.role==="student"){
    const courses=studentCourses();
-   $("#content").innerHTML=pageHead("Free Learning Access","Every published Ethan Digital Academy course is included with your free account.")+
-     `<div class="stats-grid">${stat("Free Courses","100","Included with registration","📚")}${stat("My Courses",String(courses.length),"Available now","🎓")}${stat("Course Fee","FREE","No payment required","✓")}${stat("Learning Status","Active","Study materials available","▶")}</div>`+
-     emptyState("No course payment is required","Continue to My Courses or the Learning Area. Payments do not control your course access.",`<button class="primary-btn" onclick="navigate('courses')">Browse Free Courses</button>`);
+   $("#content").innerHTML=pageHead("Payments & Course Requests","Your learner account is free. Each professional course is paid for and approved separately.")+
+     `<div class="stats-grid">${stat("Account Fee","FREE","Register at no cost","✓")}${stat("My Courses",String(courses.length),"Only approved enrolments","📚")}${stat("Payment Requests",String(portalState.myCourseRequests?.filter(r=>r.status==="pending").length||0),"Awaiting Superadmin review","⏳")}${stat("Learning Access",courses.length?"Active":"Locked",courses.length?"Approved courses only":"After verification","🔐")}</div>`+
+     emptyState("No course fee is charged for registration","Choose a professional course, pay its listed fee and submit your payment reference. Only the Superadmin can verify the payment and unlock the course.",`<button class="primary-btn" onclick="navigate('catalogue')">Browse Course Catalogue</button>`);
    return;
  }
  if(!["admin","super_admin"].includes(currentUser.role)){
