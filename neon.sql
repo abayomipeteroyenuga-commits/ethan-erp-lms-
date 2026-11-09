@@ -677,3 +677,81 @@ $function$;
 
 REVOKE ALL ON FUNCTION public.submit_quiz_attempt(uuid,jsonb) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.submit_quiz_attempt(uuid,jsonb) TO authenticated;
+
+
+-- ETHAN LEARN owner bootstrap correction.
+-- Only the Academy owner identity receives Super Admin on initial profile creation.
+CREATE OR REPLACE FUNCTION public.ensure_student_account(
+  p_first_name text,
+  p_last_name text,
+  p_phone text DEFAULT '',
+  p_learner_type text DEFAULT 'student'
+)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'public','neon_auth','pg_temp'
+AS $function$
+DECLARE
+  v_uid uuid := auth.uid();
+  v_email text;
+  v_role public.app_role;
+  v_learner_type text;
+  v_student_id uuid;
+  v_profile public.profiles%ROWTYPE;
+BEGIN
+  IF v_uid IS NULL THEN
+    RAISE EXCEPTION 'Please sign in to create your learner profile.';
+  END IF;
+  SELECT email INTO v_email FROM neon_auth."user" WHERE id=v_uid;
+  IF v_email IS NULL THEN
+    RAISE EXCEPTION 'The signed-in account could not be found.';
+  END IF;
+
+  v_role := CASE
+    WHEN lower(v_email) IN ('abayomipeteroyenuga@gmail.com','fedora4jesus@gmail.com')
+      THEN 'super_admin'::public.app_role
+    ELSE 'student'::public.app_role
+  END;
+  v_learner_type := CASE
+    WHEN p_learner_type IN ('professional','business_owner') THEN p_learner_type
+    ELSE 'student'
+  END;
+
+  INSERT INTO public.profiles(id,first_name,last_name,email,phone,learner_type,role)
+  VALUES(v_uid,coalesce(p_first_name,''),coalesce(p_last_name,''),lower(v_email),coalesce(p_phone,''),v_learner_type,v_role)
+  ON CONFLICT(id) DO UPDATE SET
+    first_name=excluded.first_name,
+    last_name=excluded.last_name,
+    email=excluded.email,
+    phone=excluded.phone,
+    learner_type=excluded.learner_type,
+    role=CASE
+      WHEN lower(excluded.email) IN ('abayomipeteroyenuga@gmail.com','fedora4jesus@gmail.com')
+        THEN 'super_admin'::public.app_role
+      WHEN public.profiles.role IN ('super_admin','admin','instructor')
+        THEN public.profiles.role
+      ELSE 'student'::public.app_role
+    END,
+    updated_at=now();
+
+  SELECT * INTO v_profile FROM public.profiles WHERE id=v_uid;
+  IF v_profile.role='student' THEN
+    INSERT INTO public.students(user_id,student_no,status)
+    VALUES(v_uid,'EDA-ST-'||upper(substr(replace(v_uid::text,'-',''),1,8)),'active')
+    ON CONFLICT(user_id) DO NOTHING;
+    SELECT id INTO v_student_id FROM public.students WHERE user_id=v_uid;
+    INSERT INTO public.enrolments(student_id,course_id,status)
+    SELECT v_student_id,c.id,'active'
+    FROM public.courses c
+    WHERE c.published=true
+    ON CONFLICT(student_id,course_id) DO NOTHING;
+  END IF;
+
+  RETURN jsonb_build_object(
+    'id',v_profile.id,'first_name',v_profile.first_name,'last_name',v_profile.last_name,
+    'email',v_profile.email,'phone',v_profile.phone,'learner_type',v_profile.learner_type,
+    'role',v_profile.role,'student_id',v_student_id
+  );
+END;
+$function$;
