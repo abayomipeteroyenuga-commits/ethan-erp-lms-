@@ -1,9 +1,9 @@
-# ETHAN ERP & LMS — Free Neon Edition
+# ETHAN LEARN — Independent Learning Platform
 
-ETHAN ERP & LMS is the free learning and academy-management portal for Ethan Digital Academy.
+ETHAN LEARN is the free learning and academy-management portal for Ethan Digital Academy.
 
 ## Hosting
-- A single Render Node.js web service serves the LMS frontend and protected course-material signing API.
+- A dedicated Render Node.js service serves the ETHAN LEARN frontend and protected course-material signing API. The ERP runs as a different service with its own database and deployment root.
 - `render.yaml` defines the Render Blueprint in Frankfurt.
 - `server.js` serves only browser-required files and `/api/storage/presign`.
 - The health endpoint is `/healthz`.
@@ -39,7 +39,7 @@ Set these securely in the Render service environment. Do not commit secret value
 - `AWS_ACCESS_KEY_ID` (private storage credential)
 - `AWS_SECRET_ACCESS_KEY` (private storage credential)
 - `NEON_STORAGE_BUCKET` (set to `ethan-lms-materials`)
-- `APP_ORIGIN` (set to `https://app.ethandigitalacademy.org`)
+- `APP_ORIGIN` (set to `https://lms.ethandigitalacademy.org` after the custom domain is attached)
 
 The Blueprint marks private values as unsynchronized so Render prompts for secure entry. Never put secrets in GitHub or browser files.
 
