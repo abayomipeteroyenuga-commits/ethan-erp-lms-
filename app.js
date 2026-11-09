@@ -2243,3 +2243,159 @@ function renderNotifications(){
   const badge=$("#notifBadge");
   if(badge){badge.textContent=String(items.length);badge.hidden=items.length===0;}
 }
+
+
+/* ETHAN LEARN — course-specific classroom and real lesson progress */
+function plainLessonHtml(value){
+  return String(value||"").split(/\r?\n/).map(line=>line.trim()?'<p>'+escHtml(line)+'</p>':"").join("");
+}
+function safeLessonHtml(value){
+  return String(value||"")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,"")
+    .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe\s*>/gi,"")
+    .replace(/\s+on[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi,"")
+    .replace(/javascript\s*:/gi,"");
+}
+async function renderLMS(){
+  const staff=["admin","super_admin","instructor"].includes(currentUser?.role||"");
+  const backend=window.ETHAN_BACKEND;
+  $("#content").innerHTML=pageHead(staff?"Learning Content Studio":"Learning Classroom",
+    staff?"Organise course content into modules and lessons.":"Choose a course, study each lesson and track your progress.")+
+    '<div class="card"><p class="muted">Loading your course library…</p></div>';
+  if(!backend?.ready){
+    $("#content").innerHTML=pageHead("Learning Classroom","Your learning space.")+emptyState("Learning service unavailable","Reconnect to the learning database and reload.");
+    return;
+  }
+  try{
+    let courses=await backend.listCourses();
+    courses=(courses||[]).filter(c=>staff||c.published===true);
+    if(currentUser?.role==="student"){
+      const enrolledIds=new Set(studentEnrolments().map(e=>e.course?.id).filter(Boolean));
+      if(enrolledIds.size)courses=courses.filter(c=>enrolledIds.has(c.id));
+    }
+    if(!courses.length){
+      $("#content").innerHTML=pageHead("Learning Classroom","Your learning space.")+emptyState("No courses are available yet","Published courses will appear here when the Academy releases them.");
+      return;
+    }
+    $("#content").innerHTML=pageHead(staff?"Learning Content Studio":"Learning Classroom",
+      staff?"Select a course to manage its modules, lessons and study resources.":"Your free digital courses, study materials and lesson progress.")+
+      '<div class="lms-library-tools"><input id="lmsCourseSearch" type="search" placeholder="Search course title or course code…" aria-label="Search courses"><span>'+courses.length+' courses available</span></div>'+
+      '<div id="lmsCourseGrid" class="lms-course-grid">'+courses.map(c=>{
+        const title=String(c.title||"Course");
+        return '<article class="lms-course-card"><div class="lms-course-card-top"><span>'+escHtml(c.code||"ETHAN COURSE")+'</span><span class="lms-free-chip">'+(Number(c.fee||0)===0?"FREE":"PAID")+'</span></div><div class="lms-course-icon">📘</div><h3>'+escHtml(title)+'</h3><p>'+escHtml(c.description||c.learning_objectives||"Practical learning resources from Ethan Digital Academy.")+'</p><div class="lms-course-meta"><span>'+escHtml(c.duration||"Self-paced")+'</span><span>'+escHtml(c.difficulty||"All levels")+'</span></div><div class="lms-course-actions"><button class="primary-btn" data-open-lms-course="'+escHtml(c.id)+'">Open classroom</button>'+(staff?'<button class="secondary-btn" data-open-course-study="'+encodeURIComponent(title)+'">Preview study guide</button>':"")+'</div></article>';
+      }).join("")+'</div>';
+    const search=$("#lmsCourseSearch"),grid=$("#lmsCourseGrid");
+    if(search)search.oninput=()=>{
+      const q=search.value.trim().toLowerCase();
+      $$("[data-open-lms-course]").forEach(btn=>{
+        const card=btn.closest(".lms-course-card");
+        if(card)card.hidden=!card.textContent.toLowerCase().includes(q);
+      });
+    };
+    $$("[data-open-lms-course]").forEach(btn=>btn.onclick=()=>{
+      const course=courses.find(c=>c.id===btn.dataset.openLmsCourse);
+      if(course)openLearningClassroom(course);
+    });
+    $$("[data-open-course-study]").forEach(btn=>btn.onclick=()=>openCourseStudy(btn.dataset.openCourseStudy));
+  }catch(error){
+    $("#content").innerHTML=pageHead("Learning Classroom","Your learning space.")+emptyState("Course library could not be loaded",error.message||"Refresh the page and try again.");
+  }
+}
+
+async function openLearningClassroom(course){
+  const backend=window.ETHAN_BACKEND;
+  if(!course?.id||!backend?.ready)return;
+  $("#content").innerHTML=pageHead("Learning Classroom","Loading "+escHtml(course.title||"course")+"…")+
+    '<div class="card"><p class="muted">Preparing course modules and your study progress…</p></div>';
+  try{
+    const modules=await backend.listCourseModules(course.id);
+    let progress=[];
+    if(currentUser?.role==="student"&&portalState.myStudent?.id){
+      progress=await backend.listMyLessonProgress(portalState.myStudent.id);
+    }
+    const done=new Set(progress.filter(p=>p.completed).map(p=>p.lesson_id));
+    const lessons=modules.flatMap(m=>(m.lessons||[]).filter(l=>currentUser.role!=="student"||l.published).map(l=>({...l,moduleTitle:m.title,modulePosition:m.position})));
+    const completed=lessons.filter(l=>done.has(l.id)).length;
+    const pct=lessons.length?Math.round(completed/lessons.length*100):0;
+    const moduleMarkup=modules.map((m,i)=>{
+      const moduleLessons=(m.lessons||[]).filter(l=>currentUser.role!=="student"||l.published);
+      const completedInModule=moduleLessons.filter(l=>done.has(l.id)).length;
+      const addLesson=staff?'<button class="secondary-btn" data-add-course-lesson="'+escHtml(m.id)+'">+ Add lesson</button>':"";
+      const rows=moduleLessons.map(l=>{
+        const isDone=done.has(l.id);
+        return '<button class="lms-lesson-row" data-open-lesson="'+escHtml(l.id)+'"><span class="lms-lesson-status '+(isDone?"is-done":"")+'">'+(isDone?"✓":"▶")+'</span><span class="lms-lesson-title"><strong>'+escHtml(l.title)+'</strong><small>'+Number(l.estimated_minutes||20)+' min</small></span><span class="lms-lesson-state">'+(isDone?"Completed":"Open lesson")+'</span></button>';
+      }).join("");
+      return '<section class="lms-module-card"><div class="lms-module-heading"><div><small>MODULE '+String(i+1).padStart(2,"0")+'</small><h3>'+escHtml(m.title)+'</h3><p>'+completedInModule+' of '+moduleLessons.length+' lessons completed</p></div>'+addLesson+'</div><div class="lms-lesson-list">'+(rows||'<p class="muted lms-module-empty">No published lessons in this module yet.</p>')+'</div></section>';
+    }).join("");
+    $("#content").innerHTML=pageHead("Learning Classroom",escHtml(course.title||"Course"),'<button class="secondary-btn" id="backToLmsLibrary">← Course library</button>')+
+      '<section class="lms-classroom-hero"><div><span class="eyebrow">ETHAN DIGITAL ACADEMY · LEARNER CLASSROOM</span><h2>'+escHtml(course.title||"Course")+'</h2><p>'+escHtml(course.description||course.learning_objectives||"Study the course material, practise and build practical skills.")+'</p></div><div class="lms-progress-summary"><strong>'+pct+'%</strong><span>LESSONS COMPLETED</span><div class="lms-progress-track"><i style="width:'+pct+'%"></i></div><small>'+completed+' of '+lessons.length+' completed</small></div></section>'+
+      (modules.length?'<div class="lms-classroom-toolbar"><h3>Course curriculum</h3>'+(staff?'<button class="primary-btn" id="addCourseModuleBtn">+ Add module</button>':"")+'</div><div class="lms-module-list">'+moduleMarkup+'</div>':
+        '<section class="lms-no-curriculum"><div class="lms-no-curriculum-icon">📚</div><div><h3>Course study material</h3><p>The structured module outline for this course is being prepared. You can still open its available study manual and guided course notes.</p><button class="primary-btn" id="openCourseStudyMaterial">Open course study material</button></div>'+(staff?'<button class="secondary-btn" id="addCourseModuleBtn">Build first module</button>':"")+'</section>');
+    $("#backToLmsLibrary").onclick=()=>renderLMS();
+    const openStudy=$("#openCourseStudyMaterial");
+    if(openStudy)openStudy.onclick=()=>openCourseStudy(encodeURIComponent(course.title));
+    $$("[data-open-lesson]").forEach(btn=>btn.onclick=()=>openLmsLesson(course,modules,btn.dataset.openLesson,done));
+    $$("[data-add-course-lesson]").forEach(btn=>btn.onclick=()=>openCreateLesson(course,modules.find(m=>m.id===btn.dataset.addCourseLesson)));
+    const addModule=$("#addCourseModuleBtn");
+    if(addModule)addModule.onclick=()=>openCreateModule(course,modules);
+  }catch(error){
+    $("#content").innerHTML=pageHead("Learning Classroom",escHtml(course.title||"Course"))+emptyState("Course content could not be loaded",error.message||"Refresh the classroom and try again.");
+  }
+}
+
+async function openLmsLesson(course,modules,lessonId,doneSet){
+  const module=modules.find(m=>(m.lessons||[]).some(l=>l.id===lessonId));
+  const lesson=module?.lessons?.find(l=>l.id===lessonId);
+  if(!lesson)return;
+  const lessons=modules.flatMap(m=>(m.lessons||[]).filter(l=>currentUser.role!=="student"||l.published));
+  const index=lessons.findIndex(l=>l.id===lesson.id);
+  const previous=lessons[index-1],next=lessons[index+1],complete=doneSet?.has(lesson.id);
+  const video=String(lesson.video_url||"").trim();
+  const videoMarkup=/^https:\/\//i.test(video)?'<p><a class="lms-video-link" href="'+escHtml(video)+'" target="_blank" rel="noopener noreferrer">▶ Open lesson video in a new tab</a></p>':"";
+  $("#content").innerHTML=pageHead("Lesson",escHtml(course.title||"Course"),'<button class="secondary-btn" id="backToCourseClassroom">← Course outline</button>')+
+    '<article class="lms-lesson-player"><div class="lms-lesson-breadcrumb">'+escHtml(module.title)+' / '+escHtml(course.title)+'</div><span class="eyebrow">LESSON '+String(index+1).padStart(2,"0")+' OF '+lessons.length+'</span><h1>'+escHtml(lesson.title)+'</h1><p class="lms-lesson-duration">Estimated study time: '+Number(lesson.estimated_minutes||20)+' minutes</p><div class="lms-lesson-content">'+safeLessonHtml(lesson.content_html||"<p>Your instructor has not added lesson notes yet.</p>")+'</div>'+videoMarkup+'<div class="lms-lesson-footer"><span class="lms-lesson-status-text">'+(complete?"Completed":"In progress")+'</span><div class="lms-lesson-nav">'+(previous?'<button class="secondary-btn" id="previousLmsLesson">← Previous lesson</button>':"<span></span>")+(currentUser.role==="student"?'<button class="primary-btn" id="completeLmsLesson">'+(complete?"Completed ✓":"Mark lesson complete")+'</button>':"")+(next?'<button class="secondary-btn" id="nextLmsLesson">Next lesson →</button>':"")+'</div></div></article>';
+  $("#backToCourseClassroom").onclick=()=>openLearningClassroom(course);
+  const prev=$("#previousLmsLesson"),nxt=$("#nextLmsLesson"),mark=$("#completeLmsLesson");
+  if(prev)prev.onclick=()=>openLmsLesson(course,modules,previous.id,doneSet);
+  if(nxt)nxt.onclick=()=>openLmsLesson(course,modules,next.id,doneSet);
+  if(mark)mark.onclick=async()=>{
+    const studentId=portalState.myStudent?.id;
+    if(!studentId)return alert("Your learner profile is not ready. Sign out and sign back in.");
+    mark.disabled=true;mark.textContent="Saving progress…";
+    try{
+      await window.ETHAN_BACKEND.setLessonProgress({studentId,lessonId:lesson.id,completed:true});
+      doneSet.add(lesson.id);
+      mark.textContent="Completed ✓";
+      const status=$(".lms-lesson-status-text");if(status)status.textContent="Completed";
+    }catch(error){mark.disabled=false;mark.textContent="Mark lesson complete";alert(error.message||"Your progress could not be saved.");}
+  };
+}
+
+function openCreateModule(course,modules){
+  if(!["admin","super_admin","instructor"].includes(currentUser?.role||""))return;
+  showModal("Add course module","Create a new section in the course curriculum.",
+    '<label>Module title<input id="newLmsModuleTitle" required placeholder="e.g. Module 1 — Foundations"></label>',
+    async()=>{
+      const title=$("#newLmsModuleTitle").value.trim();
+      if(!title)return alert("Enter a module title.");
+      try{
+        await window.ETHAN_BACKEND.createCourseModule({course_id:course.id,title,position:(modules||[]).length+1});
+        closeModal();openLearningClassroom(course);
+      }catch(error){alert(error.message||"The module could not be created.");}
+    });
+}
+function openCreateLesson(course,module){
+  if(!module||!["admin","super_admin","instructor"].includes(currentUser?.role||""))return;
+  showModal("Add lesson","Create lesson notes and publish them to the course classroom.",
+    '<label>Lesson title<input id="newLmsLessonTitle" required></label><label>Lesson notes<textarea id="newLmsLessonContent" rows="9" required placeholder="Write the lesson explanation, examples, key points and practical activity…"></textarea></label><div class="grid-2"><label>Study time (minutes)<input id="newLmsLessonMinutes" type="number" min="1" value="20"></label><label>Video link (optional)<input id="newLmsLessonVideo" type="url" placeholder="https://…"></label></div>',
+    async()=>{
+      const title=$("#newLmsLessonTitle").value.trim(),content=$("#newLmsLessonContent").value.trim();
+      const minutes=Math.max(1,Number($("#newLmsLessonMinutes").value||20)),video=$("#newLmsLessonVideo").value.trim();
+      if(!title||!content)return alert("Enter the lesson title and notes.");
+      if(video&&!/^https:\/\//i.test(video))return alert("Use a secure HTTPS link for the lesson video.");
+      try{
+        await window.ETHAN_BACKEND.createCourseLesson({module_id:module.id,title,content_html:plainLessonHtml(content),video_url:video||null,estimated_minutes:minutes,position:(module.lessons||[]).length+1,published:true});
+        closeModal();openLearningClassroom(course);
+      }catch(error){alert(error.message||"The lesson could not be saved.");}
+    });
+}
