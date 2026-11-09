@@ -470,22 +470,35 @@ renderCourses = async function () {
   });
   var addButton = document.querySelector("#addCourseBtn");
   if (addButton) addButton.onclick = function () {
-    showModal("Create Course", "Add a course to the catalogue.",
-      '<label>Course title<input id="courseTitle"></label><div class="grid-2">' +
-      '<label>Category<input id="courseCat"></label><label>Duration<input id="courseDur" placeholder="6 weeks"></label></div>',
-      function () {
+    showModal("Create Course", "Add a paid professional course to the published catalogue. The learner account remains free; this fee applies only to course access.",
+      '<label>Course title<input id="courseTitle" required maxlength="180"></label>'+
+      '<div class="grid-2"><label>Difficulty<select id="courseDifficulty"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></label><label>Duration<input id="courseDur" required placeholder="6 weeks"></label></div>'+
+      '<label>Course fee (NGN)<input id="courseFee" type="number" min="1" step="1000" required placeholder="e.g. 55000"></label>'+
+      '<label>Course description<textarea id="courseDescription" rows="3" maxlength="1200" placeholder="What learners will learn and practise"></textarea></label>',
+      async function () {
         var title = document.querySelector("#courseTitle").value.trim();
-        var category = document.querySelector("#courseCat").value.trim();
         var duration = document.querySelector("#courseDur").value.trim();
-        if (!title || !category || !duration) return alert("Complete all fields.");
-        data.courses.push({
-          code: "EDA-CRS-" + String(data.courses.length + 1).padStart(3, "0"),
-          title: title, category: category, instructor: currentUser.name,
-          duration: duration, progress: 0, lessons: 0, completed: 0
-        });
-        persist();
-        closeModal();
-        renderCourses();
+        var fee = Number(document.querySelector("#courseFee").value);
+        var difficulty = document.querySelector("#courseDifficulty").value;
+        var description = document.querySelector("#courseDescription").value.trim();
+        if (!title || !duration || !Number.isFinite(fee) || fee<=0) return alert("Enter the course title, duration and a fee greater than zero.");
+        var suffix=data.courses.map(function(c){return Number(String(c.code||"").match(/(\\d+)$/)?.[1]||0);}).reduce(function(max,n){return Math.max(max,n);},100)+1;
+        try{
+          await window.ETHAN_BACKEND.createCourse({
+            code:"EDA-"+String(suffix).padStart(3,"0"),
+            title:title,duration:duration,fee:fee,difficulty:difficulty,
+            description:description,published:true,created_by:currentUser.id
+          });
+          var records=await window.ETHAN_BACKEND.listCourses();
+          data.courses=(records||[]).map(function(c){return {
+            id:c.id,code:c.code,title:c.title,description:c.description||"",
+            category:c.difficulty||"Digital Skills",difficulty:c.difficulty||"Beginner",
+            instructor:"Ethan Digital Academy",duration:c.duration||"Self-paced",
+            progress:0,lessons:0,completed:0,fee:Number(c.fee||0),published:c.published
+          };});
+          closeModal();
+          renderCourses();
+        }catch(error){alert(error.message||"The course could not be saved.");}
       }
     );
   };
