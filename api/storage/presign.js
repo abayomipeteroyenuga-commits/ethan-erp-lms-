@@ -4,7 +4,7 @@ import { createRemoteJWKSet, jwtVerify } from "jose";
 import { Pool } from "@neondatabase/serverless";
 
 const APP_ORIGIN=process.env.APP_ORIGIN||"https://app.ethandigitalacademy.org";
-const ALLOWED_ORIGINS=[...new Set([APP_ORIGIN,process.env.RENDER_EXTERNAL_URL||"",...(process.env.ALLOWED_APP_ORIGINS||"").split(",").map(x=>x.trim())].filter(Boolean))];
+const ALLOWED_ORIGINS=[...new Set([APP_ORIGIN,"https://lms.ethandigitalacademy.org",process.env.RENDER_EXTERNAL_URL||"",...(process.env.ALLOWED_APP_ORIGINS||"").split(",").map(x=>x.trim())].filter(Boolean))];
 const BUCKET=process.env.NEON_STORAGE_BUCKET||"ethan-lms-materials";
 const UUID_RE=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const required=["DATABASE_URL","NEON_AUTH_JWKS_URL","AWS_ENDPOINT_URL_S3","AWS_REGION","AWS_ACCESS_KEY_ID","AWS_SECRET_ACCESS_KEY"];
