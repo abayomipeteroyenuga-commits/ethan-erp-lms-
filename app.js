@@ -41,7 +41,7 @@ function loadData(){
 let data = loadData();
 data.enrolments = Array.isArray(data.enrolments) ? data.enrolments : [];
 let currentUser = null;
-let portalState = { myStudent:null, myEnrolments:[], myPayments:[], backendLoaded:false };
+let portalState = { myStudent:null, myEnrolments:[], myPayments:[], myCourseRequests:[], backendLoaded:false };
 let currentPage = "dashboard";
 
 function initials(name){return String(name||"").split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join("")||"EU";}
@@ -220,14 +220,30 @@ async function openPortal(user){
 }
  
 async function hydratePortalData(user){
-  portalState={myStudent:null,myEnrolments:[],myPayments:[],backendLoaded:false};
+  portalState={myStudent:null,myEnrolments:[],myPayments:[],myCourseRequests:[],backendLoaded:false};
   if(window.ETHAN_BACKEND?.ready){
     try{
       if(user.role==="student"){
-        portalState.myStudent=await window.ETHAN_BACKEND.getStudentByUserId(user.id);
+        const [student,courses]=await Promise.all([
+          window.ETHAN_BACKEND.getStudentByUserId(user.id),
+          window.ETHAN_BACKEND.listCourses()
+        ]);
+        portalState.myStudent=student||null;
+        data.courses=(courses||[]).map(c=>({
+          id:c.id,code:c.code,title:c.title,description:c.description||c.learning_objectives||"",
+          category:c.difficulty||"Digital Skills",difficulty:c.difficulty||"Beginner",
+          instructor:"Ethan Digital Academy",duration:c.duration||"Self-paced",
+          progress:0,lessons:0,completed:0,fee:Number(c.fee||0),published:c.published
+        }));
         if(portalState.myStudent){
-          portalState.myEnrolments=await window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id);
-          portalState.myPayments=await window.ETHAN_BACKEND.listMyPayments(portalState.myStudent.id);
+          const [enrolments,payments,requests]=await Promise.all([
+            window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id),
+            window.ETHAN_BACKEND.listMyPayments(portalState.myStudent.id),
+            window.ETHAN_BACKEND.listMyCourseAccessRequests(portalState.myStudent.id)
+          ]);
+          portalState.myEnrolments=enrolments||[];
+          portalState.myPayments=payments||[];
+          portalState.myCourseRequests=requests||[];
         }
       } else if(["admin","super_admin","instructor"].includes(user.role)){
         const [students,courses] = await Promise.all([
@@ -280,15 +296,7 @@ async function hydratePortalData(user){
 }
 
 function studentEnrolments(){ return currentUser?.role==="student" ? (portalState.myEnrolments||[]) : []; }
-function studentCourses(){
- const enrolled=studentEnrolments().map(e=>e.course).filter(Boolean);
- if(enrolled.length)return enrolled;
- return (ETHAN_PUBLIC_COURSES||[]).map((course,index)=>({
-  id:"free-course-"+(index+1),code:"EDA-"+String(index+1).padStart(3,"0"),
-  title:course.name,description:course.brief,duration:"Self-paced",
-  fee:0,published:true,progress:0,lessons:0,completed:0
- }));
-}
+function studentCourses(){ return studentEnrolments().map(e=>e.course).filter(Boolean); }
 function emptyState(title,message,action=""){ return `<div class="card" style="text-align:center;padding:34px"><h3>${title}</h3><p class="muted" style="max-width:620px;margin:8px auto 18px">${message}</p>${action}</div>`; }
 function renderNav(){
   const role=currentUser.role==="admin"?"admin":currentUser.role;
