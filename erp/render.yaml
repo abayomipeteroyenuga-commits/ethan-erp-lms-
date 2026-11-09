@@ -9,6 +9,8 @@ services:
     buildCommand: npm install && npm run check
     startCommand: npm start
     healthCheckPath: /healthz
+    domains:
+      - erp.ethandigitalacademy.org
     autoDeployTrigger: commit
     envVars:
       - key: APP_ORIGIN
