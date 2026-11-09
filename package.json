@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "check": "node scripts/build-browser-sdk.js && node --check scripts/build-browser-sdk.js && node --check server.js && node --check api/course-assets.js && node --check api/storage/presign.js && node --check < app.js && node --check < neon-client.js && node --check < digital-learning.js"
+    "check": "node scripts/report-audit.js && node scripts/build-browser-sdk.js && node --check scripts/build-browser-sdk.js && node --check scripts/report-audit.js && node --check server.js && node --check api/course-assets.js && node --check api/storage/presign.js && node --check < app.js && node --check < neon-client.js && node --check < digital-learning.js"
   },
   "overrides": {
     "better-auth": "1.7.18",
