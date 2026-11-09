@@ -418,9 +418,12 @@ function openLearnerCoursePaymentRequest(course){
   var fee=Number(course.fee||0);
   if(fee<=0)return alert("This course fee has not been configured. Contact the Academy.");
   showModal("Submit course payment details",
-    "Free account registration does not include course enrolment. After transferring the exact course fee through the Academy's official payment instructions, enter the transaction details below. A Superadmin will verify the transfer before access is granted.",
-    '<div class="card" style="padding:13px;margin-bottom:12px"><strong>'+ethanLmsEscape(course.title)+'</strong><div class="muted" style="font-size:12px">'+ethanLmsEscape(course.code||"")+'</div><h3 style="margin:7px 0;color:#123d80">₦'+fee.toLocaleString("en-NG")+'</h3><small class="muted">Amount due for this course</small></div>'+
-    '<div class="card" style="padding:13px;margin-bottom:12px"><strong>Official Academy payment accounts</strong><p style="margin:8px 0">UBA · Account No. <strong>1021643438</strong></p><p style="margin:0">Kuda Microfinance Bank · Account No. <strong>3003847218</strong></p><small class="muted">Before transferring, confirm that the beneficiary name shown by your bank is the official Ethan Digital Academy account. Keep your transfer reference.</small></div>'+
+    "Your learner account is free; course access is paid separately. Transfer the exact course fee to ONE of the Academy business accounts shown below. Do not transfer to personal accounts. A Superadmin checks the payment before course access is granted.",
+    '<div class="card" style="padding:13px;margin-bottom:12px"><strong>'+ethanLmsEscape(course.title)+'</strong><div class="muted" style="font-size:12px">'+ethanLmsEscape(course.code||"")+'</div><h3 style="margin:7px 0;color:#123d80">₦'+fee.toLocaleString("en-NG")+'</h3><small class="muted">Exact amount due for this course</small></div>'+
+    '<div class="card" style="padding:15px;margin-bottom:12px;border:1px solid #c8d7f1"><strong style="display:block;margin-bottom:10px">OPTION 1 · KUDA MICROFINANCE BANK</strong><div class="muted" style="font-size:12px">Account name</div><strong>ALLONMAADIAH INTERNATIONAL LIMITED</strong><div class="muted" style="font-size:12px;margin-top:8px">Account number</div><strong style="font-size:22px;letter-spacing:1px">3003847218</strong></div>'+
+    '<div class="card" style="padding:15px;margin-bottom:12px;border:1px solid #b8dfc5"><strong style="display:block;margin-bottom:10px">OPTION 2 · UNITED BANK FOR AFRICA (UBA)</strong><div class="muted" style="font-size:12px">Account name</div><strong>ALLON-MAADIAH INTERNATIONAL LIMITED</strong><div class="muted" style="font-size:12px;margin-top:8px">Account number</div><strong style="font-size:22px;letter-spacing:1px">1021643438</strong></div>'+
+    '<div class="card" style="padding:12px;margin-bottom:12px;border:1px solid #c94b4b"><strong style="color:#a32222">SECURITY NOTICE</strong><p style="margin:6px 0 0">Do not pay into personal accounts. Before confirming the transfer, check that the beneficiary name displayed by your bank matches the selected account above.</p></div>'+
+    '<label>Which Academy account did you pay into?<select id="coursePaymentAccount" required><option value="">Select the receiving account</option><option value="Kuda MFB — 3003847218 — ALLONMAADIAH INTERNATIONAL LIMITED">Kuda MFB · 3003847218</option><option value="UBA — 1021643438 — ALLON-MAADIAH INTERNATIONAL LIMITED">UBA · 1021643438</option></select></label>'+
     '<label>Bank transfer reference<input id="courseTransferReference" required maxlength="180" placeholder="Enter the transaction reference"></label>'+
     '<div class="grid-2"><label>Payment date<input id="coursePaymentDate" type="date" required value="'+new Date().toISOString().slice(0,10)+'"></label><label>Payment method<select id="coursePaymentMethod"><option value="bank_transfer">Bank transfer</option><option value="cash">Cash paid to Academy</option><option value="pos">POS</option><option value="other">Other approved method</option></select></label></div>'+
     '<label>Additional note (optional)<textarea id="coursePaymentNotes" rows="3" maxlength="500" placeholder="Optional payment note"></textarea></label>',
@@ -428,9 +431,12 @@ function openLearnerCoursePaymentRequest(course){
       var reference=document.querySelector("#courseTransferReference").value.trim();
       var paymentDate=document.querySelector("#coursePaymentDate").value;
       var paymentMethod=document.querySelector("#coursePaymentMethod").value;
+      var paymentAccount=document.querySelector("#coursePaymentAccount").value;
       var notes=document.querySelector("#coursePaymentNotes").value.trim();
       if(reference.length<3)return alert("Enter the bank or payment transaction reference.");
       if(!paymentDate)return alert("Select the payment date.");
+      if(paymentMethod==="bank_transfer"&&!paymentAccount)return alert("Select the Academy bank account that received your transfer.");
+      if(paymentMethod==="bank_transfer")notes="Paid into: "+paymentAccount+(notes?" | "+notes:"");
       try{
         await window.ETHAN_BACKEND.createCourseAccessRequest({
           studentId:portalState.myStudent.id,courseId:course.id,amount:fee,
@@ -625,7 +631,7 @@ renderPayments = async function () {
         var actions=r.status==="pending"
           ? '<div class="toolbar-right"><button type="button" class="primary-btn" data-approve-course-request="'+ethanLmsEscape(r.id)+'">Verify & unlock</button><button type="button" class="danger-btn" data-reject-course-request="'+ethanLmsEscape(r.id)+'">Reject</button></div>'
           : (r.payment_id?'<small class="muted">Verified payment recorded</small>':(r.admin_note?'<small class="muted">'+ethanLmsEscape(r.admin_note)+'</small>':"—"));
-        return '<tr><td><strong>'+ethanLmsEscape(studentName)+'</strong><small class="muted" style="display:block">'+ethanLmsEscape(student.email||"")+'</small></td><td>'+ethanLmsEscape(courseName)+'<small class="muted" style="display:block">'+ethanLmsEscape(r.course?.code||"")+'</small></td><td><strong>₦'+Number(r.amount||0).toLocaleString("en-NG")+'</strong></td><td>'+ethanLmsEscape(r.payment_reference||"")+'</td><td>'+ethanLmsEscape(r.payment_date||"")+'</td><td><span class="badge '+badge+'">'+status+'</span></td><td>'+actions+'</td></tr>';
+        return '<tr><td><strong>'+ethanLmsEscape(studentName)+'</strong><small class="muted" style="display:block">'+ethanLmsEscape(student.email||"")+'</small></td><td>'+ethanLmsEscape(courseName)+'<small class="muted" style="display:block">'+ethanLmsEscape(r.course?.code||"")+'</small></td><td><strong>₦'+Number(r.amount||0).toLocaleString("en-NG")+'</strong></td><td>'+ethanLmsEscape(r.payment_reference||"")+'</td><td>'+ethanLmsEscape(r.notes||"—")+'</td><td>'+ethanLmsEscape(r.payment_date||"")+'</td><td><span class="badge '+badge+'">'+status+'</span></td><td>'+actions+'</td></tr>';
       }).join("");
       document.querySelector("#content").innerHTML=
         pageHead("Course Payment Approvals","Verify the transaction externally, then approve only the course shown in the request.")+
@@ -637,8 +643,8 @@ renderPayments = async function () {
         '</div>'+
         '<div class="card"><div class="card-head"><h3>Transfer verification queue</h3><span class="badge gold">'+pending.length+' pending</span></div>'+
         '<p class="muted" style="font-size:12px">Confirm the transaction reference and amount in the Academy bank records before using Verify & unlock. Approval records a verified payment and activates that course only.</p>'+
-        '<div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Amount</th><th>Transfer reference</th><th>Payment date</th><th>Status</th><th>Review</th></tr></thead><tbody>'+
-        (rows||'<tr><td colspan="7">No course payment requests have been submitted.</td></tr>')+
+        '<div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Amount</th><th>Transfer reference</th><th>Receiving account / notes</th><th>Payment date</th><th>Status</th><th>Review</th></tr></thead><tbody>'+
+        (rows||'<tr><td colspan="8">No course payment requests have been submitted.</td></tr>')+
         '</tbody></table></div></div>';
       document.querySelectorAll("[data-approve-course-request]").forEach(function(button){
         button.onclick=async function(){
