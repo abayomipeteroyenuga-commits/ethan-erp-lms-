@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ethan-erp
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    rootDir: erp
+    buildCommand: npm install && npm run check
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_ORIGIN
+        value: https://erp.ethandigitalacademy.org
+      - key: NODE_ENV
+        value: production

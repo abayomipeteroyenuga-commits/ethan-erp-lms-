@@ -1,0 +1,10 @@
+import express from "express";
+import path from "node:path";
+import {fileURLToPath} from "node:url";
+const root=path.dirname(fileURLToPath(import.meta.url));
+const app=express();const port=Number(process.env.PORT)||10000;
+app.disable("x-powered-by");app.set("trust proxy",1);
+app.get("/healthz",(_req,res)=>res.status(200).set("Cache-Control","no-store").json({status:"ok",service:"ethan-erp"}));
+app.use(express.static(root,{dotfiles:"deny",index:"index.html",etag:true,setHeaders(res,file){if(path.basename(file)==="index.html")res.setHeader("Cache-Control","no-cache");}}));
+app.use((_req,res)=>res.status(404).send("Not found"));
+app.listen(port,"0.0.0.0",()=>console.log("ETHAN ERP listening on "+port));
