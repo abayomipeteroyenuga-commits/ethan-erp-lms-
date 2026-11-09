@@ -481,3 +481,38 @@ DROP TRIGGER IF EXISTS tr_audit_erp_purchase_requisitions ON public.erp_purchase
 CREATE TRIGGER tr_audit_erp_purchase_requisitions AFTER INSERT OR UPDATE OR DELETE ON public.erp_purchase_requisitions FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
 DROP TRIGGER IF EXISTS tr_audit_erp_payment_receipts ON public.erp_payment_receipts;
 CREATE TRIGGER tr_audit_erp_payment_receipts AFTER INSERT OR UPDATE OR DELETE ON public.erp_payment_receipts FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+
+-- Admission conversion and assigned-role approval decisions.
+CREATE OR REPLACE FUNCTION public.convert_erp_application(p_application_id uuid,p_admission_no text,p_level text DEFAULT NULL)
+RETURNS public.erp_students LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_app public.erp_applications; v_student public.erp_students; v_full text; v_first text; v_last text;
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','admissions') THEN RAISE EXCEPTION 'You are not authorised to enrol applicants'; END IF;
+ IF nullif(trim(p_admission_no),'') IS NULL THEN RAISE EXCEPTION 'Admission number is required'; END IF;
+ SELECT * INTO v_app FROM public.erp_applications WHERE id=p_application_id FOR UPDATE;
+ IF v_app.id IS NULL THEN RAISE EXCEPTION 'Application not found'; END IF;
+ IF v_app.status<>'accepted' THEN RAISE EXCEPTION 'Only accepted applications can be converted to learners'; END IF;
+ v_full:=trim(v_app.full_name); v_first:=split_part(v_full,' ',1); v_last:=trim(substr(v_full,length(v_first)+1));
+ IF v_last='' THEN v_last:=v_first; END IF;
+ INSERT INTO public.erp_students(admission_no,first_name,last_name,email,phone,programme,level,status)
+ VALUES(trim(p_admission_no),v_first,v_last,v_app.email,v_app.phone,v_app.programme,p_level,'active') RETURNING * INTO v_student;
+ UPDATE public.erp_applications SET status='enrolled' WHERE id=v_app.id;
+ RETURN v_student;
+END $$;
+GRANT EXECUTE ON FUNCTION public.convert_erp_application(uuid,text,text) TO authenticated;
+
+CREATE OR REPLACE FUNCTION public.decide_erp_approval(p_request_id uuid,p_decision text,p_notes text DEFAULT NULL)
+RETURNS public.erp_approval_requests LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v public.erp_approval_requests; v_role text;
+BEGIN
+ v_role:=public.current_erp_role();
+ IF p_decision NOT IN ('approved','rejected') THEN RAISE EXCEPTION 'Decision must be approved or rejected'; END IF;
+ SELECT * INTO v FROM public.erp_approval_requests WHERE id=p_request_id FOR UPDATE;
+ IF v.id IS NULL THEN RAISE EXCEPTION 'Approval request not found'; END IF;
+ IF v.status<>'pending' THEN RAISE EXCEPTION 'This request has already been decided'; END IF;
+ IF v_role NOT IN ('super_admin','admin') AND v_role IS DISTINCT FROM v.approver_role THEN RAISE EXCEPTION 'Your role is not the assigned approver for this request'; END IF;
+ UPDATE public.erp_approval_requests SET status=p_decision,decision_notes=p_notes,decided_at=now() WHERE id=p_request_id RETURNING * INTO v;
+ RETURN v;
+END $$;
+GRANT EXECUTE ON FUNCTION public.decide_erp_approval(uuid,text,text) TO authenticated;
