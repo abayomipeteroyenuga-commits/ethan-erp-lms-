@@ -1934,3 +1934,312 @@ function renderPayments(){
    `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">ADMINISTRATION</span><h2>Payment Records</h2></div></div>
    ${rows.length?table(["Learner","Amount","Status","Description"],rows):emptyState("No payment records","Verified and pending payment records will appear here.")}</section>`;
 }
+
+
+/* ETHAN LEARN learner-experience and assessment release */
+function courseCards(list){
+  const rows=Array.isArray(list)?list:[];
+  return rows.length?'<div class="course-grid">'+rows.map(c=>{
+    const title=String(c.title||"Course"),encoded=encodeURIComponent(title);
+    const progress=Math.max(0,Math.min(100,Number(c.progress||0)));
+    return '<article class="course-card"><div class="course-thumb"><strong>'+escHtml(c.category||"Digital Course")+'</strong></div><div class="course-body"><small class="muted">'+escHtml(c.code||"")+'</small><h3>'+escHtml(title)+'</h3><p class="muted">'+escHtml(c.instructor||"Ethan Digital Academy")+'</p><div class="course-meta"><span>'+escHtml(c.duration||"Self-paced")+'</span><span>'+progress+'%</span></div><div class="progress"><span style="width:'+progress+'%"></span></div><div class="course-card-actions"><button class="primary-btn" onclick="openCourseStudy(\''+encoded+'\')">'+(currentUser?.role==="student"?"Open Study Material":"Preview Course")+'</button><button class="secondary-btn" onclick="navigate(\'lms\')">'+(currentUser?.role==="student"?"Learning Area":"Course Library")+'</button></div></div></article>';
+  }).join("")+'</div>':emptyState("No courses to display","Published courses will appear here when they are available.");
+}
+
+function renderCourses(){
+  const learner=currentUser?.role==="student";
+  const rows=learner?studentCourses():(data.courses||[]);
+  const canCreate=["admin","super_admin","instructor"].includes(currentUser?.role||"");
+  const action=canCreate?'<button class="primary-btn" id="addCourseBtn">+ Create Course</button>':"";
+  $("#content").innerHTML=pageHead(learner?"My Courses":"Course Library",learner?"Your included digital courses and study materials.":"Manage the Academy course catalogue.",action)+
+    (rows.length?courseCards(rows):emptyState(learner?"Your courses are being prepared":"No courses available","Published Academy courses will appear here."));
+  const add=$("#addCourseBtn");
+  if(add)add.onclick=()=>showModal("Create a course","Add a course to the ETHAN LEARN catalogue.",`
+    <label>Course title<input id="courseTitle" required></label>
+    <div class="grid-2"><label>Category<input id="courseCat" required></label><label>Duration<input id="courseDur" placeholder="Self-paced or 6 weeks"></label></div>
+    <label>Course description<textarea id="courseDescription" rows="3"></textarea></label>
+  `,async()=>{
+    const title=$("#courseTitle").value.trim(),category=$("#courseCat").value.trim(),duration=$("#courseDur").value.trim(),description=$("#courseDescription").value.trim();
+    if(!title||!category)return alert("Enter a course title and category.");
+    try{
+      if(!window.ETHAN_BACKEND?.ready)throw new Error("The learning database is unavailable. Try again after reconnecting.");
+      const code="EDA-CRS-"+Date.now().toString().slice(-8);
+      const created=await window.ETHAN_BACKEND.createCourse({code,title,description,duration:duration||"Self-paced",difficulty:category,published:false,created_by:currentUser.id});
+      data.courses.unshift({id:created.id,code:created.code,title:created.title,category:created.difficulty||category,duration:created.duration||"Self-paced",progress:0,lessons:0,completed:0,published:created.published});
+      closeModal();renderCourses();
+    }catch(error){alert(error.message||"The course could not be saved.");}
+  });
+}
+
+function renderDashboardLegacy(){
+  const role=currentUser?.role||"student";
+  if(role==="parent"){
+    $("#content").innerHTML=pageHead("Parent access","Parent and guardian accounts are not enabled in this LMS release.")+
+      emptyState("Parent portal not yet enabled","Learner accounts, course study and instructor assessment are the active learning journeys. No sample child or attendance information is shown.");
+    return;
+  }
+  if(role==="instructor"){
+    $("#content").innerHTML=`
+      <section class="hero-card"><div><span class="eyebrow">INSTRUCTOR WORKSPACE</span><h1>Welcome, ${escHtml(currentUser.firstName||"Instructor")}</h1><p>Manage course content and support learners with published assignments and assessments.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('courses')">Course Library</button><button class="secondary-btn" onclick="navigate('assignments')">Assignments</button></div></section>
+      <div class="stats-grid">${stat("Course Library",(data.courses||[]).length,"Courses available","📚")}${stat("Learner Records",(data.students||[]).length,"Live database records","👥")}${stat("Assignments","Open module","Current submissions","📝")}${stat("Quizzes","Open module","Published assessments","✅")}</div>
+      <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Teaching tools</h3></div><div class="quick-grid"><button class="quick-card" onclick="navigate('assignments')"><strong>Assignments</strong><p class="muted">Create tasks and grade submissions</p></button><button class="quick-card" onclick="navigate('quizzes')"><strong>Quizzes & exams</strong><p class="muted">Create assessments and view results</p></button><button class="quick-card" onclick="navigate('courses')"><strong>Course materials</strong><p class="muted">Review the digital course library</p></button></div></div></div>`;
+    return;
+  }
+  const students=(data.students||[]).length;
+  const courses=(data.courses||[]).filter(c=>c.published!==false).length;
+  const instructors=(data.instructors||[]).length;
+  const verified=(data.payments||[]).filter(p=>p.verified||String(p.status||"").toLowerCase()==="verified"||String(p.status||"").toLowerCase()==="confirmed");
+  const revenue=verified.reduce((sum,p)=>sum+Number(p.amount||0),0);
+  const money=new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(revenue);
+  $("#content").innerHTML=`
+    <section class="hero-card"><div><span class="eyebrow">ACADEMY LEARNING OPERATIONS</span><h1>Welcome back, ${escHtml(currentUser.firstName||"Administrator")}</h1><p>Oversee the learning catalogue, learner records, instruction and assessment activity.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Learners</button><button class="secondary-btn" onclick="navigate('courses')">Courses</button></div></section>
+    <div class="stats-grid">${stat("Learners",students,"Registered learner records","👥")}${stat("Published Courses",courses,"Live course catalogue","📚")}${stat("Instructors",instructors,"Registered teaching staff","🧑‍🏫")}${stat("Recorded Payments",money,"Verified payment records","💳")}</div>
+    <div class="dashboard-grid"><div class="card"><div class="card-head"><h3>Learning administration</h3></div><div class="quick-grid"><button class="quick-card" onclick="navigate('students')"><strong>Learners</strong><p class="muted">Review learner accounts</p></button><button class="quick-card" onclick="navigate('courses')"><strong>Courses</strong><p class="muted">Manage course catalogue</p></button><button class="quick-card" onclick="navigate('assignments')"><strong>Assignments</strong><p class="muted">Review submissions</p></button><button class="quick-card" onclick="navigate('quizzes')"><strong>Quizzes</strong><p class="muted">Manage assessments</p></button></div></div><div class="card"><div class="card-head"><h3>Platform data</h3></div><p class="muted">Dashboard figures are based on records currently returned by the LMS database. Empty records are shown as zero rather than example data.</p><p><strong>${students}</strong> learner profiles currently loaded.</p><p><strong>${courses}</strong> published courses currently loaded.</p></div></div>`;
+}
+
+function renderAssignments(){
+  const staff=["admin","super_admin","instructor"].includes(currentUser?.role||"");
+  const backend=window.ETHAN_BACKEND;
+  $("#content").innerHTML=pageHead("Assignments",staff?"Create practical tasks and review learner submissions.":"Complete practical tasks and review instructor feedback.",staff?'<button class="primary-btn" id="createAssignmentBtn">+ Create Assignment</button>':"")+
+    '<div class="card"><p class="muted">Loading assignments…</p></div>';
+  if(!backend?.ready){$("#content").innerHTML=pageHead("Assignments","Your assignment workspace.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload this page.");return;}
+  (async()=>{
+    try{
+      const [assignments,submissions]=await Promise.all([backend.listAssignments(),backend.listAssignmentSubmissions()]);
+      if(currentUser.role==="student"){
+        const own=submissions||[];
+        const cards=(assignments||[]).map(a=>{
+          const submission=own.find(s=>s.assignment_id===a.id);
+          const submitted=submission?'<span class="badge green">Submitted</span>': '<span class="badge gold">Not submitted</span>';
+          const course=a.course?.title||"Course";
+          const due=a.due_at?new Date(a.due_at).toLocaleString():"No deadline set";
+          return '<article class="card assignment-card"><div class="card-head"><div><small class="eyebrow">'+escHtml(course)+'</small><h3>'+escHtml(a.title)+'</h3></div>'+submitted+'</div><p>'+escHtml(a.instructions||"Complete the practical task and submit your work.")+'</p><div class="course-meta"><span>Maximum marks: '+Number(a.max_marks||100)+'</span><span>Due: '+escHtml(due)+'</span></div>'+(submission?'<p class="muted">Submitted: '+escHtml(new Date(submission.submitted_at).toLocaleString())+'</p>'+(submission.score!==null&&submission.score!==undefined?'<p><strong>Score: '+Number(submission.score)+' / '+Number(a.max_marks||100)+'</strong></p><p>'+escHtml(submission.feedback||"No feedback added yet.")+'</p>':'<p class="muted">Your submission is awaiting review.</p>'):'<button class="primary-btn" data-submit-assignment="'+a.id+'">Submit assignment</button>')+'</article>';
+        }).join("");
+        $("#content").innerHTML=pageHead("Assignments","Practical activities linked to your courses.")+(cards?'<div class="dashboard-grid">'+cards+'</div>':emptyState("No assignments published","Your instructor's assignments will appear here when they are published."));
+        $$("[data-submit-assignment]").forEach(btn=>btn.onclick=()=>openStudentAssignment(btn.dataset.submitAssignment,assignments));
+      }else{
+        const assignmentCards=(assignments||[]).map(a=>'<article class="card"><div class="card-head"><div><small class="eyebrow">'+escHtml(a.course?.title||"Course")+'</small><h3>'+escHtml(a.title)+'</h3></div><span class="badge blue">'+Number(a.max_marks||100)+' marks</span></div><p>'+escHtml(a.instructions||"No instructions added.")+'</p><small class="muted">Due: '+(a.due_at?escHtml(new Date(a.due_at).toLocaleString()):"No deadline")+'</small></article>').join("");
+        const submissionRows=(submissions||[]).map(s=>{
+          const name=[s.student?.profiles?.first_name,s.student?.profiles?.last_name].filter(Boolean).join(" ")||s.student?.student_no||"Learner";
+          return '<tr><td>'+escHtml(name)+'</td><td>'+escHtml(s.assignment?.title||"Assignment")+'</td><td>'+escHtml(new Date(s.submitted_at).toLocaleString())+'</td><td>'+(s.score===null||s.score===undefined?"Pending":Number(s.score))+'</td><td><button class="secondary-btn" data-grade-assignment="'+s.id+'">Grade</button></td></tr>';
+        }).join("");
+        $("#content").innerHTML=pageHead("Assignments","Create and manage practical tasks.")+
+          '<div class="student-section"><div class="student-section-head"><div><h2>Published & draft assignments</h2></div></div>'+(assignmentCards?'<div class="dashboard-grid">'+assignmentCards+'</div>':emptyState("No assignments created","Create an assignment to give learners a practical task."))+'</div>'+
+          '<div class="student-section"><div class="student-section-head"><div><h2>Learner submissions</h2></div></div>'+(submissionRows?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Assignment</th><th>Submitted</th><th>Score</th><th>Action</th></tr></thead><tbody>'+submissionRows+'</tbody></table></div></div>':emptyState("No submissions yet","Learner submissions will appear here."))+'</div>';
+        const create=$("#createAssignmentBtn");if(create)create.onclick=()=>openCreateAssignment(assignments);
+        $$("[data-grade-assignment]").forEach(btn=>btn.onclick=()=>openGradeAssignment(btn.dataset.gradeAssignment,submissions));
+      }
+    }catch(error){
+      $("#content").innerHTML=pageHead("Assignments","Your learning assessment workspace.")+emptyState("Assignments could not be loaded",error.message||"Refresh the page and try again.");
+    }
+  })();
+}
+
+function openCreateAssignment(){
+  const options=(data.courses||[]).filter(c=>c.id).map(c=>'<option value="'+escHtml(c.id)+'">'+escHtml(c.code+" — "+c.title)+'</option>').join("");
+  if(!options)return alert("No database courses are available. Refresh the course catalogue first.");
+  showModal("Create assignment","Publish a practical task for learners.",`
+    <label>Course<select id="assignmentCourse">${options}</select></label>
+    <label>Assignment title<input id="assignmentTitle" required></label>
+    <label>Instructions<textarea id="assignmentInstructions" rows="4" required></textarea></label>
+    <div class="grid-2"><label>Maximum marks<input id="assignmentMarks" type="number" min="1" value="100" required></label><label>Due date<input id="assignmentDue" type="datetime-local"></label></div>
+  `,async()=>{
+    const courseId=$("#assignmentCourse").value,title=$("#assignmentTitle").value.trim(),instructions=$("#assignmentInstructions").value.trim(),maxMarks=Number($("#assignmentMarks").value),due=$("#assignmentDue").value;
+    if(!courseId||!title||!instructions||!maxMarks||maxMarks<1)return alert("Complete the course, title, instructions and maximum marks.");
+    try{
+      await window.ETHAN_BACKEND.createAssignment({course_id:courseId,title,instructions,max_marks:maxMarks,due_at:due?new Date(due).toISOString():null,created_by:currentUser.id});
+      closeModal();renderAssignments();
+    }catch(error){alert(error.message||"The assignment could not be saved.");}
+  });
+}
+
+function openStudentAssignment(id,assignments){
+  const a=(assignments||[]).find(x=>x.id===id);
+  if(!a||!portalState.myStudent?.id)return alert("Your learner record is not ready. Sign out and sign in again.");
+  showModal("Submit assignment",a.title,`
+    <p class="muted">${escHtml(a.instructions||"Complete the practical task below.")}</p>
+    <label>Your answer / practical work<textarea id="assignmentResponse" rows="8" required placeholder="Write your response, steps, findings or practical result…"></textarea></label>
+  `,async()=>{
+    const response=$("#assignmentResponse").value.trim();
+    if(!response)return alert("Enter your assignment response before submitting.");
+    try{
+      await window.ETHAN_BACKEND.submitAssignment({assignmentId:id,studentId:portalState.myStudent.id,responseText:response});
+      closeModal();renderAssignments();
+    }catch(error){alert(error.message||"Your assignment could not be submitted.");}
+  });
+}
+
+function openGradeAssignment(id,submissions){
+  const s=(submissions||[]).find(x=>x.id===id);if(!s)return;
+  showModal("Grade assignment","Enter the score and constructive feedback.",`
+    <p class="muted">${escHtml(s.assignment?.title||"Assignment")}</p>
+    <label>Score<input type="number" id="assignmentScore" min="0" max="100" step="0.5" value="${s.score===null||s.score===undefined?"":Number(s.score)}" required></label>
+    <label>Feedback<textarea id="assignmentFeedback" rows="4">${escHtml(s.feedback||"")}</textarea></label>
+  `,async()=>{
+    const score=Number($("#assignmentScore").value),feedback=$("#assignmentFeedback").value.trim();
+    if(!Number.isFinite(score)||score<0)return alert("Enter a valid score.");
+    try{await window.ETHAN_BACKEND.gradeAssignmentSubmission({submissionId:id,score,feedback});closeModal();renderAssignments();}
+    catch(error){alert(error.message||"The submission could not be graded.");}
+  });
+}
+
+function renderQuizzes(){
+  const staff=["admin","super_admin","instructor"].includes(currentUser?.role||"");
+  const backend=window.ETHAN_BACKEND;
+  $("#content").innerHTML=pageHead("Quizzes & Examinations",staff?"Build quizzes and review learner attempts.":"Practise your knowledge and see your results.",staff?'<button class="primary-btn" id="createQuizBtn">+ Create Quiz</button>':"")+
+    '<div class="card"><p class="muted">Loading assessments…</p></div>';
+  if(!backend?.ready){$("#content").innerHTML=pageHead("Quizzes & Examinations","Your assessment centre.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload this page.");return;}
+  (async()=>{
+    try{
+      const quizzes=await backend.listQuizzes();
+      if(currentUser.role==="student"){
+        const attempts=await backend.listQuizAttempts();
+        const cards=(quizzes||[]).map(q=>{
+          const own=(attempts||[]).filter(a=>a.quiz_id===q.id);
+          const last=own[0];
+          return '<article class="card"><div class="card-head"><div><small class="eyebrow">'+escHtml(q.course?.title||"Course")+'</small><h3>'+escHtml(q.title)+'</h3></div><span class="badge '+(last?.passed?"green":"blue")+'">'+(last?(last.passed?"Passed":"Attempted"):"Ready")+'</span></div><p class="muted">Pass mark: '+Number(q.pass_mark||60)+'% · Allowed attempts: '+Number(q.attempts_allowed||1)+'</p>'+(last?'<p>Latest score: <strong>'+Number(last.score||0)+'%</strong></p>':"")+'<button class="primary-btn" data-start-quiz="'+q.id+'">Start quiz</button></article>';
+        }).join("");
+        $("#content").innerHTML=pageHead("Quizzes & Examinations","Assess your knowledge in published courses.")+(cards?'<div class="dashboard-grid">'+cards+'</div>':emptyState("No quizzes published yet","Published quizzes from your course instructors will appear here."));
+        $$("[data-start-quiz]").forEach(btn=>btn.onclick=()=>startEthanQuiz(btn.dataset.startQuiz));
+      }else{
+        const counts=await Promise.all((quizzes||[]).map(async q=>({id:q.id,count:(await backend.listQuizQuestionsForStaff(q.id)).length})));
+        const cards=(quizzes||[]).map(q=>{
+          const count=counts.find(x=>x.id===q.id)?.count||0;
+          return '<article class="card"><div class="card-head"><div><small class="eyebrow">'+escHtml(q.course?.title||"Course")+'</small><h3>'+escHtml(q.title)+'</h3></div><span class="badge '+(q.published?"green":"gold")+'">'+(q.published?"Published":"Draft")+'</span></div><p class="muted">'+count+' questions · Pass mark '+Number(q.pass_mark||60)+'% · '+Number(q.attempts_allowed||1)+' attempts</p><div class="course-card-actions"><button class="secondary-btn" data-add-quiz-question="'+q.id+'">Add question</button>'+(q.published?"":'<button class="primary-btn" data-publish-quiz="'+q.id+'" '+(count?"":"disabled")+'>Publish quiz</button>')+'</div></article>';
+        }).join("");
+        $("#content").innerHTML=pageHead("Quizzes & Examinations","Create fair assessments and publish them when the question set is ready.")+(cards?'<div class="dashboard-grid">'+cards+'</div>':emptyState("No quizzes created","Create a quiz, add questions and publish it for learners."));
+        const create=$("#createQuizBtn");if(create)create.onclick=()=>openCreateQuiz();
+        $$("[data-add-quiz-question]").forEach(btn=>btn.onclick=()=>openAddQuizQuestion(btn.dataset.addQuizQuestion));
+        $$("[data-publish-quiz]").forEach(btn=>btn.onclick=()=>publishEthanQuiz(btn.dataset.publishQuiz));
+      }
+    }catch(error){
+      $("#content").innerHTML=pageHead("Quizzes & Examinations","Your assessment centre.")+emptyState("Assessments could not be loaded",error.message||"Refresh the page and try again.");
+    }
+  })();
+}
+
+function quizQuestionFields(){
+  return `
+    <label>Question<textarea id="newQuizQuestion" rows="3" required></textarea></label>
+    <label>Answer options (one per line)<textarea id="newQuizOptions" rows="4" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D" required></textarea></label>
+    <label>Correct answer (copy the exact option text)<input id="newQuizCorrect" required></label>
+    <label>Marks<input id="newQuizMarks" type="number" min="1" value="1" required></label>
+  `;
+}
+function readQuizQuestionForm(){
+  const question=$("#newQuizQuestion").value.trim();
+  const options=$("#newQuizOptions").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  const correct=$("#newQuizCorrect").value.trim();
+  const marks=Number($("#newQuizMarks").value||1);
+  if(!question||options.length<2||!correct||!options.includes(correct)||marks<=0)throw new Error("Enter a question, at least two options, and the exact correct option.");
+  return {question,options,correct,marks};
+}
+function openCreateQuiz(){
+  const options=(data.courses||[]).filter(c=>c.id).map(c=>'<option value="'+escHtml(c.id)+'">'+escHtml(c.code+" — "+c.title)+'</option>').join("");
+  if(!options)return alert("No database courses are available. Refresh the course catalogue first.");
+  showModal("Create a quiz","Add the first question; the quiz will publish after it has been saved.",`
+    <label>Course<select id="quizCourse">${options}</select></label>
+    <label>Quiz title<input id="quizTitle" required></label>
+    <div class="grid-2"><label>Pass mark (%)<input id="quizPassMark" type="number" min="1" max="100" value="60"></label><label>Allowed attempts<input id="quizAttempts" type="number" min="1" value="1"></label></div>
+    <label>Suggested duration (minutes)<input id="quizDuration" type="number" min="1" value="15"></label>
+    <hr><h3>First question</h3>${quizQuestionFields()}
+  `,async()=>{
+    let q;try{q=readQuizQuestionForm();}catch(error){return alert(error.message);}
+    const courseId=$("#quizCourse").value,title=$("#quizTitle").value.trim(),passMark=Number($("#quizPassMark").value),attempts=Number($("#quizAttempts").value),duration=Number($("#quizDuration").value);
+    if(!courseId||!title||passMark<1||passMark>100||attempts<1||duration<1)return alert("Complete the quiz details.");
+    try{
+      const quiz=await window.ETHAN_BACKEND.createQuiz({course_id:courseId,title,pass_mark:passMark,attempts_allowed:attempts,time_limit_minutes:duration,published:false});
+      await window.ETHAN_BACKEND.createQuizQuestion({quiz_id:quiz.id,question:q.question,question_type:"mcq",options:q.options,correct_answer:q.correct,marks:q.marks});
+      await window.ETHAN_BACKEND.updateQuiz(quiz.id,{published:true});
+      closeModal();renderQuizzes();
+    }catch(error){alert(error.message||"The quiz was saved as a draft or could not be created. Review it and try again.");}
+  });
+}
+function openAddQuizQuestion(quizId){
+  showModal("Add quiz question","Add another question to this assessment.",quizQuestionFields(),async()=>{
+    let q;try{q=readQuizQuestionForm();}catch(error){return alert(error.message);}
+    try{await window.ETHAN_BACKEND.createQuizQuestion({quiz_id:quizId,question:q.question,question_type:"mcq",options:q.options,correct_answer:q.correct,marks:q.marks});closeModal();renderQuizzes();}
+    catch(error){alert(error.message||"The question could not be saved.");}
+  });
+}
+async function publishEthanQuiz(quizId){
+  try{
+    const questions=await window.ETHAN_BACKEND.listQuizQuestionsForStaff(quizId);
+    if(!questions.length)return alert("Add at least one question before publishing.");
+    await window.ETHAN_BACKEND.updateQuiz(quizId,{published:true});renderQuizzes();
+  }catch(error){alert(error.message||"The quiz could not be published.");}
+}
+async function startEthanQuiz(quizId){
+  const backend=window.ETHAN_BACKEND;
+  try{
+    const [quizzes,questions]=await Promise.all([backend.listQuizzes(),backend.getPublishedQuizQuestions(quizId)]);
+    const quiz=(quizzes||[]).find(q=>q.id===quizId);
+    if(!quiz||!questions.length)return alert("This quiz has no published questions yet.");
+    const body=questions.map((q,i)=>{
+      const options=Array.isArray(q.options)?q.options:[];
+      const controls=options.length?options.map((option,j)=>{
+        const value=typeof option==="object"&&option!==null?String(option.value??option.label??JSON.stringify(option)):String(option);
+        return '<label class="quiz-option"><input type="radio" name="quiz-'+q.id+'" value="'+escHtml(value)+'"><span>'+escHtml(value)+'</span></label>';
+      }).join(""):'<input class="quiz-text-answer" id="quiz-answer-'+q.id+'" type="text" placeholder="Enter your answer">';
+      return '<section class="card quiz-question"><small class="eyebrow">QUESTION '+(i+1)+' · '+Number(q.marks||1)+' MARKS</small><h3>'+escHtml(q.question)+'</h3><div class="quiz-options">'+controls+'</div></section>';
+    }).join("");
+    $("#content").innerHTML=pageHead(quiz.title,"Answer each question and submit when you are ready.")+
+      '<form id="ethanQuizAttempt"><p class="muted">Pass mark: '+Number(quiz.pass_mark||60)+'% · Suggested duration: '+Number(quiz.time_limit_minutes||0)+' minutes</p>'+body+'<div class="course-card-actions"><button class="secondary-btn" type="button" id="cancelEthanQuiz">Back to quizzes</button><button class="primary-btn" type="submit">Submit answers</button></div></form>';
+    $("#cancelEthanQuiz").onclick=()=>renderQuizzes();
+    $("#ethanQuizAttempt").onsubmit=async e=>{
+      e.preventDefault();
+      const answers={};
+      for(const q of questions){
+        const selected=document.querySelector('input[name="quiz-'+q.id+'"]:checked');
+        const typed=document.getElementById("quiz-answer-"+q.id);
+        const value=selected?selected.value:(typed?typed.value.trim():"");
+        if(!value)return alert("Answer every question before submitting.");
+        answers[q.id]=value;
+      }
+      const submit=e.submitter; if(submit){submit.disabled=true;submit.textContent="Marking quiz…";}
+      try{
+        const result=await backend.submitQuizAttempt(quizId,answers);
+        const score=Number(result?.score||0),passed=Boolean(result?.passed);
+        $("#content").innerHTML=pageHead("Quiz result","Your answers have been marked securely.")+
+          '<section class="card"><div class="eyebrow">YOUR RESULT</div><h1>'+score.toFixed(2)+'%</h1><p><span class="badge '+(passed?"green":"gold")+'">'+(passed?"Passed":"Not yet passed")+'</span></p><p>You earned '+Number(result?.earned_marks||0)+' out of '+Number(result?.total_marks||0)+' marks.</p><button class="primary-btn" id="backToQuizList">Return to quizzes</button></section>';
+        $("#backToQuizList").onclick=()=>renderQuizzes();
+      }catch(error){if(submit){submit.disabled=false;submit.textContent="Submit answers";}alert(error.message||"Your quiz could not be submitted.");}
+    };
+  }catch(error){alert(error.message||"The quiz could not be opened.");}
+}
+
+function renderStudentHome(){
+  const courses=studentCourses();
+  const firstName=escHtml(currentUser.firstName||currentUser.name||"Learner");
+  const featured=courses.slice(0,4);
+  const catalogue=ETHAN_PUBLIC_COURSES||[];
+  const courseCount=catalogue.length||courses.length;
+  $("#content").innerHTML=`
+    <section class="student-home-hero"><div><span class="eyebrow">ETHAN DIGITAL ACADEMY</span><h1>Welcome, ${firstName}</h1><p>Your learning space for practical digital skills, guided study materials and career development.</p></div><div class="student-home-profile"><small>LEARNER ACCOUNT</small><strong>${escHtml(portalRoleLabel(currentUser))}</strong></div></section>
+    <section class="student-home-stats"><div><small>COURSES AVAILABLE</small><strong>${courseCount}</strong></div><div><small>MY COURSES</small><strong>${courses.length}</strong></div><div><small>LEARNING PROGRESS</small><strong>—</strong></div><div><small>COURSE ACCESS</small><strong>ACTIVE</strong></div></section>
+    <section class="student-section"><div class="student-section-head"><div><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h2>My Learning</h2><p>Your enrolled courses and study manuals.</p></div><button class="secondary-btn" onclick="navigate('courses')">View all my courses</button></div>
+    ${featured.length?'<div class="learner-course-grid">'+featured.map(learnerCourseCard).join("")+'</div>':emptyState("Your courses are being prepared","Your enrolled courses will appear here after your learner account is ready.")}</section>
+    <section class="student-section"><div class="student-section-head"><div><span class="eyebrow">EXPLORE ETHAN</span><h2>Discover Digital Courses</h2><p>Search the course catalogue and open a course to study.</p></div><div class="student-catalogue-tools"><input id="insideCourseSearch" placeholder="Search digital courses…"/></div></div>
+    <div id="insideCourseGrid" class="inside-catalogue-grid">${catalogue.slice(0,12).map(lockedCatalogueCard).join("")}</div><div class="student-catalogue-more"><button class="secondary-btn" id="showAllInsideCourses">View all ${courseCount} courses</button></div></section>
+    <section class="student-section student-quick-links"><div class="student-section-head"><div><span class="eyebrow">YOUR STUDY TOOLS</span><h2>Learning Shortcuts</h2></div></div><div class="quick-access-grid">
+    <button onclick="navigate('lms')"><strong>Learning Area</strong><span>Open study manuals and resources</span></button><button onclick="navigate('assignments')"><strong>Assignments</strong><span>Submit practical work</span></button><button onclick="navigate('quizzes')"><strong>Quizzes & Exams</strong><span>Test your understanding</span></button><button onclick="navigate('certificates')"><strong>Certificates</strong><span>View awarded certificates</span></button></div></section>`;
+  const search=$("#insideCourseSearch"),grid=$("#insideCourseGrid"),showAll=$("#showAllInsideCourses");
+  let showingAll=false;
+  function repaint(){
+    const q=(search?.value||"").trim().toLowerCase();
+    const source=showingAll||q?catalogue:catalogue.slice(0,12);
+    const rows=source.filter(c=>!q||String(c.name+" "+c.brief).toLowerCase().includes(q));
+    grid.innerHTML=rows.map(lockedCatalogueCard).join("")||'<div class="student-empty-panel"><div><h3>No matching course</h3><p>Try another course name or keyword.</p></div></div>';
+  }
+  if(search)search.oninput=repaint;
+  if(showAll)showAll.onclick=()=>{showingAll=!showingAll;showAll.textContent=showingAll?"Show fewer courses":"View all "+courseCount+" courses";repaint();};
+}
+
+function renderNotifications(){
+  const items=Array.isArray(data.notifications)?data.notifications:[];
+  $("#notificationList").innerHTML=items.length
+    ? items.map(n=>'<div class="notification-item"><strong>'+escHtml(n.title)+'</strong><div>'+escHtml(n.message)+'</div><small>'+escHtml(n.time||"")+'</small></div>').join("")
+    : '<div class="notification-item"><strong>You are all caught up</strong><div>Important account and learning updates will appear here.</div></div>';
+  const badge=$("#notifBadge");
+  if(badge){badge.textContent=String(items.length);badge.hidden=items.length===0;}
+}
