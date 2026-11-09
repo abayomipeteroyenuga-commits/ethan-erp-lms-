@@ -22,7 +22,7 @@ app.all("/api/storage/presign", storageHandler);
 // package metadata, server code and node_modules remain private.
 const publicRootFiles = new Set([
   "/index.html", "/styles.css", "/app.js", "/config.js", "/neon-client.js",
-  "/course-narration-data.js", "/manifest.webmanifest", "/sw.js", "/ethan-logo.jpeg"
+  "/course-narration-data.js", "/digital-learning.js", "/manifest.webmanifest", "/sw.js", "/ethan-logo.jpeg"
 ]);
 
 app.use((req, res, next) => {
