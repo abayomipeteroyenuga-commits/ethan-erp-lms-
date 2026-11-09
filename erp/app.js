@@ -368,7 +368,7 @@ function openGenericForm(key,ix,row){
    const v=String(fd.get(f.name)||"").trim();
    if(f.type==="number")payload[f.name]=v===""?0:Number(v);
    else if(f.type==="date")payload[f.name]=v||null;
-   else if(f.name==="reconciled")payload[f.name]=v==="true";
+   else if(["reconciled","contact_opt_in"].includes(f.name))payload[f.name]=v==="true";
    else payload[f.name]=v||null;
   }
   if(s.table==="erp_payroll_items")payload.net_pay=Math.max(0,Number(payload.basic_salary||0)+Number(payload.allowances||0)-Number(payload.deductions||0));
