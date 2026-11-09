@@ -82,10 +82,13 @@ export default async function handler(req,res){
   }
   if(action==="download"){
    const key=String(body.key||"");
-   const record=await pool.query("SELECT cm.file_name,cm.file_path,c.published FROM public.course_materials cm JOIN public.courses c ON c.id=cm.course_id WHERE cm.file_path=$1 AND cm.is_active=true LIMIT 1",[key]);
+   const record=await pool.query(
+    "SELECT cm.file_name,cm.file_path,c.published,CASE WHEN $2=ANY(ARRAY['super_admin','admin','instructor']) THEN true ELSE (c.published=true AND EXISTS (SELECT 1 FROM public.enrolments e JOIN public.students st ON st.id=e.student_id WHERE st.user_id=$3 AND e.course_id=c.id AND e.status='active')) END AS has_access FROM public.course_materials cm JOIN public.courses c ON c.id=cm.course_id WHERE cm.file_path=$1 AND cm.is_active=true LIMIT 1",
+    [key,role,userId]
+   );
    if(!record.rows.length)return respond(res,404,{error:"This course material is unavailable."});
    const material=record.rows[0];
-   if(!material.published&&!["super_admin","admin","instructor"].includes(role))return respond(res,403,{error:"This material is not published yet."});
+   if(!material.has_access)return respond(res,403,{error:"Course material is locked until the Superadmin approves your enrolment."});
    await ensureCors();
    const requested=Math.max(60,Math.min(3600,Math.floor(Number(body.expiresIn)||600)));
    const filename=String(material.file_name||"course-material.pdf").replace(/[\r\n"\\]/g,"_").slice(0,180);
