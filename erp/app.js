@@ -104,7 +104,13 @@ async function records(){
  $("#pageContent").innerHTML=head("Academic records","Administrative result summaries. Lessons, quizzes and learning activity stay in ETHAN LMS.",'<button class="primary-btn" data-action="new-record">+ Add result record</button>')+panel("Results register",content);
 }
 
-async function certificates(){const [d,s]=await Promise.all([rows("erp_certificates"),rows("erp_students")]);$("#pageContent").innerHTML=head("Certificates register","Record institutional certificate issuance and verification.",'<button class="primary-btn" data-action="new-certificate">+ Issue certificate record</button>')+panel("Certificates",table(["Certificate No.","Learner","Programme","Issue date","Verification code","Status"],d.map(x=>{const st=s.find(y=>y.id===x.student_id);return '<tr><td>'+esc(x.certificate_no)+'</td><td>'+esc(st?st.first_name+" "+st.last_name:"—")+'</td><td>'+esc(x.programme_name)+'</td><td>'+esc(x.issued_at)+'</td><td>'+esc(x.verification_code)+'</td><td>'+pill(x.status)+'</td></tr>';}).join("")));}
+async function certificates(){
+ const [d,s]=await Promise.all([rows("erp_certificates"),rows("erp_students")]);
+ const body=d.map(x=>{const st=s.find(y=>y.id===x.student_id);return '<tr><td>'+esc(x.certificate_no)+'</td><td>'+esc(st?st.first_name+" "+st.last_name:"—")+'</td><td>'+esc(x.programme_name)+'</td><td>'+esc(x.issued_at)+'</td><td>'+esc(x.verification_code)+'</td><td>'+pill(x.status)+'</td><td><button class="link-btn" data-action="edit-old" data-type="certificate" data-id="'+esc(x.id)+'">Edit</button></td></tr>';}).join("");
+ const content=table(["Certificate No.","Learner","Programme","Issue date","Verification code","Status","Actions"],body);
+ $("#pageContent").innerHTML=head("Certificates register","Record institutional certificate issuance and verification.",'<button class="primary-btn" data-action="new-certificate">+ Issue certificate record</button>')+panel("Certificates",content);
+}
+
 async function announcements(){const d=await rows("erp_announcements");$("#pageContent").innerHTML=head("Announcements","Publish operational updates and internal academy notices.",'<button class="primary-btn" data-action="new-announcement">+ New announcement</button>')+panel("Academy updates",d.length?d.map(x=>'<article class="panel"><b>'+esc(x.title)+'</b><p class="muted">'+esc(x.message)+'</p><small class="muted">'+esc(x.created_at)+'</small></article>').join(""):'<div class="empty">No announcements yet.</div>');}
 async function reports(){
  const safe=async(t,o)=>{try{return await rows(t,o);}catch(_){return [];}};
