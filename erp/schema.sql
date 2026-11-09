@@ -806,3 +806,49 @@ CREATE OR REPLACE VIEW public.erp_student_case_directory AS
  FROM public.erp_students
  WHERE public.current_erp_role() IN ('super_admin','admin','academic_manager','hr');
 GRANT SELECT ON public.erp_student_case_directory TO authenticated;
+
+
+-- Supplier bill payments and controlled reversal.
+CREATE TABLE IF NOT EXISTS public.erp_supplier_bill_payments (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), bill_id uuid NOT NULL REFERENCES public.erp_supplier_bills(id) ON DELETE RESTRICT, payment_no text NOT NULL UNIQUE, paid_date date NOT NULL DEFAULT current_date, amount numeric(14,2) NOT NULL CHECK(amount>0), method text NOT NULL DEFAULT 'bank transfer', reference text, status text NOT NULL DEFAULT 'recorded' CHECK(status IN ('recorded','reversed')), reversal_reason text, created_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE public.erp_supplier_bill_payments ENABLE ROW LEVEL SECURITY;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.erp_supplier_bill_payments TO authenticated;
+DROP POLICY IF EXISTS erp_supplier_bill_payments_access ON public.erp_supplier_bill_payments;
+CREATE POLICY erp_supplier_bill_payments_access ON public.erp_supplier_bill_payments FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+CREATE INDEX IF NOT EXISTS erp_supplier_bill_payments_date_idx ON public.erp_supplier_bill_payments(paid_date DESC);
+CREATE OR REPLACE FUNCTION public.record_erp_supplier_bill_payment(p_bill_id uuid,p_payment_no text,p_paid_date date,p_amount numeric,p_method text,p_reference text DEFAULT NULL)
+RETURNS public.erp_supplier_bill_payments LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_bill public.erp_supplier_bills; v_payment public.erp_supplier_bill_payments; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can pay supplier bills'; END IF;
+ IF nullif(trim(p_payment_no),'') IS NULL THEN RAISE EXCEPTION 'Payment number is required'; END IF;
+ IF p_amount IS NULL OR p_amount<=0 THEN RAISE EXCEPTION 'Payment amount must be greater than zero'; END IF;
+ SELECT * INTO v_bill FROM public.erp_supplier_bills WHERE id=p_bill_id FOR UPDATE;
+ IF v_bill.id IS NULL THEN RAISE EXCEPTION 'Supplier bill not found'; END IF;
+ IF v_bill.status='cancelled' THEN RAISE EXCEPTION 'A cancelled bill cannot be paid'; END IF;
+ v_paid:=v_bill.amount_paid+p_amount;
+ IF v_paid>v_bill.total_amount THEN RAISE EXCEPTION 'Payment exceeds the outstanding supplier bill balance'; END IF;
+ UPDATE public.erp_supplier_bills SET amount_paid=v_paid,status=CASE WHEN v_paid>=total_amount THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_bill.id;
+ INSERT INTO public.erp_supplier_bill_payments(bill_id,payment_no,paid_date,amount,method,reference,status)
+ VALUES(p_bill_id,trim(p_payment_no),coalesce(p_paid_date,current_date),p_amount,coalesce(nullif(trim(p_method),''),'bank transfer'),p_reference,'recorded') RETURNING * INTO v_payment;
+ RETURN v_payment;
+END $$;
+GRANT EXECUTE ON FUNCTION public.record_erp_supplier_bill_payment(uuid,text,date,numeric,text,text) TO authenticated;
+CREATE OR REPLACE FUNCTION public.reverse_erp_supplier_bill_payment(p_payment_id uuid,p_reason text)
+RETURNS public.erp_supplier_bill_payments LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_payment public.erp_supplier_bill_payments; v_bill public.erp_supplier_bills; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can reverse supplier payments'; END IF;
+ IF nullif(trim(p_reason),'') IS NULL THEN RAISE EXCEPTION 'A reversal reason is required'; END IF;
+ SELECT * INTO v_payment FROM public.erp_supplier_bill_payments WHERE id=p_payment_id FOR UPDATE;
+ IF v_payment.id IS NULL THEN RAISE EXCEPTION 'Supplier payment not found'; END IF;
+ IF v_payment.status<>'recorded' THEN RAISE EXCEPTION 'Only recorded supplier payments can be reversed'; END IF;
+ SELECT * INTO v_bill FROM public.erp_supplier_bills WHERE id=v_payment.bill_id FOR UPDATE;
+ IF v_bill.id IS NULL THEN RAISE EXCEPTION 'Supplier bill not found'; END IF;
+ v_paid:=greatest(0,v_bill.amount_paid-v_payment.amount);
+ UPDATE public.erp_supplier_bills SET amount_paid=v_paid,status=CASE WHEN v_paid>=total_amount THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_bill.id;
+ UPDATE public.erp_supplier_bill_payments SET status='reversed',reversal_reason=trim(p_reason) WHERE id=p_payment_id RETURNING * INTO v_payment;
+ RETURN v_payment;
+END $$;
+GRANT EXECUTE ON FUNCTION public.reverse_erp_supplier_bill_payment(uuid,text) TO authenticated;
+DROP TRIGGER IF EXISTS tr_audit_erp_supplier_bill_payments ON public.erp_supplier_bill_payments;
+CREATE TRIGGER tr_audit_erp_supplier_bill_payments AFTER INSERT OR UPDATE OR DELETE ON public.erp_supplier_bill_payments FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
