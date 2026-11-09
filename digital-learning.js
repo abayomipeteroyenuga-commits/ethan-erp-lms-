@@ -21,6 +21,10 @@ window.openLmsCourse = function (courseId) {
 
 renderLMS = async function (courseId) {
   var isStudent = currentUser && currentUser.role === "student";
+  if(isStudent && portalState.myStudent?.id && window.ETHAN_BACKEND?.ready){
+    try{portalState.myEnrolments=await window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn("Approved learning courses could not be refreshed:",error);}
+  }
   var catalogue = (isStudent ? studentCourses() : (data.courses || [])).filter(function (course) {
     return course && course.published !== false;
   });
@@ -354,11 +358,13 @@ renderCourseCatalogue = async function () {
     return;
   }
   try{
-    var [courses,requests]=await Promise.all([
+    var [courses,requests,enrolments]=await Promise.all([
       backend.listCourses(),
-      backend.listMyCourseAccessRequests(portalState.myStudent.id)
+      backend.listMyCourseAccessRequests(portalState.myStudent.id),
+      backend.listStudentEnrolments(portalState.myStudent.id)
     ]);
     portalState.myCourseRequests=requests||[];
+    portalState.myEnrolments=enrolments||[];
     var enrolled=new Set(studentCourses().map(function(c){return String(c.id);}));
     var latestByCourse=new Map();
     (requests||[]).forEach(function(r){
@@ -439,8 +445,12 @@ function openLearnerCoursePaymentRequest(course){
   );
 }
 
-renderCourses = function () {
+renderCourses = async function () {
   var isStudent = currentUser.role === "student";
+  if(isStudent && portalState.myStudent?.id && window.ETHAN_BACKEND?.ready){
+    try{portalState.myEnrolments=await window.ETHAN_BACKEND.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn("Approved course list could not be refreshed:",error);}
+  }
   var list = isStudent ? studentCourses() : data.courses;
   var add = (!isStudent && ["admin", "super_admin", "instructor"].includes(currentUser.role))
     ? '<button class="primary-btn" id="addCourseBtn">+ Create Course</button>' : "";
@@ -549,8 +559,13 @@ renderPayments = async function () {
     var requests=portalState.myCourseRequests||[];
     try{
       if(backend?.ready && portalState.myStudent){
-        requests=await backend.listMyCourseAccessRequests(portalState.myStudent.id);
+        var refresh=await Promise.all([
+          backend.listMyCourseAccessRequests(portalState.myStudent.id),
+          backend.listStudentEnrolments(portalState.myStudent.id)
+        ]);
+        requests=refresh[0]||[];
         portalState.myCourseRequests=requests;
+        portalState.myEnrolments=refresh[1]||[];
       }
     }catch(error){console.warn("Course payment requests could not be refreshed:",error);}
     var pending=requests.filter(function(r){return r.status==="pending";}).length;
