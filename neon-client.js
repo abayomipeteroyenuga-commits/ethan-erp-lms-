@@ -77,6 +77,7 @@
       if(error)throw error;
       return data;
     };
+    const protectedAssetUrls=new Set();
     const backend={
       ready:true,client,
       async signUp({email,password,firstName,lastName,phone,learnerType}){
@@ -124,6 +125,8 @@
       async signOut(){
         const {error}=await client.auth.signOut();
         if(error)throw error;
+        protectedAssetUrls.forEach(url=>{try{URL.revokeObjectURL(url);}catch(_){}});
+        protectedAssetUrls.clear();
       },
       async resetPassword(email){
         const {error}=await client.auth.requestPasswordReset({email,redirectTo:location.origin+location.pathname});
@@ -350,6 +353,35 @@
       async listQuizAttempts(){
         const {data,error}=await client.from("quiz_attempts").select("*, quiz:quizzes(id,title,course_id)").order("completed_at",{ascending:false});
         if(error)throw error;return data||[];
+      },
+      async getBuiltinCourseManual(filename){
+        const session=await backend.getSession();
+        if(!session?.access_token&&!session?.accessToken)throw new Error("Sign in to open course materials.");
+        const token=session.access_token||session.accessToken;
+        const response=await fetch("/api/course-assets/manual/"+encodeURIComponent(filename),{
+          headers:{Authorization:"Bearer "+token},cache:"no-store"
+        });
+        if(!response.ok){
+          const message=await response.text().catch(()=>"The course manual could not be opened.");
+          throw new Error(message||"The course manual could not be opened.");
+        }
+        const blob=await response.blob();
+        const pdfUrl=URL.createObjectURL(blob);
+        protectedAssetUrls.add(pdfUrl);
+        return {pdf_url:pdfUrl,source:"protected-bundle",file_name:filename};
+      },
+      async getCourseNarration(filename){
+        const session=await backend.getSession();
+        if(!session?.access_token&&!session?.accessToken)throw new Error("Sign in to listen to the course narration.");
+        const token=session.access_token||session.accessToken;
+        const response=await fetch("/api/course-assets/narration/"+encodeURIComponent(filename),{
+          headers:{Authorization:"Bearer "+token},cache:"no-store"
+        });
+        if(!response.ok){
+          const message=await response.text().catch(()=>"This course narration is unavailable.");
+          throw new Error(message||"This course narration is unavailable.");
+        }
+        return response.text();
       },
       async uploadCourseMaterial({courseId,title,file}){
         const session=await backend.getSession();
