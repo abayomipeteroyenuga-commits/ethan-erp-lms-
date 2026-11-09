@@ -36,7 +36,7 @@
     const requestStorage=async(payload)=>{
       const {data,error}=await client.auth.getSession();
       if(error)throw error;
-      const token=data?.session?.access_token||data?.session?.accessToken;
+      const token=data?.session?.token||data?.session?.access_token||data?.session?.accessToken;
       if(!token)throw new Error("Your sign-in session has expired. Sign in again.");
       const response=await fetch("/api/storage/presign",{
         method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+token},
@@ -358,8 +358,8 @@
       },
       async getBuiltinCourseManual(filename){
         const session=await backend.getSession();
-        if(!session?.access_token&&!session?.accessToken)throw new Error("Sign in to open course materials.");
-        const token=session.access_token||session.accessToken;
+        if(!session?.token&&!session?.access_token&&!session?.accessToken)throw new Error("Sign in to open course materials.");
+        const token=session.token||session.access_token||session.accessToken;
         const response=await fetch("/api/course-assets/manual/"+encodeURIComponent(filename),{
           headers:{Authorization:"Bearer "+token},cache:"no-store"
         });
@@ -374,8 +374,8 @@
       },
       async getCourseNarration(filename){
         const session=await backend.getSession();
-        if(!session?.access_token&&!session?.accessToken)throw new Error("Sign in to listen to the course narration.");
-        const token=session.access_token||session.accessToken;
+        if(!session?.token&&!session?.access_token&&!session?.accessToken)throw new Error("Sign in to listen to the course narration.");
+        const token=session.token||session.access_token||session.accessToken;
         const response=await fetch("/api/course-assets/narration/"+encodeURIComponent(filename),{
           headers:{Authorization:"Bearer "+token},cache:"no-store"
         });
