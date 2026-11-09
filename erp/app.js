@@ -171,6 +171,7 @@ function genericFormat(row,col){
 function genericActions(key,ix,section,row){
  if(section.table==="erp_approval_requests"){
   if(row.status!=="pending")return "—";
+  if(!["super_admin","admin"].includes(profile.role)&&profile.role!==row.approver_role)return "Assigned to "+esc(labels[row.approver_role]||row.approver_role||"an authorised approver");
   return '<button class="link-btn" data-action="decide-approval" data-decision="approved" data-id="'+esc(row.id)+'">Approve</button> <button class="link-btn" data-action="decide-approval" data-decision="rejected" data-id="'+esc(row.id)+'">Reject</button>';
  }
  let html='<button class="link-btn" data-action="edit-generic" data-module="'+key+'" data-section="'+ix+'" data-id="'+esc(row.id)+'">Edit</button>';
