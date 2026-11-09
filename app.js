@@ -1261,6 +1261,7 @@ function renderResults(){
 }
 function renderCertificates(){
  const admin=["admin","super_admin"].includes(currentUser?.role||""),action=admin?'<button class="primary-btn" id="issueCertificateBtn">+ Issue certificate</button>':"",backend=window.ETHAN_BACKEND;
+ if(!admin&&currentUser?.role!=="student"){$("#content").innerHTML=pageHead("Certificates","Certificate access is limited to learners and Academy administrators.")+emptyState("Access restricted","Contact an Academy administrator if you need certificate records.");return;}
  $("#content").innerHTML=pageHead("Certificates",admin?"Issue and manage verified learner certificates.":"Your earned Ethan Digital Academy certificates.",action)+'<div class="card"><p class="muted">Loading certificates…</p></div>';
  if(!backend?.ready){$("#content").innerHTML=pageHead("Certificates","Your certificate wallet.")+emptyState("Learning service unavailable","Reconnect to the LMS database and reload.");return;}
  (async()=>{
