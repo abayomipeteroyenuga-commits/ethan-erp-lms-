@@ -1,4 +1,4 @@
-const CACHE = "ethan-learn-neon-v15";
+const CACHE = "ethan-learn-neon-v16";
 const ASSETS = [
   "./","./index.html","./styles.css","./app.js","./config.js",
   "./neon-client.js","./course-narration-data.js","./digital-learning.js","./assets/ethan-logo.jpeg"
