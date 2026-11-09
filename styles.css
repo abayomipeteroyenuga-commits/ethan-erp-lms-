@@ -1976,3 +1976,136 @@ textarea,input,select,button{
 .narration-panel{margin:0 0 18px;padding:18px 20px;border:1px solid #d7e0e8;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(25,45,65,.06)}
 .narration-panel>div:first-child{margin-bottom:12px}.narration-panel strong{font-size:1.05rem;color:#24496b}.narration-panel p{margin:4px 0 0}.narration-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:end}.narration-controls label{display:flex;gap:6px;align-items:center;font-size:.9rem;font-weight:700}.narration-controls select{min-width:90px;padding:9px 10px;border:1px solid #cbd5df;border-radius:9px;background:#fff}.narration-controls label:last-child select{max-width:240px}.narration-status{margin-top:12px;padding:10px 12px;border-radius:9px;background:#f4f7fa;color:#40566b;font-size:.9rem;line-height:1.45}
 @media(max-width:760px){.narration-controls{align-items:stretch}.narration-controls button,.narration-controls label{flex:1 1 46%}.narration-controls label{flex-direction:column;align-items:stretch}.narration-controls select{width:100%;max-width:none!important}}
+
+
+/* ETHAN LEARN — international learning experience refresh */
+:root{
+  --learn-navy:#08265e;
+  --learn-blue:#1768d8;
+  --learn-sky:#eaf3ff;
+  --learn-gold:#e7a91e;
+  --learn-ink:#172b4d;
+}
+html{scroll-behavior:smooth}
+body{color:var(--learn-ink);background:#f5f8fd}
+button,a,input,select,textarea{outline-offset:3px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid rgba(23,104,216,.42);
+}
+.public-brand img,.auth-card-brand img,.sidebar-brand img{object-fit:contain}
+.public-brand strong{font-size:21px;letter-spacing:.045em}
+.public-brand small{color:#667a9c}
+.secure-pill{background:#f0f6ff;color:#2d507e}
+.header-signin{background:linear-gradient(130deg,var(--learn-navy),var(--learn-blue));}
+.auth-main{align-items:stretch}
+.auth-hero-inner h1{max-width:720px}
+.auth-hero-inner h1 span{background:linear-gradient(90deg,#1768d8,#2894ec);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-lead{max-width:660px}
+.benefit-icon{background:#fff8e8;color:#a8730b;border:1px solid #f5e3b5}
+.professional-card{border-radius:22px;box-shadow:0 22px 62px rgba(15,44,91,.12)}
+.auth-card-brand img{border:0;box-shadow:none}
+.auth-submit{background:linear-gradient(120deg,#09265e,#1268d7)}
+.sidebar{background:linear-gradient(180deg,#071c49,#092d70)}
+.sidebar-brand strong{letter-spacing:.09em}
+.sidebar-brand small{letter-spacing:.11em}
+.nav-item.active{box-shadow:inset 3px 0 0 var(--learn-gold)}
+.topbar{background:rgba(255,255,255,.97);border-bottom:1px solid #e6edf7}
+.topbar h2{color:var(--learn-navy);letter-spacing:-.02em}
+.content{max-width:1800px;margin:0 auto}
+.page-title-block h1,.page-title-block h2{color:var(--learn-navy);letter-spacing:-.025em}
+.hero-card{position:relative;overflow:hidden;background:linear-gradient(112deg,#08265e 0%,#104fa9 64%,#1879da 100%)}
+.hero-card:after{content:"";position:absolute;width:310px;height:310px;right:-120px;top:-160px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.035),0 0 0 68px rgba(255,255,255,.025)}
+.hero-card>*{position:relative;z-index:1}
+.card,.stat-card,.course-card,.quick-card,.learner-course-card,.catalogue-lock-card{
+  border-color:#e2eaf5;box-shadow:0 7px 24px rgba(15,44,91,.045);border-radius:15px
+}
+.stat-card{background:#fff}
+.stat-icon{background:linear-gradient(140deg,#eff6ff,#e6f0ff);color:var(--learn-blue)}
+.primary-btn{background:linear-gradient(120deg,#09265e,#1768d8);border-radius:10px}
+.primary-btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.secondary-btn{border-radius:10px;border-color:#d8e3f2;color:#164b91}
+.course-card,.learner-course-card,.catalogue-lock-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.course-card:hover,.learner-course-card:hover,.catalogue-lock-card:hover{transform:translateY(-3px);border-color:#bad3f5;box-shadow:0 14px 32px rgba(15,57,117,.09)}
+.course-thumb{background:linear-gradient(130deg,#09265e,#1b76db)}
+.learner-course-icon{background:#edf5ff;color:#1458ae;border:1px solid #dceaff}
+.learner-progress span{background:linear-gradient(90deg,#1768d8,#43a0ef)}
+.course-status-badge{color:#155b3b;background:#edf8f1}
+.learning-course-row{border-bottom-color:#e5edf7;border-radius:10px;padding:18px 14px}
+.learning-course-row:hover{background:#f4f8ff}
+.learning-course-row b{color:#1257b6}
+.lesson-layout{align-items:start}
+.lesson-menu{box-shadow:0 8px 26px rgba(12,44,91,.05);border-radius:14px}
+.lesson-menu button{line-height:1.45}
+.lesson-menu button.active{background:#eaf3ff;color:#124f9e;box-shadow:inset 3px 0 #e7a91e}
+.lesson-content{border-radius:15px;box-shadow:0 8px 26px rgba(12,44,91,.045)}
+.modal-backdrop{backdrop-filter:blur(4px)}
+.modal{max-height:min(88vh,900px);overflow:auto;border:1px solid #e4eaf4}
+.modal input,.modal select,.modal textarea{margin-top:5px}
+.notification-panel{border-radius:15px;box-shadow:0 18px 48px rgba(8,33,77,.16)}
+.notification-item{line-height:1.5}
+.student-home-hero{
+  padding:26px 28px;border:1px solid #dce8f8;border-radius:17px;
+  background:linear-gradient(120deg,#fff,#f2f7ff);align-items:center
+}
+.student-home-hero h1{color:#08265e;font-size:clamp(1.9rem,3vw,2.6rem)}
+.student-home-profile{padding:14px 18px;background:#fff;border:1px solid #e2eaf5;border-radius:12px}
+.student-home-stats{border-color:#e0e9f6;border-radius:14px;box-shadow:0 6px 22px rgba(13,52,105,.035)}
+.student-home-stats strong{color:#08265e}
+.student-section+.student-section{border-top-color:#e1e9f4}
+.student-section-head h2{color:#08265e}
+.learner-course-card{min-height:330px}
+.learner-course-actions button{min-height:42px}
+.inside-catalogue-grid{gap:16px}
+.catalogue-lock-card{min-height:215px}
+.assignment-card,.quiz-question{padding:22px}
+.assignment-card h3,.quiz-question h3{color:#08265e}
+.assignment-card p,.quiz-question p{line-height:1.65}
+.quiz-options{display:grid;gap:10px;margin-top:16px}
+.quiz-option{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #dfe8f4;border-radius:10px;background:#fbfdff;cursor:pointer}
+.quiz-option:hover{background:#f0f6ff;border-color:#bfd7f8}
+.quiz-option input{accent-color:#1768d8}
+.quiz-text-answer{width:100%;max-width:520px;padding:12px;border:1px solid #cfd9e7;border-radius:9px}
+.quiz-question+.quiz-question{margin-top:16px}
+.assignment-card+.assignment-card{margin-top:16px}
+.empty,.empty-state{border-radius:14px}
+@media(max-width:1100px){
+  .auth-main{grid-template-columns:minmax(0,1fr) minmax(360px,.9fr)}
+  .modern-auth .auth-brand-panel{padding:44px 34px}
+}
+@media(max-width:820px){
+  .public-header{height:70px;padding:0 16px}
+  .public-brand img{width:42px;height:42px}
+  .public-brand strong{font-size:18px}
+  .secure-pill{display:none}
+  .auth-main{display:flex;flex-direction:column}
+  .modern-auth .auth-brand-panel{min-height:unset;padding:36px 22px 20px}
+  .auth-hero-inner h1{font-size:clamp(34px,9vw,48px);margin:16px 0}
+  .hero-lead{font-size:15px;line-height:1.6;margin-bottom:20px}
+  .hero-benefits{gap:11px}
+  .modern-auth .auth-card-wrap{padding:18px 16px 34px;background:transparent}
+  .professional-card{padding:22px 18px;border-radius:18px}
+  .student-home-hero{align-items:flex-start;flex-direction:column;padding:22px}
+  .student-home-profile{width:100%;text-align:left}
+  .student-section-head{align-items:flex-start;flex-direction:column}
+  .student-empty-panel{align-items:flex-start;flex-direction:column}
+  .learner-course-actions{flex-direction:column}
+  .learner-course-actions button{width:100%}
+  .lesson-content{padding:18px}
+  .modal-backdrop{padding:10px}
+  .modal{padding:18px;max-height:94vh}
+  .modal-actions{position:sticky;bottom:-18px;background:#fff;padding:12px 0 2px}
+}
+@media(max-width:480px){
+  .public-brand{gap:8px}
+  .public-brand img{width:38px;height:38px}
+  .header-signin{padding:9px 12px}
+  .auth-hero-inner h1{font-size:34px}
+  .auth-hero-inner .benefit-item small{font-size:12px}
+  .professional-card{padding:20px 15px}
+  .content{padding:12px}
+  .student-home-stats{grid-template-columns:1fr 1fr}
+  .student-home-stats>div{padding:14px;border-right:1px solid #e4eaf4}
+  .student-home-stats>div:nth-child(2){border-right:0}
+  .student-home-stats>div:nth-child(3){border-top:1px solid #e4eaf4}
+  .student-home-stats>div:nth-child(4){border-top:1px solid #e4eaf4}
+}
