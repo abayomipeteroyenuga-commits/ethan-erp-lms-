@@ -18,7 +18,7 @@ const modules=[
 ["crm","♧","CRM & Sales","super_admin,admin,admissions,finance"],
 ["accounting","₦","Accounting & Banking","super_admin,admin,finance"],
 ["budgets","▤","Budgets","super_admin,admin,finance"],
-["peopleops","♟","HR & Payroll","super_admin,admin,hr,finance"],
+["peopleops","♟","HR & Payroll","super_admin,admin,hr"],
 ["procurement","⇄","Procurement","super_admin,admin,finance"],
 ["inventory","▣","Inventory & Assets","super_admin,admin,finance,hr,academic_manager"],
 ["documents","▤","Documents","super_admin,admin,hr,finance,admissions,academic_manager"],
@@ -137,6 +137,8 @@ const genericModules={
   {table:"erp_facility_maintenance",title:"Maintenance register",button:"Create maintenance request",fields:[GF("asset_or_room","Room / asset","text",true),GF("request_type","Request type","select",true,[["repair","Repair"],["inspection","Inspection"],["servicing","Servicing"],["cleaning","Cleaning"],["other","Other"]]),GF("reported_by","Reported by"),GF("description","Issue description","textarea",true),GF("priority","Priority","select",true,[["low","Low"],["normal","Normal"],["high","High"],["urgent","Urgent"]]),GF("assigned_to","Assigned to"),GF("due_date","Due date","date"),GF("status","Status","select",true,[["open","Open"],["in_progress","In progress"],["completed","Completed"],["cancelled","Cancelled"]])],columns:[["Room / asset","asset_or_room"],["Type","request_type"],["Description","description"],["Priority","priority"],["Assigned","assigned_to"],["Due date","due_date","date"],["Status","status"]]}
  ]}
 };
+genericModules.accounting.sections[3].readOnly=true;
+genericModules.inventory.sections[1].readOnly=true;
 function genericFormat(row,col){
  const v=row[col[1]];
  if(col[2]==="money")return money(v);
@@ -146,8 +148,8 @@ function genericFormat(row,col){
  return v===null||v===undefined||v===""?"—":esc(v);
 }
 function genericTableHtml(key,ix,section,data){
- const heads=section.columns.map(c=>c[0]).concat(["Actions"]);
- const body=data.map(row=>"<tr>"+section.columns.map(c=>"<td>"+genericFormat(row,c)+"</td>").join("")+'<td><button class="link-btn" data-action="edit-generic" data-module="'+key+'" data-section="'+ix+'" data-id="'+esc(row.id)+'">Edit</button></td></tr>').join("");
+ const heads=section.columns.map(c=>c[0]).concat(section.readOnly?[]:["Actions"]);
+ const body=data.map(row=>"<tr>"+section.columns.map(c=>"<td>"+genericFormat(row,c)+"</td>").join("")+(section.readOnly?"":'<td><button class="link-btn" data-action="edit-generic" data-module="'+key+'" data-section="'+ix+'" data-id="'+esc(row.id)+'">Edit</button></td>')+"</tr>").join("");
  return '<div class="table-toolbar"><input id="gsearch_'+key+'_'+ix+'" placeholder="Search '+esc(section.title.toLowerCase())+'..."></div><div id="gtable_'+key+'_'+ix+'">'+table(heads,body)+"</div>";
 }
 async function genericPage(key){
@@ -163,8 +165,8 @@ async function genericPage(key){
   const s=cfg.sections[i],search=$("#gsearch_"+key+"_"+i);
   if(search)search.oninput=()=>{
    const q=search.value.toLowerCase(),d=(cache[s.table]||[]).filter(row=>s.columns.some(c=>String(row[c[1]]??"").toLowerCase().includes(q)));
-   const body=d.map(row=>"<tr>"+s.columns.map(c=>"<td>"+genericFormat(row,c)+"</td>").join("")+'<td><button class="link-btn" data-action="edit-generic" data-module="'+key+'" data-section="'+i+'" data-id="'+esc(row.id)+'">Edit</button></td></tr>').join("");
-   $("#gtable_"+key+"_"+i).innerHTML=table(s.columns.map(c=>c[0]).concat(["Actions"]),body);
+   const body=d.map(row=>"<tr>"+s.columns.map(c=>"<td>"+genericFormat(row,c)+"</td>").join("")+(s.readOnly?"":'<td><button class="link-btn" data-action="edit-generic" data-module="'+key+'" data-section="'+i+'" data-id="'+esc(row.id)+'">Edit</button></td>')+"</tr>").join("");
+   $("#gtable_"+key+"_"+i).innerHTML=table(s.columns.map(c=>c[0]).concat(s.readOnly?[]:["Actions"]),body);
   };
  }
 }
@@ -194,6 +196,8 @@ function openGenericForm(key,ix,row){
   if(s.table==="erp_payroll_items")payload.net_pay=Math.max(0,Number(payload.basic_salary||0)+Number(payload.allowances||0)-Number(payload.deductions||0));
   if(s.table==="erp_inventory_movements"&&!row){
    await rpc("record_erp_inventory_movement",{p_item_id:payload.item_id,p_type:payload.movement_type,p_quantity:payload.quantity,p_date:payload.movement_date||today(),p_reference:payload.reference,p_notes:payload.notes});
+  }else if(s.table==="erp_payment_receipts"&&!row){
+   await rpc("record_erp_payment_receipt",{p_receipt_no:payload.receipt_no,p_invoice_no:payload.invoice_no,p_payer_name:payload.payer_name,p_payment_date:payload.payment_date||today(),p_amount:payload.amount,p_method:payload.method,p_reference:payload.reference});
   }else{
    const result=row?await client.from(s.table).update(payload).eq("id",row.id):await client.from(s.table).insert(payload);
    if(result.error)throw result.error;
