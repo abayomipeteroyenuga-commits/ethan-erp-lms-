@@ -73,7 +73,6 @@ export default async function handler(req, res) {
 
     res.setHeader("Content-Type", isNarration ? "text/plain; charset=utf-8" : "application/pdf");
     res.setHeader("Content-Disposition", isNarration ? "inline" : 'inline; filename="' + filename.replace(/["\\r\\n]/g, "_") + '"');
-    res.setHeader("Content-Security-Policy", "default-src 'none'; sandbox");
     return res.sendFile(filePath, error => {
       if (error && !res.headersSent) respond(res, 404, "Course resource not found.");
     });
