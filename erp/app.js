@@ -254,6 +254,7 @@ function exportGenericCsv(key,ix){
 }
 function genericFormat(row,col){
  const v=row[col[1]];
+ if(col[1]==="staff_id"){const st=(cache.erp_staff||[]).find(x=>x.id===v);if(st)return esc((st.employee_no?st.employee_no+" · ":"")+st.full_name);}
  if(col[1]==="student_id"){
   const list=cache.erp_students||cache.erp_student_case_directory||[];
   const st=list.find(x=>x.id===v);
@@ -267,7 +268,7 @@ function genericFormat(row,col){
  if(col[2]==="money")return money(v);
  if(col[2]==="date")return v?esc(String(v).slice(0,10)):"—";
  if(col[2]==="variance")return money(Number(row.budget_amount||0)-Number(row.actual_amount||0));
- if(col[1]==="reconciled")return v?"Yes":"No";
+ if(typeof v==="boolean")return v?"Yes":"No";
  return v===null||v===undefined||v===""?"—":esc(v);
 }
 function genericActions(key,ix,section,row){
