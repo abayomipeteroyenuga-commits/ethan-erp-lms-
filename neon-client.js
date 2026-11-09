@@ -163,6 +163,32 @@
         const {data,error}=await client.from("lessons").update(payload).eq("id",lessonId).select().single();
         if(error)throw error;return data;
       },
+      async listAttendance(){
+        const {data,error}=await client.from("attendance").select("id,attendance_date,status,student:students(student_no,profiles(first_name,last_name,email)),course:courses(code,title)").order("attendance_date",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async markAttendance(payload){
+        const {data,error}=await client.from("attendance").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async listResults(){
+        const {data,error}=await client.from("results").select("id,assessment_name,score,grade,status,published,created_at,student:students(student_no,profiles(first_name,last_name,email)),course:courses(code,title)").order("created_at",{ascending:false});
+        if(error)throw error;return data||[];
+      },
+      async createResult(payload){
+        const {data,error}=await client.from("results").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async listCertificates(studentId=null){
+        let query=client.from("certificates").select("id,certificate_no,issued_at,status,verification_code,student:students(student_no,profiles(first_name,last_name,email)),course:courses(code,title)").order("issued_at",{ascending:false});
+        if(studentId)query=query.eq("student_id",studentId);
+        const {data,error}=await query;
+        if(error)throw error;return data||[];
+      },
+      async issueCertificate(payload){
+        const {data,error}=await client.from("certificates").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
       async listMyLessonProgress(studentId){
         const {data,error}=await client.from("lesson_progress")
           .select("lesson_id,completed,completed_at").eq("student_id",studentId);
@@ -236,7 +262,7 @@
         if(!session?.user?.id)throw new Error("Sign in again before uploading.");
         const safeName=String(file.name||"course.pdf").replace(/[^a-zA-Z0-9._-]+/g,"-").slice(0,150);
         const path=courseId+"/"+crypto.randomUUID()+"-"+safeName;
-        const signed=await requestStorage({action:"upload",key:path,contentType:file.type||"application/pdf"});
+        const signed=await requestStorage({action:"upload",courseId,key:path,contentType:file.type||"application/pdf"});
         const uploaded=await fetch(signed.url,{method:"PUT",headers:signed.headers||{"Content-Type":file.type||"application/pdf"},body:file});
         if(!uploaded.ok)throw new Error("The file upload failed ("+uploaded.status+").");
         const {data,error}=await client.from("course_materials").insert({
