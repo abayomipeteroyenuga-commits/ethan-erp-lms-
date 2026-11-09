@@ -686,3 +686,212 @@ renderPayments = async function () {
     (payments.map(function(p){return '<tr><td>'+ethanLmsEscape(p.ref||p.reference||"—")+'</td><td>'+ethanLmsEscape(p.student||"Learner")+'</td><td>'+ethanLmsEscape(p.description||"Course payment")+'</td><td>₦'+Number(p.amount||0).toLocaleString("en-NG")+'</td><td>'+ethanLmsEscape(p.status||"Verified")+'</td></tr>';}).join("")||'<tr><td colspan="5">No payment records yet.</td></tr>')+
     '</tbody></table></div></div>';
 };
+
+/* Real learner records only: assignments, attendance, results and certificates. */
+function ethanLmsRecordDate(value){
+  if(!value)return "—";
+  var d=new Date(value);
+  return Number.isNaN(d.getTime())?ethanLmsEscape(value):d.toLocaleDateString("en-NG",{day:"numeric",month:"short",year:"numeric"});
+}
+function ethanLmsLearnerGate(title){
+  return pageHead(title,"Course-linked academic records.")+
+    emptyState("Course access required","Your learner account is free. Choose a professional course, pay the listed fee and wait for the Superadmin to verify payment before course records appear.",'<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>');
+}
+function openLmsAssignmentSubmit(assignment){
+  showModal("Submit assignment", "Submit your practical work for "+ethanLmsEscape(assignment.title)+".",
+    '<label>Your response<textarea id="lmsAssignmentResponse" rows="7" maxlength="12000" placeholder="Explain your work, include key steps and paste links where relevant."></textarea></label>',
+    async function(){
+      var response=document.querySelector("#lmsAssignmentResponse").value.trim();
+      if(!response)return alert("Enter your assignment response first.");
+      try{
+        await window.ETHAN_BACKEND.submitAssignment({
+          assignmentId:assignment.id,studentId:portalState.myStudent.id,responseText:response
+        });
+        closeModal();
+        alert("Your assignment has been submitted.");
+        await renderAssignments();
+      }catch(error){alert(error.message||"The assignment could not be submitted.");}
+    }
+  );
+}
+renderAssignments = async function(){
+  var isStudent=currentUser&&currentUser.role==="student";
+  var staff=currentUser&&["admin","super_admin","instructor"].includes(currentUser.role);
+  var backend=window.ETHAN_BACKEND;
+  if(isStudent&&portalState.myStudent?.id&&backend?.ready){
+    try{portalState.myEnrolments=await backend.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn("Approved enrolments could not be refreshed:",error);}
+  }
+  var courses=isStudent?studentCourses():(data.courses||[]);
+  if(isStudent&&!courses.length){
+    document.querySelector("#content").innerHTML=ethanLmsLearnerGate("Assignments");
+    return;
+  }
+  document.querySelector("#content").innerHTML=
+    pageHead("Assignments",isStudent?"Practical tasks for your approved courses.":"Manage assignments for Academy courses.")+
+    '<div class="card"><p class="muted">Loading assignment records…</p></div>';
+  if(!backend?.ready){
+    document.querySelector("#content").innerHTML=pageHead("Assignments","Course-linked practical work.")+
+      emptyState("Learning service unavailable","Reconnect to the learning database and refresh.");
+    return;
+  }
+  try{
+    var [assignments,submissions]=await Promise.all([
+      backend.listAssignments(),backend.listAssignmentSubmissions()
+    ]);
+    var courseIds=new Set(courses.map(function(c){return String(c.id);}));
+    if(isStudent)assignments=(assignments||[]).filter(function(a){return courseIds.has(String(a.course_id));});
+    var submissionByAssignment=new Map();
+    (submissions||[]).forEach(function(sub){submissionByAssignment.set(String(sub.assignment_id),sub);});
+    var rows=(assignments||[]).map(function(a){
+      var submission=submissionByAssignment.get(String(a.id));
+      var status=submission?(submission.status||"Submitted"):"Not submitted";
+      var action=isStudent
+        ? (submission?'<span class="badge green">'+ethanLmsEscape(status)+'</span>':'<button type="button" class="primary-btn" data-submit-lms-assignment="'+ethanLmsEscape(a.id)+'">Submit work</button>')
+        : '<span class="muted">'+(submission?"Submission received":"—")+'</span>';
+      return '<tr><td><strong>'+ethanLmsEscape(a.title)+'</strong><small class="muted" style="display:block">'+ethanLmsEscape(a.instructions||"")+'</small></td>'+
+        '<td>'+ethanLmsEscape(a.course?.title||"Course")+'</td>'+
+        '<td>'+ethanLmsRecordDate(a.due_at)+'</td>'+
+        '<td>'+action+'</td></tr>';
+    }).join("");
+    var create=staff?'<button type="button" class="primary-btn" id="createLmsAssignment">+ Create Assignment</button>':"";
+    document.querySelector("#content").innerHTML=
+      pageHead("Assignments",isStudent?"Practical tasks for your approved courses.":"Create and review course-linked practical work.",create)+
+      (rows?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Assignment</th><th>Course</th><th>Due date</th><th>Submission</th></tr></thead><tbody>'+rows+'</tbody></table></div></div>':
+        emptyState("No assignments published yet",isStudent?"There are no assignment tasks published for your approved courses yet.":"No assignment records have been created yet."));
+    document.querySelectorAll("[data-submit-lms-assignment]").forEach(function(button){
+      button.onclick=function(){
+        var assignment=(assignments||[]).find(function(a){return String(a.id)===button.dataset.submitLmsAssignment;});
+        if(assignment)openLmsAssignmentSubmit(assignment);
+      };
+    });
+    var createButton=document.querySelector("#createLmsAssignment");
+    if(createButton)createButton.onclick=function(){
+      var options=(data.courses||[]).filter(function(c){return c.id;}).map(function(c){
+        return '<option value="'+ethanLmsEscape(c.id)+'">'+ethanLmsEscape(c.code||"")+' — '+ethanLmsEscape(c.title)+'</option>';
+      }).join("");
+      showModal("Create assignment","Publish a practical task for one course.",
+        '<label>Course<select id="lmsAssignmentCourse">'+options+'</select></label>'+
+        '<label>Assignment title<input id="lmsAssignmentTitle" maxlength="180" required></label>'+
+        '<label>Instructions<textarea id="lmsAssignmentInstructions" rows="5"></textarea></label>'+
+        '<label>Due date<input id="lmsAssignmentDue" type="datetime-local"></label>',
+        async function(){
+          var courseId=document.querySelector("#lmsAssignmentCourse").value;
+          var title=document.querySelector("#lmsAssignmentTitle").value.trim();
+          var instructions=document.querySelector("#lmsAssignmentInstructions").value.trim();
+          var due=document.querySelector("#lmsAssignmentDue").value;
+          if(!courseId||!title)return alert("Select a course and enter an assignment title.");
+          try{
+            await backend.createAssignment({course_id:courseId,title,instructions,due_at:due?new Date(due).toISOString():null,created_by:currentUser.id,max_marks:100});
+            closeModal();await renderAssignments();
+          }catch(error){alert(error.message||"The assignment could not be created.");}
+        }
+      );
+    };
+  }catch(error){
+    document.querySelector("#content").innerHTML=pageHead("Assignments","Course-linked practical work.")+
+      emptyState("Assignments could not be loaded",error.message||"Refresh and try again.");
+  }
+};
+
+renderAttendance = async function(){
+  var isStudent=currentUser&&currentUser.role==="student";
+  var backend=window.ETHAN_BACKEND;
+  if(isStudent&&portalState.myStudent?.id&&backend?.ready){
+    try{portalState.myEnrolments=await backend.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn(error);}
+  }
+  var courses=isStudent?studentCourses():(data.courses||[]);
+  if(isStudent&&!courses.length){
+    document.querySelector("#content").innerHTML=ethanLmsLearnerGate("Attendance");
+    return;
+  }
+  document.querySelector("#content").innerHTML=pageHead("Attendance","Attendance records for approved courses.")+
+    '<div class="card"><p class="muted">Loading attendance records…</p></div>';
+  try{
+    var rows=await backend.listAttendance();
+    var courseIds=new Set(courses.map(function(c){return String(c.id);}));
+    if(isStudent)rows=(rows||[]).filter(function(r){return !r.course?.id||courseIds.has(String(r.course.id));});
+    var body=(rows||[]).map(function(r){
+      var person=r.student?.profiles||{};
+      var name=[person.first_name,person.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
+      return '<tr><td>'+ethanLmsEscape(name)+'</td><td>'+ethanLmsEscape(r.course?.title||"Course")+'</td><td>'+ethanLmsRecordDate(r.attendance_date)+'</td><td>'+ethanLmsEscape(r.status||"—")+'</td></tr>';
+    }).join("");
+    document.querySelector("#content").innerHTML=pageHead("Attendance","Attendance records for approved courses.")+
+      (body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Date</th><th>Status</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':
+       emptyState("No attendance records yet","No attendance has been recorded for your approved courses."));
+  }catch(error){
+    document.querySelector("#content").innerHTML=pageHead("Attendance","Attendance records for approved courses.")+
+      emptyState("Attendance could not be loaded",error.message||"Refresh and try again.");
+  }
+};
+
+renderTimetable = function(){
+  var isStudent=currentUser&&currentUser.role==="student";
+  if(isStudent&&!studentCourses().length){
+    document.querySelector("#content").innerHTML=ethanLmsLearnerGate("Timetable");
+    return;
+  }
+  document.querySelector("#content").innerHTML=pageHead("Timetable","Your published class schedule.")+
+    emptyState("No timetable published yet","The Academy will display confirmed class dates and times here when your course schedule is released.");
+};
+
+renderResults = async function(){
+  var isStudent=currentUser&&currentUser.role==="student";
+  var backend=window.ETHAN_BACKEND;
+  if(isStudent&&portalState.myStudent?.id&&backend?.ready){
+    try{portalState.myEnrolments=await backend.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn(error);}
+  }
+  var courses=isStudent?studentCourses():(data.courses||[]);
+  if(isStudent&&!courses.length){
+    document.querySelector("#content").innerHTML=ethanLmsLearnerGate("Results");
+    return;
+  }
+  document.querySelector("#content").innerHTML=pageHead("Results","Published assessment results for approved courses.")+
+    '<div class="card"><p class="muted">Loading assessment results…</p></div>';
+  try{
+    var rows=await backend.listResults();
+    var courseIds=new Set(courses.map(function(c){return String(c.id);}));
+    if(isStudent)rows=(rows||[]).filter(function(r){return r.published&&(!r.course?.id||courseIds.has(String(r.course.id)));});
+    var body=(rows||[]).map(function(r){
+      var person=r.student?.profiles||{};
+      var name=[person.first_name,person.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
+      return '<tr><td>'+ethanLmsEscape(name)+'</td><td>'+ethanLmsEscape(r.course?.title||"Course")+'</td><td>'+ethanLmsEscape(r.assessment_name||"Assessment")+'</td><td>'+ethanLmsEscape(r.score==null?"—":r.score+"%")+'</td><td>'+ethanLmsEscape(r.grade||"—")+'</td><td>'+ethanLmsEscape(r.status||"—")+'</td></tr>';
+    }).join("");
+    document.querySelector("#content").innerHTML=pageHead("Results","Published assessment results for approved courses.")+
+      (body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Assessment</th><th>Score</th><th>Grade</th><th>Status</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':
+       emptyState("No published results yet","Your published assessment results will appear here after grading."));
+  }catch(error){
+    document.querySelector("#content").innerHTML=pageHead("Results","Assessment results for approved courses.")+
+      emptyState("Results could not be loaded",error.message||"Refresh and try again.");
+  }
+};
+
+renderCertificates = async function(){
+  var isStudent=currentUser&&currentUser.role==="student";
+  var backend=window.ETHAN_BACKEND;
+  if(isStudent&&portalState.myStudent?.id&&backend?.ready){
+    try{portalState.myEnrolments=await backend.listStudentEnrolments(portalState.myStudent.id);}
+    catch(error){console.warn(error);}
+  }
+  var courses=isStudent?studentCourses():(data.courses||[]);
+  if(isStudent&&!courses.length){
+    document.querySelector("#content").innerHTML=ethanLmsLearnerGate("Certificates");
+    return;
+  }
+  document.querySelector("#content").innerHTML=pageHead("Certificates","Certificates issued for completed professional courses.")+
+    '<div class="card"><p class="muted">Loading certificates…</p></div>';
+  try{
+    var records=await backend.listCertificates(isStudent?portalState.myStudent.id:null);
+    var body=(records||[]).map(function(c){
+      return '<tr><td>'+ethanLmsEscape(c.certificate_no||"—")+'</td><td>'+ethanLmsEscape(c.student?.profiles?.first_name||"Learner")+' '+ethanLmsEscape(c.student?.profiles?.last_name||"")+'</td><td>'+ethanLmsEscape(c.course?.title||"Course")+'</td><td>'+ethanLmsRecordDate(c.issued_at)+'</td><td>'+ethanLmsEscape(c.status||"Valid")+'</td></tr>';
+    }).join("");
+    document.querySelector("#content").innerHTML=pageHead("Certificates","Certificates issued for completed professional courses.")+
+      (body?'<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Certificate No.</th><th>Learner</th><th>Course</th><th>Issued</th><th>Status</th></tr></thead><tbody>'+body+'</tbody></table></div></div>':
+       emptyState("No certificates issued yet","Certificates for successfully completed and approved courses will appear here."));
+  }catch(error){
+    document.querySelector("#content").innerHTML=pageHead("Certificates","Your Academy certificates.")+
+      emptyState("Certificates could not be loaded",error.message||"Refresh and try again.");
+  }
+};
