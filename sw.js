@@ -1,7 +1,7 @@
-const CACHE = "ethan-learn-neon-v14";
+const CACHE = "ethan-learn-neon-v15";
 const ASSETS = [
   "./","./index.html","./styles.css","./app.js","./config.js",
-  "./neon-client.js","./course-narration-data.js","./assets/ethan-logo.jpeg"
+  "./neon-client.js","./course-narration-data.js","./digital-learning.js","./assets/ethan-logo.jpeg"
 ];
 self.addEventListener("install", event => {
   self.skipWaiting();
