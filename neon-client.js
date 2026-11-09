@@ -155,7 +155,9 @@
         if(error)throw error;return data||[];
       },
       async createCourse(payload){
-        const {data,error}=await client.from("courses").insert({...payload,fee:0}).select().single();
+        const fee=Number(payload.fee);
+        if(!Number.isFinite(fee)||fee<=0)throw new Error("Set a course fee greater than zero before publishing it.");
+        const {data,error}=await client.from("courses").insert({...payload,fee,published:true}).select().single();
         if(error)throw error;return data;
       },
       async createStudent(payload){
