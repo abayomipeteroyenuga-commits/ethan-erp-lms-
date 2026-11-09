@@ -336,14 +336,121 @@ courseCards = function (list) {
   }).join("") + "</div>";
 };
 
+/* Learner catalogue: free account, paid course access after manual Superadmin verification. */
+renderCourseCatalogue = async function () {
+  if (!currentUser || currentUser.role !== "student") {
+    if (currentUser && ["admin","super_admin","instructor"].includes(currentUser.role)) return renderCourses();
+    return;
+  }
+  var backend=window.ETHAN_BACKEND;
+  document.querySelector("#content").innerHTML=
+    pageHead("Course Catalogue","Your Ethan LEARN account is free. Pay only for the professional courses you choose.")+
+    emptyState("Loading course catalogue","Retrieving published digital courses and your access requests…");
+  if(!backend || !backend.ready || !portalState.myStudent){
+    document.querySelector("#content").innerHTML=
+      pageHead("Course Catalogue","Your free learner account.")+
+      emptyState("Learner profile not ready","Sign out and sign in again to finish preparing your learner profile.");
+    return;
+  }
+  try{
+    var [courses,requests]=await Promise.all([
+      backend.listCourses(),
+      backend.listMyCourseAccessRequests(portalState.myStudent.id)
+    ]);
+    portalState.myCourseRequests=requests||[];
+    var enrolled=new Set(studentCourses().map(function(c){return String(c.id);}));
+    var latestByCourse=new Map();
+    (requests||[]).forEach(function(r){
+      var key=String(r.course_id);
+      if(!latestByCourse.has(key))latestByCourse.set(key,r);
+    });
+    var visible=(courses||[]).filter(function(c){return c.published===true;});
+    var cards=visible.map(function(course){
+      var id=String(course.id),request=latestByCourse.get(id),isActive=enrolled.has(id);
+      var fee=Number(course.fee||0);
+      var state=isActive
+        ? '<span class="badge green">Approved · Active</span>'
+        : request&&request.status==="pending"
+          ? '<span class="badge gold">Payment under review</span>'
+          : request&&request.status==="rejected"
+            ? '<span class="badge red">Request declined</span>'
+            : '<span class="badge blue">Not enrolled</span>';
+      var action=isActive
+        ? '<button type="button" class="secondary-btn" disabled>Already approved</button>'
+        : request&&request.status==="pending"
+          ? '<button type="button" class="secondary-btn" disabled>Awaiting verification</button>'
+          : '<button type="button" class="primary-btn" data-request-course="'+ethanLmsEscape(id)+'">Submit payment details</button>';
+      return '<article class="lms-course-card"><div class="lms-course-card-top"><span>'+ethanLmsEscape(course.code||"ETHAN COURSE")+'</span>'+state+'</div><div class="lms-course-icon">📘</div><h3>'+ethanLmsEscape(course.title)+'</h3><p>'+ethanLmsEscape(course.description||course.learning_objectives||"Practical professional digital skills from Ethan Digital Academy.")+'</p><div class="lms-course-meta"><span>'+ethanLmsEscape(course.duration||"Self-paced")+'</span><strong>₦'+fee.toLocaleString("en-NG")+'</strong></div><div class="lms-course-actions">'+action+'</div></article>';
+    }).join("");
+    document.querySelector("#content").innerHTML=
+      pageHead("Course Catalogue","Your learner account is free. Each selected course is unlocked separately after payment verification.")+
+      '<div class="lms-library-tools"><input id="courseCatalogueSearch" type="search" placeholder="Search professional courses…" aria-label="Search professional courses"><span>'+visible.length+' courses</span></div>'+
+      (cards?'<div id="courseCatalogueGrid" class="lms-course-grid">'+cards+'</div>':emptyState("No published courses","The Academy has not published any courses yet."))+
+      '<p class="muted" style="margin-top:18px;font-size:12px">Submitting a transfer reference does not unlock a course. Access is granted only after the Superadmin confirms receipt of the payment.</p>';
+    var search=document.querySelector("#courseCatalogueSearch");
+    if(search)search.oninput=function(){
+      var q=search.value.trim().toLowerCase();
+      document.querySelectorAll("#courseCatalogueGrid .lms-course-card").forEach(function(card){
+        card.hidden=!card.textContent.toLowerCase().includes(q);
+      });
+    };
+    document.querySelectorAll("[data-request-course]").forEach(function(button){
+      button.onclick=function(){
+        var course=visible.find(function(c){return String(c.id)===button.dataset.requestCourse;});
+        if(course)openLearnerCoursePaymentRequest(course);
+      };
+    });
+  }catch(error){
+    document.querySelector("#content").innerHTML=
+      pageHead("Course Catalogue","Choose your professional digital course.")+
+      emptyState("Catalogue could not be loaded",error.message||"Refresh and try again.");
+  }
+};
+
+function openLearnerCoursePaymentRequest(course){
+  var fee=Number(course.fee||0);
+  if(fee<=0)return alert("This course fee has not been configured. Contact the Academy.");
+  showModal("Submit course payment details",
+    "Free account registration does not include course enrolment. After transferring the exact course fee through the Academy's official payment instructions, enter the transaction details below. A Superadmin will verify the transfer before access is granted.",
+    '<div class="card" style="padding:13px;margin-bottom:12px"><strong>'+ethanLmsEscape(course.title)+'</strong><div class="muted" style="font-size:12px">'+ethanLmsEscape(course.code||"")+'</div><h3 style="margin:7px 0;color:#123d80">₦'+fee.toLocaleString("en-NG")+'</h3><small class="muted">Amount due for this course</small></div>'+
+    '<label>Bank transfer reference<input id="courseTransferReference" required maxlength="180" placeholder="Enter the transaction reference"></label>'+
+    '<div class="grid-2"><label>Payment date<input id="coursePaymentDate" type="date" required value="'+new Date().toISOString().slice(0,10)+'"></label><label>Payment method<select id="coursePaymentMethod"><option value="bank_transfer">Bank transfer</option><option value="cash">Cash paid to Academy</option><option value="pos">POS</option><option value="other">Other approved method</option></select></label></div>'+
+    '<label>Additional note (optional)<textarea id="coursePaymentNotes" rows="3" maxlength="500" placeholder="Optional payment note"></textarea></label>',
+    async function(){
+      var reference=document.querySelector("#courseTransferReference").value.trim();
+      var paymentDate=document.querySelector("#coursePaymentDate").value;
+      var paymentMethod=document.querySelector("#coursePaymentMethod").value;
+      var notes=document.querySelector("#coursePaymentNotes").value.trim();
+      if(reference.length<3)return alert("Enter the bank or payment transaction reference.");
+      if(!paymentDate)return alert("Select the payment date.");
+      try{
+        await window.ETHAN_BACKEND.createCourseAccessRequest({
+          studentId:portalState.myStudent.id,courseId:course.id,amount:fee,
+          paymentReference:reference,paymentDate:paymentDate,paymentMethod:paymentMethod,notes:notes
+        });
+        closeModal();
+        alert("Your course payment details have been submitted. The course will remain locked until the Superadmin verifies the payment.");
+        await renderCourseCatalogue();
+      }catch(error){
+        alert(error.message||"Your payment details could not be submitted. Check the reference or contact the Academy.");
+      }
+    }
+  );
+}
+
 renderCourses = function () {
   var isStudent = currentUser.role === "student";
   var list = isStudent ? studentCourses() : data.courses;
   var add = (!isStudent && ["admin", "super_admin", "instructor"].includes(currentUser.role))
     ? '<button class="primary-btn" id="addCourseBtn">+ Create Course</button>' : "";
+  var intro = isStudent
+    ? "Only courses approved for your learner account appear here."
+    : "Browse and manage the Academy digital course catalogue.";
+  var body = isStudent && !list.length
+    ? emptyState("No courses approved yet", "Your free account is active. Choose a course from the catalogue, make the payment and submit the transfer reference. The Superadmin will unlock the selected course after verification.", '<button class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>')
+    : courseCards(list);
   document.querySelector("#content").innerHTML =
-    pageHead(isStudent ? "My Courses" : "Courses", "Browse and manage the Academy digital course catalogue.", add) +
-    courseCards(list);
+    pageHead(isStudent ? "My Courses" : "Courses", intro, add) + body;
   document.querySelectorAll("[data-open-course]").forEach(function (button) {
     button.addEventListener("click", function () { window.openLmsCourse(button.getAttribute("data-open-course")); });
   });
