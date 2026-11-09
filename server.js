@@ -2,6 +2,7 @@ import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import storageHandler from "./api/storage/presign.js";
+import courseAssetsHandler from "./api/course-assets.js";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -17,6 +18,7 @@ app.get("/healthz", (_req, res) => {
 });
 
 app.all("/api/storage/presign", storageHandler);
+app.get("/api/course-assets/:kind/:filename", courseAssetsHandler);
 
 // Only browser-required files are published. SQL, repository documentation,
 // package metadata, server code and node_modules remain private.
@@ -27,7 +29,9 @@ const publicRootFiles = new Set([
 
 app.use((req, res, next) => {
   const requestPath = req.path;
-  const publicAsset = requestPath.startsWith("/assets/") &&
+  const protectedCourseAsset = requestPath.startsWith("/assets/course-materials/") ||
+    requestPath.startsWith("/assets/course-narration/");
+  const publicAsset = requestPath.startsWith("/assets/") && !protectedCourseAsset &&
     !requestPath.split("/").some(segment => segment === "." || segment === "..");
   if (requestPath === "/" || publicRootFiles.has(requestPath) || publicAsset) return next();
   return res.status(404).type("text/plain").send("Not found");
