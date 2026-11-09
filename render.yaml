@@ -11,7 +11,7 @@ services:
     autoDeployTrigger: commit
     envVars:
       - key: APP_ORIGIN
-        value: https://app.ethandigitalacademy.org
+        value: https://lms.ethandigitalacademy.org
       - key: NEON_STORAGE_BUCKET
         value: ethan-lms-materials
       - key: AWS_REGION
