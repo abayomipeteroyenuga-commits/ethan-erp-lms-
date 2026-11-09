@@ -68,7 +68,10 @@ async function students(){const d=await rows("erp_students");$("#pageContent").i
 function studentTable(d){
  return table(["Admission No.","Learner","Email","Guardian","Programme","Level","Status","Actions"],d.map(x=>'<tr><td>'+esc(x.admission_no)+'</td><td><b>'+esc(x.first_name+" "+x.last_name)+'</b><br><small>'+esc(x.phone||"")+'</small></td><td>'+esc(x.email||"—")+'</td><td>'+esc(x.guardian_name||"—")+'<br><small>'+esc(x.guardian_phone||"")+'</small></td><td>'+esc(x.programme||"—")+'</td><td>'+esc(x.level||"—")+'</td><td>'+pill(x.status)+'</td><td><button class="link-btn" data-action="edit-old" data-type="student" data-id="'+esc(x.id)+'">Edit</button></td></tr>').join(""));
 }
-async function programmes(){const d=await rows("erp_programmes");$("#pageContent").innerHTML=head("Programmes","Institutional programme catalogue and administration.",'<button class="primary-btn" data-action="new-programme">+ Add programme</button>')+panel("Programme directory",table(["Code","Programme","Department","Duration","Status"],d.map(x=>'<tr><td>'+esc(x.code)+'</td><td><b>'+esc(x.name)+'</b></td><td>'+esc(x.department||"—")+'</td><td>'+esc(x.duration||"—")+'</td><td>'+pill(x.status)+'</td></tr>').join("")));}
+async function programmes(){
+ const d=await rows("erp_programmes");
+ $("#pageContent").innerHTML=head("Programmes","Institutional programme catalogue, delivery mode, capacity and fee administration.",'<button class="primary-btn" data-action="new-programme">+ Add programme</button>')+panel("Programme directory",table(["Code","Programme","Department","Duration","Fee","Delivery","Capacity","Status","Actions"],d.map(x=>'<tr><td>'+esc(x.code)+'</td><td><b>'+esc(x.name)+'</b><br><small>'+esc(x.programme_type||"")+'</small></td><td>'+esc(x.department||"—")+'</td><td>'+esc(x.duration||"—")+'</td><td>'+money(x.fee_amount)+'</td><td>'+esc(x.delivery_mode||"—")+'</td><td>'+esc(x.capacity??"—")+'</td><td>'+pill(x.status)+'</td><td><button class="link-btn" data-action="edit-old" data-type="programme" data-id="'+esc(x.id)+'">Edit</button></td></tr>').join("")));
+}
 async function staff(){
  const [d,u]=await Promise.all([rows("erp_staff"),rows("erp_profiles")]);
  const assign=profile.role==="super_admin"?'<button class="secondary-btn" data-action="promote">Assign ERP role</button>':"";
