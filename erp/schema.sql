@@ -486,7 +486,9 @@ CREATE TRIGGER tr_audit_erp_payment_receipts AFTER INSERT OR UPDATE OR DELETE ON
 -- Admission conversion and assigned-role approval decisions.
 CREATE OR REPLACE FUNCTION public.convert_erp_application(p_application_id uuid,p_admission_no text,p_level text DEFAULT NULL)
 RETURNS public.erp_students LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
-DECLARE v_app public.erp_applications; v_student public.erp_students; v_full text; v_first text; v_last text;
+DECLARE
+ v_app public.erp_applications; v_student public.erp_students; v_programme public.erp_programmes;
+ v_full text; v_first text; v_last text; v_enrolment_no text;
 BEGIN
  IF public.current_erp_role() NOT IN ('super_admin','admin','admissions') THEN RAISE EXCEPTION 'You are not authorised to enrol applicants'; END IF;
  IF nullif(trim(p_admission_no),'') IS NULL THEN RAISE EXCEPTION 'Admission number is required'; END IF;
@@ -495,8 +497,14 @@ BEGIN
  IF v_app.status<>'accepted' THEN RAISE EXCEPTION 'Only accepted applications can be converted to learners'; END IF;
  v_full:=trim(v_app.full_name); v_first:=split_part(v_full,' ',1); v_last:=trim(substr(v_full,length(v_first)+1));
  IF v_last='' THEN v_last:=v_first; END IF;
+ SELECT * INTO v_programme FROM public.erp_programmes WHERE lower(name)=lower(trim(v_app.programme)) OR code=trim(v_app.programme)
+ ORDER BY CASE WHEN lower(name)=lower(trim(v_app.programme)) THEN 0 ELSE 1 END LIMIT 1;
  INSERT INTO public.erp_students(admission_no,first_name,last_name,email,phone,programme,level,status)
- VALUES(trim(p_admission_no),v_first,v_last,v_app.email,v_app.phone,v_app.programme,p_level,'active') RETURNING * INTO v_student;
+ VALUES(trim(p_admission_no),v_first,v_last,v_app.email,v_app.phone,coalesce(v_programme.name,v_app.programme),p_level,'active')
+ RETURNING * INTO v_student;
+ v_enrolment_no:='ENR-'||trim(p_admission_no);
+ INSERT INTO public.erp_student_enrolments(enrollment_no,student_id,programme_code,programme_name,intake,start_date,fee_amount,status)
+ VALUES(v_enrolment_no,v_student.id,v_programme.code,coalesce(v_programme.name,v_app.programme),v_app.intake,current_date,coalesce(v_programme.fee_amount,0),'active');
  UPDATE public.erp_applications SET status='enrolled' WHERE id=v_app.id;
  RETURN v_student;
 END $$;
@@ -913,3 +921,27 @@ INSERT INTO public.erp_chart_accounts(account_code,account_name,account_type,sta
 ('5600','Repairs and maintenance','expense','active'),
 ('5700','Professional and administration fees','expense','active')
 ON CONFLICT(account_code) DO NOTHING;
+
+
+-- Financial statements built from posted double-entry journals.
+CREATE OR REPLACE VIEW public.erp_profit_and_loss WITH (security_invoker=true) AS
+ SELECT a.account_code,a.account_name,a.account_type,
+ (CASE WHEN a.account_type='income' THEN coalesce(sum(l.credit-l.debit),0) ELSE coalesce(sum(l.debit-l.credit),0) END)::numeric(14,2) AS balance
+ FROM public.erp_chart_accounts a
+ LEFT JOIN public.erp_journal_lines l ON l.account_code=a.account_code
+ LEFT JOIN public.erp_journal_entries j ON j.id=l.journal_id AND j.status='posted'
+ WHERE a.account_type IN ('income','expense')
+ GROUP BY a.account_code,a.account_name,a.account_type;
+CREATE OR REPLACE VIEW public.erp_balance_sheet WITH (security_invoker=true) AS
+ SELECT a.account_code,a.account_name,a.account_type,
+ (CASE WHEN a.account_type='asset' THEN coalesce(sum(l.debit-l.credit),0) ELSE coalesce(sum(l.credit-l.debit),0) END)::numeric(14,2) AS balance
+ FROM public.erp_chart_accounts a
+ LEFT JOIN public.erp_journal_lines l ON l.account_code=a.account_code
+ LEFT JOIN public.erp_journal_entries j ON j.id=l.journal_id AND j.status='posted'
+ WHERE a.account_type IN ('asset','liability','equity')
+ GROUP BY a.account_code,a.account_name,a.account_type
+ UNION ALL
+ SELECT 'CURRENT-RESULT'::text,'Current unclosed profit'::text,'equity'::text,
+ (coalesce((SELECT sum(balance) FROM public.erp_profit_and_loss WHERE account_type='income'),0)-
+  coalesce((SELECT sum(balance) FROM public.erp_profit_and_loss WHERE account_type='expense'),0))::numeric(14,2);
+GRANT SELECT ON public.erp_profit_and_loss,public.erp_balance_sheet TO authenticated;
