@@ -16,9 +16,12 @@
     document.body.appendChild(script);
   };
   try{
-    if(!cfg.neonDatabaseUrl)throw new Error("Ethan LMS Neon configuration is missing.");
+    if(!cfg.neonAuthUrl||!cfg.neonDataApiUrl)throw new Error("Ethan LMS authentication and data services are not configured.");
     const {createClient}=await import("https://esm.sh/@neon/neon-js@0.9.0-beta?bundle");
-    const client=createClient(cfg.neonDatabaseUrl);
+    const client=createClient({
+      auth:{url:cfg.neonAuthUrl},
+      dataApi:{url:cfg.neonDataApiUrl}
+    });
     const requestStorage=async(payload)=>{
       const {data,error}=await client.auth.getSession();
       if(error)throw error;
