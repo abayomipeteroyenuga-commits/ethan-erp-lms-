@@ -149,6 +149,20 @@ genericModules.payroll={title:"Payroll",desc:"Manage payroll runs and employee p
 delete genericModules.peopleops;
 genericModules.accounting.sections[3].readOnly=true;
 genericModules.accounting.sections[3].fields=genericModules.accounting.sections[3].fields.filter(f=>f.name!=="status");
+
+genericModules.accounting.sections.push(
+ {table:"erp_journal_entries",title:"General journal",button:"Post balanced journal",order:"entry_date",readOnly:true,fields:[],columns:[["Journal no.","journal_no"],["Date","entry_date","date"],["Description","description"],["Status","status"]]},
+ {table:"erp_trial_balance",title:"Trial balance",order:"account_code",readOnly:true,fields:[],columns:[["Account code","account_code"],["Account","account_name"],["Type","account_type"],["Debits","total_debits","money"],["Credits","total_credits","money"],["Balance","balance","money"]]}
+);
+genericModules.crm.sections.push(
+ {table:"erp_customer_invoices",title:"Corporate customer invoices",button:"Create customer invoice",fields:[GF("invoice_no","Invoice number","text",true),GF("customer_name","Customer / organisation","text",true),GF("description","Service / invoice description","text",true),GF("issue_date","Issue date","date",true,null,null,true),GF("due_date","Due date","date"),GF("subtotal","Subtotal (NGN)","number",true),GF("tax_amount","Tax / adjustments (NGN)","number"),GF("status","Status","select",true,[["unpaid","Unpaid"],["cancelled","Cancelled"]])],columns:[["Invoice","invoice_no"],["Customer","customer_name"],["Description","description"],["Issued","issue_date","date"],["Due","due_date","date"],["Total","total_amount","money"],["Paid","amount_paid","money"],["Status","status"]]}
+);
+genericModules.crm.sections[genericModules.crm.sections.length-1].fields=genericModules.crm.sections[genericModules.crm.sections.length-1].fields.filter(f=>f.name!=="status");
+genericModules.procurement.sections.push(
+ {table:"erp_supplier_bills",title:"Supplier bills & accounts payable",button:"Register supplier bill",fields:[GF("bill_no","Supplier bill number","text",true),GF("supplier_name","Supplier name","text",true),GF("description","Bill description","text",true),GF("bill_date","Bill date","date",true,null,null,true),GF("due_date","Due date","date"),GF("subtotal","Subtotal (NGN)","number",true),GF("tax_amount","Tax / adjustments (NGN)","number"),GF("status","Status","select",true,[["unpaid","Unpaid"],["cancelled","Cancelled"]])],columns:[["Bill","bill_no"],["Supplier","supplier_name"],["Description","description"],["Bill date","bill_date","date"],["Due","due_date","date"],["Total","total_amount","money"],["Paid","amount_paid","money"],["Status","status"]]}
+);
+genericModules.procurement.sections[genericModules.procurement.sections.length-1].fields=genericModules.procurement.sections[genericModules.procurement.sections.length-1].fields.filter(f=>f.name!=="status");
+
 genericModules.approvals.sections[0].readOnly=true;
 genericModules.approvals.sections[0].fields=genericModules.approvals.sections[0].fields.filter(f=>f.name!=="status");
 genericModules.inventory.sections[1].readOnly=true;
@@ -191,12 +205,14 @@ function genericTableHtml(key,ix,section,data){
  return '<div class="table-toolbar"><input id="gsearch_'+key+'_'+ix+'" placeholder="Search '+esc(section.title.toLowerCase())+'..."></div><div id="gtable_'+key+'_'+ix+'">'+table(heads,body)+"</div>";
 }
 async function genericPage(key){
+ if(key==="accounting"||key==="crm"||key==="procurement") {try{await rows("erp_chart_accounts");}catch(_){}}
+
  const cfg=genericModules[key];if(!cfg)return;
  let html="";
  for(let i=0;i<cfg.sections.length;i++){
   const s=cfg.sections[i],d=await rows(s.table,s.order||"created_at");
   for(const f of s.fields){if(f.relation&&!cache[f.relation.table])await rows(f.relation.table);}
-  html+=panel(s.title,genericTableHtml(key,i,s,d),'<button class="primary-btn" data-action="new-generic" data-module="'+key+'" data-section="'+i+'">+ '+esc(s.button)+'</button><button class="secondary-btn" data-action="export-generic" data-module="'+key+'" data-section="'+i+'">Export CSV</button>');
+  html+=panel(s.title,genericTableHtml(key,i,s,d),(s.button?'<button class="primary-btn" data-action="new-generic" data-module="'+key+'" data-section="'+i+'">+ '+esc(s.button)+'</button>':"")+'<button class="secondary-btn" data-action="export-generic" data-module="'+key+'" data-section="'+i+'">Export CSV</button>');
  }
  $("#pageContent").innerHTML=head(cfg.title,cfg.desc)+html;
  for(let i=0;i<cfg.sections.length;i++){
@@ -222,6 +238,23 @@ function genericFieldHtml(field,value){
 }
 function openGenericForm(key,ix,row){
  const cfg=genericModules[key];if(!cfg)return;const s=cfg.sections[ix];if(!s)return;
+ if(s.table==="erp_journal_entries"&&!row){
+  const accounts=(cache.erp_chart_accounts||[]).filter(a=>a.status==="active");
+  if(accounts.length<2){toast("Add at least two active chart-of-account records before posting a journal.",true);return;}
+  const opts=accounts.map(a=>'<option value="'+esc(a.account_code)+'">'+esc(a.account_code+" — "+a.account_name)+'</option>').join("");
+  const lines=[1,2,3,4].map(i=>'<section class="panel"><b>Journal line '+i+'</b><div class="two-col"><label>Account<select name="account_'+i+'"><option value="">Select account</option>'+opts+'</select></label><label>Description<input name="line_desc_'+i+'"></label></div><div class="two-col"><label>Debit (NGN)<input type="number" min="0" step="0.01" name="debit_'+i+'"></label><label>Credit (NGN)<input type="number" min="0" step="0.01" name="credit_'+i+'"></label></div></section>').join("");
+  modal("Post balanced journal",fld("journal_no","Journal number")+fld("entry_date","Entry date","date",true,'value="'+today()+'"')+'<label>Description<textarea name="description" required></textarea></label>'+lines,async fd=>{
+   const journalLines=[];
+   for(let i=1;i<=4;i++){
+    const account=String(fd.get("account_"+i)||"").trim(),debit=Number(fd.get("debit_"+i)||0),credit=Number(fd.get("credit_"+i)||0),description=String(fd.get("line_desc_"+i)||"").trim();
+    if(!account&&!debit&&!credit)continue;
+    if(!account||((debit>0)===(credit>0)))throw Error("Each used journal line needs an account and either a debit or a credit, not both.");
+    journalLines.push({account_code:account,debit,credit,description});
+   }
+   await rpc("post_erp_journal",{p_journal_no:String(fd.get("journal_no")||"").trim(),p_entry_date:String(fd.get("entry_date")||today()),p_description:String(fd.get("description")||"").trim(),p_lines:journalLines});
+  });
+  return;
+ }
  const fields=(s.table==="erp_inventory_items"&&row)?s.fields.filter(f=>f.name!=="quantity_on_hand"):s.fields;
  const body=fields.map(f=>genericFieldHtml(f,row?row[f.name]:undefined)).join("");
  modal((row?"Edit ":"")+s.title,body,async fd=>{
@@ -234,6 +267,7 @@ function openGenericForm(key,ix,row){
    else payload[f.name]=v||null;
   }
   if(s.table==="erp_payroll_items")payload.net_pay=Math.max(0,Number(payload.basic_salary||0)+Number(payload.allowances||0)-Number(payload.deductions||0));
+  if(s.table==="erp_customer_invoices"||s.table==="erp_supplier_bills")payload.total_amount=Number(payload.subtotal||0)+Number(payload.tax_amount||0);
   if(s.table==="erp_inventory_movements"&&!row){
    await rpc("record_erp_inventory_movement",{p_item_id:payload.item_id,p_type:payload.movement_type,p_quantity:payload.quantity,p_date:payload.movement_date||today(),p_reference:payload.reference,p_notes:payload.notes});
   }else if(s.table==="erp_payment_receipts"&&!row){
