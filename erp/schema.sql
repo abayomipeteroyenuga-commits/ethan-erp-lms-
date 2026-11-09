@@ -679,3 +679,35 @@ DROP TRIGGER IF EXISTS tr_audit_erp_customer_invoices ON public.erp_customer_inv
 CREATE TRIGGER tr_audit_erp_customer_invoices AFTER INSERT OR UPDATE OR DELETE ON public.erp_customer_invoices FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
 DROP TRIGGER IF EXISTS tr_audit_erp_supplier_bills ON public.erp_supplier_bills;
 CREATE TRIGGER tr_audit_erp_supplier_bills AFTER INSERT OR UPDATE OR DELETE ON public.erp_supplier_bills FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+
+
+-- Project delivery, compliance control and incident registers.
+CREATE TABLE IF NOT EXISTS public.erp_projects (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), project_no text NOT NULL UNIQUE, project_name text NOT NULL, description text, department text, project_manager text, start_date date, due_date date, budget numeric(14,2) NOT NULL DEFAULT 0 CHECK(budget>=0), status text NOT NULL DEFAULT 'planned', created_at timestamptz NOT NULL DEFAULT now(), CHECK(due_date IS NULL OR start_date IS NULL OR due_date>=start_date));
+CREATE TABLE IF NOT EXISTS public.erp_tasks (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), task_no text NOT NULL UNIQUE, project_id uuid REFERENCES public.erp_projects(id) ON DELETE SET NULL, title text NOT NULL, description text, assigned_to text, priority text NOT NULL DEFAULT 'normal', status text NOT NULL DEFAULT 'open', start_date date, due_date date, completed_at timestamptz, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_compliance_items (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), framework text NOT NULL, control_name text NOT NULL, owner text, risk_level text NOT NULL DEFAULT 'medium', due_date date, last_review_date date, status text NOT NULL DEFAULT 'not_started', evidence_url text, notes text, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_incidents (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), incident_no text NOT NULL UNIQUE, incident_type text NOT NULL, reported_by text NOT NULL, occurred_at timestamptz, severity text NOT NULL DEFAULT 'low', description text NOT NULL, action_taken text, status text NOT NULL DEFAULT 'reported', resolved_at timestamptz, created_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE public.erp_projects ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_tasks ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_compliance_items ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_incidents ENABLE ROW LEVEL SECURITY;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.erp_projects,public.erp_tasks,public.erp_compliance_items,public.erp_incidents TO authenticated;
+DROP POLICY IF EXISTS erp_projects_access ON public.erp_projects;
+CREATE POLICY erp_projects_access ON public.erp_projects FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr'));
+DROP POLICY IF EXISTS erp_tasks_access ON public.erp_tasks;
+CREATE POLICY erp_tasks_access ON public.erp_tasks FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','academic_manager','hr'));
+DROP POLICY IF EXISTS erp_compliance_items_access ON public.erp_compliance_items;
+CREATE POLICY erp_compliance_items_access ON public.erp_compliance_items FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr'));
+DROP POLICY IF EXISTS erp_incidents_access ON public.erp_incidents;
+CREATE POLICY erp_incidents_access ON public.erp_incidents FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','hr','academic_manager')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','hr','academic_manager'));
+CREATE INDEX IF NOT EXISTS erp_projects_due_date_idx ON public.erp_projects(due_date);
+CREATE INDEX IF NOT EXISTS erp_tasks_due_date_idx ON public.erp_tasks(due_date);
+CREATE INDEX IF NOT EXISTS erp_compliance_due_date_idx ON public.erp_compliance_items(due_date);
+CREATE INDEX IF NOT EXISTS erp_incidents_created_at_idx ON public.erp_incidents(created_at DESC);
+DROP TRIGGER IF EXISTS tr_audit_erp_projects ON public.erp_projects;
+CREATE TRIGGER tr_audit_erp_projects AFTER INSERT OR UPDATE OR DELETE ON public.erp_projects FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_tasks ON public.erp_tasks;
+CREATE TRIGGER tr_audit_erp_tasks AFTER INSERT OR UPDATE OR DELETE ON public.erp_tasks FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_compliance_items ON public.erp_compliance_items;
+CREATE TRIGGER tr_audit_erp_compliance_items AFTER INSERT OR UPDATE OR DELETE ON public.erp_compliance_items FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_incidents ON public.erp_incidents;
+CREATE TRIGGER tr_audit_erp_incidents AFTER INSERT OR UPDATE OR DELETE ON public.erp_incidents FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
