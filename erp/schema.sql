@@ -559,3 +559,123 @@ BEGIN
  RETURN v_receipt;
 END $$;
 GRANT EXECUTE ON FUNCTION public.reverse_erp_payment_receipt(uuid,text) TO authenticated;
+
+
+-- Proper double-entry general ledger, trial balance and corporate accounts receivable/payable.
+CREATE TABLE IF NOT EXISTS public.erp_journal_entries (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), journal_no text NOT NULL UNIQUE, entry_date date NOT NULL DEFAULT current_date, description text NOT NULL, status text NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','posted','void')), created_by uuid REFERENCES public.erp_profiles(id), created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS public.erp_journal_lines (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), journal_id uuid NOT NULL REFERENCES public.erp_journal_entries(id) ON DELETE CASCADE, account_code text NOT NULL REFERENCES public.erp_chart_accounts(account_code), description text, debit numeric(14,2) NOT NULL DEFAULT 0 CHECK(debit>=0), credit numeric(14,2) NOT NULL DEFAULT 0 CHECK(credit>=0), created_at timestamptz NOT NULL DEFAULT now(), CHECK ((debit>0 AND credit=0) OR (credit>0 AND debit=0)));
+CREATE TABLE IF NOT EXISTS public.erp_customer_invoices (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), invoice_no text NOT NULL UNIQUE, customer_name text NOT NULL, description text NOT NULL, issue_date date NOT NULL DEFAULT current_date, due_date date, subtotal numeric(14,2) NOT NULL DEFAULT 0 CHECK(subtotal>=0), tax_amount numeric(14,2) NOT NULL DEFAULT 0 CHECK(tax_amount>=0), total_amount numeric(14,2) NOT NULL CHECK(total_amount>=0), amount_paid numeric(14,2) NOT NULL DEFAULT 0 CHECK(amount_paid>=0), status text NOT NULL DEFAULT 'unpaid' CHECK(status IN ('unpaid','partial','paid','overdue','cancelled')), created_at timestamptz NOT NULL DEFAULT now(), CHECK(amount_paid<=total_amount));
+CREATE TABLE IF NOT EXISTS public.erp_supplier_bills (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), bill_no text NOT NULL UNIQUE, supplier_name text NOT NULL, description text NOT NULL, bill_date date NOT NULL DEFAULT current_date, due_date date, subtotal numeric(14,2) NOT NULL DEFAULT 0 CHECK(subtotal>=0), tax_amount numeric(14,2) NOT NULL DEFAULT 0 CHECK(tax_amount>=0), total_amount numeric(14,2) NOT NULL CHECK(total_amount>=0), amount_paid numeric(14,2) NOT NULL DEFAULT 0 CHECK(amount_paid>=0), status text NOT NULL DEFAULT 'unpaid' CHECK(status IN ('unpaid','partial','paid','overdue','cancelled')), created_at timestamptz NOT NULL DEFAULT now(), CHECK(amount_paid<=total_amount));
+ALTER TABLE public.erp_journal_entries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_journal_lines ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_customer_invoices ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.erp_supplier_bills ENABLE ROW LEVEL SECURITY;
+GRANT SELECT,INSERT,UPDATE,DELETE ON public.erp_journal_entries,public.erp_journal_lines,public.erp_customer_invoices,public.erp_supplier_bills TO authenticated;
+DROP POLICY IF EXISTS erp_journal_entries_access ON public.erp_journal_entries;
+CREATE POLICY erp_journal_entries_access ON public.erp_journal_entries FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+DROP POLICY IF EXISTS erp_journal_lines_access ON public.erp_journal_lines;
+CREATE POLICY erp_journal_lines_access ON public.erp_journal_lines FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+DROP POLICY IF EXISTS erp_customer_invoices_access ON public.erp_customer_invoices;
+CREATE POLICY erp_customer_invoices_access ON public.erp_customer_invoices FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance','admissions')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance','admissions'));
+DROP POLICY IF EXISTS erp_supplier_bills_access ON public.erp_supplier_bills;
+CREATE POLICY erp_supplier_bills_access ON public.erp_supplier_bills FOR ALL TO authenticated USING(public.current_erp_role() IN ('super_admin','admin','finance')) WITH CHECK(public.current_erp_role() IN ('super_admin','admin','finance'));
+CREATE INDEX IF NOT EXISTS erp_journal_entries_date_idx ON public.erp_journal_entries(entry_date DESC);
+CREATE INDEX IF NOT EXISTS erp_journal_lines_account_idx ON public.erp_journal_lines(account_code);
+CREATE INDEX IF NOT EXISTS erp_customer_invoices_date_idx ON public.erp_customer_invoices(issue_date DESC);
+CREATE INDEX IF NOT EXISTS erp_supplier_bills_date_idx ON public.erp_supplier_bills(bill_date DESC);
+CREATE OR REPLACE VIEW public.erp_trial_balance WITH (security_invoker=true) AS
+ SELECT a.account_code,a.account_name,a.account_type,
+ coalesce(sum(CASE WHEN j.id IS NOT NULL THEN l.debit ELSE 0 END),0)::numeric(14,2) AS total_debits,
+ coalesce(sum(CASE WHEN j.id IS NOT NULL THEN l.credit ELSE 0 END),0)::numeric(14,2) AS total_credits,
+ (CASE WHEN a.account_type IN ('asset','expense') THEN coalesce(sum(CASE WHEN j.id IS NOT NULL THEN l.debit-l.credit ELSE 0 END),0) ELSE coalesce(sum(CASE WHEN j.id IS NOT NULL THEN l.credit-l.debit ELSE 0 END),0) END)::numeric(14,2) AS balance
+ FROM public.erp_chart_accounts a
+ LEFT JOIN public.erp_journal_lines l ON l.account_code=a.account_code
+ LEFT JOIN public.erp_journal_entries j ON j.id=l.journal_id AND j.status='posted'
+ GROUP BY a.account_code,a.account_name,a.account_type;
+GRANT SELECT ON public.erp_trial_balance TO authenticated;
+
+CREATE OR REPLACE FUNCTION public.post_erp_journal(p_journal_no text,p_entry_date date,p_description text,p_lines jsonb)
+RETURNS public.erp_journal_entries LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_entry public.erp_journal_entries; v_count integer; v_debits numeric(14,2); v_credits numeric(14,2); v_bad integer;
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can post journal entries'; END IF;
+ IF nullif(trim(p_journal_no),'') IS NULL OR nullif(trim(p_description),'') IS NULL THEN RAISE EXCEPTION 'Journal number and description are required'; END IF;
+ IF jsonb_typeof(p_lines)<>'array' THEN RAISE EXCEPTION 'Journal lines must be an array'; END IF;
+ SELECT count(*),coalesce(sum((x->>'debit')::numeric),0),coalesce(sum((x->>'credit')::numeric),0),
+ count(*) FILTER (WHERE nullif(x->>'account_code','') IS NULL OR coalesce((x->>'debit')::numeric,0)<0 OR coalesce((x->>'credit')::numeric,0)<0 OR NOT ((coalesce((x->>'debit')::numeric,0)>0 AND coalesce((x->>'credit')::numeric,0)=0) OR (coalesce((x->>'credit')::numeric,0)>0 AND coalesce((x->>'debit')::numeric,0)=0)))
+ INTO v_count,v_debits,v_credits,v_bad FROM jsonb_array_elements(p_lines) x;
+ IF v_count<2 THEN RAISE EXCEPTION 'A journal needs at least two lines'; END IF;
+ IF v_bad>0 THEN RAISE EXCEPTION 'Every line must have an account and exactly one positive debit or credit'; END IF;
+ IF round(v_debits,2)<>round(v_credits,2) OR v_debits<=0 THEN RAISE EXCEPTION 'Journal is not balanced. Debits: %, Credits: %',v_debits,v_credits; END IF;
+ IF EXISTS(SELECT 1 FROM jsonb_array_elements(p_lines) x LEFT JOIN public.erp_chart_accounts a ON a.account_code=x->>'account_code' AND a.status='active' WHERE a.id IS NULL) THEN RAISE EXCEPTION 'Every journal account must exist and be active in the chart of accounts'; END IF;
+ INSERT INTO public.erp_journal_entries(journal_no,entry_date,description,status,created_by)
+ VALUES(trim(p_journal_no),coalesce(p_entry_date,current_date),trim(p_description),'posted',auth.uid()) RETURNING * INTO v_entry;
+ INSERT INTO public.erp_journal_lines(journal_id,account_code,description,debit,credit)
+ SELECT v_entry.id,x->>'account_code',nullif(x->>'description',''),coalesce((x->>'debit')::numeric,0),coalesce((x->>'credit')::numeric,0) FROM jsonb_array_elements(p_lines) x;
+ RETURN v_entry;
+END $$;
+GRANT EXECUTE ON FUNCTION public.post_erp_journal(text,date,text,jsonb) TO authenticated;
+
+-- Payment receipt allocation supports both student invoices and corporate customer invoices.
+CREATE OR REPLACE FUNCTION public.record_erp_payment_receipt(p_receipt_no text,p_invoice_no text,p_payer_name text,p_payment_date date,p_amount numeric,p_method text,p_reference text DEFAULT NULL)
+RETURNS public.erp_payment_receipts LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_invoice public.erp_invoices; v_customer_invoice public.erp_customer_invoices; v_receipt public.erp_payment_receipts; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance','admissions') THEN RAISE EXCEPTION 'You are not authorised to record payments'; END IF;
+ IF nullif(trim(p_receipt_no),'') IS NULL OR nullif(trim(p_payer_name),'') IS NULL THEN RAISE EXCEPTION 'Receipt number and payer name are required'; END IF;
+ IF p_amount IS NULL OR p_amount<=0 THEN RAISE EXCEPTION 'Payment amount must be greater than zero'; END IF;
+ IF nullif(trim(p_invoice_no),'') IS NOT NULL THEN
+  SELECT * INTO v_invoice FROM public.erp_invoices WHERE invoice_no=trim(p_invoice_no) FOR UPDATE;
+  IF FOUND THEN
+   v_paid:=v_invoice.amount_paid+p_amount;
+   IF v_paid>v_invoice.amount_due THEN RAISE EXCEPTION 'Payment exceeds the invoice balance'; END IF;
+   UPDATE public.erp_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=amount_due THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_invoice.id;
+  ELSE
+   SELECT * INTO v_customer_invoice FROM public.erp_customer_invoices WHERE invoice_no=trim(p_invoice_no) FOR UPDATE;
+   IF NOT FOUND THEN RAISE EXCEPTION 'Invoice not found in student or customer billing'; END IF;
+   v_paid:=v_customer_invoice.amount_paid+p_amount;
+   IF v_paid>v_customer_invoice.total_amount THEN RAISE EXCEPTION 'Payment exceeds the invoice balance'; END IF;
+   UPDATE public.erp_customer_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=total_amount THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_customer_invoice.id;
+  END IF;
+ END IF;
+ INSERT INTO public.erp_payment_receipts(receipt_no,invoice_no,payer_name,payment_date,amount,method,reference,status)
+ VALUES(trim(p_receipt_no),nullif(trim(p_invoice_no),''),trim(p_payer_name),coalesce(p_payment_date,current_date),p_amount,coalesce(nullif(trim(p_method),''),'bank transfer'),p_reference,'recorded') RETURNING * INTO v_receipt;
+ RETURN v_receipt;
+END $$;
+
+CREATE OR REPLACE FUNCTION public.reverse_erp_payment_receipt(p_receipt_id uuid,p_reason text)
+RETURNS public.erp_payment_receipts LANGUAGE plpgsql SECURITY DEFINER SET search_path=public,pg_temp AS $$
+DECLARE v_receipt public.erp_payment_receipts; v_invoice public.erp_invoices; v_customer_invoice public.erp_customer_invoices; v_paid numeric(14,2);
+BEGIN
+ IF public.current_erp_role() NOT IN ('super_admin','admin','finance') THEN RAISE EXCEPTION 'Only Finance or an administrator can reverse a payment receipt'; END IF;
+ IF nullif(trim(p_reason),'') IS NULL THEN RAISE EXCEPTION 'A reversal reason is required'; END IF;
+ SELECT * INTO v_receipt FROM public.erp_payment_receipts WHERE id=p_receipt_id FOR UPDATE;
+ IF v_receipt.id IS NULL THEN RAISE EXCEPTION 'Payment receipt not found'; END IF;
+ IF v_receipt.status<>'recorded' THEN RAISE EXCEPTION 'Only recorded receipts can be reversed'; END IF;
+ IF nullif(trim(v_receipt.invoice_no),'') IS NOT NULL THEN
+  SELECT * INTO v_invoice FROM public.erp_invoices WHERE invoice_no=v_receipt.invoice_no FOR UPDATE;
+  IF FOUND THEN
+   v_paid:=greatest(0,v_invoice.amount_paid-v_receipt.amount);
+   UPDATE public.erp_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=amount_due THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_invoice.id;
+  ELSE
+   SELECT * INTO v_customer_invoice FROM public.erp_customer_invoices WHERE invoice_no=v_receipt.invoice_no FOR UPDATE;
+   IF FOUND THEN
+    v_paid:=greatest(0,v_customer_invoice.amount_paid-v_receipt.amount);
+    UPDATE public.erp_customer_invoices SET amount_paid=v_paid,status=CASE WHEN v_paid>=total_amount THEN 'paid' WHEN v_paid>0 THEN 'partial' ELSE 'unpaid' END WHERE id=v_customer_invoice.id;
+   END IF;
+  END IF;
+ END IF;
+ UPDATE public.erp_payment_receipts SET status='reversed',reversal_reason=trim(p_reason) WHERE id=p_receipt_id RETURNING * INTO v_receipt;
+ RETURN v_receipt;
+END $$;
+GRANT EXECUTE ON FUNCTION public.record_erp_payment_receipt(text,text,text,date,numeric,text,text) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.reverse_erp_payment_receipt(uuid,text) TO authenticated;
+
+DROP TRIGGER IF EXISTS tr_audit_erp_journal_entries ON public.erp_journal_entries;
+CREATE TRIGGER tr_audit_erp_journal_entries AFTER INSERT OR UPDATE OR DELETE ON public.erp_journal_entries FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_journal_lines ON public.erp_journal_lines;
+CREATE TRIGGER tr_audit_erp_journal_lines AFTER INSERT OR UPDATE OR DELETE ON public.erp_journal_lines FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_customer_invoices ON public.erp_customer_invoices;
+CREATE TRIGGER tr_audit_erp_customer_invoices AFTER INSERT OR UPDATE OR DELETE ON public.erp_customer_invoices FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
+DROP TRIGGER IF EXISTS tr_audit_erp_supplier_bills ON public.erp_supplier_bills;
+CREATE TRIGGER tr_audit_erp_supplier_bills AFTER INSERT OR UPDATE OR DELETE ON public.erp_supplier_bills FOR EACH ROW EXECUTE FUNCTION public.log_erp_change();
