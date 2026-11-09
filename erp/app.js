@@ -150,6 +150,7 @@ delete genericModules.peopleops;
 genericModules.accounting.sections[3].readOnly=true;
 genericModules.accounting.sections[3].fields=genericModules.accounting.sections[3].fields.filter(f=>f.name!=="status");
 genericModules.approvals.sections[0].readOnly=true;
+genericModules.approvals.sections[0].fields=genericModules.approvals.sections[0].fields.filter(f=>f.name!=="status");
 genericModules.inventory.sections[1].readOnly=true;
 function exportGenericCsv(key,ix){
  const section=genericModules[key]?.sections[ix];if(!section)return;
