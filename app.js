@@ -174,7 +174,10 @@ $("#logoutBtn").addEventListener("click",async ()=>{
   $("#courseCatalogue")?.classList.remove("hidden");
 });
 
-$("#menuBtn").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+$("#menuBtn").addEventListener("click",()=>setSidebarOpen(!$("#sidebar").classList.contains("open")));
+$("#sidebarCloseBtn")?.addEventListener("click",()=>setSidebarOpen(false));
+$("#sidebarBackdrop")?.addEventListener("click",()=>setSidebarOpen(false));
+document.addEventListener("keydown",event=>{if(event.key==="Escape")setSidebarOpen(false);});
 $("#notificationBtn").addEventListener("click",()=>$("#notificationPanel").classList.toggle("hidden"));
 $("#closeNotif").addEventListener("click",()=>$("#notificationPanel").classList.add("hidden"));
 
@@ -216,7 +219,7 @@ async function openPortal(user){
  $("#courseCatalogue")?.classList.add("hidden");
  $("#userName").textContent=user.name;$("#userRole").textContent=portalRoleLabel(user);
  $("#userAvatar").textContent=initials(user.name);
- await hydratePortalData(user);renderNav();renderNotifications();navigate("dashboard");
+ await hydratePortalData(user);renderNav();setSidebarOpen(false);renderNotifications();navigate("dashboard");
 }
  
 async function hydratePortalData(user){
@@ -298,19 +301,52 @@ async function hydratePortalData(user){
 function studentEnrolments(){ return currentUser?.role==="student" ? (portalState.myEnrolments||[]) : []; }
 function studentCourses(){ return studentEnrolments().map(e=>e.course).filter(Boolean); }
 function emptyState(title,message,action=""){ return `<div class="card" style="text-align:center;padding:34px"><h3>${title}</h3><p class="muted" style="max-width:620px;margin:8px auto 18px">${message}</p>${action}</div>`; }
+function setSidebarOpen(open){
+  const sidebar=$("#sidebar");
+  const backdrop=$("#sidebarBackdrop");
+  if(!sidebar)return;
+  const shouldOpen=Boolean(open)&&window.matchMedia("(max-width: 820px)").matches;
+  sidebar.classList.toggle("open",shouldOpen);
+  if(backdrop)backdrop.classList.toggle("hidden",!shouldOpen);
+  document.body.classList.toggle("sidebar-open",shouldOpen);
+}
+function renderNavigationError(page,error){
+  const content=$("#content");
+  if(!content)return;
+  const detail=String(error&&error.message||error||"Unexpected page error");
+  const safe=detail.replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch]));
+  console.error("ETHAN LEARN page renderer failed:",page,error);
+  content.innerHTML=pageHead("This section could not load","The navigation worked, but this page encountered an error.")+
+    '<div class="card" role="alert"><h3>Page loading problem</h3><p class="muted">Please try this section again. The error details are shown below so the issue can be diagnosed.</p>'+
+    '<p class="lms-error-detail">'+safe+'</p><button type="button" class="primary-btn" onclick="navigate(\''+String(page).replace(/[^a-z-]/g,"")+'\')">Try again</button></div>';
+}
 function renderNav(){
   const role=currentUser.role==="admin"?"admin":currentUser.role;
   const nav=navByRole[role]||navByRole.student;
-  $("#sideNav").innerHTML=nav.map(([id,icon,label])=>`<button class="nav-item" data-page="${id}"><span>${icon}</span><span>${label}</span></button>`).join("");
-  $$("#sideNav .nav-item").forEach(b=>b.addEventListener("click",()=>{navigate(b.dataset.page);$("#sidebar").classList.remove("open")}));
+  $("#sideNav").innerHTML=nav.map(([id,icon,label])=>`<button class="nav-item" type="button" data-page="${id}"><span>${icon}</span><span>${label}</span></button>`).join("");
+  $("#sideNav .nav-item").forEach(button=>button.addEventListener("click",()=>{
+    const target=button.dataset.page;
+    setSidebarOpen(false);
+    navigate(target);
+  }));
 }
 function navigate(page){
   currentPage=page;
-  $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
-  const label=($("#sideNav .nav-item.active span:last-child")||{}).textContent || "Dashboard";
-  $("#pageTitle").textContent=label; $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
+  setSidebarOpen(false);
+  $("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  const activeLabel=$("#sideNav .nav-item.active span:last-child");
+  const label=activeLabel?activeLabel.textContent:"Dashboard";
+  $("#pageTitle").textContent=label;
+  $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
   const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,catalogue:()=>typeof renderCourseCatalogue==="function"?renderCourseCatalogue():renderDashboard(),courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile,"course-upload":renderCourseUpload};
-  (renderers[page]||renderDashboard)();
+  const renderer=renderers[page]||renderDashboard;
+  $("#content").innerHTML='<div class="card page-loading" role="status"><strong>Loading '+String(label).replace(/[&<>]/g,"")+'…</strong><p class="muted">Please wait while this section opens.</p></div>';
+  try{
+    const result=renderer();
+    if(result&&typeof result.then==="function")result.catch(error=>renderNavigationError(page,error));
+  }catch(error){
+    renderNavigationError(page,error);
+  }
 }
 
 function stat(label,value,sub,icon){return `<div class="stat-card"><div class="stat-icon">${icon}</div><div><small class="stat-label">${label}</small><strong class="stat-value">${value}</strong><span class="stat-sub">${sub}</span></div></div>`}
