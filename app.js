@@ -209,10 +209,19 @@ $("#globalSearch").addEventListener("keydown", e=>{
 });
 
 const adminNav = [
-  ["dashboard","▦","Dashboard"],["students","👥","Learners"],["instructors","🧑‍🏫","Instructors"],["staff","🛡","Staff Management"],
-  ["courses","📚","Courses"],["lms","▶","LMS"],["assignments","📝","Assignments"],["quizzes","✅","Quizzes"],
-  ["attendance","📅","Attendance"],["timetable","🕒","Timetable"],["payments","💳","Fees & Payments"],
-  ["results","📊","Results"],["certificates","🎓","Certificates"],["announcements","📣","Announcements"],["reports","📈","Reports"],["settings","⚙","Settings"]
+  ["dashboard","▦","Dashboard"],
+  ["students","👥","Learners"],
+  ["instructors","🧑‍🏫","Instructors"],
+  ["staff","🛡","Staff Management"],
+  ["courses","📚","Courses"],
+  ["lms","▶","Learning Content"],
+  ["assignments","📝","Assignments"],
+  ["quizzes","✅","Quizzes"],
+  ["payments","💳","Course Payments"],
+  ["results","📊","Results"],
+  ["certificates","🎓","Certificates"],
+  ["announcements","📣","Announcements"],
+  ["settings","⚙","Settings"]
 ];
 const navByRole = {
   super_admin: [...adminNav.slice(0,5), ["course-upload","⬆","Upload Course"], ...adminNav.slice(5)],
@@ -222,7 +231,7 @@ const navByRole = {
     ["quizzes","✅","Quizzes & Exams"],["attendance","📅","Attendance"],["results","📊","Results"],["certificates","🎓","Certificates"],["announcements","📣","Announcements"],["profile","👤","Profile"]
   ],
   parent:[
-    ["dashboard","▦","Dashboard"],["students","👥","My Children"],["attendance","📅","Attendance"],["payments","💳","Fees & Payments"],
+    ["dashboard","▦","Dashboard"],["students","👥","My Children"],["attendance","📅","Attendance"],["payments","💳","Course Payments"],
     ["results","📊","Results"],["announcements","📣","Announcements"],["profile","👤","Profile"]
   ],
   instructor:[
@@ -1125,7 +1134,7 @@ function renderPayments(){
  if(currentUser.role==="student"){
    const localPayments=portalState.myPayments?.length ? portalState.myPayments : data.payments.filter(p=>(p.studentId && p.studentId===portalState.myStudent?.id) || (!p.studentId && p.student===currentUser.name));
    const courses=studentCourses();
-   $("#content").innerHTML=pageHead("Fees & Payments","Payment must be verified before course access is allocated.")+`
+   $("#content").innerHTML=pageHead("Course Payments","Payment must be verified before course access is allocated.")+`
      <div class="stats-grid">${stat("Course Access",courses.length?"Active":"Pending",courses.length?"Course allocated":"Awaiting verified payment","🔐")}${stat("Allocated Courses",String(courses.length),"After payment confirmation","📚")}${stat("Recorded Payments",String(localPayments.length),"Your account","💳")}${stat("Learning Access",courses.length?"Open":"Locked",courses.length?"Enrolled":"No enrolment","▶")}</div>
      ${courses.length?emptyState("Payment verified / course allocated","Your approved course access is active. Open My Courses to start learning.",`<button class="primary-btn" onclick="navigate('courses')">Open My Courses</button>`):emptyState("Payment required before allocation","Registering creates your student account only. Make payment through the Academy's approved payment method. Admin will verify it and allocate the course you paid for; only then will lessons/videos open.")}`;
    return;
