@@ -65,6 +65,24 @@ function portalRoleLabel(user){
   return String(user?.role||"student").replaceAll("_"," ").replace(/\b\w/g,m=>m.toUpperCase());
 }
 
+/* Central role gates used by the portal pages.
+   Learners see only their approved enrolments; authorised staff can review
+   the Academy catalogue and Superadmins own privileged upload actions. */
+function isSuperAdmin(){
+  return String(currentUser?.role||"").toLowerCase()==="super_admin";
+}
+function canCreateCourses(){
+  return ["super_admin","admin","instructor"].includes(String(currentUser?.role||"").toLowerCase());
+}
+function canAccessAllCourseMaterials(){
+  return ["super_admin","admin","instructor"].includes(String(currentUser?.role||"").toLowerCase());
+}
+function allAcademyCoursesForStaff(){
+  return (Array.isArray(data.courses)?data.courses:[])
+    .filter(course=>course && course.published!==false)
+    .map(course=>({...course,catalogue:true}));
+}
+
 
 // Staff register a free account first; authorised administrators can promote that account.
 
@@ -332,18 +350,22 @@ function renderNav(){
 }
 function navigate(page){
   currentPage=page;
-  setSidebarOpen(false);
-  $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
-  const activeLabel=$("#sideNav .nav-item.active span:last-child");
-  const label=activeLabel?activeLabel.textContent:"Dashboard";
-  $("#pageTitle").textContent=label;
-  $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
-  const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,catalogue:()=>typeof renderCourseCatalogue==="function"?renderCourseCatalogue():renderDashboard(),courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile,"course-upload":renderCourseUpload};
-  const renderer=renderers[page]||renderDashboard;
-  $("#content").innerHTML='<div class="card page-loading" role="status"><strong>Loading '+String(label).replace(/[&<>]/g,"")+'…</strong><p class="muted">Please wait while this section opens.</p></div>';
   try{
+    setSidebarOpen(false);
+    $("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+    const activeLabel=$("#sideNav .nav-item.active span:last-child");
+    const label=activeLabel?activeLabel.textContent:"Dashboard";
+    $("#pageTitle").textContent=label;
+    $("#pageEyebrow").textContent=portalRoleLabel(currentUser).toUpperCase()+" PORTAL";
+    const renderers={dashboard:renderDashboard,students:renderStudents,parents:renderParents,instructors:renderInstructors,staff:renderStaff,catalogue:()=>typeof renderCourseCatalogue==="function"?renderCourseCatalogue():renderDashboard(),courses:renderCourses,lms:renderLMS,assignments:renderAssignments,quizzes:renderQuizzes,attendance:renderAttendance,timetable:renderTimetable,payments:renderPayments,results:renderResults,certificates:renderCertificates,announcements:renderAnnouncements,reports:renderReports,settings:renderSettings,profile:renderProfile,"course-upload":renderCourseUpload};
+    const renderer=renderers[page]||renderDashboard;
+    const content=$("#content");
+    if(!content)throw new Error("The LMS main content container is missing from the page.");
+    content.innerHTML='<div class="card page-loading" role="status"><strong>Loading '+String(label).replace(/[&<>]/g,"")+'…</strong><p class="muted">Please wait while this section opens.</p></div>';
+    const finish=()=>{if(content.isConnected && content.querySelector(".page-loading"))renderNavigationError(page,new Error("This section did not replace its loading view. Please retry or contact the Academy."));};
     const result=renderer();
-    if(result&&typeof result.then==="function")result.catch(error=>renderNavigationError(page,error));
+    if(result&&typeof result.then==="function")result.then(finish).catch(error=>renderNavigationError(page,error));
+    else finish();
   }catch(error){
     renderNavigationError(page,error);
   }
