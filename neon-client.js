@@ -153,6 +153,20 @@
         if(error)throw error;
         return data;
       },
+      async updateMyProfile(payload={}){
+        const activeSession=await backend.getSession();
+        const userId=activeSession?.user?.id;
+        if(!userId)throw new Error("Your sign-in session has expired. Sign in again.");
+        const firstName=String(payload.firstName||"").trim();
+        const lastName=String(payload.lastName||"").trim();
+        const phone=String(payload.phone||"").trim();
+        if(!firstName||!lastName)throw new Error("Enter both your first name and last name.");
+        const {data,error}=await client.from("profiles").update({
+          first_name:firstName,last_name:lastName,phone:phone||null
+        }).eq("id",userId).select("*").single();
+        if(error)throw error;
+        return data;
+      },
       async listStudents(){
         const {data,error}=await client.from("students").select("*, profiles(*)").order("created_at",{ascending:false});
         if(error)throw error;return data||[];
