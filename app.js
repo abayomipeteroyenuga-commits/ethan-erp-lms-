@@ -324,7 +324,7 @@ function renderNav(){
   const role=currentUser.role==="admin"?"admin":currentUser.role;
   const nav=navByRole[role]||navByRole.student;
   $("#sideNav").innerHTML=nav.map(([id,icon,label])=>`<button class="nav-item" type="button" data-page="${id}"><span>${icon}</span><span>${label}</span></button>`).join("");
-  $("#sideNav .nav-item").forEach(button=>button.addEventListener("click",()=>{
+  $$("#sideNav .nav-item").forEach(button=>button.addEventListener("click",()=>{
     const target=button.dataset.page;
     setSidebarOpen(false);
     navigate(target);
@@ -333,7 +333,7 @@ function renderNav(){
 function navigate(page){
   currentPage=page;
   setSidebarOpen(false);
-  $("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
   const activeLabel=$("#sideNav .nav-item.active span:last-child");
   const label=activeLabel?activeLabel.textContent:"Dashboard";
   $("#pageTitle").textContent=label;
