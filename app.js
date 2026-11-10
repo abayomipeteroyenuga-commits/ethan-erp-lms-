@@ -2008,10 +2008,10 @@ function renderQuizzes(){
         $("#content").innerHTML=pageHead("Quizzes & Examinations","Assess your knowledge in published courses.")+(cards?'<div class="dashboard-grid">'+cards+'</div>':emptyState("No quizzes published yet","Published quizzes from your course instructors will appear here."));
         $$("[data-start-quiz]").forEach(btn=>btn.onclick=()=>startEthanQuiz(btn.dataset.startQuiz));
       }else{
-        const counts=await Promise.all((quizzes||[]).map(async q=>({id:q.id,count:(await backend.listQuizQuestionsForStaff(q.id)).length})));
+        // Render the quiz list without issuing one request per quiz.
+        // Question validation remains on the Publish action, for the selected quiz only.
         const cards=(quizzes||[]).map(q=>{
-          const count=counts.find(x=>x.id===q.id)?.count||0;
-          return '<article class="card"><div class="card-head"><div><small class="eyebrow">'+escHtml(q.course?.title||"Course")+'</small><h3>'+escHtml(q.title)+'</h3></div><span class="badge '+(q.published?"green":"gold")+'">'+(q.published?"Published":"Draft")+'</span></div><p class="muted">'+count+' questions · Pass mark '+Number(q.pass_mark||60)+'% · '+Number(q.attempts_allowed||1)+' attempts</p><div class="course-card-actions"><button class="secondary-btn" data-add-quiz-question="'+q.id+'">Add question</button>'+(q.published?"":'<button class="primary-btn" data-publish-quiz="'+q.id+'" '+(count?"":"disabled")+'>Publish quiz</button>')+'</div></article>';
+          return '<article class="card"><div class="card-head"><div><small class="eyebrow">'+escHtml(q.course?.title||"Course")+'</small><h3>'+escHtml(q.title)+'</h3></div><span class="badge '+(q.published?"green":"gold")+'">'+(q.published?"Published":"Draft")+'</span></div><p class="muted">Question bank · Pass mark '+Number(q.pass_mark||60)+'% · '+Number(q.attempts_allowed||1)+' attempts</p><div class="course-card-actions"><button class="secondary-btn" data-add-quiz-question="'+q.id+'">Manage questions</button>'+(q.published?"":'<button class="primary-btn" data-publish-quiz="'+q.id+'">Publish quiz</button>')+'</div></article>';
         }).join("");
         $("#content").innerHTML=pageHead("Quizzes & Examinations","Create fair assessments and publish them when the question set is ready.")+(cards?'<div class="dashboard-grid">'+cards+'</div>':emptyState("No quizzes created","Create a quiz, add questions and publish it for learners."));
         const create=$("#createQuizBtn");if(create)create.onclick=()=>openCreateQuiz();
