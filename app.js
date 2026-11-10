@@ -1282,6 +1282,93 @@ function renderSettings(){
   };
 }
 
+
+function renderProfile(){
+  const user=currentUser||{};
+  const backendReady=Boolean(window.ETHAN_BACKEND?.ready&&user.id);
+  const accountRole=portalRoleLabel(user);
+  const email=String(user.email||"");
+  $("#content").innerHTML=pageHead("My Profile","Review and update the personal information connected to your ETHAN LEARN account.")+
+    '<div class="settings-layout">'+
+      '<section class="settings-section card" style="padding:24px">'+
+        '<h3>Personal details</h3>'+
+        '<p class="muted">Keep your contact information up to date. Changes are saved to your own learner or staff profile.</p>'+
+        '<div class="grid-2">'+
+          '<label>First name<input id="profileFirstName" type="text" autocomplete="given-name" value="'+escHtml(user.firstName||"")+'"></label>'+
+          '<label>Last name<input id="profileLastName" type="text" autocomplete="family-name" value="'+escHtml(user.lastName||"")+'"></label>'+
+        '</div>'+
+        '<label>Email address<input id="profileEmail" type="email" value="'+escHtml(email)+'" readonly aria-readonly="true"></label>'+
+        '<label>Phone number<input id="profilePhone" type="tel" autocomplete="tel" value="'+escHtml(user.phone||"")+'" placeholder="Enter your phone number"></label>'+
+        '<p class="muted">Your sign-in email and Academy-assigned role cannot be changed from this page.</p>'+
+        '<div id="profileMessage" class="form-message" role="status" aria-live="polite"></div>'+
+        '<button type="button" class="primary-btn" id="saveMyProfile" '+(backendReady?"":"disabled")+'>Save Changes</button>'+
+      '</section>'+
+      '<section class="settings-section card" style="padding:24px">'+
+        '<h3>Account and security</h3>'+
+        '<p><strong>Account type</strong><br>'+escHtml(accountRole)+'</p>'+
+        '<p><strong>Registered email</strong><br>'+escHtml(email||"Not available")+'</p>'+
+        '<p class="muted">For account security, password changes are completed through a secure link sent to your registered email. Your role and access permissions are managed by the Academy.</p>'+
+        '<div id="profileSecurityMessage" class="form-message" role="status" aria-live="polite"></div>'+
+        '<button type="button" class="secondary-btn" id="profileResetPassword" '+(backendReady&&email?"":"disabled")+'>Email Password Reset Link</button>'+
+      '</section>'+
+    '</div>';
+
+  const save=$("#saveMyProfile");
+  const message=$("#profileMessage");
+  if(save)save.onclick=async()=>{
+    const firstName=$("#profileFirstName").value.trim();
+    const lastName=$("#profileLastName").value.trim();
+    const phone=$("#profilePhone").value.trim();
+    if(!firstName||!lastName){
+      message.textContent="Enter both your first name and last name.";
+      message.className="form-message error";
+      return;
+    }
+    save.disabled=true;
+    save.textContent="Saving…";
+    message.textContent="";
+    try{
+      if(!window.ETHAN_BACKEND?.ready)throw new Error("The profile service is unavailable. Refresh the page and try again.");
+      const updated=await window.ETHAN_BACKEND.updateMyProfile({firstName,lastName,phone});
+      currentUser.firstName=updated.first_name||firstName;
+      currentUser.lastName=updated.last_name||lastName;
+      currentUser.phone=updated.phone||phone;
+      currentUser.name=(currentUser.firstName+" "+currentUser.lastName).trim();
+      const name=$("#userName"),avatar=$("#userAvatar");
+      if(name)name.textContent=currentUser.name;
+      if(avatar)avatar.textContent=initials(currentUser.name);
+      message.textContent="Your profile has been updated successfully.";
+      message.className="form-message success";
+    }catch(error){
+      message.textContent=error.message||"Your profile could not be updated. Please try again.";
+      message.className="form-message error";
+    }finally{
+      save.disabled=false;
+      save.textContent="Save Changes";
+    }
+  };
+
+  const reset=$("#profileResetPassword");
+  const securityMessage=$("#profileSecurityMessage");
+  if(reset)reset.onclick=async()=>{
+    reset.disabled=true;
+    reset.textContent="Sending…";
+    securityMessage.textContent="";
+    try{
+      if(!window.ETHAN_BACKEND?.ready)throw new Error("The account security service is unavailable. Refresh and try again.");
+      await window.ETHAN_BACKEND.resetPassword(email);
+      securityMessage.textContent="A password reset link has been sent to "+email+". Check your inbox.";
+      securityMessage.className="form-message success";
+    }catch(error){
+      securityMessage.textContent=error.message||"The password reset email could not be sent.";
+      securityMessage.className="form-message error";
+    }finally{
+      reset.disabled=false;
+      reset.textContent="Email Password Reset Link";
+    }
+  };
+}
+
 function renderNotifications(){
   const items=Array.isArray(data.notifications)?data.notifications:[];
   $("#notificationList").innerHTML=items.length
