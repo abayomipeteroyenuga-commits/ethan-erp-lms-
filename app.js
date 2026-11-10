@@ -1946,30 +1946,277 @@ onDocumentReady(()=>{
  if(s)s.addEventListener("change",()=>{const c=ETHAN_PUBLIC_COURSES[Number(s.value)],p=document.getElementById("courseBriefPrice");if(c&&p)p.textContent=formatCoursePrice(c.feeNGN);});
 });
 
-/* v9.1 approved bank payment page */
-function renderPayments(){
- if(currentUser.role==="student"){
-   const courses=studentCourses();
-   $("#content").innerHTML=pageHead("Payments & Course Requests","Your learner account is free. Each professional course is paid for and approved separately.")+
-     `<div class="stats-grid">${stat("Account Fee","FREE","Register at no cost","✓")}${stat("My Courses",String(courses.length),"Only approved enrolments","📚")}${stat("Payment Requests",String(portalState.myCourseRequests?.filter(r=>r.status==="pending").length||0),"Awaiting Superadmin review","⏳")}${stat("Learning Access",courses.length?"Active":"Locked",courses.length?"Approved courses only":"After verification","🔐")}</div>`+
-     emptyState("No course fee is charged for registration","Choose a professional course, pay its listed fee and submit your payment reference. Only the Superadmin can verify the payment and unlock the course.",`<button class="primary-btn" onclick="navigate('catalogue')">Browse Course Catalogue</button>`);
-   return;
- }
- if(!["admin","super_admin"].includes(currentUser.role)){
-   $("#content").innerHTML=pageHead("Payments","Payment information.")+approvedBankPaymentHtml();
-   return;
- }
- const rows=(data.payments||[]).map(p=>[
-   escHtml(p.student||p.student_name||p.student_id||"Learner"),
-   escHtml(String(p.amount||"")),
-   statusBadge(p.status||"pending"),
-   escHtml(p.description||p.reference||"Course payment")
- ]);
- $("#content").innerHTML=pageHead("Finance Records","Manage optional academy payment records. These records do not control free course access.")+
-   approvedBankPaymentHtml()+
-   `<section class="payment-history-section"><div class="student-section-head"><div><span class="eyebrow">ADMINISTRATION</span><h2>Payment Records</h2></div></div>
-   ${rows.length?table(["Learner","Amount","Status","Description"],rows):emptyState("No payment records","Verified and pending payment records will appear here.")}</section>`;
+/* v11.0 bank-transfer finance and admin verification */
+
+function financeFormatNaira(value){
+  return new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(Number(value||0));
 }
+function financeStatusBadge(status){
+  const value=String(status||"pending").toLowerCase();
+  const css=value==="approved"?"green":value==="rejected"?"red":"gold";
+  const label=value.charAt(0).toUpperCase()+value.slice(1);
+  return '<span class="badge '+css+'">'+escHtml(label)+'</span>';
+}
+function financeAccountMarkup(accounts){
+  if(!accounts.length)return emptyState("Bank accounts are not available yet","The Academy finance administrator must add the official company bank account details before learners can submit a bank-transfer request.");
+  return '<div class="approved-bank-grid">'+accounts.map(account=>
+    '<article class="approved-bank card"><small class="eyebrow">'+escHtml(account.currency||"NGN")+' BANK TRANSFER</small>'+
+    '<strong>'+escHtml(account.bank_name)+'</strong>'+
+    '<div class="muted">Account name</div><p><b>'+escHtml(account.account_name)+'</b></p>'+
+    '<div class="muted">Account number</div><div class="bank-account-number">'+escHtml(account.account_number)+'</div>'+
+    (account.instructions?'<p class="muted">'+escHtml(account.instructions)+'</p>':"")+
+    '<button type="button" class="secondary-btn" data-copy-bank="'+escHtml(account.id)+'">Copy account number</button></article>'
+  ).join("")+'</div>';
+}
+function financeRequestStatusText(request){
+  if(request.status==="approved")return "Payment verified. Course access has been activated.";
+  if(request.status==="rejected")return request.admin_note||"This request was declined. Contact the Academy finance team before paying again.";
+  return "Submitted and awaiting an administrator review.";
+}
+async function renderStudentFinance(){
+  const backend=window.ETHAN_BACKEND;
+  const student=portalState.myStudent||await backend.getStudentByUserId(currentUser.id);
+  if(!student){
+    $("#content").innerHTML=pageHead("Course Payments","Make a bank transfer for a course and request access.")+
+      emptyState("Learner profile not found","Please sign out and sign in again. Contact the Academy if this message continues.");
+    return;
+  }
+  portalState.myStudent=student;
+  const [allCourses,requests,accounts]=await Promise.all([
+    backend.listCourses(),
+    backend.listMyCourseAccessRequests(student.id),
+    backend.listPaymentBankAccounts()
+  ]);
+  portalState.myCourseRequests=requests||[];
+  const activeCourses=studentCourses();
+  const activeIds=new Set(activeCourses.map(c=>c.id));
+  const pendingIds=new Set((requests||[]).filter(r=>r.status==="pending"||r.status==="approved").map(r=>r.course_id));
+  const payable=(allCourses||[]).filter(c=>c.published===true&&Number(c.fee||0)>0&&!activeIds.has(c.id)&&!pendingIds.has(c.id));
+  const requestRows=(requests||[]).map(r=>{
+    const bank=r.bank_account;
+    const accountLabel=bank?[bank.bank_name,bank.account_name,bank.account_number].filter(Boolean).join(" · "):"Bank details not retained";
+    return '<tr><td><b>'+escHtml(r.course?.title||"Course")+'</b><br><small>'+escHtml(r.course?.code||"")+'</small></td>'+
+      '<td>'+financeFormatNaira(r.amount)+'</td><td>'+escHtml(r.payment_reference)+'</td>'+
+      '<td>'+escHtml(r.payment_date||"—")+'</td><td>'+financeStatusBadge(r.status)+'</td>'+
+      '<td><small>'+escHtml(accountLabel)+'</small><br><small class="muted">'+escHtml(financeRequestStatusText(r))+'</small></td></tr>';
+  }).join("");
+  const courseOptions=payable.map(c=>'<option value="'+escHtml(c.id)+'" data-fee="'+Number(c.fee||0)+'">'+escHtml(c.title)+' — '+financeFormatNaira(c.fee)+'</option>').join("");
+  $("#content").innerHTML=pageHead("Course Payments","Pay the listed course fee into an official Academy account, then submit your transfer reference for verification.")+
+    '<div class="stats-grid">'+
+      stat("Registration","FREE","No fee to create a learner account","✓")+
+      stat("Approved Courses",String(activeCourses.length),"Learning access already granted","📚")+
+      stat("Pending Requests",String((requests||[]).filter(r=>r.status==="pending").length),"Awaiting payment review","⏳")+
+      stat("Available Accounts",String(accounts.length),"Official transfer destinations","🏦")+
+    '</div>'+
+    '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">STEP 1</span><h2>Pay into an Academy account</h2><p>Use one of the active company bank accounts below. Confirm the account name before transferring.</p></div></div>'+
+      financeAccountMarkup(accounts)+
+    '</section>'+
+    '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">STEP 2</span><h2>Submit your transfer</h2><p>Enter the exact amount and transaction reference from your bank receipt.</p></div></div>'+
+      (payable.length&&accounts.length?
+      '<form id="courseTransferForm" class="card" style="padding:24px">'+
+        '<div class="grid-2"><label>Course<select id="financeCourseId" required><option value="">Choose a paid course</option>'+courseOptions+'</select></label>'+
+          '<label>Course fee<input id="financeCourseFee" value="" readonly placeholder="Select a course"></label></div>'+
+        '<label>Account paid into<select id="financeBankAccountId" required><option value="">Choose bank account</option>'+accounts.map(a=>'<option value="'+escHtml(a.id)+'">'+escHtml(a.bank_name)+' · '+escHtml(a.account_number)+'</option>').join("")+'</select></label>'+
+        '<div class="grid-2"><label>Bank transaction reference<input id="financePaymentReference" required maxlength="160" placeholder="Reference shown on your bank receipt"></label>'+
+          '<label>Transfer date<input id="financePaymentDate" type="date" required value="'+new Date().toISOString().slice(0,10)+'"></label></div>'+
+        '<label>Additional note (optional)<textarea id="financePaymentNote" rows="3" maxlength="500" placeholder="Payer name or other helpful payment detail"></textarea></label>'+
+        '<div id="financeTransferMessage" class="form-message" role="status" aria-live="polite"></div>'+
+        '<button type="submit" class="primary-btn" id="submitCourseTransfer">Submit for Verification</button>'+
+        '<p class="muted">Submitting a request does not unlock the course. An Admin or Super Admin must confirm that the money has arrived in the Academy account.</p>'+
+      '</form>':
+      emptyState(!accounts.length?"Bank accounts are being configured":"No paid courses available","You can submit a transfer request here when an active bank account and an eligible published paid course are available."))+
+    '</section>'+
+    '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">STEP 3</span><h2>My payment requests</h2><p>Track every course transfer you have submitted.</p></div><button type="button" class="secondary-btn" id="refreshMyPayments">Refresh</button></div>'+
+      (requestRows?'<div class="card table-wrap"><table class="data-table"><thead><tr><th>Course</th><th>Amount</th><th>Transfer reference</th><th>Date paid</th><th>Status</th><th>Review</th></tr></thead><tbody>'+requestRows+'</tbody></table></div>':emptyState("No transfer requests yet","After making a course payment, submit the bank reference above. The Academy will review it here."))+
+    '</section>';
+
+  const courseSelect=$("#financeCourseId"),feeField=$("#financeCourseFee");
+  if(courseSelect&&feeField)courseSelect.addEventListener("change",()=>{
+    const option=courseSelect.selectedOptions[0];
+    feeField.value=option?.dataset?.fee?financeFormatNaira(option.dataset.fee):"";
+  });
+  const form=$("#courseTransferForm");
+  if(form)form.addEventListener("submit",async event=>{
+    event.preventDefault();
+    const courseId=courseSelect.value;
+    const course=payable.find(c=>c.id===courseId);
+    const bankAccountId=$("#financeBankAccountId").value;
+    const paymentReference=$("#financePaymentReference").value.trim();
+    const paymentDate=$("#financePaymentDate").value;
+    const note=$("#financePaymentNote").value.trim();
+    const message=$("#financeTransferMessage"),submit=$("#submitCourseTransfer");
+    if(!course||!bankAccountId||!paymentReference||!paymentDate){
+      message.textContent="Choose a course and bank account, then enter your transfer reference and payment date.";
+      message.className="form-message error";return;
+    }
+    submit.disabled=true;submit.textContent="Submitting…";message.textContent="";
+    try{
+      await backend.createCourseAccessRequest({
+        studentId:student.id,courseId:course.id,amount:Number(course.fee),
+        paymentReference,paymentDate,paymentMethod:"bank_transfer",
+        bankAccountId,notes:note
+      });
+      message.textContent="Your payment request has been submitted. Course access will remain locked until an administrator verifies the transfer.";
+      message.className="form-message success";
+      await renderStudentFinance();
+    }catch(error){
+      message.textContent=error.message||"The payment request could not be submitted.";
+      message.className="form-message error";
+    }finally{
+      const button=$("#submitCourseTransfer");
+      if(button){button.disabled=false;button.textContent="Submit for Verification";}
+    }
+  });
+  $("#refreshMyPayments").onclick=()=>renderStudentFinance();
+  $$("[data-copy-bank]").forEach(button=>button.addEventListener("click",async()=>{
+    const account=accounts.find(a=>a.id===button.dataset.copyBank);
+    if(!account)return;
+    try{
+      await navigator.clipboard.writeText(String(account.account_number));
+      button.textContent="Copied";
+      setTimeout(()=>{if(button.isConnected)button.textContent="Copy account number";},1600);
+    }catch(_){
+      alert("Copy is unavailable in this browser. Please select the account number and copy it manually.");
+    }
+  }));
+}
+async function renderAdminFinance(){
+  const backend=window.ETHAN_BACKEND;
+  const [requests,accounts]=await Promise.all([
+    backend.listCourseAccessRequests(),
+    backend.listPaymentBankAccounts()
+  ]);
+  const pending=requests.filter(r=>r.status==="pending");
+  const approved=requests.filter(r=>r.status==="approved");
+  const rejected=requests.filter(r=>r.status==="rejected");
+  const accountRows=accounts.map(a=>'<tr><td><b>'+escHtml(a.bank_name)+'</b></td><td>'+escHtml(a.account_name)+'</td><td>'+escHtml(a.account_number)+'</td><td>'+escHtml(a.currency||"NGN")+'</td><td>'+financeStatusBadge(a.is_active?"active":"inactive")+'</td><td><button type="button" class="secondary-btn" data-toggle-bank="'+escHtml(a.id)+'" data-active="'+String(Boolean(a.is_active))+'">'+(a.is_active?"Deactivate":"Activate")+'</button></td></tr>').join("");
+  const requestRows=requests.map(r=>{
+    const student=r.student?.profiles||{};
+    const studentName=[student.first_name,student.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
+    const bank=r.bank_account||{};
+    const actions=r.status==="pending"?
+      '<div class="study-actions"><button type="button" class="primary-btn" data-approve-access="'+escHtml(r.id)+'">Verify & Approve</button><button type="button" class="danger-btn" data-reject-access="'+escHtml(r.id)+'">Reject</button></div>':
+      '<span class="muted">Reviewed '+escHtml(r.reviewed_at?new Date(r.reviewed_at).toLocaleString():"")+'</span>';
+    return '<tr><td><b>'+escHtml(studentName)+'</b><br><small>'+escHtml(student.email||"")+'</small><br><small>'+escHtml(r.student?.student_no||"")+'</small></td>'+
+      '<td><b>'+escHtml(r.course?.title||"Course")+'</b><br><small>'+escHtml(r.course?.code||"")+'</small></td>'+
+      '<td><b>'+financeFormatNaira(r.amount)+'</b></td><td>'+escHtml(r.payment_reference)+'</td>'+
+      '<td>'+escHtml(r.payment_date||"—")+'</td>'+
+      '<td>'+escHtml([bank.bank_name,bank.account_number].filter(Boolean).join(" · ")||"Not recorded")+'</td>'+
+      '<td>'+financeStatusBadge(r.status)+(r.admin_note?'<br><small>'+escHtml(r.admin_note)+'</small>':"")+'</td><td>'+actions+'</td></tr>';
+  }).join("");
+  $("#content").innerHTML=pageHead("Finance & Payment Verification","Maintain company bank accounts, review learner transfer references, and grant course access only after confirming receipt.")+
+    '<div class="stats-grid">'+
+      stat("Awaiting Verification",String(pending.length),"Transfer requests to review","⏳")+
+      stat("Approved Requests",String(approved.length),"Payments verified and access granted","✓")+
+      stat("Rejected Requests",String(rejected.length),"Requests declined","✕")+
+      stat("Active Bank Accounts",String(accounts.filter(a=>a.is_active).length),"Shown to learners","🏦")+
+    '</div>'+
+    '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">COMPANY PAYMENT DETAILS</span><h2>Official Bank Accounts</h2><p>Only Admin and Super Admin can add or deactivate payment destinations.</p></div></div>'+
+      '<form id="financeBankAccountForm" class="card" style="padding:22px">'+
+        '<div class="grid-2"><label>Bank name<input id="newFinanceBankName" required maxlength="100" placeholder="e.g. Access Bank"></label>'+
+          '<label>Account name<input id="newFinanceAccountName" required maxlength="160" placeholder="Registered company account name"></label></div>'+
+        '<div class="grid-2"><label>Account number<input id="newFinanceAccountNumber" required maxlength="30" inputmode="numeric" placeholder="Company account number"></label>'+
+          '<label>Currency<select id="newFinanceCurrency"><option value="NGN">NGN — Nigerian Naira</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — Pound Sterling</option></select></label></div>'+
+        '<label>Payment instruction (optional)<input id="newFinanceAccountInstructions" maxlength="240" placeholder="e.g. Use your full name as transfer narration"></label>'+
+        '<div id="financeBankAccountMessage" class="form-message" role="status" aria-live="polite"></div>'+
+        '<button type="submit" class="primary-btn" id="saveFinanceBankAccount">Add Company Account</button>'+
+      '</form>'+
+      (accountRows?'<div class="card table-wrap"><table class="data-table"><thead><tr><th>Bank</th><th>Account name</th><th>Account number</th><th>Currency</th><th>Status</th><th>Action</th></tr></thead><tbody>'+accountRows+'</tbody></table></div>':emptyState("No company accounts added","Enter the official Academy account details above. Active accounts are immediately displayed to learners."))+
+    '</section>'+
+    '<section class="student-section"><div class="student-section-head"><div><span class="eyebrow">PAYMENT CONTROL</span><h2>Course Transfer Requests</h2><p>Check the actual bank statement before approving. Approval automatically records the payment and unlocks the paid course.</p></div><button type="button" class="secondary-btn" id="refreshFinanceQueue">Refresh Queue</button></div>'+
+      (requestRows?'<div class="card table-wrap"><table class="data-table"><thead><tr><th>Learner</th><th>Course</th><th>Amount</th><th>Transfer reference</th><th>Date paid</th><th>Paid into</th><th>Status</th><th>Review action</th></tr></thead><tbody>'+requestRows+'</tbody></table></div>':emptyState("No course payment requests yet","Learner bank-transfer submissions will appear here for verification."))+
+    '</section>';
+
+  $("#financeBankAccountForm").addEventListener("submit",async event=>{
+    event.preventDefault();
+    const button=$("#saveFinanceBankAccount"),message=$("#financeBankAccountMessage");
+    const bankName=$("#newFinanceBankName").value.trim();
+    const accountName=$("#newFinanceAccountName").value.trim();
+    const accountNumber=$("#newFinanceAccountNumber").value.trim();
+    const currency=$("#newFinanceCurrency").value;
+    const instructions=$("#newFinanceAccountInstructions").value.trim();
+    if(!bankName||!accountName||!accountNumber){
+      message.textContent="Enter the bank name, registered account name and account number.";
+      message.className="form-message error";return;
+    }
+    button.disabled=true;button.textContent="Saving…";
+    try{
+      await backend.createPaymentBankAccount({
+        bank_name:bankName,account_name:accountName,account_number:accountNumber,
+        currency,instructions:instructions||null,is_active:true,display_order:accounts.length,
+        created_by:currentUser.id
+      });
+      await renderAdminFinance();
+    }catch(error){
+      message.textContent=error.message||"The company bank account could not be saved.";
+      message.className="form-message error";
+      button.disabled=false;button.textContent="Add Company Account";
+    }
+  });
+  $$("[data-toggle-bank]").forEach(button=>button.addEventListener("click",async()=>{
+    const active=button.dataset.active==="true";
+    if(!confirm((active?"Deactivate":"Activate")+" this company bank account?"))return;
+    button.disabled=true;
+    try{
+      await backend.updatePaymentBankAccount(button.dataset.toggleBank,{is_active:!active});
+      await renderAdminFinance();
+    }catch(error){
+      alert(error.message||"The account status could not be changed.");
+      button.disabled=false;
+    }
+  }));
+  $$("[data-approve-access]").forEach(button=>button.addEventListener("click",async()=>{
+    const request=requests.find(r=>r.id===button.dataset.approveAccess);
+    if(!request)return;
+    const who=[request.student?.profiles?.first_name,request.student?.profiles?.last_name].filter(Boolean).join(" ")||"this learner";
+    if(!confirm("Confirm that "+who+"'s transfer has arrived in the Academy bank account? Approval will record the verified payment and unlock "+(request.course?.title||"the course")+"."))
+      return;
+    button.disabled=true;button.textContent="Verifying…";
+    try{
+      await backend.approveCourseAccessRequest(request.id,"Verified by "+(currentUser.name||"Academy Admin"));
+      await renderAdminFinance();
+    }catch(error){
+      alert(error.message||"The payment could not be verified. Check the request and bank statement.");
+      button.disabled=false;button.textContent="Verify & Approve";
+    }
+  }));
+  $$("[data-reject-access]").forEach(button=>button.addEventListener("click",async()=>{
+    const request=requests.find(r=>r.id===button.dataset.rejectAccess);
+    if(!request)return;
+    const reason=prompt("Enter a reason for rejecting this payment request:");
+    if(reason===null)return;
+    button.disabled=true;button.textContent="Rejecting…";
+    try{
+      await backend.rejectCourseAccessRequest(request.id,reason.trim()||"Payment could not be confirmed.");
+      await renderAdminFinance();
+    }catch(error){
+      alert(error.message||"The request could not be rejected.");
+      button.disabled=false;button.textContent="Reject";
+    }
+  }));
+  $("#refreshFinanceQueue").onclick=()=>renderAdminFinance();
+}
+async function renderPayments(){
+  const backend=window.ETHAN_BACKEND;
+  if(!backend?.ready){
+    $("#content").innerHTML=pageHead("Finance","Your finance service is unavailable.")+
+      emptyState("Finance service unavailable",backend?.error||"Refresh the page and try again.");
+    return;
+  }
+  $("#content").innerHTML=pageHead("Finance","Loading payments and company bank accounts…")+
+    '<div class="card"><p class="muted">Loading finance records…</p></div>';
+  try{
+    if(currentUser?.role==="student")return await renderStudentFinance();
+    if(["admin","super_admin"].includes(currentUser?.role||""))return await renderAdminFinance();
+    $("#content").innerHTML=pageHead("Finance","Payment information.")+
+      emptyState("Access restricted","Your account does not have permission to view this finance section.");
+  }catch(error){
+    $("#content").innerHTML=pageHead("Finance","The finance section could not be loaded.")+
+      emptyState("Finance service unavailable",error.message||"Refresh the page and try again.");
+  }
+}
+
+
 
 
 /* ETHAN LEARN learner-experience and assessment release */
