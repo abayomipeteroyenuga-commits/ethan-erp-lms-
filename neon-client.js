@@ -209,15 +209,30 @@
         const {data,error}=await client.from("payments").insert(payload).select().single();
         if(error)throw error;return data;
       },
+      async listPaymentBankAccounts(){
+        const {data,error}=await client.from("payment_bank_accounts")
+          .select("id,bank_name,account_name,account_number,currency,instructions,is_active,display_order")
+          .order("display_order",{ascending:true}).order("created_at",{ascending:true});
+        if(error)throw error;return data||[];
+      },
+      async createPaymentBankAccount(payload){
+        const {data,error}=await client.from("payment_bank_accounts").insert(payload).select().single();
+        if(error)throw error;return data;
+      },
+      async updatePaymentBankAccount(accountId,payload){
+        const {data,error}=await client.from("payment_bank_accounts")
+          .update({...payload,updated_at:new Date().toISOString()}).eq("id",accountId).select().single();
+        if(error)throw error;return data;
+      },
       async listMyCourseAccessRequests(studentId){
         const {data,error}=await client.from("course_access_requests")
-          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,notes,status,submitted_at,reviewed_at,admin_note,course:courses(id,code,title,fee)")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_at,admin_note,course:courses(id,code,title,fee),bank_account:payment_bank_accounts(id,bank_name,account_name,account_number,currency)")
           .eq("student_id",studentId).order("submitted_at",{ascending:false});
         if(error)throw error;return data||[];
       },
       async listCourseAccessRequests(){
         const {data,error}=await client.from("course_access_requests")
-          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,notes,status,submitted_at,reviewed_by,reviewed_at,admin_note,payment_id,course:courses(id,code,title,fee),student:students(id,student_no,profiles(first_name,last_name,email,phone))")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_by,reviewed_at,admin_note,payment_id,course:courses(id,code,title,fee),student:students(id,student_no,profiles(first_name,last_name,email,phone)),bank_account:payment_bank_accounts(id,bank_name,account_name,account_number,currency)")
           .order("submitted_at",{ascending:false});
         if(error)throw error;return data||[];
       },
@@ -225,7 +240,7 @@
         const {data,error}=await client.from("course_access_requests").insert({
           student_id:payload.studentId,course_id:payload.courseId,amount:Number(payload.amount),
           payment_reference:String(payload.paymentReference||"").trim(),
-          payment_method:payload.paymentMethod||"bank_transfer",payment_date:payload.paymentDate,
+          payment_method:payload.paymentMethod||"bank_transfer",payment_date:payload.paymentDate,bank_account_id:payload.bankAccountId||null,
           notes:String(payload.notes||"").trim()||null,status:"pending"
         }).select().single();
         if(error)throw error;return data;
