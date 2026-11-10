@@ -226,13 +226,13 @@
       },
       async listMyCourseAccessRequests(studentId){
         const {data,error}=await client.from("course_access_requests")
-          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_at,admin_note,course:courses(id,code,title,fee),bank_account:payment_bank_accounts(id,bank_name,account_name,account_number,currency)")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_at,admin_note,course:courses(id,code,title,fee)")
           .eq("student_id",studentId).order("submitted_at",{ascending:false});
         if(error)throw error;return data||[];
       },
       async listCourseAccessRequests(){
         const {data,error}=await client.from("course_access_requests")
-          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_by,reviewed_at,admin_note,payment_id,course:courses(id,code,title,fee),student:students(id,student_no,profiles(first_name,last_name,email,phone)),bank_account:payment_bank_accounts(id,bank_name,account_name,account_number,currency)")
+          .select("id,student_id,course_id,amount,payment_reference,payment_method,payment_date,bank_account_id,notes,status,submitted_at,reviewed_by,reviewed_at,admin_note,payment_id,course:courses(id,code,title,fee),student:students(id,student_no,profiles(first_name,last_name,email,phone))")
           .order("submitted_at",{ascending:false});
         if(error)throw error;return data||[];
       },
