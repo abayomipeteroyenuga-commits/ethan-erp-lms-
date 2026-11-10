@@ -1993,7 +1993,7 @@ async function renderStudentFinance(){
   const pendingIds=new Set((requests||[]).filter(r=>r.status==="pending"||r.status==="approved").map(r=>r.course_id));
   const payable=(allCourses||[]).filter(c=>c.published===true&&Number(c.fee||0)>0&&!activeIds.has(c.id)&&!pendingIds.has(c.id));
   const requestRows=(requests||[]).map(r=>{
-    const bank=r.bank_account;
+    const bank=accounts.find(a=>a.id===r.bank_account_id);
     const accountLabel=bank?[bank.bank_name,bank.account_name,bank.account_number].filter(Boolean).join(" · "):"Bank details not retained";
     return '<tr><td><b>'+escHtml(r.course?.title||"Course")+'</b><br><small>'+escHtml(r.course?.code||"")+'</small></td>'+
       '<td>'+financeFormatNaira(r.amount)+'</td><td>'+escHtml(r.payment_reference)+'</td>'+
@@ -2093,7 +2093,7 @@ async function renderAdminFinance(){
   const requestRows=requests.map(r=>{
     const student=r.student?.profiles||{};
     const studentName=[student.first_name,student.last_name].filter(Boolean).join(" ")||r.student?.student_no||"Learner";
-    const bank=r.bank_account||{};
+    const bank=accounts.find(a=>a.id===r.bank_account_id)||{};
     const actions=r.status==="pending"?
       '<div class="study-actions"><button type="button" class="primary-btn" data-approve-access="'+escHtml(r.id)+'">Verify & Approve</button><button type="button" class="danger-btn" data-reject-access="'+escHtml(r.id)+'">Reject</button></div>':
       '<span class="muted">Reviewed '+escHtml(r.reviewed_at?new Date(r.reviewed_at).toLocaleString():"")+'</span>';
