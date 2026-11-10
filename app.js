@@ -361,7 +361,7 @@ function navigate(page){
   currentPage=page;
   try{
     setSidebarOpen(false);
-    $("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+    $$("#sideNav .nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
     const activeLabel=$("#sideNav .nav-item.active span:last-child");
     const label=activeLabel?activeLabel.textContent:"Dashboard";
     $("#pageTitle").textContent=label;
