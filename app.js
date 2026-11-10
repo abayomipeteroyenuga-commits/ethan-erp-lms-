@@ -384,35 +384,78 @@ function stat(label,value,sub,icon){return `<div class="stat-card"><div class="s
 function pageHead(title,desc,action=""){return `<div class="page-title-block"><div class="toolbar"><div><h1>${title}</h1><p class="muted">${desc}</p></div>${action}</div></div>`}
 
 function renderDashboard(){
-  const role=currentUser.role;
-  if(role==="admin" || role==="super_admin"){
-    $("#content").innerHTML=`
-      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">ACADEMY OVERVIEW</span><h1>Welcome back, ${currentUser.firstName}</h1><p>Manage learners, courses, finance and academic operations from one place.</p></div><div class="hero-actions"><button class="secondary-btn" onclick="navigate('students')">Manage Students</button><button class="secondary-btn" onclick="navigate('courses')">Manage Courses</button></div></div>
-      <div class="stats-grid">${stat("Total Students",data.students.length,"Active learner records","👥")}${stat("Active Courses",data.courses.length,"Published catalogue","📚")}${stat("Instructors",data.instructors.length,"Teaching staff","🧑‍🏫")}${stat("Payments","₦175,000","Recent confirmed","💳")}</div>
-      <div class="dashboard-grid">
-        <div class="card"><div class="card-head"><h3>Student Progress</h3><button class="text-btn" onclick="navigate('students')">View students</button></div><div class="progress-list">${data.students.map(s=>`<div class="progress-row"><div class="progress-top"><strong>${s.name}</strong><span>${s.progress}%</span></div><small class="muted">${s.program}</small><div class="progress"><span style="width:${s.progress}%"></span></div></div>`).join("")}</div></div>
-        <div class="card"><div class="card-head"><h3>Quick Actions</h3></div><div class="quick-grid">${[["Add Student","students"],["Create Course","courses"],["Record Payment","payments"],["Mark Attendance","attendance"],["Publish Result","results"],["Issue Certificate","certificates"]].map(([a,p])=>`<div class="quick-card" onclick="navigate('${p}')"><strong>${a}</strong><p class="muted">Open module</p></div>`).join("")}</div></div>
-      </div>`;
-  } else if(role==="student"){
-    const courses=studentCourses();
-    const average=courses.length?Math.round(courses.reduce((n,c)=>n+Number(c.progress||0),0)/courses.length):0;
-    $("#content").innerHTML=`
-      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">STUDENT PORTAL</span><h1>Welcome back, ${currentUser.firstName}</h1><p>${courses.length?"Your approved course access is active. Continue learning below.":"Your account is ready. Choose a course, make payment and submit the transfer reference for Superadmin approval."}</p></div><button class="secondary-btn" onclick="navigate('${courses.length?"lms":"catalogue"}')">${courses.length?"Continue Learning":"Browse Course Catalogue"}</button></div>
-      <div class="stats-grid">${stat("My Courses",String(courses.length),courses.length?"Allocated courses":"Courses available","📚")}${stat("Average Progress",average+"%",courses.length?"Across allocated courses":"Starts after allocation","📈")}${stat("Assignments","0",courses.length?"Published assignments appear here":"No active course","📝")}${stat("Certificates","0","Issued after successful completion","🎓")}</div>
-      ${courses.length?`<div class="card"><div class="card-head"><h3>My Course Progress</h3></div><div class="progress-list">${courses.map(c=>`<div class="progress-row"><div class="progress-top"><strong>${c.title}</strong><span>${Number(c.progress||0)}%</span></div><small class="muted">${c.duration||"Self-paced"}</small><div class="progress"><span style="width:${Number(c.progress||0)}%"></span></div></div>`).join("")}</div></div>`:emptyState("Choose a course to get started","Your learner account is free. Course lessons and assessments unlock only after the Superadmin verifies payment for the selected course.",`<button class="primary-btn" onclick="navigate('catalogue')">Browse Course Catalogue</button>`)}`;
-  } else if(role==="parent"){
-    $("#content").innerHTML=`
-      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">PARENT PORTAL</span><h1>Welcome, ${currentUser.firstName}</h1><p>Follow your child's learning progress, attendance, results and fees.</p></div></div>
-      <div class="stats-grid">${stat("Linked Children","1","Student account","👥")}${stat("Attendance","94%","This month","📅")}${stat("Overall Progress","72%","Current term","📈")}${stat("Outstanding","₦35,000","Fee balance","💳")}</div>
-      ${studentTable(data.students.slice(0,1))}`;
-  } else {
-    $("#content").innerHTML=`
-      <div class="hero-card"><div><span class="eyebrow" style="color:#a9cfff">INSTRUCTOR PORTAL</span><h1>Welcome, ${currentUser.firstName}</h1><p>Manage teaching, lessons, assignments, attendance and student performance.</p></div><button class="secondary-btn" onclick="navigate('lms')">Open Course Builder</button></div>
-      <div class="stats-grid">${stat("My Courses","3","Assigned courses","📚")}${stat("My Students","48","Active learners","👥")}${stat("To Grade","8","Submissions","📝")}${stat("Today's Classes","2","Scheduled","🕒")}</div>
-      <div class="card"><div class="card-head"><h3>Assigned Courses</h3></div>${courseCards(data.courses.slice(0,3))}</div>`;
-  }
-}
+  const role=currentUser?.role||"student";
+  const students=Array.isArray(data.students)?data.students:[];
+  const courses=(Array.isArray(data.courses)?data.courses:[]).filter(c=>c && c.published!==false);
+  const instructors=Array.isArray(data.instructors)?data.instructors:[];
+  const payments=Array.isArray(data.payments)?data.payments:[];
+  const verified=payments.filter(p=>["verified","confirmed","paid"].includes(String(p.status||"").toLowerCase())||p.verified===true);
+  const revenue=verified.reduce((sum,p)=>sum+Number(p.amount||0),0);
+  const money=new Intl.NumberFormat("en-NG",{style:"currency",currency:"NGN",maximumFractionDigits:0}).format(revenue);
 
+  if(role==="admin"||role==="super_admin"){
+    const links=[
+      ["Learners","students","View registrations and learner profiles"],
+      ["Courses","courses","Open the 100-course catalogue"],
+      ["Upload Course","course-upload","Attach a complete course PDF manual"],
+      ["Learning Content","lms","Open modules, lessons and study materials"],
+      ["Assignments","assignments","Create practical work and review submissions"],
+      ["Quizzes","quizzes","Manage lesson knowledge checks"],
+      ["Course Payments","payments","Review payments and course access requests"],
+      ["Results","results","Publish and review assessment results"],
+      ["Certificates","certificates","Issue and verify learner certificates"],
+      ["Announcements","announcements","Publish Academy notices"],
+      ["Staff Management","staff","Manage instructor and administrator roles"],
+      ["Settings","settings","View Academy and platform settings"]
+    ];
+    const shortcuts=links.map(([label,page,description])=>
+      '<button type="button" class="quick-card" onclick="navigate(\''+page+'\')"><strong>'+label+'</strong><p class="muted">'+description+'</p></button>'
+    ).join("");
+    const recentPayments=verified.slice(0,5).map(p=>
+      '<div class="section-row"><strong>'+escHtml(p.student||"Learner")+'</strong><span>'+escHtml(p.description||p.reference||"Course payment")+'</span><small class="muted">₦'+Number(p.amount||0).toLocaleString("en-NG")+' · '+escHtml(p.status||"Verified")+'</small></div>'
+    ).join("");
+    $("#content").innerHTML=
+      '<section class="hero-card"><div><span class="eyebrow">ETHAN DIGITAL ACADEMY · LEARNING OPERATIONS</span><h1>Welcome back, '+escHtml(currentUser.firstName||"Administrator")+'</h1><p>Manage the Academy catalogue, learner records, course materials and academic activity.</p></div><div class="hero-actions"><button type="button" class="secondary-btn" onclick="navigate(\'courses\')">Open Course Library</button><button type="button" class="secondary-btn" onclick="navigate(\'course-upload\')">Upload Course Manual</button></div></section>'+
+      '<div class="stats-grid">'+
+        stat("Registered Learners",String(students.length),"Real learner records","👥")+
+        stat("Published Courses",String(courses.length),"Live course catalogue","📚")+
+        stat("Instructors",String(instructors.length),"Authorised teaching staff","🧑‍🏫")+
+        stat("Verified Payments",money,String(verified.length)+" verified payment records","💳")+
+      '</div>'+
+      '<div class="dashboard-grid">'+
+        '<section class="card"><div class="card-head"><h3>Academy Modules</h3><span class="badge blue">Live workspace</span></div><div class="quick-grid">'+shortcuts+'</div></section>'+
+        '<section class="card"><div class="card-head"><h3>Payment Activity</h3><button type="button" class="text-btn" onclick="navigate(\'payments\')">Open payments</button></div>'+
+          (recentPayments||emptyState("No verified payments yet","Verified learner course payments will appear here after the Superadmin confirms them."))+
+        '</section>'+
+      '</div>'+
+      '<section class="card"><div class="card-head"><h3>Current Academy Data</h3><button type="button" class="text-btn" onclick="navigate(\'students\')">Open learner records</button></div>'+
+        '<p class="muted">This dashboard uses the live ETHAN LEARN database. Empty sections show zero until real accounts or records are created; no sample learners, staff or payments are added.</p>'+
+        '<div class="stats-grid">'+
+          stat("Learners",String(students.length),"Accounts registered","👥")+
+          stat("Course Modules",String((Array.isArray(data.courses)?data.courses:[]).length),"Course records loaded","📖")+
+          stat("Payment Records",String(payments.length),"All recorded payments","🧾")+
+          stat("Announcements",String((Array.isArray(data.announcements)?data.announcements:[]).length),"Published notices","📣")+
+        '</div></section>';
+    return;
+  }
+  if(role==="student"){
+    const myCourses=studentCourses();
+    const average=myCourses.length?Math.round(myCourses.reduce((n,c)=>n+Number(c.progress||0),0)/myCourses.length):0;
+    $("#content").innerHTML=
+      '<section class="hero-card"><div><span class="eyebrow">STUDENT PORTAL</span><h1>Welcome back, '+escHtml(currentUser.firstName||"Learner")+'</h1><p>'+(myCourses.length?"Your approved course access is active. Continue learning below.":"Your account is ready. Choose a course, make payment and submit the transfer reference for Superadmin approval.")+'</p></div><button type="button" class="secondary-btn" onclick="navigate(\''+(myCourses.length?"lms":"catalogue")+'\')">'+(myCourses.length?"Continue Learning":"Browse Course Catalogue")+'</button></section>'+
+      '<div class="stats-grid">'+stat("My Courses",String(myCourses.length),"Approved enrolments","📚")+stat("Average Progress",average+"%","Across approved courses","📈")+stat("Assignments","—","Open assignments module","📝")+stat("Certificates","—","Open certificate wallet","🎓")+'</div>'+
+      (myCourses.length?'<div class="card"><div class="card-head"><h3>My Courses</h3></div>'+courseCards(myCourses)+'</div>':emptyState("Choose a course to get started","Your learner account is free. Course lessons and assessments unlock after the Superadmin verifies payment for the selected course.",'<button type="button" class="primary-btn" onclick="navigate(\'catalogue\')">Browse Course Catalogue</button>'));
+    return;
+  }
+  if(role==="instructor"){
+    $("#content").innerHTML=
+      '<section class="hero-card"><div><span class="eyebrow">INSTRUCTOR PORTAL</span><h1>Welcome, '+escHtml(currentUser.firstName||"Instructor")+'</h1><p>Open your teaching tools, course library and assessment workspace.</p></div><button type="button" class="secondary-btn" onclick="navigate(\'lms\')">Open Learning Content</button></section>'+
+      '<div class="stats-grid">'+stat("Learner Records",String(students.length),"Live learner accounts","👥")+stat("Course Library",String(courses.length),"Published Academy courses","📚")+stat("Assignments", "Open module","Create and review practical work","📝")+stat("Quizzes","Open module","Manage published assessments","✅")+'</div>'+
+      '<div class="quick-grid"><button type="button" class="quick-card" onclick="navigate(\'courses\')"><strong>Course Library</strong><p class="muted">Open Academy courses</p></button><button type="button" class="quick-card" onclick="navigate(\'assignments\')"><strong>Assignments</strong><p class="muted">Create and review tasks</p></button><button type="button" class="quick-card" onclick="navigate(\'quizzes\')"><strong>Quizzes</strong><p class="muted">Manage knowledge checks</p></button></div>';
+    return;
+  }
+  $("#content").innerHTML=pageHead("Dashboard","Your ETHAN LEARN workspace.")+emptyState("Dashboard not available","Contact the Academy administrator to confirm your account role.");
+}
 function studentTable(list){
  return `<div class="card"><div class="table-wrap"><table class="data-table"><thead><tr><th>Student ID</th><th>Name</th><th>Program</th><th>Progress</th><th>Payment</th><th>Status</th></tr></thead><tbody>${list.map(s=>`<tr><td>${s.id}</td><td><strong>${s.name}</strong><br><small class="muted">${s.email}</small></td><td>${s.program}</td><td>${s.progress}%</td><td><span class="badge ${s.payment==="Paid"?"green":"gold"}">${s.payment}</span></td><td><span class="badge green">${s.status}</span></td></tr>`).join("")}</tbody></table></div></div>`;
 }
